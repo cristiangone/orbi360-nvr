@@ -30,7 +30,9 @@ export PIP_BREAK_SYSTEM_PACKAGES=1   # contenedor dedicado: paquetes de Python a
 export PIP_ROOT_USER_ACTION=ignore
 
 LOG=/var/log/orbi360-install.log
-exec > >(tee -a "$LOG") 2>&1
+if [[ -z "${ORBI360_REEXEC:-}" ]]; then
+  exec > >(tee -a "$LOG") 2>&1
+fi
 
 msg() { echo -e "\n\033[1;36m==> $*\033[0m"; }
 die() { echo -e "\n\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
@@ -102,6 +104,12 @@ if [[ -d "$SRC/.git" ]]; then
   git -C "$SRC" reset --hard FETCH_HEAD
 else
   git clone --depth 1 --branch "$BRANCH" "$REPO_URL" "$SRC"
+fi
+# raw.githubusercontent.com cachea el script unos minutos: lo que se descargo con wget
+# puede ser una version vieja. Se continua siempre con la copia del commit recien clonado.
+if [[ -z "${ORBI360_REEXEC:-}" ]]; then
+  export ORBI360_REEXEC=1
+  exec bash "$SRC/orbi360/lxc/install.sh"
 fi
 COMMIT="$(git -C "$SRC" rev-parse --short HEAD)"
 DOCKER="$SRC/docker/main"

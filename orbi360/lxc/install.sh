@@ -141,13 +141,17 @@ step python "$(file_hash "$DOCKER/requirements.txt" "$DOCKER/requirements-wheels
 # Equivale a docker/main/install_deps.sh, con una diferencia importante: ese script
 # trae libva2/libvpl2 de Debian 13 (para Battlemage) y eso arrastra libc6 y
 # base-files de trixie, dejando un sistema hibrido que se rompe con "apt upgrade".
-# Aca todo sale de Debian 12, salvo los .deb de Intel compute-runtime (OpenCL para
-# OpenVINO en GPU), que son los mismos que usa la imagen oficial.
+# Aca todo sale de Debian 12. Los .deb de Intel compute-runtime de upstream exigen
+# glibc 2.38 (Debian 13), asi que para OpenVINO en GPU se usa intel-opencl-icd de
+# Debian 12 (22.43), que soporta iGPUs hasta Gen12 (Tiger Lake, Alder Lake).
 # Al actualizar desde upstream, revisar install_deps.sh por cambios de versiones.
 install_runtime() {
   local deps="$DOCKER/install_deps.sh"
   apt-get -qq update   # algunos scripts de compilacion borran /var/lib/apt/lists
-  apt-get -qq install -y --no-install-recommends     apt-transport-https ca-certificates gnupg wget lbzip2 procps vainfo     unzip locales tzdata libxml2 xz-utils curl lsof jq nethogs     libgl1 libglib2.0-0 libusb-1.0.0 python3-h2 libgomp1
+  apt-get -qq install -y --no-install-recommends \
+    apt-transport-https ca-certificates gnupg wget lbzip2 procps vainfo \
+    unzip locales tzdata libxml2 xz-utils curl lsof jq nethogs \
+    libgl1 libglib2.0-0 libusb-1.0.0 python3-h2 libgomp1
 
   # Coral (Edge TPU)
   local edgetpu_url
@@ -171,22 +175,19 @@ install_runtime() {
   # Drivers de video Intel/AMD de Debian 12
   sed -i -E "/^Components: main$/s/main/main contrib non-free non-free-firmware/" /etc/apt/sources.list.d/debian.sources
   apt-get -qq update
-  apt-get -qq install -y --no-install-recommends     i965-va-driver-shaders intel-media-va-driver-non-free     intel-gpu-tools onevpl-tools libva-drm2 mesa-va-drivers     ocl-icd-libopencl1 libtbb12 libvulkan1 mesa-vulkan-drivers
+  apt-get -qq install -y --no-install-recommends \
+    i965-va-driver-shaders intel-media-va-driver-non-free \
+    intel-gpu-tools onevpl-tools libva-drm2 mesa-va-drivers \
+    intel-opencl-icd ocl-icd-libopencl1 libtbb12 libvulkan1 mesa-vulkan-drivers
   reset_apt_sources
   apt-get -qq update
 
-  # Intel compute-runtime (OpenCL/Level Zero) para OpenVINO en GPU, versiones de upstream
-  local work; work="$(mktemp -d)"
-  grep -oP 'https://github.com/(intel/compute-runtime|intel/intel-graphics-compiler|oneapi-src/level-zero)/releases/download/[^ ]+\.deb' "$deps"     | while read -r url; do wget -q -P "$work" "$url"; done
-  dpkg -i "$work"/*.deb || true
-  apt-get -qq install -f -y
-  rm -rf "$work"
-
   # yq (lo usan los scripts de arranque)
-  curl -fsSL "$(grep -oP 'https://github.com/mikefarah/yq/releases/download/[^"]+' "$deps" | sed 's/\$(dpkg --print-architecture)/amd64/')"     --output /usr/local/bin/yq
+  curl -fsSL "$(grep -oP 'https://github.com/mikefarah/yq/releases/download/[^"]+' "$deps" | sed 's/\$(dpkg --print-architecture)/amd64/')" \
+    --output /usr/local/bin/yq
   chmod +x /usr/local/bin/yq
 }
-step runtime "$(file_hash "$DOCKER/install_deps.sh" "$0")" install_runtime
+step runtime "$(file_hash "$DOCKER/install_deps.sh")-v2" install_runtime
 
 # --- Acceso a la iGPU Intel (si el CT la tiene) ---
 HAS_IGPU=0

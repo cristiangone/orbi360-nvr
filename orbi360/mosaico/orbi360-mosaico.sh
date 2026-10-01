@@ -66,7 +66,8 @@ if [[ "$ENCODER" == vaapi ]]; then
   # Codificacion por hardware en la iGPU Intel: casi no usa CPU
   HW=(-vaapi_device "$VAAPI_DEVICE")
   FILTER="${LAYOUT},format=nv12,hwupload[v]"
-  VIDEO=(-c:v h264_vaapi -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k"
+  # -rc_mode CBR: sin esto h264_vaapi puede elegir calidad constante e ignorar el bitrate
+  VIDEO=(-c:v h264_vaapi -rc_mode CBR -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k"
          -g "$GOP" -bf 0 -aud 1)
 else
   HW=()

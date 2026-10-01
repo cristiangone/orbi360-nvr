@@ -384,6 +384,48 @@ version: $CONFIG_VERSION
 EOF
 fi
 
+# Puertos internos solo en localhost. En Docker el 5000 (API sin login, con permisos
+# de admin) y el 1984 (API de go2rtc) quedan dentro del contenedor; instalado nativo
+# escucharian en toda la red. La interfaz web sigue en el 8971 (con login) via nginx.
+# Si config.yml todavia no existe, se crea con la misma config por defecto de Frigate.
+CONFIG_VERSION="$(grep -oP 'CURRENT_CONFIG_VERSION = "\K[^"]+' "$SRC/frigate/util/config.py")"
+CONFIG_VERSION="$CONFIG_VERSION" python3 - <<'EOF'
+import os
+from pathlib import Path
+from ruamel.yaml import YAML
+
+yaml = YAML()
+path = Path("/config/config.yml")
+if path.exists():
+    cfg = yaml.load(path.read_text()) or {}
+else:
+    cfg = yaml.load(
+        "mqtt:\n  enabled: false\n"
+        "detectors:\n  ov:\n    type: openvino\n    device: CPU\n"
+        "model:\n  width: 300\n  height: 300\n  input_tensor: nhwc\n"
+        "  input_pixel_format: bgr\n"
+        "  path: /openvino-model/ssdlite_mobilenet_v2.xml\n"
+        "  labelmap_path: /openvino-model/coco_91cl_bkgr.txt\n"
+        "cameras: {}\n"
+        f"version: {os.environ['CONFIG_VERSION']}\n"
+    )
+
+changed = not path.exists()
+listen = cfg.setdefault("networking", {}).setdefault("listen", {})
+if "internal" not in listen:
+    listen["internal"] = "127.0.0.1:5000"
+    changed = True
+api = cfg.setdefault("go2rtc", {}).setdefault("api", {})
+if "listen" not in api:
+    api["listen"] = "127.0.0.1:1984"
+    changed = True
+
+if changed:
+    with path.open("w") as f:
+        yaml.dump(cfg, f)
+    print("config.yml: puertos internos 5000 y 1984 restringidos a localhost")
+EOF
+
 # Cache de grabaciones en RAM, como el tmpfs que recomienda la documentacion
 if ! grep -q " /tmp/cache " /etc/fstab; then
   echo "tmpfs /tmp/cache tmpfs defaults,nofail,size=1g 0 0" >> /etc/fstab
@@ -450,34 +492,20 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-# --- Mosaico 2x2 por SRT (orbi360/mosaico) ---
+# --- Mosaicos SRT (orbi360/mosaico + Ajustes > Mosaico SRT en la interfaz) ---
+# Cada mosaico es una instancia de orbi360-mosaico@<id>.service. La lista vive en
+# /config/orbi360/mosaics.json y se administra desde la interfaz web.
 command -v srt-live-transmit >/dev/null || apt-get -qq install -y --no-install-recommends srt-tools
 install -m 755 "$SRC/orbi360/mosaico/orbi360-mosaico.sh" /usr/local/orbi360/bin/orbi360-mosaico
-MOSAICO_READY=0
-if [[ ! -f /etc/orbi360-mosaico.conf ]]; then
-  cp "$SRC/orbi360/mosaico/orbi360-mosaico.conf" /etc/orbi360-mosaico.conf
-  # Precargar las primeras 4 camaras de Orbi360 NVR, si ya hay 4
-  FIRST_CAMS="$(python3 -c '
-from ruamel.yaml import YAML
-try:
-    cams = list((YAML(typ="safe").load(open("/config/config.yml")) or {}).get("cameras") or {})
-except FileNotFoundError:
-    cams = []
-print(" ".join(cams[:4]) if len(cams) >= 4 else "")
-')"
-  if [[ -n "$FIRST_CAMS" ]]; then
-    sed -i "s/^CAMS=.*/CAMS=\"$FIRST_CAMS\"/" /etc/orbi360-mosaico.conf
-  fi
-fi
-grep -q '^CAMS="CAMARA1' /etc/orbi360-mosaico.conf || MOSAICO_READY=1
 
-cat > /etc/systemd/system/orbi360-mosaico.service <<EOF
+cat > /etc/systemd/system/orbi360-mosaico@.service <<EOF
 [Unit]
-Description=Orbi360 NVR - mosaico 2x2 por SRT
+Description=Orbi360 NVR - mosaico SRT %i
 After=orbi360-go2rtc.service
 Wants=orbi360-go2rtc.service
 
 [Service]
+Environment=CONF=/config/orbi360/mosaics/%i.conf
 ExecStart=/usr/local/orbi360/bin/orbi360-mosaico
 Restart=always
 RestartSec=5
@@ -487,14 +515,47 @@ KillMode=control-group
 WantedBy=multi-user.target
 EOF
 
+# Version anterior: un unico servicio configurado en /etc/orbi360-mosaico.conf
+if [[ -f /etc/systemd/system/orbi360-mosaico.service ]]; then
+  if [[ -d /run/systemd/system ]]; then
+    systemctl disable --now orbi360-mosaico.service || true
+  fi
+  rm -f /etc/systemd/system/orbi360-mosaico.service
+fi
+
+mosaics() { (cd /opt/frigate && python3 -m frigate.orbi360.mosaics "$@"); }
+
+if [[ -f /etc/orbi360-mosaico.conf && ! -f /config/orbi360/mosaics.json ]]; then
+  mosaics migrate && mv /etc/orbi360-mosaico.conf /etc/orbi360-mosaico.conf.migrado
+fi
+
+# Instalacion nueva: crear un mosaico con las primeras 4 camaras, si ya hay 4
+if [[ ! -f /config/orbi360/mosaics.json ]]; then
+  (cd /opt/frigate && python3 - <<'EOF'
+from ruamel.yaml import YAML
+from frigate.orbi360 import mosaics
+
+try:
+    cfg = YAML(typ="safe").load(open("/config/config.yml")) or {}
+except FileNotFoundError:
+    cfg = {}
+cams = list(cfg.get("cameras") or {})[:4]
+streams = set((cfg.get("go2rtc") or {}).get("streams") or {})
+if len(cams) == 4:
+    picked = [f"{c}_sub" if f"{c}_sub" in streams else c for c in cams]
+    mosaics.save(mosaics.MosaicList(mosaics=[
+        mosaics.Mosaic(id="principal", name="Principal", streams=picked, srt_port=9999)
+    ]))
+    print("Mosaico 'principal' creado con:", ", ".join(picked))
+EOF
+  )
+fi
+
 if [[ -d /run/systemd/system ]]; then
   systemctl daemon-reload
   systemctl enable orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
   systemctl restart orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
-  if [[ $MOSAICO_READY == 1 ]]; then
-    systemctl enable orbi360-mosaico.service
-    systemctl restart orbi360-mosaico.service
-  fi
+  mosaics apply || echo "Aviso: no se pudieron aplicar los mosaicos SRT"
 else
   echo "Aviso: systemd no esta activo; los servicios quedaron instalados pero no se iniciaron"
 fi
@@ -515,8 +576,8 @@ cat <<EOF
     journalctl -u orbi360-nvr -f          log en vivo
     nano /config/config.yml               configuracion
 
-  Mosaico SRT (2x2):     srt://$IP_ADDR:9999?mode=caller&latency=5000
-    configuracion:       /etc/orbi360-mosaico.conf  (luego: systemctl restart orbi360-mosaico)
+  Mosaicos SRT: se configuran en la interfaz, Ajustes > Mosaico SRT
+    (el primero queda en srt://$IP_ADDR:9999?mode=caller&latency=5000)
 
   Log de esta instalacion: $LOG
 EOF

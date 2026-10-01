@@ -24,6 +24,7 @@ from frigate.api import (
     media,
     motion_search,
     notification,
+    orbi360,
     preview,
     record,
     review,
@@ -150,6 +151,7 @@ def create_fastapi_app(
     app.include_router(motion_search.router)
     app.include_router(record.router)
     app.include_router(debug_replay.router)
+    app.include_router(orbi360.router)
     # App Properties
     app.frigate_config = frigate_config
     # snapshot the port nginx bound at startup, the live config can be swapped

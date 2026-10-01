@@ -13,6 +13,7 @@ class Tags(Enum):
     media = "Media"
     motion_search = "Motion Search"
     notifications = "Notifications"
+    orbi360 = "Orbi360"
     preview = "Preview"
     recordings = "Recordings"
     review = "Review"

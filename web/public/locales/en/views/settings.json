@@ -111,6 +111,7 @@
     "users": "Users",
     "roles": "Roles",
     "notifications": "Notifications",
+    "srtMosaics": "SRT mosaic",
     "triggers": "Triggers",
     "debug": "Debug",
     "frigateplus": "Frigate+",
@@ -1201,6 +1202,66 @@
       "error": {
         "registerFailed": "Failed to save notification registration."
       }
+    }
+  },
+  "srtMosaics": {
+    "title": "SRT mosaic",
+    "desc": "Each mosaic tiles four streams into a 2x2 grid and publishes it as an SRT listener, so a transcoder or player can pull it. Every mosaic is an independent output: saving one does not interrupt the others.",
+    "unsupported": "This installation cannot manage mosaic services (systemd is not available). Mosaics can be saved but will not run.",
+    "add": "Add mosaic",
+    "empty": "No mosaics yet. Add one to publish an SRT output.",
+    "edit": "Edit",
+    "restart": "Restart",
+    "delete": "Delete",
+    "copy": "Copy SRT address",
+    "summary": "{{resolution}} · {{fps}} fps · {{bitrate}} kbit/s · {{encoder}}",
+    "status": {
+      "active": "Running",
+      "activating": "Starting",
+      "inactive": "Stopped",
+      "failed": "Error",
+      "unsupported": "Not managed",
+      "unknown": "Unknown"
+    },
+    "encoders": {
+      "auto": "Automatic",
+      "vaapi": "Intel GPU (VA-API)",
+      "x264": "CPU (x264)"
+    },
+    "form": {
+      "titleNew": "New SRT mosaic",
+      "titleEdit": "Edit SRT mosaic",
+      "desc": "Pick the four streams and the SRT output settings.",
+      "name": "Name",
+      "nameRequired": "The mosaic needs a name",
+      "streams": "Streams",
+      "streamsRequired": "Pick a stream for each of the four tiles",
+      "streamsHint": "Streams ending in _sub are the low resolution ones and are recommended: they keep the load low.",
+      "pickStream": "Select a stream",
+      "positions": {
+        "topLeft": "Top left",
+        "topRight": "Top right",
+        "bottomLeft": "Bottom left",
+        "bottomRight": "Bottom right"
+      },
+      "port": "SRT port (UDP)",
+      "latency": "Latency (ms)",
+      "bitrate": "Bitrate (kbit/s)",
+      "fps": "Frames per second",
+      "resolution": "Resolution",
+      "encoder": "Encoder",
+      "enabled": "Enabled"
+    },
+    "deleteConfirm": {
+      "title": "Delete mosaic",
+      "desc": "The SRT output \"{{name}}\" will stop and be removed."
+    },
+    "toast": {
+      "saved": "SRT mosaics saved",
+      "error": "Could not save: {{message}}",
+      "copied": "SRT address copied",
+      "restarted": "Mosaic \"{{name}}\" restarted",
+      "restartError": "Could not restart the mosaic"
     }
   },
   "frigatePlus": {

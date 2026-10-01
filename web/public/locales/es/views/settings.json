@@ -29,6 +29,7 @@
     "frigateplus": "Frigate+",
     "users": "Usuarios",
     "notifications": "Notificaciones",
+    "srtMosaics": "Mosaico SRT",
     "enrichments": "Análisis avanzado",
     "triggers": "Disparadores",
     "roles": "Rols",
@@ -772,6 +773,66 @@
     "unregisterDevice": "Cancelar el registro de este dispositivo",
     "unsavedRegistrations": "Registros de notificaciones no guardados",
     "unsavedChanges": "Cambios de notificaciones no guardados"
+  },
+  "srtMosaics": {
+    "title": "Mosaico SRT",
+    "desc": "Cada mosaico arma una grilla 2x2 con cuatro transmisiones y la publica como SRT listener, para que un transcoder o reproductor la tome. Cada mosaico es una salida independiente: guardar uno no interrumpe a los demás.",
+    "unsupported": "Esta instalación no puede administrar los servicios de mosaico (systemd no está disponible). Los mosaicos se guardan pero no se ejecutan.",
+    "add": "Agregar mosaico",
+    "empty": "Todavía no hay mosaicos. Agrega uno para publicar una salida SRT.",
+    "edit": "Editar",
+    "restart": "Reiniciar",
+    "delete": "Eliminar",
+    "copy": "Copiar dirección SRT",
+    "summary": "{{resolution}} · {{fps}} fps · {{bitrate}} kbit/s · {{encoder}}",
+    "status": {
+      "active": "Transmitiendo",
+      "activating": "Iniciando",
+      "inactive": "Detenido",
+      "failed": "Error",
+      "unsupported": "Sin administrar",
+      "unknown": "Desconocido"
+    },
+    "encoders": {
+      "auto": "Automático",
+      "vaapi": "GPU Intel (VA-API)",
+      "x264": "CPU (x264)"
+    },
+    "form": {
+      "titleNew": "Nuevo mosaico SRT",
+      "titleEdit": "Editar mosaico SRT",
+      "desc": "Elige las cuatro transmisiones y los ajustes de la salida SRT.",
+      "name": "Nombre",
+      "nameRequired": "El mosaico necesita un nombre",
+      "streams": "Transmisiones",
+      "streamsRequired": "Elige una transmisión para cada uno de los cuatro cuadros",
+      "streamsHint": "Las transmisiones que terminan en _sub son las de baja resolución y se recomiendan: mantienen baja la carga.",
+      "pickStream": "Selecciona una transmisión",
+      "positions": {
+        "topLeft": "Arriba izquierda",
+        "topRight": "Arriba derecha",
+        "bottomLeft": "Abajo izquierda",
+        "bottomRight": "Abajo derecha"
+      },
+      "port": "Puerto SRT (UDP)",
+      "latency": "Latencia (ms)",
+      "bitrate": "Bitrate (kbit/s)",
+      "fps": "Cuadros por segundo",
+      "resolution": "Resolución",
+      "encoder": "Codificador",
+      "enabled": "Activado"
+    },
+    "deleteConfirm": {
+      "title": "Eliminar mosaico",
+      "desc": "La salida SRT \"{{name}}\" se detendrá y se eliminará."
+    },
+    "toast": {
+      "saved": "Mosaicos SRT guardados",
+      "error": "No se pudo guardar: {{message}}",
+      "copied": "Dirección SRT copiada",
+      "restarted": "Mosaico \"{{name}}\" reiniciado",
+      "restartError": "No se pudo reiniciar el mosaico"
+    }
   },
   "frigatePlus": {
     "title": "Configuración de Frigate+",

@@ -238,7 +238,8 @@ install_models() {
   cp "$SRC/labelmap.txt" /labelmap.txt
   cp "$SRC/audio-labelmap.txt" /audio-labelmap.txt
 
-  # Convertir SSDLite MobileNet v2 a OpenVINO IR en un entorno aislado
+  # Convertir SSDLite MobileNet v2 a OpenVINO IR en un entorno aislado.
+  # --no-same-owner: en un LXC sin privilegios los uid originales del tar no existen
   python3 -m venv "$work/venv"
   "$work/venv/bin/pip" install -q -r "$DOCKER/requirements-ov.txt"
   rm -rf /models && mkdir /models

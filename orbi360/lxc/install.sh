@@ -181,7 +181,7 @@ install_runtime() {
     ver="$(grep -oP 'gpl-\K[0-9]+' <<<"$url").0"
     mkdir -p "/usr/lib/ffmpeg/$ver"
     wget -qO /tmp/ffmpeg.tar.xz "$url"
-    tar -xf /tmp/ffmpeg.tar.xz -C "/usr/lib/ffmpeg/$ver" --strip-components 1 amd64/bin/ffmpeg amd64/bin/ffprobe
+    tar --no-same-owner -xf /tmp/ffmpeg.tar.xz -C "/usr/lib/ffmpeg/$ver" --strip-components 1 amd64/bin/ffmpeg amd64/bin/ffprobe
     rm -f /tmp/ffmpeg.tar.xz
   done < <(grep -oP 'https://github.com/NickM-27/FFmpeg-Builds/[^"]+linux64[^"]+' "$deps")
 
@@ -245,7 +245,7 @@ install_models() {
   rm -rf /models && mkdir /models
   (cd /models \
     && wget -q http://download.tensorflow.org/models/object_detection/ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
-    && tar -xf ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
+    && tar --no-same-owner -xf ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
     && "$work/venv/bin/python" "$DOCKER/build_ov_model.py")
   mkdir -p /openvino-model
   cp /models/ssdlite_mobilenet_v2.xml /models/ssdlite_mobilenet_v2.bin /openvino-model/
@@ -254,7 +254,7 @@ install_models() {
 
   # Modelo de audio
   (cd "$work" \
-    && wget -qO - https://www.kaggle.com/api/v1/models/google/yamnet/tfLite/classification-tflite/1/download | tar xz \
+    && wget -qO - https://www.kaggle.com/api/v1/models/google/yamnet/tfLite/classification-tflite/1/download | tar --no-same-owner -xz \
     && mv 1.tflite /cpu_audio_model.tflite)
   chmod 644 /cpu_audio_model.tflite
   rm -rf /models "$work"

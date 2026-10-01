@@ -223,7 +223,8 @@ step node "$NODE_MAJOR" install_node
 # --- Interfaz web (etapa "web-build") ---
 build_web() {
   echo "VITE_GIT_COMMIT_HASH=$COMMIT" > "$SRC/web/.env"
-  (cd "$SRC/web" && npm ci --no-audit --no-fund && npm run build)
+  # vite necesita mas memoria que el limite por defecto de Node (~2 GB)
+  (cd "$SRC/web" && npm ci --no-audit --no-fund && NODE_OPTIONS=--max-old-space-size=4096 npm run build)
   mv "$SRC/web/dist/BASE_PATH/monacoeditorwork/"* "$SRC/web/dist/assets/"
   rm -rf "$SRC/web/dist/BASE_PATH"
   mkdir -p /opt/frigate/web

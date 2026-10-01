@@ -146,6 +146,7 @@ step python "$(file_hash "$DOCKER/requirements.txt" "$DOCKER/requirements-wheels
 # Al actualizar desde upstream, revisar install_deps.sh por cambios de versiones.
 install_runtime() {
   local deps="$DOCKER/install_deps.sh"
+  apt-get -qq update   # algunos scripts de compilacion borran /var/lib/apt/lists
   apt-get -qq install -y --no-install-recommends     apt-transport-https ca-certificates gnupg wget lbzip2 procps vainfo     unzip locales tzdata libxml2 xz-utils curl lsof jq nethogs     libgl1 libglib2.0-0 libusb-1.0.0 python3-h2 libgomp1
 
   # Coral (Edge TPU)

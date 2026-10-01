@@ -443,10 +443,51 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
+# --- Mosaico 2x2 por SRT (orbi360/mosaico) ---
+command -v srt-live-transmit >/dev/null || apt-get -qq install -y --no-install-recommends srt-tools
+install -m 755 "$SRC/orbi360/mosaico/orbi360-mosaico.sh" /usr/local/orbi360/bin/orbi360-mosaico
+MOSAICO_READY=0
+if [[ ! -f /etc/orbi360-mosaico.conf ]]; then
+  cp "$SRC/orbi360/mosaico/orbi360-mosaico.conf" /etc/orbi360-mosaico.conf
+  # Precargar las primeras 4 camaras de Orbi360 NVR, si ya hay 4
+  FIRST_CAMS="$(python3 -c '
+from ruamel.yaml import YAML
+try:
+    cams = list((YAML(typ="safe").load(open("/config/config.yml")) or {}).get("cameras") or {})
+except FileNotFoundError:
+    cams = []
+print(" ".join(cams[:4]) if len(cams) >= 4 else "")
+')"
+  if [[ -n "$FIRST_CAMS" ]]; then
+    sed -i "s/^CAMS=.*/CAMS=\"$FIRST_CAMS\"/" /etc/orbi360-mosaico.conf
+  fi
+fi
+grep -q '^CAMS="CAMARA1' /etc/orbi360-mosaico.conf || MOSAICO_READY=1
+
+cat > /etc/systemd/system/orbi360-mosaico.service <<EOF
+[Unit]
+Description=Orbi360 NVR - mosaico 2x2 por SRT
+After=orbi360-go2rtc.service
+Wants=orbi360-go2rtc.service
+
+[Service]
+ExecStart=/usr/local/orbi360/bin/orbi360-mosaico
+Restart=always
+RestartSec=5
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 if [[ -d /run/systemd/system ]]; then
   systemctl daemon-reload
   systemctl enable orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
   systemctl restart orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
+  if [[ $MOSAICO_READY == 1 ]]; then
+    systemctl enable orbi360-mosaico.service
+    systemctl restart orbi360-mosaico.service
+  fi
 else
   echo "Aviso: systemd no esta activo; los servicios quedaron instalados pero no se iniciaron"
 fi
@@ -466,6 +507,9 @@ cat <<EOF
     systemctl status orbi360-nvr          estado del servicio
     journalctl -u orbi360-nvr -f          log en vivo
     nano /config/config.yml               configuracion
+
+  Mosaico SRT (2x2):     srt://$IP_ADDR:9999?mode=caller&latency=5000
+    configuracion:       /etc/orbi360-mosaico.conf  (luego: systemctl restart orbi360-mosaico)
 
   Log de esta instalacion: $LOG
 EOF

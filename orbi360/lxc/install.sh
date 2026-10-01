@@ -330,6 +330,9 @@ install -m 755 "$SRC/orbi360/lxc/orbi360-log.py" /usr/local/orbi360/bin/orbi360-
 
 # Variables de entorno de la imagen Docker
 DEFAULT_FFMPEG_VERSION="$(grep -oP 'ENV DEFAULT_FFMPEG_VERSION="\K[^"]+' "$DOCKER/Dockerfile")"
+# Las variables FRIGATE_* (por ejemplo FRIGATE_RTSP_PASSWORD) las agrega el usuario:
+# se conservan al regenerar el archivo
+USER_VARS="$(grep -E '^FRIGATE_' /etc/orbi360-nvr.env 2>/dev/null || true)"
 cat > /etc/orbi360-nvr.env <<EOF
 PATH=/usr/local/go2rtc/bin:/usr/local/tempio/bin:/usr/local/nginx/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 LANG=C.UTF-8
@@ -347,6 +350,10 @@ AUTOGRAPH_VERBOSITY=0
 GLOG_minloglevel=3
 GLOG_logtostderr=0
 EOF
+if [[ -n "$USER_VARS" ]]; then
+  echo "$USER_VARS" >> /etc/orbi360-nvr.env
+fi
+chmod 600 /etc/orbi360-nvr.env
 
 # Config inicial: si no existe, Frigate genera una con OpenVINO en CPU. Con iGPU Intel
 # conviene detectar en la GPU y decodificar el video por VA-API.

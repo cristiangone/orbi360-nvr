@@ -1206,7 +1206,7 @@
   },
   "srtMosaics": {
     "title": "SRT mosaic",
-    "desc": "Each mosaic tiles four streams into a 2x2 grid and publishes it as an SRT listener, so a transcoder or player can pull it. Every mosaic is an independent output: saving one does not interrupt the others.",
+    "desc": "Each mosaic combines 1 to 9 streams into a single image and publishes it as an SRT listener, so a transcoder or player can pull it. Every mosaic is an independent output: saving one does not interrupt the others.",
     "unsupported": "This installation cannot manage mosaic services (systemd is not available). Mosaics can be saved but will not run.",
     "add": "Add mosaic",
     "empty": "No mosaics yet. Add one to publish an SRT output.",
@@ -1214,7 +1214,7 @@
     "restart": "Restart",
     "delete": "Delete",
     "copy": "Copy SRT address",
-    "summary": "{{resolution}} · {{fps}} fps · {{bitrate}} kbit/s · {{encoder}}",
+    "summary": "{{layout}} · {{resolution}} · {{fps}} fps · {{bitrate}} kbit/s · {{encoder}}",
     "status": {
       "active": "Running",
       "activating": "Starting",
@@ -1231,26 +1231,24 @@
     "form": {
       "titleNew": "New SRT mosaic",
       "titleEdit": "Edit SRT mosaic",
-      "desc": "Pick the four streams and the SRT output settings.",
+      "desc": "Pick how many cameras, which streams and the SRT output settings.",
       "name": "Name",
       "nameRequired": "The mosaic needs a name",
       "streams": "Streams",
-      "streamsRequired": "Pick a stream for each of the four tiles",
-      "streamsHint": "Streams ending in _sub are the low resolution ones and are recommended: they keep the load low.",
+      "streamsRequired": "Pick a stream for every tile",
+      "streamsHint": "Tiles are filled left to right, top to bottom; unused tiles stay black. Streams ending in _sub are the low resolution ones and are recommended: they keep the load low.",
       "pickStream": "Select a stream",
-      "positions": {
-        "topLeft": "Top left",
-        "topRight": "Top right",
-        "bottomLeft": "Bottom left",
-        "bottomRight": "Bottom right"
-      },
       "port": "SRT port (UDP)",
       "latency": "Latency (ms)",
       "bitrate": "Bitrate (kbit/s)",
       "fps": "Frames per second",
       "resolution": "Resolution",
       "encoder": "Encoder",
-      "enabled": "Enabled"
+      "enabled": "Enabled",
+      "count": "Number of cameras",
+      "countOption_one": "{{count}} camera · {{layout}}",
+      "countOption_other": "{{count}} cameras · {{layout}}",
+      "tile": "Tile {{n}}"
     },
     "deleteConfirm": {
       "title": "Delete mosaic",
@@ -1262,6 +1260,17 @@
       "copied": "SRT address copied",
       "restarted": "Mosaic \"{{name}}\" restarted",
       "restartError": "Could not restart the mosaic"
+    },
+    "layouts": {
+      "1": "Full screen",
+      "2": "Side by side",
+      "3": "2x2 grid",
+      "4": "2x2 grid",
+      "5": "3x2 grid",
+      "6": "3x2 grid",
+      "7": "3x3 grid",
+      "8": "3x3 grid",
+      "9": "3x3 grid"
     }
   },
   "frigatePlus": {

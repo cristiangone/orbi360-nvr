@@ -1,6 +1,6 @@
 """SRT mosaic outputs.
 
-Each mosaic tiles four go2rtc streams into a 2x2 grid and publishes it as an
+Each mosaic tiles 1 to 9 go2rtc streams into a grid and publishes it as an
 SRT listener. Mosaics are stored in /config/orbi360/mosaics.json and run as
 instances of the systemd template unit ``orbi360-mosaico@<id>.service``
 (installed by orbi360/lxc/install.sh), each reading its own shell config from
@@ -43,7 +43,8 @@ RESERVED_PORTS = {1984, 5000, 8554, 8555, 8971}
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]{0,31}$")
 STREAM_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 
-RESOLUTIONS = {"1920x1080": (960, 540), "1280x720": (640, 360)}
+RESOLUTIONS = {"1920x1080": (1920, 1080), "1280x720": (1280, 720)}
+MAX_STREAMS = 9
 
 
 class Mosaic(BaseModel):
@@ -51,7 +52,7 @@ class Mosaic(BaseModel):
     name: str = Field(min_length=1, max_length=64)
     enabled: bool = True
     streams: list[str] = Field(
-        description="Four go2rtc stream names: top-left, top-right, bottom-left, bottom-right"
+        description="1 to 9 go2rtc stream names in reading order (left to right, top to bottom)"
     )
     srt_port: int = Field(ge=MIN_PORT, le=MAX_PORT)
     latency_ms: int = Field(default=5000, ge=20, le=60000)
@@ -72,8 +73,8 @@ class Mosaic(BaseModel):
     @field_validator("streams")
     @classmethod
     def validate_streams(cls, value: list[str]) -> list[str]:
-        if len(value) != 4:
-            raise ValueError("a 2x2 mosaic needs exactly 4 streams")
+        if not 1 <= len(value) <= MAX_STREAMS:
+            raise ValueError(f"a mosaic needs between 1 and {MAX_STREAMS} streams")
         for stream in value:
             if not STREAM_PATTERN.match(stream):
                 raise ValueError(f"invalid stream name: {stream!r}")
@@ -122,7 +123,7 @@ def save(mosaics: MosaicList) -> None:
 
 def render_conf(mosaic: Mosaic) -> str:
     """Shell config read by orbi360-mosaico. Values are validated, so safe to quote."""
-    tile_w, tile_h = RESOLUTIONS[mosaic.resolution]
+    out_w, out_h = RESOLUTIONS[mosaic.resolution]
     return "\n".join(
         [
             f"# Generado por Orbi360 NVR (Ajustes > Mosaico SRT): {mosaic.name}",
@@ -134,8 +135,8 @@ def render_conf(mosaic: Mosaic) -> str:
             f"SRT_LATENCY={mosaic.latency_ms}",
             f"BITRATE={mosaic.bitrate_kbps}",
             f"FPS={mosaic.fps}",
-            f"TILE_W={tile_w}",
-            f"TILE_H={tile_h}",
+            f"OUT_W={out_w}",
+            f"OUT_H={out_h}",
             f"ENCODER={mosaic.encoder}",
             "",
         ]

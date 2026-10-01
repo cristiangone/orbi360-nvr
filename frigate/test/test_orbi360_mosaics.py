@@ -30,7 +30,8 @@ class TestMosaicValidation(unittest.TestCase):
         for bad in (
             make(id="Mal Id"),
             make(id="x;rm"),
-            make(streams=["a", "b", "c"]),
+            make(streams=[]),
+            make(streams=[f"s{i}" for i in range(10)]),
             make(streams=["a", "b", "c", "d$(id)"]),
             make(srt_port=80),
             make(srt_port=8554),
@@ -75,7 +76,15 @@ class TestMosaicFiles(unittest.TestCase):
         self.assertIn('CAMS="a_sub b_sub c_sub d_sub"', conf)
         self.assertIn("SOURCE=direct", conf)
         self.assertIn("UDP_PORT=19999", conf)
-        self.assertIn("TILE_W=640", conf)
+        self.assertIn("OUT_W=1280", conf)
+        self.assertIn("OUT_H=720", conf)
+
+    def test_any_count_from_one_to_nine(self):
+        for count in range(1, 10):
+            mosaic = mosaics.Mosaic(**make(streams=[f"s{i}" for i in range(count)]))
+            self.assertIn(
+                f'CAMS="{" ".join(mosaic.streams)}"', mosaics.render_conf(mosaic)
+            )
 
     def test_save_load_and_apply_without_systemd(self):
         mosaic_list = mosaics.MosaicList(mosaics=[make(), make(id="b", srt_port=9000)])

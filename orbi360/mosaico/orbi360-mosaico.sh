@@ -1,17 +1,18 @@
 #!/bin/bash
 # ============================================================================
-#  orbi360-mosaico: mosaico 2x2 de camaras publicado como SRT listener
+#  orbi360-mosaico: mosaico de 1 a 9 camaras publicado como SRT listener
 #
 #  Basado en mosaico.sh de Jorge Garay. Flujo:
-#    4 streams del restream de go2rtc (rtsp://127.0.0.1:8554/<camara>)
-#      --> ffmpeg (grilla 2x2, H.264 + audio mudo) --> UDP local
+#    1 a 9 streams del restream de go2rtc (rtsp://127.0.0.1:8554/<camara>)
+#      --> ffmpeg (grilla segun la cantidad, H.264 + audio mudo) --> UDP local
 #      --> srt-live-transmit --> SRT listener :SRT_PORT
 #
 #  El cliente (transcoder/Nimble/etc.) hace PULL con:
 #    srt://<IP-del-NVR>:<SRT_PORT>?mode=caller&latency=<SRT_LATENCY>
 #
-#  Configuracion: /etc/orbi360-mosaico.conf (ver orbi360/mosaico/orbi360-mosaico.conf)
-#  Servicio:      systemctl {start|stop|status} orbi360-mosaico
+#  Configuracion: la genera la interfaz (Ajustes > Mosaico SRT) en
+#                 /config/orbi360/mosaics/<id>.conf
+#  Servicio:      systemctl {start|stop|status} orbi360-mosaico@<id>
 # ============================================================================
 set -u
 
@@ -20,21 +21,23 @@ CONF="${CONF:-/etc/orbi360-mosaico.conf}"
 [[ -f "$CONF" ]] && source "$CONF"
 
 # Valores por defecto (los del script original de Jorge)
-CAMS=(${CAMS:-})                     # nombres de streams de go2rtc, en orden: arriba-izq, arriba-der, abajo-izq, abajo-der
+CAMS=(${CAMS:-})                     # 1 a 9 streams de go2rtc, en orden de lectura (izquierda a derecha, arriba a abajo)
 SOURCE="${SOURCE:-sub}"              # sub: stream secundario (liviano) | main: stream principal
 RTSP_BASE="${RTSP_BASE:-rtsp://127.0.0.1:8554}"
 SRT_PORT="${SRT_PORT:-9999}"         # UDP; abrirlo/mapearlo como UDP
 SRT_LATENCY="${SRT_LATENCY:-5000}"   # ms. Mas alto = tolera mas perdida de red, mas delay
 BITRATE="${BITRATE:-2500}"           # kbit/s de video del mosaico
 FPS="${FPS:-15}"
-TILE_W="${TILE_W:-960}"; TILE_H="${TILE_H:-540}"   # 960x540 por cuadro -> canvas 1920x1080
+# Tamano final del mosaico. Configs viejas indicaban el cuadro de la grilla 2x2 (TILE_W/TILE_H)
+OUT_W="${OUT_W:-$(( ${TILE_W:-960} * 2 ))}"; OUT_H="${OUT_H:-$(( ${TILE_H:-540} * 2 ))}"
 UDP_PORT="${UDP_PORT:-1234}"         # puerto UDP interno encoder -> relay (solo localhost)
 ENCODER="${ENCODER:-auto}"           # auto | vaapi | x264
 VAAPI_DEVICE="${VAAPI_DEVICE:-/dev/dri/renderD128}"
 FFMPEG="${FFMPEG:-/usr/lib/ffmpeg/8.0/bin/ffmpeg}"
 
-if [[ ${#CAMS[@]} -ne 4 ]]; then
-  echo "[mosaico] Se necesitan exactamente 4 camaras en CAMS (hay ${#CAMS[@]}). Editar $CONF" >&2
+N=${#CAMS[@]}
+if (( N < 1 || N > 9 )); then
+  echo "[mosaico] CAMS debe tener entre 1 y 9 camaras (hay $N). Editar $CONF" >&2
   exit 1
 fi
 for bin in "$FFMPEG" srt-live-transmit; do
@@ -55,12 +58,32 @@ for cam in "${CAMS[@]}"; do
   INPUTS+=(-rtsp_transport tcp -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${cam}")
 done
 
-# Grilla 2x2
-LAYOUT="[0:v]scale=${TILE_W}:${TILE_H},setsar=1[a];\
-[1:v]scale=${TILE_W}:${TILE_H},setsar=1[b];\
-[2:v]scale=${TILE_W}:${TILE_H},setsar=1[c];\
-[3:v]scale=${TILE_W}:${TILE_H},setsar=1[d];\
-[a][b][c][d]xstack=inputs=4:layout=0_0|${TILE_W}_0|0_${TILE_H}|${TILE_W}_${TILE_H},fps=${FPS}"
+# Grilla segun la cantidad de camaras: 1 pantalla completa, 2 lado a lado, 3-4 en 2x2,
+# 5-6 en 3x2 y 7-9 en 3x3. Cada camara se escala sin deformarse (bandas negras si su
+# formato no coincide con el cuadro) y los cuadros sin camara quedan en negro.
+case $N in
+  1) COLS=1; ROWS=1 ;;
+  2) COLS=2; ROWS=1 ;;
+  3|4) COLS=2; ROWS=2 ;;
+  5|6) COLS=3; ROWS=2 ;;
+  *) COLS=3; ROWS=3 ;;
+esac
+TW=$(( OUT_W / COLS / 2 * 2 )); TH=$(( OUT_H / ROWS / 2 * 2 ))
+
+LAYOUT=""; TILES=""; POSITIONS=()
+for (( i = 0; i < N; i++ )); do
+  LAYOUT+="[${i}:v]scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
+  LAYOUT+="pad=${TW}:${TH}:(ow-iw)/2:(oh-ih)/2,setsar=1[t${i}];"
+  TILES+="[t${i}]"
+  POSITIONS+=("$(( i % COLS * TW ))_$(( i / COLS * TH ))")
+done
+if (( N == 1 )); then
+  LAYOUT+="[t0]null"
+else
+  LAYOUT+="${TILES}xstack=inputs=${N}:layout=$(IFS='|'; echo "${POSITIONS[*]}"):fill=black"
+fi
+# completa el lienzo si la division no fue exacta y fija los fps de salida
+LAYOUT+=",pad=${OUT_W}:${OUT_H}:(ow-iw)/2:(oh-ih)/2,fps=${FPS}"
 
 if [[ "$ENCODER" == vaapi ]]; then
   # Codificacion por hardware en la iGPU Intel: casi no usa CPU
@@ -77,7 +100,7 @@ else
          -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k")
 fi
 
-echo "[mosaico] Camaras: ${CAMS[*]} (stream $SOURCE) | encoder: $ENCODER | ${BITRATE}k @ ${FPS} fps"
+echo "[mosaico] Camaras ($N, grilla ${COLS}x${ROWS}): ${CAMS[*]} | ${OUT_W}x${OUT_H} | encoder: $ENCODER | ${BITRATE}k @ ${FPS} fps"
 echo "[mosaico] Publicando en srt://<IP>:${SRT_PORT}?mode=caller&latency=${SRT_LATENCY}"
 
 trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
@@ -97,7 +120,7 @@ trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
     "$FFMPEG" -hide_banner -loglevel warning -nostdin "${HW[@]}" \
       "${INPUTS[@]}" \
       -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
-      -filter_complex "$FILTER" -map "[v]" -map 4:a \
+      -filter_complex "$FILTER" -map "[v]" -map "${N}:a" \
       "${VIDEO[@]}" \
       -c:a aac -b:a 64k -ac 2 \
       -f mpegts "${UDP}?pkt_size=1316" 2>&1 | sed -u 's/^/[enc] /'

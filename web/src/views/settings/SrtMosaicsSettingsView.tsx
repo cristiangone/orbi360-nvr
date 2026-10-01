@@ -45,7 +45,40 @@ import { LuCopy, LuPencil, LuPlus, LuRotateCw, LuTrash2 } from "react-icons/lu";
 import { toast } from "sonner";
 import useSWR from "swr";
 
-const TILE_POSITIONS = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
+const MAX_STREAMS = 9;
+const COUNTS = Array.from({ length: MAX_STREAMS }, (_, i) => i + 1);
+
+// Same grid as orbi360-mosaico.sh: 1 full screen, 2 side by side, 3-4 in 2x2,
+// 5-6 in 3x2 and 7-9 in 3x3. Cells without a stream are black.
+function gridFor(count: number): { cols: number; rows: number } {
+  if (count <= 1) return { cols: 1, rows: 1 };
+  if (count === 2) return { cols: 2, rows: 1 };
+  if (count <= 4) return { cols: 2, rows: 2 };
+  if (count <= 6) return { cols: 3, rows: 2 };
+  return { cols: 3, rows: 3 };
+}
+
+const GRID_COLS = ["grid-cols-1", "grid-cols-2", "grid-cols-3"];
+
+function GridPreview({ streams }: { streams: string[] }) {
+  const { cols, rows } = gridFor(streams.length);
+  return (
+    <div className={cn("grid gap-1 text-xs", GRID_COLS[cols - 1])}>
+      {Array.from({ length: cols * rows }, (_, i) => (
+        <div
+          key={i}
+          className={cn(
+            "h-6 truncate rounded px-2 py-1",
+            i < streams.length ? "bg-background_alt" : "bg-black/80",
+          )}
+          title={streams[i]}
+        >
+          {streams[i] ?? ""}
+        </div>
+      ))}
+    </div>
+  );
+}
 const RESOLUTIONS: SrtMosaicResolution[] = ["1920x1080", "1280x720"];
 const ENCODERS: SrtMosaicEncoder[] = ["auto", "vaapi", "x264"];
 
@@ -241,17 +274,7 @@ export default function SrtMosaicsSettingsView() {
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-1 text-xs">
-                  {mosaic.streams.map((stream, i) => (
-                    <div
-                      key={i}
-                      className="truncate rounded bg-background_alt px-2 py-1"
-                      title={stream}
-                    >
-                      {stream}
-                    </div>
-                  ))}
-                </div>
+                <GridPreview streams={mosaic.streams} />
 
                 <div className="flex items-center gap-2">
                   <code className="flex-1 truncate rounded bg-background_alt px-2 py-1 text-xs">
@@ -274,6 +297,8 @@ export default function SrtMosaicsSettingsView() {
 
                 <div className="text-xs text-muted-foreground">
                   {t("srtMosaics.summary", {
+                    count: mosaic.streams.length,
+                    layout: t(`srtMosaics.layouts.${mosaic.streams.length}`),
                     resolution: mosaic.resolution,
                     fps: mosaic.fps,
                     bitrate: mosaic.bitrate_kbps,
@@ -346,18 +371,55 @@ export default function SrtMosaicsSettingsView() {
               </div>
 
               <div className="space-y-1">
+                <Label>{t("srtMosaics.form.count")}</Label>
+                <Select
+                  value={String(editing.streams.length)}
+                  onValueChange={(value) => {
+                    const count = parseInt(value, 10);
+                    const unused = streams.filter(
+                      (s) => s.endsWith("_sub") && !editing.streams.includes(s),
+                    );
+                    const next = editing.streams.slice(0, count);
+                    while (next.length < count) {
+                      next.push(unused.shift() ?? "");
+                    }
+                    setEditing({ ...editing, streams: next });
+                  }}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {COUNTS.map((count) => (
+                      <SelectItem key={count} value={String(count)}>
+                        {t("srtMosaics.form.countOption", {
+                          count,
+                          layout: t(`srtMosaics.layouts.${count}`),
+                        })}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-1">
                 <Label>{t("srtMosaics.form.streams")}</Label>
-                <div className="grid grid-cols-2 gap-2">
-                  {TILE_POSITIONS.map((position, i) => (
-                    <div key={position} className="space-y-1">
+                <div
+                  className={cn(
+                    "grid gap-2",
+                    GRID_COLS[gridFor(editing.streams.length).cols - 1],
+                  )}
+                >
+                  {editing.streams.map((value, i) => (
+                    <div key={i} className="min-w-0 space-y-1">
                       <span className="text-xs text-muted-foreground">
-                        {t(`srtMosaics.form.positions.${position}`)}
+                        {t("srtMosaics.form.tile", { n: i + 1 })}
                       </span>
                       <Select
-                        value={editing.streams[i] || undefined}
-                        onValueChange={(value) => {
+                        value={value || undefined}
+                        onValueChange={(selected) => {
                           const next = [...editing.streams];
-                          next[i] = value;
+                          next[i] = selected;
                           setEditing({ ...editing, streams: next });
                         }}
                       >

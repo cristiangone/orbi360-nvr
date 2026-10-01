@@ -776,7 +776,7 @@
   },
   "srtMosaics": {
     "title": "Mosaico SRT",
-    "desc": "Cada mosaico arma una grilla 2x2 con cuatro transmisiones y la publica como SRT listener, para que un transcoder o reproductor la tome. Cada mosaico es una salida independiente: guardar uno no interrumpe a los demás.",
+    "desc": "Cada mosaico combina de 1 a 9 transmisiones en una sola imagen y la publica como SRT listener, para que un transcoder o reproductor la tome. Cada mosaico es una salida independiente: guardar uno no interrumpe a los demás.",
     "unsupported": "Esta instalación no puede administrar los servicios de mosaico (systemd no está disponible). Los mosaicos se guardan pero no se ejecutan.",
     "add": "Agregar mosaico",
     "empty": "Todavía no hay mosaicos. Agrega uno para publicar una salida SRT.",
@@ -784,7 +784,7 @@
     "restart": "Reiniciar",
     "delete": "Eliminar",
     "copy": "Copiar dirección SRT",
-    "summary": "{{resolution}} · {{fps}} fps · {{bitrate}} kbit/s · {{encoder}}",
+    "summary": "{{layout}} · {{resolution}} · {{fps}} fps · {{bitrate}} kbit/s · {{encoder}}",
     "status": {
       "active": "Transmitiendo",
       "activating": "Iniciando",
@@ -801,26 +801,24 @@
     "form": {
       "titleNew": "Nuevo mosaico SRT",
       "titleEdit": "Editar mosaico SRT",
-      "desc": "Elige las cuatro transmisiones y los ajustes de la salida SRT.",
+      "desc": "Elige cuántas cámaras, qué transmisiones y los ajustes de la salida SRT.",
       "name": "Nombre",
       "nameRequired": "El mosaico necesita un nombre",
       "streams": "Transmisiones",
-      "streamsRequired": "Elige una transmisión para cada uno de los cuatro cuadros",
-      "streamsHint": "Las transmisiones que terminan en _sub son las de baja resolución y se recomiendan: mantienen baja la carga.",
+      "streamsRequired": "Elige una transmisión para cada cuadro",
+      "streamsHint": "Los cuadros se llenan de izquierda a derecha y de arriba a abajo; los que sobran quedan en negro. Las transmisiones que terminan en _sub son las de baja resolución y se recomiendan: mantienen baja la carga.",
       "pickStream": "Selecciona una transmisión",
-      "positions": {
-        "topLeft": "Arriba izquierda",
-        "topRight": "Arriba derecha",
-        "bottomLeft": "Abajo izquierda",
-        "bottomRight": "Abajo derecha"
-      },
       "port": "Puerto SRT (UDP)",
       "latency": "Latencia (ms)",
       "bitrate": "Bitrate (kbit/s)",
       "fps": "Cuadros por segundo",
       "resolution": "Resolución",
       "encoder": "Codificador",
-      "enabled": "Activado"
+      "enabled": "Activado",
+      "count": "Cantidad de cámaras",
+      "countOption_one": "{{count}} cámara · {{layout}}",
+      "countOption_other": "{{count}} cámaras · {{layout}}",
+      "tile": "Cuadro {{n}}"
     },
     "deleteConfirm": {
       "title": "Eliminar mosaico",
@@ -832,6 +830,17 @@
       "copied": "Dirección SRT copiada",
       "restarted": "Mosaico \"{{name}}\" reiniciado",
       "restartError": "No se pudo reiniciar el mosaico"
+    },
+    "layouts": {
+      "1": "Pantalla completa",
+      "2": "Lado a lado",
+      "3": "Grilla 2x2",
+      "4": "Grilla 2x2",
+      "5": "Grilla 3x2",
+      "6": "Grilla 3x2",
+      "7": "Grilla 3x3",
+      "8": "Grilla 3x3",
+      "9": "Grilla 3x3"
     }
   },
   "frigatePlus": {

@@ -202,6 +202,27 @@ install_runtime() {
 }
 step runtime "$(file_hash "$DOCKER/install_deps.sh")-v2" install_runtime
 
+# --- libva 2.22 en /usr/local ---
+# Los ffmpeg 7.0 y 8.0 incluidos llaman a vaMapBuffer2, que recien existe en libva 2.21;
+# Debian 12 trae 2.17 y la decodificacion VA-API aborta. Upstream lo resuelve trayendo
+# libva de Debian 13; aca se compila aparte en /usr/local (que el linker prioriza) y el
+# resto del sistema sigue en Debian 12. Los drivers (iHD, i965) son los de Debian.
+LIBVA_VERSION=2.22.0
+install_libva() {
+  apt-get -qq install -y --no-install-recommends meson ninja-build libdrm-dev
+  local work; work="$(mktemp -d)"
+  wget -qO "$work/libva.tar.gz" "https://github.com/intel/libva/archive/refs/tags/${LIBVA_VERSION}.tar.gz"
+  tar --no-same-owner -xf "$work/libva.tar.gz" -C "$work"
+  (cd "$work/libva-${LIBVA_VERSION}" \
+    && meson setup build --prefix=/usr/local --libdir=lib/x86_64-linux-gnu \
+         -Ddriverdir=/usr/lib/x86_64-linux-gnu/dri \
+         -Dwith_x11=no -Dwith_glx=no -Dwith_wayland=no \
+    && ninja -C build install)
+  ldconfig
+  rm -rf "$work"
+}
+step libva "$LIBVA_VERSION" install_libva
+
 # --- Acceso a la iGPU Intel (si el CT la tiene) ---
 HAS_IGPU=0
 if [[ -e /dev/dri/renderD128 ]]; then

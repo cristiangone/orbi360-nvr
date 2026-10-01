@@ -243,12 +243,18 @@ install_models() {
   python3 -m venv "$work/venv"
   "$work/venv/bin/pip" install -q -r "$DOCKER/requirements-ov.txt"
   rm -rf /models && mkdir /models
-  (cd /models \
-    && wget -q http://download.tensorflow.org/models/object_detection/ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
-    && tar --no-same-owner -xf ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
-    && "$work/venv/bin/python" "$DOCKER/build_ov_model.py")
   mkdir -p /openvino-model
-  cp /models/ssdlite_mobilenet_v2.xml /models/ssdlite_mobilenet_v2.bin /openvino-model/
+  # En algunas CPU la conversion de OpenVINO aborta (free(): invalid next size); en ese
+  # caso se usa el mismo modelo ya convertido que viene en el repo (orbi360/openvino-model)
+  if (cd /models \
+      && wget -q http://download.tensorflow.org/models/object_detection/ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
+      && tar --no-same-owner -xf ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz \
+      && "$work/venv/bin/python" "$DOCKER/build_ov_model.py"); then
+    cp /models/ssdlite_mobilenet_v2.xml /models/ssdlite_mobilenet_v2.bin /openvino-model/
+  else
+    echo "Aviso: fallo la conversion del modelo OpenVINO, se usa la copia del repo"
+    cp "$SRC/orbi360/openvino-model/ssdlite_mobilenet_v2.xml" "$SRC/orbi360/openvino-model/ssdlite_mobilenet_v2.bin" /openvino-model/
+  fi
   wget -q https://github.com/openvinotoolkit/open_model_zoo/raw/master/data/dataset_classes/coco_91cl_bkgr.txt -O /openvino-model/coco_91cl_bkgr.txt
   sed -i 's/truck/car/g' /openvino-model/coco_91cl_bkgr.txt
 

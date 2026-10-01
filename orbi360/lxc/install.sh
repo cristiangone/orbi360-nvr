@@ -154,7 +154,8 @@ install_runtime() {
   edgetpu_url="$(grep -oP 'https://github.com/feranick/libedgetpu/[^"]+' "$deps" | head -1)"
   edgetpu_url="${edgetpu_url//\$\{TARGETARCH\}/amd64}"
   wget -q -O /tmp/libedgetpu1-max.deb "$edgetpu_url"
-  (unset DEBIAN_FRONTEND; yes | dpkg -i /tmp/libedgetpu1-max.deb)
+  # dpkg pregunta por la frecuencia maxima; "yes" termina con SIGPIPE, por eso sin pipefail
+  (set +o pipefail; unset DEBIAN_FRONTEND; yes | dpkg -i /tmp/libedgetpu1-max.deb)
   rm -f /tmp/libedgetpu1-max.deb
 
   # ffmpeg 5.0, 7.0 y 8.0 (builds estaticos de NickM-27, mismas URLs que upstream)

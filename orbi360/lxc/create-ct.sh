@@ -12,7 +12,10 @@ set -euo pipefail
 
 CTID="${CTID:-241}"
 HOSTNAME_CT="${HOSTNAME_CT:-orbi360-nvr}"
-CORES="${CORES:-4}"
+# Limite de CPU por tiempo de uso (cpulimit) y no por cantidad de nucleos (cores): con
+# "cores" Proxmox entrega hilos sueltos (p. ej. 0,2,4,7) y OpenVINO corrompe memoria
+# al leer esa topologia incompleta. Asi el CT ve todos los hilos del host.
+CPULIMIT="${CPULIMIT:-4}"
 MEMORY="${MEMORY:-8192}"            # MB
 SWAP="${SWAP:-1024}"                # MB
 BRIDGE="${BRIDGE:-vmbr0}"
@@ -50,7 +53,7 @@ fi
 echo "==> Creando CT $CTID ($HOSTNAME_CT) en $IP..."
 pct create "$CTID" "local:vztmpl/$TEMPLATE" \
   --hostname "$HOSTNAME_CT" \
-  --cores "$CORES" \
+  --cpulimit "$CPULIMIT" \
   --memory "$MEMORY" \
   --swap "$SWAP" \
   --rootfs "$STORAGE:$ROOTFS_SIZE" \

@@ -13,7 +13,7 @@
 #  /config, /media/frigate) para no divergir del proyecto original, pero los
 #  servicios de s6-overlay se reemplazan por unidades de systemd.
 # ============================================================================
-set -euo pipefail
+set -Eeuo pipefail
 
 REPO_URL="${REPO_URL:-https://github.com/cristiangone/orbi360-nvr.git}"
 BRANCH="${BRANCH:-orbi360}"
@@ -21,6 +21,8 @@ SRC=/opt/orbi360-src
 STAMPS=/var/lib/orbi360-install
 NODE_MAJOR=22
 
+# "pct enter" abre una consola con un PATH minimo, sin /usr/local/bin (donde quedan pip3 y yq)
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 export DEBIAN_FRONTEND=noninteractive
 export LC_ALL=C.UTF-8
 export TARGETARCH=amd64
@@ -32,6 +34,7 @@ exec > >(tee -a "$LOG") 2>&1
 
 msg() { echo -e "\n\033[1;36m==> $*\033[0m"; }
 die() { echo -e "\n\033[1;31mERROR: $*\033[0m" >&2; exit 1; }
+trap 'echo -e "\n\033[1;31mERROR: la instalacion fallo (linea $LINENO). Revisar $LOG y volver a ejecutar el mismo comando para continuar.\033[0m" >&2' ERR
 
 # Ejecuta un paso solo si no se hizo antes con la misma "llave"
 step() {

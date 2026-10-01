@@ -1,9 +1,9 @@
 {
   "restart": {
-    "title": "האם אתה בטוח שברצונך להפעיל מחדש את Frigate?",
-    "button": "הפעלה מחדש - Frigate",
+    "title": "האם אתה בטוח שברצונך להפעיל מחדש את Orbi360 NVR?",
+    "button": "הפעלה מחדש - Orbi360 NVR",
     "restarting": {
-      "title": "Frigate מופעל מחדש כעת",
+      "title": "Orbi360 NVR מופעל מחדש כעת",
       "content": "דף זה ייטען מחדש בעוד {{countdown}} שניות.",
       "button": "אילוץ טעינה מחדש"
     }
@@ -62,12 +62,12 @@
   "explore": {
     "plus": {
       "submitToPlus": {
-        "label": "העלה ל- +Frigate",
+        "label": "העלה ל- +Orbi360 NVR",
         "desc": "אובייקטים במיקומים שברצונך להימנע מהם אינם תוצאות חיוביות שגויות. הגשתם כתוצאות חיוביות שגויות תבלבל את המודל."
       },
       "review": {
         "question": {
-          "label": "אשר תווית זו עבור +Frigate",
+          "label": "אשר תווית זו עבור +Orbi360 NVR",
           "ask_a": "האם אובייקט זה הוא <code>{{label}}</code>?",
           "ask_an": "האם אובייקט זה הוא - <code>{{label}}</code>?",
           "ask_full": "האם אובייקט זה הוא <code>{{untranslatedLabel}}</code> ({{translatedLabel}})?"

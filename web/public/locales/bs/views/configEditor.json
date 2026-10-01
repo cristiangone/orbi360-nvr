@@ -1,8 +1,8 @@
 {
-  "documentTitle": "Uređivač konfiguracije - Frigate",
+  "documentTitle": "Uređivač konfiguracije - Orbi360 NVR",
   "configEditor": "Uređivač konfiguracije",
   "safeConfigEditor": "Uređivač konfiguracije (Sigurnosni režim)",
-  "safeModeDescription": "Frigate je u sigurnosnom režimu zbog greške u validaciji konfiguracije.",
+  "safeModeDescription": "Orbi360 NVR je u sigurnosnom režimu zbog greške u validaciji konfiguracije.",
   "copyConfig": "Kopiraj konfiguraciju",
   "saveAndRestart": "Sačuvaj i ponovo pokreni",
   "saveOnly": "Sačuvaj samo",

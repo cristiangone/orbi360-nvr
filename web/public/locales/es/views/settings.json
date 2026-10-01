@@ -1,23 +1,23 @@
 {
   "documentTitle": {
-    "masksAndZones": "Editor de máscaras y zonas - Frigate",
-    "object": "Depurar - Frigate",
-    "default": "Configuración - Frigate",
-    "authentication": "Configuración de autenticación - Frigate",
-    "camera": "Configuración de cámara - Frigate",
-    "motionTuner": "Ajuste de movimiento - Frigate",
-    "classification": "Configuración de clasificación - Frigate",
-    "general": "Configuración de la interfaz - Frigate",
-    "frigatePlus": "Configuración de Frigate+ - Frigate",
-    "notifications": "Configuración de Notificaciones - Frigate",
-    "enrichments": "Configuración de Análisis Avanzado - Frigate",
-    "cameraManagement": "Administrar Cámaras - Frigate",
-    "cameraReview": "Revisar Configuración de Cámaras - Frigate",
-    "globalConfig": "Configuración Global - Frigate",
-    "cameraConfig": "Configuración de Cámara - Frigate",
-    "maintenance": "Mantenimiento - Frigate",
-    "profiles": "Perfiles - Frigate",
-    "detectorsAndModel": "Detectores y modelo - Frigate"
+    "masksAndZones": "Editor de máscaras y zonas - Orbi360 NVR",
+    "object": "Depurar - Orbi360 NVR",
+    "default": "Configuración - Orbi360 NVR",
+    "authentication": "Configuración de autenticación - Orbi360 NVR",
+    "camera": "Configuración de cámara - Orbi360 NVR",
+    "motionTuner": "Ajuste de movimiento - Orbi360 NVR",
+    "classification": "Configuración de clasificación - Orbi360 NVR",
+    "general": "Configuración de la interfaz - Orbi360 NVR",
+    "frigatePlus": "Configuración de Frigate+ - Orbi360 NVR",
+    "notifications": "Configuración de Notificaciones - Orbi360 NVR",
+    "enrichments": "Configuración de Análisis Avanzado - Orbi360 NVR",
+    "cameraManagement": "Administrar Cámaras - Orbi360 NVR",
+    "cameraReview": "Revisar Configuración de Cámaras - Orbi360 NVR",
+    "globalConfig": "Configuración Global - Orbi360 NVR",
+    "cameraConfig": "Configuración de Cámara - Orbi360 NVR",
+    "maintenance": "Mantenimiento - Orbi360 NVR",
+    "profiles": "Perfiles - Orbi360 NVR",
+    "detectorsAndModel": "Detectores y modelo - Orbi360 NVR"
   },
   "menu": {
     "cameras": "Configuración de Cámara",
@@ -166,7 +166,7 @@
   "classification": {
     "semanticSearch": {
       "title": "Búsqueda semántica",
-      "desc": "La búsqueda semántica en Frigate te permite encontrar objetos rastreados dentro de tus elementos de revisión utilizando la propia imagen, una descripción escrita por el usuario o una generada automáticamente.",
+      "desc": "La búsqueda semántica en Orbi360 NVR te permite encontrar objetos rastreados dentro de tus elementos de revisión utilizando la propia imagen, una descripción escrita por el usuario o una generada automáticamente.",
       "readTheDocumentation": "Leer la documentación",
       "reindexNow": {
         "confirmTitle": "Confirmar reindexación",
@@ -207,15 +207,15 @@
         "desc": "El tamaño del modelo utilizado para el reconocimiento facial."
       },
       "readTheDocumentation": "Leer la documentación",
-      "desc": "El reconocimiento facial permite asignar nombres a las personas y, cuando se reconoce su rostro, Frigate asignará el nombre de la persona como una subetiqueta. Esta información se incluye en la interfaz de usuario, los filtros y también en las notificaciones."
+      "desc": "El reconocimiento facial permite asignar nombres a las personas y, cuando se reconoce su rostro, Orbi360 NVR asignará el nombre de la persona como una subetiqueta. Esta información se incluye en la interfaz de usuario, los filtros y también en las notificaciones."
     },
     "licensePlateRecognition": {
       "title": "Reconocimiento de matrículas",
-      "desc": "Frigate puede reconocer matrículas en vehículos y agregar automáticamente los caracteres detectados al campo recognized_license_plate o un nombre conocido como subetiqueta a objetos que sean del tipo coche. Un caso de uso común puede ser leer las matrículas de los coches que entran en un camino de entrada o de los coches que pasan por una calle.",
+      "desc": "Orbi360 NVR puede reconocer matrículas en vehículos y agregar automáticamente los caracteres detectados al campo recognized_license_plate o un nombre conocido como subetiqueta a objetos que sean del tipo coche. Un caso de uso común puede ser leer las matrículas de los coches que entran en un camino de entrada o de los coches que pasan por una calle.",
       "readTheDocumentation": "Leer la documentación"
     },
     "toast": {
-      "success": "Los ajustes de clasificación han sido guardados. Reinicia Frigate para aplicar tus cambios.",
+      "success": "Los ajustes de clasificación han sido guardados. Reinicia Orbi360 NVR para aplicar tus cambios.",
       "error": "No se pudieron guardar los cambios de configuración: {{errorMessage}}"
     },
     "birdClassification": {
@@ -228,7 +228,7 @@
   "camera": {
     "review": {
       "alerts": "Alertas ",
-      "desc": "Activar/desactivar temporalmente las alertas y detecciones para esta cámara hasta que Frigate se reinicie. Cuando está desactivado, no se generarán nuevos elementos de revisión. ",
+      "desc": "Activar/desactivar temporalmente las alertas y detecciones para esta cámara hasta que Orbi360 NVR se reinicie. Cuando está desactivado, no se generarán nuevos elementos de revisión. ",
       "detections": "Detecciones ",
       "title": "Revisar"
     },
@@ -241,7 +241,7 @@
         "text": "Todos los objetos {{detectionsLabels}} no categorizados en {{zone}} en {{cameraName}} se mostrarán como Detecciones.",
         "notSelectDetections": "Todos los objetos {{detectionsLabels}} detectados en {{zone}} en {{cameraName}} que no estén categorizados como Alertas se mostrarán como Detecciones, independientemente de en qué zona se encuentren."
       },
-      "desc": "Frigate clasifica los elementos de revisión como Alertas y Detecciones. Por defecto, todos los objetos <em>persona</em> y <em>coche</em> se consideran Alertas. Puedes refinar la categorización de tus elementos de revisión configurando zonas requeridas para ellos.",
+      "desc": "Orbi360 NVR clasifica los elementos de revisión como Alertas y Detecciones. Por defecto, todos los objetos <em>persona</em> y <em>coche</em> se consideran Alertas. Puedes refinar la categorización de tus elementos de revisión configurando zonas requeridas para ellos.",
       "objectDetectionsTips": "Todos los objetos {{detectionsLabels}} no categorizados en {{cameraName}} se mostrarán como Detecciones, independientemente de en qué zona se encuentren.",
       "zoneObjectAlertsTips": "Todos los objetos {{alertsLabels}} detectados en {{zone}} en {{cameraName}} se mostrarán como Alertas.",
       "title": "Clasificación de revisión",
@@ -249,14 +249,14 @@
       "selectDetectionsZones": "Seleccionar zonas para Detecciones",
       "limitDetections": "Limitar detecciones a zonas específicas",
       "toast": {
-        "success": "La configuración de clasificación de revisión ha sido guardada. Reinicia Frigate para aplicar los cambios."
+        "success": "La configuración de clasificación de revisión ha sido guardada. Reinicia Orbi360 NVR para aplicar los cambios."
       },
       "unsavedChanges": "Configuración de clasificación de revisión no guardada para {{camera}}"
     },
     "title": "Ajustes de la cámara",
     "streams": {
       "title": "Transmisiones",
-      "desc": "Desactivar temporalmente una cámara hasta que Frigate se reinicie. Desactivar una cámara detiene por completo el procesamiento de las transmisiones de esta cámara por parte de Frigate. La detección, grabación y depuración no estarán disponibles.<br /> <em>Nota: Esto no desactiva las retransmisiones de go2rtc.</em>"
+      "desc": "Desactivar temporalmente una cámara hasta que Orbi360 NVR se reinicie. Desactivar una cámara detiene por completo el procesamiento de las transmisiones de esta cámara por parte de Orbi360 NVR. La detección, grabación y depuración no estarán disponibles.<br /> <em>Nota: Esto no desactiva las retransmisiones de go2rtc.</em>"
     },
     "object_descriptions": {
       "title": "Descripciones de objetos de IA generativa",
@@ -394,7 +394,7 @@
         "inputPlaceHolder": "Introduce un nombre…",
         "tips": "El nombre debe tener al menos 2 caracteres, al menos 1 letra y no debe coincidir con el nombre de una cámara ni de otra zona."
       },
-      "documentTitle": "Editar Zona - Frigate",
+      "documentTitle": "Editar Zona - Orbi360 NVR",
       "clickDrawPolygon": "Haz clic para dibujar un polígono en la imagen.",
       "speedEstimation": {
         "desc": "Habilitar la estimación de velocidad para objetos en esta zona. La zona debe tener exactamente 4 puntos.",
@@ -462,7 +462,7 @@
           "title": "{{polygonName}} ha sido guardado."
         }
       },
-      "documentTitle": "Editar Máscara de Movimiento - Frigate",
+      "documentTitle": "Editar Máscara de Movimiento - Orbi360 NVR",
       "point_one": "{{count}} punto",
       "point_many": "{{count}} puntos",
       "point_other": "{{count}} puntos",
@@ -475,7 +475,7 @@
     },
     "objectMasks": {
       "label": "Máscaras de Objetos",
-      "documentTitle": "Editar Máscara de Objetos - Frigate",
+      "documentTitle": "Editar Máscara de Objetos - Orbi360 NVR",
       "desc": {
         "documentation": "Documentación",
         "title": "Las máscaras de filtro de objetos se utilizan para descartar falsos positivos de un tipo de objeto específico según su ubicación."
@@ -522,7 +522,7 @@
     "title": "Sintonizador de Detección de Movimiento",
     "desc": {
       "documentation": "Lee la Guía de Ajuste de Movimiento",
-      "title": "Frigate utiliza la detección de movimiento como una primera verificación para determinar si hay algo ocurriendo en el marco que merezca ser analizado con la detección de objetos."
+      "title": "Orbi360 NVR utiliza la detección de movimiento como una primera verificación para determinar si hay algo ocurriendo en el marco que merezca ser analizado con la detección de objetos."
     },
     "Threshold": {
       "title": "Umbral",
@@ -562,7 +562,7 @@
       "title": "Zonas",
       "desc": "Mostrar un contorno de las zonas definidas"
     },
-    "detectorDesc": "Frigate utiliza tus detectores ({{detectors}}) para detectar objetos en el flujo de video de tu cámara.",
+    "detectorDesc": "Orbi360 NVR utiliza tus detectores ({{detectors}}) para detectar objetos en el flujo de video de tu cámara.",
     "desc": "La vista de depuración muestra una vista en tiempo real de los objetos rastreados y sus estadísticas. La lista de objetos muestra un resumen con retraso temporal de los objetos detectados.",
     "mask": {
       "title": "Máscaras de movimiento",
@@ -605,7 +605,7 @@
     "title": "Usuarios",
     "management": {
       "title": "Gestión de Usuarios",
-      "desc": "Gestiona las cuentas de usuario de esta instancia de Frigate."
+      "desc": "Gestiona las cuentas de usuario de esta instancia de Orbi360 NVR."
     },
     "addUser": "Añadir usuario",
     "toast": {
@@ -691,7 +691,7 @@
         "multiDeviceAdmin": "También puede obligar a todos los usuarios a volver a autenticarse inmediatamente rotando su secreto JWT."
       },
       "createUser": {
-        "desc": "Agregue una nueva cuenta de usuario y especifique un rol para el acceso a las áreas de la interfaz de usuario de Frigate.",
+        "desc": "Agregue una nueva cuenta de usuario y especifique un rol para el acceso a las áreas de la interfaz de usuario de Orbi360 NVR.",
         "title": "Crear nuevo usuario",
         "usernameOnlyInclude": "El nombre de usuario solo puede incluir letras, números, . o _",
         "confirmPassword": "Por favor, confirma tu contraseña"
@@ -721,14 +721,14 @@
     "title": "Notificaciones",
     "notificationSettings": {
       "title": "Configuración de notificaciones",
-      "desc": "Frigate puede enviar notificaciones push a tu dispositivo de forma nativa cuando se ejecuta en el navegador o está instalado como una PWA.",
+      "desc": "Orbi360 NVR puede enviar notificaciones push a tu dispositivo de forma nativa cuando se ejecuta en el navegador o está instalado como una PWA.",
       "documentation": "Leer la documentación"
     },
     "notificationUnavailable": {
       "title": "Notificaciones no disponibles",
       "documentation": "Leer la documentación",
-      "desc": "Las notificaciones push web requieren un contexto seguro (<code>https://…</code>). Esto es una limitación del navegador. Accede a Frigate de forma segura para usar las notificaciones.",
-      "descPwa": "En iOS, las notificaciones push web solo están disponibles cuando Frigate está instalado en la pantalla de inicio. Abre el menú <strong>Compartir</strong>, selecciona <strong>Añadir a la pantalla de inicio</strong> y, a continuación, abre Frigate desde el nuevo icono para registrar este dispositivo para las notificaciones."
+      "desc": "Las notificaciones push web requieren un contexto seguro (<code>https://…</code>). Esto es una limitación del navegador. Accede a Orbi360 NVR de forma segura para usar las notificaciones.",
+      "descPwa": "En iOS, las notificaciones push web solo están disponibles cuando Orbi360 NVR está instalado en la pantalla de inicio. Abre el menú <strong>Compartir</strong>, selecciona <strong>Añadir a la pantalla de inicio</strong> y, a continuación, abre Orbi360 NVR desde el nuevo icono para registrar este dispositivo para las notificaciones."
     },
     "globalSettings": {
       "title": "Configuración global",
@@ -763,7 +763,7 @@
     "toast": {
       "success": {
         "settingSaved": "La configuración de notificaciones se ha guardado.",
-        "registered": "Registrado correctamente para las notificaciones. Es necesario reiniciar Frigate antes de que se puedan enviar notificaciones (incluida una notificación de prueba)."
+        "registered": "Registrado correctamente para las notificaciones. Es necesario reiniciar Orbi360 NVR antes de que se puedan enviar notificaciones (incluida una notificación de prueba)."
       },
       "error": {
         "registerFailed": "Error al guardar el registro de notificaciones."
@@ -820,12 +820,12 @@
       }
     },
     "toast": {
-      "success": "La configuración de Frigate+ se ha guardado. Reinicia Frigate para aplicar los cambios.",
+      "success": "La configuración de Frigate+ se ha guardado. Reinicia Orbi360 NVR para aplicar los cambios.",
       "error": "No se pudieron guardar los cambios en la configuración: {{errorMessage}}"
     },
     "restart_required": "Es necesario reiniciar (se ha cambiado el modelo Frigate+)",
     "unsavedChanges": "Cambios en la configuración de Frigate+ no guardados",
-    "description": "Frigate+ es un servicio de suscripción que proporciona acceso a funciones y capacidades adicionales para su instancia de Frigate, incluida la posibilidad de utilizar modelos de detección de objetos personalizados entrenados con sus propios datos. Puede gestionar la configuración de sus modelos de Frigate+ aquí.",
+    "description": "Frigate+ es un servicio de suscripción que proporciona acceso a funciones y capacidades adicionales para su instancia de Orbi360 NVR, incluida la posibilidad de utilizar modelos de detección de objetos personalizados entrenados con sus propios datos. Puede gestionar la configuración de sus modelos de Frigate+ aquí.",
     "cardTitles": {
       "api": "API",
       "currentModel": "Modelo actual",
@@ -843,7 +843,7 @@
     },
     "semanticSearch": {
       "title": "Búsqueda Semántica",
-      "desc": "La búsqueda semántica en Frigate te permite encontrar objetos rastreados dentro de tus elementos de revisión utilizando ya sea la imagen en sí, una descripción de texto definida por el usuario o una generada automáticamente.",
+      "desc": "La búsqueda semántica en Orbi360 NVR te permite encontrar objetos rastreados dentro de tus elementos de revisión utilizando ya sea la imagen en sí, una descripción de texto definida por el usuario o una generada automáticamente.",
       "readTheDocumentation": "Leer la Documentación",
       "reindexNow": {
         "confirmTitle": "Confirmar Re-Indexado",
@@ -883,16 +883,16 @@
           "desc": "Usar la opción <em>large</em> emplea un modelo de embeddings faciales ArcFace y se ejecutará automáticamente en la GPU, si está disponible."
         }
       },
-      "desc": "El reconocimiento facial permite asignar nombres a las personas y, cuando su rostro es reconocido, Frigate asignará el nombre de la persona como una subetiqueta (sub label). Esta información se incluye en la interfaz de usuario, los filtros y también en las notificaciones."
+      "desc": "El reconocimiento facial permite asignar nombres a las personas y, cuando su rostro es reconocido, Orbi360 NVR asignará el nombre de la persona como una subetiqueta (sub label). Esta información se incluye en la interfaz de usuario, los filtros y también en las notificaciones."
     },
     "licensePlateRecognition": {
       "title": "Reconocimiento de Matrículas (LPR)",
       "readTheDocumentation": "Leer la Documentación",
-      "desc": "Frigate puede reconocer matrículas de vehículos y agregar automáticamente los caracteres detectados al campo recognized_license_plate, o bien asignar un nombre conocido como sub-etiqueta (sub_label) a los objetos de tipo coche (car). Un caso de uso común es leer las matrículas de los autos que ingresan a una cochera o que pasan por una calle."
+      "desc": "Orbi360 NVR puede reconocer matrículas de vehículos y agregar automáticamente los caracteres detectados al campo recognized_license_plate, o bien asignar un nombre conocido como sub-etiqueta (sub_label) a los objetos de tipo coche (car). Un caso de uso común es leer las matrículas de los autos que ingresan a una cochera o que pasan por una calle."
     },
-    "restart_required": "Es necesario reiniciar Frigate (La configuración de Enrichments han cambiado)",
+    "restart_required": "Es necesario reiniciar Orbi360 NVR (La configuración de Enrichments han cambiado)",
     "toast": {
-      "success": "Los ajustes de enriquecimientos se han guardado. Reinicia Frigate para aplicar los cambios.",
+      "success": "Los ajustes de enriquecimientos se han guardado. Reinicia Orbi360 NVR para aplicar los cambios.",
       "error": "No se pudieron guardar los cambios en la configuración: {{errorMessage}}"
     }
   },
@@ -985,7 +985,7 @@
           "error": {
             "min": "Al menos una acción debe ser seleccionada."
           },
-          "desc": "Por defecto, Frigate manda un mensaje MQTT para todos los disparadores. Las subetiquetas añaden el nombre del disparador a la etiqueta del objeto. Los atributos son metadatos de búsqueda que se almacenan por separado en los metadatos del objeto rastreado."
+          "desc": "Por defecto, Orbi360 NVR manda un mensaje MQTT para todos los disparadores. Las subetiquetas añaden el nombre del disparador a la etiqueta del objeto. Los atributos son metadatos de búsqueda que se almacenan por separado en los metadatos del objeto rastreado."
         }
       }
     },
@@ -1026,7 +1026,7 @@
   "roles": {
     "management": {
       "title": "Administración del rol de visor",
-      "desc": "Administra roles de visor personalizados y sus permisos de acceso a cámaras para esta instancia de Frigate."
+      "desc": "Administra roles de visor personalizados y sus permisos de acceso a cámaras para esta instancia de Orbi360 NVR."
     },
     "addRole": "Añade un rol",
     "table": {
@@ -1222,7 +1222,7 @@
       "estimatedBandwidth": "Ancho de banda estimado",
       "roles": "Roles",
       "ffmpegModule": "Utilice el modo de compatibilidad de transmisión",
-      "ffmpegModuleDescription": "Si la transmisión no carga después de varios intentos, intenta activar esta opción. Al activarla, Frigate usará el módulo ffmpeg con go2rtc. Esto puede mejorar la compatibilidad con algunas transmisiones de cámara.",
+      "ffmpegModuleDescription": "Si la transmisión no carga después de varios intentos, intenta activar esta opción. Al activarla, Orbi360 NVR usará el módulo ffmpeg con go2rtc. Esto puede mejorar la compatibilidad con algunas transmisiones de cámara.",
       "none": "Ninguna",
       "error": "Error",
       "streamValidated": "Transmisión {{number}} validada correctamente",
@@ -1253,7 +1253,7 @@
       }
     },
     "title": "Añadir cámara",
-    "description": "Siga los siguientes pasos para agregar una nueva cámara a su instalación de Frigate.",
+    "description": "Siga los siguientes pasos para agregar una nueva cámara a su instalación de Orbi360 NVR.",
     "steps": {
       "nameAndConnection": "Nombre y conexión",
       "probeOrSnapshot": "Sonda de prueba o hacer instantánea",
@@ -1283,16 +1283,16 @@
     "backToSettings": "Volver a configuración de la cámara",
     "streams": {
       "title": "Estado y detalles de la cámara",
-      "desc": "Desactiva temporalmente una cámara hasta que Frigate se reinicie. Desactivar una cámara detiene por completo el procesamiento de las transmisiones de Frigate. La detección, la grabación y la depuración no estarán disponibles.<br /> <em>Nota: Esto no desactiva las retransmisiones de go2rtc.</em>",
-      "enableDesc": "Deshabilita temporalmente una cámara habilitada hasta que Frigate se reinicie. Deshabilitar una cámara detiene completamente el procesamiento de los flujos de esa cámara por parte de Frigate. La detección, la grabación y la depuración no estarán disponibles. Nota: Esto no deshabilita las retransmisiones de go2rtc.Arrastra el controlador para reordenar las cámaras tal y como aparecen en la interfaz. El orden de las cámaras habilitadas se reflejará en toda la interfaz, incluido el panel en directo y los menús desplegables de selección de cámaras.",
+      "desc": "Desactiva temporalmente una cámara hasta que Orbi360 NVR se reinicie. Desactivar una cámara detiene por completo el procesamiento de las transmisiones de Orbi360 NVR. La detección, la grabación y la depuración no estarán disponibles.<br /> <em>Nota: Esto no desactiva las retransmisiones de go2rtc.</em>",
+      "enableDesc": "Deshabilita temporalmente una cámara habilitada hasta que Orbi360 NVR se reinicie. Deshabilitar una cámara detiene completamente el procesamiento de los flujos de esa cámara por parte de Orbi360 NVR. La detección, la grabación y la depuración no estarán disponibles. Nota: Esto no deshabilita las retransmisiones de go2rtc.Arrastra el controlador para reordenar las cámaras tal y como aparecen en la interfaz. El orden de las cámaras habilitadas se reflejará en toda la interfaz, incluido el panel en directo y los menús desplegables de selección de cámaras.",
       "enableLabel": "Cámaras habilitadas",
       "disableLabel": "Cámaras deshabilitadas",
-      "disableDesc": "Habilita una cámara que actualmente no está visible en la interfaz y está deshabilitada en la configuración. Es necesario reiniciar Frigate después de habilitarla.",
-      "enableSuccess": "{{cameraName}} habilitada. Reinicia Frigate para aplicar los cambios.",
+      "disableDesc": "Habilita una cámara que actualmente no está visible en la interfaz y está deshabilitada en la configuración. Es necesario reiniciar Orbi360 NVR después de habilitarla.",
+      "enableSuccess": "{{cameraName}} habilitada. Reinicia Orbi360 NVR para aplicar los cambios.",
       "friendlyName": {
         "edit": "Editar nombre visible de la cámara",
         "title": "Editar nombre visible",
-        "description": "Establece el nombre descriptivo que se mostrará para esta cámara en toda la interfaz de Frigate. Déjalo en blanco para usar el ID de la cámara.",
+        "description": "Establece el nombre descriptivo que se mostrará para esta cámara en toda la interfaz de Orbi360 NVR. Déjalo en blanco para usar el ID de la cámara.",
         "rename": "Renombrar"
       },
       "reorderHandle": "Arrastrar para reordenar",
@@ -1301,9 +1301,9 @@
       "details": {
         "edit": "Editar detalles de la cámara",
         "title": "Editar detalles de la cámara",
-        "description": "Actualiza el nombre visible, la URL externa y la visibilidad usados para esta cámara en toda la interfaz de Frigate.",
+        "description": "Actualiza el nombre visible, la URL externa y la visibilidad usados para esta cámara en toda la interfaz de Orbi360 NVR.",
         "friendlyNameLabel": "Nombre visible",
-        "friendlyNameHelp": "Nombre descriptivo que se muestra para esta cámara en toda la interfaz de Frigate. Déjalo en blanco para usar el ID de la cámara.",
+        "friendlyNameHelp": "Nombre descriptivo que se muestra para esta cámara en toda la interfaz de Orbi360 NVR. Déjalo en blanco para usar el ID de la cámara.",
         "webuiUrlLabel": "URL de la interfaz web de la cámara",
         "webuiUrlHelp": "URL para acceder directamente a la interfaz web de la cámara desde la vista de depuración. Déjala en blanco para deshabilitar el enlace.",
         "webuiUrlInvalid": "Debe ser una URL válida (p. ej., https://ejemplo.com).",
@@ -1313,7 +1313,7 @@
         "reviewHelp": "Mostrar esta cámara en Revisión, incluido el filtro de cámaras, la revisión de movimiento y la vista de historial."
       },
       "label": "Estado de la cámara",
-      "description": "Set the operating state for each camera. <br /><br /><strong>On</strong>: las transmisiones se procesan con normalidad.<br /><strong>Off</strong>: pausa temporalmente el procesamiento. No persiste tras reinicios de Frigate.<br /><strong>Disabled</strong>: detiene el procesamiento y guarda el cambio en tu configuración. Es necesario reiniciar para volver a activar una cámara desactivada.<br /><br /><em>Note: Desactivar no afecta a las retransmisiones de go2rtc.</em><br /><br />Arrastra el asa para reordenar las cámaras activas tal como aparecen en toda la interfaz, incluido el panel de Live y los menús desplegables de selección de cámara.",
+      "description": "Set the operating state for each camera. <br /><br /><strong>On</strong>: las transmisiones se procesan con normalidad.<br /><strong>Off</strong>: pausa temporalmente el procesamiento. No persiste tras reinicios de Orbi360 NVR.<br /><strong>Disabled</strong>: detiene el procesamiento y guarda el cambio en tu configuración. Es necesario reiniciar para volver a activar una cámara desactivada.<br /><br /><em>Note: Desactivar no afecta a las retransmisiones de go2rtc.</em><br /><br />Arrastra el asa para reordenar las cámaras activas tal como aparecen en toda la interfaz, incluido el panel de Live y los menús desplegables de selección de cámara.",
       "disabledSubheading": "Deshabilitado en la configuración",
       "status": {
         "on": "On",
@@ -1379,7 +1379,7 @@
       "description": "Establece el tipo de cada cámara. Las cámaras LPR dedicadas son cámaras de un solo propósito con un zoom óptico potente para capturar matrículas de vehículos lejanos. La mayoría de cámaras deberían usar el tipo de cámara normal salvo que la cámara esté específicamente destinada a LPR y tenga una vista muy enfocada a matrículas.",
       "normal": "Normal",
       "dedicatedLpr": "LPR dedicada",
-      "saveSuccess": "Se ha actualizado el tipo de cámara de {{cameraName}}. Reinicia Frigate para aplicar los cambios."
+      "saveSuccess": "Se ha actualizado el tipo de cámara de {{cameraName}}. Reinicia Orbi360 NVR para aplicar los cambios."
     },
     "description": "Añade, edita y elimina cámaras, controla el estado de cada cámara y configura sobrescrituras por perfil y tipo de cámara. Para configurar flujos, detección, movimiento y otros ajustes específicos de cámara, selecciona la sección correspondiente dentro de Configuración de cámara.",
     "clone": {
@@ -1456,13 +1456,13 @@
       },
       "toast": {
         "success": "Configuración copiada a {{cameraName}}",
-        "successWithRestart": "Configuración copiada a {{cameraName}}. Reinicia Frigate para aplicar todos los cambios.",
+        "successWithRestart": "Configuración copiada a {{cameraName}}. Reinicia Orbi360 NVR para aplicar todos los cambios.",
         "successMulti_one": "Configuración copiada a {{count}} cámara",
         "successMulti_many": "Configuración copiada a {{count}} cámaras",
         "successMulti_other": "Configuración copiada a {{count}} cámaras",
-        "successMultiWithRestart_one": "Configuración copiada a {{count}} cámara. Reinicia Frigate para aplicar todos los cambios.",
-        "successMultiWithRestart_many": "Configuración copiada a {{count}} cámaras. Reinicia Frigate para aplicar todos los cambios.",
-        "successMultiWithRestart_other": "Configuración copiada a {{count}} cámaras. Reinicia Frigate para aplicar todos los cambios.",
+        "successMultiWithRestart_one": "Configuración copiada a {{count}} cámara. Reinicia Orbi360 NVR para aplicar todos los cambios.",
+        "successMultiWithRestart_many": "Configuración copiada a {{count}} cámaras. Reinicia Orbi360 NVR para aplicar todos los cambios.",
+        "successMultiWithRestart_other": "Configuración copiada a {{count}} cámaras. Reinicia Orbi360 NVR para aplicar todos los cambios.",
         "partialFailure": "Se aplicaron {{successCount}} secciones; ‘{{failedSection}}’ falló: {{errorMessage}}",
         "partialFailureMulti": "Copiado a {{successCount}} cámara(s); error en {{failed}}: {{errorMessage}}",
         "newCameraPartialFailure": "La cámara {{cameraName}} se creó, pero no se pudieron copiar algunos ajustes: {{errorMessage}}",
@@ -1475,21 +1475,21 @@
     "title": "Configuración de revisión de la cámara",
     "object_descriptions": {
       "title": "Descripciones de objetos de IA generativa",
-      "desc": "Habilite o deshabilite temporalmente las descripciones de objetos generadas por IA para esta cámara hasta que Frigate se reinicie. Al deshabilitarlas, no se solicitarán descripciones generadas por IA para los objetos rastreados en esta cámara."
+      "desc": "Habilite o deshabilite temporalmente las descripciones de objetos generadas por IA para esta cámara hasta que Orbi360 NVR se reinicie. Al deshabilitarlas, no se solicitarán descripciones generadas por IA para los objetos rastreados en esta cámara."
     },
     "review_descriptions": {
       "title": "Revisión de descripciones de IA generativa",
-      "desc": "Habilita o deshabilita temporalmente las revisión de descripciones generadas por IA para esta cámara hasta que Frigate se reinicie. Al deshabilitarlas, no se solicitarán descripciones generadas por IA para los elementos de revisión de esta cámara."
+      "desc": "Habilita o deshabilita temporalmente las revisión de descripciones generadas por IA para esta cámara hasta que Orbi360 NVR se reinicie. Al deshabilitarlas, no se solicitarán descripciones generadas por IA para los elementos de revisión de esta cámara."
     },
     "review": {
       "title": "Revisar",
-      "desc": "Habilite o deshabilite temporalmente las alertas y detecciones de esta cámara hasta que Frigate se reinicie. Al deshabilitarlas, no se generarán nuevas revisiones. ",
+      "desc": "Habilite o deshabilite temporalmente las alertas y detecciones de esta cámara hasta que Orbi360 NVR se reinicie. Al deshabilitarlas, no se generarán nuevas revisiones. ",
       "alerts": "Alertas ",
       "detections": "Detecciones "
     },
     "reviewClassification": {
       "title": "Clasificación de la revisión",
-      "desc": "Frigate clasifica los elementos de revisión como Alertas y Detecciones. De forma predeterminada, todos los objetos de <em>persona</em> y <em>coche</em> se consideran Alertas. Puede refinar la categorización de sus elementos de revisión configurando las zonas requeridas para ellos.",
+      "desc": "Orbi360 NVR clasifica los elementos de revisión como Alertas y Detecciones. De forma predeterminada, todos los objetos de <em>persona</em> y <em>coche</em> se consideran Alertas. Puede refinar la categorización de sus elementos de revisión configurando las zonas requeridas para ellos.",
       "noDefinedZones": "No hay Zonas definidas para esta cámara.",
       "objectAlertsTips": "Todos los objetos {{alertsLabels}} en {{cameraName}} se mostrarán como alertas.",
       "zoneObjectAlertsTips": "Todos los objetos {{alertsLabels}} detectados en {{zone}} en {{cameraName}} se mostrarán como alertas.",
@@ -1504,7 +1504,7 @@
       "selectDetectionsZones": "Seleccione Zonas para la Detección",
       "limitDetections": "Limite la detección a zonas específicas",
       "toast": {
-        "success": "Se ha guardado la configuración de la clasificación de revisión. Reinicie Frigate para aplicar los cambios."
+        "success": "Se ha guardado la configuración de la clasificación de revisión. Reinicie Orbi360 NVR para aplicar los cambios."
       }
     }
   },
@@ -1552,7 +1552,7 @@
     "sync": {
       "verboseDesc": "Escribe una lista completa de archivos huérfanos en el disco para su revisión.",
       "verbose": "Detallado",
-      "desc": "Frigate limpiará periódicamente los archivos multimedia según un cronograma regular, de acuerdo con su configuración de retención. Es normal ver algunos archivos huérfanos mientras Frigate se ejecuta. Utilice esta función para eliminar del disco los archivos multimedia huérfanos que ya no se referencian en la base de datos.",
+      "desc": "Orbi360 NVR limpiará periódicamente los archivos multimedia según un cronograma regular, de acuerdo con su configuración de retención. Es normal ver algunos archivos huérfanos mientras Orbi360 NVR se ejecuta. Utilice esta función para eliminar del disco los archivos multimedia huérfanos que ya no se referencian en la base de datos.",
       "forceDesc": "Omitir el umbral de seguridad y completar la sincronización incluso si se eliminara más del 50% de los archivos.",
       "title": "Sincronización de medios",
       "started": "Sincronización de medios iniciada.",
@@ -1597,8 +1597,8 @@
       "recordings": "Grabaciones"
     },
     "regionGrid": {
-      "clearConfirmDesc": "No se recomienda borrar la cuadrícula de la región a menos que haya cambiado recientemente el tamaño del modelo de su detector o la posición física de su cámara y esté experimentando problemas de seguimiento de objetos. La cuadrícula se reconstruirá automáticamente con el tiempo a medida que se realice el seguimiento de los objetos. Es necesario reiniciar Frigate para que los cambios surtan efecto.",
-      "desc": "La cuadrícula de regiones es una optimización que aprende dónde suelen aparecer los objetos de diferentes tamaños en el campo de visión de cada cámara. Frigate utiliza estos datos para dimensionar de forma eficiente las regiones de detección. La cuadrícula se construye automáticamente a lo largo del tiempo a partir de los datos de los objetos rastreados.",
+      "clearConfirmDesc": "No se recomienda borrar la cuadrícula de la región a menos que haya cambiado recientemente el tamaño del modelo de su detector o la posición física de su cámara y esté experimentando problemas de seguimiento de objetos. La cuadrícula se reconstruirá automáticamente con el tiempo a medida que se realice el seguimiento de los objetos. Es necesario reiniciar Orbi360 NVR para que los cambios surtan efecto.",
+      "desc": "La cuadrícula de regiones es una optimización que aprende dónde suelen aparecer los objetos de diferentes tamaños en el campo de visión de cada cámara. Orbi360 NVR utiliza estos datos para dimensionar de forma eficiente las regiones de detección. La cuadrícula se construye automáticamente a lo largo del tiempo a partir de los datos de los objetos rastreados.",
       "title": "Cuadrícula de regiones",
       "clear": "Borrar cuadrícula de regiones",
       "clearConfirmTitle": "Borrar cuadrícula de regiones",
@@ -1871,7 +1871,7 @@
   "toast": {
     "success": "Ajustes guardados con éxito",
     "applied": "Ajustes aplicados con éxito",
-    "successRestartRequired": "Ajustes guardados con éxito. Reinicia Frigate para aplicar los cambios.",
+    "successRestartRequired": "Ajustes guardados con éxito. Reinicia Orbi360 NVR para aplicar los cambios.",
     "error": "Error al guardar los ajustes",
     "validationError": "Error de validación: {{message}}",
     "resetSuccess": "Restablecido a los valores globales predeterminados",
@@ -1883,9 +1883,9 @@
     "saveAllPartial_many": "Se han guardado {{successCount}} de {{totalCount}} secciones. {{failCount}} han fallado.",
     "saveAllPartial_other": "Se han guardado {{successCount}} de {{totalCount}} secciones. {{failCount}} han fallado.",
     "saveAllFailure": "Error al guardar todas las secciones.",
-    "saveAllSuccessRestartRequired_one": "La sección {{count}} se ha guardado correctamente. Reinicia Frigate para aplicar los cambios.",
-    "saveAllSuccessRestartRequired_many": "Las {{count}} secciones se han guardado correctamente. Reinicia Frigate para aplicar los cambios.",
-    "saveAllSuccessRestartRequired_other": "Las {{count}} secciones se han guardado correctamente. Reinicia Frigate para aplicar los cambios."
+    "saveAllSuccessRestartRequired_one": "La sección {{count}} se ha guardado correctamente. Reinicia Orbi360 NVR para aplicar los cambios.",
+    "saveAllSuccessRestartRequired_many": "Las {{count}} secciones se han guardado correctamente. Reinicia Orbi360 NVR para aplicar los cambios.",
+    "saveAllSuccessRestartRequired_other": "Las {{count}} secciones se han guardado correctamente. Reinicia Orbi360 NVR para aplicar los cambios."
   },
   "profiles": {
     "title": "Perfiles",
@@ -2013,7 +2013,7 @@
       "detectDisabled": "La detección de objetos está desactivada. Los elementos de revisión requieren objetos detectados para categorizar las alertas y detecciones.",
       "recordDisabled": "La grabación está deshabilitada; no se generarán elementos de revisión.",
       "allNonAlertDetections": "Toda la actividad que no sea de alerta se incluirá como detecciones.",
-      "genaiImageSourceRecordingsRecordDisabled": "El origen de imagen está establecido en 'recordings', pero la grabación está deshabilitada. Frigate usará imágenes de vista previa como alternativa."
+      "genaiImageSourceRecordingsRecordDisabled": "El origen de imagen está establecido en 'recordings', pero la grabación está deshabilitada. Orbi360 NVR usará imágenes de vista previa como alternativa."
     },
     "detect": {
       "fpsGreaterThanFive": "No se recomienda establecer los FPS de detección por encima de 5. Valores más altos pueden causar problemas de rendimiento y no aportarán ningún beneficio.",
@@ -2043,7 +2043,7 @@
       "inputsMissingGo2rtcStream": "El campo de entrada que aparece a continuación apunta a una retransmisión de go2rtc que ya no existe. Seleccione una retransmisión existente o introduzca la URL de la cámara manualmente; de lo contrario, la cámara no podrá conectarse."
     },
     "model": {
-      "optimizedFor320": "Frigate está optimizado para un modelo de 320x320, que es la mejor opción para la mayoría de las configuraciones. Un modelo de 640x640 es más lento y solo resulta útil en situaciones específicas.",
+      "optimizedFor320": "Orbi360 NVR está optimizado para un modelo de 320x320, que es la mejor opción para la mayoría de las configuraciones. Un modelo de 640x640 es más lento y solo resulta útil en situaciones específicas.",
       "inputDimensionsNotDetectResolution": "El ancho y alto de entrada del modelo son las dimensiones de entrada del modelo de detección de objetos, no la resolución de detección de la cámara. Deben coincidir con las dimensiones del modelo que esté utilizando, normalmente un tamaño cuadrado como 320x320 o 640x640."
     }
   },
@@ -2174,7 +2174,7 @@
       "noModelSelected": "Selecciona un modelo de Frigate+"
     },
     "toast": {
-      "saveSuccess": "Los ajustes de detectores y modelo se han guardado. Reinicia Frigate para aplicar los cambios.",
+      "saveSuccess": "Los ajustes de detectores y modelo se han guardado. Reinicia Orbi360 NVR para aplicar los cambios.",
       "saveError": "No se pudieron guardar los ajustes del detector y del modelo"
     },
     "unsavedChanges": "Cambios sin guardar en el detector y el modelo",

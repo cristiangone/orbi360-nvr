@@ -46,9 +46,9 @@
     "trackedPoint": "Пункт адсочвання",
     "clickToSeek": "Націсніце, каб перайсці на гэты час"
   },
-  "documentTitle": "Разгляд - Frigate",
+  "documentTitle": "Разгляд - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Запісы - Frigate",
+    "documentTitle": "Запісы - Orbi360 NVR",
     "invalidSharedLink": "Не ўдалося адкрыць спасылку на запіс з меткай часу праз памылку разбору.",
     "invalidSharedCamera": "Не ўдалося адкрыць спасылку на запіс з меткай часу праз невядомую камеру або адсутнасць доступу."
   },

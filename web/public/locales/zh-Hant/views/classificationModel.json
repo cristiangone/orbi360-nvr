@@ -151,7 +151,7 @@
       "allImagesRequired_other": "請對所有圖片進行分類。還有 {{count}} 張圖片需要分類。",
       "generating": {
         "title": "正在生成樣本圖片",
-        "description": "Frigate 正在從錄影中提取代表性圖片。這可能需要一些時間……"
+        "description": "Orbi360 NVR 正在從錄影中提取代表性圖片。這可能需要一些時間……"
       },
       "training": {
         "title": "正在訓練模型",

@@ -1,6 +1,6 @@
 {
   "generativeAI": "IA Generativa",
-  "documentTitle": "Esplora - Frigate",
+  "documentTitle": "Esplora - Orbi360 NVR",
   "exploreIsUnavailable": {
     "title": "Esplora non è disponibile",
     "embeddingsReindexing": {
@@ -25,8 +25,8 @@
         "documentation": "Leggi la documentazione",
         "context": "Una volta scaricati i modelli, potrebbe essere necessario reindicizzare gli incorporamenti degli oggetti tracciati."
       },
-      "error": "Si è verificato un errore. Controlla i registri di Frigate.",
-      "context": "Frigate sta scaricando i modelli di incorporamento necessari per supportare la funzione di Ricerca Semantica. L'operazione potrebbe richiedere diversi minuti, a seconda della velocità della connessione di rete."
+      "error": "Si è verificato un errore. Controlla i registri di Orbi360 NVR.",
+      "context": "Orbi360 NVR sta scaricando i modelli di incorporamento necessari per supportare la funzione di Ricerca Semantica. L'operazione potrebbe richiedere diversi minuti, a seconda della velocità della connessione di rete."
     }
   },
   "details": {
@@ -40,7 +40,7 @@
         "mismatch_one": "E' stato rilevato {{count}} oggetto non disponibile e incluse in questo elemento visto. Tale oggetto non è stato classificato come avviso o rilevamento oppure è già stato ripulito/eliminato.",
         "mismatch_many": "Sono stati rilevati {{count}} oggetti non disponibili e inclusi in questo elemento visto. Tali oggetti non sono stati classificati come avvisi o rilevamenti oppure sono già stati ripuliti/eliminati.",
         "mismatch_other": "Sono stati rilevati {{count}} oggetti non disponibili e inclusi in questo elemento visto. Tali oggetti non sono stati classificati come avvisi o rilevamenti oppure sono già stati ripuliti/eliminati.",
-        "hasMissingObjects": "Modifica la configurazione se vuoi che Frigate salvi gli oggetti tracciati per le seguenti etichette: <em>{{objects}}</em>"
+        "hasMissingObjects": "Modifica la configurazione se vuoi che Orbi360 NVR salvi gli oggetti tracciati per le seguenti etichette: <em>{{objects}}</em>"
       },
       "title": "Dettagli dell'elemento visto",
       "desc": "Dettagli dell'elemento visto",
@@ -53,7 +53,7 @@
           "regenerate": "È stata richiesta una nuova descrizione a {{provider}}. A seconda della velocità del tuo provider, la rigenerazione della nuova descrizione potrebbe richiedere del tempo.",
           "updatedSublabel": "Sottoetichetta aggiornata correttamente.",
           "updatedLPR": "Targa aggiornata con successo.",
-          "audioTranscription": "Trascrizione audio richiesta con successo. A seconda della velocità del server Frigate, la trascrizione potrebbe richiedere del tempo.",
+          "audioTranscription": "Trascrizione audio richiesta con successo. A seconda della velocità del server Orbi360 NVR, la trascrizione potrebbe richiedere del tempo.",
           "updatedAttributes": "Attributi aggiornati correttamente."
         },
         "error": {
@@ -69,7 +69,7 @@
     "description": {
       "label": "Descrizione",
       "placeholder": "Descrizione dell'oggetto tracciato",
-      "aiTips": "Frigate non richiederà una descrizione al tuo fornitore di Intelligenza Artificiale Generativa finché non sarà terminato il ciclo di vita dell'oggetto tracciato."
+      "aiTips": "Orbi360 NVR non richiederà una descrizione al tuo fornitore di Intelligenza Artificiale Generativa finché non sarà terminato il ciclo di vita dell'oggetto tracciato."
     },
     "label": "Etichetta",
     "editSubLabel": {
@@ -125,7 +125,7 @@
         "documentation": "Leggi la documentazione ",
         "millisecondsToOffset": "Millisecondi per compensare il rilevamento delle annotazioni. <em>Predefinito: 0</em>",
         "toast": {
-          "success": "La compensazione di annotazione per {{camera}} è stato salvato nel file di configurazione. Riavvia Frigate per applicare le modifiche."
+          "success": "La compensazione di annotazione per {{camera}} è stato salvato nel file di configurazione. Riavvia Orbi360 NVR per applicare le modifiche."
         }
       },
       "showAllZones": {

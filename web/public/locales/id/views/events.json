@@ -43,9 +43,9 @@
     "trackedPoint": "Titik terlacak",
     "clickToSeek": "Klik untuk mencari waktu ini"
   },
-  "documentTitle": "Tinjauan - Frigate",
+  "documentTitle": "Tinjauan - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Rekaman - Frigate",
+    "documentTitle": "Rekaman - Orbi360 NVR",
     "invalidSharedLink": "Tidak dapat membuka tautan rekaman bertanda waktu karena kesalahan penguraian.",
     "invalidSharedCamera": "Tidak dapat membuka tautan rekaman bertanda waktu karena kamera tidak dikenal atau tidak berwenang."
   },

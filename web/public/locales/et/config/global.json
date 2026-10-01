@@ -332,7 +332,7 @@
         },
         "version_check": {
             "label": "Versiooni kontroll",
-            "description": "Luba väljaminev ühendus, et kontrollida uuema Frigate versooni olemasolu."
+            "description": "Luba väljaminev ühendus, et kontrollida uuema Orbi360 NVR versooni olemasolu."
         }
     },
     "tls": {

@@ -1,5 +1,5 @@
 {
-  "documentTitle": "設定編輯器 - Frigate",
+  "documentTitle": "設定編輯器 - Orbi360 NVR",
   "configEditor": "設定編輯器",
   "copyConfig": "複製設定",
   "saveAndRestart": "儲存並重新啟動",
@@ -14,5 +14,5 @@
   "saveOnly": "僅儲存",
   "confirm": "是否不儲存就離開？",
   "safeConfigEditor": "設定編輯器（安全模式）",
-  "safeModeDescription": "由於設定驗證有誤，Frigate 進入安全模式。"
+  "safeModeDescription": "由於設定驗證有誤，Orbi360 NVR 進入安全模式。"
 }

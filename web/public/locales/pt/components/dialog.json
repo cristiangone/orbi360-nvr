@@ -2,12 +2,12 @@
   "restart": {
     "button": "Reiniciar",
     "restarting": {
-      "title": "Frigate está a reiniciar",
+      "title": "Orbi360 NVR está a reiniciar",
       "content": "Esta página será recarregada em {{countdown}} segundos.",
       "button": "Forçar Recarregar Agora"
     },
-    "title": "Tem a certeza que deseja reiniciar o Frigate?",
-    "description": "Isto irá parar brevemente o Frigate enquanto reinicia."
+    "title": "Tem a certeza que deseja reiniciar o Orbi360 NVR?",
+    "description": "Isto irá parar brevemente o Orbi360 NVR enquanto reinicia."
   },
   "explore": {
     "plus": {

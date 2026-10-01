@@ -1,9 +1,9 @@
 {
   "documentTitle": {
-    "default": "Direkte - Frigate"
+    "default": "Direkte - Orbi360 NVR"
   },
   "lowBandwidthMode": "Lav båndbreddemodus",
-  "documentTitle.withCamera": "{{camera}} - Direkte - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Direkte - Orbi360 NVR",
   "ptz": {
     "move": {
       "clickMove": {
@@ -186,7 +186,7 @@
   },
   "noCameras": {
     "title": "Ingen kameraer konfigurert",
-    "description": "Kom i gang ved å koble et kamera til Frigate.",
+    "description": "Kom i gang ved å koble et kamera til Orbi360 NVR.",
     "buttonText": "Legg til kamera",
     "restricted": {
       "title": "Ingen kameraer tilgjengelig",
@@ -194,7 +194,7 @@
     },
     "default": {
       "title": "Ingen kameraer konfigurert",
-      "description": "Kom i gang ved å koble et kamera til Frigate.",
+      "description": "Kom i gang ved å koble et kamera til Orbi360 NVR.",
       "buttonText": "Legg til kamera"
     },
     "group": {

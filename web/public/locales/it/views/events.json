@@ -20,7 +20,7 @@
   },
   "markTheseItemsAsReviewed": "Segna questi elementi come visti",
   "markAsReviewed": "Segna come visto",
-  "documentTitle": "Revisiona - Frigate",
+  "documentTitle": "Revisiona - Orbi360 NVR",
   "allCameras": "Tutte le telecamere",
   "timeline": {
     "label": "Linea temporale"
@@ -32,7 +32,7 @@
     "noFoundForTimePeriod": "Nessun evento trovato per questo intervallo."
   },
   "recordings": {
-    "documentTitle": "Registrazioni - Frigate",
+    "documentTitle": "Registrazioni - Orbi360 NVR",
     "invalidSharedLink": "Impossibile aprire il collegamento alla registrazione con orario a causa di un errore di analisi.",
     "invalidSharedCamera": "Impossibile aprire il collegamento alla registrazione con orario a causa di una telecamera sconosciuta o non autorizzata."
   },

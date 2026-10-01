@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Bạn có chắc chắn muốn khởi động lại Frigate không?",
+    "title": "Bạn có chắc chắn muốn khởi động lại Orbi360 NVR không?",
     "button": "Khởi động lại",
     "restarting": {
-      "title": "Đang khởi động lại Frigate",
+      "title": "Đang khởi động lại Orbi360 NVR",
       "content": "Trang này sẽ tải lại sau {{countdown}} giây.",
       "button": "Tải lại ngay"
     },
-    "description": "Thao tác này sẽ tạm dừng hoạt động của Frigate trong thời gian ngắn để khởi động lại."
+    "description": "Thao tác này sẽ tạm dừng hoạt động của Orbi360 NVR trong thời gian ngắn để khởi động lại."
   },
   "explore": {
     "plus": {

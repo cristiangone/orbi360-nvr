@@ -1,20 +1,20 @@
 {
   "documentTitle": {
-    "default": "Nastavitve - Frigate",
-    "authentication": "Nastavitve avtentikacije - Frigate",
-    "camera": "Nastavitve kamere - Frigate",
-    "notifications": "Nastavitve obvestil - Frigate",
-    "masksAndZones": "Urejevalnik mask in območij - Frigate",
-    "object": "Razhroščevanje - Frigate",
-    "general": "Nastavitve profila - Frigate",
-    "frigatePlus": "Nastavitve Frigate+ - Frigate",
-    "enrichments": "Nastavitve obogatenih podatkov - Frigate",
-    "motionTuner": "Prilagajanje zaznavanja gibanja - Frigate",
-    "cameraManagement": "Upravljanje kamer - Frigate",
-    "cameraReview": "Nastavitve pregleda kamer - Frigate",
-    "globalConfig": "Globalna konfiguracija - Frigate",
-    "cameraConfig": "Konfiguracija kamere - Frigate",
-    "maintenance": "Vzdrževanje - Frigate"
+    "default": "Nastavitve - Orbi360 NVR",
+    "authentication": "Nastavitve avtentikacije - Orbi360 NVR",
+    "camera": "Nastavitve kamere - Orbi360 NVR",
+    "notifications": "Nastavitve obvestil - Orbi360 NVR",
+    "masksAndZones": "Urejevalnik mask in območij - Orbi360 NVR",
+    "object": "Razhroščevanje - Orbi360 NVR",
+    "general": "Nastavitve profila - Orbi360 NVR",
+    "frigatePlus": "Nastavitve Frigate+ - Orbi360 NVR",
+    "enrichments": "Nastavitve obogatenih podatkov - Orbi360 NVR",
+    "motionTuner": "Prilagajanje zaznavanja gibanja - Orbi360 NVR",
+    "cameraManagement": "Upravljanje kamer - Orbi360 NVR",
+    "cameraReview": "Nastavitve pregleda kamer - Orbi360 NVR",
+    "globalConfig": "Globalna konfiguracija - Orbi360 NVR",
+    "cameraConfig": "Konfiguracija kamere - Orbi360 NVR",
+    "maintenance": "Vzdrževanje - Orbi360 NVR"
   },
   "menu": {
     "ui": "Uporabniški vmesnik",
@@ -94,7 +94,7 @@
       "point_few": "",
       "point_other": "{{count}} točke",
       "label": "Območja",
-      "documentTitle": "Uredi območje - Frigate",
+      "documentTitle": "Uredi območje - Orbi360 NVR",
       "desc": {
         "title": "Območja (Zones) ti omogočajo določitev specifičnih delov slike, da lahko ugotoviš, ali se objekt nahaja v določenem predelu.",
         "documentation": "Dokumentacija"
@@ -152,7 +152,7 @@
       "point_few": "",
       "point_other": "{{count}} točke",
       "label": "Maske objektov",
-      "documentTitle": "Uredi masko objekta - Frigate",
+      "documentTitle": "Uredi masko objekta - Orbi360 NVR",
       "desc": {
         "title": "Maske za filtre objektov se uporabljajo za filtriranje lažnih pozitivnih rezultatov za določen tip objekta glede na lokacijo.",
         "documentation": "Dokumentacija"
@@ -184,7 +184,7 @@
       "point_few": "",
       "point_other": "{{count}} točke",
       "label": "Maska gibanja",
-      "documentTitle": "Uredi masko gibanja - Frigate",
+      "documentTitle": "Uredi masko gibanja - Orbi360 NVR",
       "desc": {
         "title": "Maske gibanja se uporabljajo za preprečevanje neželenih vrst gibanja, ki bi sprožile zaznavanje. Preveč maskiranja bo otežilo sledenje objektom.",
         "documentation": "Dokumentacija"
@@ -367,7 +367,7 @@
     },
     "semanticSearch": {
       "title": "Semantično iskanje",
-      "desc": "Semantično iskanje v Frigate ti omogoča iskanje sledenih objektov z uporabo same slike, tvojega opisa ali samodejno generiranega opisa.",
+      "desc": "Semantično iskanje v Orbi360 NVR ti omogoča iskanje sledenih objektov z uporabo same slike, tvojega opisa ali samodejno generiranega opisa.",
       "readTheDocumentation": "Preberi Dokumentacijo",
       "reindexNow": {
         "label": "Ponovno indeksiraj zdaj",
@@ -394,7 +394,7 @@
     },
     "faceRecognition": {
       "title": "Prepoznava obrazov",
-      "desc": "Prepoznava obrazov omogoča dodeljevanje imen osebam; ko je obraz prepoznan, Frigate ime osebe doda kot pod-oznako. Ti podatki so vidni v vmesniku, filtrih in obvestilih.",
+      "desc": "Prepoznava obrazov omogoča dodeljevanje imen osebam; ko je obraz prepoznan, Orbi360 NVR ime osebe doda kot pod-oznako. Ti podatki so vidni v vmesniku, filtrih in obvestilih.",
       "readTheDocumentation": "Preberi Dokumentacijo",
       "modelSize": {
         "label": "Velikost modela",
@@ -411,12 +411,12 @@
     },
     "licensePlateRecognition": {
       "title": "Prepoznava registrskih tablic",
-      "desc": "Frigate lahko prepozna registrske tablice na vozilih in samodejno doda prepoznane znake v polje 'recognized_license_plate' ali znano ime kot pod-oznako za objekte vrste avto. Tipičen primer uporabe je branje tablic na dovozu ali na ulici.",
+      "desc": "Orbi360 NVR lahko prepozna registrske tablice na vozilih in samodejno doda prepoznane znake v polje 'recognized_license_plate' ali znano ime kot pod-oznako za objekte vrste avto. Tipičen primer uporabe je branje tablic na dovozu ali na ulici.",
       "readTheDocumentation": "Preberi Dokumentacijo"
     },
     "restart_required": "Potreben ponovni zagon (sprememba nastavitev obogatenih podatkov)",
     "toast": {
-      "success": "Nastavitve obogatenih podatkov so shranjene. Ponovno zaženi Frigate, da uveljaviš spremembe.",
+      "success": "Nastavitve obogatenih podatkov so shranjene. Ponovno zaženi Orbi360 NVR, da uveljaviš spremembe.",
       "error": "Shranjevanje sprememb konfiguracije ni uspelo: {{errorMessage}}"
     }
   },
@@ -431,7 +431,7 @@
     },
     "review": {
       "title": "Pregled",
-      "desc": "Začasno omogoči/onemogoči opozorila in zaznavanja za to kamero, dokler se Frigate ne zažene znova. Ko je onemogočeno, ne bodo ustvarjeni novi elementi pregleda. ",
+      "desc": "Začasno omogoči/onemogoči opozorila in zaznavanja za to kamero, dokler se Orbi360 NVR ne zažene znova. Ko je onemogočeno, ne bodo ustvarjeni novi elementi pregleda. ",
       "alerts": "Opozorila ",
       "detections": "Detekcije "
     },
@@ -461,7 +461,7 @@
   },
   "cameraWizard": {
     "title": "Dodaj kamero",
-    "description": "Sledi spodnjim korakom, da dodaš novo kamero v svojo namestitev Frigate.",
+    "description": "Sledi spodnjim korakom, da dodaš novo kamero v svojo namestitev Orbi360 NVR.",
     "steps": {
       "nameAndConnection": "Ime in povezava",
       "streamConfiguration": "Konfiguracija pretoka",
@@ -684,7 +684,7 @@
       "description": "Končna potrditev in analiza pred shranjevanjem. Pred shranjevanjem poveži vsak pretok.",
       "validationTitle": "Potrditev pretoka",
       "ffmpegModule": "Uporabi način za združljivost pretoka",
-      "ffmpegModuleDescription": "Če se pretok po več poskusih ne naloži, poskusi omogočiti to možnost. Frigate bo uporabil modul ffmpeg z go2rtc, kar lahko izboljša združljivost z nekaterimi kamerami.",
+      "ffmpegModuleDescription": "Če se pretok po več poskusih ne naloži, poskusi omogočiti to možnost. Orbi360 NVR bo uporabil modul ffmpeg z go2rtc, kar lahko izboljša združljivost z nekaterimi kamerami.",
       "none": "Brez",
       "error": "Napaka",
       "streamValidated": "Pretok {{number}} je bil uspešno potrjen",
@@ -813,7 +813,7 @@
           "error": {
             "min": "Izbrano mora biti vsaj eno dejanje."
           },
-          "desc": "Frigate privzeto pošlje MQTT sporočilo za vse sprožilce. 'Podoznake' dodajo ime sprožilca k oznaki objekta. 'Atributi' pa so metapodatki, ki se shranijo ločeno.",
+          "desc": "Orbi360 NVR privzeto pošlje MQTT sporočilo za vse sprožilce. 'Podoznake' dodajo ime sprožilca k oznaki objekta. 'Atributi' pa so metapodatki, ki se shranijo ločeno.",
           "title": "Dejanja"
         },
         "threshold": {
@@ -904,7 +904,7 @@
       "desc": "Prikaži obrise vseh določenih območij"
     },
     "title": "Razhroščevanje",
-    "detectorDesc": "Frigate uporablja tvoje detektorje ({{detectors}}) za zaznavanje objektov v video toku kamere.",
+    "detectorDesc": "Orbi360 NVR uporablja tvoje detektorje ({{detectors}}) za zaznavanje objektov v video toku kamere.",
     "desc": "Pogled za razhroščevanje prikazuje sledene objekte in njihovo statistiko v realnem času. Seznam objektov prikazuje povzetek zaznanih objektov s časovnim zamikom.",
     "openCameraWebUI": "Odpri spletni vmesnik kamere {{camera}}",
     "debugging": "Razhroščevanje",
@@ -995,10 +995,10 @@
     "streams": {
       "title": "Omogoči / Onemogoči kamere",
       "enableLabel": "Omogočene kamere",
-      "enableDesc": "Začasno onemogoči omogočeno kamero do ponovnega zagona Frigate. Onemogočanje popolnoma ustavi obdelavo pretokov te kamere. Zaznavanje, snemanje in razhroščevanje ne bodo na voljo.<br /> <em>Opomba: To ne onemogoči go2rtc ponovnega pretakanja.</em>",
+      "enableDesc": "Začasno onemogoči omogočeno kamero do ponovnega zagona Orbi360 NVR. Onemogočanje popolnoma ustavi obdelavo pretokov te kamere. Zaznavanje, snemanje in razhroščevanje ne bodo na voljo.<br /> <em>Opomba: To ne onemogoči go2rtc ponovnega pretakanja.</em>",
       "disableLabel": "Onemogočene kamere",
-      "disableDesc": "Omogoči kamero, ki trenutno ni vidna v vmesniku in je onemogočena v konfiguraciji. Po omogočanju je potreben ponovni zagon Frigate.",
-      "enableSuccess": "Kamera {{cameraName}} je omogočena v konfiguraciji. Ponovno zaženi Frigate za uveljavitev sprememb."
+      "disableDesc": "Omogoči kamero, ki trenutno ni vidna v vmesniku in je onemogočena v konfiguraciji. Po omogočanju je potreben ponovni zagon Orbi360 NVR.",
+      "enableSuccess": "Kamera {{cameraName}} je omogočena v konfiguraciji. Ponovno zaženi Orbi360 NVR za uveljavitev sprememb."
     },
     "cameraConfig": {
       "add": "Dodaj kamero",
@@ -1048,7 +1048,7 @@
     },
     "reviewClassification": {
       "title": "Klasifikacija pregledov",
-      "desc": "Frigate razvršča elemente pregleda na Opozorila (Alerts) in Zaznave (Detections). Privzeto vsi objekti <em>oseba</em> in <em>avto</em> štejejo kot Opozorila. Razvrščanje lahko izboljšaš z določitvijo zahtevanih območij zanje.",
+      "desc": "Orbi360 NVR razvršča elemente pregleda na Opozorila (Alerts) in Zaznave (Detections). Privzeto vsi objekti <em>oseba</em> in <em>avto</em> štejejo kot Opozorila. Razvrščanje lahko izboljšaš z določitvijo zahtevanih območij zanje.",
       "noDefinedZones": "Za to kamero ni določenih območij (zones).",
       "objectAlertsTips": "Vsi objekti {{alertsLabels}} na kameri {{cameraName}} bodo prikazani kot Opozorila.",
       "zoneObjectAlertsTips": "Vsi objekti {{alertsLabels}}, zaznani v območju {{zone}} na kameri {{cameraName}}, bodo prikazani kot Opozorila.",
@@ -1063,7 +1063,7 @@
       "selectDetectionsZones": "Izberi območja za Zaznave",
       "limitDetections": "Omeji zaznave na določena območja",
       "toast": {
-        "success": "Konfiguracija klasifikacije pregledov je shranjena. Ponovno zaženi Frigate za uveljavitev sprememb."
+        "success": "Konfiguracija klasifikacije pregledov je shranjena. Ponovno zaženi Orbi360 NVR za uveljavitev sprememb."
       }
     }
   },
@@ -1071,7 +1071,7 @@
     "title": "Nastavljalnik zaznavanja gibanja",
     "unsavedChanges": "Neshranjene spremembe nastavitev gibanja ({{camera}})",
     "desc": {
-      "title": "Frigate uporablja zaznavanje gibanja kot prvi korak, da ugotovi, ali se v kadru dogaja kaj, kar bi bilo vredno preveriti z zaznavanjem objektov.",
+      "title": "Orbi360 NVR uporablja zaznavanje gibanja kot prvi korak, da ugotovi, ali se v kadru dogaja kaj, kar bi bilo vredno preveriti z zaznavanjem objektov.",
       "documentation": "Preberi vodič za nastavljanje gibanja"
     },
     "Threshold": {
@@ -1094,7 +1094,7 @@
     "title": "Uporabniki",
     "management": {
       "title": "Upravljanje uporabnikov",
-      "desc": "Upravljaj z uporabniškimi računi te namestitve Frigate."
+      "desc": "Upravljaj z uporabniškimi računi te namestitve Orbi360 NVR."
     },
     "addUser": "Dodaj uporabnika",
     "updatePassword": "Ponastavi geslo",
@@ -1167,7 +1167,7 @@
       },
       "createUser": {
         "title": "Ustvari novega uporabnika",
-        "desc": "Dodaj nov uporabniški račun in določi vlogo za dostop do delov vmesnika Frigate.",
+        "desc": "Dodaj nov uporabniški račun in določi vlogo za dostop do delov vmesnika Orbi360 NVR.",
         "usernameOnlyInclude": "Uporabniško ime lahko vsebuje le črke, številke, . ali _",
         "confirmPassword": "Prosim, potrdi geslo"
       },
@@ -1207,11 +1207,11 @@
     "title": "Obvestila",
     "notificationSettings": {
       "title": "Nastavitve obvestil",
-      "desc": "Frigate lahko pošilja potisna obvestila (push) neposredno na tvojo napravo, ko teče v brskalniku ali je nameščen kot PWA."
+      "desc": "Orbi360 NVR lahko pošilja potisna obvestila (push) neposredno na tvojo napravo, ko teče v brskalniku ali je nameščen kot PWA."
     },
     "notificationUnavailable": {
       "title": "Obvestila niso na voljo",
-      "desc": "Spletna potisna obvestila zahtevajo varno povezavo (<code>https://…</code>). To je omejitev brskalnika. Za uporabo obvestil dostopaj do Frigate prek varne povezave."
+      "desc": "Spletna potisna obvestila zahtevajo varno povezavo (<code>https://…</code>). To je omejitev brskalnika. Za uporabo obvestil dostopaj do Orbi360 NVR prek varne povezave."
     },
     "globalSettings": {
       "title": "Globalne nastavitve",
@@ -1248,7 +1248,7 @@
     "cancelSuspension": "Prekliči prekinitev",
     "toast": {
       "success": {
-        "registered": "Registracija na obvestila je bila uspešna. Preden se lahko pošljejo kakršna koli obvestila (vključno s testnim), je potreben ponovni zagon Frigate.",
+        "registered": "Registracija na obvestila je bila uspešna. Preden se lahko pošljejo kakršna koli obvestila (vključno s testnim), je potreben ponovni zagon Orbi360 NVR.",
         "settingSaved": "Nastavitve obvestil so shranjene."
       },
       "error": {
@@ -1302,7 +1302,7 @@
     "unsavedChanges": "Neshranjene spremembe Frigate+ nastavitev",
     "restart_required": "Potreben ponovni zagon (sprememba Frigate+ modela)",
     "toast": {
-      "success": "Nastavitve Frigate+ so bile shranjene. Ponovno zaženi Frigate za uveljavitev sprememb.",
+      "success": "Nastavitve Frigate+ so bile shranjene. Ponovno zaženi Orbi360 NVR za uveljavitev sprememb.",
       "error": "Napaka pri shranjevanju konfiguracije: {{errorMessage}}"
     }
   },
@@ -1319,7 +1319,7 @@
     "title": "Vzdrževanje",
     "sync": {
       "title": "Sinhronizacija medijev",
-      "desc": "Frigate redno čisti medije glede na tvoje nastavitve hrambe. Občasno se lahko pojavijo osirotele datoteke. Uporabi to funkcijo za ročno odstranitev datotek, na katere baza podatkov ne referencira več.",
+      "desc": "Orbi360 NVR redno čisti medije glede na tvoje nastavitve hrambe. Občasno se lahko pojavijo osirotele datoteke. Uporabi to funkcijo za ročno odstranitev datotek, na katere baza podatkov ne referencira več.",
       "started": "Sinhronizacija medijev se je začela.",
       "alreadyRunning": "Sinhronizacija že poteka.",
       "error": "Zagon sinhronizacije ni uspel",
@@ -1367,7 +1367,7 @@
       "desc": "Mreža regij je optimizacija, s katero se sistem nauči, kje se na posamezni kameri običajno pojavljajo objekti določenih velikosti. To omogoča učinkovitejše določanje regij zaznavanja. Mreža se sčasoma zgradi samodejno.",
       "clear": "Počisti mrežo regij",
       "clearConfirmTitle": "Počisti mrežo regij",
-      "clearConfirmDesc": "Čiščenje mreže regij ni priporočljivo, razen če si pred kratkim spremenil velikost modela detektorja ali fizično premaknil kamero in imaš težave s sledenjem. Mreža se bo samodejno zgradila nazaj. Za uveljavitev je potreben ponovni zagon Frigate.",
+      "clearConfirmDesc": "Čiščenje mreže regij ni priporočljivo, razen če si pred kratkim spremenil velikost modela detektorja ali fizično premaknil kamero in imaš težave s sledenjem. Mreža se bo samodejno zgradila nazaj. Za uveljavitev je potreben ponovni zagon Orbi360 NVR.",
       "clearSuccess": "Mreža regij je bila uspešno očiščena",
       "clearError": "Čiščenje mreže regij ni uspelo",
       "restartRequired": "Za uveljavitev sprememb mreže regij je potreben ponovni zagon"
@@ -1532,7 +1532,7 @@
   "toast": {
     "success": "Nastavitve so bile uspešno shranjene",
     "applied": "Nastavitve so bile uspešno uveljavljene",
-    "successRestartRequired": "Nastavitve so shranjene. Ponovno zaženi Frigate, da uveljaviš spremembe.",
+    "successRestartRequired": "Nastavitve so shranjene. Ponovno zaženi Orbi360 NVR, da uveljaviš spremembe.",
     "error": "Shranjevanje nastavitev ni uspelo",
     "validationError": "Validacija ni uspela: {{message}}",
     "resetSuccess": "Ponastavljeno na globalne privzete vrednosti",

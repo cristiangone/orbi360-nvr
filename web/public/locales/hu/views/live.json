@@ -4,10 +4,10 @@
     "disable": "Kétirányú kommunikáció tiltása"
   },
   "documentTitle": {
-    "default": "Élő - Frigate"
+    "default": "Élő - Orbi360 NVR"
   },
   "lowBandwidthMode": "Alacsony felbontású mód",
-  "documentTitle.withCamera": "{{camera}} - Élő - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Élő - Orbi360 NVR",
   "cameraAudio": {
     "disable": "Kamera hangjának kikapcsolása",
     "enable": "Kamera hangjának bekapcsolása"

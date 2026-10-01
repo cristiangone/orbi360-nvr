@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "storage": "Statistici Stocare - Frigate",
-    "cameras": "Statistici Camere - Frigate",
-    "general": "Statistici Generale - Frigate",
+    "storage": "Statistici Stocare - Orbi360 NVR",
+    "cameras": "Statistici Camere - Orbi360 NVR",
+    "general": "Statistici Generale - Orbi360 NVR",
     "logs": {
-      "go2rtc": "Jurnale Go2RTC - Frigate",
-      "nginx": "Jurnale Nginx - Frigate",
-      "frigate": "Jurnale Frigate - Frigate",
-      "websocket": "Jurnale de mesaje - Frigate"
+      "go2rtc": "Jurnale Go2RTC - Orbi360 NVR",
+      "nginx": "Jurnale Nginx - Orbi360 NVR",
+      "frigate": "Jurnale Orbi360 NVR - Orbi360 NVR",
+      "websocket": "Jurnale de mesaje - Orbi360 NVR"
     },
-    "enrichments": "Statistici Procesări Avansate - Frigate"
+    "enrichments": "Statistici Procesări Avansate - Orbi360 NVR"
   },
   "general": {
     "hardwareInfo": {
@@ -47,7 +47,7 @@
       "intelGpuWarning": {
         "title": "Avertisment statistici GPU Intel",
         "message": "Statisticile GPU sunt indisponibile",
-        "description": "Acesta este un bug cunoscut în instrumentele de raportare GPU Intel (intel_gpu_top), unde acestea se blochează și returnează repetat o utilizare GPU de 0% chiar și atunci când accelerarea hardware și detecția obiectelor rulează corect pe (i)GPU. Aceasta nu este o problemă Frigate. Poți reporni host-ul pentru a remedia temporar problema și a confirma că GPU-ul funcționează corect. Performanța nu este afectată."
+        "description": "Acesta este un bug cunoscut în instrumentele de raportare GPU Intel (intel_gpu_top), unde acestea se blochează și returnează repetat o utilizare GPU de 0% chiar și atunci când accelerarea hardware și detecția obiectelor rulează corect pe (i)GPU. Aceasta nu este o problemă Orbi360 NVR. Poți reporni host-ul pentru a remedia temporar problema și a confirma că GPU-ul funcționează corect. Performanța nu este afectată."
       },
       "gpuTemperature": "Temperatură GPU",
       "npuTemperature": "Temperatură NPU",
@@ -79,7 +79,7 @@
     "recordings": {
       "title": "Înregistrări",
       "earliestRecording": "Cea mai veche înregistrare disponibilă:",
-      "tips": "Această valoare reprezintă stocarea totală folosită de înregistrări în baza de date Frigate. Frigate nu monitorizează utilizarea stocării pentru toate fișierele de pe disc."
+      "tips": "Această valoare reprezintă stocarea totală folosită de înregistrări în baza de date Orbi360 NVR. Orbi360 NVR nu monitorizează utilizarea stocării pentru toate fișierele de pe disc."
     },
     "title": "Stocare",
     "cameraStorage": {
@@ -90,7 +90,7 @@
       "percentageOfTotalUsed": "Procent din total",
       "unused": {
         "title": "Neutilizat",
-        "tips": "Este posibil ca această valoare să nu reprezinte cu precizie spațiul liber disponibil pentru Frigate dacă ai și alte fișiere pe disc în afara înregistrărilor Frigate. Frigate nu urmărește utilizarea stocării în afara propriilor înregistrări."
+        "tips": "Este posibil ca această valoare să nu reprezinte cu precizie spațiul liber disponibil pentru Orbi360 NVR dacă ai și alte fișiere pe disc în afara înregistrărilor Orbi360 NVR. Orbi360 NVR nu urmărește utilizarea stocării în afara propriilor înregistrări."
       },
       "bandwidth": "Lățime de bandă"
     },

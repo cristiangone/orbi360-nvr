@@ -9,7 +9,7 @@
     },
     "environment_vars": {
         "label": "환경 변수",
-        "description": "Home Assistant OS에서 Frigate 프로세스에 적용할 환경 변수의 키/값 쌍입니다. 비-HAOS 사용자는 Docker 환경 변수 설정을 사용해야 합니다."
+        "description": "Home Assistant OS에서 Orbi360 NVR 프로세스에 적용할 환경 변수의 키/값 쌍입니다. 비-HAOS 사용자는 Docker 환경 변수 설정을 사용해야 합니다."
     },
     "logger": {
         "label": "로깅",
@@ -64,7 +64,7 @@
         "description": "쿠키 및 속도 제한 옵션을 포함한 인증 및 세션 관련 설정입니다.",
         "enabled": {
             "label": "인증 활성화",
-            "description": "Frigate UI에 대한 기본 인증을 활성화합니다."
+            "description": "Orbi360 NVR UI에 대한 기본 인증을 활성화합니다."
         },
         "reset_admin_password": {
             "label": "관리자 비밀번호 초기화",
@@ -112,7 +112,7 @@
         "description": "추적 객체 및 녹화 메타데이터를 저장하는 Frigate의 SQLite 데이터베이스 설정입니다.",
         "path": {
             "label": "데이터베이스 경로",
-            "description": "Frigate SQLite 데이터베이스 파일이 저장될 파일 시스템 경로입니다."
+            "description": "Orbi360 NVR SQLite 데이터베이스 파일이 저장될 파일 시스템 경로입니다."
         }
     },
     "go2rtc": {
@@ -197,13 +197,13 @@
     },
     "networking": {
         "label": "네트워킹",
-        "description": "Frigate 엔드포인트의 IPv6 활성화 등 네트워크 관련 설정입니다.",
+        "description": "Orbi360 NVR 엔드포인트의 IPv6 활성화 등 네트워크 관련 설정입니다.",
         "ipv6": {
             "label": "IPv6 구성",
-            "description": "Frigate 네트워크 서비스의 IPv6 관련 설정입니다.",
+            "description": "Orbi360 NVR 네트워크 서비스의 IPv6 관련 설정입니다.",
             "enabled": {
                 "label": "IPv6 활성화",
-                "description": "지원 가능한 Frigate 서비스(API 및 UI)에 IPv6 지원을 활성화합니다."
+                "description": "지원 가능한 Orbi360 NVR 서비스(API 및 UI)에 IPv6 지원을 활성화합니다."
             }
         },
         "listen": {
@@ -1137,7 +1137,7 @@
         },
         "ignore_time_mismatch": {
             "label": "시간 불일치 무시",
-            "description": "ONVIF 통신 시 카메라와 Frigate 서버 간의 시간 동기화 차이를 무시합니다."
+            "description": "ONVIF 통신 시 카메라와 Orbi360 NVR 서버 간의 시간 동기화 차이를 무시합니다."
         }
     },
     "profiles": {
@@ -1164,7 +1164,7 @@
             },
             "role_map": {
                 "label": "역할 매핑",
-                "description": "업스트림 그룹 값을 Frigate 역할에 매핑합니다 (예: 관리자 그룹을 admin 역할에 매핑)."
+                "description": "업스트림 그룹 값을 Orbi360 NVR 역할에 매핑합니다 (예: 관리자 그룹을 admin 역할에 매핑)."
             }
         },
         "logout_url": {
@@ -1213,15 +1213,15 @@
         },
         "version_check": {
             "label": "버전 확인",
-            "description": "최신 Frigate 버전이 출시되었는지 확인하는 아웃바운드 검사를 활성화합니다."
+            "description": "최신 Orbi360 NVR 버전이 출시되었는지 확인하는 아웃바운드 검사를 활성화합니다."
         }
     },
     "tls": {
         "label": "TLS",
-        "description": "Frigate 웹 엔드포인트(포트 8971)에 대한 TLS 보안 설정입니다.",
+        "description": "Orbi360 NVR 웹 엔드포인트(포트 8971)에 대한 TLS 보안 설정입니다.",
         "enabled": {
             "label": "TLS 활성화",
-            "description": "설정된 TLS 포트에서 Frigate 웹 UI 및 API에 대한 TLS 연결을 활성화합니다."
+            "description": "설정된 TLS 포트에서 Orbi360 NVR 웹 UI 및 API에 대한 TLS 연결을 활성화합니다."
         }
     },
     "ui": {

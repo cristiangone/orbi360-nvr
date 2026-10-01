@@ -1,6 +1,6 @@
 {
-  "documentTitle": "V živo - Frigate",
-  "documentTitle.withCamera": "{{camera}} - V živo - Frigate",
+  "documentTitle": "V živo - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - V živo - Orbi360 NVR",
   "lowBandwidthMode": "Način nizke pasovne širine",
   "twoWayTalk": {
     "enable": "Omogoči dvosmerni pogovor",
@@ -179,7 +179,7 @@
   },
   "noCameras": {
     "title": "Ni nastavljenih kamer",
-    "description": "Začni tako, da povežeš kamero s Frigate.",
+    "description": "Začni tako, da povežeš kamero s Orbi360 NVR.",
     "buttonText": "Dodaj kamero",
     "restricted": {
       "title": "Ni razpoložljivih kamer",
@@ -187,7 +187,7 @@
     },
     "default": {
       "title": "Ni nastavljenih kamer",
-      "description": "Začni tako, da povežeš kamero s Frigate.",
+      "description": "Začni tako, da povežeš kamero s Orbi360 NVR.",
       "buttonText": "Dodaj kamero"
     },
     "group": {

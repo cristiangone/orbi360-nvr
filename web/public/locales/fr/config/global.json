@@ -5,11 +5,11 @@
     },
     "safe_mode": {
         "label": "Mode sans échec",
-        "description": "Si activé, Frigate démarre en mode sans échec avec des fonctionnalités réduites pour le dépannage."
+        "description": "Si activé, Orbi360 NVR démarre en mode sans échec avec des fonctionnalités réduites pour le dépannage."
     },
     "environment_vars": {
         "label": "Variables d'environnement",
-        "description": "Paires clé/valeur des variables d'environnement à définir pour le processus Frigate sous Home Assistant OS. Les utilisateurs sans HAOS doivent utiliser la configuration des variables d'environnement de Docker à la place."
+        "description": "Paires clé/valeur des variables d'environnement à définir pour le processus Orbi360 NVR sous Home Assistant OS. Les utilisateurs sans HAOS doivent utiliser la configuration des variables d'environnement de Docker à la place."
     },
     "logger": {
         "label": "Journalisation",
@@ -27,7 +27,7 @@
         "label": "Authentification",
         "enabled": {
             "label": "Activer l'authentification",
-            "description": "Active l'authentification native de l'interface de Frigate."
+            "description": "Active l'authentification native de l'interface de Orbi360 NVR."
         },
         "description": "Paramètres d'authentification et de session, y compris les options relatives aux cookies et à la limitation du débit.",
         "reset_admin_password": {
@@ -73,7 +73,7 @@
     },
     "database": {
         "label": "Base de donnée",
-        "description": "Réglages concernant la base de donnée SQLite utilisé par Frigate pour stocker les objets suivis et enregistrer les métadonnées.",
+        "description": "Réglages concernant la base de donnée SQLite utilisé par Orbi360 NVR pour stocker les objets suivis et enregistrer les métadonnées.",
         "path": {
             "label": "Chemin vers la base de donnée"
         }

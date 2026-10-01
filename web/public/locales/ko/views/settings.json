@@ -121,23 +121,23 @@
     }
   },
   "documentTitle": {
-    "default": "설정 - Frigate",
-    "authentication": "인증 설정 - Frigate",
-    "camera": "카메라 설정 - Frigate",
-    "enrichments": "확장 기능 설정 - Frigate",
-    "masksAndZones": "마스크 및 구역 편집기 - Frigate",
-    "motionTuner": "움직임 튜너 - Frigate",
-    "object": "디버그 - Frigate",
-    "general": "UI 설정 - Frigate",
-    "frigatePlus": "Frigate+ 설정 - Frigate",
-    "notifications": "알림 설정 - Frigate",
-    "cameraManagement": "카메라 관리 - Frigate",
-    "cameraReview": "카메라 다시보기 설정 - Frigate",
-    "globalConfig": "전역 설정 - Frigate",
-    "cameraConfig": "카메라 설정 - Frigate",
-    "maintenance": "유지 관리 - Frigate",
-    "profiles": "프로필 - Frigate",
-    "detectorsAndModel": "감지기 및 모델 - Frigate"
+    "default": "설정 - Orbi360 NVR",
+    "authentication": "인증 설정 - Orbi360 NVR",
+    "camera": "카메라 설정 - Orbi360 NVR",
+    "enrichments": "확장 기능 설정 - Orbi360 NVR",
+    "masksAndZones": "마스크 및 구역 편집기 - Orbi360 NVR",
+    "motionTuner": "움직임 튜너 - Orbi360 NVR",
+    "object": "디버그 - Orbi360 NVR",
+    "general": "UI 설정 - Orbi360 NVR",
+    "frigatePlus": "Frigate+ 설정 - Orbi360 NVR",
+    "notifications": "알림 설정 - Orbi360 NVR",
+    "cameraManagement": "카메라 관리 - Orbi360 NVR",
+    "cameraReview": "카메라 다시보기 설정 - Orbi360 NVR",
+    "globalConfig": "전역 설정 - Orbi360 NVR",
+    "cameraConfig": "카메라 설정 - Orbi360 NVR",
+    "maintenance": "유지 관리 - Orbi360 NVR",
+    "profiles": "프로필 - Orbi360 NVR",
+    "detectorsAndModel": "감지기 및 모델 - Orbi360 NVR"
   },
   "users": {
     "table": {
@@ -152,7 +152,7 @@
     "title": "사용자",
     "management": {
       "title": "사용자 관리",
-      "desc": "이 Frigate 인스턴스의 사용자 계정을 관리합니다."
+      "desc": "이 Orbi360 NVR 인스턴스의 사용자 계정을 관리합니다."
     },
     "addUser": "사용자 추가",
     "updatePassword": "비밀번호 재설정",
@@ -216,7 +216,7 @@
       },
       "createUser": {
         "title": "새 사용자 생성",
-        "desc": "새 사용자 계정을 추가하고 Frigate UI 접근 권한을 위한 역할을 지정합니다.",
+        "desc": "새 사용자 계정을 추가하고 Orbi360 NVR UI 접근 권한을 위한 역할을 지정합니다.",
         "usernameOnlyInclude": "사용자 이름은 영문자, 숫자, 마침표(.), 밑줄(_)만 포함할 수 있습니다",
         "confirmPassword": "비밀번호를 확인해 주세요"
       },
@@ -709,7 +709,7 @@
     "streams": {
       "title": "카메라 상태 및 세부 정보",
       "label": "카메라 상태",
-      "description": "각 카메라의 동작 상태를 설정합니다.<br /><br /><strong>켜짐 (On)</strong>: 스트림이 정상적으로 처리됩니다.<br /><strong>꺼짐 (Off)</strong>: 처리를 일시 중단합니다. Frigate 재시작 시 유지되지 않습니다.<br /><strong>비활성화 (Disabled)</strong>: 처리를 중지하고 설정 파일에 저장합니다. 다시 활성화하려면 재시작이 필요합니다.<br /><br /><em>참고: 비활성화해도 go2rtc 재스트림에는 영향을 주지 않습니다.</em><br /><br />핸들을 드래그하여 실시간 대시보드 및 카메라 드롭다운 목록에 표시되는 순서를 변경할 수 있습니다.",
+      "description": "각 카메라의 동작 상태를 설정합니다.<br /><br /><strong>켜짐 (On)</strong>: 스트림이 정상적으로 처리됩니다.<br /><strong>꺼짐 (Off)</strong>: 처리를 일시 중단합니다. Orbi360 NVR 재시작 시 유지되지 않습니다.<br /><strong>비활성화 (Disabled)</strong>: 처리를 중지하고 설정 파일에 저장합니다. 다시 활성화하려면 재시작이 필요합니다.<br /><br /><em>참고: 비활성화해도 go2rtc 재스트림에는 영향을 주지 않습니다.</em><br /><br />핸들을 드래그하여 실시간 대시보드 및 카메라 드롭다운 목록에 표시되는 순서를 변경할 수 있습니다.",
       "disabledSubheading": "설정에서 비활성화됨",
       "status": {
         "on": "켜짐",
@@ -724,9 +724,9 @@
       "details": {
         "edit": "카메라 세부 정보 수정",
         "title": "카메라 세부 정보 수정",
-        "description": "Frigate UI 전반에 표시되는 표시 이름, 외부 URL 및 가시성을 업데이트합니다.",
+        "description": "Orbi360 NVR UI 전반에 표시되는 표시 이름, 외부 URL 및 가시성을 업데이트합니다.",
         "friendlyNameLabel": "표시 이름 (별칭)",
-        "friendlyNameHelp": "Frigate UI 전반에 표시될 카메라의 별칭입니다. 비워 두면 카메라 ID가 사용됩니다.",
+        "friendlyNameHelp": "Orbi360 NVR UI 전반에 표시될 카메라의 별칭입니다. 비워 두면 카메라 ID가 사용됩니다.",
         "webuiUrlLabel": "카메라 웹 UI URL",
         "webuiUrlHelp": "디버그 뷰에서 카메라 자체 웹 관리 페이지로 바로 연결되는 URL입니다. 링크를 비활성화하려면 비워 두세요.",
         "webuiUrlInvalid": "유효한 URL이어야 합니다 (예: https://example.com).",
@@ -993,7 +993,7 @@
     },
     "zones": {
       "label": "구역",
-      "documentTitle": "구역 수정 - Frigate",
+      "documentTitle": "구역 수정 - Orbi360 NVR",
       "desc": {
         "title": "구역을 지정하면 프레임의 특정 영역을 정의하여 객체가 해당 구역 내에 있는지 여부를 판정할 수 있습니다.",
         "documentation": "공식 문서"
@@ -1048,7 +1048,7 @@
     },
     "motionMasks": {
       "label": "움직임 마스크",
-      "documentTitle": "움직임 마스크 수정 - Frigate",
+      "documentTitle": "움직임 마스크 수정 - Orbi360 NVR",
       "desc": {
         "title": "움직임 마스크는 불필요한 유형의 움직임으로 인한 감지 트리거를 방지하는 데 사용됩니다. 마스크를 과도하게 설정하면 객체 추적이 어려워질 수 있습니다.",
         "documentation": "공식 문서"
@@ -1079,7 +1079,7 @@
     },
     "objectMasks": {
       "label": "객체 마스크",
-      "documentTitle": "객체 마스크 수정 - Frigate",
+      "documentTitle": "객체 마스크 수정 - Orbi360 NVR",
       "desc": {
         "title": "객체 필터 마스크는 특정 위치에서 발생하는 특정 객체 유형의 오탐지를 걸러내는 데 사용됩니다.",
         "documentation": "공식 문서"
@@ -1204,7 +1204,7 @@
   "roles": {
     "management": {
       "title": "조회자(Viewer) 역할 관리",
-      "desc": "이 Frigate 인스턴스에 대한 사용자 정의 뷰어 역할과 카메라 접근 권한을 관리합니다."
+      "desc": "이 Orbi360 NVR 인스턴스에 대한 사용자 정의 뷰어 역할과 카메라 접근 권한을 관리합니다."
     },
     "addRole": "역할 추가",
     "table": {
@@ -1317,7 +1317,7 @@
   },
   "frigatePlus": {
     "title": "Frigate+ 설정",
-    "description": "Frigate+는 사용자의 데이터를 기반으로 학습된 맞춤형 객체 감지 모델을 비롯하여 Frigate 인스턴스를 위한 추가 기능과 역량을 제공하는 구독 서비스입니다. 여기에서 Frigate+ 모델 설정을 관리할 수 있습니다.",
+    "description": "Frigate+는 사용자의 데이터를 기반으로 학습된 맞춤형 객체 감지 모델을 비롯하여 Orbi360 NVR 인스턴스를 위한 추가 기능과 역량을 제공하는 구독 서비스입니다. 여기에서 Frigate+ 모델 설정을 관리할 수 있습니다.",
     "cardTitles": {
       "api": "API",
       "currentModel": "현재 모델",

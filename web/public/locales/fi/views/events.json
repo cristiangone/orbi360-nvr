@@ -23,12 +23,12 @@
     "aria": "Valitse tapahtumat",
     "noFoundForTimePeriod": "Tapahtumia ei löydetty tältä ajanjaksolta."
   },
-  "documentTitle": "Tarkastelu - Frigate",
+  "documentTitle": "Tarkastelu - Orbi360 NVR",
   "detected": "havaittu",
   "selected_one": "{{count}} valittu",
   "selected_other": "{{count}} valittu",
   "recordings": {
-    "documentTitle": "Tallenteet - Frigate"
+    "documentTitle": "Tallenteet - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Viimeiset 24 tuntia"

@@ -5,11 +5,11 @@
   },
   "safe_mode": {
     "label": "Safe mode",
-    "description": "When enabled, start Frigate in safe mode with reduced features for troubleshooting."
+    "description": "When enabled, start Orbi360 NVR in safe mode with reduced features for troubleshooting."
   },
   "environment_vars": {
     "label": "Environment variables",
-    "description": "Key/value pairs of environment variables to set for the Frigate process in Home Assistant OS. Non-HAOS users must use Docker environment variable configuration instead."
+    "description": "Key/value pairs of environment variables to set for the Orbi360 NVR process in Home Assistant OS. Non-HAOS users must use Docker environment variable configuration instead."
   },
   "logger": {
     "label": "Logging",
@@ -28,7 +28,7 @@
     "description": "Authentication and session-related settings including cookie and rate limit options.",
     "enabled": {
       "label": "Enable authentication",
-      "description": "Enable native authentication for the Frigate UI."
+      "description": "Enable native authentication for the Orbi360 NVR UI."
     },
     "reset_admin_password": {
       "label": "Reset admin password",
@@ -73,10 +73,10 @@
   },
   "database": {
     "label": "Database",
-    "description": "Settings for the SQLite database used by Frigate to store tracked object and recording metadata.",
+    "description": "Settings for the SQLite database used by Orbi360 NVR to store tracked object and recording metadata.",
     "path": {
       "label": "Database path",
-      "description": "Filesystem path where the Frigate SQLite database file will be stored."
+      "description": "Filesystem path where the Orbi360 NVR SQLite database file will be stored."
     }
   },
   "go2rtc": {
@@ -100,7 +100,7 @@
     },
     "topic_prefix": {
       "label": "Topic prefix",
-      "description": "MQTT topic prefix for all Frigate topics; must be unique if running multiple instances."
+      "description": "MQTT topic prefix for all Orbi360 NVR topics; must be unique if running multiple instances."
     },
     "client_id": {
       "label": "Client ID",
@@ -161,13 +161,13 @@
   },
   "networking": {
     "label": "Networking",
-    "description": "Network-related settings such as IPv6 enablement for Frigate endpoints.",
+    "description": "Network-related settings such as IPv6 enablement for Orbi360 NVR endpoints.",
     "ipv6": {
       "label": "IPv6 configuration",
-      "description": "IPv6-specific settings for Frigate network services.",
+      "description": "IPv6-specific settings for Orbi360 NVR network services.",
       "enabled": {
         "label": "Enable IPv6",
-        "description": "Enable IPv6 support for Frigate services (API and UI) where applicable."
+        "description": "Enable IPv6 support for Orbi360 NVR services (API and UI) where applicable."
       }
     },
     "listen": {
@@ -175,20 +175,20 @@
       "description": "Configuration for internal and external listening ports. This is for advanced users. For the majority of use cases it's recommended to change the ports section of your Docker compose file.",
       "internal": {
         "label": "Internal port",
-        "description": "Internal listening port for Frigate (default 5000)."
+        "description": "Internal listening port for Orbi360 NVR (default 5000)."
       },
       "external": {
         "label": "External port",
-        "description": "External listening port for Frigate (default 8971)."
+        "description": "External listening port for Orbi360 NVR (default 8971)."
       }
     }
   },
   "proxy": {
     "label": "Proxy",
-    "description": "Settings for integrating Frigate behind a reverse proxy that passes authenticated user headers.",
+    "description": "Settings for integrating Orbi360 NVR behind a reverse proxy that passes authenticated user headers.",
     "header_map": {
       "label": "Header mapping",
-      "description": "Map incoming proxy headers to Frigate user and role fields for proxy-based auth.",
+      "description": "Map incoming proxy headers to Orbi360 NVR user and role fields for proxy-based auth.",
       "user": {
         "label": "User header",
         "description": "Header containing the authenticated username provided by the upstream proxy."
@@ -199,7 +199,7 @@
       },
       "role_map": {
         "label": "Role mapping",
-        "description": "Map upstream group values to Frigate roles (for example map admin groups to the admin role)."
+        "description": "Map upstream group values to Orbi360 NVR roles (for example map admin groups to the admin role)."
       }
     },
     "logout_url": {
@@ -248,15 +248,15 @@
     },
     "version_check": {
       "label": "Version check",
-      "description": "Enable an outbound check to detect if a newer Frigate version is available."
+      "description": "Enable an outbound check to detect if a newer Orbi360 NVR version is available."
     }
   },
   "tls": {
     "label": "TLS",
-    "description": "TLS settings for Frigate's web endpoints (port 8971).",
+    "description": "TLS settings for Orbi360 NVR's web endpoints (port 8971).",
     "enabled": {
       "label": "Enable TLS",
-      "description": "Enable TLS for Frigate's web UI and API on the configured TLS port."
+      "description": "Enable TLS for Orbi360 NVR's web UI and API on the configured TLS port."
     }
   },
   "ui": {
@@ -1571,7 +1571,7 @@
       },
       "calibrate_on_startup": {
         "label": "Calibrate on start",
-        "description": "Measure PTZ motor speeds on startup to improve tracking accuracy. Frigate will update config with movement_weights after calibration."
+        "description": "Measure PTZ motor speeds on startup to improve tracking accuracy. Orbi360 NVR will update config with movement_weights after calibration."
       },
       "zooming": {
         "label": "Zoom mode",
@@ -1608,7 +1608,7 @@
     },
     "ignore_time_mismatch": {
       "label": "Ignore time mismatch",
-      "description": "Ignore time synchronization differences between camera and Frigate server for ONVIF communication."
+      "description": "Ignore time synchronization differences between camera and Orbi360 NVR server for ONVIF communication."
     }
   }
 }

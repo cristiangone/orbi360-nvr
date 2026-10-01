@@ -1,6 +1,6 @@
 {
     "title": "Reluare de depanare",
-    "description": "Redă înregistrările camerei pentru depanare. Lista de obiecte arată un rezumat decalat în timp al obiectelor detectate, iar tab-ul Mesaje arată un flux de mesaje interne ale Frigate din înregistrarea redată.",
+    "description": "Redă înregistrările camerei pentru depanare. Lista de obiecte arată un rezumat decalat în timp al obiectelor detectate, iar tab-ul Mesaje arată un flux de mesaje interne ale Orbi360 NVR din înregistrarea redată.",
     "websocket_messages": "Mesaje",
     "dialog": {
         "title": "Pornește reluarea de depanare",
@@ -31,7 +31,7 @@
         "noSessionDesc": "Pornește o reluare de depanare din vizualizarea Istoric dând click pe butonul Acțiuni din bara de instrumente și alegând Reluare depanare.",
         "goToRecordings": "Mergi la istoric",
         "preparingClip": "Pregătire clip…",
-        "preparingClipDesc": "Frigate îmbină înregistrările pentru intervalul de timp selectat. Acest lucru poate dura un minut pentru intervale mai mari.",
+        "preparingClipDesc": "Orbi360 NVR îmbină înregistrările pentru intervalul de timp selectat. Acest lucru poate dura un minut pentru intervale mai mari.",
         "startingCamera": "Pornire reluare depanare…",
         "startError": {
             "title": "Pornirea reluării de depanare a eșuat",
@@ -55,6 +55,6 @@
         "activeTracking": "Urmărire activă",
         "noActiveTracking": "Nicio urmărire activă",
         "configuration": "Configurație",
-        "configurationDesc": "Ajustează setările de detecție a mișcării și urmărire a obiectelor pentru camera de reluare de depanare. Nicio modificare nu este salvată în fișierul tău de configurare Frigate."
+        "configurationDesc": "Ajustează setările de detecție a mișcării și urmărire a obiectelor pentru camera de reluare de depanare. Nicio modificare nu este salvată în fișierul tău de configurare Orbi360 NVR."
     }
 }

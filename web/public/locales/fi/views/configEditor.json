@@ -14,5 +14,5 @@
   "copyConfig": "Kopioi konfiguraatio",
   "saveAndRestart": "Tallenna & uudelleenkäynnistä",
   "safeConfigEditor": "Konfiguraatioeditori (vikasietotila)",
-  "safeModeDescription": "Frigate on vikasietotilassa konfiguraation vahvistusvirheen vuoksi."
+  "safeModeDescription": "Orbi360 NVR on vikasietotilassa konfiguraation vahvistusvirheen vuoksi."
 }

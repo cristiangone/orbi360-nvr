@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "Live - Frigate"
+    "default": "Live - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Frigate - Live",
+  "documentTitle.withCamera": "{{camera}} - Orbi360 NVR - Live",
   "lowBandwidthMode": "Mod Latime de Banda Limitata",
   "twoWayTalk": {
     "enable": "Activare dialog",
@@ -186,7 +186,7 @@
   },
   "noCameras": {
     "title": "Nicio Cameră Configurată",
-    "description": "Începe prin a conecta o cameră la Frigate.",
+    "description": "Începe prin a conecta o cameră la Orbi360 NVR.",
     "buttonText": "Adaugă cameră",
     "restricted": {
       "title": "Nicio Cameră Disponibilă",
@@ -194,7 +194,7 @@
     },
     "default": {
       "title": "Nicio cameră configurată",
-      "description": "Începe prin a conecta o cameră la Frigate.",
+      "description": "Începe prin a conecta o cameră la Orbi360 NVR.",
       "buttonText": "Adaugă cameră"
     },
     "group": {

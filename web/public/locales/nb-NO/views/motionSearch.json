@@ -1,5 +1,5 @@
 {
-    "documentTitle": "Bevegelsessøk - Frigate",
+    "documentTitle": "Bevegelsessøk - Orbi360 NVR",
     "title": "Bevegelsessøk",
     "description": "Tegn et polygon for å definere et interesseområde, og angi et tidsrom for å søke etter bevegelsesendringer i dette området.",
     "selectCamera": "Bevegelsessøk laster",

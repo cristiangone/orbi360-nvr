@@ -2,7 +2,7 @@
   "time": {
     "untilRestart": "Đến khi khởi động lại",
     "untilForTime": "Cho đến khi {{time}}",
-    "untilForRestart": "Cho đến khi Frigate khởi động lại.",
+    "untilForRestart": "Cho đến khi Orbi360 NVR khởi động lại.",
     "ago": "{{timeAgo}} trước",
     "formattedTimestamp": {
       "12hour": "d MMM, h:mm:ss aaa",
@@ -260,7 +260,7 @@
     "title": "Vai trò",
     "admin": "Quản trị viên",
     "viewer": "Người xem",
-    "desc": "Quản trị viên có toàn quyền truy cập tất cả các tính năng trong giao diện Frigate. Người xem chỉ được phép xem camera, mục đã ghi lại và các đoạn video lịch sử trong giao diện."
+    "desc": "Quản trị viên có toàn quyền truy cập tất cả các tính năng trong giao diện Orbi360 NVR. Người xem chỉ được phép xem camera, mục đã ghi lại và các đoạn video lịch sử trong giao diện."
   },
   "pagination": {
     "label": "Trang",
@@ -293,7 +293,7 @@
   },
   "field": {
     "optional": "Không bắt buộc",
-    "internalID": "Internal ID Frigate sử dụng trong cấu hình và cơ sở dữ liệu"
+    "internalID": "Internal ID Orbi360 NVR sử dụng trong cấu hình và cơ sở dữ liệu"
   },
   "information": {
     "pixels": "{{area}}px"

@@ -4,7 +4,7 @@
     "untilRestart": "Do ponovnega zagona",
     "ago": "pred {{timeAgo}}",
     "justNow": "Ravnokar",
-    "untilForRestart": "Dokler se Frigate ne ponovno zažene.",
+    "untilForRestart": "Dokler se Orbi360 NVR ne ponovno zažene.",
     "thisWeek": "Ta teden",
     "lastWeek": "Prejšnji teden",
     "thisMonth": "Ta mesec",
@@ -178,9 +178,9 @@
     "help": "Pomoč",
     "documentation": {
       "title": "Dokumentacija",
-      "label": "Frigate dokumentacija"
+      "label": "Orbi360 NVR dokumentacija"
     },
-    "restart": "Ponovno zaženi Frigate",
+    "restart": "Ponovno zaženi Orbi360 NVR",
     "export": "Izvoz",
     "faceLibrary": "Knjižnica obrazov",
     "user": {
@@ -302,12 +302,12 @@
     "desc": "Administratorji imajo poln dostop do vseh funkcij. Gledalci so omejeni na ogled kamer, pregled dogodkov in zgodovinskih posnetkov."
   },
   "accessDenied": {
-    "documentTitle": "Dostop zavrnjen - Frigate",
+    "documentTitle": "Dostop zavrnjen - Orbi360 NVR",
     "title": "Dostop zavrnjen",
     "desc": "Nimaš dovoljenja za ogled te strani."
   },
   "notFound": {
-    "documentTitle": "Ni mogoče najti - Frigate",
+    "documentTitle": "Ni mogoče najti - Orbi360 NVR",
     "title": "404",
     "desc": "Stran ne obstaja"
   },
@@ -319,7 +319,7 @@
   },
   "field": {
     "optional": "Izbirno",
-    "internalID": "Notranji ID, ki ga Frigate uporablja v konfiguraciji in bazi podatkov"
+    "internalID": "Notranji ID, ki ga Orbi360 NVR uporablja v konfiguraciji in bazi podatkov"
   },
   "information": {
     "pixels": "{{area}}px"

@@ -30,9 +30,9 @@
       "description": "Peržiūros gali būti kuriamos tik tada kai kamerai yra aktyvuoti įrašymai."
     }
   },
-  "documentTitle": "Peržiūros - Frigate",
+  "documentTitle": "Peržiūros - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Įrašai - Frigate",
+    "documentTitle": "Įrašai - Orbi360 NVR",
     "invalidSharedLink": "Nepavyko atidaryti įrašo nuorodos su laiko žyme dėl duomenų išrinkimo klaidos.",
     "invalidSharedCamera": "Nepavyko atidaryti įrašo nuorodos su laiko žyme dėl nežinomos ar neprieinamos kameros."
   },

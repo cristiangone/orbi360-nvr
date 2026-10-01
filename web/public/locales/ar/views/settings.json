@@ -4,11 +4,11 @@
     "default": "الإعدادات - فرايجيت",
     "authentication": "إعدادات المصادقة - فرايجيت",
     "enrichments": "إحصاء الاعدادات",
-    "masksAndZones": "القناع ومحرر المنطقة - Frigate",
+    "masksAndZones": "القناع ومحرر المنطقة - Orbi360 NVR",
     "motionTuner": "مضبط الحركة - Firgate",
-    "object": "تصحيح الأخطاء - Frigate",
-    "general": "الإعدادات العامة - Frigate",
-    "notifications": "إعدادات الإشعارات - Frigate"
+    "object": "تصحيح الأخطاء - Orbi360 NVR",
+    "general": "الإعدادات العامة - Orbi360 NVR",
+    "notifications": "إعدادات الإشعارات - Orbi360 NVR"
   },
   "menu": {
     "ui": "واجهة المستخدم",

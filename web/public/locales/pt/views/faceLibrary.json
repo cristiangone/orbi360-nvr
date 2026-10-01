@@ -15,7 +15,7 @@
     "subLabelScore": "Pontuação da Subetiqueta",
     "unknown": "Desconhecido"
   },
-  "documentTitle": "Biblioteca de rostos - Frigate",
+  "documentTitle": "Biblioteca de rostos - Orbi360 NVR",
   "uploadFaceImage": {
     "title": "Carregar imagem do rosto",
     "desc": "Carregue uma imagem para procurar rostos e incluir em {{pageToggle}}"

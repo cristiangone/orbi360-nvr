@@ -16,10 +16,10 @@
     }
   },
   "recordings": {
-    "documentTitle": "Posnetki - Frigate"
+    "documentTitle": "Posnetki - Orbi360 NVR"
   },
   "camera": "Kamera",
-  "documentTitle": "Pregled - Frigate",
+  "documentTitle": "Pregled - Orbi360 NVR",
   "alerts": "Opozorila",
   "detections": "Zaznave",
   "motion": {

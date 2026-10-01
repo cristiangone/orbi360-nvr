@@ -6,7 +6,7 @@
     "label": "攝影機設定",
     "friendly_name": {
         "label": "顯示名稱",
-        "description": "攝影機在 Frigate 介面顯示的名稱"
+        "description": "攝影機在 Orbi360 NVR 介面顯示的名稱"
     },
     "enabled": {
         "label": "已啟用",
@@ -811,7 +811,7 @@
             },
             "calibrate_on_startup": {
                 "label": "啟動時校準",
-                "description": "在啟動時測量 PTZ 電機速度以提高追蹤精度。Frigate 將在校準後用 movement_weights 更新配置。"
+                "description": "在啟動時測量 PTZ 電機速度以提高追蹤精度。Orbi360 NVR 將在校準後用 movement_weights 更新配置。"
             },
             "zooming": {
                 "label": "變焦模式",
@@ -848,7 +848,7 @@
         },
         "ignore_time_mismatch": {
             "label": "忽略時間不匹配",
-            "description": "忽略 ONVIF 通訊中攝影機和 Frigate 伺服器之間的時間同步差異。"
+            "description": "忽略 ONVIF 通訊中攝影機和 Orbi360 NVR 伺服器之間的時間同步差異。"
         }
     },
     "best_image_timeout": {
@@ -868,7 +868,7 @@
         },
         "dashboard": {
             "label": "在即時儀表板上顯示",
-            "description": "切換此攝影機在 Frigate 頁面的所有位置是否可見。停用此項將需要手動編輯配置才能在頁面中再次檢視此攝影機。"
+            "description": "切換此攝影機在 Orbi360 NVR 頁面的所有位置是否可見。停用此項將需要手動編輯配置才能在頁面中再次檢視此攝影機。"
         },
         "review": {
             "label": "在Review中顯示",
@@ -884,7 +884,7 @@
         "description": "區域允許您定義幀的特定區域，以便確定目標是否在特定區域內。",
         "friendly_name": {
             "label": "區域名稱",
-            "description": "區域的友好名稱，顯示在 Frigate UI 中。如果未設定，將使用區域名稱的格式化版本。"
+            "description": "區域的友好名稱，顯示在 Orbi360 NVR UI 中。如果未設定，將使用區域名稱的格式化版本。"
         },
         "enabled": {
             "label": "開啟",

@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Klasifikační modely - Frigate",
+  "documentTitle": "Klasifikační modely - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Odstrániť Klasifikačné obrazy",
     "renameCategory": "Přejmenovat třídu",
@@ -43,7 +43,7 @@
       "deleteCategoryFailed": "Chyba při mazání třídy: {{errorMessage}}",
       "deleteModelFailed": "Chyba při mazání modelu: {{errorMessage}}",
       "categorizeFailed": "Chyba při mazání obrázku: {{errorMessage}}",
-      "trainingFailed": "Trénování modelu selhalo. Zkontrolujte logy Frigate pro zjištění detailů.",
+      "trainingFailed": "Trénování modelu selhalo. Zkontrolujte logy Orbi360 NVR pro zjištění detailů.",
       "trainingFailedToStart": "Chyba spuštění trénování modelu: {{errorMessage}}",
       "updateModelFailed": "Chyba aktualizace modelu: {{errorMessage}}",
       "renameCategoryFailed": "Chyba přejmenování třídy: {{errorMessage}}"

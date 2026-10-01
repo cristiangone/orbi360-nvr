@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "storage": "Frigate - Estatísticas de Armazenamento",
-    "general": "Frigate - Estatísticas Gerais",
-    "enrichments": "Frigate - Estatísticas de Enriquecimento",
+    "storage": "Orbi360 NVR - Estatísticas de Armazenamento",
+    "general": "Orbi360 NVR - Estatísticas Gerais",
+    "enrichments": "Orbi360 NVR - Estatísticas de Enriquecimento",
     "logs": {
-      "frigate": "Frigate - Registos de Eventos do Frigate",
-      "go2rtc": "Frigate - Registos de Eventos do Go2RTC",
-      "nginx": "Frigate - Registos de Eventos do Nginx"
+      "frigate": "Orbi360 NVR - Registos de Eventos do Orbi360 NVR",
+      "go2rtc": "Orbi360 NVR - Registos de Eventos do Go2RTC",
+      "nginx": "Orbi360 NVR - Registos de Eventos do Nginx"
     },
-    "cameras": "Frigate - Estatísticas das Câmaras"
+    "cameras": "Orbi360 NVR - Estatísticas das Câmaras"
   },
   "title": "Sistema",
   "metrics": "Métricas do sistema",
@@ -42,7 +42,7 @@
       "percentageOfTotalUsed": "Porcentagem do total",
       "bandwidth": "Largura de banda",
       "unused": {
-        "tips": "Este valor pode não representar com precisão o espaço livre disponível para o Frigate se você tiver outros ficheiros armazenados em sua unidade além das gravações do Frigate. O Frigate não rastreia o uso de armazenamento fora de suas gravações.",
+        "tips": "Este valor pode não representar com precisão o espaço livre disponível para o Orbi360 NVR se você tiver outros ficheiros armazenados em sua unidade além das gravações do Orbi360 NVR. O Orbi360 NVR não rastreia o uso de armazenamento fora de suas gravações.",
         "title": "Não utilizado"
       },
       "unusedStorageInformation": "Informações de armazenamento não utilizado",
@@ -53,7 +53,7 @@
     "recordings": {
       "title": "Gravações",
       "earliestRecording": "Primeira gravação disponível:",
-      "tips": "Este valor representa o armazenamento total utilizado pelas gravações na base de dados do Frigate. O Frigate não acompanha a utilização do armazenamento de todos os ficheiros no seu disco."
+      "tips": "Este valor representa o armazenamento total utilizado pelas gravações na base de dados do Orbi360 NVR. O Orbi360 NVR não acompanha a utilização do armazenamento de todos os ficheiros no seu disco."
     },
     "shm": {
       "title": "Alocação SHM (memória partilhada)",

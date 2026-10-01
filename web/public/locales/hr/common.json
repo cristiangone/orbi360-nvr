@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Do {{time}}",
-    "untilForRestart": "Dok se Frigate ponovno pokrene.",
+    "untilForRestart": "Dok se Orbi360 NVR ponovno pokrene.",
     "untilRestart": "Do ponovnog pokretanja",
     "justNow": "Upravo",
     "today": "Danas",
@@ -168,9 +168,9 @@
     "help": "Pomoć",
     "documentation": {
       "title": "Dokumentacija",
-      "label": "Frigate dokumentacija"
+      "label": "Orbi360 NVR dokumentacija"
     },
-    "restart": "Ponovno pokreni Frigate",
+    "restart": "Ponovno pokreni Orbi360 NVR",
     "review": "Pregled",
     "explore": "Istraži",
     "export": "Izvezi",
@@ -258,7 +258,7 @@
   },
   "field": {
     "optional": "Opcionalno",
-    "internalID": "Interni ID koji Frigate koristi u konfiguraciji i bazi podataka"
+    "internalID": "Interni ID koji Orbi360 NVR koristi u konfiguraciji i bazi podataka"
   },
   "toast": {
     "copyUrlToClipboard": "Kopiran URL u međuspremnik.",
@@ -274,7 +274,7 @@
     "title": "Uloge",
     "admin": "Administrator",
     "viewer": "Gledatelj",
-    "desc": "Administratori imaju potpuni pristup svim značajkama u Frigate korisnickom sučelju. Gledatelji su ograničeni na pregled kamera, pregled stavki i povijesnog snimka u korisničkom sučelju."
+    "desc": "Administratori imaju potpuni pristup svim značajkama u Orbi360 NVR korisnickom sučelju. Gledatelji su ograničeni na pregled kamera, pregled stavki i povijesnog snimka u korisničkom sučelju."
   },
   "pagination": {
     "label": "paginacija",
@@ -289,12 +289,12 @@
     "more": "Više stranica"
   },
   "accessDenied": {
-    "documentTitle": "Pristup Odbijen - Frigate",
+    "documentTitle": "Pristup Odbijen - Orbi360 NVR",
     "title": "Pristup Odbijen",
     "desc": "Nemaš dopuštenje za pregled ove stranice."
   },
   "notFound": {
-    "documentTitle": "Nije Nađeno - Frigate",
+    "documentTitle": "Nije Nađeno - Orbi360 NVR",
     "title": "404",
     "desc": "Stranica nije pronađena"
   },

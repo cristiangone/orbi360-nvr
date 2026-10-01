@@ -1,18 +1,18 @@
 {
   "documentTitle": {
-    "default": "Nastavení - Frigate",
-    "authentication": "Nastavení ověřování - Frigate",
-    "camera": "Nastavení kamery - Frigate",
-    "classification": "Nastavení klasifikace - Frigate",
-    "notifications": "Nastavení notifikací - Frigate",
-    "masksAndZones": "Editor masky a zón - Frigate",
-    "motionTuner": "Ladění detekce pohybu - Frigate",
-    "object": "Ladění - Frigate",
-    "general": "Nastavení rozhraní - Frigate",
-    "frigatePlus": "Frigate+ nastavení - Frigate",
-    "enrichments": "Nastavení obohacení - Frigate",
-    "cameraManagement": "Správa kamer - Frigate",
-    "cameraReview": "Nastavení kontroly kamery - Frigate"
+    "default": "Nastavení - Orbi360 NVR",
+    "authentication": "Nastavení ověřování - Orbi360 NVR",
+    "camera": "Nastavení kamery - Orbi360 NVR",
+    "classification": "Nastavení klasifikace - Orbi360 NVR",
+    "notifications": "Nastavení notifikací - Orbi360 NVR",
+    "masksAndZones": "Editor masky a zón - Orbi360 NVR",
+    "motionTuner": "Ladění detekce pohybu - Orbi360 NVR",
+    "object": "Ladění - Orbi360 NVR",
+    "general": "Nastavení rozhraní - Orbi360 NVR",
+    "frigatePlus": "Frigate+ nastavení - Orbi360 NVR",
+    "enrichments": "Nastavení obohacení - Orbi360 NVR",
+    "cameraManagement": "Správa kamer - Orbi360 NVR",
+    "cameraReview": "Nastavení kontroly kamery - Orbi360 NVR"
   },
   "frigatePlus": {
     "toast": {
@@ -73,7 +73,7 @@
         "success": "Reindexování úspěšně spuštěno."
       },
       "title": "Sémantické Hledání",
-      "desc": "Sémantické vyhledávání ve Frigate umožňuje najít sledované objekty ve vašich záznamech pomocí samotného obrázku, uživatelem zadaného textového popisu nebo automaticky generovaného popisu.",
+      "desc": "Sémantické vyhledávání ve Orbi360 NVR umožňuje najít sledované objekty ve vašich záznamech pomocí samotného obrázku, uživatelem zadaného textového popisu nebo automaticky generovaného popisu.",
       "modelSize": {
         "small": {
           "title": "malý",
@@ -94,18 +94,18 @@
     },
     "toast": {
       "error": "Chyba při ukládání změn konfigurace: {{errorMessage}}",
-      "success": "Nastavení klasifikací uloženo. Restartujte Frigate pro aplikování změn."
+      "success": "Nastavení klasifikací uloženo. Restartujte Orbi360 NVR pro aplikování změn."
     },
     "restart_required": "Vyžadován restart (Nastavení klasifikací se změnilo)",
     "licensePlateRecognition": {
       "title": "Rozpoznávání SPZ",
-      "desc": "Frigate dokáže rozpoznávat SPZ na vozidlech a automaticky přidávat rozpoznané znaky do pole recognized_license_plate nebo známý název jako podružný štítek k objektům typu auto. Běžným případem použití je čtení SPZ aut vjíždějících na příjezdovou cestu nebo projíždějících kolem na ulici.",
+      "desc": "Orbi360 NVR dokáže rozpoznávat SPZ na vozidlech a automaticky přidávat rozpoznané znaky do pole recognized_license_plate nebo známý název jako podružný štítek k objektům typu auto. Běžným případem použití je čtení SPZ aut vjíždějících na příjezdovou cestu nebo projíždějících kolem na ulici.",
       "readTheDocumentation": "Přečtěte si dokumentaci"
     },
     "faceRecognition": {
       "title": "Rozpoznávání obličeje",
       "readTheDocumentation": "Přečtěte si dokumentaci",
-      "desc": "Rozpoznávání obličeje umožňuje přiřadit lidem jména, a když je jejich obličej rozpoznán, Frigate přiřadí dané jméno jako podružný štítek (sub_label). Tato informace se zobrazuje v uživatelském rozhraní, je dostupná ve filtrech a je také součástí notifikací.",
+      "desc": "Rozpoznávání obličeje umožňuje přiřadit lidem jména, a když je jejich obličej rozpoznán, Orbi360 NVR přiřadí dané jméno jako podružný štítek (sub_label). Tato informace se zobrazuje v uživatelském rozhraní, je dostupná ve filtrech a je také součástí notifikací.",
       "modelSize": {
         "label": "Velikost Modelu",
         "desc": "Velikost modelu použitého pro rozpoznávání obličeje.",
@@ -169,7 +169,7 @@
       },
       "add": "Přidat Zónu",
       "edit": "Upravit Zónu",
-      "documentTitle": "Upravit Zónu - Frigate",
+      "documentTitle": "Upravit Zónu - Orbi360 NVR",
       "clickDrawPolygon": "Klikněte pro kreslení polygonu na obrázku.",
       "point_one": "{{count}} bod",
       "point_few": "{{count}} body",
@@ -185,7 +185,7 @@
         "title": "Maska detekce pohybu pokrývá {{polygonArea}}% záběru kamery. Příliš velké masky detekce pohybu nejsou doporučovány.",
         "tips": "Masky detekce pohybu nebrání detekci objektů. Místo toho byste měli použít požadovanou zónu."
       },
-      "documentTitle": "Editovat Masku Detekce pohybu - Frigate",
+      "documentTitle": "Editovat Masku Detekce pohybu - Orbi360 NVR",
       "desc": {
         "title": "Masky detekce pohybu slouží k zabránění nežádoucím typům pohybu ve spuštění detekce. Příliš rozsáhlé maskování však může ztížit sledování objektů.",
         "documentation": "Dokumentace"
@@ -268,7 +268,7 @@
     },
     "objectMasks": {
       "label": "Masky Objektu",
-      "documentTitle": "Upravit Masku Objektu - Frigate",
+      "documentTitle": "Upravit Masku Objektu - Orbi360 NVR",
       "desc": {
         "documentation": "Dokumentace",
         "title": "Masky filtrování objektů slouží k odfiltrování falešných detekcí daného typu objektu na základě jeho umístění."
@@ -390,7 +390,7 @@
       "tips": "<p><strong>Boxy oblastí zájmu</strong></p><br><p>Jasně zelené boxy budou překryty na oblastech zájmu ve snímku, které jsou odesílány detektoru objektů.</p>"
     },
     "title": "Ladění",
-    "detectorDesc": "Frigate používá vaše detektory {{detectors}} k detekci objektů ve streamu vašich kamer.",
+    "detectorDesc": "Orbi360 NVR používá vaše detektory {{detectors}} k detekci objektů ve streamu vašich kamer.",
     "objectList": "Seznam objektů",
     "boundingBoxes": {
       "title": "Ohraničující rámečky",
@@ -442,17 +442,17 @@
   "camera": {
     "streams": {
       "title": "Streamy",
-      "desc": "Dočasně zakáže kameru dokud Frigate nerestartuje. Deaktivace kamery zcela zastaví zpracování jejích streamů ve Frigate. Detekce, nahrávání ani ladění nebudou dostupné.<br/><em>Poznámka: Tímto nedojde k deaktivaci restreamů v go2rtc.</em>"
+      "desc": "Dočasně zakáže kameru dokud Orbi360 NVR nerestartuje. Deaktivace kamery zcela zastaví zpracování jejích streamů ve Orbi360 NVR. Detekce, nahrávání ani ladění nebudou dostupné.<br/><em>Poznámka: Tímto nedojde k deaktivaci restreamů v go2rtc.</em>"
     },
     "review": {
-      "desc": "Dočasně povolte nebo zakažte upozornění a detekce pro tuto kameru dokud Frigate nerestartuje. Pokud jsou vypnuté, nebudou se vytvářet žádné nové položky k přezkoumání. ",
+      "desc": "Dočasně povolte nebo zakažte upozornění a detekce pro tuto kameru dokud Orbi360 NVR nerestartuje. Pokud jsou vypnuté, nebudou se vytvářet žádné nové položky k přezkoumání. ",
       "detections": "Detekce ",
       "title": "Revize",
       "alerts": "Výstrahy "
     },
     "reviewClassification": {
       "readTheDocumentation": "Přečtěte si dokumentaci",
-      "desc": "Frigate rozděluje položky k přezkoumání na Upozornění a Detekce. Ve výchozím nastavení jsou všechny objekty typu <em>osoba</em> a <em>auto</em> považovány za Upozornění. Kategorizaci těchto položek můžete upřesnit nastavením požadovaných zón.",
+      "desc": "Orbi360 NVR rozděluje položky k přezkoumání na Upozornění a Detekce. Ve výchozím nastavení jsou všechny objekty typu <em>osoba</em> a <em>auto</em> považovány za Upozornění. Kategorizaci těchto položek můžete upřesnit nastavením požadovaných zón.",
       "title": "Přehled klasifikace",
       "objectAlertsTips": "Všechny {{alertsLabels}} objekty na {{cameraName}} budou zobrazeny ve Výstrahách.",
       "objectDetectionsTips": "Všechny objekty typu {{detectionsLabels}}, které nejsou na kameře {{cameraName}} zařazeny do kategorie, budou zobrazeny jako Detekce bez ohledu na to, ve které zóně se nacházejí.",
@@ -467,7 +467,7 @@
       "selectAlertsZones": "Vybrat zóny pro Výstrahy",
       "selectDetectionsZones": "Vybrat zóny pro Detekce",
       "toast": {
-        "success": "Konfigurace Revizí Klasifikací byla uložena. Restartujte Frigate pro aplikování změn."
+        "success": "Konfigurace Revizí Klasifikací byla uložena. Restartujte Orbi360 NVR pro aplikování změn."
       },
       "limitDetections": "Omezit detekce pro specifické zóny"
     },
@@ -514,12 +514,12 @@
     "notificationSettings": {
       "documentation": "Přečtěte si dokumentaci",
       "title": "Nastavení notifikací",
-      "desc": "Frigate může nativně odesílat push notifikace do vašeho zařízení, pokud běží v prohlížeči nebo je nainstalován jako PWA (progresivní webová aplikace)."
+      "desc": "Orbi360 NVR může nativně odesílat push notifikace do vašeho zařízení, pokud běží v prohlížeči nebo je nainstalován jako PWA (progresivní webová aplikace)."
     },
     "notificationUnavailable": {
       "documentation": "Přečtěte si dokumentaci",
       "title": "Notifikace Nedostupné",
-      "desc": "Webové push notifikace vyžadují zabezpečený kontext (<code>https://…</code>). Jedná se o omezení prohlížeče. Pro použití notifikací přistupujte k Frigate přes zabezpečené připojení."
+      "desc": "Webové push notifikace vyžadují zabezpečený kontext (<code>https://…</code>). Jedná se o omezení prohlížeče. Pro použití notifikací přistupujte k Orbi360 NVR přes zabezpečené připojení."
     },
     "cameras": {
       "title": "Kamery",
@@ -558,7 +558,7 @@
         "registerFailed": "Nepodařilo se uložit registraci notifikací."
       },
       "success": {
-        "registered": "Notifikace byly úspěšně zaregistrovány. Pro odesílání notifikací (včetně testovací) je nutné Frigate restartovat.",
+        "registered": "Notifikace byly úspěšně zaregistrovány. Pro odesílání notifikací (včetně testovací) je nutné Orbi360 NVR restartovat.",
         "settingSaved": "Nastavení notifikací bylo uloženo."
       }
     },
@@ -602,7 +602,7 @@
       },
       "createUser": {
         "title": "Vytvořit nového uživatele",
-        "desc": "Přidejte nový uživatelský účet a zadejte roli pro určení přístupu k jednotlivým částem uživatelského rozhraní Frigate.",
+        "desc": "Přidejte nový uživatelský účet a zadejte roli pro určení přístupu k jednotlivým částem uživatelského rozhraní Orbi360 NVR.",
         "usernameOnlyInclude": "Uživatelské jméno smí obsahovat pouze písmena, čísla, . nebo _",
         "confirmPassword": "Potvrďte prosím heslo"
       },
@@ -657,7 +657,7 @@
       }
     },
     "management": {
-      "desc": "Spravujte uživatelské účty této instance Frigate.",
+      "desc": "Spravujte uživatelské účty této instance Orbi360 NVR.",
       "title": "Správa uživatelů"
     },
     "addUser": "Přidat uživatele",
@@ -675,7 +675,7 @@
     "title": "Ladění detekce pohybu",
     "desc": {
       "documentation": "Přečtěte si příručku Ladění detekce pohybu",
-      "title": "Frigate používá detekci pohybu jako první kontrolu k ověření, zda se ve snímku děje něco, co stojí za další analýzu pomocí detekce objektů."
+      "title": "Orbi360 NVR používá detekci pohybu jako první kontrolu k ověření, zda se ve snímku děje něco, co stojí za další analýzu pomocí detekce objektů."
     },
     "Threshold": {
       "title": "Práh",
@@ -690,7 +690,7 @@
     "title": "Nastavení obohacení",
     "faceRecognition": {
       "title": "Rozpoznání obličeje",
-      "desc": "Rozpoznávání obličeje umožňuje přiřadit lidem jména a po rozpoznání jejich obličeje. Frigate přiřadí jméno osoby jako podštítek. Tyto informace jsou zahrnuty v uživatelském rozhraní, filtrech a také v oznámeních.",
+      "desc": "Rozpoznávání obličeje umožňuje přiřadit lidem jména a po rozpoznání jejich obličeje. Orbi360 NVR přiřadí jméno osoby jako podštítek. Tyto informace jsou zahrnuty v uživatelském rozhraní, filtrech a také v oznámeních.",
       "readTheDocumentation": "Přečtěte si Dokumentaci",
       "modelSize": {
         "label": "Velikost Modelu",
@@ -717,7 +717,7 @@
         "error": "Chyba spuštění přeindexování: {{errorMessage}}"
       },
       "title": "Sémantické vyhledávání",
-      "desc": "Sémantické vyhledávání ve Frigate umožňuje najít sledované objekty v rámci vašich zkontrolovaných položek pomocí samotného obrázku, uživatelem definovaného textového popisu nebo automaticky generovaného popisu.",
+      "desc": "Sémantické vyhledávání ve Orbi360 NVR umožňuje najít sledované objekty v rámci vašich zkontrolovaných položek pomocí samotného obrázku, uživatelem definovaného textového popisu nebo automaticky generovaného popisu.",
       "readTheDocumentation": "Přečtěte si Dokumentaci",
       "modelSize": {
         "label": "Velikost modelu",
@@ -739,12 +739,12 @@
     "unsavedChanges": "Neuložené změny nastavení Obohacení",
     "licensePlateRecognition": {
       "title": "Rozpoznání SPZ",
-      "desc": "Frigate dokáže rozpoznávat SPZ vozidel a automaticky přidávat detekované znaky do pole recognized_license_plate nebo název známé SPZ jako sub_label k objektům typu auto. Běžným případem použití může být čtení SPZ aut vjíždějících na příjezdovou cestu nebo aut projíždějících po ulici.",
+      "desc": "Orbi360 NVR dokáže rozpoznávat SPZ vozidel a automaticky přidávat detekované znaky do pole recognized_license_plate nebo název známé SPZ jako sub_label k objektům typu auto. Běžným případem použití může být čtení SPZ aut vjíždějících na příjezdovou cestu nebo aut projíždějících po ulici.",
       "readTheDocumentation": "Přečtěte si Dokumentaci"
     },
     "restart_required": "Nutný restart (nastavení Obohacení změněno)",
     "toast": {
-      "success": "Nastavení Obohacení uloženo. Restartujte Frigate aby se změny aplikovaly.",
+      "success": "Nastavení Obohacení uloženo. Restartujte Orbi360 NVR aby se změny aplikovaly.",
       "error": "Chyba ukládání změn konfigurace: {{errorMessage}}"
     }
   },
@@ -816,7 +816,7 @@
         },
         "actions": {
           "title": "Akce",
-          "desc": "Ve výchozím nastavení Frigate odesílá MQTT zprávu pro všechny spouštěče. Podřazené popisky přidávají název spouštěče k popisku objektu. Atributy jsou prohledávatelná metadata uložená samostatně v metadatech sledovaného objektu.",
+          "desc": "Ve výchozím nastavení Orbi360 NVR odesílá MQTT zprávu pro všechny spouštěče. Podřazené popisky přidávají název spouštěče k popisku objektu. Atributy jsou prohledávatelná metadata uložená samostatně v metadatech sledovaného objektu.",
           "error": {
             "min": "Musí být vybrána alespoň jedna akce."
           }
@@ -902,7 +902,7 @@
     },
     "management": {
       "title": "Správa role diváka",
-      "desc": "Spravujte vlastní role diváků a jejich oprávnění k přístupu ke kamerám pro tuto instanci Frigate."
+      "desc": "Spravujte vlastní role diváků a jejich oprávnění k přístupu ke kamerám pro tuto instanci Orbi360 NVR."
     }
   },
   "cameraWizard": {
@@ -932,7 +932,7 @@
   "cameraReview": {
     "reviewClassification": {
       "toast": {
-        "success": "Konfigurace Klasifikací Revizí byla uložena. Restartujte Frigate pro aplikování změn."
+        "success": "Konfigurace Klasifikací Revizí byla uložena. Restartujte Orbi360 NVR pro aplikování změn."
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "Tiesiogiai - Frigate"
+    "default": "Tiesiogiai - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Tiesiogiai - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Tiesiogiai - Orbi360 NVR",
   "lowBandwidthMode": "Mažo-pralaidumo Rėžimas",
   "cameraAudio": {
     "enable": "Įgalinti Kamerų Garsą",
@@ -178,7 +178,7 @@
   },
   "noCameras": {
     "title": "Nėra Sukonfiguruotų Kamerų",
-    "description": "Pradėti nuo kameros prijungimo pire Frigate.",
+    "description": "Pradėti nuo kameros prijungimo pire Orbi360 NVR.",
     "buttonText": "Pridėti Kamerą",
     "restricted": {
       "title": "Nėra Prieinamų Kamerų",
@@ -186,7 +186,7 @@
     },
     "default": {
       "title": "Nėra Sukonfiguruotų Kamerų",
-      "description": "Pradėkite nuo kameros prijungimo prie Frigate.",
+      "description": "Pradėkite nuo kameros prijungimo prie Orbi360 NVR.",
       "buttonText": "Pridėti Kamerą"
     },
     "group": {

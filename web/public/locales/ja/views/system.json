@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "cameras": "カメラ統計情報 - Frigate",
-    "general": "一般統計 - Frigate",
-    "storage": "ストレージ統計 - Frigate",
-    "enrichments": "高度解析統計 - Frigate",
+    "cameras": "カメラ統計情報 - Orbi360 NVR",
+    "general": "一般統計 - Orbi360 NVR",
+    "storage": "ストレージ統計 - Orbi360 NVR",
+    "enrichments": "高度解析統計 - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate ログ - Frigate",
-      "go2rtc": "Go2RTC ログ - Frigate",
-      "nginx": "Nginx ログ - Frigate",
-      "websocket": "メッセージログ - Frigate"
+      "frigate": "Orbi360 NVR ログ - Orbi360 NVR",
+      "go2rtc": "Go2RTC ログ - Orbi360 NVR",
+      "nginx": "Nginx ログ - Orbi360 NVR",
+      "websocket": "メッセージログ - Orbi360 NVR"
     }
   },
   "title": "システム",
@@ -108,7 +108,7 @@
       "intelGpuWarning": {
         "title": "Intel GPU 統計情報の警告",
         "message": "GPU の統計情報を取得できません",
-        "description": "これは Intel の GPU 統計取得ツール（intel_gpu_top）における既知の不具合です。ハードウェアアクセラレーションやオブジェクト検知が (i)GPU 上で正しく動作している場合でも、GPU 使用率が 0% と繰り返し表示されることがあります。これは Frigate の不具合ではありません。ホストを再起動することで一時的に解消し、GPU が正常に動作していることを確認できます。本問題はパフォーマンスには影響しません。"
+        "description": "これは Intel の GPU 統計取得ツール（intel_gpu_top）における既知の不具合です。ハードウェアアクセラレーションやオブジェクト検知が (i)GPU 上で正しく動作している場合でも、GPU 使用率が 0% と繰り返し表示されることがあります。これは Orbi360 NVR の不具合ではありません。ホストを再起動することで一時的に解消し、GPU が正常に動作していることを確認できます。本問題はパフォーマンスには影響しません。"
       },
       "gpuCompute": "GPU 演算 / エンコード",
       "gpuTemperature": "GPU 温度",
@@ -132,7 +132,7 @@
     "overview": "概要",
     "recordings": {
       "title": "録画",
-      "tips": "この値は Frigate のデータベースで録画が使用している総ストレージ量を表します。Frigate はディスク上のすべてのファイルの使用量を追跡しているわけではありません。",
+      "tips": "この値は Orbi360 NVR のデータベースで録画が使用している総ストレージ量を表します。Orbi360 NVR はディスク上のすべてのファイルの使用量を追跡しているわけではありません。",
       "earliestRecording": "利用可能な最古の録画:"
     },
     "shm": {
@@ -152,7 +152,7 @@
       "bandwidth": "帯域幅",
       "unused": {
         "title": "未使用",
-        "tips": "Frigate の録画以外にドライブへ保存しているファイルがある場合、この値は Frigate が利用できる空き容量を正確に表さないことがあります。Frigate は録画以外のストレージ使用量を追跡しません。"
+        "tips": "Orbi360 NVR の録画以外にドライブへ保存しているファイルがある場合、この値は Orbi360 NVR が利用できる空き容量を正確に表さないことがあります。Orbi360 NVR は録画以外のストレージ使用量を追跡しません。"
       }
     }
   },

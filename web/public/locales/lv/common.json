@@ -78,7 +78,7 @@
     "inProgress": "Izpilda",
     "invalidStartTime": "Nederīgs sākuma laiks",
     "invalidEndTime": "Nederīgs beigu laiks",
-    "untilForRestart": "Līdz Frigate pārstartējas.",
+    "untilForRestart": "Līdz Orbi360 NVR pārstartējas.",
     "untilRestart": "Līdz pārstartēšanai",
     "ago": "{{timeAgo}} pirms",
     "justNow": "Nupat",
@@ -243,7 +243,7 @@
       "title": "Dokumentācija",
       "label": "Frigates dokumentācija"
     },
-    "restart": "Restartēt Frigate",
+    "restart": "Restartēt Orbi360 NVR",
     "live": {
       "title": "Tiešraide",
       "allCameras": "Visas kameras",
@@ -284,7 +284,7 @@
     "title": "Loma",
     "admin": "Administrators",
     "viewer": "Skatītājs",
-    "desc": "Administratoriem ir pilna piekļuve visām Frigate funkcijām. Skatītāji var skatīt tikai kameras, skatāmos elementus un arhivētos ierakstus."
+    "desc": "Administratoriem ir pilna piekļuve visām Orbi360 NVR funkcijām. Skatītāji var skatīt tikai kameras, skatāmos elementus un arhivētos ierakstus."
   },
   "pagination": {
     "label": "lappuse",
@@ -299,12 +299,12 @@
     "more": "Vairāk lapas"
   },
   "accessDenied": {
-    "documentTitle": "Piekļuve liegta - Frigate",
+    "documentTitle": "Piekļuve liegta - Orbi360 NVR",
     "title": "Piekļuve liegta",
     "desc": "Jums nav atļaujas skatīt šo lapu."
   },
   "notFound": {
-    "documentTitle": "Nav atrasts - Frigate",
+    "documentTitle": "Nav atrasts - Orbi360 NVR",
     "title": "404",
     "desc": "Lapa nav atrasta"
   },

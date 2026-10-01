@@ -1,9 +1,9 @@
 {
   "restart": {
-    "title": "Ali si prepričan, da želiš ponovno zagnati Frigate?",
+    "title": "Ali si prepričan, da želiš ponovno zagnati Orbi360 NVR?",
     "button": "Ponovni zagon",
     "restarting": {
-      "title": "Frigate se ponovno zaganja",
+      "title": "Orbi360 NVR se ponovno zaganja",
       "content": "Stran se bo osvežila čez {{countdown}} sekund.",
       "button": "Prisili osvežitev zdaj"
     },

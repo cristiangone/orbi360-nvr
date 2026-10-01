@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "general": "Algemene Statistieken - Frigate",
+    "general": "Algemene Statistieken - Orbi360 NVR",
     "logs": {
-      "nginx": "Nginx Logboeken - Frigate",
-      "go2rtc": "Go2RTC Logboeken - Frigate",
-      "frigate": "Frigate Logboek - Frigate",
-      "websocket": "Berichten Logboeken - Frigate"
+      "nginx": "Nginx Logboeken - Orbi360 NVR",
+      "go2rtc": "Go2RTC Logboeken - Orbi360 NVR",
+      "frigate": "Orbi360 NVR Logboek - Orbi360 NVR",
+      "websocket": "Berichten Logboeken - Orbi360 NVR"
     },
-    "storage": "Opslag Statistieken - Frigate",
-    "cameras": "Camera Statistieken - Frigate",
-    "enrichments": "Verrijkings Statistieken - Frigate"
+    "storage": "Opslag Statistieken - Orbi360 NVR",
+    "cameras": "Camera Statistieken - Orbi360 NVR",
+    "enrichments": "Verrijkings Statistieken - Orbi360 NVR"
   },
   "title": "Systeem",
   "metrics": "Systeemstatistieken",
@@ -103,7 +103,7 @@
       "intelGpuWarning": {
         "title": "Waarschuwing Intel GPU-statistieken",
         "message": "GPU-statistieken niet beschikbaar",
-        "description": "Dit is een bekend probleem in de GPU-statistiekentools van Intel (intel_gpu_top). Deze raken defect en geven herhaaldelijk een GPU-gebruik van 0% weer, zelfs wanneer hardware-acceleratie en objectdetectie correct draaien op de (i)GPU. Dit is geen bug in Frigate. Je kunt de host opnieuw opstarten om het tijdelijk op te lossen en te controleren dat de GPU goed werkt. Dit heeft geen invloed op de prestaties."
+        "description": "Dit is een bekend probleem in de GPU-statistiekentools van Intel (intel_gpu_top). Deze raken defect en geven herhaaldelijk een GPU-gebruik van 0% weer, zelfs wanneer hardware-acceleratie en objectdetectie correct draaien op de (i)GPU. Dit is geen bug in Orbi360 NVR. Je kunt de host opnieuw opstarten om het tijdelijk op te lossen en te controleren dat de GPU goed werkt. Dit heeft geen invloed op de prestaties."
       },
       "gpuTemperature": "GPU Temperatuur"
     },
@@ -126,7 +126,7 @@
     "recordings": {
       "title": "Opnames",
       "earliestRecording": "Oudste beschikbare opname:",
-      "tips": "Deze waarde laat het totale opslag ruimte gebruik voor opnames zien in de database van Frigate. Frigate houdt geen opslag gebruiks gegevens bij van alle bestanden op uw schijf."
+      "tips": "Deze waarde laat het totale opslag ruimte gebruik voor opnames zien in de database van Orbi360 NVR. Orbi360 NVR houdt geen opslag gebruiks gegevens bij van alle bestanden op uw schijf."
     },
     "cameraStorage": {
       "title": "Camera Opslag",
@@ -135,7 +135,7 @@
       "percentageOfTotalUsed": "Percentage van Totaal",
       "unused": {
         "title": "Ongebruikt",
-        "tips": "Deze waarde kan de beschikbare opslag ruimte voor Frigate niet goed weergeven indien er ook andere bestanden op de schijf staan. Frigate houdt geen opslag gegevens bij van bestanden buiten haar eigen opnames."
+        "tips": "Deze waarde kan de beschikbare opslag ruimte voor Orbi360 NVR niet goed weergeven indien er ook andere bestanden op de schijf staan. Orbi360 NVR houdt geen opslag gegevens bij van bestanden buiten haar eigen opnames."
       },
       "camera": "Camera",
       "bandwidth": "Bandbreedte"

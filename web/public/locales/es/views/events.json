@@ -24,7 +24,7 @@
     "aria": "Seleccionar eventos",
     "noFoundForTimePeriod": "No se encontraron eventos para este período de tiempo."
   },
-  "documentTitle": "Revisión - Frigate",
+  "documentTitle": "Revisión - Orbi360 NVR",
   "markAsReviewed": "Marcar como revisado",
   "newReviewItems": {
     "label": "Ver nuevos elementos de revisión",
@@ -32,7 +32,7 @@
   },
   "camera": "Cámara",
   "recordings": {
-    "documentTitle": "Grabaciones - Frigate",
+    "documentTitle": "Grabaciones - Orbi360 NVR",
     "invalidSharedLink": "No se puede abrir el enlace de la grabación con marca de tiempo debido a un error de análisis.",
     "invalidSharedCamera": "No se puede abrir el enlace de la grabación con marca de tiempo debido a una cámara desconocida o no autorizada."
   },

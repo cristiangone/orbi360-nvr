@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Configuratie-bewerken - Frigate",
+  "documentTitle": "Configuratie-bewerken - Orbi360 NVR",
   "copyConfig": "Configuratie kopiëren",
   "saveAndRestart": "Opslaan en opnieuw opstarten",
   "toast": {
@@ -14,5 +14,5 @@
   "saveOnly": "Alleen opslaan",
   "confirm": "Afsluiten zonder op te slaan?",
   "safeConfigEditor": "Configuratie-editor (veilige modus)",
-  "safeModeDescription": "Frigate is in veilige modus vanwege een configuratievalidatiefout."
+  "safeModeDescription": "Orbi360 NVR is in veilige modus vanwege een configuratievalidatiefout."
 }

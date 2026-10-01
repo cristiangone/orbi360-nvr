@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "即時監控 - Frigate"
+    "default": "即時監控 - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - 即時畫面 - Frigate",
+  "documentTitle.withCamera": "{{camera}} - 即時畫面 - Orbi360 NVR",
   "lowBandwidthMode": "低流量模式",
   "twoWayTalk": {
     "enable": "啟用雙向通話",
@@ -186,7 +186,7 @@
   },
   "noCameras": {
     "title": "未設定攝影機",
-    "description": "準備開始連線攝影機至 Frigate。",
+    "description": "準備開始連線攝影機至 Orbi360 NVR。",
     "buttonText": "新增攝影機",
     "restricted": {
       "title": "無可用攝影機",
@@ -194,7 +194,7 @@
     },
     "default": {
       "title": "沒有配置攝影機",
-      "description": "現在就將攝影機接入到 Frigate 吧。",
+      "description": "現在就將攝影機接入到 Orbi360 NVR 吧。",
       "buttonText": "新增攝影機"
     },
     "group": {

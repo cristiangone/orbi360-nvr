@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Klasifikasi Model - Frigate",
+  "documentTitle": "Klasifikasi Model - Orbi360 NVR",
   "details": {
     "scoreInfo": "Skor tersebut mewakili rata-rata kepercayaan klasifikasi di seluruh deteksi objek ini.",
     "none": "Tidak Ada",
@@ -39,7 +39,7 @@
       "deleteCategoryFailed": "Gagal menghapus kelas: {{errorMessage}}",
       "deleteModelFailed": "Gagal menghapus model: {{errorMessage}}",
       "categorizeFailed": "Gagal mengkategorikan gambar: {{errorMessage}}",
-      "trainingFailed": "Gagal melakukan training model. Cek log Frigate untuk rinciannya.",
+      "trainingFailed": "Gagal melakukan training model. Cek log Orbi360 NVR untuk rinciannya.",
       "trainingFailedToStart": "Gagal memulai training model: {{errorMessage}}"
     }
   },

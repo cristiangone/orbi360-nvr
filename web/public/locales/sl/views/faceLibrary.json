@@ -51,7 +51,7 @@
       "updateFaceScoreFailed": "Posodobitev ocene obraza ni uspela: {{errorMessage}}"
     }
   },
-  "documentTitle": "Knjižnica obrazov - Frigate",
+  "documentTitle": "Knjižnica obrazov - Orbi360 NVR",
   "collections": "Zbirke",
   "createFaceLibrary": {
     "title": "Ustvari Zbirko",

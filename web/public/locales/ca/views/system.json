@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "cameras": "Estadístiques de càmera - Frigate",
-    "storage": "Estadístiques d'emmagatzematge - Frigate",
-    "general": "Estadístiques generals - Frigate",
+    "cameras": "Estadístiques de càmera - Orbi360 NVR",
+    "storage": "Estadístiques d'emmagatzematge - Orbi360 NVR",
+    "general": "Estadístiques generals - Orbi360 NVR",
     "logs": {
-      "frigate": "Registres de Frigate - Frigate",
-      "go2rtc": "Registres de Go2RTC - Frigate",
-      "nginx": "Registres de Nginix - Frigate",
-      "websocket": "Registres de missatges - Frigate"
+      "frigate": "Registres de Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Registres de Go2RTC - Orbi360 NVR",
+      "nginx": "Registres de Nginix - Orbi360 NVR",
+      "websocket": "Registres de missatges - Orbi360 NVR"
     },
-    "enrichments": "Estadístiques complementàries - Frigate"
+    "enrichments": "Estadístiques complementàries - Orbi360 NVR"
   },
   "title": "Sistema",
   "metrics": "Mètriques del sistema",
@@ -109,7 +109,7 @@
       "intelGpuWarning": {
         "title": "Avís d'estadístiques de la GPU d'Intel",
         "message": "Estadístiques de GPU no disponibles",
-        "description": "Aquest és un error conegut en les eines d'informació de les estadístiques de GPU d'Intel (intel.gpu.top) on es trencarà i retornarà repetidament un ús de GPU del 0% fins i tot en els casos en què l'acceleració del maquinari i la detecció d'objectes s'executen correctament a la (i)GPU. Això no és un error de Frigate. Podeu reiniciar l'amfitrió per a corregir temporalment el problema i confirmar que la GPU funciona correctament. Això no afecta el rendiment."
+        "description": "Aquest és un error conegut en les eines d'informació de les estadístiques de GPU d'Intel (intel.gpu.top) on es trencarà i retornarà repetidament un ús de GPU del 0% fins i tot en els casos en què l'acceleració del maquinari i la detecció d'objectes s'executen correctament a la (i)GPU. Això no és un error de Orbi360 NVR. Podeu reiniciar l'amfitrió per a corregir temporalment el problema i confirmar que la GPU funciona correctament. Això no afecta el rendiment."
       },
       "gpuTemperature": "Temperatura de la GPU",
       "npuTemperature": "Temperatura NPU",
@@ -133,7 +133,7 @@
     "recordings": {
       "title": "Gravacions",
       "earliestRecording": "Gravació més antiga disponible:",
-      "tips": "Aquest valor representa l'emmagatzematge total utilitzat per les gravacions a la base de dades de Frigate. Frigate no registre l'ús de tots els arxius del disc."
+      "tips": "Aquest valor representa l'emmagatzematge total utilitzat per les gravacions a la base de dades de Orbi360 NVR. Orbi360 NVR no registre l'ús de tots els arxius del disc."
     },
     "cameraStorage": {
       "camera": "Càmera",
@@ -143,7 +143,7 @@
       "title": "Emmagatzematge de càmera",
       "unused": {
         "title": "Sense utilitzar",
-        "tips": "Aquest valor pot no de forma exacta representar l'espai lliure disponible a Frigate si tens altres fitxers emmagatzemats en la vostra unitat més enllà dels registres de Frigate. Frigate no rastreja l'ús d'emmagatzematge extern als seus registres."
+        "tips": "Aquest valor pot no de forma exacta representar l'espai lliure disponible a Orbi360 NVR si tens altres fitxers emmagatzemats en la vostra unitat més enllà dels registres de Orbi360 NVR. Orbi360 NVR no rastreja l'ús d'emmagatzematge extern als seus registres."
       },
       "percentageOfTotalUsed": "Percentatge del total"
     },

@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Sei sicuro di voler riavviare Frigate?",
+    "title": "Sei sicuro di voler riavviare Orbi360 NVR?",
     "button": "Riavvia",
     "restarting": {
-      "title": "Frigate si sta riavviando",
+      "title": "Orbi360 NVR si sta riavviando",
       "content": "Questa pagina si ricaricherà in {{countdown}} secondi.",
       "button": "Forza ricarica ora"
     },
-    "description": "Questo fermerà brevemente Frigate mentre si riavvia."
+    "description": "Questo fermerà brevemente Orbi360 NVR mentre si riavvia."
   },
   "explore": {
     "plus": {
@@ -204,10 +204,10 @@
     "shareTimestamp": {
       "label": "Condividi orario",
       "title": "Condividi orario",
-      "description": "Condividi un URL con l'orario della posizione attuale del lettore oppure scegli un orario personalizzato. Tieni presente che questo URL non è pubblico ed è accessibile solo agli utenti che hanno accesso a Frigate e a questa telecamera.",
+      "description": "Condividi un URL con l'orario della posizione attuale del lettore oppure scegli un orario personalizzato. Tieni presente che questo URL non è pubblico ed è accessibile solo agli utenti che hanno accesso a Orbi360 NVR e a questa telecamera.",
       "custom": "Orario personalizzato",
       "button": "URL dell'orario di condivisione",
-      "shareTitle": "Orario revisione Frigate: {{camera}}"
+      "shareTitle": "Orario revisione Orbi360 NVR: {{camera}}"
     }
   },
   "imagePicker": {

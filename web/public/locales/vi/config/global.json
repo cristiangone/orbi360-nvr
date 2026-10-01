@@ -5,7 +5,7 @@
     },
     "safe_mode": {
         "label": "Chế độ an toàn",
-        "description": "Khi được kích hoạt, hãy khởi động Frigate ở chế độ an toàn với các tính năng bị hạn chế để khắc phục sự cố."
+        "description": "Khi được kích hoạt, hãy khởi động Orbi360 NVR ở chế độ an toàn với các tính năng bị hạn chế để khắc phục sự cố."
     },
     "environment_vars": {
         "label": "Biến môi trường"

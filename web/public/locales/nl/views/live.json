@@ -101,9 +101,9 @@
   "notifications": "Meldingen",
   "audio": "Geluid",
   "documentTitle": {
-    "default": "Live - Frigate"
+    "default": "Live - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Live - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Live - Orbi360 NVR",
   "autotracking": {
     "enable": "Automatisch volgen inschakelen",
     "disable": "Automatisch volgen uitschakelen"
@@ -186,7 +186,7 @@
   },
   "noCameras": {
     "title": "Geen camera’s ingesteld",
-    "description": "Begin door een camera te verbinden met Frigate.",
+    "description": "Begin door een camera te verbinden met Orbi360 NVR.",
     "buttonText": "Camera toevoegen",
     "restricted": {
       "title": "Geen camera's beschikbaar",
@@ -194,7 +194,7 @@
     },
     "default": {
       "title": "Geen camera’s ingesteld",
-      "description": "Begin door een camera te verbinden met Frigate.",
+      "description": "Begin door een camera te verbinden met Orbi360 NVR.",
       "buttonText": "Camera toevoegen"
     },
     "group": {

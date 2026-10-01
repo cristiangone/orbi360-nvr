@@ -4,7 +4,7 @@
     },
     "safe_mode": {
         "label": "Vikasietotila",
-        "description": "Kun käytössä, käynnistä Frigate vikasietotilassa rajoitetuilla ominaisuuksilla vianselvitystä varten."
+        "description": "Kun käytössä, käynnistä Orbi360 NVR vikasietotilassa rajoitetuilla ominaisuuksilla vianselvitystä varten."
     },
     "logger": {
         "label": "Lokitus",

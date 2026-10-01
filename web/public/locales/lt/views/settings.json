@@ -1,19 +1,19 @@
 {
   "documentTitle": {
-    "default": "Nustatymai - Frigate",
-    "authentication": "Autentifikavimo Nustatymai - Frigate",
-    "camera": "Kameros Nustatymai - Frigate",
-    "object": "Debug - Frigate",
-    "general": "Išvaizdos Parametrai - Frigate",
-    "frigatePlus": "Frigate+ Nustatymai - Frigate",
-    "notifications": "Pranešimų Nustatymai - Frigate",
-    "motionTuner": "Judesio Derinimas - Frigate",
-    "enrichments": "Patobulinimų Nustatymai - Frigate",
-    "masksAndZones": "Maskavimo ir Zonų redaktorius - Frigate",
-    "cameraManagement": "Valdyti Kameras - Frigate",
-    "cameraReview": "Kameros Peržiūros Nustatymai - Frigate",
-    "globalConfig": "Visuotiniai Parametrai — Frigate",
-    "cameraConfig": "Kameros Parametrai — Frigate"
+    "default": "Nustatymai - Orbi360 NVR",
+    "authentication": "Autentifikavimo Nustatymai - Orbi360 NVR",
+    "camera": "Kameros Nustatymai - Orbi360 NVR",
+    "object": "Debug - Orbi360 NVR",
+    "general": "Išvaizdos Parametrai - Orbi360 NVR",
+    "frigatePlus": "Frigate+ Nustatymai - Orbi360 NVR",
+    "notifications": "Pranešimų Nustatymai - Orbi360 NVR",
+    "motionTuner": "Judesio Derinimas - Orbi360 NVR",
+    "enrichments": "Patobulinimų Nustatymai - Orbi360 NVR",
+    "masksAndZones": "Maskavimo ir Zonų redaktorius - Orbi360 NVR",
+    "cameraManagement": "Valdyti Kameras - Orbi360 NVR",
+    "cameraReview": "Kameros Peržiūros Nustatymai - Orbi360 NVR",
+    "globalConfig": "Visuotiniai Parametrai — Orbi360 NVR",
+    "cameraConfig": "Kameros Parametrai — Orbi360 NVR"
   },
   "menu": {
     "ui": "UI",
@@ -110,7 +110,7 @@
     },
     "semanticSearch": {
       "title": "Semantic Paieška",
-      "desc": "Frigate Semantic Paieška leidžia jums atrasti sekamus objektus tarp peržiūrų, naudojant arba pačius paveiksliuks, vartotojo pateiktus tekstinius aprašymus arba automatiškai sugeneruotas reikšmes.",
+      "desc": "Orbi360 NVR Semantic Paieška leidžia jums atrasti sekamus objektus tarp peržiūrų, naudojant arba pačius paveiksliuks, vartotojo pateiktus tekstinius aprašymus arba automatiškai sugeneruotas reikšmes.",
       "reindexNow": {
         "label": "Perindeksuoti Dabar",
         "desc": "Perindeksavimas sugeneruos įterpinius visiems sekamiems objektams. Šis procesas veiks fone ir priklausomai nuo jūsų turimo sekamų objektų kiekio gali maksimaliai apkrauti jūsų CPU bei užtrukti nemažai laiko.",
@@ -136,7 +136,7 @@
     },
     "faceRecognition": {
       "title": "Veidų Atpažinimas",
-      "desc": "Veidų atpažinimas leidžia priskirti vardus žmonėms ir kai jų veidai atpažįstami Frigate priskirs žmogaus vardą kaip sub etiketę. Ši informacija prieinama vartotojo sąsajoje, filtruose, taip ir pranešimuose.",
+      "desc": "Veidų atpažinimas leidžia priskirti vardus žmonėms ir kai jų veidai atpažįstami Orbi360 NVR priskirs žmogaus vardą kaip sub etiketę. Ši informacija prieinama vartotojo sąsajoje, filtruose, taip ir pranešimuose.",
       "modelSize": {
         "label": "Modelio Dydis",
         "desc": "Modelio dydis naudojamas veidų atpažinimui.",
@@ -152,11 +152,11 @@
     },
     "licensePlateRecognition": {
       "title": "Registracijos Numerių Atpažinimas",
-      "desc": "Frigate gali atpažinti automobilių registracijos numerius ir automatiškai pridėti aptikitus simbolius į \"recognized_license_plate\" laukelį arba žinoma pavadinima kaip sub_etiketę \"mašina\" tipo objektams. Dažnas panaudojimas būtų nuskaityti numerius mašinų įvažiuojančių į įvažiavimą arba mašinų pravažiuojančių gatve."
+      "desc": "Orbi360 NVR gali atpažinti automobilių registracijos numerius ir automatiškai pridėti aptikitus simbolius į \"recognized_license_plate\" laukelį arba žinoma pavadinima kaip sub_etiketę \"mašina\" tipo objektams. Dažnas panaudojimas būtų nuskaityti numerius mašinų įvažiuojančių į įvažiavimą arba mašinų pravažiuojančių gatve."
     },
     "restart_required": "Privaloma perkrauti (Patobulinimų nustatymai pakeisti)",
     "toast": {
-      "success": "Patobulinimų nustaty buvo pakeisti. Kad pkyčiai būtų pritaikyti perkraukite Frigate.",
+      "success": "Patobulinimų nustaty buvo pakeisti. Kad pkyčiai būtų pritaikyti perkraukite Orbi360 NVR.",
       "error": "Nepavyko išsaugoti konfiguracijos pakeitimų: {{errorMessage}}"
     }
   },
@@ -164,16 +164,16 @@
     "title": "Kamerų Nustatymai",
     "streams": {
       "title": "Transliacijos",
-      "desc": "Laikinai išjunkite kamerą kol Frigate bus perkrautas. Išjungiant kamerą visiškai sustabdo Frigate veiklą šiai kamerai. Nebus aptikimų, įrašų ar debug informacijos.<br /><em>Pastaba: Tai neišjungs go2rtc sratų.</em>"
+      "desc": "Laikinai išjunkite kamerą kol Orbi360 NVR bus perkrautas. Išjungiant kamerą visiškai sustabdo Orbi360 NVR veiklą šiai kamerai. Nebus aptikimų, įrašų ar debug informacijos.<br /><em>Pastaba: Tai neišjungs go2rtc sratų.</em>"
     },
     "review": {
-      "desc": "Trumpam įjungti/išjungti įspėjimus ir aptikimus šiai kamerai iki kol Frigate bus perkrautas. Kai išjungta, naujos peržiūros nebus kuriamos. ",
+      "desc": "Trumpam įjungti/išjungti įspėjimus ir aptikimus šiai kamerai iki kol Orbi360 NVR bus perkrautas. Kai išjungta, naujos peržiūros nebus kuriamos. ",
       "detections": "Aptikimai ",
       "title": "Peržiūra",
       "alerts": "Įspėjimai "
     },
     "reviewClassification": {
-      "desc": "Frigate kategorizuoja peržiūras į Įspėjimus ir Aptikimus. Pagal nutylėjimą, visi <em>žmonių</em> ir <em>mašinų</em> objektai yra vertinami kaip įspėjimai. Jūs galite detalizuoti peržiūrų kategorizavimą priskiriant objektas privalomas zonas.",
+      "desc": "Orbi360 NVR kategorizuoja peržiūras į Įspėjimus ir Aptikimus. Pagal nutylėjimą, visi <em>žmonių</em> ir <em>mašinų</em> objektai yra vertinami kaip įspėjimai. Jūs galite detalizuoti peržiūrų kategorizavimą priskiriant objektas privalomas zonas.",
       "zoneObjectAlertsTips": "Visi {{alertsLabels}} objektai aptikti {{zone}} ir {{cameraName}} bus rodomi kaip Įspėjimai.",
       "objectDetectionsTips": "Visi {{detectionsLabels}} objektai nekategorizuoti {{cameraName}} bus rodomi kaip Aptikimai nepriklausomai kurioje zonoje ji yra.",
       "zoneObjectDetectionsTips": {
@@ -189,7 +189,7 @@
       "unsavedChanges": "Neišsaugoti Apžvalgos Klasifikavimo nustatymai kamerai {{camera}}",
       "selectAlertsZones": "Pasirinkti zonas Įspėjimams",
       "toast": {
-        "success": "Apžvalgų Klasifikavimo konfiguracija buvo išsaugota. Restartuoti Frigate kad pokyčiai būtų pritaikyti."
+        "success": "Apžvalgų Klasifikavimo konfiguracija buvo išsaugota. Restartuoti Orbi360 NVR kad pokyčiai būtų pritaikyti."
       }
     },
     "cameraConfig": {
@@ -236,7 +236,7 @@
       "point_few": "{{count}} taškai",
       "point_other": "{{count}} taškų",
       "label": "Zonos",
-      "documentTitle": "Redaguoti Zonas - Frigate",
+      "documentTitle": "Redaguoti Zonas - Orbi360 NVR",
       "desc": {
         "title": "Zonos leidžia apibrėžti specifinį kadro plotą tam, kad galėtumėte įvardinti ar objektas yra tam tikrame plote.",
         "documentation": "Dokumentacija"
@@ -300,7 +300,7 @@
         "title": "Judesio maskuoti dengia {{polygonArea}}% kameros ploto. Didelės judesio maskuotės nerekomenduojamos."
       },
       "label": "Judesio Maskuotė",
-      "documentTitle": "Redaguoti Judesio Maskuotę - Frigate",
+      "documentTitle": "Redaguoti Judesio Maskuotę - Orbi360 NVR",
       "add": "Nauja Judesio Maskuotė",
       "edit": "Redaguoti Judesio Maskuotę",
       "clickDrawPolygon": "Spragtelti kad piešti poligoną ant atvaizdo.",
@@ -316,7 +316,7 @@
       "point_few": "{{count}} taškai",
       "point_other": "{{count}} taškų",
       "label": "Objekto Maskuotė",
-      "documentTitle": "Redaguoti Objekto Maskuotę - Frigate",
+      "documentTitle": "Redaguoti Objekto Maskuotę - Orbi360 NVR",
       "desc": {
         "title": "Objektų filtravimo maskuotės naudojamos išfiltruoti klaidingus teigiamus rezultatus pagal vietą parinktam objekto tipui.",
         "documentation": "Dokumentacija"
@@ -406,7 +406,7 @@
     "title": "Judesių Aptikimų Derinimas",
     "unsavedChanges": "Neišsaugoti Judesių Derinimo pokyčiai ({{camera}})",
     "desc": {
-      "title": "Frigate naudoja judesių aptikimą kaip pirmos eilės patikrinimą įvertinti ar yra kadre kažkas, kam verta būtų atlikti objektų atpažinimą.",
+      "title": "Orbi360 NVR naudoja judesių aptikimą kaip pirmos eilės patikrinimą įvertinti ar yra kadre kažkas, kam verta būtų atlikti objektų atpažinimą.",
       "documentation": "Skaityti Judesių Derinimo Gidą"
     },
     "Threshold": {
@@ -426,7 +426,7 @@
     }
   },
   "debug": {
-    "detectorDesc": "Frigate naudoja jūsų detektorius ({{detectors}}) objektų aptikimui jūsų kameros transliacijoje.",
+    "detectorDesc": "Orbi360 NVR naudoja jūsų detektorius ({{detectors}}) objektų aptikimui jūsų kameros transliacijoje.",
     "audio": {
       "noAudioDetections": "Nėra Garso aptikimų",
       "title": "Garsas",
@@ -526,7 +526,7 @@
       },
       "createUser": {
         "title": "Sukurti Naują Vartotoją",
-        "desc": "Pridėti naują vartotojo paskyrą ir nurodyti prieigos roles prie Frigate funkcijų.",
+        "desc": "Pridėti naują vartotojo paskyrą ir nurodyti prieigos roles prie Orbi360 NVR funkcijų.",
         "usernameOnlyInclude": "Vartotojo vardas gali būti sudarytas iš raidžių, skaičių, . arba _",
         "confirmPassword": "Prašome patvirtinti slaptažodį"
       },
@@ -554,7 +554,7 @@
     "title": "Vartotojai",
     "management": {
       "title": "Vartotojų Valdymas",
-      "desc": "Valdyti šios Frigate aplinkos vartotojų paskyras."
+      "desc": "Valdyti šios Orbi360 NVR aplinkos vartotojų paskyras."
     },
     "addUser": "Pridėti Vartotoją",
     "updatePassword": "Atkurti Slaptažodį",
@@ -632,7 +632,7 @@
         },
         "actions": {
           "title": "Veiksmai",
-          "desc": "Pagal nutylėjimą, Frigate sukuria MQTT žinutę visiem trigeriams. Subetiketės prideda trigerio pavadinimą prie objekto etiketės. Atributai, tai paieškai pasiekiami metaduomenys saugomi atskirai sekamų objektų metaduomenyse.",
+          "desc": "Pagal nutylėjimą, Orbi360 NVR sukuria MQTT žinutę visiem trigeriams. Subetiketės prideda trigerio pavadinimą prie objekto etiketės. Atributai, tai paieškai pasiekiami metaduomenys saugomi atskirai sekamų objektų metaduomenyse.",
           "error": {
             "min": "Bent vienas veiksmas privalo būti parinktas."
           }
@@ -690,11 +690,11 @@
     "title": "Pranešimai",
     "notificationSettings": {
       "title": "Pranešimų Nustatymai",
-      "desc": "Frigate praneįimai sukurti veikti su push pranešimais į įrenginį kai naršoma per naršyklę arba įdiegta kaip PWA."
+      "desc": "Orbi360 NVR praneįimai sukurti veikti su push pranešimais į įrenginį kai naršoma per naršyklę arba įdiegta kaip PWA."
     },
     "notificationUnavailable": {
       "title": "Pranešimai Negalimi",
-      "desc": "Web push pranešimai reikalauja saugios aplinkos (<code>https://...</code>). Tai yra naršyklės apribojimai. Atsidarykit Frigate saugiu kanalu kad galėtumėte naudotis pranešimais."
+      "desc": "Web push pranešimai reikalauja saugios aplinkos (<code>https://...</code>). Tai yra naršyklės apribojimai. Atsidarykit Orbi360 NVR saugiu kanalu kad galėtumėte naudotis pranešimais."
     },
     "globalSettings": {
       "title": "Visuotiniai Nustatymai",
@@ -731,7 +731,7 @@
     "cancelSuspension": "Atšaukti Sustabdymą",
     "toast": {
       "success": {
-        "registered": "Sėkmingai užregistruota pranešimams. Frigate perkrovimas yra būtinas, kad nors kokie pranešimai būtų išsiųsti (net ir bandomieji).",
+        "registered": "Sėkmingai užregistruota pranešimams. Orbi360 NVR perkrovimas yra būtinas, kad nors kokie pranešimai būtų išsiųsti (net ir bandomieji).",
         "settingSaved": "Pranešimų nustatymai buvo išsaugoti."
       },
       "error": {
@@ -778,7 +778,7 @@
     "unsavedChanges": "Neišsaugoti Frigate+ nustatymų pokyčiai",
     "restart_required": "Perkrovimas privalomas (Frigate+ modeliai pakeisti)",
     "toast": {
-      "success": "Frigate+ nustatymai buvo išsaugoti. Perkraukite Frigate kad pritaikytumėte pokyčius.",
+      "success": "Frigate+ nustatymai buvo išsaugoti. Perkraukite Orbi360 NVR kad pritaikytumėte pokyčius.",
       "error": "Nepavyko išsaugoti konfiguraijos pokyčių: {{errorMessage}}"
     }
   },
@@ -841,12 +841,12 @@
     },
     "management": {
       "title": "Žiūrovo Rolės Valdymas",
-      "desc": "Valdyti šios Frigate aplinkos specializuotas žiūrovo roles ir kamerų prieigos leidimus."
+      "desc": "Valdyti šios Orbi360 NVR aplinkos specializuotas žiūrovo roles ir kamerų prieigos leidimus."
     }
   },
   "cameraWizard": {
     "title": "Pridėti Kamerą",
-    "description": "Sekite žemiau nurodytus žingsnius norėdami pridėti naują kamerą prie savo Frigate.",
+    "description": "Sekite žemiau nurodytus žingsnius norėdami pridėti naują kamerą prie savo Orbi360 NVR.",
     "steps": {
       "nameAndConnection": "Pavadinimas ir Jungtis",
       "streamConfiguration": "Transliacijos Nustatymai",

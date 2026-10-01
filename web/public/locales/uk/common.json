@@ -44,7 +44,7 @@
     "m": "{{time}}хв",
     "s": "{{time}}сек",
     "untilForTime": "До {{time}}",
-    "untilForRestart": "Доки Frigate не перезавантажиться.",
+    "untilForRestart": "Доки Orbi360 NVR не перезавантажиться.",
     "untilRestart": "До перезавантаження",
     "formattedTimestamp": {
       "12hour": "MMM d, h:mm:ss aaa",
@@ -202,9 +202,9 @@
     "help": "Допомогти",
     "documentation": {
       "title": "Документація",
-      "label": "Frigate документація"
+      "label": "Orbi360 NVR документація"
     },
-    "restart": "Перезапустити Frigate",
+    "restart": "Перезапустити Orbi360 NVR",
     "live": {
       "title": "Пряма трансляція",
       "allCameras": "Всi камери",
@@ -301,12 +301,12 @@
     "label": "Пагінація"
   },
   "accessDenied": {
-    "documentTitle": "Доступ заборонений - Frigate",
+    "documentTitle": "Доступ заборонений - Orbi360 NVR",
     "title": "Доступ заборонений",
     "desc": "У вас немає дозволу на перегляд цієї сторінки."
   },
   "notFound": {
-    "documentTitle": "Не знайдено - Frigate",
+    "documentTitle": "Не знайдено - Orbi360 NVR",
     "desc": "Сторінка не знайдена",
     "title": "404"
   },
@@ -322,7 +322,7 @@
   },
   "field": {
     "optional": "Необов'язково",
-    "internalID": "Внутрішній ідентифікатор, який Frigate використовує в конфігурації та базі даних"
+    "internalID": "Внутрішній ідентифікатор, який Orbi360 NVR використовує в конфігурації та базі даних"
   },
   "no_items": "Нема елементів",
   "validation_errors": "Помилки при перевірці",

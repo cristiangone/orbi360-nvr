@@ -5,7 +5,7 @@
         "description": "Zona omogućava da definirate specifičnu područje okvira da biste odredili je li objekt unutar određenog područja.",
         "friendly_name": {
             "label": "Ime zone",
-            "description": "Korisničko ime za zonu, prikazano u UI Frigate. Ako nije postavljeno, koristi se oblikovana verzija imena zone."
+            "description": "Korisničko ime za zonu, prikazano u UI Orbi360 NVR. Ako nije postavljeno, koristi se oblikovana verzija imena zone."
         },
         "enabled": {
             "label": "Omogućeno",
@@ -80,7 +80,7 @@
     },
     "friendly_name": {
         "label": "Prijateljsko ime",
-        "description": "Prijateljsko ime kamere korišteno u korisničkom sučelju Frigate"
+        "description": "Prijateljsko ime kamere korišteno u korisničkom sučelju Orbi360 NVR"
     },
     "enabled": {
         "label": "Omogućeno",
@@ -878,7 +878,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Kalibriraj na početku",
-                "description": "Mjeri brzine motora PTZ pri pokretanju kako bi poboljšao preciznost praćenja. Frigate će ažurirati konfiguraciju s težinama pokreta nakon kalibracije."
+                "description": "Mjeri brzine motora PTZ pri pokretanju kako bi poboljšao preciznost praćenja. Orbi360 NVR će ažurirati konfiguraciju s težinama pokreta nakon kalibracije."
             },
             "zooming": {
                 "label": "Režim zumiranja",
@@ -915,7 +915,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Zanemari razliku u vremenu",
-            "description": "Zanemari razlike u sinhronizaciji vremena između kamere i Frigate servera za komunikaciju ONVIF."
+            "description": "Zanemari razlike u sinhronizaciji vremena između kamere i Orbi360 NVR servera za komunikaciju ONVIF."
         }
     },
     "type": {
@@ -931,7 +931,7 @@
         },
         "dashboard": {
             "label": "Prikaži u UI",
-            "description": "Prekidač je li ova kamera vidljiva svuda u UI Frigate. Onemogućavanje ovoga zahtijeva ručno uređivanje konfiguracije za ponovno prikazivanje ove kamere u UI."
+            "description": "Prekidač je li ova kamera vidljiva svuda u UI Orbi360 NVR. Onemogućavanje ovoga zahtijeva ručno uređivanje konfiguracije za ponovno prikazivanje ove kamere u UI."
         }
     },
     "webui_url": {

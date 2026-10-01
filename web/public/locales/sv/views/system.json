@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "storage": "Lagringsstatistik - Frigate",
-    "general": "Allmän statistik - Frigate",
-    "cameras": "Kamerastatistik - Frigate",
+    "storage": "Lagringsstatistik - Orbi360 NVR",
+    "general": "Allmän statistik - Orbi360 NVR",
+    "cameras": "Kamerastatistik - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate-loggar - Frigate",
-      "go2rtc": "go2rtc-loggar - Frigate",
-      "nginx": "Nginx-loggar - Frigate"
+      "frigate": "Orbi360 NVR-loggar - Orbi360 NVR",
+      "go2rtc": "go2rtc-loggar - Orbi360 NVR",
+      "nginx": "Nginx-loggar - Orbi360 NVR"
     },
-    "enrichments": "Berikningsstatistik - Frigate"
+    "enrichments": "Berikningsstatistik - Orbi360 NVR"
   },
   "logs": {
     "copy": {
@@ -80,7 +80,7 @@
       "intelGpuWarning": {
         "title": "Intel GPU statistik varning",
         "message": "GPU statistik otillgänglig",
-        "description": "Detta är en känd bugg i Intels GPU-statistikrapporteringsverktyg (intel_gpu_top) där den slutar fungera och upprepade gånger returnerar en GPU-användning på 0 %, även i fall där hårdvaruacceleration och objektdetektering körs korrekt på (i)GPU:n. Detta är inte en Frigate-bugg. Du kan starta om värden för att tillfälligt åtgärda problemet och bekräfta att GPU:n fungerar korrekt. Detta påverkar inte prestandan."
+        "description": "Detta är en känd bugg i Intels GPU-statistikrapporteringsverktyg (intel_gpu_top) där den slutar fungera och upprepade gånger returnerar en GPU-användning på 0 %, även i fall där hårdvaruacceleration och objektdetektering körs korrekt på (i)GPU:n. Detta är inte en Orbi360 NVR-bugg. Du kan starta om värden för att tillfälligt åtgärda problemet och bekräfta att GPU:n fungerar korrekt. Detta påverkar inte prestandan."
       }
     },
     "otherProcesses": {
@@ -103,7 +103,7 @@
       "bandwidth": "Bandbredd",
       "unused": {
         "title": "Oanvänt",
-        "tips": "Det här värdet kanske inte korrekt motsvarar det lediga utrymme som är tillgängligt för Frigate om hårddisken även innehåller andra filer än Frigates inspelningar. Frigate spårar inte lagringsanvändning utanför sina egna inspelningar."
+        "tips": "Det här värdet kanske inte korrekt motsvarar det lediga utrymme som är tillgängligt för Orbi360 NVR om hårddisken även innehåller andra filer än Frigates inspelningar. Orbi360 NVR spårar inte lagringsanvändning utanför sina egna inspelningar."
       },
       "title": "Kameralagring",
       "camera": "Kamera",
@@ -113,7 +113,7 @@
     "overview": "Översikt",
     "recordings": {
       "title": "Inspelningar",
-      "tips": "Detta värde representerar den totala lagringsmängden som används av inspelningarna i Frigates databas. Frigate spårar inte lagringsanvändningen för alla filer på din disk.",
+      "tips": "Detta värde representerar den totala lagringsmängden som används av inspelningarna i Frigates databas. Orbi360 NVR spårar inte lagringsanvändningen för alla filer på din disk.",
       "earliestRecording": "Tidigast tillgängliga inspelning:"
     },
     "shm": {

@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Indtil {{time}}",
-    "untilForRestart": "Indtil Frigate genstarter.",
+    "untilForRestart": "Indtil Orbi360 NVR genstarter.",
     "untilRestart": "Indtil genstart",
     "ago": "{{timeAgo}} siden",
     "justNow": "Lige nu",
@@ -232,9 +232,9 @@
     "help": "Hjælp",
     "documentation": {
       "title": "Dokumentation",
-      "label": "Frigate dokumentation"
+      "label": "Orbi360 NVR dokumentation"
     },
-    "restart": "Genstart Frigate",
+    "restart": "Genstart Orbi360 NVR",
     "live": {
       "title": "Direkte",
       "allCameras": "Alle kameraer",
@@ -278,7 +278,7 @@
     "title": "Rolle",
     "admin": "Admin",
     "viewer": "Seer",
-    "desc": "Admins har fuld adgang til Frigate UI. Viewers er begrænset til at se kameraer, gennemse items, og historik i UI."
+    "desc": "Admins har fuld adgang til Orbi360 NVR UI. Viewers er begrænset til at se kameraer, gennemse items, og historik i UI."
   },
   "pagination": {
     "label": "sideinddeling",
@@ -293,12 +293,12 @@
     "more": "Flere sider"
   },
   "accessDenied": {
-    "documentTitle": "Adgang nægtet - Frigate",
+    "documentTitle": "Adgang nægtet - Orbi360 NVR",
     "title": "Adgang nægtet",
     "desc": "Du har ikke rettigheder til at se denne side."
   },
   "notFound": {
-    "documentTitle": "Ikke fundet - Frigate",
+    "documentTitle": "Ikke fundet - Orbi360 NVR",
     "title": "404",
     "desc": "Siden blev ikke fundet"
   },
@@ -311,7 +311,7 @@
   },
   "field": {
     "optional": "Valgfrit",
-    "internalID": "Det interne ID som Frigate bruger i konfigurationen og databasen"
+    "internalID": "Det interne ID som Orbi360 NVR bruger i konfigurationen og databasen"
   },
   "information": {
     "pixels": "{{area}}px"

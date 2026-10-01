@@ -1,8 +1,8 @@
 {
-  "documentTitle": "Konfigurācijas rediģēšana - Frigate",
+  "documentTitle": "Konfigurācijas rediģēšana - Orbi360 NVR",
   "configEditor": "Konfigurācijas redaktors",
   "safeConfigEditor": "Konfigurācijas redaktors (drošais režīms)",
-  "safeModeDescription": "Frigate ir drošajā režīmā konfigurācijas pārbaudes kļūdas dēļ.",
+  "safeModeDescription": "Orbi360 NVR ir drošajā režīmā konfigurācijas pārbaudes kļūdas dēļ.",
   "copyConfig": "Kopēt konfigurāciju",
   "saveAndRestart": "Saglabāt un pārstartēt",
   "saveOnly": "Tikai saglabāt",

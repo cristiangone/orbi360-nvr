@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "你確定要重新啟動 Frigate 嗎？",
+    "title": "你確定要重新啟動 Orbi360 NVR 嗎？",
     "button": "重新啟動",
     "restarting": {
-      "title": "Frigate 正在重新啟動",
+      "title": "Orbi360 NVR 正在重新啟動",
       "content": "此頁面將在 {{countdown}} 秒後重新載入。",
       "button": "立即重新載入"
     },
-    "description": "Frigate 在重啟期間將短暫停止執行。"
+    "description": "Orbi360 NVR 在重啟期間將短暫停止執行。"
   },
   "explore": {
     "plus": {
@@ -174,10 +174,10 @@
     "shareTimestamp": {
       "label": "分享該時間片段",
       "title": "分享該時間片段",
-      "description": "分享帶目前錄製播放時間的網址，或選擇自訂時間。請注意這不是公開的分享連結，只有具備 Frigate 及此攝影機存取權限的使用者才能存取。",
+      "description": "分享帶目前錄製播放時間的網址，或選擇自訂時間。請注意這不是公開的分享連結，只有具備 Orbi360 NVR 及此攝影機存取權限的使用者才能存取。",
       "custom": "自訂時間",
       "button": "分享時間片段網址",
-      "shareTitle": "Frigate 審閱時間：{{camera}}"
+      "shareTitle": "Orbi360 NVR 審閱時間：{{camera}}"
     }
   },
   "imagePicker": {

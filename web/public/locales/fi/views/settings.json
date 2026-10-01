@@ -1,19 +1,19 @@
 {
   "documentTitle": {
-    "camera": "Kamera-asetukset - Frigate",
-    "classification": "Klassifiointiasetukset - Frigate",
-    "masksAndZones": "Peite ja vyöhykemuokkain - Frigate",
-    "motionTuner": "Liikesäädin - Frigate",
-    "default": "Asetukset - Frigate",
-    "general": "Yleiset asetukset - Frigate",
-    "frigatePlus": "Frigate+ asetukset - Frigate",
-    "object": "Virheenjäljitys - Frigate",
-    "authentication": "Autentikointiasetukset - Frigate",
-    "notifications": "Ilmoitusasetukset - Frigate",
-    "enrichments": "Laajennusasetukset – Frigate",
-    "cameraManagement": "Hallitse Kameroita - Frigate",
-    "globalConfig": "Globaali konfiguraatio - Frigate",
-    "cameraConfig": "Kamera konfiguraatio - Frigate"
+    "camera": "Kamera-asetukset - Orbi360 NVR",
+    "classification": "Klassifiointiasetukset - Orbi360 NVR",
+    "masksAndZones": "Peite ja vyöhykemuokkain - Orbi360 NVR",
+    "motionTuner": "Liikesäädin - Orbi360 NVR",
+    "default": "Asetukset - Orbi360 NVR",
+    "general": "Yleiset asetukset - Orbi360 NVR",
+    "frigatePlus": "Frigate+ asetukset - Orbi360 NVR",
+    "object": "Virheenjäljitys - Orbi360 NVR",
+    "authentication": "Autentikointiasetukset - Orbi360 NVR",
+    "notifications": "Ilmoitusasetukset - Orbi360 NVR",
+    "enrichments": "Laajennusasetukset – Orbi360 NVR",
+    "cameraManagement": "Hallitse Kameroita - Orbi360 NVR",
+    "globalConfig": "Globaali konfiguraatio - Orbi360 NVR",
+    "cameraConfig": "Kamera konfiguraatio - Orbi360 NVR"
   },
   "menu": {
     "ui": "Käyttöliittymä",
@@ -132,15 +132,15 @@
           "desc": "Valitessa <em>suuri</em> käytetään ArcFace mallia kasvojen upotukseen joka ajetaan automaattisesti grafiikkaprosessorilla mikäli mahdollista."
         }
       },
-      "desc": "Kasvojentunnistus sallii nimien antamisen ihmisille ja kun heidän kasvonsa tunnistetaan Frigate antaa henkilölle nimen ala-viittenä. Tämä tieto sisällytetään käyttöliittymään, filttereihin sekä ilmoituksiin."
+      "desc": "Kasvojentunnistus sallii nimien antamisen ihmisille ja kun heidän kasvonsa tunnistetaan Orbi360 NVR antaa henkilölle nimen ala-viittenä. Tämä tieto sisällytetään käyttöliittymään, filttereihin sekä ilmoituksiin."
     },
     "licensePlateRecognition": {
       "title": "Rekisterikilven tunnistus",
-      "desc": "Frigate voi tunnistaa ajoneuvojen rekisterikilpiä ja lisätä tunnistetut kirjaimet automaattisesti recognized_license_plate -kenttään tai tunnettu nimi sub_label kohteisiin joiden tyyppi on ajoneuvo. Yleinen käyttökohde on lukea pihatielle ajavien tai kadulla ohiajavien ajoneuvojen rekisterikilvet.",
+      "desc": "Orbi360 NVR voi tunnistaa ajoneuvojen rekisterikilpiä ja lisätä tunnistetut kirjaimet automaattisesti recognized_license_plate -kenttään tai tunnettu nimi sub_label kohteisiin joiden tyyppi on ajoneuvo. Yleinen käyttökohde on lukea pihatielle ajavien tai kadulla ohiajavien ajoneuvojen rekisterikilvet.",
       "readTheDocumentation": "Lue dokumentaatio"
     },
     "toast": {
-      "success": "Klassifiointiasetukset on tallennettu. Käynnistä Frigate uudelleen saadaksesi ne käyttöön.",
+      "success": "Klassifiointiasetukset on tallennettu. Käynnistä Orbi360 NVR uudelleen saadaksesi ne käyttöön.",
       "error": "Konfiguraatio muutoksia ei voitu tallentaa: {{errorMessage}}"
     },
     "restart_required": "Tarvitaan uudelleenkäynnistys (luokitusasetuksia muutettu)",
@@ -153,11 +153,11 @@
     "title": "Kamera-asetukset",
     "streams": {
       "title": "Striimit",
-      "desc": "Poista kamera käytöstä väliaikaisesti, kunnes Frigate uudelleenkäynnistetään. Kameran poiskytkeminen lopettaa kameran videostriimien käsittelyn. Havainnot, tallennus ja debuggaus ovat pois käytöstä.<br /><em>Huom: tämä ei poista käytöstä go2rtc uusinta striimejä.</em>"
+      "desc": "Poista kamera käytöstä väliaikaisesti, kunnes Orbi360 NVR uudelleenkäynnistetään. Kameran poiskytkeminen lopettaa kameran videostriimien käsittelyn. Havainnot, tallennus ja debuggaus ovat pois käytöstä.<br /><em>Huom: tämä ei poista käytöstä go2rtc uusinta striimejä.</em>"
     },
     "review": {
       "title": "Katselu",
-      "desc": "Kytke väliaikaisesti päälle/pois hälytykset ja tunnistus tälle kameralle, kunnes Frigate käynnistetään uudelleen. Kun ne ovat pois päältä, uusia katseltavia tapahtumia ei luoda. ",
+      "desc": "Kytke väliaikaisesti päälle/pois hälytykset ja tunnistus tälle kameralle, kunnes Orbi360 NVR käynnistetään uudelleen. Kun ne ovat pois päältä, uusia katseltavia tapahtumia ei luoda. ",
       "alerts": "Hälytykset ",
       "detections": "Tunnistukset "
     },
@@ -174,11 +174,11 @@
         "regardlessOfZoneObjectDetectionsTips": "Kaikki {{detectionsLabels}} objektit joita ei ole kategorisoitu lähteessä {{cameraName}} näytetään Tunnistuksina niiden vyöhykkeestä huolimatta."
       },
       "selectAlertsZones": "Valitse vyöhykkeet Hälytystä varten",
-      "desc": "Frigate kategorisoi tahtumia Hälytyksiksi ja Tunnistuksiksi. Vakiona kaikki <em>henkilö</em> sekä <em>ajoneuvo</em> objektit käsitellään Hälytyksinä. Voit kategorisoida uudelleen katseltavat tapahtumat antamalla niille vaaditut alueet.",
+      "desc": "Orbi360 NVR kategorisoi tahtumia Hälytyksiksi ja Tunnistuksiksi. Vakiona kaikki <em>henkilö</em> sekä <em>ajoneuvo</em> objektit käsitellään Hälytyksinä. Voit kategorisoida uudelleen katseltavat tapahtumat antamalla niille vaaditut alueet.",
       "limitDetections": "Rajoita tunnistukset tiettyihin vyöhykkeisiin",
       "selectDetectionsZones": "Valitse vyöhykkeet tunnistusta varten",
       "toast": {
-        "success": "Luokittelumäärityksen tarkistus on tallennettu. Käynnistä Frigate uudelleen muutosten käyttöönottamiseksi."
+        "success": "Luokittelumäärityksen tarkistus on tallennettu. Käynnistä Orbi360 NVR uudelleen muutosten käyttöönottamiseksi."
       }
     },
     "cameraConfig": {
@@ -240,7 +240,7 @@
     },
     "zones": {
       "label": "Vyöhykkeet",
-      "documentTitle": "Muokkaa vyöhykkeitä - Frigate",
+      "documentTitle": "Muokkaa vyöhykkeitä - Orbi360 NVR",
       "edit": "Myokkaa vyöhykettä",
       "inertia": {
         "title": "Inertia",
@@ -304,7 +304,7 @@
         "documentation": "Lue dokumentaatio",
         "title": "Liikepeittoja käytetään estämään ei-toivottujen liiketyyppien (esimerkiksi puiden oksat, kameroiden aikaleimat) aiheuttamat tunnistukset. Liikepeittoja tulisi käyttää <em>hyvin säästeliäästi</em>, sillä liiallinen maskaus vaikeuttaa kohteiden seurantaa."
       },
-      "documentTitle": "Muokkaa liikepeittoa - Frigate",
+      "documentTitle": "Muokkaa liikepeittoa - Orbi360 NVR",
       "desc": {
         "title": "Liikepeittoa käytetään estämään ei-toivottujen liiketyyppien aiheuttamat tunnistukset. Liiallinen peittäminen vaikeuttaa kohteiden seurantaa.",
         "documentation": "Dokumentaatio"
@@ -339,7 +339,7 @@
           "noName": "Kohdepeitto on tallennettu. Käynnistä Frigatti uudelleen muutosten käyttöönottamiseksi."
         }
       },
-      "documentTitle": "Muokkaa kohdepeittoa - Frigate",
+      "documentTitle": "Muokkaa kohdepeittoa - Orbi360 NVR",
       "desc": {
         "title": "Objektisuodatinpeittoja käytetään suodattamaan pois väärät positiiviset tulokset tietylle kohdetyypille sijainnin perusteella.",
         "documentation": "Dokumentaatio"
@@ -392,7 +392,7 @@
     "title": "Käyttäjät",
     "management": {
       "title": "Käyttäjien hallinta",
-      "desc": "Hallinnoi tämän Frigate-instanssin käyttäjätilejä."
+      "desc": "Hallinnoi tämän Orbi360 NVR-instanssin käyttäjätilejä."
     },
     "addUser": "Lisää käyttäjä",
     "updatePassword": "Päivitä salasana",
@@ -437,7 +437,7 @@
   "motionDetectionTuner": {
     "title": "Liiketunnistuksen säätäminen",
     "desc": {
-      "title": "Frigate käyttää liiketunnistusta ensimmäisenä tarkistuksena nähdäkseen, tapahtuuko kuvassa jotain, mikä kannattaisi tarkistaa objektitunnistuksella.",
+      "title": "Orbi360 NVR käyttää liiketunnistusta ensimmäisenä tarkistuksena nähdäkseen, tapahtuuko kuvassa jotain, mikä kannattaisi tarkistaa objektitunnistuksella.",
       "documentation": "Lue liikkeensäädön opas"
     },
     "Threshold": {
@@ -518,7 +518,7 @@
         },
         "actions": {
           "title": "Toiminnot",
-          "desc": "Oletuksena Frigate lähettää MQTT-viestin kaikille laukaisimille. Valitse lisätoiminto, joka suoritetaan, kun tämä laukaisija laukeaa.",
+          "desc": "Oletuksena Orbi360 NVR lähettää MQTT-viestin kaikille laukaisimille. Valitse lisätoiminto, joka suoritetaan, kun tämä laukaisija laukeaa.",
           "error": {
             "min": "Vähintään yksi toiminto on valittava."
           }
@@ -561,7 +561,7 @@
     },
     "faceRecognition": {
       "title": "Kasvojentunnistus",
-      "desc": "Kasvojentunnistuksen avulla ihmisille voidaan antaa nimiä, ja kun heidän kasvonsa tunnistetaan, Frigate lisää henkilön nimen alaluokaksi. Nämä tiedot näkyvät käyttöliittymässä, suodattimissa ja ilmoituksissa.",
+      "desc": "Kasvojentunnistuksen avulla ihmisille voidaan antaa nimiä, ja kun heidän kasvonsa tunnistetaan, Orbi360 NVR lisää henkilön nimen alaluokaksi. Nämä tiedot näkyvät käyttöliittymässä, suodattimissa ja ilmoituksissa.",
       "modelSize": {
         "label": "Mallin koko",
         "desc": "Kasvojentunnistuksessa käytettävän mallin koko.",

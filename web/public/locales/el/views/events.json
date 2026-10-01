@@ -24,9 +24,9 @@
   "selected_other": "{{count}} επελεγμένα",
   "camera": "Κάμερα",
   "detected": "ανιχνέυτηκε",
-  "documentTitle": "Προεσκόπιση - Frigate",
+  "documentTitle": "Προεσκόπιση - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Καταγραφές - Frigate"
+    "documentTitle": "Καταγραφές - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Τελευταίες 24 Ώρες"

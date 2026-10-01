@@ -39,7 +39,7 @@
     "error": {
       "deleteImageFailed": "Brisanje ni uspelo: {{errorMessage}}",
       "deleteCategoryFailed": "Brisanje razreda ni uspelo: {{errorMessage}}",
-      "trainingFailed": "Učenje modela ni uspelo. Preveri Frigate dnevnike (logs) za podrobnosti.",
+      "trainingFailed": "Učenje modela ni uspelo. Preveri Orbi360 NVR dnevnike (logs) za podrobnosti.",
       "deleteModelFailed": "Brisanje modela ni uspelo: {{errorMessage}}",
       "categorizeFailed": "Klasifikacija slike ni uspela: {{errorMessage}}",
       "trainingFailedToStart": "Začetek učenja modela ni uspel: {{errorMessage}}",
@@ -83,7 +83,7 @@
       "buttonText": "Ustvari model stanja"
     }
   },
-  "documentTitle": "Modeli za klasifikacijo - Frigate",
+  "documentTitle": "Modeli za klasifikacijo - Orbi360 NVR",
   "details": {
     "scoreInfo": "Ocena predstavlja povprečno zaupanje klasifikacije vseh zaznav tega objekta.",
     "none": "Brez",
@@ -175,7 +175,7 @@
       "allImagesRequired_other": "Prosim, klasificiraj vse slike. Preostalo je še {{count}} slik.",
       "generating": {
         "title": "Generiranje vzorčnih slik",
-        "description": "Frigate pridobiva reprezentativne slike iz tvojih posnetkov. To lahko traja trenutek..."
+        "description": "Orbi360 NVR pridobiva reprezentativne slike iz tvojih posnetkov. To lahko traja trenutek..."
       },
       "training": {
         "title": "Učenje modela",

@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "Suora - Frigate"
+    "default": "Suora - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Suora - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Suora - Orbi360 NVR",
   "lowBandwidthMode": "Pienen kaistanleveyden tila",
   "twoWayTalk": {
     "enable": "Ota käyttöön kaksisuuntainen puhe",

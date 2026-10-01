@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "cameras": "Estatísticas das Câmeras - Frigate",
-    "storage": "Status de Armazenamento - Frigate",
-    "general": "Estatísticas Gerais - Frigate",
-    "enrichments": "Estatísticas de Enriquecimento - Frigate",
+    "cameras": "Estatísticas das Câmeras - Orbi360 NVR",
+    "storage": "Status de Armazenamento - Orbi360 NVR",
+    "general": "Estatísticas Gerais - Orbi360 NVR",
+    "enrichments": "Estatísticas de Enriquecimento - Orbi360 NVR",
     "logs": {
-      "frigate": "Registros Frigate - Frigate",
-      "go2rtc": "Registros GoRTC - Frigate",
-      "nginx": "Registros Nginx - Frigate",
-      "websocket": "Registros de Mensagem - Frigate"
+      "frigate": "Registros Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Registros GoRTC - Orbi360 NVR",
+      "nginx": "Registros Nginx - Orbi360 NVR",
+      "websocket": "Registros de Mensagem - Orbi360 NVR"
     }
   },
   "title": "Sistema",
@@ -111,7 +111,7 @@
     "recordings": {
       "title": "Gravações",
       "earliestRecording": "Gravação mais recente disponível:",
-      "tips": "Esse valor representa o armazenamento total usado pelas gravações no banco de dados do Frigate. O Frigate não rastreia o uso de armazenamento para todos os arquivos do seu disco."
+      "tips": "Esse valor representa o armazenamento total usado pelas gravações no banco de dados do Orbi360 NVR. O Orbi360 NVR não rastreia o uso de armazenamento para todos os arquivos do seu disco."
     },
     "cameraStorage": {
       "title": "Armazenamento da Câmera",
@@ -122,7 +122,7 @@
       "bandwidth": "Largura de Banda",
       "unused": {
         "title": "Não Utilizado",
-        "tips": "Esse valor por não representar com precisão o espaço livre disponí®el para o Frigate se você possui outros arquivos armazenados no seu drive além das gravações do Frigate. O Frigate não rastreia a utilização do armazenamento além de suas próprias gravações."
+        "tips": "Esse valor por não representar com precisão o espaço livre disponí®el para o Orbi360 NVR se você possui outros arquivos armazenados no seu drive além das gravações do Orbi360 NVR. O Orbi360 NVR não rastreia a utilização do armazenamento além de suas próprias gravações."
       }
     },
     "shm": {

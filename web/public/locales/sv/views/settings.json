@@ -1,19 +1,19 @@
 {
   "documentTitle": {
-    "camera": "Kamerainställningar - Frigate",
-    "default": "Inställningar - Frigate",
-    "general": "Inställningar för användargränssnittet - Frigate",
-    "authentication": "Autentiseringsinställningar - Frigate",
-    "classification": "Klassificeringsinställningar - Frigate",
-    "masksAndZones": "Maskerings- och zonverktyg - Frigate",
-    "enrichments": "Berikningsinställningar - Frigate",
-    "frigatePlus": "Frigate+-inställningar - Frigate",
-    "notifications": "Aviseringsinställningar - Frigate",
-    "motionTuner": "Rörelsejustering - Frigate",
-    "object": "Felsökning - Frigate",
-    "cameraManagement": "Hantera kameror - Frigate",
-    "cameraReview": "Kameragranskningsinställningar - Frigate",
-    "profiles": "Profiler - Frigate"
+    "camera": "Kamerainställningar - Orbi360 NVR",
+    "default": "Inställningar - Orbi360 NVR",
+    "general": "Inställningar för användargränssnittet - Orbi360 NVR",
+    "authentication": "Autentiseringsinställningar - Orbi360 NVR",
+    "classification": "Klassificeringsinställningar - Orbi360 NVR",
+    "masksAndZones": "Maskerings- och zonverktyg - Orbi360 NVR",
+    "enrichments": "Berikningsinställningar - Orbi360 NVR",
+    "frigatePlus": "Frigate+-inställningar - Orbi360 NVR",
+    "notifications": "Aviseringsinställningar - Orbi360 NVR",
+    "motionTuner": "Rörelsejustering - Orbi360 NVR",
+    "object": "Felsökning - Orbi360 NVR",
+    "cameraManagement": "Hantera kameror - Orbi360 NVR",
+    "cameraReview": "Kameragranskningsinställningar - Orbi360 NVR",
+    "profiles": "Profiler - Orbi360 NVR"
   },
   "general": {
     "title": "Inställningar för användargränssnittet",
@@ -86,7 +86,7 @@
     "title": "Berikningsinställningar",
     "semanticSearch": {
       "title": "Semantisk sökning",
-      "desc": "Med semantisk sökning i Frigate kan du hitta spårade objekt i granskningsobjekt med hjälp av själva bilden, en egen textbeskrivning eller en automatiskt genererad beskrivning.",
+      "desc": "Med semantisk sökning i Orbi360 NVR kan du hitta spårade objekt i granskningsobjekt med hjälp av själva bilden, en egen textbeskrivning eller en automatiskt genererad beskrivning.",
       "readTheDocumentation": "Läs dokumentationen",
       "reindexNow": {
         "label": "Omindexera nu",
@@ -112,7 +112,7 @@
       }
     },
     "faceRecognition": {
-      "desc": "Med ansiktsigenkänning kan personer tilldelas namn. När ett ansikte känns igen lägger Frigate till personens namn som en underetikett. Informationen visas i användargränssnittet, filter och aviseringar.",
+      "desc": "Med ansiktsigenkänning kan personer tilldelas namn. När ett ansikte känns igen lägger Orbi360 NVR till personens namn som en underetikett. Informationen visas i användargränssnittet, filter och aviseringar.",
       "readTheDocumentation": "Läs dokumentationen",
       "modelSize": {
         "label": "Modellstorlek",
@@ -130,12 +130,12 @@
     },
     "licensePlateRecognition": {
       "title": "Igenkänning av registreringsskyltar",
-      "desc": "Frigate kan känna igen registreringsskyltar på fordon och automatiskt lägga till de detekterade tecknen i fältet <code>recognized_license_plate</code>, eller lägga till ett känt namn som underetikett för bilobjekt. Ett vanligt användningsfall är att läsa registreringsskyltar på bilar som kör in på en uppfart eller passerar på en gata.",
+      "desc": "Orbi360 NVR kan känna igen registreringsskyltar på fordon och automatiskt lägga till de detekterade tecknen i fältet <code>recognized_license_plate</code>, eller lägga till ett känt namn som underetikett för bilobjekt. Ett vanligt användningsfall är att läsa registreringsskyltar på bilar som kör in på en uppfart eller passerar på en gata.",
       "readTheDocumentation": "Läs dokumentationen"
     },
     "restart_required": "Omstart krävs eftersom berikningsinställningarna har ändrats",
     "toast": {
-      "success": "Inställningarna för berikning har sparats. Starta om Frigate för att tillämpa dina ändringar.",
+      "success": "Inställningarna för berikning har sparats. Starta om Orbi360 NVR för att tillämpa dina ändringar.",
       "error": "Kunde inte spara konfigurationsändringarna: {{errorMessage}}"
     }
   },
@@ -178,7 +178,7 @@
     "title": "Kamera inställningar",
     "streams": {
       "title": "Videoströmmar",
-      "desc": "Inaktivera tillfälligt en kamera tills Frigate startar om. Om du inaktiverar en kamera helt stoppas Frigates bearbetning av kamerans strömmar. Detektering, inspelning och felsökning kommer inte att vara tillgängliga.<br /> <em>Obs! Detta inaktiverar inte go2rtc-återströmmar.</em>"
+      "desc": "Inaktivera tillfälligt en kamera tills Orbi360 NVR startar om. Om du inaktiverar en kamera helt stoppas Frigates bearbetning av kamerans strömmar. Detektering, inspelning och felsökning kommer inte att vara tillgängliga.<br /> <em>Obs! Detta inaktiverar inte go2rtc-återströmmar.</em>"
     },
     "object_descriptions": {
       "title": "Generativa AI-objektbeskrivningar",
@@ -190,13 +190,13 @@
     },
     "review": {
       "title": "Recensera",
-      "desc": "Tillfälligt Aktivera/avaktivera varningar och detekteringar för den här kameran tills Frigate startar om. När den är avaktiverad genereras inga nya granskningsobjekt. ",
+      "desc": "Tillfälligt Aktivera/avaktivera varningar och detekteringar för den här kameran tills Orbi360 NVR startar om. När den är avaktiverad genereras inga nya granskningsobjekt. ",
       "alerts": "Aviseringar ",
       "detections": "Detektioner "
     },
     "reviewClassification": {
       "title": "Granska klassificering",
-      "desc": "Frigate kategoriserar granskningsobjekt som varningar och detekteringar. Som standard betraktas alla <em>person</em>- och <em>bil</em>-objekt som varningar. Du kan förfina kategoriseringen av dina granskningsobjekt genom att konfigurera obligatoriska zoner för dem.",
+      "desc": "Orbi360 NVR kategoriserar granskningsobjekt som varningar och detekteringar. Som standard betraktas alla <em>person</em>- och <em>bil</em>-objekt som varningar. Du kan förfina kategoriseringen av dina granskningsobjekt genom att konfigurera obligatoriska zoner för dem.",
       "noDefinedZones": "Inga zoner är definierade för den här kameran.",
       "objectAlertsTips": "Alla {{alertsLabels}}-objekt på {{cameraName}} kommer att visas som varningar.",
       "zoneObjectAlertsTips": "Alla {{alertsLabels}} objekt som upptäcks i {{zone}} på {{cameraName}} kommer att visas som varningar.",
@@ -211,7 +211,7 @@
       "selectDetectionsZones": "Välj zoner för detektioner",
       "limitDetections": "Begränsa detektioner till specifika zoner",
       "toast": {
-        "success": "Konfigurationen för granskning av klassificering har sparats. Starta om Frigate för att tillämpa ändringarna."
+        "success": "Konfigurationen för granskning av klassificering har sparats. Starta om Orbi360 NVR för att tillämpa ändringarna."
       }
     },
     "addCamera": "Lägg till ny kamera",
@@ -318,7 +318,7 @@
     },
     "zones": {
       "label": "Zoner",
-      "documentTitle": "Redigera zon - Frigate",
+      "documentTitle": "Redigera zon - Orbi360 NVR",
       "desc": {
         "documentation": "Dokumentation",
         "title": "Zoner låter dig definiera ett specifikt område av bilden så att du kan avgöra om ett objekt befinner sig inom ett visst område eller inte."
@@ -370,7 +370,7 @@
     },
     "motionMasks": {
       "label": "Rörelsemask",
-      "documentTitle": "Redigera rörelsemask - Frigate",
+      "documentTitle": "Redigera rörelsemask - Orbi360 NVR",
       "desc": {
         "title": "Rörelsemasker används för att förhindra att oönskade typer av rörelser utlöser detektering. Övermaskering gör det svårare att spåra objekt.",
         "documentation": "Dokumentation"
@@ -396,7 +396,7 @@
     },
     "objectMasks": {
       "label": "Objektmasker",
-      "documentTitle": "Redigera objektmask - Frigate",
+      "documentTitle": "Redigera objektmask - Orbi360 NVR",
       "point_one": "{{count}} punkt",
       "point_other": "{{count}} punkter",
       "desc": {
@@ -424,7 +424,7 @@
     "title": "Rörelsejustering",
     "unsavedChanges": "Osparade ändringar i rörelsejusteringen ({{camera}})",
     "desc": {
-      "title": "Frigate använder rörelsedetektering som en första kontroll för att se om det händer något i bilden som är värt att kontrollera med objektdetektering.",
+      "title": "Orbi360 NVR använder rörelsedetektering som en första kontroll för att se om det händer något i bilden som är värt att kontrollera med objektdetektering.",
       "documentation": "Läs guiden för rörelsejustering"
     },
     "Threshold": {
@@ -445,7 +445,7 @@
   },
   "debug": {
     "title": "Felsökning",
-    "detectorDesc": "Frigate använder detektorerna ({{detectors}}) för att detektera objekt i kamerans videoström.",
+    "detectorDesc": "Orbi360 NVR använder detektorerna ({{detectors}}) för att detektera objekt i kamerans videoström.",
     "desc": "Felsökningsvyn visar spårade objekt och deras statistik i realtid. Objektlistan visar en tidsfördröjd sammanfattning av detekterade objekt.",
     "openCameraWebUI": "Öppna webbgränssnittet för {{camera}}",
     "debugging": "Felsökning",
@@ -506,7 +506,7 @@
     "title": "Användare",
     "management": {
       "title": "Användarhantering",
-      "desc": "Hantera användarkonton för denna Frigate-instans."
+      "desc": "Hantera användarkonton för denna Orbi360 NVR-instans."
     },
     "addUser": "Lägg till användare",
     "updatePassword": "Uppdatera lösenord",
@@ -582,7 +582,7 @@
       },
       "createUser": {
         "title": "Skapa ny användare",
-        "desc": "Lägg till ett nytt användarkonto och ange en roll för åtkomst till områden i Frigate-gränssnittet.",
+        "desc": "Lägg till ett nytt användarkonto och ange en roll för åtkomst till områden i Orbi360 NVR-gränssnittet.",
         "usernameOnlyInclude": "Användarnamnet får endast innehålla bokstäver, siffror, . eller _",
         "confirmPassword": "Bekräfta lösenordet"
       },
@@ -622,7 +622,7 @@
     "title": "Aviseringar",
     "notificationSettings": {
       "title": "Aviseringsinställningar",
-      "desc": "Frigate kan skicka pushaviseringar till enheten när Frigate körs i en webbläsare eller är installerat som en PWA."
+      "desc": "Orbi360 NVR kan skicka pushaviseringar till enheten när Orbi360 NVR körs i en webbläsare eller är installerat som en PWA."
     },
     "globalSettings": {
       "title": "Övergripande inställningar",
@@ -643,7 +643,7 @@
     "active": "Aviseringar är aktiva",
     "notificationUnavailable": {
       "title": "Aviseringar är inte tillgängliga",
-      "desc": "Web Push-aviseringar kräver en säker anslutning (<code>https://…</code>). Det är en begränsning i webbläsaren. Använd en säker anslutning till Frigate för att aktivera aviseringar."
+      "desc": "Web Push-aviseringar kräver en säker anslutning (<code>https://…</code>). Det är en begränsning i webbläsaren. Använd en säker anslutning till Orbi360 NVR för att aktivera aviseringar."
     },
     "deviceSpecific": "Enhetsspecifika inställningar",
     "registerDevice": "Registrera den här enheten",
@@ -663,7 +663,7 @@
     "cancelSuspension": "Avsluta pausen",
     "toast": {
       "success": {
-        "registered": "Registreringen för aviseringar har lyckats. Omstart av Frigate krävs innan några aviseringar (inklusive en testavisering) kan skickas.",
+        "registered": "Registreringen för aviseringar har lyckats. Omstart av Orbi360 NVR krävs innan några aviseringar (inklusive en testavisering) kan skickas.",
         "settingSaved": "Aviseringsinställningarna har sparats."
       },
       "error": {
@@ -729,7 +729,7 @@
     },
     "management": {
       "title": "Hantering av visningsroller",
-      "desc": "Hantera anpassade visningsroller och deras behörigheter för kameraåtkomst i den här Frigate-instansen."
+      "desc": "Hantera anpassade visningsroller och deras behörigheter för kameraåtkomst i den här Orbi360 NVR-instansen."
     }
   },
   "frigatePlus": {
@@ -771,7 +771,7 @@
     "unsavedChanges": "Osparade ändringar av inställningar för Frigate+",
     "restart_required": "Omstart krävs eftersom Frigate+-modellen har ändrats",
     "toast": {
-      "success": "Inställningarna för Frigate+ har sparats. Starta om Frigate för att tillämpa ändringarna.",
+      "success": "Inställningarna för Frigate+ har sparats. Starta om Orbi360 NVR för att tillämpa ändringarna.",
       "error": "Kunde inte spara konfigurationsändringarna: {{errorMessage}}"
     }
   },
@@ -856,7 +856,7 @@
         },
         "actions": {
           "title": "Åtgärder",
-          "desc": "Som standard skickar Frigate ett MQTT-meddelande för alla utlösare. Underetiketter lägger till utlösarens namn i objektetiketten. Attribut är sökbara metadata som lagras separat i det spårade objektets metadata.",
+          "desc": "Som standard skickar Orbi360 NVR ett MQTT-meddelande för alla utlösare. Underetiketter lägger till utlösarens namn i objektetiketten. Attribut är sökbara metadata som lagras separat i det spårade objektets metadata.",
           "error": {
             "min": "Minst en åtgärd måste väljas."
           }
@@ -904,7 +904,7 @@
   },
   "cameraWizard": {
     "title": "Lägg till kamera",
-    "description": "Följ stegen nedan för att lägga till en ny kamera i din Frigate-installation.",
+    "description": "Följ stegen nedan för att lägga till en ny kamera i din Orbi360 NVR-installation.",
     "steps": {
       "nameAndConnection": "Namn och anslutning",
       "streamConfiguration": "Strömkonfiguration",
@@ -1090,7 +1090,7 @@
         "resolutionLow": "En upplösning på {{resolution}} kan vara för låg för tillförlitlig detektering av små objekt."
       },
       "ffmpegModule": "Använd läge för strömkompatibilitet",
-      "ffmpegModuleDescription": "Om strömmen inte läses in efter flera försök, prova att aktivera detta. När det är aktiverat kommer Frigate att använda ffmpeg-modulen med go2rtc. Detta kan ge bättre kompatibilitet med vissa kameraströmmar.",
+      "ffmpegModuleDescription": "Om strömmen inte läses in efter flera försök, prova att aktivera detta. När det är aktiverat kommer Orbi360 NVR att använda ffmpeg-modulen med go2rtc. Detta kan ge bättre kompatibilitet med vissa kameraströmmar.",
       "streamsTitle": "Kameraströmmar",
       "addStream": "Lägg till ström",
       "addAnotherStream": "Lägg till ytterligare en ström",
@@ -1148,7 +1148,7 @@
       "estimatedBandwidth": "Uppskattad bandbredd",
       "roles": "Roller",
       "ffmpegModule": "Använd strömkompatibilitetsläge",
-      "ffmpegModuleDescription": "Om strömmen inte laddas efter flera försök, försök att aktivera detta. När det är aktiverat kommer Frigate att använda ffmpeg-modulen med go2rtc. Detta kan ge bättre kompatibilitet med vissa kameraströmmar.",
+      "ffmpegModuleDescription": "Om strömmen inte laddas efter flera försök, försök att aktivera detta. När det är aktiverat kommer Orbi360 NVR att använda ffmpeg-modulen med go2rtc. Detta kan ge bättre kompatibilitet med vissa kameraströmmar.",
       "none": "Ingen",
       "error": "Fel",
       "streamValidated": "Ström {{number}} har validerats",
@@ -1186,7 +1186,7 @@
     "backToSettings": "Tillbaka till kamerainställningar",
     "streams": {
       "title": "Aktivera eller inaktivera kameror",
-      "desc": "Inaktivera tillfälligt en kamera tills Frigate startar om. Om du inaktiverar en kamera helt stoppas Frigates bearbetning av kamerans strömmar. Detektering, inspelning och felsökning kommer inte att vara tillgängliga.<br /> <em>Obs! Detta inaktiverar inte go2rtc-återströmmar.</em>"
+      "desc": "Inaktivera tillfälligt en kamera tills Orbi360 NVR startar om. Om du inaktiverar en kamera helt stoppas Frigates bearbetning av kamerans strömmar. Detektering, inspelning och felsökning kommer inte att vara tillgängliga.<br /> <em>Obs! Detta inaktiverar inte go2rtc-återströmmar.</em>"
     },
     "cameraConfig": {
       "add": "Lägg till kamera",
@@ -1222,21 +1222,21 @@
     "title": "Inställningar för kameragranskning",
     "object_descriptions": {
       "title": "Generativa AI-objektbeskrivningar",
-      "desc": "Aktivera eller inaktivera tillfälligt generativa AI-objektbeskrivningar för kameran tills Frigate startar om. När funktionen är inaktiverad begärs inga AI-genererade beskrivningar för spårade objekt från kameran."
+      "desc": "Aktivera eller inaktivera tillfälligt generativa AI-objektbeskrivningar för kameran tills Orbi360 NVR startar om. När funktionen är inaktiverad begärs inga AI-genererade beskrivningar för spårade objekt från kameran."
     },
     "review_descriptions": {
       "title": "Beskrivningar av generativa AI-granskningar",
-      "desc": "Aktivera eller inaktivera tillfälligt generativa AI-granskningsbeskrivningar för kameran tills Frigate startar om. När funktionen är inaktiverad begärs inga AI-genererade beskrivningar för granskningsobjekt från kameran."
+      "desc": "Aktivera eller inaktivera tillfälligt generativa AI-granskningsbeskrivningar för kameran tills Orbi360 NVR startar om. När funktionen är inaktiverad begärs inga AI-genererade beskrivningar för granskningsobjekt från kameran."
     },
     "review": {
       "title": "Granska",
-      "desc": "Aktivera eller inaktivera tillfälligt varningar och detekteringar för kameran tills Frigate startar om. När funktionen är inaktiverad skapas inga nya granskningsobjekt. ",
+      "desc": "Aktivera eller inaktivera tillfälligt varningar och detekteringar för kameran tills Orbi360 NVR startar om. När funktionen är inaktiverad skapas inga nya granskningsobjekt. ",
       "alerts": "Varningar ",
       "detections": "Detekteringar "
     },
     "reviewClassification": {
       "title": "Granskningsklassificering",
-      "desc": "Frigate klassificerar granskningsobjekt som varningar eller detekteringar. Som standard betraktas alla <em>person</em>- och <em>bil</em>-objekt som varningar. Du kan förfina klassificeringen genom att ange obligatoriska zoner.",
+      "desc": "Orbi360 NVR klassificerar granskningsobjekt som varningar eller detekteringar. Som standard betraktas alla <em>person</em>- och <em>bil</em>-objekt som varningar. Du kan förfina klassificeringen genom att ange obligatoriska zoner.",
       "noDefinedZones": "Inga zoner är definierade för den här kameran.",
       "objectAlertsTips": "Alla {{alertsLabels}}-objekt på {{cameraName}} visas som varningar.",
       "zoneObjectAlertsTips": "Alla {{alertsLabels}}-objekt som detekteras i {{zone}} på {{cameraName}} visas som varningar.",
@@ -1251,7 +1251,7 @@
       "selectDetectionsZones": "Välj zoner för detekteringar",
       "limitDetections": "Begränsa detekteringar till specifika zoner",
       "toast": {
-        "success": "Konfigurationen för granskning av klassificering har sparats. Starta om Frigate för att tillämpa ändringarna."
+        "success": "Konfigurationen för granskning av klassificering har sparats. Starta om Orbi360 NVR för att tillämpa ändringarna."
       }
     }
   },

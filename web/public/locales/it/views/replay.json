@@ -1,6 +1,6 @@
 {
     "title": "Riproduzione correzioni",
-    "description": "Riproduci le registrazioni della telecamera per le correzioni. L'elenco degli oggetti mostra un riepilogo ritardato degli oggetti rilevati e la scheda Messaggi mostra un flusso di messaggi interni di Frigate tratti dal filmato riprodotto.",
+    "description": "Riproduci le registrazioni della telecamera per le correzioni. L'elenco degli oggetti mostra un riepilogo ritardato degli oggetti rilevati e la scheda Messaggi mostra un flusso di messaggi interni di Orbi360 NVR tratti dal filmato riprodotto.",
     "websocket_messages": "Messaggi",
     "dialog": {
         "title": "Avvia la riproduzione delle correzioni",
@@ -31,7 +31,7 @@
         "noSessionDesc": "Avvia una riproduzione correzioni dalla visualizzazione Cronologia facendo clic sul pulsante Azioni nella barra degli strumenti e scegliendo Riproduzione correzioni.",
         "goToRecordings": "Vai alla Cronologia",
         "preparingClip": "Preparazione video…",
-        "preparingClipDesc": "Frigate sta unendo le registrazioni relative all'intervallo di tempo selezionato. Questa operazione può richiedere un minuto per intervalli più lunghi.",
+        "preparingClipDesc": "Orbi360 NVR sta unendo le registrazioni relative all'intervallo di tempo selezionato. Questa operazione può richiedere un minuto per intervalli più lunghi.",
         "startingCamera": "Avvio della riproduzione correzioni…",
         "startError": {
             "title": "Impossibile avviare la riproduzione correzioni",
@@ -55,6 +55,6 @@
         "activeTracking": "Tracciamento attivo",
         "noActiveTracking": "Nessun tracciamento attivo",
         "configuration": "Configurazione",
-        "configurationDesc": "Regola con precisione le impostazioni di rilevamento del movimento e tracciamento degli oggetti per la telecamera riproduzione correzioni. Nessuna modifica verrà salvata nel file di configurazione di Frigate."
+        "configurationDesc": "Regola con precisione le impostazioni di rilevamento del movimento e tracciamento degli oggetti per la telecamera riproduzione correzioni. Nessuna modifica verrà salvata nel file di configurazione di Orbi360 NVR."
     }
 }

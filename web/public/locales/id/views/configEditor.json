@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Editor Konfigurasi - Frigate",
+  "documentTitle": "Editor Konfigurasi - Orbi360 NVR",
   "configEditor": "Editor Konfigurasi",
   "copyConfig": "Salin Konfigurasi",
   "saveAndRestart": "Simpan dan Mulai ulang",
@@ -13,6 +13,6 @@
     }
   },
   "confirm": "Keluar tanpa menyimpan?",
-  "safeModeDescription": "Frigate sedang dalam mode aman karena kesalahan validasi konfigurasi.",
+  "safeModeDescription": "Orbi360 NVR sedang dalam mode aman karena kesalahan validasi konfigurasi.",
   "safeConfigEditor": "Editor Konfigurasi(Mode Aman)"
 }

@@ -34,7 +34,7 @@
         "label": "Độ lệch Chú thích",
         "tips": "MẸO: Hãy tưởng tượng có một clip sự kiện với một người đi từ trái sang phải. Nếu hộp giới hạn trên dòng thời gian sự kiện luôn ở bên trái của người đó thì giá trị nên được giảm xuống. Tương tự, nếu một người đi từ trái sang phải và hộp giới hạn luôn ở phía trước người đó thì giá trị nên được tăng lên.",
         "toast": {
-          "success": "Độ lệch chú thích cho {{camera}} đã được lưu vào tệp cấu hình. Khởi động lại Frigate để áp dụng các thay đổi của bạn."
+          "success": "Độ lệch chú thích cho {{camera}} đã được lưu vào tệp cấu hình. Khởi động lại Orbi360 NVR để áp dụng các thay đổi của bạn."
         }
       },
       "title": "Cài đặt Chú thích"
@@ -67,12 +67,12 @@
           "regenerate": "Một mô tả mới đã được yêu cầu từ {{provider}}. Tùy thuộc vào tốc độ của nhà cung cấp của bạn, mô tả mới có thể mất một chút thời gian để tạo lại.",
           "updatedLPR": "Cập nhật biển số xe thành công.",
           "updatedSublabel": "Cập nhật nhãn phụ thành công.",
-          "audioTranscription": "Đã yêu cầu chuyển đổi âm thanh thành văn bản thành công. Tùy vào tốc độ của máy chủ Frigate, quá trình chuyển đổi có thể mất một khoảng thời gian để hoàn tất."
+          "audioTranscription": "Đã yêu cầu chuyển đổi âm thanh thành văn bản thành công. Tùy vào tốc độ của máy chủ Orbi360 NVR, quá trình chuyển đổi có thể mất một khoảng thời gian để hoàn tất."
         }
       },
       "tips": {
         "mismatch_other": "{{count}} đối tượng không khả dụng đã được phát hiện và bao gồm trong mục xem lại này. Những đối tượng đó hoặc không đủ điều kiện là một cảnh báo hoặc phát hiện hoặc đã được dọn dẹp/xóa.",
-        "hasMissingObjects": "Điều chỉnh cấu hình của bạn nếu bạn muốn Frigate lưu các đối tượng được theo dõi cho các nhãn sau: <em>{{objects}}</em>"
+        "hasMissingObjects": "Điều chỉnh cấu hình của bạn nếu bạn muốn Orbi360 NVR lưu các đối tượng được theo dõi cho các nhãn sau: <em>{{objects}}</em>"
       }
     },
     "expandRegenerationMenu": "Mở rộng menu tạo lại",
@@ -102,7 +102,7 @@
     "description": {
       "label": "Mô tả",
       "placeholder": "Mô tả của đối tượng được theo dõi",
-      "aiTips": "Frigate sẽ không yêu cầu mô tả từ nhà cung cấp AI tạo sinh của bạn cho đến khi vòng đời của đối tượng được theo dõi kết thúc."
+      "aiTips": "Orbi360 NVR sẽ không yêu cầu mô tả từ nhà cung cấp AI tạo sinh của bạn cho đến khi vòng đời của đối tượng được theo dõi kết thúc."
     },
     "tips": {
       "descriptionSaved": "Lưu mô tả thành công",
@@ -186,7 +186,7 @@
       "estimatedTime": "Thời gian ước tính còn lại:"
     },
     "downloadingModels": {
-      "context": "Frigate đang tải xuống các mô hình dữ liệu nhúng cần thiết để hỗ trợ tính năng Tìm kiếm theo Ngữ nghĩa. Quá trình này có thể mất vài phút tùy thuộc vào tốc độ kết nối mạng của bạn.",
+      "context": "Orbi360 NVR đang tải xuống các mô hình dữ liệu nhúng cần thiết để hỗ trợ tính năng Tìm kiếm theo Ngữ nghĩa. Quá trình này có thể mất vài phút tùy thuộc vào tốc độ kết nối mạng của bạn.",
       "setup": {
         "visionModel": "Mô hình thị giác",
         "visionModelFeatureExtractor": "Trình trích xuất đặc trưng mô hình thị giác",
@@ -197,7 +197,7 @@
         "context": "Bạn có thể muốn tái lập chỉ mục dữ liệu nhúng của các đối tượng được theo dõi sau khi các mô hình được tải xuống.",
         "documentation": "Đọc tài liệu"
       },
-      "error": "Đã xảy ra lỗi. Vui lòng kiểm tra nhật ký của Frigate."
+      "error": "Đã xảy ra lỗi. Vui lòng kiểm tra nhật ký của Orbi360 NVR."
     },
     "title": "Tính năng Khám phá không khả dụng"
   },
@@ -230,7 +230,7 @@
     "tracking_details": "chi tiết theo dõi"
   },
   "fetchingTrackedObjectsFailed": "Lỗi khi tìm nạp các đối tượng được theo dõi: {{errorMessage}}",
-  "documentTitle": "Khám phá - Frigate",
+  "documentTitle": "Khám phá - Orbi360 NVR",
   "generativeAI": "AI Tạo sinh",
   "trackedObjectsCount_other": "{{count}} đối tượng được theo dõi ",
   "aiAnalysis": {

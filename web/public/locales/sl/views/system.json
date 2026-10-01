@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "cameras": "Statistika kamer - Frigate",
-    "storage": "Statistika shrambe - Frigate",
-    "general": "Splošna statistika - Frigate",
+    "cameras": "Statistika kamer - Orbi360 NVR",
+    "storage": "Statistika shrambe - Orbi360 NVR",
+    "general": "Splošna statistika - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate dnevniki - Frigate",
-      "go2rtc": "Go2RTC dnevniki - Frigate",
-      "nginx": "Nginx dnevniki - Frigate",
-      "websocket": "Dnevniki sporočil - Frigate"
+      "frigate": "Orbi360 NVR dnevniki - Orbi360 NVR",
+      "go2rtc": "Go2RTC dnevniki - Orbi360 NVR",
+      "nginx": "Nginx dnevniki - Orbi360 NVR",
+      "websocket": "Dnevniki sporočil - Orbi360 NVR"
     },
-    "enrichments": "Statistika obogatenih podatkov - Frigate"
+    "enrichments": "Statistika obogatenih podatkov - Orbi360 NVR"
   },
   "logs": {
     "download": {
@@ -63,7 +63,7 @@
   "storage": {
     "recordings": {
       "title": "Posnetki",
-      "tips": "Ta vrednost predstavlja skupno shrambo, ki jo zasedajo posnetki v podatkovni bazi Frigate. Frigate ne spremlja porabe shrambe za vse datoteke na tvojem disku.",
+      "tips": "Ta vrednost predstavlja skupno shrambo, ki jo zasedajo posnetki v podatkovni bazi Orbi360 NVR. Orbi360 NVR ne spremlja porabe shrambe za vse datoteke na tvojem disku.",
       "earliestRecording": "Najstarejši razpoložljiv posnetek:"
     },
     "title": "Shramba",
@@ -77,7 +77,7 @@
       "bandwidth": "Pasovna širina",
       "unused": {
         "title": "Neporabljeno",
-        "tips": "Ta vrednost morda ne predstavlja natančno prostega prostora, ki je na voljo programu Frigate, če imaš na disku poleg posnetkov Frigate shranjene še druge datoteke. Frigate ne spremlja porabe shrambe izven svojih posnetkov."
+        "tips": "Ta vrednost morda ne predstavlja natančno prostega prostora, ki je na voljo programu Orbi360 NVR, če imaš na disku poleg posnetkov Orbi360 NVR shranjene še druge datoteke. Orbi360 NVR ne spremlja porabe shrambe izven svojih posnetkov."
       }
     },
     "shm": {
@@ -124,7 +124,7 @@
       "npuUsage": "Uporaba NPU",
       "intelGpuWarning": {
         "message": "Statistika GPU ni na voljo",
-        "description": "To je znana napaka v Intelovih orodjih za poročanje (intel_gpu_top), kjer orodje neha delovati in nenehno vrača 0 % porabo GPU, čeprav strojno pospeševanje in zaznavanje objektov pravilno delujeta na (i)GPU. To ni napaka programa Frigate. Za začasno rešitev in potrditev delovanja lahko ponovno zaženeš gostiteljski sistem. To ne vpliva na zmogljivost.",
+        "description": "To je znana napaka v Intelovih orodjih za poročanje (intel_gpu_top), kjer orodje neha delovati in nenehno vrača 0 % porabo GPU, čeprav strojno pospeševanje in zaznavanje objektov pravilno delujeta na (i)GPU. To ni napaka programa Orbi360 NVR. Za začasno rešitev in potrditev delovanja lahko ponovno zaženeš gostiteljski sistem. To ne vpliva na zmogljivost.",
         "title": "Opozorilo za Intel GPU"
       },
       "gpuTemperature": "Temperatura GPU",

@@ -49,12 +49,12 @@
   "restart": {
     "restarting": {
       "button": "โหลดหน้าใหม่ตอนนี้",
-      "title": "Frigate กำลังรีสตาร์ท",
+      "title": "Orbi360 NVR กำลังรีสตาร์ท",
       "content": "หน้านี้จะถูกโหลดในอีก {{countdown}} วินาที."
     },
-    "title": "คุณแน่ใจหรือว่าต้องการรีสตาร์ท Frigate?",
+    "title": "คุณแน่ใจหรือว่าต้องการรีสตาร์ท Orbi360 NVR?",
     "button": "รีสตาร์ท",
-    "description": "Frigate จะหยุดทำงานชั่วขณะในระหว่างรีสตาร์ท"
+    "description": "Orbi360 NVR จะหยุดทำงานชั่วขณะในระหว่างรีสตาร์ท"
   },
   "explore": {
     "plus": {

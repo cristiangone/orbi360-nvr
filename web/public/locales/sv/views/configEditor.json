@@ -10,9 +10,9 @@
       "savingError": "Det gick inte att spara konfigurationen"
     }
   },
-  "documentTitle": "Redigera konfiguration – Frigate",
+  "documentTitle": "Redigera konfiguration – Orbi360 NVR",
   "configEditor": "Redigera konfiguration",
   "confirm": "Avsluta utan att spara?",
   "safeConfigEditor": "Konfigurationsredigerare (felsäkert läge)",
-  "safeModeDescription": "Frigate är i felsäkert läge på grund av ett konfigurationsvalideringsfel."
+  "safeModeDescription": "Orbi360 NVR är i felsäkert läge på grund av ett konfigurationsvalideringsfel."
 }

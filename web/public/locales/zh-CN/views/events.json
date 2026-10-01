@@ -24,9 +24,9 @@
     "aria": "选择事件",
     "noFoundForTimePeriod": "未找到该时间段的事件。"
   },
-  "documentTitle": "核查 - Frigate",
+  "documentTitle": "核查 - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "回放 - Frigate",
+    "documentTitle": "回放 - Orbi360 NVR",
     "invalidSharedLink": "由于解析错误，无法打开带时间戳的录制链接。",
     "invalidSharedCamera": "由于摄像头未知或未获授权，无法打开带时间戳的录制链接。"
   },

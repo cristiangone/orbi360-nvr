@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Até {{time}}",
-    "untilForRestart": "Até o Frigate reiniciar.",
+    "untilForRestart": "Até o Orbi360 NVR reiniciar.",
     "untilRestart": "Até reiniciar",
     "ago": "{{timeAgo}} atrás",
     "justNow": "Agora mesmo",
@@ -239,9 +239,9 @@
     "help": "Ajuda",
     "documentation": {
       "title": "Documentação",
-      "label": "Documentação do Frigate"
+      "label": "Documentação do Orbi360 NVR"
     },
-    "restart": "Reiniciar o Frigate",
+    "restart": "Reiniciar o Orbi360 NVR",
     "live": {
       "title": "Ao Vivo",
       "allCameras": "Todas as câmeras",
@@ -286,7 +286,7 @@
     "title": "Papel",
     "admin": "Administrador",
     "viewer": "Espectador",
-    "desc": "Administradores possuem acesso total a todos os recursos da interface do Frigate. Espectadores são limitados a ver as câmeras, revisar itens, e filmagens históricas na interface."
+    "desc": "Administradores possuem acesso total a todos os recursos da interface do Orbi360 NVR. Espectadores são limitados a ver as câmeras, revisar itens, e filmagens históricas na interface."
   },
   "pagination": {
     "label": "paginação",
@@ -301,12 +301,12 @@
     "more": "Mais páginas"
   },
   "accessDenied": {
-    "documentTitle": "Acesso Negado - Frigate",
+    "documentTitle": "Acesso Negado - Orbi360 NVR",
     "title": "Acesso Negado",
     "desc": "Você não possui permissão para visualizar essa página."
   },
   "notFound": {
-    "documentTitle": "Não Encontrado - Frigate",
+    "documentTitle": "Não Encontrado - Orbi360 NVR",
     "title": "404",
     "desc": "Página não encontrada"
   },
@@ -321,7 +321,7 @@
   },
   "field": {
     "optional": "Opcional",
-    "internalID": "O ID interno que o Frigate usa na configuração e banco de dados"
+    "internalID": "O ID interno que o Orbi360 NVR usa na configuração e banco de dados"
   },
   "no_items": "Sem itens",
   "validation_errors": "Erros de validação",

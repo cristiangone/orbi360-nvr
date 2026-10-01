@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Êtes-vous sûr de vouloir redémarrer Frigate ?",
+    "title": "Êtes-vous sûr de vouloir redémarrer Orbi360 NVR ?",
     "restarting": {
-      "title": "Redémarrage de Frigate en cours",
+      "title": "Redémarrage de Orbi360 NVR en cours",
       "content": "Cette page sera rechargée dans {{countdown}} secondes.",
       "button": "Forcer l'actualisation maintenant"
     },
     "button": "Redémarrer",
-    "description": "Frigate s'arrêtera momentanément pour redémarrer."
+    "description": "Orbi360 NVR s'arrêtera momentanément pour redémarrer."
   },
   "explore": {
     "plus": {
@@ -204,10 +204,10 @@
     "shareTimestamp": {
       "label": "Partager cette date",
       "title": "Partager cette date",
-      "description": "Partager une URL horodatée correspondant à la position actuelle du lecteur, ou choisir un horodatage personnalisé. Notez qu’il ne s’agit pas d’un lien de partage public et qu’il est uniquement accessible aux utilisateurs ayant accès à Frigate et à cette caméra.",
+      "description": "Partager une URL horodatée correspondant à la position actuelle du lecteur, ou choisir un horodatage personnalisé. Notez qu’il ne s’agit pas d’un lien de partage public et qu’il est uniquement accessible aux utilisateurs ayant accès à Orbi360 NVR et à cette caméra.",
       "custom": "Horodatage personnalisé",
       "button": "Partager le lien de l'horodatage",
-      "shareTitle": "Horodatage de la revue Frigate : {{camera}}"
+      "shareTitle": "Horodatage de la revue Orbi360 NVR : {{camera}}"
     }
   },
   "imagePicker": {

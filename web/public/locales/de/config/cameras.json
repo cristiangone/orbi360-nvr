@@ -46,7 +46,7 @@
     },
     "friendly_name": {
         "label": "Anzeigename",
-        "description": "Kamera-Anzeigename in der Frigate-Benutzeroberfläche"
+        "description": "Kamera-Anzeigename in der Orbi360 NVR-Benutzeroberfläche"
     },
     "audio_transcription": {
         "label": "Audio-Transkription",
@@ -673,7 +673,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Beim Start kalibrieren",
-                "description": "Messen Sie die Drehzahlen der PTZ-Motoren beim Start, um die Nachführgenauigkeit zu verbessern. Frigate aktualisiert die Konfiguration nach der Kalibrierung mit den Bewegungsgewichten."
+                "description": "Messen Sie die Drehzahlen der PTZ-Motoren beim Start, um die Nachführgenauigkeit zu verbessern. Orbi360 NVR aktualisiert die Konfiguration nach der Kalibrierung mit den Bewegungsgewichten."
             },
             "zooming": {
                 "label": "Zoom-Modus",
@@ -724,7 +724,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Zeitabweichung ignorieren",
-            "description": "Ignoriere Zeitunterschiede zwischen Kamera und Frigate-Server bei der ONVIF-Kommunikation."
+            "description": "Ignoriere Zeitunterschiede zwischen Kamera und Orbi360 NVR-Server bei der ONVIF-Kommunikation."
         },
         "profile": {
             "label": "ONVIF Profile",
@@ -888,7 +888,7 @@
         "description": "Mit Zonen können Sie einen bestimmten Bereich des Bildausschnitts festlegen, um zu bestimmen, ob sich ein Objekt innerhalb dieses Bereichs befindet oder nicht.",
         "friendly_name": {
             "label": "Zonen Name",
-            "description": "Ein benutzerfreundlicher Name für die Zone, der in der Benutzeroberfläche von Frigate angezeigt wird. Wenn kein Name festgelegt ist, wird eine formatierte Version des Zonennamens verwendet."
+            "description": "Ein benutzerfreundlicher Name für die Zone, der in der Benutzeroberfläche von Orbi360 NVR angezeigt wird. Wenn kein Name festgelegt ist, wird eine formatierte Version des Zonennamens verwendet."
         },
         "enabled": {
             "label": "Aktiviert",

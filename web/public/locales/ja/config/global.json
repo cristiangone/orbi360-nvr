@@ -5,7 +5,7 @@
     },
     "environment_vars": {
         "label": "環境変数",
-        "description": "Home Assistant OS の Frigate プロセスに設定する環境変数のキー/値ペア。HAOS をご利用でない場合は、代わりに Docker の環境変数設定を使用してください。"
+        "description": "Home Assistant OS の Orbi360 NVR プロセスに設定する環境変数のキー/値ペア。HAOS をご利用でない場合は、代わりに Docker の環境変数設定を使用してください。"
     },
     "audio": {
         "label": "音声検知",
@@ -59,7 +59,7 @@
         "label": "認証",
         "enabled": {
             "label": "認証を有効化",
-            "description": "Frigate UI でネイティブ認証を有効にする。"
+            "description": "Orbi360 NVR UI でネイティブ認証を有効にする。"
         },
         "reset_admin_password": {
             "label": "adminパスワードをリセット",
@@ -272,7 +272,7 @@
         },
         "topic_prefix": {
             "label": "トピックプレフィックス",
-            "description": "Frigate の全 MQTT トピックに付与するプレフィックス。複数インスタンスを起動する場合は重複しないようにします。"
+            "description": "Orbi360 NVR の全 MQTT トピックに付与するプレフィックス。複数インスタンスを起動する場合は重複しないようにします。"
         },
         "client_id": {
             "label": "クライアント ID",
@@ -340,7 +340,7 @@
         },
         "version_check": {
             "label": "バージョンチェック",
-            "description": "新しい Frigate のバージョンが利用可能かを外部にチェックする機能を有効にします。"
+            "description": "新しい Orbi360 NVR のバージョンが利用可能かを外部にチェックする機能を有効にします。"
         }
     },
     "notifications": {
@@ -365,13 +365,13 @@
     },
     "networking": {
         "label": "ネットワーキング",
-        "description": "Frigate エンドポイントの IPv6 有効化など、ネットワーク関連の設定。",
+        "description": "Orbi360 NVR エンドポイントの IPv6 有効化など、ネットワーク関連の設定。",
         "ipv6": {
             "label": "IPv6 設定",
-            "description": "Frigate ネットワークサービス向けの IPv6 固有設定。",
+            "description": "Orbi360 NVR ネットワークサービス向けの IPv6 固有設定。",
             "enabled": {
                 "label": "IPv6 を有効化",
-                "description": "適用可能な Frigate サービス（API および UI）で IPv6 サポートを有効にします。"
+                "description": "適用可能な Orbi360 NVR サービス（API および UI）で IPv6 サポートを有効にします。"
             }
         },
         "listen": {
@@ -379,20 +379,20 @@
             "description": "内部・外部の待ち受けポートの設定。上級者向け。多くの場合 Docker compose ファイルの ports セクションを変更することを推奨します。",
             "internal": {
                 "label": "内部ポート",
-                "description": "Frigate の内部待ち受けポート（デフォルト 5000）。"
+                "description": "Orbi360 NVR の内部待ち受けポート（デフォルト 5000）。"
             },
             "external": {
                 "label": "外部ポート",
-                "description": "Frigate の外部待ち受けポート（デフォルト 8971）。"
+                "description": "Orbi360 NVR の外部待ち受けポート（デフォルト 8971）。"
             }
         }
     },
     "proxy": {
         "label": "プロキシ",
-        "description": "認証済みユーザーヘッダーを渡すリバースプロキシの背後で Frigate を運用する際の設定。",
+        "description": "認証済みユーザーヘッダーを渡すリバースプロキシの背後で Orbi360 NVR を運用する際の設定。",
         "header_map": {
             "label": "ヘッダーマッピング",
-            "description": "プロキシベース認証のため、受信したプロキシヘッダーを Frigate のユーザー・ロールフィールドにマッピングします。",
+            "description": "プロキシベース認証のため、受信したプロキシヘッダーを Orbi360 NVR のユーザー・ロールフィールドにマッピングします。",
             "user": {
                 "label": "ユーザーヘッダー",
                 "description": "上流プロキシから提供される認証済みユーザー名を含むヘッダー。"
@@ -403,7 +403,7 @@
             },
             "role_map": {
                 "label": "ロールマッピング",
-                "description": "上流のグループ値を Frigate のロールにマッピングします（例: admin グループを admin ロールに）。"
+                "description": "上流のグループ値を Orbi360 NVR のロールにマッピングします（例: admin グループを admin ロールに）。"
             }
         },
         "logout_url": {
@@ -425,10 +425,10 @@
     },
     "tls": {
         "label": "TLS",
-        "description": "Frigate の Web エンドポイント（ポート 8971）の TLS 設定。",
+        "description": "Orbi360 NVR の Web エンドポイント（ポート 8971）の TLS 設定。",
         "enabled": {
             "label": "TLS を有効化",
-            "description": "設定された TLS ポートで Frigate の Web UI と API の TLS を有効にします。"
+            "description": "設定された TLS ポートで Orbi360 NVR の Web UI と API の TLS を有効にします。"
         }
     },
     "ui": {
@@ -1636,7 +1636,7 @@
         },
         "ignore_time_mismatch": {
             "label": "時刻差異を無視",
-            "description": "ONVIF 通信時に、カメラと Frigate サーバー間の時刻同期差異を無視します。"
+            "description": "ONVIF 通信時に、カメラと Orbi360 NVR サーバー間の時刻同期差異を無視します。"
         }
     }
 }

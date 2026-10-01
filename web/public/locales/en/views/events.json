@@ -43,9 +43,9 @@
     "trackedPoint": "Tracked point",
     "clickToSeek": "Click to seek to this time"
   },
-  "documentTitle": "Review - Frigate",
+  "documentTitle": "Review - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Recordings - Frigate",
+    "documentTitle": "Recordings - Orbi360 NVR",
     "invalidSharedLink": "Unable to open timestamped recording link due to parsing error.",
     "invalidSharedCamera": "Unable to open timestamped recording link due to an unknown or unauthorized camera."
   },

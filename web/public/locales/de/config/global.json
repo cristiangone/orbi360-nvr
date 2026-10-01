@@ -5,7 +5,7 @@
     },
     "safe_mode": {
         "label": "abgesicherter Modus",
-        "description": "Wenn aktiviert, startet Frigate im abgesicherten Modus mit reduzierten Features für die Fehlersuche."
+        "description": "Wenn aktiviert, startet Orbi360 NVR im abgesicherten Modus mit reduzierten Features für die Fehlersuche."
     },
     "audio": {
         "label": "Audioereignisse",
@@ -45,7 +45,7 @@
     },
     "environment_vars": {
         "label": "Umgebungsvariablen",
-        "description": "Schlüssel-/Wertpaare für Umgebungsvariablen des Frigate-Prozesses in Home Assistant OS. Nicht-HAOS Benutzer müssen anstatt dessen Docker Umgebungsvariablen nutzen."
+        "description": "Schlüssel-/Wertpaare für Umgebungsvariablen des Orbi360 NVR-Prozesses in Home Assistant OS. Nicht-HAOS Benutzer müssen anstatt dessen Docker Umgebungsvariablen nutzen."
     },
     "logger": {
         "label": "Protokollierung",
@@ -64,7 +64,7 @@
         "description": "Einstellungen für die Authentifizierung und Sitzungen, einschließlich Optionen für Cookies und Limits.",
         "enabled": {
             "label": "Authentifizierung aktivieren",
-            "description": "Aktivierung native Authentifizierung für Frigate UI."
+            "description": "Aktivierung native Authentifizierung für Orbi360 NVR UI."
         },
         "reset_admin_password": {
             "label": "Zurücksetzen vom Admin Passwort",
@@ -185,10 +185,10 @@
     },
     "database": {
         "label": "Datenbank",
-        "description": "Einstellungen für die SQLite-Datenbank, die von Frigate zum Speichern von verfolgten Objekten und Aufzeichnungsmetadaten verwendet wird.",
+        "description": "Einstellungen für die SQLite-Datenbank, die von Orbi360 NVR zum Speichern von verfolgten Objekten und Aufzeichnungsmetadaten verwendet wird.",
         "path": {
             "label": "Pfad zur Datenbank",
-            "description": "Dateisystempfad, in dem die Frigate-SQLite-Datenbankdatei gespeichert wird."
+            "description": "Dateisystempfad, in dem die Orbi360 NVR-SQLite-Datenbankdatei gespeichert wird."
         }
     },
     "detect": {
@@ -272,7 +272,7 @@
         },
         "topic_prefix": {
             "label": "Themenpräfix",
-            "description": "MQTT-Themenpräfix für alle Frigate-Themen; muss bei Ausführung mehrerer Instanzen eindeutig sein."
+            "description": "MQTT-Themenpräfix für alle Orbi360 NVR-Themen; muss bei Ausführung mehrerer Instanzen eindeutig sein."
         },
         "client_id": {
             "label": "Klient ID",
@@ -445,13 +445,13 @@
     },
     "networking": {
         "label": "Vernetzung",
-        "description": "Netzwerkbezogene Einstellungen wie die Aktivierung von IPv6 für Frigate-Endpunkte.",
+        "description": "Netzwerkbezogene Einstellungen wie die Aktivierung von IPv6 für Orbi360 NVR-Endpunkte.",
         "ipv6": {
             "label": "IPv6-Konfiguration",
-            "description": "IPv6-spezifische Einstellungen für Frigate-Netzwerkdienste.",
+            "description": "IPv6-spezifische Einstellungen für Orbi360 NVR-Netzwerkdienste.",
             "enabled": {
                 "label": "IPv6 aktivieren",
-                "description": "Aktivieren Sie die IPv6-Unterstützung für Frigate-Dienste (API und Benutzeroberfläche), wo dies möglich ist."
+                "description": "Aktivieren Sie die IPv6-Unterstützung für Orbi360 NVR-Dienste (API und Benutzeroberfläche), wo dies möglich ist."
             }
         },
         "listen": {
@@ -459,20 +459,20 @@
             "description": "Konfiguration für interne und externe Listening-Ports. Dies ist für fortgeschrittene Benutzer gedacht. Für die meisten Anwendungsfälle wird empfohlen, den Abschnitt „Ports“ Ihrer Docker-Compose-Datei zu ändern.",
             "internal": {
                 "label": "interne port",
-                "description": "Interner Listening-Port für Frigate (Standard 5000)."
+                "description": "Interner Listening-Port für Orbi360 NVR (Standard 5000)."
             },
             "external": {
                 "label": "Externer Anschluss",
-                "description": "Externer Listening-Port für Frigate (Standard 8971)."
+                "description": "Externer Listening-Port für Orbi360 NVR (Standard 8971)."
             }
         }
     },
     "proxy": {
         "label": "Proxy",
-        "description": "Einstellungen für die Integration von Frigate hinter einem Reverse-Proxy, der authentifizierte Benutzer-Header weiterleitet.",
+        "description": "Einstellungen für die Integration von Orbi360 NVR hinter einem Reverse-Proxy, der authentifizierte Benutzer-Header weiterleitet.",
         "header_map": {
             "label": "Header-Zuordnung",
-            "description": "Ordnen Sie eingehende Proxy-Header den Frigate-Benutzer- und Rollenfeldern für die proxybasierte Authentifizierung zu.",
+            "description": "Ordnen Sie eingehende Proxy-Header den Orbi360 NVR-Benutzer- und Rollenfeldern für die proxybasierte Authentifizierung zu.",
             "user": {
                 "label": "Benutzerkopfzeile",
                 "description": "Header, der den vom Upstream-Proxy bereitgestellten authentifizierten Benutzernamen enthält."
@@ -483,7 +483,7 @@
             },
             "role_map": {
                 "label": "Rollenabbildung",
-                "description": "Ordnen Sie die Werte der Upstream-Gruppe den Frigate-Rollen zu (z. B. ordnen Sie Admin-Gruppen der Admin-Rolle zu)."
+                "description": "Ordnen Sie die Werte der Upstream-Gruppe den Orbi360 NVR-Rollen zu (z. B. ordnen Sie Admin-Gruppen der Admin-Rolle zu)."
             }
         },
         "logout_url": {
@@ -548,7 +548,7 @@
         },
         "version_check": {
             "label": "Versionscheck",
-            "description": "Aktivieren Sie eine Outbound-Prüfung, um festzustellen, ob eine neuere Version von Frigate verfügbar ist."
+            "description": "Aktivieren Sie eine Outbound-Prüfung, um festzustellen, ob eine neuere Version von Orbi360 NVR verfügbar ist."
         }
     },
     "lpr": {
@@ -674,10 +674,10 @@
     },
     "tls": {
         "label": "TLS",
-        "description": "TLS-Einstellungen für die Website von Frigate (Port 8971).",
+        "description": "TLS-Einstellungen für die Website von Orbi360 NVR (Port 8971).",
         "enabled": {
             "label": "Aktivieren TLS",
-            "description": "Aktivieren Sie TLS für die Web-Benutzeroberfläche und die API von Frigate auf dem konfigurierten TLS-Port."
+            "description": "Aktivieren Sie TLS für die Web-Benutzeroberfläche und die API von Orbi360 NVR auf dem konfigurierten TLS-Port."
         }
     },
     "ui": {
@@ -1529,7 +1529,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Beim Start kalibrieren",
-                "description": "Messen Sie die Drehzahlen der PTZ-Motoren beim Start, um die Nachführgenauigkeit zu verbessern. Frigate aktualisiert die Konfiguration nach der Kalibrierung mit den Bewegungsgewichten."
+                "description": "Messen Sie die Drehzahlen der PTZ-Motoren beim Start, um die Nachführgenauigkeit zu verbessern. Orbi360 NVR aktualisiert die Konfiguration nach der Kalibrierung mit den Bewegungsgewichten."
             },
             "zooming": {
                 "label": "Zoom-Modus",
@@ -1580,7 +1580,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Zeitabweichung ignorieren",
-            "description": "Ignoriere Zeitunterschiede zwischen Kamera und Frigate-Server bei der ONVIF-Kommunikation."
+            "description": "Ignoriere Zeitunterschiede zwischen Kamera und Orbi360 NVR-Server bei der ONVIF-Kommunikation."
         },
         "profile": {
             "label": "ONVIF Profile",

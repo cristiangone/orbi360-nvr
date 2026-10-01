@@ -1,5 +1,5 @@
 {
-  "documentTitle": "분류 모델 - Frigate",
+  "documentTitle": "분류 모델 - Orbi360 NVR",
   "details": {
     "scoreInfo": "점수는 이 객체에 대해 감지된 모든 결과의 평균 분류 신뢰도를 나타냅니다.",
     "none": "없음",
@@ -38,7 +38,7 @@
       "deleteCategoryFailed": "클래스 삭제 실패: {{errorMessage}}",
       "deleteModelFailed": "모델 삭제 실패: {{errorMessage}}",
       "categorizeFailed": "이미지 분류 실패: {{errorMessage}}",
-      "trainingFailed": "모델 학습에 실패했습니다. 자세한 내용은 Frigate 로그를 확인하세요.",
+      "trainingFailed": "모델 학습에 실패했습니다. 자세한 내용은 Orbi360 NVR 로그를 확인하세요.",
       "trainingFailedToStart": "모델 학습 시작 실패: {{errorMessage}}",
       "updateModelFailed": "모델 업데이트 실패: {{errorMessage}}",
       "renameCategoryFailed": "클래스 이름 변경 실패: {{errorMessage}}",

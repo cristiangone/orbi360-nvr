@@ -824,7 +824,7 @@ export function DetectorHardwareField(props: FieldProps) {
                             {t("field.internalID", {
                               ns: "common",
                               defaultValue:
-                                "The Internal ID Frigate uses in the configuration and database",
+                                "The Internal ID Orbi360 NVR uses in the configuration and database",
                             })}
                           </p>
                           {renameErrors[key] && (

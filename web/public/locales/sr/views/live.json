@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Uživo - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Uživo - Frigate",
+  "documentTitle": "Uživo - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Uživo - Orbi360 NVR",
   "lowBandwidthMode": "Režim niskog propusnog opsega",
   "twoWayTalk": {
     "enable": "Omogući dvosmerni razgovor",

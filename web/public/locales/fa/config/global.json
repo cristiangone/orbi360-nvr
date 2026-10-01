@@ -976,7 +976,7 @@
         },
         "ignore_time_mismatch": {
             "label": "عدم تطابق زمانی را نادیده بگیرید",
-            "description": "برای ارتباط ONVIF، از تفاوت‌های همگام‌سازی زمانی بین دوربین و سرور Frigate صرف نظر کنید."
+            "description": "برای ارتباط ONVIF، از تفاوت‌های همگام‌سازی زمانی بین دوربین و سرور Orbi360 NVR صرف نظر کنید."
         },
         "label": "ONVIF",
         "profile": {
@@ -1140,7 +1140,7 @@
             "description": "تنظیمات خاص IPv6 برای سرویس‌های شبکه فریگیت.",
             "enabled": {
                 "label": "فعال کردن IPv6",
-                "description": "فعال کردن IPv6 support for Frigate services (API and رابط کاربری) where applicable."
+                "description": "فعال کردن IPv6 support for Orbi360 NVR services (API and رابط کاربری) where applicable."
             }
         },
         "listen": {
@@ -1229,7 +1229,7 @@
         "description": "تنظیمات TLS برای نقاط پایانی وب فریگیت (پورت 8971).",
         "enabled": {
             "label": "فعال کردن TLS",
-            "description": "فعال کردن TLS for Frigate's web رابط کاربری and API on the configured TLS port."
+            "description": "فعال کردن TLS for Orbi360 NVR's web رابط کاربری and API on the configured TLS port."
         }
     },
     "ui": {

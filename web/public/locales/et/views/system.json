@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "general": "Üldine statistika - Frigate",
-    "cameras": "Kaamerate statistika - Frigate",
-    "storage": "Andmeruumi statistika - Frigate",
+    "general": "Üldine statistika - Orbi360 NVR",
+    "cameras": "Kaamerate statistika - Orbi360 NVR",
+    "storage": "Andmeruumi statistika - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate logid - Frigate",
-      "go2rtc": "Go2RTC logid - Frigate",
-      "nginx": "Nginx logid - Frigate",
-      "websocket": "Sõnumite logid - Frigate"
+      "frigate": "Orbi360 NVR logid - Orbi360 NVR",
+      "go2rtc": "Go2RTC logid - Orbi360 NVR",
+      "nginx": "Nginx logid - Orbi360 NVR",
+      "websocket": "Sõnumite logid - Orbi360 NVR"
     },
-    "enrichments": "Rikastus statistika - Frigate"
+    "enrichments": "Rikastus statistika - Orbi360 NVR"
   },
   "logs": {
     "download": {
@@ -144,7 +144,7 @@
       "camera": "Kaamera",
       "unused": {
         "title": "Kasutamata",
-        "tips": "See väärtus ei pruugi Frigate'i jaoks saadaolevat vaba ruumi täpselt kajastada, kui teie draivil on lisaks Frigate'i salvestistele ka muid faile. Frigate ei jälgi salvestusruumi kasutamist väljaspool oma salvestisi."
+        "tips": "See väärtus ei pruugi Orbi360 NVR'i jaoks saadaolevat vaba ruumi täpselt kajastada, kui teie draivil on lisaks Orbi360 NVR'i salvestistele ka muid faile. Orbi360 NVR ei jälgi salvestusruumi kasutamist väljaspool oma salvestisi."
       },
       "bandwidth": "Ribalaius",
       "storageUsed": "Salvestusmaht",

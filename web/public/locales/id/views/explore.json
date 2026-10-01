@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Jelajahi - Frigate",
+  "documentTitle": "Jelajahi - Orbi360 NVR",
   "generativeAI": "AI Generatif",
   "exploreIsUnavailable": {
     "title": "Jelajah Tidak Tersedia",
@@ -15,7 +15,7 @@
       }
     },
     "downloadingModels": {
-      "context": "Frigate sedang mengunduh model embedding yang diperlukan untuk mendukung fitur Pencarian Semantik. Ini mungkin memerlukan beberapa menit tergantung pada kecepatan koneksi jaringan Anda.",
+      "context": "Orbi360 NVR sedang mengunduh model embedding yang diperlukan untuk mendukung fitur Pencarian Semantik. Ini mungkin memerlukan beberapa menit tergantung pada kecepatan koneksi jaringan Anda.",
       "setup": {
         "visionModel": "Model visi",
         "visionModelFeatureExtractor": "Pengekstrak fitur model visi",
@@ -25,7 +25,7 @@
       "tips": {
         "context": "Anda mungkin ingin mengindeks ulang embedding objek terlacak Anda setelah model selesai diunduh."
       },
-      "error": "Terjadi kesalahan. Periksa log Frigate."
+      "error": "Terjadi kesalahan. Periksa log Orbi360 NVR."
     }
   },
   "details": {
@@ -39,7 +39,7 @@
       },
       "tips": {
         "mismatch_other": "{{count}} objek yang tidak tersedia terdeteksi dan disertakan dalam item tinjauan ini. Objek-objek tersebut tidak memenuhi syarat sebagai peringatan atau deteksi, atau sudah dibersihkan/dihapus.",
-        "hasMissingObjects": "Sesuaikan konfigurasi Anda jika Anda ingin Frigate menyimpan objek terlacak untuk label berikut: <em>{{objects}}</em>"
+        "hasMissingObjects": "Sesuaikan konfigurasi Anda jika Anda ingin Orbi360 NVR menyimpan objek terlacak untuk label berikut: <em>{{objects}}</em>"
       },
       "toast": {
         "success": {
@@ -47,7 +47,7 @@
           "updatedSublabel": "Berhasil memperbarui sublabel.",
           "updatedLPR": "Berhasil memperbarui pelat nomor.",
           "updatedAttributes": "Berhasil memperbarui atribut.",
-          "audioTranscription": "Berhasil meminta transkripsi audio. Tergantung pada kecepatan server Frigate Anda, transkripsi mungkin memerlukan waktu untuk selesai."
+          "audioTranscription": "Berhasil meminta transkripsi audio. Tergantung pada kecepatan server Orbi360 NVR Anda, transkripsi mungkin memerlukan waktu untuk selesai."
         },
         "error": {
           "regenerate": "Gagal memanggil {{provider}} untuk deskripsi baru: {{errorMessage}}",
@@ -99,7 +99,7 @@
     "description": {
       "label": "Deskripsi",
       "placeholder": "Deskripsi objek terlacak",
-      "aiTips": "Frigate tidak akan meminta deskripsi dari penyedia AI Generatif Anda sampai siklus hidup objek terlacak berakhir."
+      "aiTips": "Orbi360 NVR tidak akan meminta deskripsi dari penyedia AI Generatif Anda sampai siklus hidup objek terlacak berakhir."
     },
     "expandRegenerationMenu": "Perluas menu pembuatan ulang",
     "regenerateFromSnapshot": "Buat Ulang dari Snapshot",

@@ -3,7 +3,7 @@
     "title": "Vai esi pārliecināts, ka vēlies pārstartēt Frigati?",
     "button": "Pārstartēt",
     "restarting": {
-      "title": "Frigate tiek pārstartēta",
+      "title": "Orbi360 NVR tiek pārstartēta",
       "content": "Šī lapa tiks atkārtoti ielādēta pēc {{countdown}} sekundēm.",
       "button": "Atjaunot tagad"
     }

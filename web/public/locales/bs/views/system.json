@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "cameras": "Statistika kamere - Frigate",
-    "storage": "Statistika skladišta - Frigate",
-    "general": "Opća statistika - Frigate",
-    "enrichments": "Statistika bogatstva - Frigate",
+    "cameras": "Statistika kamere - Orbi360 NVR",
+    "storage": "Statistika skladišta - Orbi360 NVR",
+    "general": "Opća statistika - Orbi360 NVR",
+    "enrichments": "Statistika bogatstva - Orbi360 NVR",
     "logs": {
-      "frigate": "Zapisi Frigate - Frigate",
-      "go2rtc": "Zapisi Go2RTC - Frigate",
-      "nginx": "Zapisi Nginx - Frigate",
-      "websocket": "Zapisi poruka - Frigate"
+      "frigate": "Zapisi Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Zapisi Go2RTC - Orbi360 NVR",
+      "nginx": "Zapisi Nginx - Orbi360 NVR",
+      "websocket": "Zapisi poruka - Orbi360 NVR"
     }
   },
   "title": "Sistem",
@@ -111,7 +111,7 @@
       "intelGpuWarning": {
         "title": "Upozorenje o statistikama Intel GPU",
         "message": "Statistike GPU nedostupne",
-        "description": "Ovo je poznati bug u alatima za prikaz statistika Intel GPU (intel_gpu_top) gdje će se prekiniti i ponovo vratiti GPU korišćenje od 0% čak i u slučajevima kada se hardverska akceleracija i detekcija objekata ispravno izvršavaju na (i)GPU. Ovo nije bug Frigate. Možete ponovo pokrenuti host kako biste privremeno popravili problem i potvrdili da GPU radi ispravno. Ovo ne utiče na performanse."
+        "description": "Ovo je poznati bug u alatima za prikaz statistika Intel GPU (intel_gpu_top) gdje će se prekiniti i ponovo vratiti GPU korišćenje od 0% čak i u slučajevima kada se hardverska akceleracija i detekcija objekata ispravno izvršavaju na (i)GPU. Ovo nije bug Orbi360 NVR. Možete ponovo pokrenuti host kako biste privremeno popravili problem i potvrdili da GPU radi ispravno. Ovo ne utiče na performanse."
       }
     },
     "otherProcesses": {
@@ -132,7 +132,7 @@
     "overview": "Pregled",
     "recordings": {
       "title": "Snimci",
-      "tips": "Ova vrijednost predstavlja ukupno skladište koje se koristi za snimke u bazi podataka Frigate. Frigate ne praćenje korišćenje skladišta za sve datoteke na vašem disku.",
+      "tips": "Ova vrijednost predstavlja ukupno skladište koje se koristi za snimke u bazi podataka Orbi360 NVR. Orbi360 NVR ne praćenje korišćenje skladišta za sve datoteke na vašem disku.",
       "earliestRecording": "Najstariji dostupni snimak:"
     },
     "shm": {
@@ -152,7 +152,7 @@
       "bandwidth": "Širina pojasa",
       "unused": {
         "title": "Neiskorišćeno",
-        "tips": "Ova vrijednost može nepravilno predstavljati slobodno prostor dostupan Frigate ako imate druge datoteke pohranjene na vašem disku izvan snimaka Frigate. Frigate ne praćenje korišćenje skladišta izvan svojih snimaka."
+        "tips": "Ova vrijednost može nepravilno predstavljati slobodno prostor dostupan Orbi360 NVR ako imate druge datoteke pohranjene na vašem disku izvan snimaka Orbi360 NVR. Orbi360 NVR ne praćenje korišćenje skladišta izvan svojih snimaka."
       }
     }
   },

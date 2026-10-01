@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "直到 {{time}}",
-    "untilForRestart": "直到 Frigate 重启。",
+    "untilForRestart": "直到 Orbi360 NVR 重启。",
     "untilRestart": "直到重启",
     "ago": "{{timeAgo}} 前",
     "justNow": "刚才",
@@ -249,7 +249,7 @@
     "help": "帮助",
     "documentation": {
       "title": "文档",
-      "label": "Frigate 的官方文档"
+      "label": "Orbi360 NVR 的官方文档"
     },
     "live": {
       "title": "实时监控",
@@ -272,7 +272,7 @@
       "setPassword": "设置密码",
       "title": "用户"
     },
-    "restart": "重启 Frigate",
+    "restart": "重启 Orbi360 NVR",
     "classification": "目标分类",
     "actions": "操作",
     "chat": "聊天",
@@ -294,15 +294,15 @@
     "title": "权限组",
     "admin": "管理员",
     "viewer": "成员",
-    "desc": "管理员可以完全访问 Frigate 界面上所有功能。成员则仅能查看摄像头、核查项和历史录像。"
+    "desc": "管理员可以完全访问 Orbi360 NVR 界面上所有功能。成员则仅能查看摄像头、核查项和历史录像。"
   },
   "accessDenied": {
-    "documentTitle": "没有权限 - Frigate",
+    "documentTitle": "没有权限 - Orbi360 NVR",
     "title": "没有权限",
     "desc": "您没有权限查看此页面。"
   },
   "notFound": {
-    "documentTitle": "没有找到页面 - Frigate",
+    "documentTitle": "没有找到页面 - Orbi360 NVR",
     "title": "404",
     "desc": "页面未找到"
   },
@@ -318,7 +318,7 @@
   },
   "field": {
     "optional": "可选",
-    "internalID": "Frigate 在配置与数据库中使用的内部 ID"
+    "internalID": "Orbi360 NVR 在配置与数据库中使用的内部 ID"
   },
   "no_items": "没有项目",
   "validation_errors": "验证错误",

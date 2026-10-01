@@ -1,6 +1,6 @@
 {
     "title": "Debug-Wiedergabe",
-    "description": "Spielen Sie Kameraaufnahmen zur Fehlerbehebung ab. Die Objektliste zeigt eine zeitversetzte Übersicht der erkannten Objekte an, und auf der Registerkarte „Meldungen“ wird ein Stream der internen Meldungen von Frigate aus dem Wiedergabematerial angezeigt.",
+    "description": "Spielen Sie Kameraaufnahmen zur Fehlerbehebung ab. Die Objektliste zeigt eine zeitversetzte Übersicht der erkannten Objekte an, und auf der Registerkarte „Meldungen“ wird ein Stream der internen Meldungen von Orbi360 NVR aus dem Wiedergabematerial angezeigt.",
     "websocket_messages": "Nachrichten",
     "dialog": {
         "title": "Debug-Wiedergabe starten",
@@ -31,7 +31,7 @@
         "noSessionDesc": "Starten Sie eine Debug-Wiedergabe aus der Verlaufsansicht, indem Sie in der Symbolleiste auf die Schaltfläche „Aktionen“ klicken und „Debug-Wiedergabe“ auswählen.",
         "goToRecordings": "Zur Historie",
         "preparingClip": "Clip wird vorbereitet…",
-        "preparingClipDesc": "Frigate fasst die Aufzeichnungen für den ausgewählten Zeitraum zusammen. Bei längeren Zeiträumen kann dies eine Minute dauern.",
+        "preparingClipDesc": "Orbi360 NVR fasst die Aufzeichnungen für den ausgewählten Zeitraum zusammen. Bei längeren Zeiträumen kann dies eine Minute dauern.",
         "startingCamera": "Debug-Wiedergabe wird gestartet…",
         "startError": {
             "title": "Debug Replay konnte nicht gestartet werden",
@@ -55,6 +55,6 @@
         "activeTracking": "Aktive Verfolgung",
         "noActiveTracking": "Keine aktive Nachverfolgung",
         "configuration": "Konfiguration",
-        "configurationDesc": "Passen Sie die Einstellungen für die Bewegungserkennung und die Objektverfolgung der Debug-Replay-Kamera an. Es werden keine Änderungen in Ihrer Frigate-Konfigurationsdatei gespeichert."
+        "configurationDesc": "Passen Sie die Einstellungen für die Bewegungserkennung und die Objektverfolgung der Debug-Replay-Kamera an. Es werden keine Änderungen in Ihrer Orbi360 NVR-Konfigurationsdatei gespeichert."
     }
 }

@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "Canlı - Frigate"
+    "default": "Canlı - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Canlı - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Canlı - Orbi360 NVR",
   "muteCameras": {
     "disable": "Tüm Kameraların Sesini Aç",
     "enable": "Tüm Kameraları Sustur"
@@ -181,7 +181,7 @@
   },
   "noCameras": {
     "title": "Yapılandırılmış Kamera Yok",
-    "description": "Frigate’e bir kamera bağlayarak başlayın.",
+    "description": "Orbi360 NVR’e bir kamera bağlayarak başlayın.",
     "buttonText": "Kamera Ekle",
     "restricted": {
       "title": "Kullanılabilir Kamera Yok",
@@ -189,7 +189,7 @@
     },
     "default": {
       "title": "Hiçbir kamera yapılandırılmamış",
-      "description": "Öncelikle bir kamerayı Frigate'e bağlayarak başlayın.",
+      "description": "Öncelikle bir kamerayı Orbi360 NVR'e bağlayarak başlayın.",
       "buttonText": "Kamera Ekle"
     },
     "group": {

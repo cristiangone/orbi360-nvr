@@ -1,11 +1,11 @@
 {
-  "documentTitle": "Konfigurationsstyring - Frigate",
+  "documentTitle": "Konfigurationsstyring - Orbi360 NVR",
   "copyConfig": "Kopiér konfiguration",
   "saveAndRestart": "Gem & Genstart",
   "saveOnly": "Kun gem",
   "configEditor": "Konfigurationsværktøj",
   "safeConfigEditor": "Konfigurationsværktøj (Sikker tilstand)",
-  "safeModeDescription": "Frigate er i sikker tilstand på grund af valideringsfejl af konfigurationen.",
+  "safeModeDescription": "Orbi360 NVR er i sikker tilstand på grund af valideringsfejl af konfigurationen.",
   "confirm": "Afslut uden at gemme?",
   "toast": {
     "success": {

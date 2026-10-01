@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Preskúmať - Frigate",
+  "documentTitle": "Preskúmať - Orbi360 NVR",
   "generativeAI": "Generatívna AI",
   "details": {
     "timestamp": "Časová pečiatka",
@@ -14,14 +14,14 @@
         "mismatch_one": "Bol zistený a zahrnutý do tejto položky kontroly nedostupný objekt ({{count}}). Tieto objekty buď neboli kvalifikované ako upozornenie alebo detekcia, alebo už boli vyčistené/odstránené.",
         "mismatch_few": "Bolo zistených a zahrnutých do tejto položky kontroly {{count}} nedostupných objektov. Tieto objekty buď neboli kvalifikované ako upozornenie alebo detekcia, alebo už boli vyčistené/odstránené.",
         "mismatch_other": "Bolo zistených a zahrnutých do tejto položky kontroly {{count}} nedostupných objektov. Tieto objekty buď neboli kvalifikované ako upozornenie alebo detekcia, alebo už boli vyčistené/odstránené.",
-        "hasMissingObjects": "Upravte si konfiguráciu, ak chcete, aby Frigate ukladal sledované objekty pre nasledujúce označenia: <em>{{objects}}<em>"
+        "hasMissingObjects": "Upravte si konfiguráciu, ak chcete, aby Orbi360 NVR ukladal sledované objekty pre nasledujúce označenia: <em>{{objects}}<em>"
       },
       "toast": {
         "success": {
           "regenerate": "Od poskytovateľa {{provider}} bol vyžiadaný nový popis. V závislosti od rýchlosti vášho poskytovateľa môže jeho obnovenie chvíľu trvať.",
           "updatedSublabel": "Podštítok bol úspešne aktualizovaný.",
           "updatedLPR": "ŠPZ bola úspešne aktualizovaná.",
-          "audioTranscription": "Úspešne požiadané o prepis zvuku. V závislosti od rýchlosti vášho servera Frigate môže dokončenie prepisu trvať určitý čas."
+          "audioTranscription": "Úspešne požiadané o prepis zvuku. V závislosti od rýchlosti vášho servera Orbi360 NVR môže dokončenie prepisu trvať určitý čas."
         },
         "error": {
           "regenerate": "Nepodarilo sa zavolať od {{provider}} pre nový popis: {{errorMessage}}",
@@ -66,7 +66,7 @@
     },
     "description": {
       "placeholder": "Popis sledovaného objektu",
-      "aiTips": "Frigate si od vášho poskytovateľa generatívnej umelej inteligencie nevyžiada popis, kým sa neukončí životný cyklus sledovaného objektu.",
+      "aiTips": "Orbi360 NVR si od vášho poskytovateľa generatívnej umelej inteligencie nevyžiada popis, kým sa neukončí životný cyklus sledovaného objektu.",
       "label": "Popis"
     },
     "expandRegenerationMenu": "Rozbaľte ponuku regenerácie",
@@ -92,7 +92,7 @@
       }
     },
     "downloadingModels": {
-      "context": "Frigate sťahuje potrebné modely vkladania na podporu funkcie sémantického vyhľadávania. V závislosti od rýchlosti vášho sieťového pripojenia to môže trvať niekoľko minút.",
+      "context": "Orbi360 NVR sťahuje potrebné modely vkladania na podporu funkcie sémantického vyhľadávania. V závislosti od rýchlosti vášho sieťového pripojenia to môže trvať niekoľko minút.",
       "setup": {
         "visionModel": "Model vízie",
         "visionModelFeatureExtractor": "Extraktor prvkov modelu videnia",
@@ -155,7 +155,7 @@
         "millisecondsToOffset": "Milisekundy na posunutie detekcie anotácií. <em>Predvolené: 0</em>",
         "tips": "TIP: Predstavte si klip udalosti, v ktorom osoba kráča zľava doprava. Ak je ohraničujúci rámček časovej osi udalosti stále naľavo od osoby, hodnota by sa mala znížiť. Podobne, ak osoba kráča zľava doprava a ohraničujúci rámček je stále pred ňou, hodnota by sa mala zvýšiť.",
         "toast": {
-          "success": "Odsadenie anotácie pre {{camera}} bolo uložené do konfiguračného súboru. Reštartujte Frigate, aby sa zmeny prejavili."
+          "success": "Odsadenie anotácie pre {{camera}} bolo uložené do konfiguračného súboru. Reštartujte Orbi360 NVR, aby sa zmeny prejavili."
         }
       }
     },

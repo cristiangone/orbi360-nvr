@@ -17,7 +17,7 @@
       },
       "review": {
         "question": {
-          "label": "Vahvista tämä nimike Frigate Plussalle",
+          "label": "Vahvista tämä nimike Orbi360 NVR Plussalle",
           "ask_a": "Onko kohde <code>{{label}}</code>?",
           "ask_an": "Onko tämä kohde <code>{{label}}</code>?",
           "ask_full": "Onko tämä kohde <code>{{untranslatedLabel}}</code> ({{translatedLabel}})?"

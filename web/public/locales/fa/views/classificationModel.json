@@ -29,7 +29,7 @@
       "deleteCategoryFailed": "کلاس حذف نشد: {{errorMessage}}",
       "deleteModelFailed": "حذف مدل ناموفق بود: {{errorMessage}}",
       "categorizeFailed": "دسته‌بندی تصویر ناموفق بود: {{errorMessage}}",
-      "trainingFailed": "آموزش مدل ناموفق بود. برای جزئیات، گزارش‌های Frigate را بررسی کنید.",
+      "trainingFailed": "آموزش مدل ناموفق بود. برای جزئیات، گزارش‌های Orbi360 NVR را بررسی کنید.",
       "trainingFailedToStart": "شروع آموزش مدل ناموفق بود: {{errorMessage}}",
       "updateModelFailed": "به‌روزرسانی مدل ناموفق بود: {{errorMessage}}",
       "renameCategoryFailed": "تغییر نام کلاس ناموفق بود: {{errorMessage}}",
@@ -134,7 +134,7 @@
     "step3": {
       "selectImagesDescription": "برای انتخاب، روی تصاویر کلیک کنید. وقتی کارتان با این کلاس تمام شد روی «ادامه» کلیک کنید.",
       "generating": {
-        "description": "Frigate در حال استخراج تصاویر نماینده از ضبط‌های شماست. ممکن است کمی زمان ببرد…",
+        "description": "Orbi360 NVR در حال استخراج تصاویر نماینده از ضبط‌های شماست. ممکن است کمی زمان ببرد…",
         "title": "در حال تولید تصاویر نمونه"
       },
       "retryGenerate": "تلاش دوباره برای تولید",

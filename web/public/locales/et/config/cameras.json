@@ -5,7 +5,7 @@
     },
     "friendly_name": {
         "label": "Sõbralik nimi",
-        "description": "Frigate UI-s kasutatud kaamerasõbralik nimi"
+        "description": "Orbi360 NVR UI-s kasutatud kaamerasõbralik nimi"
     },
     "enabled": {
         "label": "Kasutusel",

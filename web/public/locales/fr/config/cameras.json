@@ -5,7 +5,7 @@
     },
     "friendly_name": {
         "label": "Nom convivial",
-        "description": "Nom convivial de la caméra utilisé dans l'IU Frigate"
+        "description": "Nom convivial de la caméra utilisé dans l'IU Orbi360 NVR"
     },
     "enabled": {
         "label": "Activé",

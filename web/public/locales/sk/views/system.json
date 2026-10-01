@@ -1,13 +1,13 @@
 {
   "documentTitle": {
-    "cameras": "Štatistiky kamier - Frigate",
-    "storage": "Štatistiky úložiska - Frigate",
-    "general": "Všeobecné štatistiky - Frigate",
-    "enrichments": "Štatistiky AI funkcií - Frigate",
+    "cameras": "Štatistiky kamier - Orbi360 NVR",
+    "storage": "Štatistiky úložiska - Orbi360 NVR",
+    "general": "Všeobecné štatistiky - Orbi360 NVR",
+    "enrichments": "Štatistiky AI funkcií - Orbi360 NVR",
     "logs": {
-      "frigate": "Protokoly Frigate - Frigate",
-      "go2rtc": "Protokoly Go2RTC - Frigate",
-      "nginx": "Protokoly Ngnix - Frigate"
+      "frigate": "Protokoly Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Protokoly Go2RTC - Orbi360 NVR",
+      "nginx": "Protokoly Ngnix - Orbi360 NVR"
     }
   },
   "title": "System",
@@ -80,7 +80,7 @@
       "intelGpuWarning": {
         "title": "Intel GPU Stats Upozornenie",
         "message": "Štatistiky GPU nedostupné",
-        "description": "Toto je známa chyba v Štatistike správ Intel (intel_gpu_top) kde sa rozpadne a opakovane vráti používanie GPU 0% aj v prípadoch, keď hardvér detekcie objektov správne beží na (i)GPU. Toto nie je Frigate chyba. Môžete reštartovať a tak dočasne opraviť problém a potvrdiť, že GPU funguje správne. Toto nemá vplyv na výkon."
+        "description": "Toto je známa chyba v Štatistike správ Intel (intel_gpu_top) kde sa rozpadne a opakovane vráti používanie GPU 0% aj v prípadoch, keď hardvér detekcie objektov správne beží na (i)GPU. Toto nie je Orbi360 NVR chyba. Môžete reštartovať a tak dočasne opraviť problém a potvrdiť, že GPU funguje správne. Toto nemá vplyv na výkon."
       }
     },
     "otherProcesses": {
@@ -100,7 +100,7 @@
     "overview": "Prehľad",
     "recordings": {
       "title": "Nahrávky",
-      "tips": "Táto hodnota predstavuje celkové úložisko, ktoré používajú nahrávky v databáze Frigate. Frigate nesleduje využitie úložiska pre všetky súbory na vašom disku.",
+      "tips": "Táto hodnota predstavuje celkové úložisko, ktoré používajú nahrávky v databáze Orbi360 NVR. Orbi360 NVR nesleduje využitie úložiska pre všetky súbory na vašom disku.",
       "earliestRecording": "Najstaršia dostupná nahrávka:"
     },
     "shm": {
@@ -116,7 +116,7 @@
       "bandwidth": "Šírka pásma",
       "unused": {
         "title": "Nepoužité",
-        "tips": "Táto hodnota nemusí presne zodpovedať voľnému miestu dostupnému pre Frigate, ak máte na disku uložené aj iné súbory okrem nahrávok Frigate. Frigate nesleduje využitie úložiska mimo svojich nahrávok."
+        "tips": "Táto hodnota nemusí presne zodpovedať voľnému miestu dostupnému pre Orbi360 NVR, ak máte na disku uložené aj iné súbory okrem nahrávok Orbi360 NVR. Orbi360 NVR nesleduje využitie úložiska mimo svojich nahrávok."
       }
     }
   },

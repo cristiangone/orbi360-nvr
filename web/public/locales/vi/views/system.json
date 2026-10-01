@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "storage": "Thống kê lưu trữ - Frigate",
-    "general": "Thống kê Chung - Frigate",
-    "enrichments": "Thống kê Làm giàu Dữ liệu - Frigate",
+    "storage": "Thống kê lưu trữ - Orbi360 NVR",
+    "general": "Thống kê Chung - Orbi360 NVR",
+    "enrichments": "Thống kê Làm giàu Dữ liệu - Orbi360 NVR",
     "logs": {
-      "frigate": "Nhật ký Frigate - Frigate",
-      "go2rtc": "Nhật ký Go2RTC - Frigate",
-      "nginx": "Nhật ký Nginx - Frigate"
+      "frigate": "Nhật ký Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Nhật ký Go2RTC - Orbi360 NVR",
+      "nginx": "Nhật ký Nginx - Orbi360 NVR"
     },
-    "cameras": "Thống kê Camera - Frigate"
+    "cameras": "Thống kê Camera - Orbi360 NVR"
   },
   "general": {
     "hardwareInfo": {
@@ -46,7 +46,7 @@
       "intelGpuWarning": {
         "title": "Cảnh báo thống kê GPU Intel",
         "message": "Không có số liệu thống kê GPU",
-        "description": "Đây là lỗi đã biết trong công cụ báo cáo thống kê GPU của Intel (intel_gpu_top), khi nó bị trục trặc và liên tục trả về mức sử dụng GPU là 0%, dù thực tế phần cứng tăng tốc và nhận diện đối tượng đang hoạt động đúng trên (i)GPU. Đây không phải lỗi của Frigate. Bạn có thể khởi động lại máy chủ để tạm thời khắc phục và xác nhận GPU vẫn hoạt động bình thường. Điều này không ảnh hưởng đến hiệu suất."
+        "description": "Đây là lỗi đã biết trong công cụ báo cáo thống kê GPU của Intel (intel_gpu_top), khi nó bị trục trặc và liên tục trả về mức sử dụng GPU là 0%, dù thực tế phần cứng tăng tốc và nhận diện đối tượng đang hoạt động đúng trên (i)GPU. Đây không phải lỗi của Orbi360 NVR. Bạn có thể khởi động lại máy chủ để tạm thời khắc phục và xác nhận GPU vẫn hoạt động bình thường. Điều này không ảnh hưởng đến hiệu suất."
       }
     },
     "otherProcesses": {
@@ -75,13 +75,13 @@
       "bandwidth": "Băng thông",
       "unused": {
         "title": "Chưa sử dụng",
-        "tips": "Giá trị này có thể không phản ánh chính xác dung lượng trống có sẵn cho Frigate nếu bạn có các tệp khác được lưu trữ trên ổ đĩa ngoài các bản ghi của Frigate. Frigate không theo dõi việc sử dụng dung lượng lưu trữ bên ngoài các bản ghi của nó."
+        "tips": "Giá trị này có thể không phản ánh chính xác dung lượng trống có sẵn cho Orbi360 NVR nếu bạn có các tệp khác được lưu trữ trên ổ đĩa ngoài các bản ghi của Orbi360 NVR. Orbi360 NVR không theo dõi việc sử dụng dung lượng lưu trữ bên ngoài các bản ghi của nó."
       }
     },
     "title": "Lưu trữ",
     "recordings": {
       "title": "Bản ghi",
-      "tips": "Giá trị này thể hiện tổng dung lượng lưu trữ được sử dụng bởi các bản ghi trong cơ sở dữ liệu của Frigate. Frigate không theo dõi việc sử dụng dung lượng lưu trữ cho tất cả các tệp trên đĩa của bạn.",
+      "tips": "Giá trị này thể hiện tổng dung lượng lưu trữ được sử dụng bởi các bản ghi trong cơ sở dữ liệu của Orbi360 NVR. Orbi360 NVR không theo dõi việc sử dụng dung lượng lưu trữ cho tất cả các tệp trên đĩa của bạn.",
       "earliestRecording": "Bản ghi sớm nhất hiện có:"
     },
     "shm": {

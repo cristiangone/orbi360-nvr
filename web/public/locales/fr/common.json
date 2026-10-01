@@ -1,6 +1,6 @@
 {
   "time": {
-    "untilForRestart": "Jusqu'à ce que Frigate redémarre.",
+    "untilForRestart": "Jusqu'à ce que Orbi360 NVR redémarre.",
     "untilRestart": "Jusqu'au redémarrage",
     "untilForTime": "Jusqu'à {{time}}",
     "justNow": "À l'instant",
@@ -215,7 +215,7 @@
     "systemLogs": "Journaux système",
     "documentation": {
       "title": "Documentation",
-      "label": "Documentation de Frigate"
+      "label": "Documentation de Orbi360 NVR"
     },
     "system": "Système",
     "help": "Aide",
@@ -233,7 +233,7 @@
     "systemMetrics": "Métriques du système",
     "settings": "Paramètres",
     "withSystem": "Système",
-    "restart": "Redémarrer Frigate",
+    "restart": "Redémarrer Orbi360 NVR",
     "live": {
       "cameras": {
         "count_one": "{{count}} caméra",
@@ -268,7 +268,7 @@
     "title": "Rôle",
     "viewer": "Observateur",
     "admin": "Administrateur",
-    "desc": "Les administrateurs ont un accès complet à toutes les fonctionnalités de l'interface Frigate. Les observateurs sont limités à la consultation des caméras, des activités, et à l'historique des enregistrements dans l'interface."
+    "desc": "Les administrateurs ont un accès complet à toutes les fonctionnalités de l'interface Orbi360 NVR. Les observateurs sont limités à la consultation des caméras, des activités, et à l'historique des enregistrements dans l'interface."
   },
   "pagination": {
     "next": {
@@ -284,14 +284,14 @@
   },
   "notFound": {
     "title": "404",
-    "documentTitle": "Non trouvé - Frigate",
+    "documentTitle": "Non trouvé - Orbi360 NVR",
     "desc": "Page non trouvée"
   },
   "selectItem": "Sélectionner {{item}}",
   "readTheDocumentation": "Lire la documentation",
   "accessDenied": {
     "title": "Accès refusé",
-    "documentTitle": "Accès refusé - Frigate",
+    "documentTitle": "Accès refusé - Orbi360 NVR",
     "desc": "Vous n'avez pas l'autorisation de consulter cette page."
   },
   "label": {
@@ -326,7 +326,7 @@
   },
   "field": {
     "optional": "Facultatif",
-    "internalID": "L'ID interne utilisée par Frigate dans la configuration et la base de donnêes"
+    "internalID": "L'ID interne utilisée par Orbi360 NVR dans la configuration et la base de donnêes"
   },
   "list": {
     "two": "{{0}} et {{1}}",

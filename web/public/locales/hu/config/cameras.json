@@ -36,7 +36,7 @@
     },
     "friendly_name": {
         "label": "Egyszerű név",
-        "description": "A Frigate felhasználói felületén használt, könnyen megjegyezhető kamera név"
+        "description": "A Orbi360 NVR felhasználói felületén használt, könnyen megjegyezhető kamera név"
     },
     "enabled": {
         "label": "Engedélyezve",

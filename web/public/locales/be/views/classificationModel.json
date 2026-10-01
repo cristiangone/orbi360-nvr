@@ -12,7 +12,7 @@
     "title": "Апошнія класіфікацыі",
     "aria": "Выбраць апошнія класіфікацыі"
   },
-  "documentTitle": "Мадэлі класіфікацыі - Frigate",
+  "documentTitle": "Мадэлі класіфікацыі - Orbi360 NVR",
   "disabled": "Адключана",
   "button": {
     "deleteClassificationAttempts": "Выдаліць відарысы класіфікацыі",
@@ -53,7 +53,7 @@
       "deleteCategoryFailed": "Не ўдалося выдаліць клас: {{errorMessage}}",
       "deleteModelFailed": "Не ўдалося выдаліць мадэль: {{errorMessage}}",
       "categorizeFailed": "Не ўдалося класіфікаваць відарыс: {{errorMessage}}",
-      "trainingFailed": "Навучанне мадэлі не ўдалося. Падрабязнасці ў журналах Frigate.",
+      "trainingFailed": "Навучанне мадэлі не ўдалося. Падрабязнасці ў журналах Orbi360 NVR.",
       "trainingFailedToStart": "Не ўдалося пачаць навучанне мадэлі: {{errorMessage}}",
       "updateModelFailed": "Не ўдалося абнавіць мадэль: {{errorMessage}}",
       "renameCategoryFailed": "Не ўдалося перайменаваць клас: {{errorMessage}}",
@@ -186,7 +186,7 @@
       "allImagesRequired_many": "Класіфікуйце ўсе відарысы. Засталося {{count}} відарысаў.",
       "generating": {
         "title": "Стварэнне прыкладаў відарысаў",
-        "description": "Frigate падбірае прадстаўнічыя відарысы з вашых запісаў. Гэта можа заняць момант…"
+        "description": "Orbi360 NVR падбірае прадстаўнічыя відарысы з вашых запісаў. Гэта можа заняць момант…"
       },
       "training": {
         "title": "Навучанне мадэлі",

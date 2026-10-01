@@ -27,15 +27,15 @@
     }
   },
   "documentTitle": {
-    "cameras": "Kameroiden tilastot - Frigate",
+    "cameras": "Kameroiden tilastot - Orbi360 NVR",
     "storage": "Tallenteiden tilastot - Fgirage",
-    "general": "Yleiset tilastot - Frigate",
-    "enrichments": "Rikastetut tilastot - Frigate",
+    "general": "Yleiset tilastot - Orbi360 NVR",
+    "enrichments": "Rikastetut tilastot - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigaten lokit - Frigate",
-      "go2rtc": "Go2RTC lokit - Frigate",
-      "nginx": "Nginx lokit - Frigate",
-      "websocket": "Viestilokit - Frigate"
+      "frigate": "Frigaten lokit - Orbi360 NVR",
+      "go2rtc": "Go2RTC lokit - Orbi360 NVR",
+      "nginx": "Nginx lokit - Orbi360 NVR",
+      "websocket": "Viestilokit - Orbi360 NVR"
     }
   },
   "title": "Järjestelmä",

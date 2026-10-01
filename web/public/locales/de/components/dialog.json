@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Sind Sie sicher, dass Sie Frigate neustarten wollen?",
+    "title": "Sind Sie sicher, dass Sie Orbi360 NVR neustarten wollen?",
     "restarting": {
-      "title": "Frigate startet neu",
+      "title": "Orbi360 NVR startet neu",
       "content": "Diese Seite wird in {{countdown}} Sekunde(n) aktualisiert.",
       "button": "Neuladen erzwingen"
     },
     "button": "Neustarten",
-    "description": "Dies wird Frigate kurz stoppen, während es neu startet."
+    "description": "Dies wird Orbi360 NVR kurz stoppen, während es neu startet."
   },
   "explore": {
     "plus": {
@@ -193,7 +193,7 @@
     "shareTimestamp": {
       "label": "Zeitstempel teilen",
       "title": "Zeitstempel teilen",
-      "description": "Teile eine URL mit Zeitstempel, die die aktuelle Position des Players angibt, oder wähle einen benutzerdefinierten Zeitstempel aus. Beachte, dass es sich hierbei nicht um eine öffentliche Freigabe-URL handelt und dass nur Benutzer Zugriff darauf haben, die Zugriff auf Frigate und diese Kamera haben.",
+      "description": "Teile eine URL mit Zeitstempel, die die aktuelle Position des Players angibt, oder wähle einen benutzerdefinierten Zeitstempel aus. Beachte, dass es sich hierbei nicht um eine öffentliche Freigabe-URL handelt und dass nur Benutzer Zugriff darauf haben, die Zugriff auf Orbi360 NVR und diese Kamera haben.",
       "custom": "Benutzerdefinierter Zeitstempel",
       "button": "URL des Zeitstempels teilen",
       "shareTitle": "Zeitstempel der Fregattenbewertung: {{camera}}"

@@ -8,12 +8,12 @@
         "textModel": "Besedilni model",
         "textTokenizer": "Besedilni razčlenjevalnik (tokenizer)"
       },
-      "context": "Frigate prenaša potrebne modele vdelav za podporo funkcije semantičnega iskanja. To lahko traja nekaj minut, odvisno od hitrosti tvoje omrežne povezave.",
+      "context": "Orbi360 NVR prenaša potrebne modele vdelav za podporo funkcije semantičnega iskanja. To lahko traja nekaj minut, odvisno od hitrosti tvoje omrežne povezave.",
       "tips": {
         "context": "Morda boš želel ponovno indeksirati vdelave sledenih objektov, ko bodo modeli preneseni.",
         "documentation": "Preberi dokumentacijo"
       },
-      "error": "Prišlo je do napake. Preveri Frigate dnevnike (logs)."
+      "error": "Prišlo je do napake. Preveri Orbi360 NVR dnevnike (logs)."
     },
     "embeddingsReindexing": {
       "step": {
@@ -27,7 +27,7 @@
       "finishingShortly": "Kmalu bo končano"
     }
   },
-  "documentTitle": "Raziskovanje - Frigate",
+  "documentTitle": "Raziskovanje - Orbi360 NVR",
   "generativeAI": "Generativna UI",
   "exploreMore": "Razišči več objektov vrste {{label}}",
   "details": {
@@ -43,7 +43,7 @@
     "description": {
       "placeholder": "Opis sledenega objekta",
       "label": "Opis",
-      "aiTips": "Frigate ne bo zahteval opisa od tvojega ponudnika generativne UI, dokler se življenjski cikel sledenega objekta ne zaključi."
+      "aiTips": "Orbi360 NVR ne bo zahteval opisa od tvojega ponudnika generativne UI, dokler se življenjski cikel sledenega objekta ne zaključi."
     },
     "recognizedLicensePlate": "Prepoznana registrska tablica",
     "objects": "Objekti",
@@ -55,7 +55,7 @@
         "viewInExplore": "Ogled v Raziskovanju"
       },
       "tips": {
-        "hasMissingObjects": "Prilagodi svojo konfiguracijo, če želiš, da Frigate shranjuje sledene objekte za naslednje oznake: <em>{{objects}}</em>",
+        "hasMissingObjects": "Prilagodi svojo konfiguracijo, če želiš, da Orbi360 NVR shranjuje sledene objekte za naslednje oznake: <em>{{objects}}</em>",
         "mismatch_one": "{{count}} nedostopen objekt je bil zaznan in vključen v to postavko. Ti objekti niso izpolnili pogojev za opozorilo ali zaznavo ali pa so bili že izbrisani.",
         "mismatch_two": "{{count}} nedostopna objekta sta bila zaznana in vključena v to postavko.",
         "mismatch_few": "{{count}} nedostopni objekti so bili zaznani in vključeni v to postavko.",
@@ -225,7 +225,7 @@
         "millisecondsToOffset": "Odmik zaznanih anotacij v milisekundah. <em>Privzeto: 0</em>",
         "tips": "NASVET: Predstavljajte si posnetek dogodka, v katerem oseba hodi od leve proti desni. Če je okvir dogodka na časovnici preveč levo od osebe, je treba vrednost zmanjšati. Podobno je treba vrednost povečati, če oseba hodi od leve proti desni in je okvir preveč pred njo.",
         "toast": {
-          "success": "Odmik anotacij za {{camera}} je bil shranjen v konfiguracijsko datoteko. Znova zaženite Frigate, da uveljavite spremembe."
+          "success": "Odmik anotacij za {{camera}} je bil shranjen v konfiguracijsko datoteko. Znova zaženite Orbi360 NVR, da uveljavite spremembe."
         }
       }
     },

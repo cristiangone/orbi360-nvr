@@ -16,9 +16,9 @@
     "camera": "Kaamera"
   },
   "documentTitle": {
-    "default": "Frigate reaalajas"
+    "default": "Orbi360 NVR reaalajas"
   },
-  "documentTitle.withCamera": "{{camera}} - Otseülekanne - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Otseülekanne - Orbi360 NVR",
   "lowBandwidthMode": "Väikese ribalaiusega režiim",
   "twoWayTalk": {
     "enable": "Lülita kahepoolne kõneside sisse",
@@ -168,10 +168,10 @@
       "description": "Sul pole õigust ühegi selle grupi kaamera vaatamiseks."
     },
     "title": "Ühtegi kaamerat pole seadistatud",
-    "description": "Alustamiseks ühenda mõni kaamera Frigate'iga.",
+    "description": "Alustamiseks ühenda mõni kaamera Orbi360 NVR'iga.",
     "default": {
       "title": "Ühtegi kaamerat pole seadistatud",
-      "description": "Alustamiseks ühenda mõni kaamera Frigate'iga.",
+      "description": "Alustamiseks ühenda mõni kaamera Orbi360 NVR'iga.",
       "buttonText": "Lisa kaamera"
     },
     "group": {

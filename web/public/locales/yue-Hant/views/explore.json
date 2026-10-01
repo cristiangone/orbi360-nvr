@@ -1,5 +1,5 @@
 {
-  "documentTitle": "瀏覽 - Frigate",
+  "documentTitle": "瀏覽 - Orbi360 NVR",
   "generativeAI": "生成式人工智能",
   "exploreIsUnavailable": {
     "title": "無法使用瀏覽功能",
@@ -19,8 +19,8 @@
         "context": "下載完成後，你可能需要重新索引追蹤物件的嵌入。",
         "documentation": "閱讀文件"
       },
-      "error": "發生錯誤。請檢查 Frigate 日誌。",
-      "context": "Frigate 正在下載必要的嵌入模型以支援語意搜尋功能。這可能需要幾分鐘，視乎你的網絡速度。",
+      "error": "發生錯誤。請檢查 Orbi360 NVR 日誌。",
+      "context": "Orbi360 NVR 正在下載必要的嵌入模型以支援語意搜尋功能。這可能需要幾分鐘，視乎你的網絡速度。",
       "setup": {
         "textTokenizer": "文字分詞器",
         "textModel": "文字模型",
@@ -73,7 +73,7 @@
         "documentation": "閱讀文件 ",
         "millisecondsToOffset": "偵測註解的偏移毫秒數。<em>預設：0</em>",
         "toast": {
-          "success": "{{camera}} 的註解偏移量已儲存到設定檔。請重新啟動 Frigate 以套用更改。"
+          "success": "{{camera}} 的註解偏移量已儲存到設定檔。請重新啟動 Orbi360 NVR 以套用更改。"
         }
       }
     },
@@ -97,14 +97,14 @@
       },
       "tips": {
         "mismatch_other": "偵測到 {{count}} 個不可用的物件並包含在此審查項目中。這些物件可能未符合警報或偵測標準，或已被清除/刪除。",
-        "hasMissingObjects": "如果你想讓 Frigate 保存下列標籤的追蹤物件，請調整設定：<em>{{objects}}</em>"
+        "hasMissingObjects": "如果你想讓 Orbi360 NVR 保存下列標籤的追蹤物件，請調整設定：<em>{{objects}}</em>"
       },
       "toast": {
         "success": {
           "updatedSublabel": "成功更新子標籤。",
           "updatedLPR": "成功更新車牌號碼。",
           "regenerate": "已從 {{provider}} 請求新的描述。根據提供者的速度，生成新的描述可能需要一些時間。",
-          "audioTranscription": "成功請求音訊轉錄。視乎你的 Frigate 伺服器速度，轉錄可能需要一些時間完成。",
+          "audioTranscription": "成功請求音訊轉錄。視乎你的 Orbi360 NVR 伺服器速度，轉錄可能需要一些時間完成。",
           "updatedAttributes": "已成功更新屬性。"
         },
         "error": {
@@ -138,7 +138,7 @@
     "description": {
       "label": "描述",
       "placeholder": "追蹤物件的描述",
-      "aiTips": "Frigate 會等到追蹤物件生命周期結束後，才向你的生成式 AI 提供者請求描述。"
+      "aiTips": "Orbi360 NVR 會等到追蹤物件生命周期結束後，才向你的生成式 AI 提供者請求描述。"
     },
     "editLPR": {
       "descNoLabel": "為此追蹤物件輸入新的車牌號碼",

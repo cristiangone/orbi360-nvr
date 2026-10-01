@@ -57,15 +57,15 @@
     "detectIsVerySlow": "{{detect}} ช้ามาก ({{speed}} มิลลิวินาที)"
   },
   "documentTitle": {
-    "cameras": "ข้อมูลกล้อง - Frigate",
-    "storage": "สถิติคลังข้อมูล - Frigate",
-    "general": "สถิติทั่วไป - Frigate",
-    "enrichments": "สถิติเพิ่มเติม - Frigate",
+    "cameras": "ข้อมูลกล้อง - Orbi360 NVR",
+    "storage": "สถิติคลังข้อมูล - Orbi360 NVR",
+    "general": "สถิติทั่วไป - Orbi360 NVR",
+    "enrichments": "สถิติเพิ่มเติม - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate Logs - Frigate",
-      "go2rtc": "Logs ของ Go2RTC - Frigate",
-      "nginx": "Logs ของ Nginx - Frigate",
-      "websocket": "ประวัติข้อความ - Frigate"
+      "frigate": "Orbi360 NVR Logs - Orbi360 NVR",
+      "go2rtc": "Logs ของ Go2RTC - Orbi360 NVR",
+      "nginx": "Logs ของ Nginx - Orbi360 NVR",
+      "websocket": "ประวัติข้อความ - Orbi360 NVR"
     }
   },
   "logs": {

@@ -7,7 +7,7 @@
     "yesterday": "Eilen",
     "last14": "Viimeiset 14 päivää",
     "untilForTime": "Kunnes {{time}}",
-    "untilForRestart": "Kunnes Frigate uudelleenkäynnistyy.",
+    "untilForRestart": "Kunnes Orbi360 NVR uudelleenkäynnistyy.",
     "thisWeek": "Tämä viikko",
     "lastWeek": "Viime viikko",
     "last7": "Viimeiset 7 päivää",
@@ -58,7 +58,7 @@
     "label": "sivutus"
   },
   "accessDenied": {
-    "documentTitle": "Pääsy kielletty - Frigate",
+    "documentTitle": "Pääsy kielletty - Orbi360 NVR",
     "title": "Pääsy kielletty",
     "desc": "Sinulla ei ole oikeuksia tarkastella tätä sivua."
   },
@@ -69,7 +69,7 @@
     "title": "Rooli"
   },
   "notFound": {
-    "documentTitle": "Ei löytynyt - Frigate",
+    "documentTitle": "Ei löytynyt - Orbi360 NVR",
     "title": "404",
     "desc": "Sivua ei löytynyt"
   },

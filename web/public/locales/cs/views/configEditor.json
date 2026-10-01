@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Editor konfigurace - Frigate",
+  "documentTitle": "Editor konfigurace - Orbi360 NVR",
   "configEditor": "Editor konfigurace",
   "copyConfig": "Kopírovat konfiguraci",
   "saveAndRestart": "Uložit a restartovat",
@@ -14,5 +14,5 @@
   },
   "confirm": "Opustit bez uložení?",
   "safeConfigEditor": "Editor konfigurace (Nouzový režim)",
-  "safeModeDescription": "Frigate je v nouzovém režimu kvůli chybě při ověřování konfigurace."
+  "safeModeDescription": "Orbi360 NVR je v nouzovém režimu kvůli chybě při ověřování konfigurace."
 }

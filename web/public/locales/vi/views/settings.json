@@ -1,17 +1,17 @@
 {
   "documentTitle": {
-    "default": "Cài đặt - Frigate",
-    "authentication": "Cài đặt Xác thực - Frigate",
-    "camera": "Cài đặt Camera - Frigate",
-    "enrichments": "Cài đặt Làm giàu Dữ liệu - Frigate",
-    "notifications": "Cài đặt Thông báo - Frigate",
-    "masksAndZones": "Trình chỉnh sửa Mặt nạ và Vùng - Frigate",
-    "object": "Gỡ lỗi - Frigate",
-    "general": "Cài đặt giao diện – Frigate",
-    "frigatePlus": "Cài đặt Frigate+ - Frigate",
-    "motionTuner": "Bộ tinh chỉnh Chuyển động - Frigate",
-    "cameraManagement": "Quản Lý Camera - Frigate",
-    "cameraReview": "Cài Đặt Xem Lại Camera - Frigate"
+    "default": "Cài đặt - Orbi360 NVR",
+    "authentication": "Cài đặt Xác thực - Orbi360 NVR",
+    "camera": "Cài đặt Camera - Orbi360 NVR",
+    "enrichments": "Cài đặt Làm giàu Dữ liệu - Orbi360 NVR",
+    "notifications": "Cài đặt Thông báo - Orbi360 NVR",
+    "masksAndZones": "Trình chỉnh sửa Mặt nạ và Vùng - Orbi360 NVR",
+    "object": "Gỡ lỗi - Orbi360 NVR",
+    "general": "Cài đặt giao diện – Orbi360 NVR",
+    "frigatePlus": "Cài đặt Frigate+ - Orbi360 NVR",
+    "motionTuner": "Bộ tinh chỉnh Chuyển động - Orbi360 NVR",
+    "cameraManagement": "Quản Lý Camera - Orbi360 NVR",
+    "cameraReview": "Cài Đặt Xem Lại Camera - Orbi360 NVR"
   },
   "notification": {
     "toast": {
@@ -20,7 +20,7 @@
       },
       "success": {
         "settingSaved": "Cài đặt thông báo đã được lưu.",
-        "registered": "Đã đăng ký nhận thông báo thành công. Cần khởi động lại Frigate trước khi có thể gửi bất kỳ thông báo nào (kể cả thông báo thử)."
+        "registered": "Đã đăng ký nhận thông báo thành công. Cần khởi động lại Orbi360 NVR trước khi có thể gửi bất kỳ thông báo nào (kể cả thông báo thử)."
       }
     },
     "unsavedChanges": "Các thay đổi Thông báo chưa được lưu",
@@ -53,12 +53,12 @@
       "10minutes": "Tạm dừng trong 10 phút"
     },
     "notificationSettings": {
-      "desc": "Frigate có thể gửi thông báo đẩy tự nhiên đến thiết bị của bạn khi nó đang chạy trong trình duyệt hoặc được cài đặt dưới dạng PWA.",
+      "desc": "Orbi360 NVR có thể gửi thông báo đẩy tự nhiên đến thiết bị của bạn khi nó đang chạy trong trình duyệt hoặc được cài đặt dưới dạng PWA.",
       "title": "Cài đặt Thông báo",
       "documentation": "Đọc tài liệu"
     },
     "notificationUnavailable": {
-      "desc": "Thông báo đẩy web yêu cầu một ngữ cảnh an toàn (<code>https://…</code>). Đây là một hạn chế của trình duyệt. Truy cập Frigate một cách an toàn để sử dụng thông báo.",
+      "desc": "Thông báo đẩy web yêu cầu một ngữ cảnh an toàn (<code>https://…</code>). Đây là một hạn chế của trình duyệt. Truy cập Orbi360 NVR một cách an toàn để sử dụng thông báo.",
       "title": "Thông báo không khả dụng",
       "documentation": "Đọc tài liệu"
     },
@@ -107,7 +107,7 @@
     },
     "unsavedChanges": "Các thay đổi cài đặt Frigate+ chưa được lưu",
     "toast": {
-      "success": "Cài đặt Frigate+ đã được lưu. Khởi động lại Frigate để áp dụng các thay đổi.",
+      "success": "Cài đặt Frigate+ đã được lưu. Khởi động lại Orbi360 NVR để áp dụng các thay đổi.",
       "error": "Không thể lưu các thay đổi cấu hình: {{errorMessage}}"
     },
     "restart_required": "Yêu cầu khởi động lại (mô hình Frigate+ đã thay đổi)"
@@ -118,21 +118,21 @@
       "alerts": "Cảnh báo ",
       "detections": "Phát hiện ",
       "title": "Xem lại",
-      "desc": "Tạm thời bật/tắt cảnh báo và phát hiện cho camera này cho đến khi Frigate khởi động lại. Khi bị vô hiệu hóa, sẽ không có mục xem lại mới nào được tạo ra. "
+      "desc": "Tạm thời bật/tắt cảnh báo và phát hiện cho camera này cho đến khi Orbi360 NVR khởi động lại. Khi bị vô hiệu hóa, sẽ không có mục xem lại mới nào được tạo ra. "
     },
     "reviewClassification": {
       "title": "Phân loại mục Xem lại",
       "unsavedChanges": "Các thay đổi cài đặt Phân loại mục Xem lại chưa được lưu cho {{camera}}",
       "readTheDocumentation": "Đọc tài liệu",
       "objectDetectionsTips": "Tất cả các đối tượng {{detectionsLabels}} không được phân loại trên {{cameraName}} sẽ được hiển thị dưới dạng Phát hiện bất kể chúng ở trong vùng nào.",
-      "desc": "Frigate phân loại các mục xem lại thành Cảnh báo và Phát hiện. Theo mặc định, tất cả các đối tượng <em>người</em> và <em>ô tô</em> được coi là Cảnh báo. Bạn có thể tinh chỉnh việc phân loại các mục xem lại của mình bằng cách định cấu hình các vùng bắt buộc cho chúng.",
+      "desc": "Orbi360 NVR phân loại các mục xem lại thành Cảnh báo và Phát hiện. Theo mặc định, tất cả các đối tượng <em>người</em> và <em>ô tô</em> được coi là Cảnh báo. Bạn có thể tinh chỉnh việc phân loại các mục xem lại của mình bằng cách định cấu hình các vùng bắt buộc cho chúng.",
       "zoneObjectDetectionsTips": {
         "text": "Tất cả các đối tượng {{detectionsLabels}} không được phân loại trong vùng {{zone}} trên {{cameraName}} sẽ được hiển thị dưới dạng Phát hiện.",
         "notSelectDetections": "Tất cả các đối tượng {{detectionsLabels}} được phát hiện trong vùng {{zone}} trên {{cameraName}} không được phân loại là Cảnh báo sẽ được hiển thị dưới dạng Phát hiện bất kể chúng ở trong vùng nào.",
         "regardlessOfZoneObjectDetectionsTips": "Tất cả các đối tượng {{detectionsLabels}} không được phân loại trên {{cameraName}} sẽ được hiển thị dưới dạng Phát hiện bất kể chúng ở trong vùng nào."
       },
       "toast": {
-        "success": "Cấu hình Phân loại mục Xem lại đã được lưu. Khởi động lại Frigate để áp dụng các thay đổi."
+        "success": "Cấu hình Phân loại mục Xem lại đã được lưu. Khởi động lại Orbi360 NVR để áp dụng các thay đổi."
       },
       "limitDetections": "Giới hạn phát hiện trong các vùng cụ thể",
       "selectDetectionsZones": "Chọn vùng cho Phát hiện",
@@ -143,7 +143,7 @@
     },
     "streams": {
       "title": "Luồng phát",
-      "desc": "Tạm thời vô hiệu hóa một camera cho đến khi Frigate khởi động lại. Vô hiệu hóa một camera sẽ dừng hoàn toàn quá trình xử lý các luồng của camera này của Frigate. Việc phát hiện, ghi hình và gỡ lỗi sẽ không khả dụng.<br /> <em>Lưu ý: Điều này không vô hiệu hóa các luồng phát lại của go2rtc.</em>"
+      "desc": "Tạm thời vô hiệu hóa một camera cho đến khi Orbi360 NVR khởi động lại. Vô hiệu hóa một camera sẽ dừng hoàn toàn quá trình xử lý các luồng của camera này của Orbi360 NVR. Việc phát hiện, ghi hình và gỡ lỗi sẽ không khả dụng.<br /> <em>Lưu ý: Điều này không vô hiệu hóa các luồng phát lại của go2rtc.</em>"
     },
     "object_descriptions": {
       "title": "Mô tả đối tượng bằng AI tạo sinh",
@@ -244,7 +244,7 @@
         "title": "Đối tượng",
         "desc": "Loại đối tượng áp dụng cho mặt nạ đối tượng này."
       },
-      "documentTitle": "Chỉnh sửa Mặt nạ đối tượng - Frigate",
+      "documentTitle": "Chỉnh sửa Mặt nạ đối tượng - Orbi360 NVR",
       "desc": {
         "title": "Mặt nạ lọc đối tượng được sử dụng để lọc ra các kết quả dương tính giả cho một loại đối tượng nhất định dựa trên vị trí.",
         "documentation": "Tài liệu"
@@ -305,14 +305,14 @@
       },
       "edit": "Chỉnh sửa Vùng",
       "label": "Vùng",
-      "documentTitle": "Chỉnh sửa Vùng - Frigate",
+      "documentTitle": "Chỉnh sửa Vùng - Orbi360 NVR",
       "inertia": {
         "title": "Quán tính",
         "desc": "Chỉ định số khung hình mà một đối tượng phải ở trong một vùng trước khi được coi là ở trong vùng. <em>Mặc định: 3</em>"
       }
     },
     "motionMasks": {
-      "documentTitle": "Chỉnh sửa Mặt nạ chuyển động - Frigate",
+      "documentTitle": "Chỉnh sửa Mặt nạ chuyển động - Orbi360 NVR",
       "desc": {
         "documentation": "Tài liệu",
         "title": "Mặt nạ chuyển động được sử dụng để ngăn các loại chuyển động không mong muốn kích hoạt phát hiện. Việc che quá nhiều sẽ khiến việc theo dõi đối tượng trở nên khó khăn hơn."
@@ -365,7 +365,7 @@
     },
     "title": "Bộ tinh chỉnh Phát hiện Chuyển động",
     "desc": {
-      "title": "Frigate sử dụng phát hiện chuyển động như một bước kiểm tra đầu tiên để xem có điều gì đang xảy ra trong khung hình đáng để kiểm tra bằng phát hiện đối tượng hay không.",
+      "title": "Orbi360 NVR sử dụng phát hiện chuyển động như một bước kiểm tra đầu tiên để xem có điều gì đang xảy ra trong khung hình đáng để kiểm tra bằng phát hiện đối tượng hay không.",
       "documentation": "Đọc Hướng dẫn Tinh chỉnh Chuyển động"
     },
     "improveContrast": {
@@ -386,7 +386,7 @@
       "ratio": "Tỷ lệ",
       "area": "Diện tích"
     },
-    "detectorDesc": "Frigate sử dụng các bộ phát hiện của bạn ({{detectors}}) để phát hiện các đối tượng trong luồng video của camera.",
+    "detectorDesc": "Orbi360 NVR sử dụng các bộ phát hiện của bạn ({{detectors}}) để phát hiện các đối tượng trong luồng video của camera.",
     "boundingBoxes": {
       "colors": {
         "label": "Màu sắc Hộp giới hạn Đối tượng",
@@ -440,7 +440,7 @@
     "title": "Người dùng",
     "management": {
       "title": "Quản lý Người dùng",
-      "desc": "Quản lý các tài khoản người dùng của phiên bản Frigate này."
+      "desc": "Quản lý các tài khoản người dùng của phiên bản Orbi360 NVR này."
     },
     "table": {
       "noUsers": "Không tìm thấy người dùng nào.",
@@ -486,7 +486,7 @@
         "passwordIsRequired": "Mật khẩu là bắt buộc"
       },
       "createUser": {
-        "desc": "Thêm một tài khoản người dùng mới và chỉ định một vai trò để truy cập vào các khu vực của giao diện người dùng Frigate.",
+        "desc": "Thêm một tài khoản người dùng mới và chỉ định một vai trò để truy cập vào các khu vực của giao diện người dùng Orbi360 NVR.",
         "usernameOnlyInclude": "Tên người dùng chỉ có thể bao gồm chữ cái, số, . hoặc _",
         "title": "Tạo Người dùng Mới",
         "confirmPassword": "Vui lòng xác nhận mật khẩu của bạn"
@@ -606,7 +606,7 @@
     },
     "semanticSearch": {
       "title": "Tìm kiếm theo Ngữ nghĩa",
-      "desc": "Tìm kiếm theo Ngữ nghĩa trong Frigate cho phép bạn tìm các đối tượng được theo dõi trong các mục xem lại của mình bằng cách sử dụng chính hình ảnh, mô tả văn bản do người dùng xác định hoặc mô tả được tạo tự động.",
+      "desc": "Tìm kiếm theo Ngữ nghĩa trong Orbi360 NVR cho phép bạn tìm các đối tượng được theo dõi trong các mục xem lại của mình bằng cách sử dụng chính hình ảnh, mô tả văn bản do người dùng xác định hoặc mô tả được tạo tự động.",
       "reindexNow": {
         "desc": "Việc tái lập chỉ mục sẽ tạo lại các nhúng (embeddings) cho tất cả các đối tượng được theo dõi. Quá trình này chạy ở chế độ nền và có thể làm CPU của bạn hoạt động tối đa và mất một khoảng thời gian đáng kể tùy thuộc vào số lượng đối tượng bạn đã theo dõi.",
         "confirmTitle": "Xác nhận Tái lập chỉ mục",
@@ -633,7 +633,7 @@
     },
     "faceRecognition": {
       "title": "Nhận dạng Khuôn mặt",
-      "desc": "Nhận dạng khuôn mặt cho phép gán tên cho người và khi khuôn mặt của họ được nhận dạng, Frigate sẽ gán tên của người đó làm nhãn phụ. Thông tin này được bao gồm trong giao diện người dùng, bộ lọc, cũng như trong các thông báo.",
+      "desc": "Nhận dạng khuôn mặt cho phép gán tên cho người và khi khuôn mặt của họ được nhận dạng, Orbi360 NVR sẽ gán tên của người đó làm nhãn phụ. Thông tin này được bao gồm trong giao diện người dùng, bộ lọc, cũng như trong các thông báo.",
       "readTheDocumentation": "Đọc tài liệu",
       "modelSize": {
         "label": "Kích thước Mô hình",
@@ -650,12 +650,12 @@
     },
     "licensePlateRecognition": {
       "title": "Nhận dạng Biển số xe",
-      "desc": "Frigate có thể nhận dạng biển số xe trên các phương tiện và tự động thêm các ký tự được phát hiện vào trường recognized_license_plate hoặc một tên đã biết làm nhãn phụ cho các đối tượng thuộc loại ô tô. Một trường hợp sử dụng phổ biến có thể là đọc biển số xe ô tô đi vào đường lái xe hoặc ô tô đi ngang qua trên đường phố.",
+      "desc": "Orbi360 NVR có thể nhận dạng biển số xe trên các phương tiện và tự động thêm các ký tự được phát hiện vào trường recognized_license_plate hoặc một tên đã biết làm nhãn phụ cho các đối tượng thuộc loại ô tô. Một trường hợp sử dụng phổ biến có thể là đọc biển số xe ô tô đi vào đường lái xe hoặc ô tô đi ngang qua trên đường phố.",
       "readTheDocumentation": "Đọc tài liệu"
     },
     "restart_required": "Yêu cầu khởi động lại (cài đặt Làm giàu Dữ liệu đã thay đổi)",
     "toast": {
-      "success": "Cài đặt Làm giàu Dữ liệu đã được lưu. Khởi động lại Frigate để áp dụng các thay đổi của bạn.",
+      "success": "Cài đặt Làm giàu Dữ liệu đã được lưu. Khởi động lại Orbi360 NVR để áp dụng các thay đổi của bạn.",
       "error": "Không thể lưu các thay đổi cấu hình: {{errorMessage}}"
     }
   },
@@ -707,7 +707,7 @@
         },
         "actions": {
           "title": "Các hành động",
-          "desc": "Theo mặc định, Frigate kích hoạt thông báo MQTT cho tất cả các trình kích hoạt. Nhãn phụ thêm tên kích hoạt vào nhãn đối tượng. Thuộc tính là siêu dữ liệu có thể tìm kiếm được lưu trữ riêng biệt trong siêu dữ liệu đối tượng được theo dõi.",
+          "desc": "Theo mặc định, Orbi360 NVR kích hoạt thông báo MQTT cho tất cả các trình kích hoạt. Nhãn phụ thêm tên kích hoạt vào nhãn đối tượng. Thuộc tính là siêu dữ liệu có thể tìm kiếm được lưu trữ riêng biệt trong siêu dữ liệu đối tượng được theo dõi.",
           "error": {
             "min": "Phải chọn ít nhất một hành động."
           }

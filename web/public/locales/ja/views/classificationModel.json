@@ -1,5 +1,5 @@
 {
-  "documentTitle": "分類モデル - Frigate",
+  "documentTitle": "分類モデル - Orbi360 NVR",
   "button": {
     "deleteImages": "画像を削除",
     "deleteClassificationAttempts": "分類画像を削除",
@@ -27,7 +27,7 @@
       "deleteCategoryFailed": "クラスの削除に失敗しました: {{errorMessage}}",
       "deleteModelFailed": "モデルの削除に失敗しました: {{errorMessage}}",
       "categorizeFailed": "画像の分類に失敗しました: {{errorMessage}}",
-      "trainingFailed": "モデルの学習に失敗しました。Frigate のログを確認してください。",
+      "trainingFailed": "モデルの学習に失敗しました。Orbi360 NVR のログを確認してください。",
       "trainingFailedToStart": "モデルの学習を開始できませんでした: {{errorMessage}}",
       "updateModelFailed": "モデルの更新に失敗しました: {{errorMessage}}",
       "renameCategoryFailed": "クラス名の変更に失敗しました: {{errorMessage}}",
@@ -91,7 +91,7 @@
       "allImagesRequired_other": "すべての画像を分類してください。残り {{count}} 枚です。",
       "generating": {
         "title": "サンプル画像を生成中",
-        "description": "Frigate が録画から代表的な画像を抽出しています。しばらくお待ちください..."
+        "description": "Orbi360 NVR が録画から代表的な画像を抽出しています。しばらくお待ちください..."
       },
       "training": {
         "title": "モデルを学習中",

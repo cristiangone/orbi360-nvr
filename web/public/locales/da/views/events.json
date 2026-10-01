@@ -16,9 +16,9 @@
       "title": "Optagelser skal være aktiveret"
     }
   },
-  "documentTitle": "Gennemse - Frigate",
+  "documentTitle": "Gennemse - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Optagelser - Frigate"
+    "documentTitle": "Optagelser - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Sidste 24 timer"

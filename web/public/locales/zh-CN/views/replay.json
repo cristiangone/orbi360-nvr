@@ -1,6 +1,6 @@
 {
     "title": "调试回放",
-    "description": "回放摄像头录像以供调试。目标列表会延时展示已检测目标的汇总信息，消息标签页则实时展示回放录像对应的 Frigate 内部日志信息流。",
+    "description": "回放摄像头录像以供调试。目标列表会延时展示已检测目标的汇总信息，消息标签页则实时展示回放录像对应的 Orbi360 NVR 内部日志信息流。",
     "websocket_messages": "消息",
     "dialog": {
         "title": "开始调试回放",
@@ -31,7 +31,7 @@
         "noSessionDesc": "从历史回放页面启动调试回放：点击工具栏中的操作按钮，选择调试回放即可。",
         "goToRecordings": "查看历史记录",
         "preparingClip": "正在准备片段…",
-        "preparingClipDesc": "Frigate 正在拼接所选时间范围的录像片段。时间跨度较大时，该过程可能需要一分钟左右。",
+        "preparingClipDesc": "Orbi360 NVR 正在拼接所选时间范围的录像片段。时间跨度较大时，该过程可能需要一分钟左右。",
         "startingCamera": "开始调试回放中…",
         "startError": {
             "title": "调试回放启动失败",
@@ -55,6 +55,6 @@
         "activeTracking": "活动追踪中",
         "noActiveTracking": "没有活动追踪",
         "configuration": "配置",
-        "configurationDesc": "微调调试回放摄像头的移动侦测与目标追踪参数。本次调整不会保存到你的 Frigate 配置文件中。"
+        "configurationDesc": "微调调试回放摄像头的移动侦测与目标追踪参数。本次调整不会保存到你的 Orbi360 NVR 配置文件中。"
     }
 }

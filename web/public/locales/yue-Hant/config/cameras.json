@@ -9,7 +9,7 @@
     },
     "friendly_name": {
         "label": "顯示名稱",
-        "description": "在 Frigate 介面顯示的鏡頭名稱"
+        "description": "在 Orbi360 NVR 介面顯示的鏡頭名稱"
     },
     "enabled": {
         "label": "已啟用",

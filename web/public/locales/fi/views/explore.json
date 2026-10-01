@@ -62,7 +62,7 @@
       "context": "Selausta voidaan käyttää sen jälkeen kun seurattavien kohteiden uudelleenindeksöinti on valmistunut."
     },
     "downloadingModels": {
-      "context": "Frigate lataa semanttista hakua varten vaadittavat upotusmallit. Tämä saattaa viedä useamman minuutin, riippuen yhteytesi nopeudesta.",
+      "context": "Orbi360 NVR lataa semanttista hakua varten vaadittavat upotusmallit. Tämä saattaa viedä useamman minuutin, riippuen yhteytesi nopeudesta.",
       "setup": {
         "visionModel": "Vision-malli",
         "textModel": "Tekstimalli",

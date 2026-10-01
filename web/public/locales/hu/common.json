@@ -2,7 +2,7 @@
   "time": {
     "untilForTime": "{{time}} ideig",
     "s": "{{time}} másodperc",
-    "untilForRestart": "Amíg a Frigate újraindul.",
+    "untilForRestart": "Amíg a Orbi360 NVR újraindul.",
     "untilRestart": "Amíg újraindul",
     "justNow": "Most",
     "ago": "Ennyi ideje: {{timeAgo}}",
@@ -99,7 +99,7 @@
     },
     "documentation": {
       "title": "Dokumentáció",
-      "label": "Frigate dokumentáció"
+      "label": "Orbi360 NVR dokumentáció"
     },
     "help": "Segítség",
     "explore": "Felfedezés",
@@ -161,7 +161,7 @@
     },
     "uiPlayground": "UI játszótér",
     "faceLibrary": "Arc Könyvtár",
-    "restart": "Frigate Újraindítása",
+    "restart": "Orbi360 NVR Újraindítása",
     "live": {
       "title": "Élő",
       "allCameras": "Minden Kamera",
@@ -205,14 +205,14 @@
     "label": "lapozás"
   },
   "accessDenied": {
-    "documentTitle": "Belépés Megtagadva - Frigate",
+    "documentTitle": "Belépés Megtagadva - Orbi360 NVR",
     "title": "Belépés Megtagadva",
     "desc": "Nincs jogolultsága ehhez az oldalhoz."
   },
   "notFound": {
     "title": "404",
     "desc": "Oldal nem található",
-    "documentTitle": "Nem található - Frigate"
+    "documentTitle": "Nem található - Orbi360 NVR"
   },
   "toast": {
     "copyUrlToClipboard": "URL kimásolva a vágólapra.",
@@ -314,7 +314,7 @@
   },
   "field": {
     "optional": "Opcionális",
-    "internalID": "A belső ID, amelyet a Frigate használ a konfigurációban és az adatbázisban"
+    "internalID": "A belső ID, amelyet a Orbi360 NVR használ a konfigurációban és az adatbázisban"
   },
   "no_items": "Nincsenek elemek",
   "validation_errors": "Érvényesítési Hibák",

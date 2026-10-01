@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Sınıflandırma Modelleri - Frigate",
+  "documentTitle": "Sınıflandırma Modelleri - Orbi360 NVR",
   "details": {
     "scoreInfo": "Skor, modelin nesneyi tespit ettiği tüm durumlar için ortalama güven düzeyini gösterir.",
     "none": "Hiçbiri",
@@ -33,7 +33,7 @@
       "deleteImageFailed": "Silinemedi: {{errorMessage}}",
       "deleteModelFailed": "Model silinemedi: {{errorMessage}}",
       "categorizeFailed": "Görsel sınıflandırılamadı: {{errorMessage}}",
-      "trainingFailed": "Model eğitimi başarısız oldu. Ayrıntılar için Frigate günlüklerini kontrol edin.",
+      "trainingFailed": "Model eğitimi başarısız oldu. Ayrıntılar için Orbi360 NVR günlüklerini kontrol edin.",
       "deleteCategoryFailed": "Sınıf silinemedi: {{errorMessage}}",
       "trainingFailedToStart": "Model eğitimi başlatılamadı: {{errorMessage}}",
       "updateModelFailed": "Model güncellenemedi: {{errorMessage}}",
@@ -161,7 +161,7 @@
       "allImagesRequired_other": "Lütfen tüm görselleri sınıflandırın. {{count}} görsel kaldı.",
       "generating": {
         "title": "Örnek Görseller Oluşturuluyor",
-        "description": "Frigate kayıtlarınızdan temsili görüntüler alınıyor. Bu işlem biraz zaman alabilir…"
+        "description": "Orbi360 NVR kayıtlarınızdan temsili görüntüler alınıyor. Bu işlem biraz zaman alabilir…"
       },
       "training": {
         "title": "Model Eğitiliyor",

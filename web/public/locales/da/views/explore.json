@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Udforsk - Frigate",
+  "documentTitle": "Udforsk - Orbi360 NVR",
   "generativeAI": "Generativ AI",
   "type": {
     "details": "detaljer",
@@ -24,7 +24,7 @@
     },
     "title": "Udforsk er ikke tilgængelig",
     "downloadingModels": {
-      "context": "Frigate henter de nødvendige indlejringsmodeller for at understøtte semantiske søgninger. Dette kan tage flere minutter, afhængig af hastigheden på din netværksforbindelse."
+      "context": "Orbi360 NVR henter de nødvendige indlejringsmodeller for at understøtte semantiske søgninger. Dette kan tage flere minutter, afhængig af hastigheden på din netværksforbindelse."
     }
   },
   "exploreMore": "Udforsk flere {{label}}-objekter",

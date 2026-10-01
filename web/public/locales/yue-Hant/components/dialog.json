@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "你確定要重新啟動 Frigate 嗎？",
+    "title": "你確定要重新啟動 Orbi360 NVR 嗎？",
     "button": "重新啟動",
     "restarting": {
-      "title": "Frigate 正在重新啟動",
+      "title": "Orbi360 NVR 正在重新啟動",
       "content": "此頁面將在 {{countdown}} 秒後重新載入。",
       "button": "立即強制重新載入"
     },
-    "description": "重新啟動期間將會短暫停止 Frigate。"
+    "description": "重新啟動期間將會短暫停止 Orbi360 NVR。"
   },
   "explore": {
     "plus": {

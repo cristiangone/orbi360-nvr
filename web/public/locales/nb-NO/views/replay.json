@@ -31,7 +31,7 @@
         "noSessionDesc": "Start en feilsøkingsavspilling fra Historikk-visningen ved å klikke på Handlinger-knappen i verktøylinjen og velge Feilsøkingsavspilling.",
         "goToRecordings": "Gå til historikk",
         "preparingClip": "Forbereder klipp…",
-        "preparingClipDesc": "Frigate syr sammen opptak for det valgte tidsrommet. Dette kan ta et minutt for lengre perioder.",
+        "preparingClipDesc": "Orbi360 NVR syr sammen opptak for det valgte tidsrommet. Dette kan ta et minutt for lengre perioder.",
         "startingCamera": "Starter feilsøkingsavspilling…",
         "startError": {
             "title": "Kunne ikke starte feilsøkingsavspilling",
@@ -55,6 +55,6 @@
         "activeTracking": "Aktiv sporing",
         "noActiveTracking": "Ingen aktiv sporing",
         "configuration": "Konfigurasjon",
-        "configurationDesc": "Finjuster innstillinger for bevegelsesdeteksjon og objektsporing for feilsøkingskameraet. Ingen endringer lagres i din Frigate-konfigurasjonsfil."
+        "configurationDesc": "Finjuster innstillinger for bevegelsesdeteksjon og objektsporing for feilsøkingskameraet. Ingen endringer lagres i din Orbi360 NVR-konfigurasjonsfil."
     }
 }

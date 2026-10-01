@@ -1,5 +1,5 @@
 {
-  "documentTitle": "โมเดลการจำแนกประเภท- Frigate",
+  "documentTitle": "โมเดลการจำแนกประเภท- Orbi360 NVR",
   "details": {
     "scoreInfo": "คะแนน (Score) คือค่าเฉลี่ยของความมั่นใจในการจำแนกประเภท (Classification Confidence) จากการตรวจจับวัตถุชิ้นนี้ในทุกๆ ครั้ง",
     "none": "ไม่มี",

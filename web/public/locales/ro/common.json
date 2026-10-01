@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Până la {{time}}",
-    "untilForRestart": "Până la repornirea Frigate.",
+    "untilForRestart": "Până la repornirea Orbi360 NVR.",
     "untilRestart": "Până la repornire",
     "ago": "{{timeAgo}} în urmă",
     "justNow": "Acum",
@@ -87,7 +87,7 @@
   "menu": {
     "documentation": {
       "title": "Documentație",
-      "label": "Documentație Frigate"
+      "label": "Documentație Orbi360 NVR"
     },
     "explore": "Căutare",
     "uiPlayground": "UI Playground",
@@ -186,7 +186,7 @@
       }
     },
     "withSystem": "Modul sistemului",
-    "restart": "Repornește Frigate",
+    "restart": "Repornește Orbi360 NVR",
     "review": "Revizuire",
     "classification": "Clasificare",
     "chat": "Chat",
@@ -286,7 +286,7 @@
   },
   "role": {
     "viewer": "Vizualizator",
-    "desc": "Administratorii au acces complet la toate funcționalitățile din interfața Frigate. Vizualizatorii sunt limitați la vizualizarea camerelor, a elementelor de revizuire și a înregistrărilor istorice în interfață.",
+    "desc": "Administratorii au acces complet la toate funcționalitățile din interfața Orbi360 NVR. Vizualizatorii sunt limitați la vizualizarea camerelor, a elementelor de revizuire și a înregistrărilor istorice în interfață.",
     "admin": "Administrator",
     "title": "Rol"
   },
@@ -304,10 +304,10 @@
   "accessDenied": {
     "title": "Acces refuzat",
     "desc": "Nu ai permisiunea să vizualizezi această pagină.",
-    "documentTitle": "Acces refuzat - Frigate"
+    "documentTitle": "Acces refuzat - Orbi360 NVR"
   },
   "notFound": {
-    "documentTitle": "Nu a fost găsit - Frigate",
+    "documentTitle": "Nu a fost găsit - Orbi360 NVR",
     "title": "404",
     "desc": "Pagină negăsită"
   },
@@ -322,7 +322,7 @@
   },
   "field": {
     "optional": "Opțional",
-    "internalID": "ID-ul Intern pe care Frigate îl folosește în configurație și în baza de date"
+    "internalID": "ID-ul Intern pe care Orbi360 NVR îl folosește în configurație și în baza de date"
   },
   "no_items": "Niciun element",
   "validation_errors": "Erori de validare",

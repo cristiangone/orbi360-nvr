@@ -15,7 +15,7 @@
       "description": "Granskningsobjekt kan bara skapas för en kamera när inspelningar är aktiverade för kameran."
     }
   },
-  "documentTitle": "Granska - Frigate",
+  "documentTitle": "Granska - Orbi360 NVR",
   "timeline": "Tidslinje",
   "events": {
     "noFoundForTimePeriod": "Inga händelser hittades för den här tidsperioden.",
@@ -23,7 +23,7 @@
     "label": "Händelse"
   },
   "recordings": {
-    "documentTitle": "Inspelningar - Frigate"
+    "documentTitle": "Inspelningar - Orbi360 NVR"
   },
   "newReviewItems": {
     "label": "Visa nya objekt att granska",

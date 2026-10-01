@@ -11,8 +11,8 @@
       "savingError": "Error al guardar la configuración"
     }
   },
-  "documentTitle": "Editor de Configuración - Frigate",
+  "documentTitle": "Editor de Configuración - Orbi360 NVR",
   "confirm": "¿Salir sin guardar?",
   "safeConfigEditor": "Editor de Configuración (Modo Seguro)",
-  "safeModeDescription": "Frigate se encuentra en modo seguro debido a un error de validación en la configuración."
+  "safeModeDescription": "Orbi360 NVR se encuentra en modo seguro debido a un error de validación en la configuración."
 }

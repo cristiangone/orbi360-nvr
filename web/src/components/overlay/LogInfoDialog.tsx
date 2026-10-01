@@ -118,7 +118,7 @@ function useHelpfulLinks(content: string | undefined) {
         link: getLocaleDocUrl(
           "configuration/record#will-frigate-delete-old-recordings-if-my-storage-runs-out",
         ),
-        text: "Frigate Automatic Storage Cleanup",
+        text: "Orbi360 NVR Automatic Storage Cleanup",
       });
     }
 

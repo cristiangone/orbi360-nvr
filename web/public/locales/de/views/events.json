@@ -23,9 +23,9 @@
     "noFoundForTimePeriod": "Keine Ereignisse für diesen Zeitraum gefunden.",
     "aria": "Wähle Ereignisse aus"
   },
-  "documentTitle": "Überprüfung - Frigate",
+  "documentTitle": "Überprüfung - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Aufnahmen - Frigate",
+    "documentTitle": "Aufnahmen - Orbi360 NVR",
     "invalidSharedLink": "Der Link zur zeitgestempelten Aufzeichnung kann aufgrund eines Parsing-Fehlers nicht geöffnet werden.",
     "invalidSharedCamera": "Der Link zur zeitgestempelten Aufzeichnung kann nicht geöffnet werden, da es sich um eine unbekannte oder nicht autorisierte Kamera handelt."
   },

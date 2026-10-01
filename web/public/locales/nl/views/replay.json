@@ -24,13 +24,13 @@
         }
     },
     "title": "Debug Herhaling",
-    "description": "Herhaal camera-opnames voor foutopsporing. De objectlijst toont een vertraagde samenvatting van gedetecteerde objecten en het tabblad Berichten toont een stream van interne Frigate-berichten uit de herhaalde beelden.",
+    "description": "Herhaal camera-opnames voor foutopsporing. De objectlijst toont een vertraagde samenvatting van gedetecteerde objecten en het tabblad Berichten toont een stream van interne Orbi360 NVR-berichten uit de herhaalde beelden.",
     "page": {
         "noSession": "Geen actieve debugherhalingssessie",
         "noSessionDesc": "Start een debugherhaling vanuit de Geschiedenis-weergave door op de knop Acties in de werkbalk te klikken en Debug Herhaling te kiezen.",
         "goToRecordings": "Ga naar Geschiedenis",
         "preparingClip": "Clip voorbereiden…",
-        "preparingClipDesc": "Frigate voegt opnames samen voor het geselecteerde tijdsbereik. Dit kan bij langere bereiken even duren.",
+        "preparingClipDesc": "Orbi360 NVR voegt opnames samen voor het geselecteerde tijdsbereik. Dit kan bij langere bereiken even duren.",
         "startingCamera": "Debugherhaling starten…",
         "startError": {
             "title": "Kan debugherhaling niet starten",
@@ -54,6 +54,6 @@
         "activeTracking": "Actieve tracking",
         "noActiveTracking": "Geen actieve tracking",
         "configuration": "Configuratie",
-        "configurationDesc": "Stem de instellingen voor bewegingsdetectie en objecttracking van de debugherhalingscamera nauwkeurig af. Wijzigingen worden niet opgeslagen in je Frigate-configuratiebestand."
+        "configurationDesc": "Stem de instellingen voor bewegingsdetectie en objecttracking van de debugherhalingscamera nauwkeurig af. Wijzigingen worden niet opgeslagen in je Orbi360 NVR-configuratiebestand."
     }
 }

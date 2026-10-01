@@ -53,9 +53,9 @@
     "label": "Vaata uusi ülevaatamiseks mõeldud kirjeid",
     "button": "Uued ülevaatamiseks mõeldud kirjed"
   },
-  "documentTitle": "Ülevaatamine - Frigate",
+  "documentTitle": "Ülevaatamine - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Salvestised - Frigate",
+    "documentTitle": "Salvestised - Orbi360 NVR",
     "invalidSharedLink": "Töötlemisvea tõttu ei õnnestu avada ajatempliga salvestuse linki.",
     "invalidSharedCamera": "Tundmatu või volituseta kaamera tõttu ei õnnestu avada ajatempliga salvestuse linki."
   },

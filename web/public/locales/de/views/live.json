@@ -53,9 +53,9 @@
     }
   },
   "documentTitle": {
-    "default": "Live - Frigate"
+    "default": "Live - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Live - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Live - Orbi360 NVR",
   "muteCameras": {
     "disable": "Stumm aller Kameras aufheben",
     "enable": "Alle Kameras auf stumm"
@@ -188,7 +188,7 @@
     },
     "default": {
       "title": "Keine Kameras konfiguriert",
-      "description": "Zum Start eine Kamera mit Frigate verbinden.",
+      "description": "Zum Start eine Kamera mit Orbi360 NVR verbinden.",
       "buttonText": "Kamera hinzufügen"
     },
     "group": {

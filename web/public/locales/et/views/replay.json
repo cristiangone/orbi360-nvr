@@ -31,7 +31,7 @@
         "noSessionDesc": "Alusta silumissalvestise taasesitust ajaloo vaates, klõpsates tööriistaribal nupul \"Toimingud\" ja valides silumissalvestise taasesituse.",
         "goToRecordings": "Mine ajaloo vaatesse",
         "preparingClip": "Klipi ettevalmistamine…",
-        "preparingClipDesc": "Frigate koondab valitud ajavahemiku salvestisi. Pikemate vahemike puhul võib see võtta kauem.",
+        "preparingClipDesc": "Orbi360 NVR koondab valitud ajavahemiku salvestisi. Pikemate vahemike puhul võib see võtta kauem.",
         "startingCamera": "Silumise taasesituse käivitamine…",
         "startError": {
             "title": "Silumise taasesituse käivitamine ebaõnnestus",
@@ -55,6 +55,6 @@
         "activeTracking": "Aktiivne jälgimine",
         "noActiveTracking": "Aktiivset jälgimist pole",
         "configuration": "Seaded",
-        "configurationDesc": "Peenhäälesta liikumistuvastuse ja objektide jälgimise sätteid silumis- ja taasesituskaamera jaoks. Frigate'i konfiguratsiooni faili muudatusi ei salvestata."
+        "configurationDesc": "Peenhäälesta liikumistuvastuse ja objektide jälgimise sätteid silumis- ja taasesituskaamera jaoks. Orbi360 NVR'i konfiguratsiooni faili muudatusi ei salvestata."
     }
 }

@@ -105,8 +105,8 @@
       "label": "Редагувати групу камер"
     }
   },
-  "documentTitle": "Пряма трансляція - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Пряма трансляція - Frigate",
+  "documentTitle": "Пряма трансляція - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Пряма трансляція - Orbi360 NVR",
   "lowBandwidthMode": "Економічний режим",
   "twoWayTalk": {
     "enable": "Увімкнути двосторонню розмову",
@@ -173,7 +173,7 @@
   },
   "noCameras": {
     "title": "Немає налаштованих камер",
-    "description": "Почніть з підключення камери до Frigate.",
+    "description": "Почніть з підключення камери до Orbi360 NVR.",
     "buttonText": "Додати камеру",
     "restricted": {
       "title": "Немає Доступних Камер",
@@ -181,7 +181,7 @@
     },
     "default": {
       "title": "Немає Налаштованих Камер",
-      "description": "Почніть з підключення камери до Frigate.",
+      "description": "Почніть з підключення камери до Orbi360 NVR.",
       "buttonText": "Додати Камеру"
     },
     "group": {

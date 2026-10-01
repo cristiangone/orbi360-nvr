@@ -11,11 +11,11 @@
     },
     "safe_mode": {
         "label": "Безопасен режим",
-        "description": "При избор, Frigate ще стартира в безопасен режим за отстраняване на неизправности."
+        "description": "При избор, Orbi360 NVR ще стартира в безопасен режим за отстраняване на неизправности."
     },
     "environment_vars": {
         "label": "Променливи",
-        "description": "Параметри за стартиране на Frigate в Home Assistant OS. Non-HAOS потребителите трябва да използват Docker конфигурация."
+        "description": "Параметри за стартиране на Orbi360 NVR в Home Assistant OS. Non-HAOS потребителите трябва да използват Docker конфигурация."
     },
     "logger": {
         "label": "Логове",

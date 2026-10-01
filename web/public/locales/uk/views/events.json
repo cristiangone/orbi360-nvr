@@ -25,9 +25,9 @@
     "aria": "Выбрати події",
     "noFoundForTimePeriod": "За цей період подій не знайдено."
   },
-  "documentTitle": "Перегляд подiя - Frigate",
+  "documentTitle": "Перегляд подiя - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Записи - Frigate"
+    "documentTitle": "Записи - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Останні 24 години"

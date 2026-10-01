@@ -26,7 +26,7 @@
     "invalidName": "Nom no vàlid. Els noms només poden incloure lletres, números, espais, apòstrofs, guions baixos i guions.",
     "nameCannotContainHash": "El nom no pot contenir #."
   },
-  "documentTitle": "Biblioteca de rostres - Frigate",
+  "documentTitle": "Biblioteca de rostres - Orbi360 NVR",
   "uploadFaceImage": {
     "title": "Puja una imatge del rostre",
     "desc": "Carregar una imatge per escanejar els rostres i incloure per a {{pageToggle}}"

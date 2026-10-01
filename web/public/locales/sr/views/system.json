@@ -1,13 +1,13 @@
 {
   "documentTitle": {
-    "cameras": "Statusi kamera - Frigate",
-    "storage": "Statistika skladištenja - Frigate",
+    "cameras": "Statusi kamera - Orbi360 NVR",
+    "storage": "Statistika skladištenja - Orbi360 NVR",
     "general": "Општа статистика - Фригејт",
-    "enrichments": "Statistika obogaćivanja - Frigate",
+    "enrichments": "Statistika obogaćivanja - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate logovi - Frigate",
-      "go2rtc": "Go2RTC dnevnici - Frigate",
-      "nginx": "Nginx logovi - Frigate"
+      "frigate": "Orbi360 NVR logovi - Orbi360 NVR",
+      "go2rtc": "Go2RTC dnevnici - Orbi360 NVR",
+      "nginx": "Nginx logovi - Orbi360 NVR"
     }
   },
   "title": "Sistem",

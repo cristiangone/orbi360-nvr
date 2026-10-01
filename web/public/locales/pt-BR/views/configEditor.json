@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Editor de Configuração - Frigate",
+  "documentTitle": "Editor de Configuração - Orbi360 NVR",
   "configEditor": "Editor de configuração",
   "copyConfig": "Copiar Configuração",
   "saveAndRestart": "Salvar & Reiniciar",
@@ -14,5 +14,5 @@
     }
   },
   "safeConfigEditor": "Editor de Configuração (Modo Seguro)",
-  "safeModeDescription": "O Frigate está no modo seguro devido a um erro de validação de configuração."
+  "safeModeDescription": "O Orbi360 NVR está no modo seguro devido a um erro de validação de configuração."
 }

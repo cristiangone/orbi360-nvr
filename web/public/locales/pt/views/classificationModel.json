@@ -39,7 +39,7 @@
       "deleteCategoryFailed": "Falha ao excluir a classe: {{errorMessage}}",
       "deleteModelFailed": "Falha ao excluir o modelo: {{errorMessage}}",
       "categorizeFailed": "Falha ao categorizar a imagem: {{errorMessage}}",
-      "trainingFailed": "O treinamento do modelo falhou. Verifique os registros do Frigate para obter detalhes.",
+      "trainingFailed": "O treinamento do modelo falhou. Verifique os registros do Orbi360 NVR para obter detalhes.",
       "trainingFailedToStart": "Falha ao iniciar o treinamento do modelo: {{errorMessage}}",
       "updateModelFailed": "Falha ao atualizar o modelo: {{errorMessage}}",
       "renameCategoryFailed": "Falha ao renomear a classe: {{errorMessage}}"
@@ -51,7 +51,7 @@
     "minClassesTitle": "Não é possível excluir a classe",
     "minClassesDesc": "Um modelo de classificação deve ter pelo menos duas classes. Adicione outra classe antes de excluir esta."
   },
-  "documentTitle": "Modelos de Classificação – Frigate",
+  "documentTitle": "Modelos de Classificação – Orbi360 NVR",
   "description": {
     "invalidName": "Nome inválido. Os nomes podem incluir apenas letras, números, espaços, apóstrofos, sublinhados e hífens."
   }

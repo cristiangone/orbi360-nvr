@@ -1,18 +1,18 @@
 {
   "documentTitle": {
-    "default": "設定 - Frigate",
-    "authentication": "認證設定 - Frigate",
-    "camera": "鏡頭設定 - Frigate",
-    "classification": "進階功能設定 - Frigate",
-    "masksAndZones": "遮罩與區域編輯器 - Frigate",
-    "motionTuner": "移動調校器 - Frigate",
-    "object": "除錯 - Frigate",
-    "general": "介面設定 - Frigate",
-    "frigatePlus": "Frigate+ 設定 - Frigate",
-    "notifications": "通知設定 - Frigate",
-    "enrichments": "進階功能設定 - Frigate",
-    "cameraManagement": "管理鏡頭 - Frigate",
-    "cameraReview": "鏡頭檢視設定 - Frigate"
+    "default": "設定 - Orbi360 NVR",
+    "authentication": "認證設定 - Orbi360 NVR",
+    "camera": "鏡頭設定 - Orbi360 NVR",
+    "classification": "進階功能設定 - Orbi360 NVR",
+    "masksAndZones": "遮罩與區域編輯器 - Orbi360 NVR",
+    "motionTuner": "移動調校器 - Orbi360 NVR",
+    "object": "除錯 - Orbi360 NVR",
+    "general": "介面設定 - Orbi360 NVR",
+    "frigatePlus": "Frigate+ 設定 - Orbi360 NVR",
+    "notifications": "通知設定 - Orbi360 NVR",
+    "enrichments": "進階功能設定 - Orbi360 NVR",
+    "cameraManagement": "管理鏡頭 - Orbi360 NVR",
+    "cameraReview": "鏡頭檢視設定 - Orbi360 NVR"
   },
   "menu": {
     "ui": "介面",
@@ -105,7 +105,7 @@
     },
     "semanticSearch": {
       "title": "語意搜尋",
-      "desc": "Frigate 的語意搜尋功能讓你可以利用影像本身、自訂文字描述，或自動產生的描述，在審查項目中尋找已追蹤的物件。",
+      "desc": "Orbi360 NVR 的語意搜尋功能讓你可以利用影像本身、自訂文字描述，或自動產生的描述，在審查項目中尋找已追蹤的物件。",
       "readTheDocumentation": "閱讀文件",
       "reindexNow": {
         "label": "立即重建索引",
@@ -145,17 +145,17 @@
       },
       "readTheDocumentation": "閱讀文件",
       "title": "人臉識別",
-      "desc": "人臉識別功能允許為人物分配名字，當辨識到他們的臉孔時，Frigate 會將名字加到子標籤上。此資訊會顯示於介面、篩選器及通知中。"
+      "desc": "人臉識別功能允許為人物分配名字，當辨識到他們的臉孔時，Orbi360 NVR 會將名字加到子標籤上。此資訊會顯示於介面、篩選器及通知中。"
     },
     "licensePlateRecognition": {
       "title": "車牌識別",
       "readTheDocumentation": "閱讀文件",
-      "desc": "Frigate 可以識別車輛上的車牌，自動將偵測到的字元加到已辨識車牌欄位，或將已知名稱加到屬於車輛類型的物件的子標籤上。常見用途包括讀取駛入車道或在街道上駛過的車輛的車牌。"
+      "desc": "Orbi360 NVR 可以識別車輛上的車牌，自動將偵測到的字元加到已辨識車牌欄位，或將已知名稱加到屬於車輛類型的物件的子標籤上。常見用途包括讀取駛入車道或在街道上駛過的車輛的車牌。"
     },
     "restart_required": "需要重新啟動（分類設定已變更）",
     "toast": {
       "error": "儲存設定變更失敗：{{errorMessage}}",
-      "success": "分類設定已儲存。請重新啟動 Frigate 以套用你的更改。"
+      "success": "分類設定已儲存。請重新啟動 Orbi360 NVR 以套用你的更改。"
     },
     "title": "進階功能設定",
     "unsavedChanges": "進階功能設定更改尚未儲存"
@@ -164,7 +164,7 @@
     "title": "鏡頭設定",
     "streams": {
       "title": "串流",
-      "desc": "暫時停用鏡頭直到Frigate重新啟動。停用鏡頭會完全停止 Frigate 處理此鏡頭的串流。將會無法使用偵測、錄影和除錯功能。<br /><em>注意：這不會停用 go2rtc 的轉播功能。</em>"
+      "desc": "暫時停用鏡頭直到Frigate重新啟動。停用鏡頭會完全停止 Orbi360 NVR 處理此鏡頭的串流。將會無法使用偵測、錄影和除錯功能。<br /><em>注意：這不會停用 go2rtc 的轉播功能。</em>"
     },
     "review": {
       "title": "審查",
@@ -346,11 +346,11 @@
         "title": "區域可讓你定義畫面中的特定範圍，以判斷物件是否進入該範圍。",
         "documentation": "文件"
       },
-      "documentTitle": "編輯區域 - Frigate"
+      "documentTitle": "編輯區域 - Orbi360 NVR"
     },
     "motionMasks": {
       "label": "移動遮罩",
-      "documentTitle": "編輯移動遮罩 - Frigate",
+      "documentTitle": "編輯移動遮罩 - Orbi360 NVR",
       "desc": {
         "title": "移動遮罩可防止不需要的移動觸發偵測。遮罩過多會令物件追蹤變得困難。",
         "documentation": "文件"
@@ -396,7 +396,7 @@
           "noName": "物件遮罩已儲存。"
         }
       },
-      "documentTitle": "編輯物件遮罩 - Frigate",
+      "documentTitle": "編輯物件遮罩 - Orbi360 NVR",
       "edit": "編輯物件遮罩"
     },
     "filter": {
@@ -460,7 +460,7 @@
       "title": "時間戳記",
       "desc": "在圖片上疊加時間戳記"
     },
-    "detectorDesc": "Frigate 使用你的偵測器（{{detectors}}）來偵測鏡頭影片串流中的物件。",
+    "detectorDesc": "Orbi360 NVR 使用你的偵測器（{{detectors}}）來偵測鏡頭影片串流中的物件。",
     "debugging": "除錯中",
     "mask": {
       "title": "移動遮罩",
@@ -715,7 +715,7 @@
           "desc": "使用<em>小型</em>模型會採用 FaceNet 臉部嵌入模型，在大多數 CPU 上能有效運行。"
         }
       },
-      "desc": "人臉識別功能允許為人物分配名字，當辨識到他們的臉孔時，Frigate 會將名字加到子標籤上。此資訊會顯示於介面、篩選器及通知中。",
+      "desc": "人臉識別功能允許為人物分配名字，當辨識到他們的臉孔時，Orbi360 NVR 會將名字加到子標籤上。此資訊會顯示於介面、篩選器及通知中。",
       "title": "人臉識別",
       "readTheDocumentation": "閱讀文件"
     },
@@ -724,7 +724,7 @@
       "desc": "鳥類分類會使用量化 Tensorflow 模型識別已知鳥類。當辨識到已知鳥類時，牠的常見名稱會加到子標籤上。此資訊會顯示在介面、篩選器及通知中。"
     },
     "semanticSearch": {
-      "desc": "Frigate 的語意搜尋功能讓你可以利用影像本身、自訂文字描述，或自動產生的描述，在審查項目中尋找已追蹤的物件。",
+      "desc": "Orbi360 NVR 的語意搜尋功能讓你可以利用影像本身、自訂文字描述，或自動產生的描述，在審查項目中尋找已追蹤的物件。",
       "reindexNow": {
         "confirmDesc": "你確定要重建索引所有已追蹤物件的嵌入向量嗎？這個過程會在背景運行，但可能會用盡你的 CPU，而且需要一定時間。你可以在「瀏覽」頁面查看進度。",
         "label": "立即重建索引",
@@ -752,21 +752,21 @@
     },
     "licensePlateRecognition": {
       "title": "車牌識別",
-      "desc": "Frigate 可以識別車輛上的車牌，自動將偵測到的字元加到已辨識車牌欄位，或將已知名稱加到屬於車輛類型的物件的子標籤上。常見用途包括讀取駛入車道或在街道上駛過的車輛的車牌。",
+      "desc": "Orbi360 NVR 可以識別車輛上的車牌，自動將偵測到的字元加到已辨識車牌欄位，或將已知名稱加到屬於車輛類型的物件的子標籤上。常見用途包括讀取駛入車道或在街道上駛過的車輛的車牌。",
       "readTheDocumentation": "閱讀文件"
     },
     "title": "進階功能設定",
     "unsavedChanges": "未儲存進階功能設定變更",
     "restart_required": "需要重新啟動（進階功能設定已變更）",
     "toast": {
-      "success": "進階功能設定已儲存。請重新啟動 Frigate 以套用你的更改。",
+      "success": "進階功能設定已儲存。請重新啟動 Orbi360 NVR 以套用你的更改。",
       "error": "儲存設定變更失敗：{{errorMessage}}"
     }
   },
   "roles": {
     "management": {
       "title": "觀察者角色管理",
-      "desc": "管理自訂觀察者角色及其對此 Frigate 實例的鏡頭存取權限。"
+      "desc": "管理自訂觀察者角色及其對此 Orbi360 NVR 實例的鏡頭存取權限。"
     },
     "addRole": "新增角色",
     "table": {
@@ -913,7 +913,7 @@
         },
         "actions": {
           "title": "操作",
-          "desc": "預設情況下，Frigate 會對所有觸發器發送 MQTT 訊息。子標籤會將觸發器名稱加入到物件標籤中。屬性是可搜尋的元數據，單獨儲存在被追蹤對象的元數據中。",
+          "desc": "預設情況下，Orbi360 NVR 會對所有觸發器發送 MQTT 訊息。子標籤會將觸發器名稱加入到物件標籤中。屬性是可搜尋的元數據，單獨儲存在被追蹤對象的元數據中。",
           "error": {
             "min": "至少需要選擇一個操作。"
           }
@@ -952,7 +952,7 @@
   },
   "cameraWizard": {
     "title": "新增鏡頭",
-    "description": "請依照以下步驟，將新鏡頭加入 Frigate。",
+    "description": "請依照以下步驟，將新鏡頭加入 Orbi360 NVR。",
     "steps": {
       "nameAndConnection": "名稱與連線",
       "streamConfiguration": "串流設定",
@@ -1188,7 +1188,7 @@
       "estimatedBandwidth": "預計頻寬",
       "roles": "角色",
       "ffmpegModule": "使用串流相容模式",
-      "ffmpegModuleDescription": "若多次嘗試仍無法載入，建議啟用。啟用後，Frigate 將使用 ffmpeg 模組和 go2rtc。這可能會提高與某些鏡頭串流相容性。",
+      "ffmpegModuleDescription": "若多次嘗試仍無法載入，建議啟用。啟用後，Orbi360 NVR 將使用 ffmpeg 模組和 go2rtc。這可能會提高與某些鏡頭串流相容性。",
       "none": "無",
       "error": "錯誤",
       "streamValidated": "串流 {{number}} 驗證成功",
@@ -1226,7 +1226,7 @@
     "backToSettings": "返回鏡頭設定",
     "streams": {
       "title": "啟用／停用鏡頭",
-      "desc": "暫時停用鏡頭，直到 Frigate 重新啟動。停用鏡頭會完全停止 Frigate 對該鏡頭串流的處理。偵測、錄影及除錯功能將無法使用。<br /><em>注意：這不會停用 go2rtc 轉串流。</em>"
+      "desc": "暫時停用鏡頭，直到 Orbi360 NVR 重新啟動。停用鏡頭會完全停止 Orbi360 NVR 對該鏡頭串流的處理。偵測、錄影及除錯功能將無法使用。<br /><em>注意：這不會停用 go2rtc 轉串流。</em>"
     },
     "cameraConfig": {
       "add": "新增鏡頭",
@@ -1270,13 +1270,13 @@
     },
     "review": {
       "title": "審查",
-      "desc": "暫時啟用／停用此鏡頭的警報與偵測，直到 Frigate 重啟。停用時，不會產生新的審查項目。 ",
+      "desc": "暫時啟用／停用此鏡頭的警報與偵測，直到 Orbi360 NVR 重啟。停用時，不會產生新的審查項目。 ",
       "alerts": "警報 ",
       "detections": "偵測 "
     },
     "reviewClassification": {
       "title": "審查分類",
-      "desc": "Frigate 將審查項目分類為警報與偵測。預設情況下，所有 <em>person</em> 與 <em>car</em> 物件會視為警報。你可以透過設定對應區域來精確分類審查項目。",
+      "desc": "Orbi360 NVR 將審查項目分類為警報與偵測。預設情況下，所有 <em>person</em> 與 <em>car</em> 物件會視為警報。你可以透過設定對應區域來精確分類審查項目。",
       "noDefinedZones": "此鏡頭未定義任何區域。",
       "objectAlertsTips": "在{{cameraName}}上所有{{alertsLabels}}物件將會顯示為警報。",
       "zoneObjectAlertsTips": "在{{cameraName}}的{{zone}}區域偵測到的所有{{alertsLabels}}物件將會顯示為警報。",

@@ -1,6 +1,6 @@
 {
   "configEditor": "Editor di configurazione",
-  "documentTitle": "Editor di configurazione - Frigate",
+  "documentTitle": "Editor di configurazione - Orbi360 NVR",
   "copyConfig": "Copia configurazione",
   "saveAndRestart": "Salva e riavvia",
   "saveOnly": "Salva soltanto",
@@ -14,5 +14,5 @@
   },
   "confirm": "Vuoi uscire senza salvare?",
   "safeConfigEditor": "Editor di configurazione (modalità provvisoria)",
-  "safeModeDescription": "Frigate è in modalità provvisoria a causa di un errore di convalida della configurazione."
+  "safeModeDescription": "Orbi360 NVR è in modalità provvisoria a causa di un errore di convalida della configurazione."
 }

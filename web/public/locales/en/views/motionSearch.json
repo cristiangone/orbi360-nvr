@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Motion Search - Frigate",
+  "documentTitle": "Motion Search - Orbi360 NVR",
   "title": "Motion Search",
   "description": "Draw a polygon to define the region of interest, and specify a time range to search for motion changes within that region.",
   "selectCamera": "Motion Search is loading",

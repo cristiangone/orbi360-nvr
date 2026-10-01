@@ -1,5 +1,5 @@
 {
-  "documentTitle": "탐색 - Frigate",
+  "documentTitle": "탐색 - Orbi360 NVR",
   "generativeAI": "생성형 AI",
   "exploreMore": "더 많은 {{label}} 객체 탐색",
   "exploreIsUnavailable": {
@@ -26,7 +26,7 @@
       "tips": {
         "context": "모델 다운로드가 완료되면 추적 객체의 임베딩을 다시 색인하는 것이 좋습니다."
       },
-      "error": "오류가 발생했습니다. Frigate 로그를 확인하세요."
+      "error": "오류가 발생했습니다. Orbi360 NVR 로그를 확인하세요."
     }
   },
   "details": {
@@ -48,7 +48,7 @@
           "updatedSublabel": "하위 레이블을 성공적으로 업데이트했습니다.",
           "updatedLPR": "차량 번호판을 성공적으로 업데이트했습니다.",
           "updatedAttributes": "속성을 성공적으로 업데이트했습니다.",
-          "audioTranscription": "오디오 텍스트 변환을 성공적으로 요청했습니다. Frigate 서버 성능에 따라 변환이 완료되기까지 시간이 걸릴 수 있습니다."
+          "audioTranscription": "오디오 텍스트 변환을 성공적으로 요청했습니다. Orbi360 NVR 서버 성능에 따라 변환이 완료되기까지 시간이 걸릴 수 있습니다."
         },
         "error": {
           "regenerate": "{{provider}}에 새 설명 요청 실패: {{errorMessage}}",
@@ -205,7 +205,7 @@
     },
     "submitToPlus": {
       "label": "Frigate+에 제출",
-      "aria": "Frigate Plus에 제출"
+      "aria": "Orbi360 NVR Plus에 제출"
     },
     "viewInHistory": {
       "label": "기록에서 보기",

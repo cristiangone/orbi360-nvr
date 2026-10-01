@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Istraživanje - Frigate",
+  "documentTitle": "Istraživanje - Orbi360 NVR",
   "generativeAI": "Generativna AI",
   "exploreMore": "Istražite više {{label}} objekata",
   "exploreIsUnavailable": {
@@ -16,7 +16,7 @@
       }
     },
     "downloadingModels": {
-      "context": "Frigate preuzima potrebne modele ugrađenih objekata kako bi podržao funkciju Semantičke pretrage. Ovo može trajati nekoliko minuta ovisno o brzini vaše mreže.",
+      "context": "Orbi360 NVR preuzima potrebne modele ugrađenih objekata kako bi podržao funkciju Semantičke pretrage. Ovo može trajati nekoliko minuta ovisno o brzini vaše mreže.",
       "setup": {
         "visionModel": "Model vida",
         "visionModelFeatureExtractor": "Izvođač značajki modela vida",
@@ -26,7 +26,7 @@
       "tips": {
         "context": "Moguće je da želite ponovno indeksirati ugrađene objekte koji se prate nakon što se modele preuzmu."
       },
-      "error": "Dogodila se greška. Provjerite zapise Frigate."
+      "error": "Dogodila se greška. Provjerite zapise Orbi360 NVR."
     }
   },
   "trackedObjectDetails": "Detalji praćenih objekata",
@@ -101,7 +101,7 @@
         "mismatch_one": "{{count}} nedostupan objekat je detektovan i uključen u ovu stavku pregleda. Ti objekti se nisu kvalifikovali kao upozorenje ili detekcija, ili su već očišćeni/obrisani.",
         "mismatch_few": "{{count}} nedostupnih objekata je detektovano i uključeno u ovu stavku pregleda. Ti objekti se nisu kvalifikovali kao upozorenje ili detekciju, ili su već očišćeni/obrisani.",
         "mismatch_other": "{{count}} nedostupnih objekata je detektovano i uključeno u ovu stavku pregleda. Ti objekti se nisu kvalifikovali kao upozorenje ili detekciju, ili su već očišćeni/obrisani.",
-        "hasMissingObjects": "Prilagodite svoju konfiguraciju ako želite da Frigate sačuva pratiti objekte za sljedeće oznake: <em>{{objects}}</em>"
+        "hasMissingObjects": "Prilagodite svoju konfiguraciju ako želite da Orbi360 NVR sačuva pratiti objekte za sljedeće oznake: <em>{{objects}}</em>"
       },
       "toast": {
         "success": {
@@ -109,7 +109,7 @@
           "updatedSublabel": "Uspješno ažurirana podjezika.",
           "updatedLPR": "Uspješno ažurirana tablica.",
           "updatedAttributes": "Uspješno ažurirana atribute.",
-          "audioTranscription": "Uspješno zahtjev za audio transkripciju. Ovisno o brzini vašeg Frigate servera, transkripcija može potrajati neko vrijeme da se završi."
+          "audioTranscription": "Uspješno zahtjev za audio transkripciju. Ovisno o brzini vašeg Orbi360 NVR servera, transkripcija može potrajati neko vrijeme da se završi."
         },
         "error": {
           "regenerate": "Neuspješno poziv {{provider}} za novi opis: {{errorMessage}}",
@@ -162,7 +162,7 @@
     "description": {
       "label": "Opis",
       "placeholder": "Opis praćenog objekta",
-      "aiTips": "Frigate neće tražiti opis od vašeg generativnog AI provajdera dok se životni vijek praćenog objekta ne završi."
+      "aiTips": "Orbi360 NVR neće tražiti opis od vašeg generativnog AI provajdera dok se životni vijek praćenog objekta ne završi."
     },
     "expandRegenerationMenu": "Proširi izbornik regeneracije",
     "regenerateFromSnapshot": "Regeneriraj iz snimka",

@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Ao vivo - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Ao vivo - Frigate",
+  "documentTitle": "Ao vivo - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Ao vivo - Orbi360 NVR",
   "twoWayTalk": {
     "disable": "Desativar conversa bidirecional",
     "enable": "Habilitar conversa bidirecional"

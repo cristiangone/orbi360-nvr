@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Kas oled kindel, et soovid Frigate'i uuesti käivitada?",
+    "title": "Kas oled kindel, et soovid Orbi360 NVR'i uuesti käivitada?",
     "button": "Käivita uuesti",
     "restarting": {
-      "title": "Frigate käivitub uuesti",
+      "title": "Orbi360 NVR käivitub uuesti",
       "content": "See leht laaditakse uuesti {{countdown}} sekundi pärast.",
       "button": "Laadi uuesti kohe"
     },
-    "description": "Järgnevaga Frigate uuesti käivitamise ajaks lõpetab korraks töö."
+    "description": "Järgnevaga Orbi360 NVR uuesti käivitamise ajaks lõpetab korraks töö."
   },
   "search": {
     "saveSearch": {
@@ -182,10 +182,10 @@
     "shareTimestamp": {
       "label": "Jaotise ajatempel",
       "title": "Jaotise ajatempel",
-      "description": "Jaga praeguse esituskoha ajatempliga URL-i või vali kohandatud ajatempel. Arvesta, et see ei ole avalik jagamislink ja on kättesaadav ainult kasutajatele, kellel on ligipääs Frigate'ile ja sellele kaamerale.",
+      "description": "Jaga praeguse esituskoha ajatempliga URL-i või vali kohandatud ajatempel. Arvesta, et see ei ole avalik jagamislink ja on kättesaadav ainult kasutajatele, kellel on ligipääs Orbi360 NVR'ile ja sellele kaamerale.",
       "custom": "Kohandatud ajatempel",
       "button": "Jaga ajatempliga linki",
-      "shareTitle": "Frigate ülevaate ajatempel: {{camera}}"
+      "shareTitle": "Orbi360 NVR ülevaate ajatempel: {{camera}}"
     }
   },
   "imagePicker": {

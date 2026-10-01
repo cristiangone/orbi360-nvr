@@ -1,5 +1,5 @@
 {
-    "documentTitle": "モーション検索 - Frigate",
+    "documentTitle": "モーション検索 - Orbi360 NVR",
     "title": "モーション検索",
     "description": "関心領域を定義する多角形を描画し、その領域内で動きの変化を検索する時間範囲を指定します。",
     "selectCamera": "モーション検索を読み込み中です",

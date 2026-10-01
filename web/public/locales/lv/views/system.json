@@ -1,13 +1,13 @@
 {
   "documentTitle": {
-    "cameras": "Kameru statistika - Frigate",
-    "storage": "Uzglabāšanas statistika - Frigate",
-    "general": "Vispārīgā statistika - Frigate",
-    "enrichments": "Bagātināšanas statistika - Frigate",
+    "cameras": "Kameru statistika - Orbi360 NVR",
+    "storage": "Uzglabāšanas statistika - Orbi360 NVR",
+    "general": "Vispārīgā statistika - Orbi360 NVR",
+    "enrichments": "Bagātināšanas statistika - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate konfigurācija - Frigate",
-      "go2rtc": "Logi Go2RTC - Frigate",
-      "nginx": "Logi Nginx - Frigate"
+      "frigate": "Orbi360 NVR konfigurācija - Orbi360 NVR",
+      "go2rtc": "Logi Go2RTC - Orbi360 NVR",
+      "nginx": "Logi Nginx - Orbi360 NVR"
     }
   },
   "stats": {

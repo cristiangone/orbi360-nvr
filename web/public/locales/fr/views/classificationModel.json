@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Modèles de classification - Frigate",
+  "documentTitle": "Modèles de classification - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Supprimer les images de classification",
     "renameCategory": "Renommer la classe",
@@ -32,7 +32,7 @@
       "deleteImageFailed": "Échec de la suppression : {{errorMessage}}",
       "deleteCategoryFailed": "Échec de la suppression de la classe : {{errorMessage}}",
       "categorizeFailed": "Échec de la catégorisation de l'image : {{errorMessage}}",
-      "trainingFailed": "L'entraînement du modèle a échoué. Consultez les journaux de Frigate pour plus de détails.",
+      "trainingFailed": "L'entraînement du modèle a échoué. Consultez les journaux de Orbi360 NVR pour plus de détails.",
       "deleteModelFailed": "Impossible de supprimer le modèle : {{errorMessage}}",
       "updateModelFailed": "Impossible de mettre à jour le modèle : {{errorMessage}}",
       "renameCategoryFailed": "Impossible de renommer la classe : {{errorMessage}}",
@@ -139,7 +139,7 @@
       "selectImagesDescription": "Cliquez sur les images pour les sélectionner. Cliquez sur Continuer lorsque vous avez terminé avec cette classe.",
       "generating": {
         "title": "Génération d'images d'exemple en cours",
-        "description": "Frigate récupère des images représentatives à partir de vos enregistrements. Cela peut prendre un moment..."
+        "description": "Orbi360 NVR récupère des images représentatives à partir de vos enregistrements. Cela peut prendre un moment..."
       },
       "training": {
         "title": "Entraînement du modèle",

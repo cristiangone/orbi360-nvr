@@ -19,12 +19,12 @@
         "textTokenizer": "Tokenizador de texto",
         "visionModelFeatureExtractor": "Extrator de funcionalidade de modelo de visão"
       },
-      "context": "O Frigate está a transferir os modelos de incorporação necessários para suportar a funcionalidade de \"Procura Semântica\". Isto pode levar vários minutos, dependendo da velocidade da sua ligação de rede.",
+      "context": "O Orbi360 NVR está a transferir os modelos de incorporação necessários para suportar a funcionalidade de \"Procura Semântica\". Isto pode levar vários minutos, dependendo da velocidade da sua ligação de rede.",
       "tips": {
         "context": "Talvez queira reindexar as incorporações dos seus objetos rastreados depois de os modelos serem transferidos.",
         "documentation": "Leia a documentação"
       },
-      "error": "Ocorreu um erro. Verifique os registos do Frigate."
+      "error": "Ocorreu um erro. Verifique os registos do Orbi360 NVR."
     },
     "title": "Explorar não está disponível"
   },
@@ -34,7 +34,7 @@
       "title": "Analisar detalhes do item",
       "desc": "Analisar detalhes do item",
       "tips": {
-        "hasMissingObjects": "Ajuste sua configuração se você quiser que o Frigate guarde os objetos rastreados para os seguintes rótulos: <em>{{objects}}</em>",
+        "hasMissingObjects": "Ajuste sua configuração se você quiser que o Orbi360 NVR guarde os objetos rastreados para os seguintes rótulos: <em>{{objects}}</em>",
         "mismatch_one": "{{count}} objeto indisponível foi detectado e incluído neste item de análise. Esses objetos não qualificaram como alerta ou detecção ou já foram limpos/excluídos.",
         "mismatch_many": "{{count}} objetos indisponíveis foram detectados e incluídos neste item de análise. Esses objetos não qualificaram como alerta ou detecção ou já foram limpos/excluídos.",
         "mismatch_other": "{{count}} objetos indisponíveis foram detectados e incluídos neste item de análise. Esses objetos não qualificaram como alerta ou detecção ou já foram limpos/excluídos."
@@ -61,7 +61,7 @@
     "zones": "Zonas",
     "description": {
       "label": "Descrição",
-      "aiTips": "O Frigate não solicitará uma descrição do seu fornecedor de IA Generativa até que o ciclo de vida do objeto rastreado tenha terminado.",
+      "aiTips": "O Orbi360 NVR não solicitará uma descrição do seu fornecedor de IA Generativa até que o ciclo de vida do objeto rastreado tenha terminado.",
       "placeholder": "Descrição do objeto rastreado"
     },
     "camera": "Câmera",
@@ -104,7 +104,7 @@
       "label": "Classificação"
     }
   },
-  "documentTitle": "Frigate - Explorar",
+  "documentTitle": "Orbi360 NVR - Explorar",
   "trackedObjectDetails": "Detalhes do objeto rastreado",
   "type": {
     "details": "detalhes",
@@ -141,7 +141,7 @@
         "label": "Deslocamento de Anotação",
         "millisecondsToOffset": "Milissegundos para deslocar as anotações de detecção. <em>Padrão: 0</em>",
         "toast": {
-          "success": "O deslocamento de anotação para {{camera}} foi salvo no arquivo de configuração. Reinicie o Frigate para aplicar as alterações."
+          "success": "O deslocamento de anotação para {{camera}} foi salvo no arquivo de configuração. Reinicie o Orbi360 NVR para aplicar as alterações."
         }
       },
       "showAllZones": {

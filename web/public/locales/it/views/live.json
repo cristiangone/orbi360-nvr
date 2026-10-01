@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "In diretta - Frigate"
+    "default": "In diretta - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Dal vivo - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Dal vivo - Orbi360 NVR",
   "lowBandwidthMode": "Modalità a bassa larghezza di banda",
   "twoWayTalk": {
     "enable": "Abilita audio bidirezionale",
@@ -181,14 +181,14 @@
   "noCameras": {
     "buttonText": "Aggiungi telecamera",
     "title": "Nessuna telecamera configurata",
-    "description": "Per iniziare, collega una telecamera a Frigate.",
+    "description": "Per iniziare, collega una telecamera a Orbi360 NVR.",
     "restricted": {
       "title": "Nessuna telecamera disponibile",
       "description": "Non hai l'autorizzazione per visualizzare alcuna telecamera in questo gruppo."
     },
     "default": {
       "title": "Nessuna telecamera configurata",
-      "description": "Per iniziare, collega una telecamera a Frigate.",
+      "description": "Per iniziare, collega una telecamera a Orbi360 NVR.",
       "buttonText": "Aggiungi telecamera"
     },
     "group": {

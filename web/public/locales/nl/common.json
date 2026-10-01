@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Totdat {{time}}",
-    "untilForRestart": "Totdat Frigate herstart.",
+    "untilForRestart": "Totdat Orbi360 NVR herstart.",
     "untilRestart": "Tot herstart",
     "12hours": "12 uur",
     "lastWeek": "Vorige week",
@@ -249,10 +249,10 @@
         "count_other": "{{count}} Camera's"
       }
     },
-    "restart": "Herstart Frigate",
+    "restart": "Herstart Orbi360 NVR",
     "documentation": {
       "title": "Documentatie",
-      "label": "Frigate documentatie"
+      "label": "Orbi360 NVR documentatie"
     },
     "review": "Beoordelen",
     "explore": "Verkennen",
@@ -288,7 +288,7 @@
     "title": "Rol",
     "admin": "Beheerder",
     "viewer": "Kijker",
-    "desc": "Beheerders hebben volledige toegang tot alle functies in de Frigate-interface. Kijkers kunnen alleen camera’s bekijken, items beoordelen en historische beelden terugkijken."
+    "desc": "Beheerders hebben volledige toegang tot alle functies in de Orbi360 NVR-interface. Kijkers kunnen alleen camera’s bekijken, items beoordelen en historische beelden terugkijken."
   },
   "pagination": {
     "previous": {
@@ -303,14 +303,14 @@
     }
   },
   "accessDenied": {
-    "documentTitle": "Toegang geweigerd - Frigate",
+    "documentTitle": "Toegang geweigerd - Orbi360 NVR",
     "desc": "Je hebt geen toestemming om deze pagina te bekijken.",
     "title": "Toegang geweigerd"
   },
   "notFound": {
     "desc": "Pagina niet gevonden",
     "title": "404",
-    "documentTitle": "Niet gevonden - Frigate"
+    "documentTitle": "Niet gevonden - Orbi360 NVR"
   },
   "selectItem": "Selecteer {{item}}",
   "readTheDocumentation": "Lees de documentatie",
@@ -324,7 +324,7 @@
   },
   "field": {
     "optional": "Optioneel",
-    "internalID": "De interne ID die Frigate gebruikt in de configuratie en database"
+    "internalID": "De interne ID die Orbi360 NVR gebruikt in de configuratie en database"
   },
   "credentialField": {
     "savedPlaceholder": "Opgeslagen - leeg laten om huidige te behouden"

@@ -19,8 +19,8 @@
     "ended": "הקלטה ידנית לפי דרישה הסתיימה.",
     "failedToEnd": "סיום ההקלטה הידנית לפי דרישה נכשל."
   },
-  "documentTitle": "שידור חי - Frigate",
-  "documentTitle.withCamera": "{{camera}} - שידור חי- Frigate",
+  "documentTitle": "שידור חי - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - שידור חי- Orbi360 NVR",
   "lowBandwidthMode": "מצב רוחב פס נמוך",
   "twoWayTalk": {
     "enable": "אפשור דיבור דו כיווני",
@@ -179,7 +179,7 @@
   },
   "noCameras": {
     "title": "לא הוגדרו מצלמות",
-    "description": "התחל על-ידי חיבור מצלמה ל-Frigate.",
+    "description": "התחל על-ידי חיבור מצלמה ל-Orbi360 NVR.",
     "buttonText": "הוסף מצלמה",
     "restricted": {
       "title": "אין מצלמות זמינות",

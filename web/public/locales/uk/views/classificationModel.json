@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Моделі класифікації - Frigate",
+  "documentTitle": "Моделі класифікації - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Видалити зображення класифікації",
     "renameCategory": "Перейменувати клас",
@@ -31,7 +31,7 @@
       "deleteImageFailed": "Не вдалося видалити: {{errorMessage}}",
       "deleteCategoryFailed": "Не вдалося видалити клас: {{errorMessage}}",
       "categorizeFailed": "Не вдалося класифікувати зображення: {{errorMessage}}",
-      "trainingFailed": "Навчання моделі не вдалося. Перегляньте журнали Frigate для отримання детальної інформації.",
+      "trainingFailed": "Навчання моделі не вдалося. Перегляньте журнали Orbi360 NVR для отримання детальної інформації.",
       "deleteModelFailed": "Не вдалося видалити модель: {{errorMessage}}",
       "updateModelFailed": "Не вдалося оновити модель: {{errorMessage}}",
       "renameCategoryFailed": "Не вдалося перейменувати клас: {{errorMessage}}",

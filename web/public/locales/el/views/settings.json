@@ -1,17 +1,17 @@
 {
   "documentTitle": {
-    "default": "Ρυθμίσεις - Frigate",
-    "authentication": "Ρυθμίσεις ελέγχου ταυτοποίησης - Frigate",
-    "camera": "Ρυθμίσεις Κάμερας - Frigate",
-    "enrichments": "Ρυθμίσεις εμπλουτισμού - Frigate",
-    "masksAndZones": "Ρυθμίσεις Μασκών και Ζωνών - Frigate",
-    "motionTuner": "Ρύθμιση Κίνησης - Frigate",
-    "object": "Επίλυση σφαλμάτων - Frigate",
-    "general": "Ρυθμίσεις UI - Frigate",
-    "frigatePlus": "Ρυθμίσεις Frigate+ - Frigate",
+    "default": "Ρυθμίσεις - Orbi360 NVR",
+    "authentication": "Ρυθμίσεις ελέγχου ταυτοποίησης - Orbi360 NVR",
+    "camera": "Ρυθμίσεις Κάμερας - Orbi360 NVR",
+    "enrichments": "Ρυθμίσεις εμπλουτισμού - Orbi360 NVR",
+    "masksAndZones": "Ρυθμίσεις Μασκών και Ζωνών - Orbi360 NVR",
+    "motionTuner": "Ρύθμιση Κίνησης - Orbi360 NVR",
+    "object": "Επίλυση σφαλμάτων - Orbi360 NVR",
+    "general": "Ρυθμίσεις UI - Orbi360 NVR",
+    "frigatePlus": "Ρυθμίσεις Frigate+ - Orbi360 NVR",
     "notifications": "Ρυθμίσεις Ειδοποιήσεων",
-    "cameraManagement": "Διαχείριση καμερών - Frigate",
-    "cameraReview": "Ρυθμίσεις αξιολόγησης κάμερας - Frigate"
+    "cameraManagement": "Διαχείριση καμερών - Orbi360 NVR",
+    "cameraReview": "Ρυθμίσεις αξιολόγησης κάμερας - Orbi360 NVR"
   },
   "masksAndZones": {
     "zones": {

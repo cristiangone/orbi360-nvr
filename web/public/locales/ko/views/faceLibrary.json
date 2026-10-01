@@ -14,7 +14,7 @@
     "scoreInfo": "점수는 각 이미지에서 얼굴이 차지하는 크기로 가중치를 부여한 모든 얼굴 점수의 가중 평균입니다."
   },
   "selectItem": "{{item}} 선택",
-  "documentTitle": "얼굴 라이브러리 - Frigate",
+  "documentTitle": "얼굴 라이브러리 - Orbi360 NVR",
   "uploadFaceImage": {
     "title": "얼굴 이미지 업로드",
     "desc": "얼굴을 스캔하여 {{pageToggle}}에 추가할 이미지를 업로드하세요"

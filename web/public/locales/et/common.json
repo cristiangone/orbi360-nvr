@@ -2,7 +2,7 @@
   "time": {
     "untilForTime": "Kuni {{time}}",
     "today": "Täna",
-    "untilForRestart": "Kuni Frigate käivitub uuesti.",
+    "untilForRestart": "Kuni Orbi360 NVR käivitub uuesti.",
     "untilRestart": "Kuni uuesti käivitamiseni",
     "ago": "{{timeAgo}} tagasi",
     "justNow": "Hetk tagasi",
@@ -173,9 +173,9 @@
     "help": "Abiteave",
     "documentation": {
       "title": "Dokumentatsioon",
-      "label": "Frigate'i dokumentatsioon"
+      "label": "Orbi360 NVR'i dokumentatsioon"
     },
-    "restart": "Käivita Frigate uuesti",
+    "restart": "Käivita Orbi360 NVR uuesti",
     "review": "Ülevaatamine",
     "explore": "Uuri",
     "export": "Ekspordi",
@@ -271,7 +271,7 @@
   },
   "field": {
     "optional": "Valikuline",
-    "internalID": "Seadistustes ja andmebaasis kasutatav Frigate'i sisemine tunnus"
+    "internalID": "Seadistustes ja andmebaasis kasutatav Orbi360 NVR'i sisemine tunnus"
   },
   "toast": {
     "copyUrlToClipboard": "Võrguaadress on kopeeritud lõikelauale.",
@@ -288,7 +288,7 @@
     "title": "Roll",
     "admin": "Peakasutaja",
     "viewer": "Vaataja",
-    "desc": "Peakasutajatel on Frigate'i kasutajaliideses kõik õigused. Vaatajad võivad vaid kaamerate pilti vaadata, objekte ülevaadata ning otsida arhiivist vanu videoid."
+    "desc": "Peakasutajatel on Orbi360 NVR'i kasutajaliideses kõik õigused. Vaatajad võivad vaid kaamerate pilti vaadata, objekte ülevaadata ning otsida arhiivist vanu videoid."
   },
   "pagination": {
     "label": "lehenummerdus",
@@ -303,12 +303,12 @@
     "more": "Järgnevad lehed"
   },
   "accessDenied": {
-    "documentTitle": "Ligipääs on keelatud - Frigate",
+    "documentTitle": "Ligipääs on keelatud - Orbi360 NVR",
     "title": "Ligipääs on keelatud",
     "desc": "Sul pole õigusi selle lehe vaatamiseks."
   },
   "notFound": {
-    "documentTitle": "Lehte ei leidu - Frigate",
+    "documentTitle": "Lehte ei leidu - Orbi360 NVR",
     "title": "404",
     "desc": "Veebilehte ei leidu"
   },

@@ -25,7 +25,7 @@
     "noFoundForTimePeriod": "Nenhum evento encontrado neste período."
   },
   "recordings": {
-    "documentTitle": "Gravações - Frigate"
+    "documentTitle": "Gravações - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Últimas 24 horas"
@@ -36,7 +36,7 @@
     "label": "Ver novos itens para revisão"
   },
   "selected_one": "{{count}} selecionado(s)",
-  "documentTitle": "Revisar - Frigate",
+  "documentTitle": "Revisar - Orbi360 NVR",
   "markAsReviewed": "Marcar como Revisado",
   "selected_other": "{{count}} selecionado(s)",
   "camera": "Câmera",

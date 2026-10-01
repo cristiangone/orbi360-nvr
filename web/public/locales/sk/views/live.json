@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Naživo - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Naživo - Frigate",
+  "documentTitle": "Naživo - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Naživo - Orbi360 NVR",
   "lowBandwidthMode": "Režim nízkej šírky pásma",
   "twoWayTalk": {
     "enable": "Povoliť obojsmernú komunikáciu",
@@ -171,7 +171,7 @@
   },
   "noCameras": {
     "title": "Nie sú konfigurované žiadne kamery",
-    "description": "Začnite tým, že pripojíte kameru do Frigate.",
+    "description": "Začnite tým, že pripojíte kameru do Orbi360 NVR.",
     "buttonText": "Pridať kameru",
     "restricted": {
       "title": "Žiadne kamery k dispozícii",

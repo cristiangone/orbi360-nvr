@@ -1,6 +1,6 @@
 {
   "search": "Sök",
-  "documentTitle": "Exporter - Frigate",
+  "documentTitle": "Exporter - Orbi360 NVR",
   "noExports": "Inga exporter hittade",
   "deleteExport": "Radera export",
   "deleteExport.desc": "Är du säker på att du vill ta bort {{exportName}}?",

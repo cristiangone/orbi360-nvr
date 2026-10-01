@@ -1,10 +1,10 @@
 {
-  "documentTitle": "Ζωντανά - Frigate",
+  "documentTitle": "Ζωντανά - Orbi360 NVR",
   "twoWayTalk": {
     "enable": "Ενεργοποίηση αμφίδρομης επικοινωνίας",
     "disable": "Απενεργοποίηση αμφίδρομης επικοινωνίας"
   },
-  "documentTitle.withCamera": "{{camera}} - Ζωντανή μετάδοση - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Ζωντανή μετάδοση - Orbi360 NVR",
   "lowBandwidthMode": "Λειτουργία χαμηλής ευρυζωνικότητας",
   "cameraAudio": {
     "enable": "Ενεργοποίηση ήχου Κάμερας",

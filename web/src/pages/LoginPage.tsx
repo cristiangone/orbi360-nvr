@@ -12,7 +12,8 @@ function LoginPage() {
           <div className="p-8">
             <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
               <div className="flex flex-col items-center space-y-2">
-                <Logo className="mb-6 h-8 w-8" />
+                <Logo className="h-20 w-20" />
+                <h1 className="text-2xl font-semibold">Orbi360 NVR</h1>
               </div>
               <UserAuthForm />
             </div>

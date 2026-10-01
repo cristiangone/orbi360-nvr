@@ -6,7 +6,7 @@
     },
     "friendly_name": {
         "label": "Nume prietenos",
-        "description": "Numele camerei afișat în interfața Frigate"
+        "description": "Numele camerei afișat în interfața Orbi360 NVR"
     },
     "enabled": {
         "label": "Activată",
@@ -811,7 +811,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Calibrare la pornire",
-                "description": "Măsoară vitezele motorului PTZ la pornire pentru a îmbunătăți precizia urmăririi. Frigate va actualiza config-ul cu movement_weights după calibrare."
+                "description": "Măsoară vitezele motorului PTZ la pornire pentru a îmbunătăți precizia urmăririi. Orbi360 NVR va actualiza config-ul cu movement_weights după calibrare."
             },
             "zooming": {
                 "label": "Mod zoom",
@@ -848,7 +848,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Ignoră decalaj timp",
-            "description": "Ignoră diferențele de sincronizare a timpului între cameră și serverul Frigate pentru comunicarea ONVIF."
+            "description": "Ignoră diferențele de sincronizare a timpului între cameră și serverul Orbi360 NVR pentru comunicarea ONVIF."
         },
         "profile": {
             "label": "Profil ONVIF",
@@ -884,7 +884,7 @@
         "description": "Zonele îți permit să definești o arie specifică în cadru pentru a determina dacă un obiect se află sau nu într-un anumit loc.",
         "friendly_name": {
             "label": "Nume zonă",
-            "description": "Un nume ușor de recunoscut pentru zonă, afișat în interfața Frigate. Dacă nu este setat, se va folosi o versiune formatată a numelui zonei."
+            "description": "Un nume ușor de recunoscut pentru zonă, afișat în interfața Orbi360 NVR. Dacă nu este setat, se va folosi o versiune formatată a numelui zonei."
         },
         "enabled": {
             "label": "Activat",

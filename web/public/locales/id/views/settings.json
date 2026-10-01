@@ -1,23 +1,23 @@
 {
   "documentTitle": {
-    "default": "Pengaturan - Frigate",
-    "camera": "Pengaturan Kamera - Frigate",
-    "classification": "Pengaturan Klasifikasi - Frigate",
-    "authentication": "Pengaturan Autentikasi - Frigate",
-    "masksAndZones": "Editor Masker dan Zona - Frigate",
-    "motionTuner": "Penyetel Gerakan - Frigate",
-    "general": "Pengaturan UI - Frigate",
-    "object": "Debug - Frigate",
-    "enrichments": "Pengaturan Pengayaan - Frigate",
-    "cameraManagement": "Kelola Kamera - Frigate",
-    "cameraReview": "Pengaturan Tinjauan Kamera - Frigate",
-    "frigatePlus": "Pengaturan Frigate+ - Frigate",
-    "notifications": "Pengaturan Notifikasi - Frigate",
-    "globalConfig": "Konfigurasi Global - Frigate",
-    "cameraConfig": "Konfigurasi Kamera - Frigate",
-    "detectorsAndModel": "Detektor dan model - Frigate",
-    "maintenance": "Pemeliharaan - Frigate",
-    "profiles": "Profil - Frigate"
+    "default": "Pengaturan - Orbi360 NVR",
+    "camera": "Pengaturan Kamera - Orbi360 NVR",
+    "classification": "Pengaturan Klasifikasi - Orbi360 NVR",
+    "authentication": "Pengaturan Autentikasi - Orbi360 NVR",
+    "masksAndZones": "Editor Masker dan Zona - Orbi360 NVR",
+    "motionTuner": "Penyetel Gerakan - Orbi360 NVR",
+    "general": "Pengaturan UI - Orbi360 NVR",
+    "object": "Debug - Orbi360 NVR",
+    "enrichments": "Pengaturan Pengayaan - Orbi360 NVR",
+    "cameraManagement": "Kelola Kamera - Orbi360 NVR",
+    "cameraReview": "Pengaturan Tinjauan Kamera - Orbi360 NVR",
+    "frigatePlus": "Pengaturan Frigate+ - Orbi360 NVR",
+    "notifications": "Pengaturan Notifikasi - Orbi360 NVR",
+    "globalConfig": "Konfigurasi Global - Orbi360 NVR",
+    "cameraConfig": "Konfigurasi Kamera - Orbi360 NVR",
+    "detectorsAndModel": "Detektor dan model - Orbi360 NVR",
+    "maintenance": "Pemeliharaan - Orbi360 NVR",
+    "profiles": "Profil - Orbi360 NVR"
   },
   "menu": {
     "cameraManagement": "Manajemen kamera",
@@ -188,7 +188,7 @@
       "recordDisabled": "Perekaman dinonaktifkan, item tinjauan tidak akan dibuat.",
       "detectDisabled": "Deteksi objek dinonaktifkan. Item tinjauan memerlukan objek yang terdeteksi untuk mengategorikan alert dan deteksi.",
       "allNonAlertDetections": "Semua aktivitas non-alert akan disertakan sebagai deteksi.",
-      "genaiImageSourceRecordingsRecordDisabled": "Sumber gambar disetel ke 'rekaman', tetapi perekaman dinonaktifkan. Frigate akan kembali ke gambar pratinjau."
+      "genaiImageSourceRecordingsRecordDisabled": "Sumber gambar disetel ke 'rekaman', tetapi perekaman dinonaktifkan. Orbi360 NVR akan kembali ke gambar pratinjau."
     },
     "audio": {
       "noAudioRole": "Tidak ada stream yang memiliki peran audio yang didefinisikan. Anda harus mengaktifkan peran audio agar deteksi audio berfungsi."
@@ -267,7 +267,7 @@
     },
     "semanticSearch": {
       "title": "Pencarian Semantik",
-      "desc": "Pencarian Semantik di Frigate memungkinkan Anda menemukan objek yang terlacak dalam item tinjauan menggunakan gambar itu sendiri, deskripsi teks yang ditentukan pengguna, atau deskripsi yang dibuat secara otomatis.",
+      "desc": "Pencarian Semantik di Orbi360 NVR memungkinkan Anda menemukan objek yang terlacak dalam item tinjauan menggunakan gambar itu sendiri, deskripsi teks yang ditentukan pengguna, atau deskripsi yang dibuat secara otomatis.",
       "reindexNow": {
         "label": "Indeks Ulang Sekarang",
         "desc": "Pengindeksan ulang akan membuat ulang embedding untuk semua objek yang terlacak. Proses ini berjalan di latar belakang dan dapat memaksimalkan penggunaan CPU Anda serta memerlukan waktu cukup lama tergantung pada jumlah objek yang terlacak yang Anda miliki.",
@@ -293,7 +293,7 @@
     },
     "faceRecognition": {
       "title": "Pengenalan Wajah",
-      "desc": "Pengenalan wajah memungkinkan orang diberi nama, dan saat wajah mereka dikenali Frigate akan menetapkan nama orang tersebut sebagai sub_label. Informasi ini disertakan dalam UI, filter, serta notifikasi.",
+      "desc": "Pengenalan wajah memungkinkan orang diberi nama, dan saat wajah mereka dikenali Orbi360 NVR akan menetapkan nama orang tersebut sebagai sub_label. Informasi ini disertakan dalam UI, filter, serta notifikasi.",
       "modelSize": {
         "label": "Ukuran Model",
         "desc": "Ukuran model yang digunakan untuk pengenalan wajah.",
@@ -309,17 +309,17 @@
     },
     "licensePlateRecognition": {
       "title": "Pengenalan Pelat Nomor",
-      "desc": "Frigate dapat mengenali pelat nomor pada kendaraan dan secara otomatis menambahkan karakter yang terdeteksi ke field recognized_license_plate atau nama yang dikenal sebagai sub_label pada objek bertipe mobil. Kasus penggunaan yang umum adalah membaca pelat nomor mobil yang masuk ke jalan masuk rumah atau mobil yang melintas di jalan."
+      "desc": "Orbi360 NVR dapat mengenali pelat nomor pada kendaraan dan secara otomatis menambahkan karakter yang terdeteksi ke field recognized_license_plate atau nama yang dikenal sebagai sub_label pada objek bertipe mobil. Kasus penggunaan yang umum adalah membaca pelat nomor mobil yang masuk ke jalan masuk rumah atau mobil yang melintas di jalan."
     },
     "restart_required": "Perlu mulai ulang (pengaturan Pengayaan berubah)",
     "toast": {
-      "success": "Pengaturan Pengayaan telah disimpan. Mulai ulang Frigate untuk menerapkan perubahan Anda.",
+      "success": "Pengaturan Pengayaan telah disimpan. Mulai ulang Orbi360 NVR untuk menerapkan perubahan Anda.",
       "error": "Gagal menyimpan perubahan konfigurasi: {{errorMessage}}"
     }
   },
   "cameraWizard": {
     "title": "Tambah Kamera",
-    "description": "Ikuti langkah-langkah di bawah ini untuk menambahkan kamera baru ke instalasi Frigate Anda.",
+    "description": "Ikuti langkah-langkah di bawah ini untuk menambahkan kamera baru ke instalasi Orbi360 NVR Anda.",
     "steps": {
       "nameAndConnection": "Nama & Koneksi",
       "probeOrSnapshot": "Probe atau Cuplikan",
@@ -476,7 +476,7 @@
       "estimatedBandwidth": "Perkiraan Bandwidth",
       "roles": "Peran",
       "ffmpegModule": "Gunakan mode kompatibilitas stream",
-      "ffmpegModuleDescription": "Jika stream tidak dimuat setelah beberapa kali percobaan, coba aktifkan ini. Saat diaktifkan, Frigate akan menggunakan modul ffmpeg dengan go2rtc. Ini dapat memberikan kompatibilitas yang lebih baik dengan beberapa stream kamera.",
+      "ffmpegModuleDescription": "Jika stream tidak dimuat setelah beberapa kali percobaan, coba aktifkan ini. Saat diaktifkan, Orbi360 NVR akan menggunakan modul ffmpeg dengan go2rtc. Ini dapat memberikan kompatibilitas yang lebih baik dengan beberapa stream kamera.",
       "none": "Tidak ada",
       "error": "Kesalahan",
       "streamValidated": "Stream {{number}} berhasil divalidasi",
@@ -529,21 +529,21 @@
     "streams": {
       "title": "Status dan Detail Kamera",
       "enableLabel": "Kamera yang diaktifkan",
-      "enableDesc": "Nonaktifkan sementara kamera yang aktif hingga Frigate dimulai ulang. Menonaktifkan kamera sepenuhnya akan menghentikan seluruh pemrosesan stream kamera ini oleh Frigate. Deteksi, perekaman, dan debugging tidak akan tersedia.<br /> <em>Catatan: Ini tidak menonaktifkan restream go2rtc.</em><br /><br />Seret pegangan untuk mengubah urutan kamera sebagaimana ditampilkan di UI. Urutan kamera yang aktif akan tercermin di seluruh UI termasuk dasbor Langsung dan dropdown pemilihan kamera.",
+      "enableDesc": "Nonaktifkan sementara kamera yang aktif hingga Orbi360 NVR dimulai ulang. Menonaktifkan kamera sepenuhnya akan menghentikan seluruh pemrosesan stream kamera ini oleh Orbi360 NVR. Deteksi, perekaman, dan debugging tidak akan tersedia.<br /> <em>Catatan: Ini tidak menonaktifkan restream go2rtc.</em><br /><br />Seret pegangan untuk mengubah urutan kamera sebagaimana ditampilkan di UI. Urutan kamera yang aktif akan tercermin di seluruh UI termasuk dasbor Langsung dan dropdown pemilihan kamera.",
       "disableLabel": "Kamera yang dinonaktifkan",
-      "disableDesc": "Aktifkan kamera yang saat ini tidak terlihat di UI dan dinonaktifkan dalam konfigurasi. Mulai ulang Frigate diperlukan setelah mengaktifkan.",
-      "enableSuccess": "{{cameraName}} diaktifkan. Restart Frigate untuk menerapkan.",
+      "disableDesc": "Aktifkan kamera yang saat ini tidak terlihat di UI dan dinonaktifkan dalam konfigurasi. Mulai ulang Orbi360 NVR diperlukan setelah mengaktifkan.",
+      "enableSuccess": "{{cameraName}} diaktifkan. Restart Orbi360 NVR untuk menerapkan.",
       "reorderHandle": "Seret untuk mengubah urutan",
       "saving": "Menyimpan…",
       "saved": "Tersimpan",
       "friendlyName": {
         "edit": "Edit nama tampilan kamera",
         "title": "Edit Nama Tampilan",
-        "description": "Tetapkan nama ramah yang ditampilkan untuk kamera ini di seluruh UI Frigate. Biarkan kosong untuk menggunakan ID kamera.",
+        "description": "Tetapkan nama ramah yang ditampilkan untuk kamera ini di seluruh UI Orbi360 NVR. Biarkan kosong untuk menggunakan ID kamera.",
         "rename": "Ubah Nama"
       },
       "label": "Status kamera",
-      "description": "Atur status operasi untuk setiap kamera.<br /><br /><strong>Nyala</strong>: stream diproses secara normal.<br /><strong>Mati</strong>: mem jeda pemrosesan untuk sementara. Tidak tetap setelah Frigate dimulai ulang.<br /><strong>Nonaktif</strong>: menghentikan pemrosesan dan menyimpan perubahan ke konfigurasi Anda. Restart diperlukan untuk mengaktifkan kembali kamera yang dinonaktifkan.<br /><br /><em>Catatan: Menonaktifkan tidak memengaruhi restream go2rtc.</em><br /><br />Seret pegangan untuk mengubah urutan kamera aktif sebagaimana tampil di seluruh UI, termasuk dasbor Live dan menu dropdown pemilihan kamera.",
+      "description": "Atur status operasi untuk setiap kamera.<br /><br /><strong>Nyala</strong>: stream diproses secara normal.<br /><strong>Mati</strong>: mem jeda pemrosesan untuk sementara. Tidak tetap setelah Orbi360 NVR dimulai ulang.<br /><strong>Nonaktif</strong>: menghentikan pemrosesan dan menyimpan perubahan ke konfigurasi Anda. Restart diperlukan untuk mengaktifkan kembali kamera yang dinonaktifkan.<br /><br /><em>Catatan: Menonaktifkan tidak memengaruhi restream go2rtc.</em><br /><br />Seret pegangan untuk mengubah urutan kamera aktif sebagaimana tampil di seluruh UI, termasuk dasbor Live dan menu dropdown pemilihan kamera.",
       "disabledSubheading": "Dinonaktifkan dalam konfigurasi",
       "status": {
         "on": "Nyala",
@@ -554,9 +554,9 @@
       "details": {
         "edit": "Edit detail kamera",
         "title": "Edit Detail Kamera",
-        "description": "Perbarui nama tampilan, URL eksternal, dan visibilitas yang digunakan untuk kamera ini di seluruh UI Frigate.",
+        "description": "Perbarui nama tampilan, URL eksternal, dan visibilitas yang digunakan untuk kamera ini di seluruh UI Orbi360 NVR.",
         "friendlyNameLabel": "Nama Tampilan",
-        "friendlyNameHelp": "Nama ramah yang ditampilkan untuk kamera ini di seluruh UI Frigate. Biarkan kosong untuk menggunakan ID kamera.",
+        "friendlyNameHelp": "Nama ramah yang ditampilkan untuk kamera ini di seluruh UI Orbi360 NVR. Biarkan kosong untuk menggunakan ID kamera.",
         "webuiUrlLabel": "URL Web UI Kamera",
         "webuiUrlHelp": "URL untuk membuka web UI kamera langsung dari tampilan Debug. Biarkan kosong untuk menonaktifkan tautan.",
         "webuiUrlInvalid": "Harus berupa URL yang valid (misalnya, https://example.com).",
@@ -611,7 +611,7 @@
       "description": "Tetapkan tipe untuk setiap kamera. Kamera LPR khusus adalah kamera satu fungsi dengan zoom optik kuat untuk menangkap pelat nomor pada kendaraan yang jauh. Sebagian besar kamera sebaiknya menggunakan tipe kamera normal kecuali kamera tersebut memang khusus untuk LPR dan memiliki tampilan yang sangat terfokus pada pelat nomor.",
       "normal": "Normal",
       "dedicatedLpr": "LPR Khusus",
-      "saveSuccess": "Tipe kamera untuk {{cameraName}} telah diperbarui. Mulai ulang Frigate untuk menerapkan perubahan."
+      "saveSuccess": "Tipe kamera untuk {{cameraName}} telah diperbarui. Mulai ulang Orbi360 NVR untuk menerapkan perubahan."
     },
     "clone": {
       "sectionTitle": "Kloning pengaturan",
@@ -685,9 +685,9 @@
       },
       "toast": {
         "success": "Pengaturan disalin ke {{cameraName}}",
-        "successWithRestart": "Pengaturan disalin ke {{cameraName}}. Restart Frigate untuk menerapkan semua perubahan.",
+        "successWithRestart": "Pengaturan disalin ke {{cameraName}}. Restart Orbi360 NVR untuk menerapkan semua perubahan.",
         "successMulti_other": "Pengaturan disalin ke {{count}} kamera",
-        "successMultiWithRestart_other": "Pengaturan disalin ke {{count}} kamera. Restart Frigate untuk menerapkan semua perubahan.",
+        "successMultiWithRestart_other": "Pengaturan disalin ke {{count}} kamera. Restart Orbi360 NVR untuk menerapkan semua perubahan.",
         "partialFailure": "{{successCount}} bagian diterapkan; '{{failedSection}}' gagal: {{errorMessage}}",
         "partialFailureMulti": "Disalin ke {{successCount}} kamera; gagal untuk {{failed}}: {{errorMessage}}",
         "newCameraPartialFailure": "Kamera {{cameraName}} berhasil dibuat, tetapi beberapa pengaturan gagal disalin: {{errorMessage}}",
@@ -700,21 +700,21 @@
     "title": "Pengaturan Tinjauan Kamera",
     "object_descriptions": {
       "title": "Deskripsi Objek AI Generatif",
-      "desc": "Aktifkan/nonaktifkan sementara deskripsi objek AI Generatif untuk kamera ini hingga Frigate dimulai ulang. Saat dinonaktifkan, deskripsi yang dihasilkan AI tidak akan diminta untuk objek terlacak pada kamera ini."
+      "desc": "Aktifkan/nonaktifkan sementara deskripsi objek AI Generatif untuk kamera ini hingga Orbi360 NVR dimulai ulang. Saat dinonaktifkan, deskripsi yang dihasilkan AI tidak akan diminta untuk objek terlacak pada kamera ini."
     },
     "review_descriptions": {
       "title": "Deskripsi Tinjauan AI Generatif",
-      "desc": "Aktifkan/nonaktifkan sementara deskripsi tinjauan AI Generatif untuk kamera ini hingga Frigate dimulai ulang. Saat dinonaktifkan, deskripsi yang dihasilkan AI tidak akan diminta untuk item tinjauan pada kamera ini."
+      "desc": "Aktifkan/nonaktifkan sementara deskripsi tinjauan AI Generatif untuk kamera ini hingga Orbi360 NVR dimulai ulang. Saat dinonaktifkan, deskripsi yang dihasilkan AI tidak akan diminta untuk item tinjauan pada kamera ini."
     },
     "review": {
       "title": "Tinjauan",
-      "desc": "Aktifkan/nonaktifkan sementara alert dan deteksi untuk kamera ini hingga Frigate dimulai ulang. Saat dinonaktifkan, tidak ada item tinjauan baru yang akan dibuat. ",
+      "desc": "Aktifkan/nonaktifkan sementara alert dan deteksi untuk kamera ini hingga Orbi360 NVR dimulai ulang. Saat dinonaktifkan, tidak ada item tinjauan baru yang akan dibuat. ",
       "alerts": "Alert ",
       "detections": "Deteksi "
     },
     "reviewClassification": {
       "title": "Klasifikasi Tinjauan",
-      "desc": "Frigate mengategorikan item tinjauan sebagai Alert dan Deteksi. Secara default, semua objek <em>person</em> dan <em>car</em> dianggap sebagai Alert. Anda dapat menyempurnakan kategorisasi item tinjauan Anda dengan mengonfigurasi zona yang diwajibkan untuk item tersebut.",
+      "desc": "Orbi360 NVR mengategorikan item tinjauan sebagai Alert dan Deteksi. Secara default, semua objek <em>person</em> dan <em>car</em> dianggap sebagai Alert. Anda dapat menyempurnakan kategorisasi item tinjauan Anda dengan mengonfigurasi zona yang diwajibkan untuk item tersebut.",
       "noDefinedZones": "Tidak ada zona yang didefinisikan untuk kamera ini.",
       "objectAlertsTips": "Semua objek {{alertsLabels}} pada {{cameraName}} akan ditampilkan sebagai Alert.",
       "zoneObjectAlertsTips": "Semua objek {{alertsLabels}} yang terdeteksi di {{zone}} pada {{cameraName}} akan ditampilkan sebagai Alert.",
@@ -729,7 +729,7 @@
       "selectDetectionsZones": "Pilih zona untuk Deteksi",
       "limitDetections": "Batasi deteksi ke zona tertentu",
       "toast": {
-        "success": "Konfigurasi Klasifikasi Tinjauan telah disimpan. Mulai ulang Frigate untuk menerapkan perubahan."
+        "success": "Konfigurasi Klasifikasi Tinjauan telah disimpan. Mulai ulang Orbi360 NVR untuk menerapkan perubahan."
       }
     }
   },
@@ -825,7 +825,7 @@
     },
     "zones": {
       "label": "Zona",
-      "documentTitle": "Edit Zona - Frigate",
+      "documentTitle": "Edit Zona - Orbi360 NVR",
       "desc": {
         "title": "Zona memungkinkan Anda menentukan area tertentu pada frame sehingga Anda dapat menentukan apakah suatu objek berada di dalam area tertentu atau tidak.",
         "documentation": "Dokumentasi"
@@ -880,7 +880,7 @@
     },
     "motionMasks": {
       "label": "Masker Gerakan",
-      "documentTitle": "Edit Masker Gerakan - Frigate",
+      "documentTitle": "Edit Masker Gerakan - Orbi360 NVR",
       "desc": {
         "title": "Masker gerakan digunakan untuk mencegah jenis gerakan yang tidak diinginkan memicu deteksi. Masking yang berlebihan akan membuat objek lebih sulit dilacak.",
         "documentation": "Dokumentasi"
@@ -911,7 +911,7 @@
     },
     "objectMasks": {
       "label": "Masker Objek",
-      "documentTitle": "Edit Masker Objek - Frigate",
+      "documentTitle": "Edit Masker Objek - Orbi360 NVR",
       "desc": {
         "title": "Masker filter objek digunakan untuk menyaring positif palsu untuk tipe objek tertentu berdasarkan lokasi.",
         "documentation": "Dokumentasi"
@@ -949,7 +949,7 @@
     "title": "Penyetel Deteksi Gerakan",
     "unsavedChanges": "Perubahan Penyetel Gerakan yang belum disimpan ({{camera}})",
     "desc": {
-      "title": "Frigate menggunakan deteksi gerakan sebagai pemeriksaan awal untuk melihat apakah ada sesuatu yang terjadi dalam frame yang layak diperiksa dengan deteksi objek.",
+      "title": "Orbi360 NVR menggunakan deteksi gerakan sebagai pemeriksaan awal untuk melihat apakah ada sesuatu yang terjadi dalam frame yang layak diperiksa dengan deteksi objek.",
       "documentation": "Baca Panduan Penyetelan Gerakan"
     },
     "Threshold": {
@@ -970,7 +970,7 @@
   },
   "debug": {
     "title": "Debug",
-    "detectorDesc": "Frigate menggunakan detektor Anda ({{detectors}}) untuk mendeteksi objek di stream video kamera Anda.",
+    "detectorDesc": "Orbi360 NVR menggunakan detektor Anda ({{detectors}}) untuk mendeteksi objek di stream video kamera Anda.",
     "desc": "Tampilan debug menunjukkan tampilan real-time objek yang dilacak dan statistiknya. Daftar objek menampilkan ringkasan objek yang terdeteksi dengan sedikit jeda waktu.",
     "openCameraWebUI": "Buka UI Web milik {{camera}}",
     "debugging": "Debugging",
@@ -1037,7 +1037,7 @@
     "title": "Pengguna",
     "management": {
       "title": "Manajemen Pengguna",
-      "desc": "Kelola akun pengguna untuk instance Frigate ini."
+      "desc": "Kelola akun pengguna untuk instance Orbi360 NVR ini."
     },
     "addUser": "Tambah Pengguna",
     "updatePassword": "Atur Ulang Kata Sandi",
@@ -1110,7 +1110,7 @@
       },
       "createUser": {
         "title": "Buat Pengguna Baru",
-        "desc": "Tambahkan akun pengguna baru dan tentukan perannya untuk akses ke area UI Frigate.",
+        "desc": "Tambahkan akun pengguna baru dan tentukan perannya untuk akses ke area UI Orbi360 NVR.",
         "usernameOnlyInclude": "Nama pengguna hanya boleh berisi huruf, angka, . atau _",
         "confirmPassword": "Harap konfirmasi kata sandi Anda"
       },
@@ -1149,7 +1149,7 @@
   "roles": {
     "management": {
       "title": "Manajemen Peran Viewer",
-      "desc": "Kelola peran viewer kustom dan izin akses kameranya untuk instance Frigate ini."
+      "desc": "Kelola peran viewer kustom dan izin akses kameranya untuk instance Orbi360 NVR ini."
     },
     "addRole": "Tambah Peran",
     "table": {
@@ -1210,12 +1210,12 @@
     "title": "Notifikasi",
     "notificationSettings": {
       "title": "Pengaturan Notifikasi",
-      "desc": "Frigate dapat secara native mengirim notifikasi push ke perangkat Anda saat berjalan di browser atau diinstal sebagai PWA."
+      "desc": "Orbi360 NVR dapat secara native mengirim notifikasi push ke perangkat Anda saat berjalan di browser atau diinstal sebagai PWA."
     },
     "notificationUnavailable": {
       "title": "Notifikasi Tidak Tersedia",
-      "desc": "Notifikasi push web memerlukan konteks aman (<code>https://…</code>). Ini adalah batasan browser. Akses Frigate secara aman untuk menggunakan notifikasi.",
-      "descPwa": "Di iOS, notifikasi push web hanya tersedia jika Frigate dipasang ke Layar Utama Anda. Buka menu <strong>Bagikan</strong>, pilih <strong>Tambahkan ke Layar Utama</strong>, lalu buka Frigate dari ikon baru tersebut untuk mendaftarkan perangkat ini agar menerima notifikasi."
+      "desc": "Notifikasi push web memerlukan konteks aman (<code>https://…</code>). Ini adalah batasan browser. Akses Orbi360 NVR secara aman untuk menggunakan notifikasi.",
+      "descPwa": "Di iOS, notifikasi push web hanya tersedia jika Orbi360 NVR dipasang ke Layar Utama Anda. Buka menu <strong>Bagikan</strong>, pilih <strong>Tambahkan ke Layar Utama</strong>, lalu buka Orbi360 NVR dari ikon baru tersebut untuk mendaftarkan perangkat ini agar menerima notifikasi."
     },
     "globalSettings": {
       "title": "Pengaturan Global",
@@ -1252,7 +1252,7 @@
     "cancelSuspension": "Batalkan Penangguhan",
     "toast": {
       "success": {
-        "registered": "Berhasil terdaftar untuk notifikasi. Mulai ulang Frigate diperlukan sebelum notifikasi apa pun (termasuk notifikasi uji) dapat dikirim.",
+        "registered": "Berhasil terdaftar untuk notifikasi. Mulai ulang Orbi360 NVR diperlukan sebelum notifikasi apa pun (termasuk notifikasi uji) dapat dikirim.",
         "settingSaved": "Pengaturan notifikasi telah disimpan."
       },
       "error": {
@@ -1262,7 +1262,7 @@
   },
   "frigatePlus": {
     "title": "Pengaturan Frigate+",
-    "description": "Frigate+ adalah layanan berlangganan yang menyediakan akses ke fitur dan kemampuan tambahan untuk instance Frigate Anda, termasuk kemampuan menggunakan model deteksi objek kustom yang dilatih dengan data Anda sendiri. Anda dapat mengelola pengaturan model Frigate+ Anda di sini.",
+    "description": "Frigate+ adalah layanan berlangganan yang menyediakan akses ke fitur dan kemampuan tambahan untuk instance Orbi360 NVR Anda, termasuk kemampuan menggunakan model deteksi objek kustom yang dilatih dengan data Anda sendiri. Anda dapat mengelola pengaturan model Frigate+ Anda di sini.",
     "cardTitles": {
       "api": "API",
       "currentModel": "Model Saat Ini",
@@ -1314,7 +1314,7 @@
     "unsavedChanges": "Perubahan pengaturan Frigate+ yang belum disimpan",
     "restart_required": "Perlu mulai ulang (model Frigate+ berubah)",
     "toast": {
-      "success": "Pengaturan Frigate+ telah disimpan. Mulai ulang Frigate untuk menerapkan perubahan.",
+      "success": "Pengaturan Frigate+ telah disimpan. Mulai ulang Orbi360 NVR untuk menerapkan perubahan.",
       "error": "Gagal menyimpan perubahan konfigurasi: {{errorMessage}}"
     }
   },
@@ -1337,7 +1337,7 @@
       "noModelSelected": "Pilih model Frigate+"
     },
     "toast": {
-      "saveSuccess": "Pengaturan detektor dan model telah disimpan. Mulai ulang Frigate untuk menerapkan perubahan.",
+      "saveSuccess": "Pengaturan detektor dan model telah disimpan. Mulai ulang Orbi360 NVR untuk menerapkan perubahan.",
       "saveError": "Gagal menyimpan pengaturan detektor dan model"
     },
     "unsavedChanges": "Perubahan detektor dan model yang belum disimpan",
@@ -1427,7 +1427,7 @@
         },
         "actions": {
           "title": "Tindakan",
-          "desc": "Secara default, Frigate mengirim pesan MQTT untuk semua pemicu. Sub label menambahkan nama pemicu ke label objek. Atribut adalah metadata yang dapat dicari dan disimpan secara terpisah dalam metadata objek terlacak.",
+          "desc": "Secara default, Orbi360 NVR mengirim pesan MQTT untuk semua pemicu. Sub label menambahkan nama pemicu ke label objek. Atribut adalah metadata yang dapat dicari dan disimpan secara terpisah dalam metadata objek terlacak.",
           "error": {
             "min": "Setidaknya satu tindakan harus dipilih."
           }
@@ -1468,7 +1468,7 @@
     "title": "Pemeliharaan",
     "sync": {
       "title": "Sinkronisasi Media",
-      "desc": "Frigate akan secara berkala membersihkan media sesuai jadwal reguler berdasarkan konfigurasi retensi Anda. Wajar jika ada beberapa file yatim piatu saat Frigate berjalan. Gunakan fitur ini untuk menghapus file media yatim piatu dari disk yang tidak lagi direferensikan dalam basis data.",
+      "desc": "Orbi360 NVR akan secara berkala membersihkan media sesuai jadwal reguler berdasarkan konfigurasi retensi Anda. Wajar jika ada beberapa file yatim piatu saat Orbi360 NVR berjalan. Gunakan fitur ini untuk menghapus file media yatim piatu dari disk yang tidak lagi direferensikan dalam basis data.",
       "started": "Sinkronisasi media dimulai.",
       "alreadyRunning": "Pekerjaan sinkronisasi sudah sedang berjalan",
       "error": "Gagal memulai sinkronisasi",
@@ -1515,10 +1515,10 @@
     },
     "regionGrid": {
       "title": "Grid Wilayah",
-      "desc": "Grid wilayah adalah optimasi yang mempelajari di mana objek dengan ukuran berbeda biasanya muncul dalam bidang pandang tiap kamera. Frigate menggunakan data ini untuk menentukan ukuran wilayah deteksi secara efisien. Grid ini dibangun secara otomatis seiring waktu dari data objek terlacak.",
+      "desc": "Grid wilayah adalah optimasi yang mempelajari di mana objek dengan ukuran berbeda biasanya muncul dalam bidang pandang tiap kamera. Orbi360 NVR menggunakan data ini untuk menentukan ukuran wilayah deteksi secara efisien. Grid ini dibangun secara otomatis seiring waktu dari data objek terlacak.",
       "clear": "Hapus grid wilayah",
       "clearConfirmTitle": "Hapus Grid Wilayah",
-      "clearConfirmDesc": "Menghapus grid wilayah tidak direkomendasikan kecuali Anda baru-baru ini mengubah ukuran model detektor atau mengubah posisi fisik kamera dan mengalami masalah pelacakan objek. Grid akan dibangun ulang secara otomatis seiring waktu saat objek dilacak. Frigate perlu dimulai ulang agar perubahan diterapkan.",
+      "clearConfirmDesc": "Menghapus grid wilayah tidak direkomendasikan kecuali Anda baru-baru ini mengubah ukuran model detektor atau mengubah posisi fisik kamera dan mengalami masalah pelacakan objek. Grid akan dibangun ulang secara otomatis seiring waktu saat objek dilacak. Orbi360 NVR perlu dimulai ulang agar perubahan diterapkan.",
       "clearSuccess": "Grid wilayah berhasil dihapus",
       "clearError": "Gagal menghapus grid wilayah",
       "restartRequired": "Perlu mulai ulang agar perubahan grid wilayah diterapkan"
@@ -1770,13 +1770,13 @@
   "toast": {
     "success": "Pengaturan berhasil disimpan",
     "applied": "Pengaturan berhasil diterapkan",
-    "successRestartRequired": "Pengaturan berhasil disimpan. Mulai ulang Frigate untuk menerapkan perubahan Anda.",
+    "successRestartRequired": "Pengaturan berhasil disimpan. Mulai ulang Orbi360 NVR untuk menerapkan perubahan Anda.",
     "error": "Gagal menyimpan pengaturan",
     "validationError": "Validasi gagal: {{message}}",
     "resetSuccess": "Atur ulang ke default global",
     "resetError": "Gagal mengatur ulang pengaturan",
     "saveAllSuccess_other": "Semua {{count}} bagian berhasil disimpan.",
-    "saveAllSuccessRestartRequired_other": "Semua {{count}} bagian berhasil disimpan. Mulai ulang Frigate untuk menerapkan perubahan Anda.",
+    "saveAllSuccessRestartRequired_other": "Semua {{count}} bagian berhasil disimpan. Mulai ulang Orbi360 NVR untuk menerapkan perubahan Anda.",
     "saveAllPartial_other": "{{successCount}} dari {{totalCount}} bagian berhasil disimpan. {{failCount}} gagal.",
     "saveAllFailure": "Gagal menyimpan semua bagian."
   },

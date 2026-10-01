@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Tallózás - Frigate",
+  "documentTitle": "Tallózás - Orbi360 NVR",
   "itemMenu": {
     "downloadVideo": {
       "label": "Video letöltése",
@@ -58,7 +58,7 @@
     "description": {
       "placeholder": "Követett tárgy leírása",
       "label": "Leírás",
-      "aiTips": "A Frigate nem fog igényelni leírást a Generatív MI szolgáltatójától, amíg a követett tárgy életciklusa be nem fejeződött."
+      "aiTips": "A Orbi360 NVR nem fog igényelni leírást a Generatív MI szolgáltatójától, amíg a követett tárgy életciklusa be nem fejeződött."
     },
     "timestamp": "Időbélyeg",
     "estimatedSpeed": "Becsült Sebesség",
@@ -96,7 +96,7 @@
       "tips": {
         "mismatch_one": "{{count}} nem elérhető objektum lett észlelve és belefogalve ebbe az ellenőrzési elembe. Ez az objektum vagy nem felelt meg a riasztás vagy észlelés feltételeinek, vagy már törlésre/eltávolításra került.",
         "mismatch_other": "{{count}} nem elérhető objektumok lettek észlelve és belefogalve ebbe az ellenőrzési elembe. Ezek az objektumok vagy nem feleltek meg a riasztás vagy észlelés feltételeinek, vagy már törlésre/eltávolításra kerültek.",
-        "hasMissingObjects": "Állítsa be a konfigurációját, ha azt szeretné, hogy a Frigate mentse a követett objektumokat a következő címkékhez: <em>{{objects}}</em>"
+        "hasMissingObjects": "Állítsa be a konfigurációját, ha azt szeretné, hogy a Orbi360 NVR mentse a követett objektumokat a következő címkékhez: <em>{{objects}}</em>"
       }
     },
     "snapshotScore": {
@@ -152,8 +152,8 @@
         "visionModel": "Látvány modell",
         "visionModelFeatureExtractor": "Látvány modell képesség kinyerő"
       },
-      "error": "Hiba történt. Ellenőrizze a Frigate naplókat.",
-      "context": "A Frigate letölti a szemantikus keresés funkcióhoz szükséges beágyazási modelleket. Ez a hálózati kapcsolat sebességétől függően néhány percet is igénybe vehet."
+      "error": "Hiba történt. Ellenőrizze a Orbi360 NVR naplókat.",
+      "context": "A Orbi360 NVR letölti a szemantikus keresés funkcióhoz szükséges beágyazási modelleket. Ez a hálózati kapcsolat sebességétől függően néhány percet is igénybe vehet."
     }
   },
   "noTrackedObjects": "Nincs követett tárgy",
@@ -197,7 +197,7 @@
         "millisecondsToOffset": "Ezredmásodpercben megadott érték, amellyel az észlelési jelölések eltolhatók. <em>Alapértelmezett: 0</em>",
         "tips": "TIPP: Képzelje el, hogy van egy eseményklip, amelyben egy személy balról jobbra sétál. Ha az esemény idővonalán a kijelölő keret következetesen a személy bal oldalán jelenik meg, akkor az értéket csökkenteni kell. Hasonlóképpen, ha a kijelölő keret folyamatosan a személy előtt van, akkor az értéket növelni kell.",
         "toast": {
-          "success": "A(z) {{camera}} jelöléseltolása el lett mentve a konfigurációs fájlba. Indítsa újra a Frigate-et a módosítások alkalmazásához."
+          "success": "A(z) {{camera}} jelöléseltolása el lett mentve a konfigurációs fájlba. Indítsa újra a Orbi360 NVR-et a módosítások alkalmazásához."
         }
       },
       "showAllZones": {

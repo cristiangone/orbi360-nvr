@@ -1,6 +1,6 @@
 {
     "title": "Debug ponavljanje",
-    "description": "Ponovno prikazivanje snimaka kamere za ispitivanje. Lista objekata prikazuje zakasnjelje sažetak detektiranih objekata, a kartica Zapisi prikazuje tok unutrašnjih poruka Frigate iz snimaka ponavljanja.",
+    "description": "Ponovno prikazivanje snimaka kamere za ispitivanje. Lista objekata prikazuje zakasnjelje sažetak detektiranih objekata, a kartica Zapisi prikazuje tok unutrašnjih poruka Orbi360 NVR iz snimaka ponavljanja.",
     "websocket_messages": "Poruke",
     "dialog": {
         "title": "Počni debug ponavljanje",
@@ -47,9 +47,9 @@
         "activeTracking": "Aktivno praćenje",
         "noActiveTracking": "Nema aktivnog praćenja",
         "configuration": "Konfiguracija",
-        "configurationDesc": "Podesiti precizno detekciju pokreta i praćenje objekata za kameru za debagovanje ponavljanja. Promjene se ne čuvaju u datoteci konfiguracije Frigate.",
+        "configurationDesc": "Podesiti precizno detekciju pokreta i praćenje objekata za kameru za debagovanje ponavljanja. Promjene se ne čuvaju u datoteci konfiguracije Orbi360 NVR.",
         "preparingClip": "Pripremam klip…",
-        "preparingClipDesc": "Frigate spaja snimke za odabrani vremenski raspon. Ovo može potrajati minut za duže raspone.",
+        "preparingClipDesc": "Orbi360 NVR spaja snimke za odabrani vremenski raspon. Ovo može potrajati minut za duže raspone.",
         "startingCamera": "Pokretanje ponovnog pokretanja otklanjanja grešaka…",
         "startError": {
             "title": "Neuspjelo pokretanje ponovnog prikaza otklanjanja grešaka",

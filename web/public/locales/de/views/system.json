@@ -35,7 +35,7 @@
       "intelGpuWarning": {
         "title": "Intel GPU Statistik Warnung",
         "message": "GPU stats nicht verfügbar",
-        "description": "Dies ist ein bekannter Fehler in den GPU-Statistik-Tools von Intel (intel_gpu_top), bei dem das Tool ausfällt und wiederholt eine GPU-Auslastung von 0 % anzeigt, selbst wenn die Hardwarebeschleunigung und die Objekterkennung auf der (i)GPU korrekt funktionieren. Dies ist kein Fehler von Frigate. Du kannst den Host neu starten, um das Problem vorübergehend zu beheben und zu prüfen, ob die GPU korrekt funktioniert. Dies hat keine Auswirkungen auf die Leistung."
+        "description": "Dies ist ein bekannter Fehler in den GPU-Statistik-Tools von Intel (intel_gpu_top), bei dem das Tool ausfällt und wiederholt eine GPU-Auslastung von 0 % anzeigt, selbst wenn die Hardwarebeschleunigung und die Objekterkennung auf der (i)GPU korrekt funktionieren. Dies ist kein Fehler von Orbi360 NVR. Du kannst den Host neu starten, um das Problem vorübergehend zu beheben und zu prüfen, ob die GPU korrekt funktioniert. Dies hat keine Auswirkungen auf die Leistung."
       },
       "gpuTemperature": "GPU Temperatur",
       "npuTemperature": "NPU Temperatur",
@@ -64,16 +64,16 @@
     }
   },
   "documentTitle": {
-    "cameras": "Kamerastatistiken – Frigate",
-    "storage": "Speicherstatistiken - Frigate",
-    "general": "Allgemeine Statistiken - Frigate",
+    "cameras": "Kamerastatistiken – Orbi360 NVR",
+    "storage": "Speicherstatistiken - Orbi360 NVR",
+    "general": "Allgemeine Statistiken - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate Protokolle – Frigate",
-      "go2rtc": "Go2RTC Protokolle - Frigate",
-      "nginx": "Nginx Protokolle - Frigate",
-      "websocket": "Nachrichten Protokolle - Frigate"
+      "frigate": "Orbi360 NVR Protokolle – Orbi360 NVR",
+      "go2rtc": "Go2RTC Protokolle - Orbi360 NVR",
+      "nginx": "Nginx Protokolle - Orbi360 NVR",
+      "websocket": "Nachrichten Protokolle - Orbi360 NVR"
     },
-    "enrichments": "Erweiterte Statistiken - Frigate"
+    "enrichments": "Erweiterte Statistiken - Orbi360 NVR"
   },
   "title": "System",
   "logs": {
@@ -132,14 +132,14 @@
     "recordings": {
       "earliestRecording": "Älteste verfügbare Aufzeichnung:",
       "title": "Aufnahmen",
-      "tips": "Dieser Wert gibt den Gesamtspeicherplatz an, den die Aufzeichnungen in der Datenbank von Frigate belegen. Frigate erfasst nicht die Speichernutzung für alle Dateien auf Ihrer Festplatte."
+      "tips": "Dieser Wert gibt den Gesamtspeicherplatz an, den die Aufzeichnungen in der Datenbank von Orbi360 NVR belegen. Orbi360 NVR erfasst nicht die Speichernutzung für alle Dateien auf Ihrer Festplatte."
     },
     "cameraStorage": {
       "camera": "Kamera",
       "title": "Kamera Speicher",
       "unused": {
         "title": "Ungenutzt",
-        "tips": "Dieser Wert gibt möglicherweise nicht genau den freien Speicherplatz an, der Frigate zur Verfügung steht, wenn neben den Aufzeichnungen von Frigate noch andere Dateien auf der Festplatte gespeichert sind. Frigate verfolgt die Speichernutzung außerhalb der Aufzeichnungen nicht."
+        "tips": "Dieser Wert gibt möglicherweise nicht genau den freien Speicherplatz an, der Orbi360 NVR zur Verfügung steht, wenn neben den Aufzeichnungen von Orbi360 NVR noch andere Dateien auf der Festplatte gespeichert sind. Orbi360 NVR verfolgt die Speichernutzung außerhalb der Aufzeichnungen nicht."
       },
       "unusedStorageInformation": "Info zum ungenutzten Speicher",
       "storageUsed": "Speicher",

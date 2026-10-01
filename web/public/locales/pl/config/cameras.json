@@ -299,7 +299,7 @@
     },
     "friendly_name": {
         "label": "Przyjazna nazwa",
-        "description": "Przyjazna nazwa kamery używana w interfejsie Frigate"
+        "description": "Przyjazna nazwa kamery używana w interfejsie Orbi360 NVR"
     },
     "enabled": {
         "label": "Włączone",
@@ -807,7 +807,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Kalibruj przy uruchomieniu",
-                "description": "Zmierz prędkości silników PTZ przy uruchomieniu, aby poprawić dokładność śledzenia. Frigate zaktualizuje konfigurację o movement_weights po kalibracji."
+                "description": "Zmierz prędkości silników PTZ przy uruchomieniu, aby poprawić dokładność śledzenia. Orbi360 NVR zaktualizuje konfigurację o movement_weights po kalibracji."
             },
             "zooming": {
                 "label": "Przybliżanie (Zoom)",
@@ -844,7 +844,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Ignoruj rozbieżność czasu",
-            "description": "Ignoruj różnice w synchronizacji czasu między kamerą a serwerem Frigate w komunikacji ONVIF."
+            "description": "Ignoruj różnice w synchronizacji czasu między kamerą a serwerem Orbi360 NVR w komunikacji ONVIF."
         }
     },
     "type": {
@@ -880,7 +880,7 @@
         "description": "Strefy pozwalają zdefiniować określony obszar kadru w celu określenia, czy obiekt znajduje się w danym miejscu.",
         "friendly_name": {
             "label": "Nazwa strefy",
-            "description": "Przyjazna dla użytkownika nazwa strefy wyświetlana w interfejsie Frigate. Jeśli nie jest ustawiona, zostanie użyta sformatowana nazwa strefy."
+            "description": "Przyjazna dla użytkownika nazwa strefy wyświetlana w interfejsie Orbi360 NVR. Jeśli nie jest ustawiona, zostanie użyta sformatowana nazwa strefy."
         },
         "enabled": {
             "label": "Włączona",

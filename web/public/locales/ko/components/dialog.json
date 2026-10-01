@@ -3,11 +3,11 @@
     "title": "Frigate을 정말로 다시 시작하시겠습니까?",
     "button": "재시작",
     "restarting": {
-      "title": "Frigate 재시작 중",
+      "title": "Orbi360 NVR 재시작 중",
       "content": "이 페이지는 {{countdown}}초 후에 자동으로 새로고침됩니다.",
       "button": "지금 즉시 새로고침"
     },
-    "description": "재시작하는 동안 Frigate 동작이 일시적으로 중단됩니다."
+    "description": "재시작하는 동안 Orbi360 NVR 동작이 일시적으로 중단됩니다."
   },
   "explore": {
     "plus": {
@@ -172,10 +172,10 @@
     "shareTimestamp": {
       "label": "타임스탬프 공유",
       "title": "타임스탬프 공유",
-      "description": "현재 재생 위치가 포함된 URL을 공유하거나 특정 타임스탬프를 지정합니다. 이 URL은 공개 링크가 아니며 Frigate 및 해당 카메라 접근 권한이 있는 사용자만 접근할 수 있습니다.",
+      "description": "현재 재생 위치가 포함된 URL을 공유하거나 특정 타임스탬프를 지정합니다. 이 URL은 공개 링크가 아니며 Orbi360 NVR 및 해당 카메라 접근 권한이 있는 사용자만 접근할 수 있습니다.",
       "custom": "사용자 지정 타임스탬프",
       "button": "타임스탬프 URL 공유",
-      "shareTitle": "Frigate 다시보기 타임스탬프: {{camera}}"
+      "shareTitle": "Orbi360 NVR 다시보기 타임스탬프: {{camera}}"
     }
   },
   "imagePicker": {

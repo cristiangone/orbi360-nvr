@@ -1,22 +1,22 @@
 {
   "documentTitle": {
-    "default": "設定 - Frigate",
-    "authentication": "認證設定 - Frigate",
-    "camera": "鏡頭設定 - Frigate",
-    "enrichments": "進階功能設定 - Frigate",
-    "general": "使用者介面設定 - Frigate",
-    "frigatePlus": "Frigate+ 設定 - Frigate",
-    "notifications": "通知設定 - Frigate",
-    "masksAndZones": "遮罩與區域編輯器 - Frigate",
-    "motionTuner": "移動偵測調教器 - Frigate",
-    "object": "除錯 - Frigate",
-    "cameraManagement": "管理鏡頭 - Frigate",
-    "cameraReview": "攝影機預覽設定 - Frigate",
-    "globalConfig": "全域性配置 - Frigate",
-    "cameraConfig": "攝影機配置 - Frigate",
-    "detectorsAndModel": "偵測器與模型 - Frigate",
-    "maintenance": "維護 - Frigate",
-    "profiles": "設定檔 - Frigate"
+    "default": "設定 - Orbi360 NVR",
+    "authentication": "認證設定 - Orbi360 NVR",
+    "camera": "鏡頭設定 - Orbi360 NVR",
+    "enrichments": "進階功能設定 - Orbi360 NVR",
+    "general": "使用者介面設定 - Orbi360 NVR",
+    "frigatePlus": "Frigate+ 設定 - Orbi360 NVR",
+    "notifications": "通知設定 - Orbi360 NVR",
+    "masksAndZones": "遮罩與區域編輯器 - Orbi360 NVR",
+    "motionTuner": "移動偵測調教器 - Orbi360 NVR",
+    "object": "除錯 - Orbi360 NVR",
+    "cameraManagement": "管理鏡頭 - Orbi360 NVR",
+    "cameraReview": "攝影機預覽設定 - Orbi360 NVR",
+    "globalConfig": "全域性配置 - Orbi360 NVR",
+    "cameraConfig": "攝影機配置 - Orbi360 NVR",
+    "detectorsAndModel": "偵測器與模型 - Orbi360 NVR",
+    "maintenance": "維護 - Orbi360 NVR",
+    "profiles": "設定檔 - Orbi360 NVR"
   },
   "menu": {
     "ui": "使用者介面",
@@ -176,7 +176,7 @@
         }
       },
       "title": "語意搜尋",
-      "desc": "Frigate 中的語意搜尋功能可讓您使用圖像本身、使用者定義的文字描述或自動產生的描述，在審核專案中尋找追蹤物件。",
+      "desc": "Orbi360 NVR 中的語意搜尋功能可讓您使用圖像本身、使用者定義的文字描述或自動產生的描述，在審核專案中尋找追蹤物件。",
       "reindexNow": {
         "label": "立即重新索引",
         "desc": "重新索引會為所有追蹤物件重新產生嵌入向量。此過程在背景運行，可能會佔用大量 CPU 資源，並且耗時較長，具體取決於追蹤物件的數量。",
@@ -190,7 +190,7 @@
     },
     "faceRecognition": {
       "title": "人臉識別",
-      "desc": "人臉辨識功能允許為人物分配名稱，當辨識到他們的面孔時，Frigate 會將人物的名字作為子標籤進行分配。這些資訊會顯示在介面、過濾器以及通知中。",
+      "desc": "人臉辨識功能允許為人物分配名稱，當辨識到他們的面孔時，Orbi360 NVR 會將人物的名字作為子標籤進行分配。這些資訊會顯示在介面、過濾器以及通知中。",
       "modelSize": {
         "label": "模型大小",
         "desc": "用於人臉辨識的模型大小。",
@@ -210,11 +210,11 @@
     },
     "licensePlateRecognition": {
       "title": "車牌辨識",
-      "desc": "Frigate 可以辨識車輛的車牌，並自動將偵測到的字元新增到 辨識的車牌（recognized_license_plate）欄位中，或將已知車牌對應的名稱作為子標籤新增到該車輛目標中。該功能常用於辨識駛入車道的車輛車牌或經過街道的車輛車牌。"
+      "desc": "Orbi360 NVR 可以辨識車輛的車牌，並自動將偵測到的字元新增到 辨識的車牌（recognized_license_plate）欄位中，或將已知車牌對應的名稱作為子標籤新增到該車輛目標中。該功能常用於辨識駛入車道的車輛車牌或經過街道的車輛車牌。"
     },
     "restart_required": "需要重啟（增強功能設定已儲存）",
     "toast": {
-      "success": "增強功能設定已儲存。請重啟 Frigate 以應用更改。",
+      "success": "增強功能設定已儲存。請重啟 Orbi360 NVR 以應用更改。",
       "error": "配置更改儲存失敗：{{errorMessage}}"
     }
   },
@@ -265,7 +265,7 @@
         "customUrlRtspRequired": "自訂 URL 必須以「rtsp://」開頭；對於非 RTSP 協議的攝影機串流，需手動新增至設定檔。"
       }
     },
-    "description": "請按照以下步驟新增攝影機至 Frigate 中。",
+    "description": "請按照以下步驟新增攝影機至 Orbi360 NVR 中。",
     "steps": {
       "nameAndConnection": "名稱與連線",
       "probeOrSnapshot": "探測或快照",
@@ -377,7 +377,7 @@
       "estimatedBandwidth": "預估頻寬",
       "roles": "功能",
       "ffmpegModule": "使用影片串流相容模式",
-      "ffmpegModuleDescription": "若多次嘗試後仍無法載入影片流，可嘗試啟用此功能。啟用後，Frigate 將透過 go2rtc 呼叫 ffmpeg 模組。這可能會提升與部分攝影機影片流的相容性。",
+      "ffmpegModuleDescription": "若多次嘗試後仍無法載入影片流，可嘗試啟用此功能。啟用後，Orbi360 NVR 將透過 go2rtc 呼叫 ffmpeg 模組。這可能會提升與部分攝影機影片流的相容性。",
       "none": "無",
       "error": "錯誤",
       "streamValidated": "影片流 {{number}} 驗證成功",
@@ -504,7 +504,7 @@
         },
         "actions": {
           "title": "動作",
-          "desc": "預設情況下，Frigate 會為所有觸發器傳送 MQTT 訊息。子標籤會將觸發器名稱新增到目標標籤中。屬性是可搜尋的中繼資料，獨立儲存在追蹤目標的中繼資料中。",
+          "desc": "預設情況下，Orbi360 NVR 會為所有觸發器傳送 MQTT 訊息。子標籤會將觸發器名稱新增到目標標籤中。屬性是可搜尋的中繼資料，獨立儲存在追蹤目標的中繼資料中。",
           "error": {
             "min": "必須至少選擇一項動作。"
           }
@@ -588,18 +588,18 @@
     "streams": {
       "title": "開啟或關閉攝影機",
       "enableLabel": "開啟攝影機",
-      "enableDesc": "暫時停用已開啟的攝影機，直到 Frigate 重啟。停用攝影機會完全停止 Frigate 對該攝影機影片流的處理。偵測、錄影和除錯功能將不可用。<br /> <em>注意：這不會停用 go2rtc 的轉推流。</em>",
+      "enableDesc": "暫時停用已開啟的攝影機，直到 Orbi360 NVR 重啟。停用攝影機會完全停止 Orbi360 NVR 對該攝影機影片流的處理。偵測、錄影和除錯功能將不可用。<br /> <em>注意：這不會停用 go2rtc 的轉推流。</em>",
       "disableLabel": "關閉攝影機",
-      "disableDesc": "開啟在當前在介面中不可見且在配置中被停用的攝影機。啟用後需要重啟 Frigate 才能生效。",
-      "enableSuccess": "已在配置中啟用 {{cameraName}}。請重啟 Frigate 以應用更改。",
+      "disableDesc": "開啟在當前在介面中不可見且在配置中被停用的攝影機。啟用後需要重啟 Orbi360 NVR 才能生效。",
+      "enableSuccess": "已在配置中啟用 {{cameraName}}。請重啟 Orbi360 NVR 以應用更改。",
       "friendlyName": {
         "edit": "修改攝影機顯示名稱",
         "title": "修改顯示名稱",
-        "description": "設定該攝像機在 Frigate 使用者介面中顯示的名稱。若留空，則使用攝像機 ID。",
+        "description": "設定該攝像機在 Orbi360 NVR 使用者介面中顯示的名稱。若留空，則使用攝像機 ID。",
         "rename": "重新命名"
       },
       "label": "攝影機狀態",
-      "description": "設定各攝影機的運作狀態。<br /><br /><strong>開啟</strong>：正常處理串流。<br /><strong>關閉</strong>：暫時暫停處理。重啟 Frigate 後不會保留此狀態。<br /><strong>停用</strong>：停止處理並將變更儲存至您的設定中。需要重新啟動才能重新啟用已停用的攝影機。<br /><br /><em>備註：停用不會影響 go2rtc 的轉流功能。</em><br /><br />拖曳控制鍵可調整現用攝影機在整個 UI 中顯示的順序，包括即時儀表板和攝影機選擇下拉選單。",
+      "description": "設定各攝影機的運作狀態。<br /><br /><strong>開啟</strong>：正常處理串流。<br /><strong>關閉</strong>：暫時暫停處理。重啟 Orbi360 NVR 後不會保留此狀態。<br /><strong>停用</strong>：停止處理並將變更儲存至您的設定中。需要重新啟動才能重新啟用已停用的攝影機。<br /><br /><em>備註：停用不會影響 go2rtc 的轉流功能。</em><br /><br />拖曳控制鍵可調整現用攝影機在整個 UI 中顯示的順序，包括即時儀表板和攝影機選擇下拉選單。",
       "disabledSubheading": "在設定中禁用",
       "status": {
         "on": "開啟",
@@ -613,9 +613,9 @@
       "details": {
         "edit": "編輯攝影機詳細資料",
         "title": "編輯攝影機詳細資料",
-        "description": "更新此攝影機在整個 Frigate UI 中使用的顯示名稱、外部 URL 和可見性。",
+        "description": "更新此攝影機在整個 Orbi360 NVR UI 中使用的顯示名稱、外部 URL 和可見性。",
         "friendlyNameLabel": "顯示名稱",
-        "friendlyNameHelp": "在整個 Frigate UI 中顯示此攝影機的顯示名稱。留空則會使用攝影機 ID。",
+        "friendlyNameHelp": "在整個 Orbi360 NVR UI 中顯示此攝影機的顯示名稱。留空則會使用攝影機 ID。",
         "webuiUrlLabel": "攝影機網頁介面網址",
         "webuiUrlHelp": "可從「偵錯」檢視中直接造訪攝影機網頁介面的網址。留空以停用此連結。",
         "webuiUrlInvalid": "必須是有效的網址（例如：https://example.com）。",
@@ -670,7 +670,7 @@
       "description": "為每路攝影機設定型別。專用車牌辨識（LPR）攝影機為單用途裝置，配備高倍光學變焦，可抓拍遠處車輛的車牌。絕大多數攝影機應選用通用型別；只有專為車牌辨識部署、且畫面聚焦對準車牌的攝影機，才需選擇專用 LPR 型別。",
       "normal": "通用",
       "dedicatedLpr": "車牌辨識專用",
-      "saveSuccess": "已更新 {{cameraName}} 的攝影機型別，請重啟 Frigate 以使更改生效。"
+      "saveSuccess": "已更新 {{cameraName}} 的攝影機型別，請重啟 Orbi360 NVR 以使更改生效。"
     },
     "clone": {
       "sectionTitle": "複製設定",
@@ -744,9 +744,9 @@
       },
       "toast": {
         "success": "設定已複製到 {{cameraName}}",
-        "successWithRestart": "設定已複製到 {{cameraName}}。請重新啟動 Frigate 以套用所有變更。",
+        "successWithRestart": "設定已複製到 {{cameraName}}。請重新啟動 Orbi360 NVR 以套用所有變更。",
         "successMulti_other": "設定已複製到 {{count}} 台攝影機",
-        "successMultiWithRestart_other": "設定已複製到 {{count}} 台攝影機。請重新啟動 Frigate 以套用所有變更。",
+        "successMultiWithRestart_other": "設定已複製到 {{count}} 台攝影機。請重新啟動 Orbi360 NVR 以套用所有變更。",
         "partialFailure": "已套用 {{successCount}} 個區段；「{{failedSection}}」失敗：{{errorMessage}}",
         "partialFailureMulti": "設定已複製到 {{successCount}} 台攝影機；{{failed}} 失敗：{{errorMessage}}",
         "newCameraPartialFailure": "攝影機 {{cameraName}} 已建立，但部分設定複製失敗：{{errorMessage}}",
@@ -759,21 +759,21 @@
     "title": "攝影機審閱設定",
     "object_descriptions": {
       "title": "生成式AI目標描述",
-      "desc": "臨時啟用或停用此攝影機的 生成式AI目標描述 功能，直到 Frigate 重啟。停用後，系統將不再請求該攝影機追蹤目標和物體的AI生成描述。"
+      "desc": "臨時啟用或停用此攝影機的 生成式AI目標描述 功能，直到 Orbi360 NVR 重啟。停用後，系統將不再請求該攝影機追蹤目標和物體的AI生成描述。"
     },
     "review_descriptions": {
       "title": "生成式 AI 審閱總結",
-      "desc": "臨時開關該攝影機的 生成式 AI 審閱總結 功能，直到 Frigate 重啟。停用後，系統將不再請求 AI 生成該攝影機審閱項目的總結。"
+      "desc": "臨時開關該攝影機的 生成式 AI 審閱總結 功能，直到 Orbi360 NVR 重啟。停用後，系統將不再請求 AI 生成該攝影機審閱項目的總結。"
     },
     "review": {
       "title": "審閱",
-      "desc": "臨時開關該攝影機的警報與偵測項生成功能，直到 Frigate 重啟後恢復。停用期間，系統將不再生成新的審閱項目。 ",
+      "desc": "臨時開關該攝影機的警報與偵測項生成功能，直到 Orbi360 NVR 重啟後恢復。停用期間，系統將不再生成新的審閱項目。 ",
       "alerts": "警報 ",
       "detections": "偵測 "
     },
     "reviewClassification": {
       "title": "審閱分類",
-      "desc": "Frigate 將審查項目分類為警報與偵測。預設情況下，所有 <em>人</em> 與 <em>汽車</em> 物件都會被視為警報。您可以透過為其設定所需的區域，來進一步精確分類您的審查項目。",
+      "desc": "Orbi360 NVR 將審查項目分類為警報與偵測。預設情況下，所有 <em>人</em> 與 <em>汽車</em> 物件都會被視為警報。您可以透過為其設定所需的區域，來進一步精確分類您的審查項目。",
       "noDefinedZones": "此攝影機未設定任何監控區。",
       "objectAlertsTips": "所有 {{alertsLabels}} 類目標或物體在 {{cameraName}} 下都將視為警報。",
       "zoneObjectAlertsTips": "所有 {{alertsLabels}} 類目標或物體在 {{cameraName}} 下的 {{zone}} 區域內都將視為警報。",
@@ -884,7 +884,7 @@
     },
     "zones": {
       "label": "區域",
-      "documentTitle": "編輯區域 - Frigate",
+      "documentTitle": "編輯區域 - Orbi360 NVR",
       "desc": {
         "title": "該功能允許你定義特定區域，以便你可以確定特定目標或物體是否在該區域內。",
         "documentation": "文件"
@@ -939,7 +939,7 @@
     },
     "motionMasks": {
       "label": "畫面變動遮罩",
-      "documentTitle": "編輯畫面變動遮罩 - Frigate",
+      "documentTitle": "編輯畫面變動遮罩 - Orbi360 NVR",
       "desc": {
         "title": "畫面變動遮罩用於防止觸發不必要的畫面變動偵測。過度的設定遮罩將使目標更加難以被追蹤。",
         "documentation": "文件"
@@ -970,7 +970,7 @@
     },
     "objectMasks": {
       "label": "目標遮罩",
-      "documentTitle": "編輯目標遮罩 - Frigate",
+      "documentTitle": "編輯目標遮罩 - Orbi360 NVR",
       "desc": {
         "title": "目標過濾器用於防止特定位置出現對某個目標/物體的誤報。",
         "documentation": "文件"
@@ -1008,7 +1008,7 @@
     "title": "畫面變動偵測調整",
     "unsavedChanges": "{{camera}} 的畫面變動調整設定未儲存",
     "desc": {
-      "title": "Frigate 將首先使用畫面變動偵測來確認每一幀畫面中是否有變動的區域，然後再對該區域使用目標偵測。",
+      "title": "Orbi360 NVR 將首先使用畫面變動偵測來確認每一幀畫面中是否有變動的區域，然後再對該區域使用目標偵測。",
       "documentation": "閱讀有關畫面變動偵測的文件"
     },
     "Threshold": {
@@ -1029,7 +1029,7 @@
   },
   "debug": {
     "title": "除錯",
-    "detectorDesc": "Frigate 將使用偵測器（{{detectors}}）來偵測攝影機影片流中的目標或物體。",
+    "detectorDesc": "Orbi360 NVR 將使用偵測器（{{detectors}}）來偵測攝影機影片流中的目標或物體。",
     "desc": "除錯介面將即時顯示被追蹤的目標以及統計資訊，目標清單將顯示偵測到的目標和延遲顯示的概覽。",
     "openCameraWebUI": "開啟 {{camera}} 的管理頁面",
     "debugging": "除錯選項",
@@ -1096,7 +1096,7 @@
     "title": "使用者",
     "management": {
       "title": "使用者管理",
-      "desc": "管理此 Frigate 例項的使用者帳戶。"
+      "desc": "管理此 Orbi360 NVR 例項的使用者帳戶。"
     },
     "addUser": "新增使用者",
     "updatePassword": "修改密碼",
@@ -1169,7 +1169,7 @@
       },
       "createUser": {
         "title": "建立新使用者",
-        "desc": "建立一個新使用者帳戶，並指定一個權限組以控制存取 Frigate 頁面的權限。",
+        "desc": "建立一個新使用者帳戶，並指定一個權限組以控制存取 Orbi360 NVR 頁面的權限。",
         "usernameOnlyInclude": "使用者名稱只能包含字母、數字和 _",
         "confirmPassword": "請確認你的密碼"
       },
@@ -1208,7 +1208,7 @@
   "roles": {
     "management": {
       "title": "檢視者權限組管理",
-      "desc": "管理此 Frigate 例項的自訂權限組及其攝影機存取權限。"
+      "desc": "管理此 Orbi360 NVR 例項的自訂權限組及其攝影機存取權限。"
     },
     "addRole": "新增權限組",
     "table": {
@@ -1269,12 +1269,12 @@
     "title": "通知",
     "notificationSettings": {
       "title": "通知設定",
-      "desc": "Frigate 在瀏覽器中執行或作為 PWA 安裝時，可以原生向您的裝置傳送推送通知。"
+      "desc": "Orbi360 NVR 在瀏覽器中執行或作為 PWA 安裝時，可以原生向您的裝置傳送推送通知。"
     },
     "notificationUnavailable": {
       "title": "通知功能不可用",
-      "desc": "網頁推送通知需要安全連線（<code>https://…</code>）。這是瀏覽器的限制。請透過安全方式存取 Frigate 以使用通知功能。",
-      "descPwa": "在 iOS 上，只有將 Frigate 加到主畫面後，才能使用網頁推播通知。請開啟 <strong>分享</strong> 選單，選擇 <strong>加入主畫面</strong>，然後從新圖示開啟 Frigate，即可為此裝置註冊通知功能。"
+      "desc": "網頁推送通知需要安全連線（<code>https://…</code>）。這是瀏覽器的限制。請透過安全方式存取 Orbi360 NVR 以使用通知功能。",
+      "descPwa": "在 iOS 上，只有將 Orbi360 NVR 加到主畫面後，才能使用網頁推播通知。請開啟 <strong>分享</strong> 選單，選擇 <strong>加入主畫面</strong>，然後從新圖示開啟 Orbi360 NVR，即可為此裝置註冊通知功能。"
     },
     "globalSettings": {
       "title": "全域性設定",
@@ -1311,7 +1311,7 @@
     "cancelSuspension": "取消暫停",
     "toast": {
       "success": {
-        "registered": "已成功註冊通知。需要重啟 Frigate 才能傳送任何通知（包括測試通知）。",
+        "registered": "已成功註冊通知。需要重啟 Orbi360 NVR 才能傳送任何通知（包括測試通知）。",
         "settingSaved": "通知設定已儲存。"
       },
       "error": {
@@ -1321,7 +1321,7 @@
   },
   "frigatePlus": {
     "title": "Frigate+ 設定",
-    "description": "Frigate+ 是一項訂閱服務，可為你的 Frigate 例項提供額外的功能和能力，包括使用基於你自己的資料訓練的自訂目標偵測模型。你可以在此管理 Frigate+ 的模型設定。",
+    "description": "Frigate+ 是一項訂閱服務，可為你的 Orbi360 NVR 例項提供額外的功能和能力，包括使用基於你自己的資料訓練的自訂目標偵測模型。你可以在此管理 Frigate+ 的模型設定。",
     "cardTitles": {
       "api": "API",
       "currentModel": "目前模型",
@@ -1373,7 +1373,7 @@
     "unsavedChanges": "未儲存Frigate+變更設定",
     "restart_required": "需要重啟（Frigate+模型已修改）",
     "toast": {
-      "success": "Frigate+ 設定已儲存。請重啟 Frigate 以應用更改。",
+      "success": "Frigate+ 設定已儲存。請重啟 Orbi360 NVR 以應用更改。",
       "error": "配置更改儲存失敗：{{errorMessage}}"
     }
   },
@@ -1396,7 +1396,7 @@
       "noModelSelected": "選擇 Frigate+ 模型"
     },
     "toast": {
-      "saveSuccess": "偵測器與模型設定已儲存。請重新啟動 Frigate 以套用變更。",
+      "saveSuccess": "偵測器與模型設定已儲存。請重新啟動 Orbi360 NVR 以套用變更。",
       "saveError": "儲存偵測器與模型設定失敗"
     },
     "unsavedChanges": "偵測器與模型有未儲存的變更",
@@ -1406,7 +1406,7 @@
     "title": "維護",
     "sync": {
       "title": "媒體同步",
-      "desc": "Frigate 會根據您的保留配置定期清理媒體檔案。出現少量孤立檔案是正常現象。使用此功能可以刪除磁碟上不再被資料庫引用的孤立媒體檔案。",
+      "desc": "Orbi360 NVR 會根據您的保留配置定期清理媒體檔案。出現少量孤立檔案是正常現象。使用此功能可以刪除磁碟上不再被資料庫引用的孤立媒體檔案。",
       "started": "媒體同步已啟動。",
       "alreadyRunning": "同步任務已在執行中",
       "error": "啟動同步失敗",
@@ -1453,10 +1453,10 @@
     },
     "regionGrid": {
       "title": "區域網格",
-      "desc": "區域網格是一種最佳化功能，它會學習不同大小的目標通常出現在每個攝影機視野中的位置。Frigate 利用這些資料來高效地確定偵測區域的大小。該網格會根據追蹤目標資料自動構建。",
+      "desc": "區域網格是一種最佳化功能，它會學習不同大小的目標通常出現在每個攝影機視野中的位置。Orbi360 NVR 利用這些資料來高效地確定偵測區域的大小。該網格會根據追蹤目標資料自動構建。",
       "clear": "清除區域網格",
       "clearConfirmTitle": "清除區域網格",
-      "clearConfirmDesc": "除非你最近更改了偵測器模型大小或攝影機的物理位置，並且遇到了目標追蹤問題，否則不建議清除區域網格。網格會隨著目標的追蹤自動重建。更改需要重啟 Frigate 才能生效。",
+      "clearConfirmDesc": "除非你最近更改了偵測器模型大小或攝影機的物理位置，並且遇到了目標追蹤問題，否則不建議清除區域網格。網格會隨著目標的追蹤自動重建。更改需要重啟 Orbi360 NVR 才能生效。",
       "clearSuccess": "區域網格清除成功",
       "clearError": "清除區域網格失敗",
       "restartRequired": "需要重啟以使區域網格更改生效"
@@ -1725,7 +1725,7 @@
   "toast": {
     "success": "設定儲存成功",
     "applied": "設定應用成功",
-    "successRestartRequired": "設定儲存成功。請重啟 Frigate 以應用更改。",
+    "successRestartRequired": "設定儲存成功。請重啟 Orbi360 NVR 以應用更改。",
     "error": "儲存設定失敗",
     "validationError": "驗證失敗：{{message}}",
     "resetSuccess": "已重設為全域性預設值",
@@ -1733,7 +1733,7 @@
     "saveAllSuccess_other": "所有 {{count}} 個部分儲存成功。",
     "saveAllPartial_other": "已儲存 {{successCount}} / {{totalCount}} 個部分。{{failCount}} 個失敗。",
     "saveAllFailure": "儲存所有部分失敗。",
-    "saveAllSuccessRestartRequired_other": "已成功儲存 {{count}} 個區塊。請重新啟動 Frigate 以套用變更。"
+    "saveAllSuccessRestartRequired_other": "已成功儲存 {{count}} 個區塊。請重新啟動 Orbi360 NVR 以套用變更。"
   },
   "profiles": {
     "title": "設定檔",
@@ -1909,7 +1909,7 @@
       "recordDisabled": "錄製已停用，不會生成審閱記錄項。",
       "detectDisabled": "目標偵測已停用。審閱記錄需要依靠偵測到的目標來對警報和偵測事件進行分類。",
       "allNonAlertDetections": "所有非警報類活動都將被記錄為偵測事件。",
-      "genaiImageSourceRecordingsRecordDisabled": "影像來源雖然設定為「錄製」，但錄製功能已關閉。Frigate 將自動降級使用預覽圖片。"
+      "genaiImageSourceRecordingsRecordDisabled": "影像來源雖然設定為「錄製」，但錄製功能已關閉。Orbi360 NVR 將自動降級使用預覽圖片。"
     },
     "audio": {
       "noAudioRole": "暫無任何串流已開啟音訊（audio）功能（role）。必須在影片串流上啟用音訊功能，音訊偵測才能正常運作。"
@@ -1957,7 +1957,7 @@
       "jinav2SmallModelSize": "Jina V2 的大型模型版本記憶體佔用與推理開銷較高，建議搭配獨立顯示卡使用大型模型。"
     },
     "model": {
-      "optimizedFor320": "Frigate 已針對 320x320 模型進行最佳化，這是大多數環境下的最佳選擇。640x640 模型速度較慢，且僅在特定情境下有所幫助。",
+      "optimizedFor320": "Orbi360 NVR 已針對 320x320 模型進行最佳化，這是大多數環境下的最佳選擇。640x640 模型速度較慢，且僅在特定情境下有所幫助。",
       "inputDimensionsNotDetectResolution": "模型輸入的寬度與高度是物件偵測模型的輸入尺寸，而不是攝影機的偵測解析度。它們應該與您使用的模型尺寸相符 — 通常是像 320x320 或 640x640 這樣的正方形尺寸。"
     },
     "ffmpeg": {

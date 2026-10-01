@@ -1,5 +1,5 @@
 {
-  "documentTitle": "מודלי סיווג - Frigate",
+  "documentTitle": "מודלי סיווג - Orbi360 NVR",
   "details": {
     "scoreInfo": "הציון מייצג את ממוצע רמת הביטחון של הסיווג, על פני כל הזיהויים של האובייקט הזה.",
     "none": "ללא ערך",
@@ -43,7 +43,7 @@
       "deleteCategoryFailed": "מחיקת הקטגוריה נכשלה: {{errorMessage}}",
       "deleteModelFailed": "מחיקת המודל נכשלה: {{errorMessage}}",
       "categorizeFailed": "סיווג התמונה נכשל: {{errorMessage}}",
-      "trainingFailed": "אימון המודל נכשל. בדוק בלוגים של Frigate לפרטים.",
+      "trainingFailed": "אימון המודל נכשל. בדוק בלוגים של Orbi360 NVR לפרטים.",
       "trainingFailedToStart": "הפעלת אימון המודל נכשלה: {{errorMessage}}",
       "updateModelFailed": "עדכון המודל נכשל: {{errorMessage}}",
       "renameCategoryFailed": "שינוי שם הקטגוריה נכשל: {{errorMessage}}"
@@ -124,7 +124,7 @@
       "allImagesRequired_other": "",
       "generating": {
         "title": "יוצר תמונות לדוגמה",
-        "description": "Frigate שואב תמונות מייצגות מההקלטות שלך. פעולה זו עשויה להימשך מספר רגעים..."
+        "description": "Orbi360 NVR שואב תמונות מייצגות מההקלטות שלך. פעולה זו עשויה להימשך מספר רגעים..."
       },
       "retryGenerate": "נסה ליצור מחדש",
       "noImages": "לא נוצרו תמונות לדוגמה"

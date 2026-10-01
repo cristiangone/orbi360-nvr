@@ -18,9 +18,9 @@
   },
   "timeline.aria": "Selecione a linha do tempo",
   "alerts": "Alertas",
-  "documentTitle": "Análise - Frigate",
+  "documentTitle": "Análise - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Frigate - Gravações"
+    "documentTitle": "Orbi360 NVR - Gravações"
   },
   "calendarFilter": {
     "last24Hours": "Últimas 24 horas"

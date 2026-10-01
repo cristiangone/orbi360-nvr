@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Do {{time}}",
-    "untilForRestart": "Do reštartu Frigate.",
+    "untilForRestart": "Do reštartu Orbi360 NVR.",
     "untilRestart": "Do reštartu",
     "ago": "pred {{timeAgo}}",
     "justNow": "Práve teraz",
@@ -213,7 +213,7 @@
       },
       "hr": "Hrvatski (Croatian)"
     },
-    "restart": "Reštartovať Frigate",
+    "restart": "Reštartovať Orbi360 NVR",
     "live": {
       "title": "Naživo",
       "allCameras": "Všetky kamery",
@@ -257,7 +257,7 @@
     "help": "Pomocník",
     "documentation": {
       "title": "Dokumentácia",
-      "label": "Dokumentácia Frigate"
+      "label": "Dokumentácia Orbi360 NVR"
     },
     "review": "Recenzia",
     "explore": "Preskúmať",
@@ -282,7 +282,7 @@
     "title": "Rola",
     "admin": "Správca",
     "viewer": "Divák",
-    "desc": "Správcovia majú plný prístup ku všetkým funkciám v užívateľskom rozhraní Frigate. Diváci sú obmedzení na sledovanie kamier, položiek prehľadu a historických záznamov v UI."
+    "desc": "Správcovia majú plný prístup ku všetkým funkciám v užívateľskom rozhraní Orbi360 NVR. Diváci sú obmedzení na sledovanie kamier, položiek prehľadu a historických záznamov v UI."
   },
   "pagination": {
     "label": "stránkovanie",
@@ -297,12 +297,12 @@
     "more": "Viac strán"
   },
   "accessDenied": {
-    "documentTitle": "Prístup odmietnutý - Frigate",
+    "documentTitle": "Prístup odmietnutý - Orbi360 NVR",
     "title": "Prístup odmietnutý",
     "desc": "Nemáte oprávnenie zobraziť túto stránku."
   },
   "notFound": {
-    "documentTitle": "Nenájdené - Frigate",
+    "documentTitle": "Nenájdené - Orbi360 NVR",
     "title": "404",
     "desc": "Stránka nenájdená"
   },
@@ -316,7 +316,7 @@
   },
   "field": {
     "optional": "Voliteľné",
-    "internalID": "Interné ID Frigate používa v konfigurácii a databáze"
+    "internalID": "Interné ID Orbi360 NVR používa v konfigurácii a databáze"
   },
   "no_items": "Žiadne položky",
   "validation_errors": "Chyby overenia",

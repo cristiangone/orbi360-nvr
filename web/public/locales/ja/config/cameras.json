@@ -46,7 +46,7 @@
     },
     "friendly_name": {
         "label": "表示名",
-        "description": "Frigate UIで使用されるカメラの表示名"
+        "description": "Orbi360 NVR UIで使用されるカメラの表示名"
     },
     "audio_transcription": {
         "label": "音声文字起こし",
@@ -848,7 +848,7 @@
         },
         "ignore_time_mismatch": {
             "label": "時刻差異を無視",
-            "description": "ONVIF 通信時に、カメラと Frigate サーバー間の時刻同期差異を無視します。"
+            "description": "ONVIF 通信時に、カメラと Orbi360 NVR サーバー間の時刻同期差異を無視します。"
         }
     },
     "best_image_timeout": {
@@ -884,7 +884,7 @@
         "description": "ゾーンを使うとフレーム内の特定領域を定義でき、オブジェクトがその領域内にあるかを判定できます。",
         "friendly_name": {
             "label": "ゾーン名",
-            "description": "Frigate UI に表示されるユーザー向けのゾーン名。未設定の場合、ゾーン名の整形版が使用されます。"
+            "description": "Orbi360 NVR UI に表示されるユーザー向けのゾーン名。未設定の場合、ゾーン名の整形版が使用されます。"
         },
         "enabled": {
             "label": "有効",

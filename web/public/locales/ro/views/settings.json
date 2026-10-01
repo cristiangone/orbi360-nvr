@@ -1,23 +1,23 @@
 {
   "documentTitle": {
-    "authentication": "Setări Autentificare - Frigate",
-    "camera": "Setări cameră - Frigate",
-    "default": "Setări - Frigate",
-    "classification": "Setări de clasificare - Frigate",
-    "masksAndZones": "Editor Mască și Zonă - Frigate",
-    "notifications": "Setări Notificări - Frigate",
-    "motionTuner": "Reglaj Mișcare - Frigate",
-    "object": "Depanare - Frigate",
-    "general": "Setări interfață - Frigate",
-    "frigatePlus": "Setări Frigate+ - Frigate",
-    "enrichments": "Setări Îmbunătățiri - Frigate",
-    "cameraManagement": "Gestionare Camere - Frigate",
-    "cameraReview": "Setări Review Cameră - Frigate",
-    "globalConfig": "Configurație Globală - Frigate",
-    "cameraConfig": "Configurație Cameră - Frigate",
-    "maintenance": "Mentenanță - Frigate",
-    "profiles": "Profile - Frigate",
-    "detectorsAndModel": "Detectoare și model - Frigate"
+    "authentication": "Setări Autentificare - Orbi360 NVR",
+    "camera": "Setări cameră - Orbi360 NVR",
+    "default": "Setări - Orbi360 NVR",
+    "classification": "Setări de clasificare - Orbi360 NVR",
+    "masksAndZones": "Editor Mască și Zonă - Orbi360 NVR",
+    "notifications": "Setări Notificări - Orbi360 NVR",
+    "motionTuner": "Reglaj Mișcare - Orbi360 NVR",
+    "object": "Depanare - Orbi360 NVR",
+    "general": "Setări interfață - Orbi360 NVR",
+    "frigatePlus": "Setări Frigate+ - Orbi360 NVR",
+    "enrichments": "Setări Îmbunătățiri - Orbi360 NVR",
+    "cameraManagement": "Gestionare Camere - Orbi360 NVR",
+    "cameraReview": "Setări Review Cameră - Orbi360 NVR",
+    "globalConfig": "Configurație Globală - Orbi360 NVR",
+    "cameraConfig": "Configurație Cameră - Orbi360 NVR",
+    "maintenance": "Mentenanță - Orbi360 NVR",
+    "profiles": "Profile - Orbi360 NVR",
+    "detectorsAndModel": "Detectoare și model - Orbi360 NVR"
   },
   "menu": {
     "ui": "Interfață (UI)",
@@ -178,7 +178,7 @@
         "label": "Mărime Model"
       },
       "title": "Recunoaștere Facială",
-      "desc": "Recunoașterea facială permite alocarea de nume persoanelor; când o față este recunoscută, Frigate va asocia numele ca sub-etichetă. Informația apare în UI, filtre și notificări.",
+      "desc": "Recunoașterea facială permite alocarea de nume persoanelor; când o față este recunoscută, Orbi360 NVR va asocia numele ca sub-etichetă. Informația apare în UI, filtre și notificări.",
       "readTheDocumentation": "Citește documentația"
     },
     "semanticSearch": {
@@ -193,7 +193,7 @@
         "error": "Eșec la pornirea reindexării: {{errorMessage}}"
       },
       "title": "Căutare Semantică",
-      "desc": "Căutarea semantică în Frigate îți permite să găsești obiecte urmărite folosind fie imaginea în sine, o descriere text definită de utilizator, sau una generată automat.",
+      "desc": "Căutarea semantică în Orbi360 NVR îți permite să găsești obiecte urmărite folosind fie imaginea în sine, o descriere text definită de utilizator, sau una generată automat.",
       "readTheDocumentation": "Citește documentația",
       "modelSize": {
         "label": "Mărime Model",
@@ -209,7 +209,7 @@
       }
     },
     "licensePlateRecognition": {
-      "desc": "Frigate poate recunoaște plăcuțele de înmatriculare și poate adăuga caracterele detectate în câmpul recognized_license_plate sau un nume cunoscut ca sub-etichetă pentru obiectele de tip mașină. Util pentru mașini care intră pe alee sau trec pe stradă.",
+      "desc": "Orbi360 NVR poate recunoaște plăcuțele de înmatriculare și poate adăuga caracterele detectate în câmpul recognized_license_plate sau un nume cunoscut ca sub-etichetă pentru obiectele de tip mașină. Util pentru mașini care intră pe alee sau trec pe stradă.",
       "title": "Recunoaștere Numere Înmatriculare",
       "readTheDocumentation": "Citește documentația"
     },
@@ -221,7 +221,7 @@
     },
     "restart_required": "Repornire necesară (setările de îmbunătățiri s-au modificat)",
     "toast": {
-      "success": "Setările de îmbunătățiri au fost salvate. Repornește Frigate pentru a aplica modificările.",
+      "success": "Setările de îmbunătățiri au fost salvate. Repornește Orbi360 NVR pentru a aplica modificările.",
       "error": "Eșec la salvarea modificărilor de configurare: {{errorMessage}}"
     }
   },
@@ -229,17 +229,17 @@
     "title": "Setări cameră",
     "streams": {
       "title": "Stream-uri",
-      "desc": "Dezactivează temporar o cameră până la repornirea Frigate. Dezactivarea completă a unei camere oprește procesarea streamului acesteia de către Frigate. Detecția, înregistrarea și depanarea nu vor fi disponibile.<br /> <em>Notă: Aceasta nu dezactivează restream-urile go2rtc.</em>"
+      "desc": "Dezactivează temporar o cameră până la repornirea Orbi360 NVR. Dezactivarea completă a unei camere oprește procesarea streamului acesteia de către Orbi360 NVR. Detecția, înregistrarea și depanarea nu vor fi disponibile.<br /> <em>Notă: Aceasta nu dezactivează restream-urile go2rtc.</em>"
     },
     "review": {
       "title": "Revizuire",
-      "desc": "Activează/dezactivează temporar alertele și detecțiile pentru această cameră până la repornirea Frigate. Când este dezactivată, nu vor fi generate noi elemente pentru revizuire. ",
+      "desc": "Activează/dezactivează temporar alertele și detecțiile pentru această cameră până la repornirea Orbi360 NVR. Când este dezactivată, nu vor fi generate noi elemente pentru revizuire. ",
       "alerts": "Alerte. ",
       "detections": "Detecții. "
     },
     "reviewClassification": {
       "title": "Clasificare revizuiri",
-      "desc": "Frigate clasifică elementele de revizuire în \"alerte\" și \"detecții\". În mod implicit, toate obiectele de tip <em>persoană</em> și <em>mașină</em> sunt considerate alerte. Poți rafina clasificarea elementelor de revizuire configurând zonele necesare pentru acestea.",
+      "desc": "Orbi360 NVR clasifică elementele de revizuire în \"alerte\" și \"detecții\". În mod implicit, toate obiectele de tip <em>persoană</em> și <em>mașină</em> sunt considerate alerte. Poți rafina clasificarea elementelor de revizuire configurând zonele necesare pentru acestea.",
       "readTheDocumentation": "Citește documentația",
       "unsavedChanges": "Setări de clasificare a revizuirilor nesalvate pentru {{camera}}",
       "limitDetections": "Limitează detecțiile la zone specifice",
@@ -252,7 +252,7 @@
       "zoneObjectAlertsTips": "Toate obiectele {{alertsLabels}} detectate în {{zone}} pe {{cameraName}} vor fi afișate ca alerte.",
       "objectDetectionsTips": "Toate obiectele {{detectionsLabels}} necategorisite pe {{cameraName}} vor fi afișate ca detecții, indiferent de zona în care se află.",
       "toast": {
-        "success": "Configurația clasificării pentru revizuire a fost salvată. Repornește Frigate pentru a aplica modificările."
+        "success": "Configurația clasificării pentru revizuire a fost salvată. Repornește Orbi360 NVR pentru a aplica modificările."
       },
       "selectAlertsZones": "Selectează zone pentru alerte",
       "noDefinedZones": "Nu sunt definite zone pentru această cameră.",
@@ -340,7 +340,7 @@
         "title": "Prag viteză ({{unit}})",
         "desc": "Specifică viteza minimă pentru ca obiectele să fie luate în considerare în această zonă."
       },
-      "documentTitle": "Editare Zonă - Frigate",
+      "documentTitle": "Editare Zonă - Orbi360 NVR",
       "clickDrawPolygon": "Click pentru a desena un poligon pe imagine.",
       "toast": {
         "success": "Zona ({{zoneName}}) a fost salvată."
@@ -362,7 +362,7 @@
       "point_other": "{{count}} de puncte",
       "clickDrawPolygon": "Click pentru a desena un poligon pe imagine.",
       "label": "Mască de mișcare",
-      "documentTitle": "Editare mască de mișcare - Frigate",
+      "documentTitle": "Editare mască de mișcare - Orbi360 NVR",
       "desc": {
         "documentation": "Documentație",
         "title": "Măștile de mișcare sunt folosite pentru a preveni declanșarea detecției de către tipuri de mișcare nedorite. Mascarea excesivă va îngreuna urmărirea obiectelor."
@@ -395,7 +395,7 @@
       "point_one": "{{count}} punct",
       "point_few": "{{count}} puncte",
       "point_other": "{{count}} de puncte",
-      "documentTitle": "Editare mască de obiect - Frigate",
+      "documentTitle": "Editare mască de obiect - Orbi360 NVR",
       "add": "Adaugă mască de obiect",
       "edit": "Editează masca de obiect",
       "desc": {
@@ -555,7 +555,7 @@
       "desc": "Afișează poligoanele măștilor de mișcare",
       "title": "Măști de mișcare"
     },
-    "detectorDesc": "Frigate folosește detectoarele tale ({{detectors}}) pentru a detecta obiecte în stream-ul video al camerei.",
+    "detectorDesc": "Orbi360 NVR folosește detectoarele tale ({{detectors}}) pentru a detecta obiecte în stream-ul video al camerei.",
     "timestamp": {
       "title": "Marcaj temporal",
       "desc": "Suprapune un marcaj temporal pe imagine"
@@ -647,7 +647,7 @@
       "createUser": {
         "confirmPassword": "Te rugăm să confirmi parola",
         "title": "Creează utilizator nou",
-        "desc": "Adaugă un cont nou și specifică un rol pentru accesul în interfața Frigate.",
+        "desc": "Adaugă un cont nou și specifică un rol pentru accesul în interfața Orbi360 NVR.",
         "usernameOnlyInclude": "Numele de utilizator poate conține doar litere, cifre, puncte (.) sau sublinieri (_)"
       },
       "passwordSetting": {
@@ -665,7 +665,7 @@
     },
     "addUser": "Adaugă utilizator",
     "management": {
-      "desc": "Gestionează conturile de utilizator ale acestei instanțe Frigate.",
+      "desc": "Gestionează conturile de utilizator ale acestei instanțe Orbi360 NVR.",
       "title": "Administrare utilizatori"
     },
     "toast": {
@@ -697,7 +697,7 @@
   "notification": {
     "notificationSettings": {
       "title": "Setări Notificări",
-      "desc": "Frigate poate trimite notificări push direct pe dispozitivul tău când rulează în browser sau este instalat ca PWA.",
+      "desc": "Orbi360 NVR poate trimite notificări push direct pe dispozitivul tău când rulează în browser sau este instalat ca PWA.",
       "documentation": "Citește documentația"
     },
     "globalSettings": {
@@ -711,9 +711,9 @@
     },
     "notificationUnavailable": {
       "documentation": "Citește documentația",
-      "desc": "Notificările push web necesită un context securizat (<code>https://…</code>). Aceasta este o limitare a browserului. Accesează Frigate în mod securizat pentru a utiliza notificările.",
+      "desc": "Notificările push web necesită un context securizat (<code>https://…</code>). Aceasta este o limitare a browserului. Accesează Orbi360 NVR în mod securizat pentru a utiliza notificările.",
       "title": "Notificări Indisponibile",
-      "descPwa": "Pe iOS, notificările web push sunt disponibile doar când Frigate este instalat pe ecranul principal. Deschide meniul <strong>Partajare</strong>, alege <strong>Adaugă pe ecranul principal</strong>, apoi deschide Frigate din noua pictogramă pentru a înregistra acest dispozitiv pentru notificări."
+      "descPwa": "Pe iOS, notificările web push sunt disponibile doar când Orbi360 NVR este instalat pe ecranul principal. Deschide meniul <strong>Partajare</strong>, alege <strong>Adaugă pe ecranul principal</strong>, apoi deschide Orbi360 NVR din noua pictogramă pentru a înregistra acest dispozitiv pentru notificări."
     },
     "cameras": {
       "title": "Camere",
@@ -736,7 +736,7 @@
     },
     "toast": {
       "success": {
-        "registered": "Înregistrarea pentru notificări a reușit. Este necesară repornirea Frigate înainte de a putea trimite orice notificare (inclusiv cea de test).",
+        "registered": "Înregistrarea pentru notificări a reușit. Este necesară repornirea Orbi360 NVR înainte de a putea trimite orice notificare (inclusiv cea de test).",
         "settingSaved": "Setările pentru notificări au fost salvate."
       },
       "error": {
@@ -796,7 +796,7 @@
     },
     "toast": {
       "error": "Eroare la salvarea modificărilor de config: {{errorMessage}}",
-      "success": "Setările Frigate+ au fost salvate. Repornește Frigate pentru a aplica modificările."
+      "success": "Setările Frigate+ au fost salvate. Repornește Orbi360 NVR pentru a aplica modificările."
     },
     "restart_required": "Repornire necesară (modelul Frigate+ a fost schimbat)",
     "unsavedChanges": "Modificări Frigate+ nesalvate",
@@ -825,7 +825,7 @@
       "desc": "Îmbunătățește contrastul pentru scenele întunecate. <em>Implicit: ACTIVAT</em>"
     },
     "desc": {
-      "title": "Frigate folosește detecția de mișcare ca prim pas pentru a verifica dacă se întâmplă ceva în cadru ce merită verificat cu detecția de obiecte.",
+      "title": "Orbi360 NVR folosește detecția de mișcare ca prim pas pentru a verifica dacă se întâmplă ceva în cadru ce merită verificat cu detecția de obiecte.",
       "documentation": "Citește Ghidul de reglare a mișcării"
     },
     "toast": {
@@ -914,7 +914,7 @@
         },
         "actions": {
           "title": "Acțiuni",
-          "desc": "În mod implicit, Frigate trimite un mesaj MQTT pentru toate triggerele. Sub-etichetele adaugă numele triggerului la eticheta obiectului. Atributele sunt metadate căutabile stocate separat.",
+          "desc": "În mod implicit, Orbi360 NVR trimite un mesaj MQTT pentru toate triggerele. Sub-etichetele adaugă numele triggerului la eticheta obiectului. Atributele sunt metadate căutabile stocate separat.",
           "error": {
             "min": "Trebuie selectată cel puțin o acțiune."
           }
@@ -963,7 +963,7 @@
   "roles": {
     "management": {
       "title": "Administrare roluri vizualizator",
-      "desc": "Gestionează rolurile de vizualizator personalizate și permisiunile de acces la camere pentru această instanță Frigate."
+      "desc": "Gestionează rolurile de vizualizator personalizate și permisiunile de acces la camere pentru această instanță Orbi360 NVR."
     },
     "addRole": "Adaugă rol",
     "table": {
@@ -1024,7 +1024,7 @@
   },
   "cameraWizard": {
     "title": "Adaugă Cameră",
-    "description": "Urmează pașii de mai jos pentru a adăuga o cameră nouă în instalația Frigate.",
+    "description": "Urmează pașii de mai jos pentru a adăuga o cameră nouă în instalația Orbi360 NVR.",
     "steps": {
       "nameAndConnection": "Nume și Conexiune",
       "streamConfiguration": "Configurare Stream",
@@ -1210,7 +1210,7 @@
         "resolutionLow": "O rezoluție de {{resolution}} poate fi prea mică pentru detectarea fiabilă a obiectelor mici."
       },
       "ffmpegModule": "Folosește modul de compatibilitate pentru stream-uri",
-      "ffmpegModuleDescription": "Dacă fluxul nu se încarcă după mai multe încercări, activați această opțiune. Când este activată, Frigate va folosi modulul ffmpeg împreună cu go2rtc. Aceasta poate oferi o compatibilitate mai bună cu unele fluxuri de camere.",
+      "ffmpegModuleDescription": "Dacă fluxul nu se încarcă după mai multe încercări, activați această opțiune. Când este activată, Orbi360 NVR va folosi modulul ffmpeg împreună cu go2rtc. Aceasta poate oferi o compatibilitate mai bună cu unele fluxuri de camere.",
       "streamsTitle": "Stream-uri cameră",
       "addStream": "Adaugă un stream",
       "addAnotherStream": "Mai adaugă un stream",
@@ -1268,7 +1268,7 @@
       "estimatedBandwidth": "Lățime de bandă estimată",
       "roles": "Roluri",
       "ffmpegModule": "Folosește modul de compatibilitate de stream-uri",
-      "ffmpegModuleDescription": "Dacă stream-ul nu se încarcă după mai multe încercări, activează asta. Frigate va folosi modulul ffmpeg cu go2rtc, ceea ce poate ajuta la compatibilitatea cu anumite camere.",
+      "ffmpegModuleDescription": "Dacă stream-ul nu se încarcă după mai multe încercări, activează asta. Orbi360 NVR va folosi modulul ffmpeg cu go2rtc, ceea ce poate ajuta la compatibilitatea cu anumite camere.",
       "none": "Niciunul",
       "error": "Eroare",
       "streamValidated": "Stream-ul {{number}} a fost validat cu succes",
@@ -1307,16 +1307,16 @@
     "backToSettings": "Înapoi la Setări Cameră",
     "streams": {
       "title": "Stare și detalii cameră",
-      "desc": "Dezactivează temporar o cameră până la repornirea Frigate. Dezactivarea unei camere oprește complet procesarea streamingului acestei camere de către Frigate. Detecția, înregistrarea și depanarea vor fi indisponibile.<br /> <em>Notă: Aceasta nu dezactivează restreamingul go2rtc.</em>",
+      "desc": "Dezactivează temporar o cameră până la repornirea Orbi360 NVR. Dezactivarea unei camere oprește complet procesarea streamingului acestei camere de către Orbi360 NVR. Detecția, înregistrarea și depanarea vor fi indisponibile.<br /> <em>Notă: Aceasta nu dezactivează restreamingul go2rtc.</em>",
       "enableLabel": "Camere activate",
-      "enableDesc": "Dezactivează temporar o cameră activată până la repornirea Frigate. Dezactivarea unei camere oprește complet procesarea de către Frigate a fluxurilor acestei camere. Detectarea, înregistrarea și depanarea vor fi indisponibile. <br /> <em>Notă: Acest lucru nu dezactivează retransmisiile go2rtc..</em> <br /> <br />Trage de mâner pentru a reordona camerele așa cum apar în interfață. Ordinea camerelor activate va fi reflectată în întreaga interfață, inclusiv în tabloul de bord Live și în meniurile derulante pentru selectarea camerelor.",
+      "enableDesc": "Dezactivează temporar o cameră activată până la repornirea Orbi360 NVR. Dezactivarea unei camere oprește complet procesarea de către Orbi360 NVR a fluxurilor acestei camere. Detectarea, înregistrarea și depanarea vor fi indisponibile. <br /> <em>Notă: Acest lucru nu dezactivează retransmisiile go2rtc..</em> <br /> <br />Trage de mâner pentru a reordona camerele așa cum apar în interfață. Ordinea camerelor activate va fi reflectată în întreaga interfață, inclusiv în tabloul de bord Live și în meniurile derulante pentru selectarea camerelor.",
       "disableLabel": "Camere dezactivate",
-      "disableDesc": "Activează o cameră care este ascunsă în interfață și dezactivată în configurație. Este necesară repornirea Frigate după activare.",
-      "enableSuccess": "S-a activat {{cameraName}}. Repornește Frigate pentru a aplica.",
+      "disableDesc": "Activează o cameră care este ascunsă în interfață și dezactivată în configurație. Este necesară repornirea Orbi360 NVR după activare.",
+      "enableSuccess": "S-a activat {{cameraName}}. Repornește Orbi360 NVR pentru a aplica.",
       "friendlyName": {
         "edit": "Editează numele afișat al camerei",
         "title": "Editează numele afișat",
-        "description": "Setează numele afișat pentru această cameră în întreaga interfață Frigate. Lasă necompletat pentru a folosi ID-ul camerei.",
+        "description": "Setează numele afișat pentru această cameră în întreaga interfață Orbi360 NVR. Lasă necompletat pentru a folosi ID-ul camerei.",
         "rename": "Redenumește"
       },
       "reorderHandle": "Trage pentru a reordona",
@@ -1325,9 +1325,9 @@
       "details": {
         "edit": "Editează detaliile camerei",
         "title": "Editează detaliile camerei",
-        "description": "Actualizează numele de afișare, URL-ul extern și vizibilitatea folosite pentru această cameră în tot UI-ul Frigate.",
+        "description": "Actualizează numele de afișare, URL-ul extern și vizibilitatea folosite pentru această cameră în tot UI-ul Orbi360 NVR.",
         "friendlyNameLabel": "Nume afișat",
-        "friendlyNameHelp": "Numele prietenos afișat pentru această cameră în întreaga interfață Frigate. Lasă gol pentru a utiliza ID-ul camerei.",
+        "friendlyNameHelp": "Numele prietenos afișat pentru această cameră în întreaga interfață Orbi360 NVR. Lasă gol pentru a utiliza ID-ul camerei.",
         "webuiUrlLabel": "URL-ul interfeței web a camerei",
         "webuiUrlHelp": "URL pentru a vizita interfața web a camerei direct din vizualizarea Depanare (Debug). Lasă gol pentru a dezactiva linkul.",
         "webuiUrlInvalid": "Trebuie să fie un URL valid (de exemplu, https://exemplu.com).",
@@ -1337,7 +1337,7 @@
         "reviewHelp": "Arată această cameră în revizuiri, inclusiv filtrul de camere, revizuirea mișcărilor și vizualizarea istoricului."
       },
       "label": "Stare cameră",
-      "description": "Setează starea de funcționare pentru fiecare cameră.<br /><br /><strong>Pornit</strong>: stream-urile sunt procesate normal.<br /><strong>Oprit</strong>: pune temporar pe pauză procesarea. Nu se menține după repornirile Frigate.<br /><strong>Dezactivat</strong>: oprește procesarea și salvează modificarea în configurația ta. Este necesară o repornire pentru a reactiva o cameră dezactivată.<br /><br /><em>Notă: Dezactivarea nu afectează restream-urile go2rtc.</em><br /><br />Trage⋮ pentru a reordona camerele active așa cum apar în interfață, inclusiv în panoul Live și în meniurile drop-down de selecție a camerei.",
+      "description": "Setează starea de funcționare pentru fiecare cameră.<br /><br /><strong>Pornit</strong>: stream-urile sunt procesate normal.<br /><strong>Oprit</strong>: pune temporar pe pauză procesarea. Nu se menține după repornirile Orbi360 NVR.<br /><strong>Dezactivat</strong>: oprește procesarea și salvează modificarea în configurația ta. Este necesară o repornire pentru a reactiva o cameră dezactivată.<br /><br /><em>Notă: Dezactivarea nu afectează restream-urile go2rtc.</em><br /><br />Trage⋮ pentru a reordona camerele active așa cum apar în interfață, inclusiv în panoul Live și în meniurile drop-down de selecție a camerei.",
       "disabledSubheading": "Dezactivat în configurație",
       "status": {
         "on": "Pornit",
@@ -1403,7 +1403,7 @@
       "description": "Setează tipul pentru fiecare cameră. Camerele LPR dedicate sunt camere cu un singur scop, cu zoom optic puternic pentru a captura plăcuțele de înmatriculare ale vehiculelor aflate la distanță. Majoritatea camerelor ar trebui să folosească tipul normal de cameră, cu excepția cazului în care camera este special pentru LPR și are o vedere strâns focalizată pe plăcuțele de înmatriculare.",
       "normal": "Normal",
       "dedicatedLpr": "LPR dedicat",
-      "saveSuccess": "Tipul camerei a fost actualizat pentru {{cameraName}}. Repornește Frigate pentru a aplica modificările."
+      "saveSuccess": "Tipul camerei a fost actualizat pentru {{cameraName}}. Repornește Orbi360 NVR pentru a aplica modificările."
     },
     "description": "Adaugă, editează și șterge camere, controlează starea fiecărei camere și configurează excepții pe profil și pe tip de cameră. Pentru a configura stream-uri, detecție, mișcare și alte setări specifice camerelor, alege secțiunea corespunzătoare din Configurare cameră.",
     "clone": {
@@ -1480,14 +1480,14 @@
       },
       "toast": {
         "success": "Setări copiate la {{cameraName}}",
-        "successWithRestart": "Setări copiate la {{cameraName}}. Reporniți Frigate pentru a aplica toate modificările.",
+        "successWithRestart": "Setări copiate la {{cameraName}}. Reporniți Orbi360 NVR pentru a aplica toate modificările.",
         "successMulti_one": "Setări copiate la {{count}} cameră",
         "successMulti_few": "Setări copiate la {{count}} camere",
         "successMulti_other": "Setări copiate la {{count}} de camere",
         "partialFailure": "{{successCount}} secțiuni aplicate; '{{failedSection}}' a eșuat: {{errorMessage}}",
-        "successMultiWithRestart_one": "Setări copiate la {{count}} cameră. Reporniți Frigate pentru a aplica toate modificările.",
-        "successMultiWithRestart_few": "Setări copiate la {{count}} camere. Reporniți Frigate pentru a aplica toate modificările.",
-        "successMultiWithRestart_other": "Setări copiate la {{count}} de camere. Reporniți Frigate pentru a aplica toate modificările.",
+        "successMultiWithRestart_one": "Setări copiate la {{count}} cameră. Reporniți Orbi360 NVR pentru a aplica toate modificările.",
+        "successMultiWithRestart_few": "Setări copiate la {{count}} camere. Reporniți Orbi360 NVR pentru a aplica toate modificările.",
+        "successMultiWithRestart_other": "Setări copiate la {{count}} de camere. Reporniți Orbi360 NVR pentru a aplica toate modificările.",
         "partialFailureMulti": "Copiat la {{successCount}} cameră(e); a eșuat pentru {{failed}}: {{errorMessage}}",
         "newCameraPartialFailure": "Camera {{cameraName}} a fost creată, dar unele setări nu au putut fi copiate: {{errorMessage}}",
         "sourceMissing": "Camera sursă nu mai există",
@@ -1507,13 +1507,13 @@
     },
     "review": {
       "title": "Revizuire",
-      "desc": "Activează/dezactivează temporar alertele și detecțiile pentru această cameră până la repornirea Frigate. Când sunt dezactivate, nu se vor genera elemente noi de review. ",
+      "desc": "Activează/dezactivează temporar alertele și detecțiile pentru această cameră până la repornirea Orbi360 NVR. Când sunt dezactivate, nu se vor genera elemente noi de review. ",
       "alerts": "Alerte ",
       "detections": "Detecții "
     },
     "reviewClassification": {
       "title": "Clasificare Review",
-      "desc": "Frigate clasifică elementele de review ca Alerte sau Detecții. Implicit, toate obiectele de tip <em>persoană</em> și <em>mașină</em> sunt considerate Alerte. Poți rafina clasificarea configurând zone obligatorii.",
+      "desc": "Orbi360 NVR clasifică elementele de review ca Alerte sau Detecții. Implicit, toate obiectele de tip <em>persoană</em> și <em>mașină</em> sunt considerate Alerte. Poți rafina clasificarea configurând zone obligatorii.",
       "noDefinedZones": "Nu există zone definite pentru această cameră.",
       "objectAlertsTips": "Toate obiectele {{alertsLabels}} de pe {{cameraName}} vor apărea ca Alerte.",
       "zoneObjectAlertsTips": "Toate obiectele {{alertsLabels}} detectate în {{zone}} pe {{cameraName}} vor apărea ca Alerte.",
@@ -1528,7 +1528,7 @@
       "selectDetectionsZones": "Selectează zonele pentru Detecții",
       "limitDetections": "Limitează detecțiile la anumite zone",
       "toast": {
-        "success": "Configurația Clasificării Review a fost salvată. Repornește Frigate pentru aplicare."
+        "success": "Configurația Clasificării Review a fost salvată. Repornește Orbi360 NVR pentru aplicare."
       }
     }
   },
@@ -1565,7 +1565,7 @@
     "title": "Mentenanță",
     "sync": {
       "title": "Sincronizare Media",
-      "desc": "Frigate va curăța periodic fișierele media conform setărilor de retenție. Este normal să apară câteva fișiere orfane în timp ce Frigate rulează. Folosește această funcție pentru a șterge fișierele media de pe disc care nu mai sunt referențiate în baza de date.",
+      "desc": "Orbi360 NVR va curăța periodic fișierele media conform setărilor de retenție. Este normal să apară câteva fișiere orfane în timp ce Orbi360 NVR rulează. Folosește această funcție pentru a șterge fișierele media de pe disc care nu mai sunt referențiate în baza de date.",
       "started": "Sincronizarea media a început.",
       "alreadyRunning": "O sarcină de sincronizare rulează deja",
       "error": "Eroare la pornirea sincronizării",
@@ -1612,10 +1612,10 @@
     },
     "regionGrid": {
       "title": "Grilă regiune",
-      "desc": "Grila de regiune este o optimizare care învață unde apar de obicei obiectele de diferite dimensiuni în câmpul vizual al fiecărei camere. Frigate folosește aceste date pentru a redimensiona eficient regiunile de detecție. Grila este construită automat în timp, pe baza datelor de la obiectele urmărite.",
+      "desc": "Grila de regiune este o optimizare care învață unde apar de obicei obiectele de diferite dimensiuni în câmpul vizual al fiecărei camere. Orbi360 NVR folosește aceste date pentru a redimensiona eficient regiunile de detecție. Grila este construită automat în timp, pe baza datelor de la obiectele urmărite.",
       "clear": "Șterge grila regiune",
       "clearConfirmTitle": "Șterge grila regiune",
-      "clearConfirmDesc": "Curățarea grilei de regiune nu este recomandată decât dacă ai schimbat recent mărimea modelului de detecție sau ai schimbat poziția fizică a camerei și ai probleme cu urmărirea obiectelor. Grila va fi reconstruită automat în timp, pe măsură ce obiectele sunt urmărite. Este necesară o repornire a Frigate pentru ca modificările să intre în vigoare.",
+      "clearConfirmDesc": "Curățarea grilei de regiune nu este recomandată decât dacă ai schimbat recent mărimea modelului de detecție sau ai schimbat poziția fizică a camerei și ai probleme cu urmărirea obiectelor. Grila va fi reconstruită automat în timp, pe măsură ce obiectele sunt urmărite. Este necesară o repornire a Orbi360 NVR pentru ca modificările să intre în vigoare.",
       "clearSuccess": "Grila de regiune a fost ștearsă cu succes",
       "clearError": "Eșec la ștergerea grilei de regiune",
       "restartRequired": "Este necesară o repornire pentru ca modificările grilei de regiune să intre în vigoare"
@@ -1886,7 +1886,7 @@
   },
   "toast": {
     "success": "Setările au fost salvate cu succes",
-    "successRestartRequired": "Setările au fost salvate cu succes. Repornește Frigate pentru a aplica modificările.",
+    "successRestartRequired": "Setările au fost salvate cu succes. Repornește Orbi360 NVR pentru a aplica modificările.",
     "error": "Eroare la salvarea setărilor",
     "validationError": "Validarea a eșuat: {{message}}",
     "resetSuccess": "Resetat la valorile globale implicite",
@@ -1899,9 +1899,9 @@
     "saveAllPartial_other": "{{successCount}} din {{totalCount}} de secțiuni salvate. {{failCount}} eșuate.",
     "saveAllFailure": "Eroare la salvarea tuturor secțiunilor.",
     "applied": "Setările au fost aplicate cu succes",
-    "saveAllSuccessRestartRequired_one": "{{count}} secțiune salvată cu succes. Repornește Frigate pentru a aplica modificările.",
-    "saveAllSuccessRestartRequired_few": "{{count}} secțiuni salvate cu succes. Repornește Frigate pentru a aplica modificările.",
-    "saveAllSuccessRestartRequired_other": "{{count}} de secțiuni salvate cu succes. Repornește Frigate pentru a aplica modificările."
+    "saveAllSuccessRestartRequired_one": "{{count}} secțiune salvată cu succes. Repornește Orbi360 NVR pentru a aplica modificările.",
+    "saveAllSuccessRestartRequired_few": "{{count}} secțiuni salvate cu succes. Repornește Orbi360 NVR pentru a aplica modificările.",
+    "saveAllSuccessRestartRequired_other": "{{count}} de secțiuni salvate cu succes. Repornește Orbi360 NVR pentru a aplica modificările."
   },
   "unsavedChanges": "Ai modificări nesalvate",
   "confirmReset": "Confirmă Resetarea",
@@ -2053,7 +2053,7 @@
       "recordDisabled": "Înregistrarea este dezactivată, elementele de revizuire nu vor fi generate.",
       "detectDisabled": "Detecția obiectelor este dezactivată. Elementele de revizuire necesită obiecte detectate pentru a categorisi alertele și detecțiile.",
       "allNonAlertDetections": "Toată activitatea fără alertă va fi inclusă ca detecții.",
-      "genaiImageSourceRecordingsRecordDisabled": "Sursa imaginii este setată pe 'recordings', dar înregistrarea este dezactivată. Frigate va reveni la imaginile de previzualizare."
+      "genaiImageSourceRecordingsRecordDisabled": "Sursa imaginii este setată pe 'recordings', dar înregistrarea este dezactivată. Orbi360 NVR va reveni la imaginile de previzualizare."
     },
     "audio": {
       "noAudioRole": "Niciun flux nu are rolul audio definit. Trebuie să activați rolul audio pentru ca detecția audio să funcționeze."
@@ -2108,7 +2108,7 @@
       "inputsMissingGo2rtcStream": "Un câmp de mai jos indică o retransmisie go2rtc care nu mai există. Selectează o retransmisie existentă sau introdu manual URL-ul camerei, altfel această cameră nu se va putea conecta."
     },
     "model": {
-      "optimizedFor320": "Frigate este optimizat pentru un model de 320x320, care este cea mai bună alegere pentru majoritatea configurațiilor. Un model de 640x640 este mai lent și ajută doar în scenarii specifice.",
+      "optimizedFor320": "Orbi360 NVR este optimizat pentru un model de 320x320, care este cea mai bună alegere pentru majoritatea configurațiilor. Un model de 640x640 este mai lent și ajută doar în scenarii specifice.",
       "inputDimensionsNotDetectResolution": "Lățimea și înălțimea de intrare ale modelului reprezintă dimensiunile de intrare ale modelului de detectare a obiectelor, nu rezoluția de detecție a camerei tale. Acestea ar trebui să se potrivească cu dimensiunile modelului pe care îl folosești — de obicei o dimensiune pătrată, cum ar fi 320x320 sau 640x640."
     }
   },
@@ -2205,7 +2205,7 @@
       "noModelSelected": "Selectează un model Frigate+"
     },
     "toast": {
-      "saveSuccess": "Setările pentru detectoare și model au fost salvate. Repornește Frigate pentru a aplica modificările.",
+      "saveSuccess": "Setările pentru detectoare și model au fost salvate. Repornește Orbi360 NVR pentru a aplica modificările.",
       "saveError": "Nu s-au putut salva setările pentru detector și model"
     },
     "unsavedChanges": "Modificări nesalvate pentru detector și model",

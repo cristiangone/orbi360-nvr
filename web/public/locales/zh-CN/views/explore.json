@@ -1,5 +1,5 @@
 {
-  "documentTitle": "浏览 - Frigate",
+  "documentTitle": "浏览 - Orbi360 NVR",
   "generativeAI": "生成式 AI",
   "exploreIsUnavailable": {
     "title": "浏览功能不可用",
@@ -97,14 +97,14 @@
       },
       "tips": {
         "mismatch_other": "检测到 {{count}} 个不可用的目标，并已包含在此核查项中。这些目标可能未达到警报或检测标准，或者已被清理/删除。",
-        "hasMissingObjects": "如果希望 Frigate 保存 <em>{{objects}}</em> 标签的追踪目标，请调整您的配置"
+        "hasMissingObjects": "如果希望 Orbi360 NVR 保存 <em>{{objects}}</em> 标签的追踪目标，请调整您的配置"
       },
       "toast": {
         "success": {
           "regenerate": "已向 {{provider}} 请求新的描述。根据提供商的速度，生成新描述可能需要一些时间。",
           "updatedSublabel": "成功更新子标签。",
           "updatedLPR": "成功更新车牌。",
-          "audioTranscription": "成功请求音频转录。根据你运行 Frigate 的服务器速度，转录可能需要一些时间才能完成。",
+          "audioTranscription": "成功请求音频转录。根据你运行 Orbi360 NVR 的服务器速度，转录可能需要一些时间才能完成。",
           "updatedAttributes": "更新属性成功。"
         },
         "error": {
@@ -141,7 +141,7 @@
     "description": {
       "label": "描述",
       "placeholder": "追踪目标的描述",
-      "aiTips": "在追踪目标的目标全周期结束之前，Frigate 不会向您的生成式 AI 提供商请求描述。"
+      "aiTips": "在追踪目标的目标全周期结束之前，Orbi360 NVR 不会向您的生成式 AI 提供商请求描述。"
     },
     "expandRegenerationMenu": "展开重新生成菜单",
     "regenerateFromSnapshot": "从快照重新生成",

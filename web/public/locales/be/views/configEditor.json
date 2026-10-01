@@ -1,8 +1,8 @@
 {
-  "documentTitle": "Рэдактар канфігурацыі - Frigate",
+  "documentTitle": "Рэдактар канфігурацыі - Orbi360 NVR",
   "configEditor": "Рэдактар канфігурацыі",
   "safeConfigEditor": "Рэдактар канфігурацыі (бяспечны рэжым)",
-  "safeModeDescription": "Frigate працуе ў бяспечным рэжыме праз памылку праверкі канфігурацыі.",
+  "safeModeDescription": "Orbi360 NVR працуе ў бяспечным рэжыме праз памылку праверкі канфігурацыі.",
   "copyConfig": "Скапіяваць канфігурацыю",
   "saveAndRestart": "Захаваць і перазапусціць",
   "saveOnly": "Толькі захаваць",

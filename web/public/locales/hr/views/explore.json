@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Istražite - Frigate",
+  "documentTitle": "Istražite - Orbi360 NVR",
   "generativeAI": "Generativni AI",
   "exploreIsUnavailable": {
     "title": "Istraživanje je nedostupno",
@@ -21,11 +21,11 @@
         "visionModelFeatureExtractor": "Ekstraktor značajki modela vizije",
         "textTokenizer": "Tokenizator teksta"
       },
-      "context": "Frigate preuzima potrebne modele ugrađivanja kako bi podržao značajku semantičkog pretraživanja. To može potrajati nekoliko minuta, ovisno o brzini vaše mrežne veze.",
+      "context": "Orbi360 NVR preuzima potrebne modele ugrađivanja kako bi podržao značajku semantičkog pretraživanja. To može potrajati nekoliko minuta, ovisno o brzini vaše mrežne veze.",
       "tips": {
         "context": "Možda ćete htjeti ponovno indeksirati ugrađivanja (embeddings) svojih praćenih objekata kada se modeli preuzmu."
       },
-      "error": "Došlo je do pogreške. Provjerite Frigate logove."
+      "error": "Došlo je do pogreške. Provjerite Orbi360 NVR logove."
     }
   },
   "details": {
@@ -35,7 +35,7 @@
         "mismatch_one": "{{count}} nedostupan objekt je otkriven i uključen u ovaj pregledni stavak. Ti objekti ili nisu kvalificirani kao upozorenje ili detekcija, ili su već uklonjeni/izbrisani.",
         "mismatch_few": "{{count}} nedostupna objekta su otkrivena i uključena u ovaj pregledni stavak. Ti objekti ili nisu kvalificirani kao upozorenje ili detekcija, ili su već uklonjeni/izbrisani.",
         "mismatch_other": "{{count}} nedostupnih objekata je otkriveno i uključeno u ovaj pregledni stavak. Ti objekti ili nisu kvalificirani kao upozorenje ili detekcija, ili su već uklonjeni/izbrisani.",
-        "hasMissingObjects": "Prilagodite svoju konfiguraciju ako želite da Frigate sprema praćene objekte za sljedeće oznake: <em>{{objects}}</em>"
+        "hasMissingObjects": "Prilagodite svoju konfiguraciju ako želite da Orbi360 NVR sprema praćene objekte za sljedeće oznake: <em>{{objects}}</em>"
       },
       "title": "Detalji o pregledu stavke",
       "desc": "Detalji o pregledu stavke",
@@ -49,7 +49,7 @@
           "updatedSublabel": "Uspješno ažurirana podoznaka.",
           "updatedLPR": "Uspješno ažurirana registarska pločica.",
           "updatedAttributes": "Uspješno ažurirani atributi.",
-          "audioTranscription": "Uspješno zatražena audio transkripcija. Ovisno o brzini vašeg Frigate servera, transkripcija može potrajati neko vrijeme."
+          "audioTranscription": "Uspješno zatražena audio transkripcija. Ovisno o brzini vašeg Orbi360 NVR servera, transkripcija može potrajati neko vrijeme."
         },
         "error": {
           "regenerate": "Neuspješno pozivanje {{provider}} za novi opis: {{errorMessage}}",
@@ -101,7 +101,7 @@
     "description": {
       "label": "Opis",
       "placeholder": "Opis praćenog objekta",
-      "aiTips": "Frigate neće tražiti opis od vašeg Generative AI pružatelja dok životni ciklus praćenog objekta ne završi."
+      "aiTips": "Orbi360 NVR neće tražiti opis od vašeg Generative AI pružatelja dok životni ciklus praćenog objekta ne završi."
     },
     "expandRegenerationMenu": "Proširi izbornik regeneracije",
     "regenerateFromSnapshot": "Regeneracija iz Snimki",

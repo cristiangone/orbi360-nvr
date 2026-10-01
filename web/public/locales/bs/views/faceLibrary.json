@@ -16,7 +16,7 @@
     "aria": "Odaberite nedavna prepoznavanja",
     "empty": "Nema nedavnih pokušaja prepoznavanja lica"
   },
-  "documentTitle": "Biblioteka lica - Frigate",
+  "documentTitle": "Biblioteka lica - Orbi360 NVR",
   "uploadFaceImage": {
     "title": "Učitajte sliku lica",
     "desc": "Učitajte sliku za skeniranje lica i uključite za {{pageToggle}}"

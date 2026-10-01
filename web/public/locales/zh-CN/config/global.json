@@ -5,11 +5,11 @@
     },
     "safe_mode": {
         "label": "安全模式",
-        "description": "开启后，Frigate 将以安全模式启动，将会关闭部分功能，以便排查问题。"
+        "description": "开启后，Orbi360 NVR 将以安全模式启动，将会关闭部分功能，以便排查问题。"
     },
     "environment_vars": {
         "label": "环境变量",
-        "description": "用于在 Home Assistant OS 中为 Frigate 进程设置的环境变量。非 HAOS 用户不能使用该配置项，而必须使用 Docker 的环境变量配置。"
+        "description": "用于在 Home Assistant OS 中为 Orbi360 NVR 进程设置的环境变量。非 HAOS 用户不能使用该配置项，而必须使用 Docker 的环境变量配置。"
     },
     "logger": {
         "label": "日志",
@@ -68,7 +68,7 @@
         "description": "身份验证和会话相关设置，包括 Cookie 和速率限制选项。",
         "enabled": {
             "label": "开启身份验证",
-            "description": "为 Frigate 页面开启原生身份验证。"
+            "description": "为 Orbi360 NVR 页面开启原生身份验证。"
         },
         "reset_admin_password": {
             "label": "重置管理员密码",
@@ -357,10 +357,10 @@
     },
     "database": {
         "label": "数据库",
-        "description": "Frigate 用于存储追踪目标和录像元数据的 SQLite 数据库设置。",
+        "description": "Orbi360 NVR 用于存储追踪目标和录像元数据的 SQLite 数据库设置。",
         "path": {
             "label": "数据库路径",
-            "description": "Frigate SQLite 数据库文件的存储路径。"
+            "description": "Orbi360 NVR SQLite 数据库文件的存储路径。"
         }
     },
     "go2rtc": {
@@ -384,7 +384,7 @@
         },
         "topic_prefix": {
             "label": "主题前缀",
-            "description": "所有 Frigate 主题的 MQTT 主题前缀；如果运行多个实例，必须唯一。"
+            "description": "所有 Orbi360 NVR 主题的 MQTT 主题前缀；如果运行多个实例，必须唯一。"
         },
         "client_id": {
             "label": "客户端 ID",
@@ -445,13 +445,13 @@
     },
     "networking": {
         "label": "网络",
-        "description": "网络相关设置，如 Frigate 端点的 IPv6 启用。",
+        "description": "网络相关设置，如 Orbi360 NVR 端点的 IPv6 启用。",
         "ipv6": {
             "label": "IPv6 配置",
-            "description": "Frigate 网络服务的 IPv6 特定设置。",
+            "description": "Orbi360 NVR 网络服务的 IPv6 特定设置。",
             "enabled": {
                 "label": "开启 IPv6",
-                "description": "在适用的情况下为 Frigate 服务（API 和 UI）启用 IPv6 支持。"
+                "description": "在适用的情况下为 Orbi360 NVR 服务（API 和 UI）启用 IPv6 支持。"
             }
         },
         "listen": {
@@ -459,20 +459,20 @@
             "description": "内部和外部监听端口的配置。此选项适用于高级用户。对于大多数用例，建议在 Docker compose 文件的 ports 部分进行更改。",
             "internal": {
                 "label": "内部端口",
-                "description": "Frigate 的内部监听端口（默认 5000）。"
+                "description": "Orbi360 NVR 的内部监听端口（默认 5000）。"
             },
             "external": {
                 "label": "外部端口",
-                "description": "Frigate 的外部监听端口（默认 8971）。"
+                "description": "Orbi360 NVR 的外部监听端口（默认 8971）。"
             }
         }
     },
     "proxy": {
         "label": "代理",
-        "description": "用于将 Frigate 集成到传递已认证用户头的反向代理后面的设置。",
+        "description": "用于将 Orbi360 NVR 集成到传递已认证用户头的反向代理后面的设置。",
         "header_map": {
             "label": "请求头映射",
-            "description": "将传入的代理请求头映射到 Frigate 用户和权限组字段，用于基于代理的身份验证。",
+            "description": "将传入的代理请求头映射到 Orbi360 NVR 用户和权限组字段，用于基于代理的身份验证。",
             "user": {
                 "label": "用户请求头",
                 "description": "包含上游代理提供的已认证用户名的请求头。"
@@ -483,7 +483,7 @@
             },
             "role_map": {
                 "label": "权限组映射",
-                "description": "将上游组值映射到 Frigate 权限组（例如将管理员组映射到管理员权限组）。"
+                "description": "将上游组值映射到 Orbi360 NVR 权限组（例如将管理员组映射到管理员权限组）。"
             }
         },
         "logout_url": {
@@ -532,15 +532,15 @@
         },
         "version_check": {
             "label": "版本检查",
-            "description": "启用出站检查以检测是否有更新版本的 Frigate 可用。"
+            "description": "启用出站检查以检测是否有更新版本的 Orbi360 NVR 可用。"
         }
     },
     "tls": {
         "label": "TLS",
-        "description": "Frigate Web 端点（端口 8971）的 TLS 设置。",
+        "description": "Orbi360 NVR Web 端点（端口 8971）的 TLS 设置。",
         "enabled": {
             "label": "开启 TLS",
-            "description": "为 Frigate 的网页页面和 API 的端口开启 TLS 加密。"
+            "description": "为 Orbi360 NVR 的网页页面和 API 的端口开启 TLS 加密。"
         }
     },
     "ui": {
@@ -2254,7 +2254,7 @@
             },
             "calibrate_on_startup": {
                 "label": "启动时校准",
-                "description": "在启动时测量 PTZ 电机速度以提高追踪精度。Frigate 将在校准后用 movement_weights 更新配置。"
+                "description": "在启动时测量 PTZ 电机速度以提高追踪精度。Orbi360 NVR 将在校准后用 movement_weights 更新配置。"
             },
             "zooming": {
                 "label": "变焦模式",
@@ -2291,7 +2291,7 @@
         },
         "ignore_time_mismatch": {
             "label": "忽略时间不匹配",
-            "description": "忽略 ONVIF 通信中摄像头和 Frigate 服务器之间的时间同步差异。"
+            "description": "忽略 ONVIF 通信中摄像头和 Orbi360 NVR 服务器之间的时间同步差异。"
         },
         "profile": {
             "label": "ONVIF 配置文件",

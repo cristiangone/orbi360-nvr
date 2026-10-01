@@ -22,9 +22,9 @@
     "aria": "בחירת אירועים",
     "noFoundForTimePeriod": "לא נמצאו אירועים עבור תקופת זמן זו."
   },
-  "documentTitle": "סקירה - Frigate",
+  "documentTitle": "סקירה - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "הקלטות - Frigate"
+    "documentTitle": "הקלטות - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "24 שעות אחרונות"

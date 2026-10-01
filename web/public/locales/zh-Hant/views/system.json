@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "cameras": "鏡頭統計 - Frigate",
-    "storage": "儲存裝置統計 - Frigate",
-    "general": "一般統計 - Frigate",
-    "enrichments": "進階功能統計 - Frigate",
+    "cameras": "鏡頭統計 - Orbi360 NVR",
+    "storage": "儲存裝置統計 - Orbi360 NVR",
+    "general": "一般統計 - Orbi360 NVR",
+    "enrichments": "進階功能統計 - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate 日誌 - Frigate",
-      "go2rtc": "Go2RTC 日誌 - Frigate",
-      "nginx": "Nginx 日誌 - Frigate",
-      "websocket": "訊息日誌 - Frigate"
+      "frigate": "Orbi360 NVR 日誌 - Orbi360 NVR",
+      "go2rtc": "Go2RTC 日誌 - Orbi360 NVR",
+      "nginx": "Nginx 日誌 - Orbi360 NVR",
+      "websocket": "訊息日誌 - Orbi360 NVR"
     }
   },
   "title": "系統",
@@ -108,7 +108,7 @@
       "intelGpuWarning": {
         "title": "Intel GPU 狀態警告",
         "message": "GPU 狀態資訊不可用",
-        "description": "這是一個在Intel GPU 狀態回報工具 (intel_gpu_top) 中已知的 Bug，該工具會故障並重複的回報 GPU占用率為 0%，甚至在硬體加速與物件偵測在 (i)GPU上正確運作時也是如此。這不是 Frigate 的 Bug。您可以透過重新啟動主機來暫時修復此問題以確認 GPU 運作正常。這不會影響效能。"
+        "description": "這是一個在Intel GPU 狀態回報工具 (intel_gpu_top) 中已知的 Bug，該工具會故障並重複的回報 GPU占用率為 0%，甚至在硬體加速與物件偵測在 (i)GPU上正確運作時也是如此。這不是 Orbi360 NVR 的 Bug。您可以透過重新啟動主機來暫時修復此問題以確認 GPU 運作正常。這不會影響效能。"
       },
       "gpuCompute": "GPU 計算 / 編碼",
       "gpuTemperature": "GPU 溫度",
@@ -132,7 +132,7 @@
     "overview": "總覽",
     "recordings": {
       "title": "錄影檔案",
-      "tips": "此數值僅代表 Frigate 資料庫中錄影資料的儲存空間用量。Frigate 不會追蹤硬碟上所有檔案的使用量。",
+      "tips": "此數值僅代表 Orbi360 NVR 資料庫中錄影資料的儲存空間用量。Orbi360 NVR 不會追蹤硬碟上所有檔案的使用量。",
       "earliestRecording": "最早的錄影檔案："
     },
     "cameraStorage": {
@@ -144,7 +144,7 @@
       "bandwidth": "頻寬",
       "unused": {
         "title": "未使用",
-        "tips": "在磁碟中有除了 Frigate 錄影內容以外的檔案時，此數值可能無法正確反應可用的空間。Frigate 不會追蹤錄影資料以外的檔案的儲存空間用量。"
+        "tips": "在磁碟中有除了 Orbi360 NVR 錄影內容以外的檔案時，此數值可能無法正確反應可用的空間。Orbi360 NVR 不會追蹤錄影資料以外的檔案的儲存空間用量。"
       }
     },
     "shm": {

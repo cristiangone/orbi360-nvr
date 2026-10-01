@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Kategoriseringsmodeller - Frigate",
+  "documentTitle": "Kategoriseringsmodeller - Orbi360 NVR",
   "details": {
     "scoreInfo": "Scoren viser den gennemsnitlige sikkerhed for kategoriseringen på tværs af alle registreringer af dette objekt.",
     "unknown": "Ukendt",
@@ -43,7 +43,7 @@
       "deleteCategoryFailed": "Sletning af kategori fejlede: {{errorMessage}}",
       "deleteModelFailed": "Sletning af model fejlede: {{errorMessage}}",
       "categorizeFailed": "Kategorisering af billedet fejlede: {{errorMessage}}",
-      "trainingFailed": "Træning af modellen fejlede. Check Frigate loggen.",
+      "trainingFailed": "Træning af modellen fejlede. Check Orbi360 NVR loggen.",
       "trainingFailedToStart": "Opstart af modeltræning fejlede: {{errorMessage}}",
       "updateModelFailed": "Ændring af modellen fejlede: {{errorMessage}}",
       "renameCategoryFailed": "Kan ikke omdøbe kategorien: {{errorMessage}}"
@@ -135,7 +135,7 @@
       "allImagesRequired_other": "Venligst kategoriser alle billeder. {{count}} billeder tilbage.",
       "generating": {
         "title": "Genererer testbilleder",
-        "description": "Frigate henter repræsentative billeder fra dine optagelser. Det kan tage et øjeblik..."
+        "description": "Orbi360 NVR henter repræsentative billeder fra dine optagelser. Det kan tage et øjeblik..."
       },
       "training": {
         "title": "Træningsmodel",

@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Tyrinėti - Frigate",
+  "documentTitle": "Tyrinėti - Orbi360 NVR",
   "generativeAI": "Generatyvinis DI",
   "exploreMore": "Apžvelgti daugiau {{label}} objektų",
   "exploreIsUnavailable": {
@@ -16,7 +16,7 @@
     },
     "title": "Tyrinėjimai Negalimi",
     "downloadingModels": {
-      "context": "Frigate siunčiasi reikalingus įterpimo modelius, kad būtų palaikoma Semantic Paieškos funkcija. Tai gali užtrukti priklausomai nuo duomenų srauto greičio.",
+      "context": "Orbi360 NVR siunčiasi reikalingus įterpimo modelius, kad būtų palaikoma Semantic Paieškos funkcija. Tai gali užtrukti priklausomai nuo duomenų srauto greičio.",
       "setup": {
         "visionModel": "Vaizdo modelis",
         "visionModelFeatureExtractor": "Vaizdo modelio funkcijų išgavimas",
@@ -26,7 +26,7 @@
       "tips": {
         "context": "Galimai norėsite iš naujo indeksuoti savo sekamų objektų įterpius po to kai modeliai parsisiųs."
       },
-      "error": "Įvyko klaida. Patikrinkite Frigate įrašus."
+      "error": "Įvyko klaida. Patikrinkite Orbi360 NVR įrašus."
     }
   },
   "details": {
@@ -36,7 +36,7 @@
         "mismatch_one": "{{count}} neesamas objektas aptiktas ir pridėtas į šį peržiuros įrašą. Tie objektai arba neatitinką įspėjimų ar aptikimų sąlygų arba jau buvo išvalyti/ištrinti.",
         "mismatch_few": "{{count}} neesami objektai aptikti ir pridėti į šį peržiuros įrašą. Tie objektai arba neatitinką įspėjimų ar aptikimų sąlygų arba jau buvo išvalyti/ištrinti.",
         "mismatch_other": "{{count}} neesamų objektų aptiktų ir pridėtų į šį peržiuros įrašą. Tie objektai arba neatitinką įspėjimų ar aptikimų sąlygų arba jau buvo išvalyti/ištrinti.",
-        "hasMissingObjects": "Koreguokite savo nustatymus jeigu norite, kad Frigate saugoti objektus su šiomis etiketėmis: <em>{{objects}}</em>"
+        "hasMissingObjects": "Koreguokite savo nustatymus jeigu norite, kad Orbi360 NVR saugoti objektus su šiomis etiketėmis: <em>{{objects}}</em>"
       },
       "title": "Peržiūrėti Įrašo Detales",
       "desc": "Peržiūrėti Įrašo detales",
@@ -49,7 +49,7 @@
           "regenerate": "Gauta nauja užklausa iš {{provider}} naujam aprašymui. Priklausomai nuo jūsų tiekėjo greičio, naują aprašymą sukurti gali užtrukti.",
           "updatedSublabel": "Sėkmingai atnaujinta sub etiketė.",
           "updatedLPR": "Sėkmingai atnaujinti registracijos numeriai.",
-          "audioTranscription": "Sėkmingai užklausta garso aprašymo. Priklausomai nuo jūsų Frigate serverio pajėgumų, tai gali užtrukti.",
+          "audioTranscription": "Sėkmingai užklausta garso aprašymo. Priklausomai nuo jūsų Orbi360 NVR serverio pajėgumų, tai gali užtrukti.",
           "updatedAttributes": "Atributai sekmingai atnaujinti."
         },
         "error": {
@@ -97,7 +97,7 @@
     "description": {
       "label": "Aprašymas",
       "placeholder": "Sekamo objekto aprašymas",
-      "aiTips": "Iki kol sekamo objekto gyvavimo ciklas užsibaigs Frigate neklaus aprašymo iš jūsų Generatyvinio DI tiekėjo."
+      "aiTips": "Iki kol sekamo objekto gyvavimo ciklas užsibaigs Orbi360 NVR neklaus aprašymo iš jūsų Generatyvinio DI tiekėjo."
     },
     "expandRegenerationMenu": "Išskleisti regeneravimo meniu",
     "regenerateFromSnapshot": "Regeneruoti iš Momentinės Nuotraukos",
@@ -145,7 +145,7 @@
         "label": "Anotacijos Perstūmimas",
         "tips": "Patarimas: Įsivaizduokite kad yra įvykio klipas kur žmogus eina iš kairės į dešinę. Jei apibrėžimo dėžutė nuolatos yra žmogui iš kairės tuomet reikšmę sumažinkite. Analogiškai, jei dėžutė piešiama priekyje žmogaus tuomet reikšmę padidinkite.",
         "toast": {
-          "success": "Anotacijos perslinkimas kamerai {{camera}} buvo išsaugota konfiguracijoje. Perkraukite Frigate, kad pritaikytumėte pokyčius."
+          "success": "Anotacijos perslinkimas kamerai {{camera}} buvo išsaugota konfiguracijoje. Perkraukite Orbi360 NVR, kad pritaikytumėte pokyčius."
         }
       },
       "title": "Anotacijų Nustatymai",
@@ -212,7 +212,7 @@
     },
     "submitToPlus": {
       "label": "Pateikti į Frigate+",
-      "aria": "Pateikti į Frigate Plius"
+      "aria": "Pateikti į Orbi360 NVR Plius"
     },
     "viewInHistory": {
       "label": "Žiūrėti Istorijoje",

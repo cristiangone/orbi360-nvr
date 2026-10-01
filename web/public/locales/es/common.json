@@ -23,7 +23,7 @@
     "day_many": "{{time}} días",
     "day_other": "{{time}} días",
     "untilForTime": "Hasta {{time}}",
-    "untilForRestart": "Hasta que Frigate se reinicie.",
+    "untilForRestart": "Hasta que Orbi360 NVR se reinicie.",
     "untilRestart": "Hasta que se reinicie",
     "ago": "Hace {{timeAgo}}",
     "justNow": "Ahora mismo",
@@ -180,9 +180,9 @@
     },
     "documentation": {
       "title": "Documentación",
-      "label": "Documentación de Frigate"
+      "label": "Documentación de Orbi360 NVR"
     },
-    "restart": "Reiniciar Frigate",
+    "restart": "Reiniciar Orbi360 NVR",
     "live": {
       "title": "Directo",
       "cameras": {
@@ -295,7 +295,7 @@
     "title": "Rol",
     "admin": "Administrador",
     "viewer": "Espectador",
-    "desc": "Los administradores tienen acceso completo a todas las funciones en la interfaz de usuario de Frigate. Los espectadores están limitados a ver cámaras, elementos de revisión y grabaciones históricas en la interfaz de usuario."
+    "desc": "Los administradores tienen acceso completo a todas las funciones en la interfaz de usuario de Orbi360 NVR. Los espectadores están limitados a ver cámaras, elementos de revisión y grabaciones históricas en la interfaz de usuario."
   },
   "pagination": {
     "label": "paginación",
@@ -310,12 +310,12 @@
     "more": "Más páginas"
   },
   "accessDenied": {
-    "documentTitle": "Acceso denegado - Frigate",
+    "documentTitle": "Acceso denegado - Orbi360 NVR",
     "desc": "No tienes permiso para ver esta página.",
     "title": "Acceso denegado"
   },
   "notFound": {
-    "documentTitle": "No se ha encontrado - Frigate",
+    "documentTitle": "No se ha encontrado - Orbi360 NVR",
     "title": "404",
     "desc": "Página no encontrada"
   },
@@ -331,7 +331,7 @@
   },
   "field": {
     "optional": "Opcional",
-    "internalID": "La ID interna que usa Frigate en la configuración y en la base de datos"
+    "internalID": "La ID interna que usa Orbi360 NVR en la configuración y en la base de datos"
   },
   "no_items": "No hay elementos",
   "validation_errors": "Errores de validación",

@@ -1,23 +1,23 @@
 {
   "documentTitle": {
-    "default": "设置 - Frigate",
-    "authentication": "身份验证设置 - Frigate",
-    "camera": "摄像头设置 - Frigate",
-    "classification": "分类设置 - Frigate",
-    "masksAndZones": "遮罩和区域编辑器 - Frigate",
-    "motionTuner": "画面变动调整 - Frigate",
-    "object": "调试 - Frigate",
-    "general": "界面设置 - Frigate",
-    "frigatePlus": "Frigate+ 设置 - Frigate",
-    "notifications": "通知设置 - Frigate",
-    "enrichments": "增强功能设置 - Frigate",
-    "cameraManagement": "管理摄像头 - Frigate",
-    "cameraReview": "摄像头核查设置 - Frigate",
-    "globalConfig": "全局配置 - Frigate",
-    "cameraConfig": "摄像头配置 - Frigate",
-    "maintenance": "维护 - Frigate",
-    "profiles": "配置模板 - Frigate",
-    "detectorsAndModel": "检测器和模型 - Frigate"
+    "default": "设置 - Orbi360 NVR",
+    "authentication": "身份验证设置 - Orbi360 NVR",
+    "camera": "摄像头设置 - Orbi360 NVR",
+    "classification": "分类设置 - Orbi360 NVR",
+    "masksAndZones": "遮罩和区域编辑器 - Orbi360 NVR",
+    "motionTuner": "画面变动调整 - Orbi360 NVR",
+    "object": "调试 - Orbi360 NVR",
+    "general": "界面设置 - Orbi360 NVR",
+    "frigatePlus": "Frigate+ 设置 - Orbi360 NVR",
+    "notifications": "通知设置 - Orbi360 NVR",
+    "enrichments": "增强功能设置 - Orbi360 NVR",
+    "cameraManagement": "管理摄像头 - Orbi360 NVR",
+    "cameraReview": "摄像头核查设置 - Orbi360 NVR",
+    "globalConfig": "全局配置 - Orbi360 NVR",
+    "cameraConfig": "摄像头配置 - Orbi360 NVR",
+    "maintenance": "维护 - Orbi360 NVR",
+    "profiles": "配置模板 - Orbi360 NVR",
+    "detectorsAndModel": "检测器和模型 - Orbi360 NVR"
   },
   "menu": {
     "ui": "界面设置",
@@ -195,7 +195,7 @@
     },
     "faceRecognition": {
       "title": "人脸识别",
-      "desc": "人脸识别功能允许为人物分配名称，当识别到他们的面孔时，Frigate 会将人物的名字作为子标签进行分配。这些信息会显示在界面、过滤器以及通知中。",
+      "desc": "人脸识别功能允许为人物分配名称，当识别到他们的面孔时，Orbi360 NVR 会将人物的名字作为子标签进行分配。这些信息会显示在界面、过滤器以及通知中。",
       "readTheDocumentation": "阅读文档（英文）",
       "modelSize": {
         "label": "模型大小",
@@ -212,11 +212,11 @@
     },
     "licensePlateRecognition": {
       "title": "车牌识别",
-      "desc": "Frigate 可以识别车辆的车牌，并自动将检测到的字符添加到 recognized_license_plate 字段中，或将已知名称作为子标签添加到汽车类型的对象中。常见的使用场景可能是读取驶入车道的汽车车牌或经过街道的汽车车牌。",
+      "desc": "Orbi360 NVR 可以识别车辆的车牌，并自动将检测到的字符添加到 recognized_license_plate 字段中，或将已知名称作为子标签添加到汽车类型的对象中。常见的使用场景可能是读取驶入车道的汽车车牌或经过街道的汽车车牌。",
       "readTheDocumentation": "阅读文档（英文）"
     },
     "toast": {
-      "success": "分类设置已保存，请重启 Frigate 以应用更改。",
+      "success": "分类设置已保存，请重启 Orbi360 NVR 以应用更改。",
       "error": "保存配置更改失败：{{errorMessage}}"
     },
     "birdClassification": {
@@ -230,7 +230,7 @@
     "title": "摄像头设置",
     "streams": {
       "title": "视频流",
-      "desc": "暂时禁用摄像头，除非重启Frigate否则将保持禁用。禁用摄像头将完全停止 Frigate 对该摄像头视频流的处理。检测、录制和调试功能都将不可用。<br /><em>注意：该选项不会禁用 go2rtc 转播。</em>"
+      "desc": "暂时禁用摄像头，除非重启Frigate否则将保持禁用。禁用摄像头将完全停止 Orbi360 NVR 对该摄像头视频流的处理。检测、录制和调试功能都将不可用。<br /><em>注意：该选项不会禁用 go2rtc 转播。</em>"
     },
     "review": {
       "title": "核查",
@@ -240,7 +240,7 @@
     },
     "reviewClassification": {
       "title": "核查分级",
-      "desc": "Frigate 将核查项分为“警报”和“检测”。默认情况下，所有的 <strong>人</strong>、<strong>汽车</strong> 对象都将视为警报。你可以通过修改配置文件配置区域来细分。",
+      "desc": "Orbi360 NVR 将核查项分为“警报”和“检测”。默认情况下，所有的 <strong>人</strong>、<strong>汽车</strong> 对象都将视为警报。你可以通过修改配置文件配置区域来细分。",
       "readTheDocumentation": "阅读文档",
       "noDefinedZones": "该摄像头没有设置区域。",
       "objectAlertsTips": "所有 {{alertsLabels}} 对象在 {{cameraName}} 下都将显示为警报。",
@@ -255,7 +255,7 @@
       "selectDetectionsZones": "选择检测区域",
       "limitDetections": "限制仅在特定区域内进行检测",
       "toast": {
-        "success": "核查分级配置已保存。请重启 Frigate 以应用更改。"
+        "success": "核查分级配置已保存。请重启 Orbi360 NVR 以应用更改。"
       },
       "unsavedChanges": "{{camera}} 的核查分类设置未保存"
     },
@@ -383,7 +383,7 @@
     },
     "zones": {
       "label": "区域",
-      "documentTitle": "编辑区域 - Frigate",
+      "documentTitle": "编辑区域 - Orbi360 NVR",
       "desc": {
         "title": "该功能允许你定义特定区域，以便你可以确定特定目标或物体是否在该区域内。",
         "documentation": "文档"
@@ -439,7 +439,7 @@
     },
     "motionMasks": {
       "label": "画面变动遮罩",
-      "documentTitle": "编辑画面变动遮罩 - Frigate",
+      "documentTitle": "编辑画面变动遮罩 - Orbi360 NVR",
       "desc": {
         "title": "画面变动遮罩用于防止触发不必要的画面变动检测。过度的设置遮罩将使目标更加难以被追踪。",
         "documentation": "文档"
@@ -472,7 +472,7 @@
     },
     "objectMasks": {
       "label": "目标遮罩",
-      "documentTitle": "编辑目标遮罩 - Frigate",
+      "documentTitle": "编辑目标遮罩 - Orbi360 NVR",
       "desc": {
         "title": "目标过滤器用于防止特定位置出现对某个目标/物体的误报。",
         "documentation": "文档"
@@ -516,7 +516,7 @@
   "motionDetectionTuner": {
     "title": "画面变动检测调整",
     "desc": {
-      "title": "Frigate 将首先使用画面变动检测来确认每一帧画面中是否有变动的区域，然后再对该区域使用目标检测。",
+      "title": "Orbi360 NVR 将首先使用画面变动检测来确认每一帧画面中是否有变动的区域，然后再对该区域使用目标检测。",
       "documentation": "阅读有关画面变动检测的文档"
     },
     "Threshold": {
@@ -538,7 +538,7 @@
   },
   "debug": {
     "title": "调试",
-    "detectorDesc": "Frigate 将使用检测器（{{detectors}}）来检测摄像头视频流中的目标或物体。",
+    "detectorDesc": "Orbi360 NVR 将使用检测器（{{detectors}}）来检测摄像头视频流中的目标或物体。",
     "desc": "调试界面将实时显示被追踪的目标以及统计信息，目标列表将显示检测到的目标和延迟显示的概览。",
     "debugging": "调试选项",
     "objectList": "目标列表",
@@ -600,7 +600,7 @@
     "title": "用户",
     "management": {
       "title": "用户管理",
-      "desc": "管理此 Frigate 实例的用户账户。"
+      "desc": "管理此 Orbi360 NVR 实例的用户账户。"
     },
     "addUser": "添加用户",
     "updatePassword": "修改密码",
@@ -676,7 +676,7 @@
       },
       "createUser": {
         "title": "创建新用户",
-        "desc": "创建一个新用户账户，并指定一个权限组以控制访问 Frigate 页面的权限。",
+        "desc": "创建一个新用户账户，并指定一个权限组以控制访问 Orbi360 NVR 页面的权限。",
         "usernameOnlyInclude": "用户名只能包含字母、数字和 _",
         "confirmPassword": "请确认你的密码"
       },
@@ -716,7 +716,7 @@
     "title": "通知",
     "notificationSettings": {
       "title": "通知设置",
-      "desc": "Frigate 在浏览器中运行或作为 PWA 安装时，可以原生向您的设备发送推送通知。",
+      "desc": "Orbi360 NVR 在浏览器中运行或作为 PWA 安装时，可以原生向您的设备发送推送通知。",
       "documentation": "阅读文档"
     },
     "globalSettings": {
@@ -725,9 +725,9 @@
     },
     "notificationUnavailable": {
       "title": "通知功能不可用",
-      "desc": "网页推送通知需要安全连接（<code>https://…</code>）。这是浏览器的限制。请通过安全方式访问 Frigate 以使用通知功能。",
+      "desc": "网页推送通知需要安全连接（<code>https://…</code>）。这是浏览器的限制。请通过安全方式访问 Orbi360 NVR 以使用通知功能。",
       "documentation": "阅读文档",
-      "descPwa": "在 iOS 设备上，只有将 Frigate 安装到主屏幕后，才能使用网页推送通知。请打开<strong>分享</strong>菜单，选择<strong>添加到主屏幕</strong>，然后从新生成的图标打开 Frigate，即可注册此设备以接收通知。"
+      "descPwa": "在 iOS 设备上，只有将 Orbi360 NVR 安装到主屏幕后，才能使用网页推送通知。请打开<strong>分享</strong>菜单，选择<strong>添加到主屏幕</strong>，然后从新生成的图标打开 Orbi360 NVR，即可注册此设备以接收通知。"
     },
     "email": {
       "title": "电子邮箱",
@@ -758,7 +758,7 @@
     "cancelSuspension": "取消暂停",
     "toast": {
       "success": {
-        "registered": "已成功注册通知。需要重启 Frigate 才能发送任何通知（包括测试通知）。",
+        "registered": "已成功注册通知。需要重启 Orbi360 NVR 才能发送任何通知（包括测试通知）。",
         "settingSaved": "通知设置已保存。"
       },
       "error": {
@@ -815,12 +815,12 @@
       }
     },
     "toast": {
-      "success": "Frigate+ 设置已保存。请重启 Frigate 以应用更改。",
+      "success": "Frigate+ 设置已保存。请重启 Orbi360 NVR 以应用更改。",
       "error": "配置更改保存失败：{{errorMessage}}"
     },
     "restart_required": "需要重启（Frigate+模型已修改）",
     "unsavedChanges": "未保存Frigate+变更设置",
-    "description": "Frigate+ 是一项订阅服务，可为你的 Frigate 实例提供额外的功能和能力，包括使用基于你自己的数据训练的自定义目标检测模型。你可以在此管理 Frigate+ 的模型设置。",
+    "description": "Frigate+ 是一项订阅服务，可为你的 Orbi360 NVR 实例提供额外的功能和能力，包括使用基于你自己的数据训练的自定义目标检测模型。你可以在此管理 Frigate+ 的模型设置。",
     "cardTitles": {
       "api": "API",
       "currentModel": "当前模型",
@@ -859,16 +859,16 @@
         }
       },
       "title": "语义搜索",
-      "desc": "Frigate 中的语义搜索功能将能够让你通过图片、用户自定义的文本描述，或自动生成的文本描述等方式在核查项目中查找目标/物体。",
+      "desc": "Orbi360 NVR 中的语义搜索功能将能够让你通过图片、用户自定义的文本描述，或自动生成的文本描述等方式在核查项目中查找目标/物体。",
       "readTheDocumentation": "阅读文档"
     },
     "licensePlateRecognition": {
-      "desc": "Frigate 可以识别车辆的车牌，并自动将检测到的字符添加到 识别的车牌（recognized_license_plate）字段中，或将已知车牌对应的名称作为子标签添加到该车辆目标中。该功能常用于识别驶入车道的车辆车牌或经过街道的车辆车牌。",
+      "desc": "Orbi360 NVR 可以识别车辆的车牌，并自动将检测到的字符添加到 识别的车牌（recognized_license_plate）字段中，或将已知车牌对应的名称作为子标签添加到该车辆目标中。该功能常用于识别驶入车道的车辆车牌或经过街道的车辆车牌。",
       "title": "车牌识别",
       "readTheDocumentation": "阅读文档"
     },
     "faceRecognition": {
-      "desc": "人脸识别功能允许为人物分配名称，当识别到他们的面孔时，Frigate 会将人物的名字作为子标签进行分配。这些信息会显示在界面、过滤器以及通知中。",
+      "desc": "人脸识别功能允许为人物分配名称，当识别到他们的面孔时，Orbi360 NVR 会将人物的名字作为子标签进行分配。这些信息会显示在界面、过滤器以及通知中。",
       "title": "人脸识别",
       "readTheDocumentation": "阅读文档",
       "modelSize": {
@@ -885,7 +885,7 @@
       }
     },
     "toast": {
-      "success": "增强功能设置已保存。请重启 Frigate 以应用更改。",
+      "success": "增强功能设置已保存。请重启 Orbi360 NVR 以应用更改。",
       "error": "配置更改保存失败：{{errorMessage}}"
     },
     "unsavedChanges": "增强功能设置未保存",
@@ -972,7 +972,7 @@
         },
         "actions": {
           "title": "动作",
-          "desc": "默认情况下，Frigate 会为所有触发器发送 MQTT 消息。子标签会将触发器名称添加到目标标签中。属性是可搜索的元数据，独立存储在追踪目标的元数据中。",
+          "desc": "默认情况下，Orbi360 NVR 会为所有触发器发送 MQTT 消息。子标签会将触发器名称添加到目标标签中。属性是可搜索的元数据，独立存储在追踪目标的元数据中。",
           "error": {
             "min": "必须至少选择一项动作。"
           }
@@ -1021,7 +1021,7 @@
   "roles": {
     "management": {
       "title": "成员权限组管理",
-      "desc": "管理此 Frigate 实例的自定义权限组及其摄像头访问权限。"
+      "desc": "管理此 Orbi360 NVR 实例的自定义权限组及其摄像头访问权限。"
     },
     "addRole": "添加权限组",
     "table": {
@@ -1080,7 +1080,7 @@
   },
   "cameraWizard": {
     "title": "添加摄像头",
-    "description": "请按照以下步骤添加摄像头至 Frigate 中。",
+    "description": "请按照以下步骤添加摄像头至 Orbi360 NVR 中。",
     "steps": {
       "nameAndConnection": "名称与连接",
       "streamConfiguration": "视频流配置",
@@ -1266,7 +1266,7 @@
         "resolutionLow": "使用 {{resolution}} 分辨率可能过低，难以检测较小的物体。"
       },
       "ffmpegModule": "使用视频流兼容模式",
-      "ffmpegModuleDescription": "如果多次尝试后视频流仍无法加载，可以尝试启用此功能。启用后，Frigate 将使用集成 go2rtc 的 ffmpeg 模块，这可能会提高与某些摄像头视频流的兼容性。",
+      "ffmpegModuleDescription": "如果多次尝试后视频流仍无法加载，可以尝试启用此功能。启用后，Orbi360 NVR 将使用集成 go2rtc 的 ffmpeg 模块，这可能会提高与某些摄像头视频流的兼容性。",
       "streamsTitle": "摄像头视频流",
       "addStream": "添加视频流",
       "addAnotherStream": "添加其他视频流",
@@ -1324,7 +1324,7 @@
       "estimatedBandwidth": "预估带宽",
       "roles": "功能",
       "ffmpegModule": "使用视频流兼容模式",
-      "ffmpegModuleDescription": "若多次尝试后仍无法加载视频流，可尝试启用此功能。启用后，Frigate 将通过 go2rtc 调用 ffmpeg 模块。这可能会提升与部分摄像头视频流的兼容性。",
+      "ffmpegModuleDescription": "若多次尝试后仍无法加载视频流，可尝试启用此功能。启用后，Orbi360 NVR 将通过 go2rtc 调用 ffmpeg 模块。这可能会提升与部分摄像头视频流的兼容性。",
       "none": "无",
       "error": "错误",
       "streamValidated": "视频流 {{number}} 验证成功",
@@ -1363,16 +1363,16 @@
     "backToSettings": "返回摄像头设置",
     "streams": {
       "title": "摄像头状态和详细信息",
-      "desc": "将临时禁用摄像头，直到 Frigate 重启。禁用摄像头将完全停止 Frigate 对该摄像头视频流的处理，届时检测、录制及调试功能均不可用。<br /><em>注意：go2rtc 的转流服务不受影响。</em>",
+      "desc": "将临时禁用摄像头，直到 Orbi360 NVR 重启。禁用摄像头将完全停止 Orbi360 NVR 对该摄像头视频流的处理，届时检测、录制及调试功能均不可用。<br /><em>注意：go2rtc 的转流服务不受影响。</em>",
       "enableLabel": "开启摄像头",
-      "enableDesc": "暂时禁用已开启的摄像头，直到 Frigate 重启。禁用摄像头会完全停止 Frigate 对该摄像头视频流的处理。检测、录像和调试功能将不可用。<br /> <em>注意：这不会禁用 go2rtc 的转推流。</em><br /><br />拖动滑块以重新排序摄像头，使其在用户界面中按顺序显示。启用的摄像头的顺序将在整个用户界面中反映，包括实时监控仪表板和摄像头选择下拉菜单。",
+      "enableDesc": "暂时禁用已开启的摄像头，直到 Orbi360 NVR 重启。禁用摄像头会完全停止 Orbi360 NVR 对该摄像头视频流的处理。检测、录像和调试功能将不可用。<br /> <em>注意：这不会禁用 go2rtc 的转推流。</em><br /><br />拖动滑块以重新排序摄像头，使其在用户界面中按顺序显示。启用的摄像头的顺序将在整个用户界面中反映，包括实时监控仪表板和摄像头选择下拉菜单。",
       "disableLabel": "关闭摄像头",
-      "disableDesc": "开启在当前在界面中不可见且在配置中被禁用的摄像头。启用后需要重启 Frigate 才能生效。",
-      "enableSuccess": "已启用 {{cameraName}}。请重启 Frigate 以应用。",
+      "disableDesc": "开启在当前在界面中不可见且在配置中被禁用的摄像头。启用后需要重启 Orbi360 NVR 才能生效。",
+      "enableSuccess": "已启用 {{cameraName}}。请重启 Orbi360 NVR 以应用。",
       "friendlyName": {
         "edit": "修改摄像头显示名称",
         "title": "修改显示名称",
-        "description": "设置该摄像机在 Frigate 用户界面中显示的名称。若留空，则使用摄像机 ID。",
+        "description": "设置该摄像机在 Orbi360 NVR 用户界面中显示的名称。若留空，则使用摄像机 ID。",
         "rename": "重命名"
       },
       "reorderHandle": "拖动以重新排序",
@@ -1381,9 +1381,9 @@
       "details": {
         "edit": "编辑摄像头细节",
         "title": "编辑摄像头细节",
-        "description": "更新此摄像头在 Frigate 页面中使用的显示名称、外部设置 URL 地址和是否可见。",
+        "description": "更新此摄像头在 Orbi360 NVR 页面中使用的显示名称、外部设置 URL 地址和是否可见。",
         "friendlyNameLabel": "显示名称",
-        "friendlyNameHelp": "在 Frigate 页面中显示此摄像头的友好名称。留空以使用摄像头 ID。",
+        "friendlyNameHelp": "在 Orbi360 NVR 页面中显示此摄像头的友好名称。留空以使用摄像头 ID。",
         "webuiUrlLabel": "摄像头管理后台 URL",
         "webuiUrlHelp": "从调试页面中直接访问摄像头管理网页界面。留空以禁用链接。",
         "webuiUrlInvalid": "必须是有效的 URL（例如：https://example.com）。",
@@ -1459,7 +1459,7 @@
       "description": "为每路摄像头设置类型。专用车牌识别（LPR）摄像头为单用途设备，配备高倍光学变焦，可抓拍远处车辆的车牌。绝大多数摄像头应选用“通用”类型；只有专为车牌识别部署、且画面聚焦对准车牌的摄像头，才需选择“专用车牌识别”。",
       "normal": "通用",
       "dedicatedLpr": "车牌识别专用",
-      "saveSuccess": "已更新 {{cameraName}} 的摄像头类型，请重启 Frigate 以使更改生效。"
+      "saveSuccess": "已更新 {{cameraName}} 的摄像头类型，请重启 Orbi360 NVR 以使更改生效。"
     },
     "description": "添加、编辑和删除摄像头，控制每个摄像头的状态，并配置每个配置文件和摄像头类型的覆盖设置。要配置视频流、检测、画面变动和其他特定于摄像头的设置，请在“摄像头配置”下选择相关功能。",
     "clone": {
@@ -1534,9 +1534,9 @@
       },
       "toast": {
         "success": "设置已复制到 {{cameraName}}",
-        "successWithRestart": "设置已复制到 {{cameraName}}。请重启 Frigate 以应用所有更改。",
+        "successWithRestart": "设置已复制到 {{cameraName}}。请重启 Orbi360 NVR 以应用所有更改。",
         "successMulti_other": "设置已复制到 {{count}} 个摄像头",
-        "successMultiWithRestart_other": "设置已复制到 {{count}} 个摄像头。请重启 Frigate 以应用所有更改。",
+        "successMultiWithRestart_other": "设置已复制到 {{count}} 个摄像头。请重启 Orbi360 NVR 以应用所有更改。",
         "partialFailure": "{{successCount}} 个部分已应用；'{{failedSection}}' 失败：{{errorMessage}}",
         "partialFailureMulti": "已复制到 {{successCount}} 个摄像头；{{failed}} 个失败：{{errorMessage}}",
         "newCameraPartialFailure": "摄像头 {{cameraName}} 已创建，但部分设置复制失败：{{errorMessage}}",
@@ -1549,21 +1549,21 @@
     "title": "摄像头核查设置",
     "object_descriptions": {
       "title": "生成式AI目标描述",
-      "desc": "临时启用或禁用此摄像头的 生成式AI目标描述 功能，直到 Frigate 重启。禁用后，系统将不再请求该摄像头追踪目标和物体的AI生成描述。"
+      "desc": "临时启用或禁用此摄像头的 生成式AI目标描述 功能，直到 Orbi360 NVR 重启。禁用后，系统将不再请求该摄像头追踪目标和物体的AI生成描述。"
     },
     "review_descriptions": {
       "title": "生成式 AI 核查总结",
-      "desc": "临时开关该摄像头的 生成式 AI 核查总结 功能，直到 Frigate 重启。禁用后，系统将不再请求 AI 生成该摄像头核查项目的总结。"
+      "desc": "临时开关该摄像头的 生成式 AI 核查总结 功能，直到 Orbi360 NVR 重启。禁用后，系统将不再请求 AI 生成该摄像头核查项目的总结。"
     },
     "review": {
       "title": "核查",
-      "desc": "临时开关该摄像头的警报与检测项生成功能，直到 Frigate 重启后恢复。禁用期间，系统将不再生成新的核查项目。 ",
+      "desc": "临时开关该摄像头的警报与检测项生成功能，直到 Orbi360 NVR 重启后恢复。禁用期间，系统将不再生成新的核查项目。 ",
       "alerts": "警报 ",
       "detections": "检测 "
     },
     "reviewClassification": {
       "title": "核查分类",
-      "desc": "Frigate 将核查项的严重程度分为“警报”和“检测”两个等级。默认情况下，所有的<strong>人</strong>、<strong>汽车</strong> 目标都将视为警报。你可以通过修改配置文件配置区域来细分。",
+      "desc": "Orbi360 NVR 将核查项的严重程度分为“警报”和“检测”两个等级。默认情况下，所有的<strong>人</strong>、<strong>汽车</strong> 目标都将视为警报。你可以通过修改配置文件配置区域来细分。",
       "noDefinedZones": "此摄像头未设置任何监控区。",
       "objectAlertsTips": "所有 {{alertsLabels}} 类目标或物体在 {{cameraName}} 下都将视为警报。",
       "zoneObjectAlertsTips": "所有 {{alertsLabels}} 类目标或物体在 {{cameraName}} 下的 {{zone}} 区域内都将视为警报。",
@@ -1868,7 +1868,7 @@
     "title": "维护",
     "sync": {
       "title": "媒体同步",
-      "desc": "Frigate 会根据您的保留配置定期清理媒体文件。出现少量孤立文件是正常现象。使用此功能可以删除磁盘上不再被数据库引用的孤立媒体文件。",
+      "desc": "Orbi360 NVR 会根据您的保留配置定期清理媒体文件。出现少量孤立文件是正常现象。使用此功能可以删除磁盘上不再被数据库引用的孤立媒体文件。",
       "started": "媒体同步已启动。",
       "alreadyRunning": "同步任务已在运行中",
       "error": "启动同步失败",
@@ -1915,10 +1915,10 @@
     },
     "regionGrid": {
       "title": "区域网格",
-      "desc": "区域网格是一种优化功能，它会学习不同大小的目标通常出现在每个摄像头视野中的位置。Frigate 利用这些数据来高效地确定检测区域的大小。该网格会根据追踪目标数据自动构建。",
+      "desc": "区域网格是一种优化功能，它会学习不同大小的目标通常出现在每个摄像头视野中的位置。Orbi360 NVR 利用这些数据来高效地确定检测区域的大小。该网格会根据追踪目标数据自动构建。",
       "clear": "清除区域网格",
       "clearConfirmTitle": "清除区域网格",
-      "clearConfirmDesc": "除非你最近更改了检测器模型大小或摄像头的物理位置，并且遇到了目标追踪问题，否则不建议清除区域网格。网格会随着目标的追踪自动重建。更改需要重启 Frigate 才能生效。",
+      "clearConfirmDesc": "除非你最近更改了检测器模型大小或摄像头的物理位置，并且遇到了目标追踪问题，否则不建议清除区域网格。网格会随着目标的追踪自动重建。更改需要重启 Orbi360 NVR 才能生效。",
       "clearSuccess": "区域网格清除成功",
       "clearError": "清除区域网格失败",
       "restartRequired": "需要重启以使区域网格更改生效"
@@ -1936,7 +1936,7 @@
   "toast": {
     "success": "设置保存成功",
     "applied": "设置应用成功",
-    "successRestartRequired": "设置保存成功。请重启 Frigate 以应用更改。",
+    "successRestartRequired": "设置保存成功。请重启 Orbi360 NVR 以应用更改。",
     "error": "保存设置失败",
     "validationError": "验证失败：{{message}}",
     "resetSuccess": "已重置为全局默认值",
@@ -1944,7 +1944,7 @@
     "saveAllSuccess_other": "所有 {{count}} 个部分保存成功。",
     "saveAllPartial_other": "已保存 {{successCount}} / {{totalCount}} 个部分。{{failCount}} 个失败。",
     "saveAllFailure": "保存所有部分失败。",
-    "saveAllSuccessRestartRequired_other": "成功保存 {{count}} 个部分。重启 Frigate 以生效。"
+    "saveAllSuccessRestartRequired_other": "成功保存 {{count}} 个部分。重启 Orbi360 NVR 以生效。"
   },
   "unsavedChanges": "您有未保存的更改",
   "confirmReset": "确认重置",
@@ -2082,7 +2082,7 @@
       "recordDisabled": "录制已禁用，不会生成核查记录项。",
       "detectDisabled": "目标检测已禁用。核查记录需要依靠检测到的目标来对警报和检测事件进行分类。",
       "allNonAlertDetections": "所有非警报类活动都将被记录为检测事件。",
-      "genaiImageSourceRecordingsRecordDisabled": "图像源虽然设置为“录制”，但录制功能已关闭。Frigate 将自动降级使用预览图片。"
+      "genaiImageSourceRecordingsRecordDisabled": "图像源虽然设置为“录制”，但录制功能已关闭。Orbi360 NVR 将自动降级使用预览图片。"
     },
     "lpr": {
       "vehicleNotTracked": "车牌识别需要先追踪到车辆才能工作。请在该摄像头的检测目标中添加“汽车”或其他类型的车辆目标。",
@@ -2138,7 +2138,7 @@
       "inputsMissingGo2rtcStream": "下面的输入指向了一个已不存在的 go2rtc 转流。请选择一个现有的转流或手动输入摄像头的 URL，否则此摄像头将无法连接。"
     },
     "model": {
-      "optimizedFor320": "Frigate 针对了 320x320 的模型进行优化，这是大多数设置的最佳选择。640x640 模型速度较慢，仅在特定场景下有帮助。",
+      "optimizedFor320": "Orbi360 NVR 针对了 320x320 的模型进行优化，这是大多数设置的最佳选择。640x640 模型速度较慢，仅在特定场景下有帮助。",
       "inputDimensionsNotDetectResolution": "模型输入的宽度和高度是目标检测模型的输入尺寸，而不是你摄像头的检测分辨率。它们应该与你正在使用的模型的尺寸相匹配，通常是一个方形尺寸，如320x320或640x640。"
     }
   },
@@ -2230,7 +2230,7 @@
       "noModelSelected": "选择 Frigate+ 模型"
     },
     "toast": {
-      "saveSuccess": "检测器与模型设置已保存，请重启 Frigate 以生效配置。",
+      "saveSuccess": "检测器与模型设置已保存，请重启 Orbi360 NVR 以生效配置。",
       "saveError": "保存检测器及模型设置失败"
     },
     "unsavedChanges": "检测器与模型配置存在未保存修改",

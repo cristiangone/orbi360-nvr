@@ -1,7 +1,7 @@
 {
   "time": {
     "justNow": "כעת",
-    "untilForRestart": "עד לאתחול של Frigate.",
+    "untilForRestart": "עד לאתחול של Orbi360 NVR.",
     "untilRestart": "עד לאתחול",
     "ago": "לפני {{timeAgo}}",
     "today": "היום",
@@ -226,7 +226,7 @@
     "help": "עזרה",
     "documentation": {
       "title": "תיעוד",
-      "label": "תיעוד Frigate"
+      "label": "תיעוד Orbi360 NVR"
     },
     "restart": "הפעלה מחדש",
     "live": {
@@ -266,7 +266,7 @@
     "title": "הרשאה",
     "admin": "מנהל",
     "viewer": "צופה",
-    "desc": "למנהלי מערכת יש גישה מלאה לכל התכונות בממשק המשתמש של Frigate. הצופים מוגבלים לצפייה במצלמות, סקירת פריטים וצילומים היסטוריים בממשק המשתמש."
+    "desc": "למנהלי מערכת יש גישה מלאה לכל התכונות בממשק המשתמש של Orbi360 NVR. הצופים מוגבלים לצפייה במצלמות, סקירת פריטים וצילומים היסטוריים בממשק המשתמש."
   },
   "pagination": {
     "next": {
@@ -283,10 +283,10 @@
   "accessDenied": {
     "title": "הגישה נדחתה",
     "desc": "אין לך הרשאה לצפות בדף הזה.",
-    "documentTitle": "גישה נדחתה - Frigate"
+    "documentTitle": "גישה נדחתה - Orbi360 NVR"
   },
   "notFound": {
-    "documentTitle": "לא נמצא - Frigate",
+    "documentTitle": "לא נמצא - Orbi360 NVR",
     "title": "404",
     "desc": "דף לא נמצא"
   },
@@ -299,7 +299,7 @@
   },
   "field": {
     "optional": "אופציונלי",
-    "internalID": "המזהה הפנימי ש־Frigate משתמש בו בהגדרות ובמסד הנתונים"
+    "internalID": "המזהה הפנימי ש־Orbi360 NVR משתמש בו בהגדרות ובמסד הנתונים"
   },
   "information": {
     "pixels": "{{area}}px"

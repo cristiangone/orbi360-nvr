@@ -1,18 +1,18 @@
 {
   "documentTitle": {
-    "default": "Ayarlar - Frigate",
-    "classification": "Sınıflandırma Ayarları - Frigate",
-    "camera": "Kamera Ayarları - Frigate",
-    "masksAndZones": "Maske ve Alan Düzenleyici - Frigate",
-    "authentication": "Kimlik Doğrulama Ayarları - Frigate",
-    "motionTuner": "Hareket Algılama Ayarları - Frigate",
-    "frigatePlus": "Frigate+ Ayarları - Frigate",
-    "object": "Hata Ayıklama - Frigate",
-    "general": "Kullanıcı Arayüzü Ayarları – Frigate",
-    "notifications": "Bildirim Ayarları - Frigate",
-    "enrichments": "Zenginleştirme Ayarları - Frigate",
-    "cameraManagement": "Kameraları Yönet - Frigate",
-    "cameraReview": "Kamera İnceleme Ayarları - Frigate"
+    "default": "Ayarlar - Orbi360 NVR",
+    "classification": "Sınıflandırma Ayarları - Orbi360 NVR",
+    "camera": "Kamera Ayarları - Orbi360 NVR",
+    "masksAndZones": "Maske ve Alan Düzenleyici - Orbi360 NVR",
+    "authentication": "Kimlik Doğrulama Ayarları - Orbi360 NVR",
+    "motionTuner": "Hareket Algılama Ayarları - Orbi360 NVR",
+    "frigatePlus": "Frigate+ Ayarları - Orbi360 NVR",
+    "object": "Hata Ayıklama - Orbi360 NVR",
+    "general": "Kullanıcı Arayüzü Ayarları – Orbi360 NVR",
+    "notifications": "Bildirim Ayarları - Orbi360 NVR",
+    "enrichments": "Zenginleştirme Ayarları - Orbi360 NVR",
+    "cameraManagement": "Kameraları Yönet - Orbi360 NVR",
+    "cameraReview": "Kamera İnceleme Ayarları - Orbi360 NVR"
   },
   "menu": {
     "masksAndZones": "Maskeler / Alanlar",
@@ -116,7 +116,7 @@
         },
         "desc": "Anlamsal arama için kullanılan dil modelinin büyüklüğü."
       },
-      "desc": "Frigate'daki Anlamsal Arama özelliği inceleme öğelerinizde takip edilen nesneleri bizzat nesnenin resmi ile aratarak ya da otomatik olarak veya kullanıcı tarafından yazılmış bir metin açıklaması içinde aratarak bulmanıza imkan sağlar."
+      "desc": "Orbi360 NVR'daki Anlamsal Arama özelliği inceleme öğelerinizde takip edilen nesneleri bizzat nesnenin resmi ile aratarak ya da otomatik olarak veya kullanıcı tarafından yazılmış bir metin açıklaması içinde aratarak bulmanıza imkan sağlar."
     },
     "faceRecognition": {
       "modelSize": {
@@ -132,21 +132,21 @@
         "desc": "Yüz tanıma için kullanılan modelin boyutu."
       },
       "title": "Yüz Tanıma",
-      "desc": "Yüz tanıma, tanınan insanlara isim vermenize olanak tanır ve bu yüzler tanındığında Frigate, kişinin adını alt etiket olarak ekler. Bu bilgi; kullanıcı arayüzü, filtreler ve bildirimlerde gösterilir.",
+      "desc": "Yüz tanıma, tanınan insanlara isim vermenize olanak tanır ve bu yüzler tanındığında Orbi360 NVR, kişinin adını alt etiket olarak ekler. Bu bilgi; kullanıcı arayüzü, filtreler ve bildirimlerde gösterilir.",
       "readTheDocumentation": "Dökümantasyonu Oku"
     },
     "toast": {
       "error": "Yapılandırma değişiklikleri kaydedilemedi: {{errorMessage}}",
-      "success": "Sınıflandırma ayarları kaydedildi. Değişikliklerinizi uygulamak için Frigate'i yeniden başlatın."
+      "success": "Sınıflandırma ayarları kaydedildi. Değişikliklerinizi uygulamak için Orbi360 NVR'i yeniden başlatın."
     },
     "licensePlateRecognition": {
-      "desc": "Frigate araç plakalarını tanıyabilir ve algılanan karakterleri otomatik olarak recognized_license_plate alanına veya belirli bir plaka için tanımladığınız bir takma ismi alt etiket olarak ilgili aracın tanımlanan nesnesine ekleyebilir. Bu sistem, garajınıza giren veya caddeden geçen araçların plakalarını okumak için kullanılabilir.",
+      "desc": "Orbi360 NVR araç plakalarını tanıyabilir ve algılanan karakterleri otomatik olarak recognized_license_plate alanına veya belirli bir plaka için tanımladığınız bir takma ismi alt etiket olarak ilgili aracın tanımlanan nesnesine ekleyebilir. Bu sistem, garajınıza giren veya caddeden geçen araçların plakalarını okumak için kullanılabilir.",
       "title": "Plaka Tanıma",
       "readTheDocumentation": "Dökümantasyonu Oku"
     },
     "birdClassification": {
       "title": "Kuş Sınıflandırma",
-      "desc": "Kuş Sınıflandırma özelliği, bilinen kuş türlerini kuantize edilmiş bir Tensorflow modeli kullanarak teşhis etmenizi sağlar. Model bir kuş türünü teşhis ettiğinde, Frigate, bu türün adını alt etiket olarak ekler. Bu bilgi; kullanıcı arayüzü, filtreler ve bildirimlerde gösterilir."
+      "desc": "Kuş Sınıflandırma özelliği, bilinen kuş türlerini kuantize edilmiş bir Tensorflow modeli kullanarak teşhis etmenizi sağlar. Model bir kuş türünü teşhis ettiğinde, Orbi360 NVR, bu türün adını alt etiket olarak ekler. Bu bilgi; kullanıcı arayüzü, filtreler ve bildirimlerde gösterilir."
     },
     "restart_required": "Yeniden Başlatma Gerekli (Sınıflandırma ayarları değiştirildi)"
   },
@@ -166,7 +166,7 @@
       "title": "İncele",
       "alerts": "Alarmlar ",
       "detections": "Tespitler ",
-      "desc": "Bu kamera için uyarıları ve algılamaları geçici olarak etkinleştirin/devre dışı bırakın. Frigate yeniden başlatıldığında yapılandırmanızdaki tercihlere geri dönülür. Devre dışı bırakıldığında, yeni inceleme öğeleri oluşturulamaz. "
+      "desc": "Bu kamera için uyarıları ve algılamaları geçici olarak etkinleştirin/devre dışı bırakın. Orbi360 NVR yeniden başlatıldığında yapılandırmanızdaki tercihlere geri dönülür. Devre dışı bırakıldığında, yeni inceleme öğeleri oluşturulamaz. "
     },
     "reviewClassification": {
       "readTheDocumentation": "Dökümantasyonu Oku",
@@ -177,7 +177,7 @@
         "text": "{{cameraName}} kamerasındaki {{zone}} alanındaki kategorize edilmemiş bütün {{detectionsLabels}} nesneleri Algılama olarak sınıflandırılacaktır."
       },
       "zoneObjectAlertsTips": "{{cameraName}} kamerasındaki {{zone}} alanında algılanan bütün {{alertsLabels}} nesneleri Alarm olarak sınıflandırılacaktır.",
-      "desc": "Frigate tespit edilen İnceleme öğelerini Alarmlar ve Tespitler olarak kategorize eder. Varsayılan olarak bütün <em>kişi</em> ve <em>araba</em> nesneleri Alarm olarak sınıflandırılır. İnceleme öğelerinizin sınıflandırmasını tespit sınırlandırma sayfasında gerekli alanlar seçerek sınırlandırabilirsiniz.",
+      "desc": "Orbi360 NVR tespit edilen İnceleme öğelerini Alarmlar ve Tespitler olarak kategorize eder. Varsayılan olarak bütün <em>kişi</em> ve <em>araba</em> nesneleri Alarm olarak sınıflandırılır. İnceleme öğelerinizin sınıflandırmasını tespit sınırlandırma sayfasında gerekli alanlar seçerek sınırlandırabilirsiniz.",
       "objectDetectionsTips": "{{cameraName}} kamerasında kategorize edilmemiş bütün {{detectionsLabels}} nesneleri, hangi alanda olduklarına bakılmaksızın Algılama olarak sınıflandırılacaktır.",
       "selectDetectionsZones": "Algılamalar için alanları seçin",
       "title": "Tespit Sınıflandırmaları",
@@ -185,12 +185,12 @@
       "objectAlertsTips": "{{cameraName}} kamerasındaki bütün {{alertsLabels}} nesneleri Alarm olarak sınıflandırılacaktır.",
       "limitDetections": "Algılamaları belirli alanlara sınırla",
       "toast": {
-        "success": "İnceleme Sınıflandırma ayarları kaydedildi. Değişiklikleri uygulamak için Frigate'i yeniden başlatın."
+        "success": "İnceleme Sınıflandırma ayarları kaydedildi. Değişiklikleri uygulamak için Orbi360 NVR'i yeniden başlatın."
       },
       "unsavedChanges": "{{camera}} için Kaydedilmemiş Sınıflandırma Ayarları"
     },
     "streams": {
-      "desc": "Frigate yeniden başlataılana kadar bir kamerayı devre dışı bırakın. Bir kameranın devre dışı bırakılması, Frigate'in bu kamerayı işlemesini tamamen durdurur. Algılama, kayıt ve hata ayıklama özellikleri kullanılamaz.<br /> <em>Not: Bu eylem, go2rtc'deki yeniden akışları devre dışı bırakmaz.</em>",
+      "desc": "Orbi360 NVR yeniden başlataılana kadar bir kamerayı devre dışı bırakın. Bir kameranın devre dışı bırakılması, Orbi360 NVR'in bu kamerayı işlemesini tamamen durdurur. Algılama, kayıt ve hata ayıklama özellikleri kullanılamaz.<br /> <em>Not: Bu eylem, go2rtc'deki yeniden akışları devre dışı bırakmaz.</em>",
       "title": "Akışlar"
     },
     "object_descriptions": {
@@ -297,7 +297,7 @@
     },
     "zones": {
       "label": "Alanlar",
-      "documentTitle": "Alanı Düzenle - Frigate",
+      "documentTitle": "Alanı Düzenle - Orbi360 NVR",
       "desc": {
         "documentation": "Dökümantasyon",
         "title": "Alanlar, görüntüde belirli bir alanını tanımlamanıza olanak tanır. Böylece bir nesnenin belirli bir alanda olup olmadığını tespit edebilirsiniz."
@@ -374,7 +374,7 @@
       },
       "label": "Hareket Maskesi",
       "edit": "Hareket Maskesini Düzenle",
-      "documentTitle": "Hareket Maskesini Düzenle - Frigate"
+      "documentTitle": "Hareket Maskesini Düzenle - Orbi360 NVR"
     },
     "objectMasks": {
       "desc": {
@@ -397,7 +397,7 @@
           "title": "{{polygonName}} kaydedildi."
         }
       },
-      "documentTitle": "Nesne Maskesini Düzenle - Frigate",
+      "documentTitle": "Nesne Maskesini Düzenle - Orbi360 NVR",
       "label": "Nesne Maskeleri",
       "clickDrawPolygon": "Görüntü üzerinde bir çokgen çizmek için tıklayın."
     },
@@ -419,7 +419,7 @@
       "success": "Hareket ayarları kaydedildi."
     },
     "desc": {
-      "title": "Frigate, kamera görüntüsünde nesne tespiti ile kontrol etmeye değer bir şey olup olmadığını görmek için ilk olarak hareket algılamayı kullanır.",
+      "title": "Orbi360 NVR, kamera görüntüsünde nesne tespiti ile kontrol etmeye değer bir şey olup olmadığını görmek için ilk olarak hareket algılamayı kullanır.",
       "documentation": "Hareket Algılama İnce Ayar Kılavuzunu Okuyun"
     },
     "improveContrast": {
@@ -462,7 +462,7 @@
       "tips": "Alanını ve oranını göstermek için kamera görüntüsü üzerinde bir dikdörtgen çizmek için bu seçeneği etkinleştirin. Bu değerler daha sonra yapılandırmanızda nesne şekil filtresi parametrelerini ayarlamak için kullanılabilir."
     },
     "debugging": "Hata Ayıklama",
-    "detectorDesc": "Frigate, kamera video akışınızdaki nesneleri algılamak için algılayıcılar ({{detectors}}) kullanır.",
+    "detectorDesc": "Orbi360 NVR, kamera video akışınızdaki nesneleri algılamak için algılayıcılar ({{detectors}}) kullanır.",
     "noObjects": "Nesne Yok",
     "mask": {
       "title": "Hareket maskeleri",
@@ -492,7 +492,7 @@
     "title": "Kullanıcılar",
     "management": {
       "title": "Kullanıcı Yönetimi",
-      "desc": "Bu Frigate kurulumundaki kullanıcı hesaplarını yönetin."
+      "desc": "Bu Orbi360 NVR kurulumundaki kullanıcı hesaplarını yönetin."
     },
     "addUser": "Kullanıcı Ekle",
     "toast": {
@@ -567,7 +567,7 @@
       },
       "createUser": {
         "title": "Yeni Kullanıcı Oluştur",
-        "desc": "Yeni bir kullanıcı hesabı ekleyin ve Frigate'deki erişim düzeylerini sınırlandırmak için bir rol belirtin.",
+        "desc": "Yeni bir kullanıcı hesabı ekleyin ve Orbi360 NVR'deki erişim düzeylerini sınırlandırmak için bir rol belirtin.",
         "usernameOnlyInclude": "Kullanıcı adı yalnızca harfler, sayılar, nokta veya alt çizgi (_) içerebilir",
         "confirmPassword": "Lütfen parolanızı onaylayın"
       },
@@ -609,12 +609,12 @@
     "notificationSettings": {
       "title": "Bildirim Ayarları",
       "documentation": "Dökümantasyonu Oku",
-      "desc": "Frigate, tarayıcıdan veya web uygulaması (PWA) olarak kullanıyor olmanız fark etmeksizin, tarayıcınızın bildirimler özelliği aracılığıyla bildirimler gönderebilir."
+      "desc": "Orbi360 NVR, tarayıcıdan veya web uygulaması (PWA) olarak kullanıyor olmanız fark etmeksizin, tarayıcınızın bildirimler özelliği aracılığıyla bildirimler gönderebilir."
     },
     "notificationUnavailable": {
       "title": "Bildirimler Kullanılamıyor",
       "documentation": "Dökümantasyonu Oku",
-      "desc": "Web push bildirimleri güvenli bir bağlam gerektirir (<code>https://…</code>). Bu, tarayıcı sınırlamasıdır. Bildirimleri kullanmak için Frigate'e güvenli bir şekilde (https) erişin."
+      "desc": "Web push bildirimleri güvenli bir bağlam gerektirir (<code>https://…</code>). Bu, tarayıcı sınırlamasıdır. Bildirimleri kullanmak için Orbi360 NVR'e güvenli bir şekilde (https) erişin."
     },
     "globalSettings": {
       "title": "Genel Ayarlar",
@@ -644,7 +644,7 @@
     },
     "toast": {
       "success": {
-        "registered": "Bildirimlere başarıyla kaydolundu. Herhangi bir bildirimin (test bildirimi dahil) gönderilebilmesi için Frigate'in yeniden başlatılması gereklidir.",
+        "registered": "Bildirimlere başarıyla kaydolundu. Herhangi bir bildirimin (test bildirimi dahil) gönderilebilmesi için Orbi360 NVR'in yeniden başlatılması gereklidir.",
         "settingSaved": "Bildirim ayarları kaydedildi."
       },
       "error": {
@@ -698,7 +698,7 @@
       }
     },
     "toast": {
-      "success": "Frigate+ ayarları kaydedildi. Değişiklikleri uygulamak için Frigate'i yeniden başlatın.",
+      "success": "Frigate+ ayarları kaydedildi. Değişiklikleri uygulamak için Orbi360 NVR'i yeniden başlatın.",
       "error": "Yapılandırma değişiklikleri kaydedilemedi: {{errorMessage}}"
     },
     "restart_required": "Yeniden Başlatma Gerekli (Frigate+ modeli değiştirildi)",
@@ -757,12 +757,12 @@
     },
     "licensePlateRecognition": {
       "title": "Plaka Tanıma",
-      "desc": "Frigate tespit edilen araçların tescil plakalarındaki karakterleri okuyabilir ve ilgili araba türündeki nesnenin recognized_license_plate bölümüne, varsa bilindik bir adını da sub_label bölümüne ekleyebilir. Bu özelliği bir yoldan geçen yahut evin önüne park eden araçların plakalarını okumak için kullanabilirsiniz.",
+      "desc": "Orbi360 NVR tespit edilen araçların tescil plakalarındaki karakterleri okuyabilir ve ilgili araba türündeki nesnenin recognized_license_plate bölümüne, varsa bilindik bir adını da sub_label bölümüne ekleyebilir. Bu özelliği bir yoldan geçen yahut evin önüne park eden araçların plakalarını okumak için kullanabilirsiniz.",
       "readTheDocumentation": "Dökümantasyonu Oku"
     },
     "restart_required": "Yeniden başlatma gerekli (zenginleştirme ayarları değişti)",
     "toast": {
-      "success": "Zenginleştirme ayarları kaydedildi. Değişiklikleri uygulamak için Frigate'i yeniden başlatın.",
+      "success": "Zenginleştirme ayarları kaydedildi. Değişiklikleri uygulamak için Orbi360 NVR'i yeniden başlatın.",
       "error": "Yapılandırma değişiklikleri kaydedilemedi: {{errorMessage}}"
     }
   },
@@ -808,7 +808,7 @@
         },
         "actions": {
           "title": "Eylemler",
-          "desc": "Varsayılan olarak, Frigate tüm tetikleyici isimlerini bir MQTT mesajı olarak gönderir. Alt etiketler, tetikleyici ismini nesne etiketine ekler. Nitelikler, izlenen nesne meta verilerinde ayrı olarak depolanan aranabilir meta verilerdir.",
+          "desc": "Varsayılan olarak, Orbi360 NVR tüm tetikleyici isimlerini bir MQTT mesajı olarak gönderir. Alt etiketler, tetikleyici ismini nesne etiketine ekler. Nitelikler, izlenen nesne meta verilerinde ayrı olarak depolanan aranabilir meta verilerdir.",
           "error": {
             "min": "En az bir eylem seçilmelidir."
           }
@@ -890,7 +890,7 @@
   },
   "cameraWizard": {
     "title": "Kamera Ekle",
-    "description": "Aşağıdaki adımları izleyerek Frigate kurulumunuza yeni bir kamera ekleyin.",
+    "description": "Aşağıdaki adımları izleyerek Orbi360 NVR kurulumunuza yeni bir kamera ekleyin.",
     "steps": {
       "nameAndConnection": "İsim & Bağlantı",
       "probeOrSnapshot": "Probe veya Anlık Görüntü",
@@ -1033,7 +1033,7 @@
       "estimatedBandwidth": "Tahmini Bant Genişliği",
       "roles": "Roller",
       "ffmpegModule": "Yayın uyumluluk modunu kullan",
-      "ffmpegModuleDescription": "Yayın birkaç denemeden sonra yüklenmezse, bunu etkinleştirmeyi deneyin. Etkinleştirildiğinde, Frigate go2rtc ile ffmpeg modülünü kullanacaktır. Bu, bazı kamera yayınları ile daha iyi uyumluluk sağlayabilir.",
+      "ffmpegModuleDescription": "Yayın birkaç denemeden sonra yüklenmezse, bunu etkinleştirmeyi deneyin. Etkinleştirildiğinde, Orbi360 NVR go2rtc ile ffmpeg modülünü kullanacaktır. Bu, bazı kamera yayınları ile daha iyi uyumluluk sağlayabilir.",
       "none": "Hiçbiri",
       "error": "Hata",
       "description": "Yeni kameranızı kaydetmeden önce son doğrulama ve analiz. Kaydetmeden önce her akışı bağlayın.",
@@ -1085,7 +1085,7 @@
     "backToSettings": "Kamera Ayarlarına Dön",
     "streams": {
       "title": "Kameraları Etkinleştir / Devre Dışı Bırak",
-      "desc": "Frigate yeniden başlatılana kadar bir kamerayı geçici olarak devre dışı bırakın. Bir kamerayı devre dışı bırakmak, Frigate'in bu kameranın akışlarını işlemesini tamamen durdurur. Algılama, kayıt ve hata ayıklama kullanılamaz.<br /> <em>Not: Bu, go2rtc yeniden akışlarını devre dışı bırakmaz.</em>"
+      "desc": "Orbi360 NVR yeniden başlatılana kadar bir kamerayı geçici olarak devre dışı bırakın. Bir kamerayı devre dışı bırakmak, Orbi360 NVR'in bu kameranın akışlarını işlemesini tamamen durdurur. Algılama, kayıt ve hata ayıklama kullanılamaz.<br /> <em>Not: Bu, go2rtc yeniden akışlarını devre dışı bırakmaz.</em>"
     },
     "cameraConfig": {
       "add": "Kamera Ekle",
@@ -1121,7 +1121,7 @@
     "title": "Kamera İnceleme Ayarları",
     "object_descriptions": {
       "title": "Üretken Yapay Zeka Nesne Açıklamaları",
-      "desc": "Frigate yeniden başlatılana kadar bu kamera için Üretken Yapay Zeka nesne açıklamalarını geçici olarak etkinleştirin/devre dışı bırakın. Devre dışı bırakıldığında, bu kameradaki izlenen nesneler için yapay zeka tarafından oluşturulan açıklamalar istenmeyecektir."
+      "desc": "Orbi360 NVR yeniden başlatılana kadar bu kamera için Üretken Yapay Zeka nesne açıklamalarını geçici olarak etkinleştirin/devre dışı bırakın. Devre dışı bırakıldığında, bu kameradaki izlenen nesneler için yapay zeka tarafından oluşturulan açıklamalar istenmeyecektir."
     },
     "review_descriptions": {
       "title": "Üretken Yapay Zeka İnceleme Açıklamaları",
@@ -1129,13 +1129,13 @@
     },
     "review": {
       "title": "İncele",
-      "desc": "Frigate yeniden başlatılana kadar bu kamera için uyarıları ve algılamaları geçici olarak etkinleştirin/devre dışı bırakın. Devre dışı bırakıldığında, yeni inceleme öğeleri oluşturulmaz. ",
+      "desc": "Orbi360 NVR yeniden başlatılana kadar bu kamera için uyarıları ve algılamaları geçici olarak etkinleştirin/devre dışı bırakın. Devre dışı bırakıldığında, yeni inceleme öğeleri oluşturulmaz. ",
       "alerts": "Uyarılar ",
       "detections": "Tespitler "
     },
     "reviewClassification": {
       "title": "Sınıflandırmayı İncele",
-      "desc": "Frigate, inceleme öğelerini Uyarılar ve Algılamalar olarak kategorilere ayırır. Varsayılan olarak, tüm <em>kişi</em> ve <em>araba</em> nesneleri Uyarı olarak kabul edilir. İnceleme öğelerinizin kategorilendirmesini, bunlar için gerekli bölgeleri yapılandırarak iyileştirebilirsiniz.",
+      "desc": "Orbi360 NVR, inceleme öğelerini Uyarılar ve Algılamalar olarak kategorilere ayırır. Varsayılan olarak, tüm <em>kişi</em> ve <em>araba</em> nesneleri Uyarı olarak kabul edilir. İnceleme öğelerinizin kategorilendirmesini, bunlar için gerekli bölgeleri yapılandırarak iyileştirebilirsiniz.",
       "noDefinedZones": "Bu kamera için herhangi bir bölge tanımlanmamıştır.",
       "objectAlertsTips": "{{cameraName}} üzerindeki tüm {{alertsLabels}} nesneleri Uyarı olarak gösterilecektir.",
       "zoneObjectAlertsTips": "{{cameraName}} üzerinde, {{zone}} bölgesinde tespit edilen tüm {{alertsLabels}} nesneleri Uyarı olarak gösterilecektir.",
@@ -1150,14 +1150,14 @@
       "selectDetectionsZones": "Tespitler için bölgeleri seçin",
       "limitDetections": "Tespitleri belirli bölgelerle sınırlayın",
       "toast": {
-        "success": "Sınıflandırma yapılandırması kaydedildi. Değişiklikleri uygulamak için Frigate'i yeniden başlatın."
+        "success": "Sınıflandırma yapılandırması kaydedildi. Değişiklikleri uygulamak için Orbi360 NVR'i yeniden başlatın."
       }
     }
   },
   "roles": {
     "management": {
       "title": "İzleyici Rol Yönetimi",
-      "desc": "Bu Frigate örneği için özel görüntüleyici rollerini ve kamera erişim izinlerini yönetin."
+      "desc": "Bu Orbi360 NVR örneği için özel görüntüleyici rollerini ve kamera erişim izinlerini yönetin."
     },
     "addRole": "Rol Ekle",
     "table": {

@@ -1,5 +1,5 @@
 {
-  "documentTitle": "分类模型 - Frigate",
+  "documentTitle": "分类模型 - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "删除分类图片",
     "renameCategory": "重命名类别",
@@ -26,7 +26,7 @@
       "deleteImageFailed": "删除失败：{{errorMessage}}",
       "deleteCategoryFailed": "删除类别失败：{{errorMessage}}",
       "categorizeFailed": "图片分类失败：{{errorMessage}}",
-      "trainingFailed": "训练模型失败，请查看 Frigate 日志获取详情。",
+      "trainingFailed": "训练模型失败，请查看 Orbi360 NVR 日志获取详情。",
       "deleteModelFailed": "删除模型失败：{{errorMessage}}",
       "updateModelFailed": "更新模型失败：{{errorMessage}}",
       "trainingFailedToStart": "开始训练模型失败：{{errorMessage}}",
@@ -129,7 +129,7 @@
       "selectImagesDescription": "点击图像进行选择，完成该类别后点击“继续”。",
       "generating": {
         "title": "正在生成样本图片",
-        "description": "Frigate 正在从录像中提取代表性图片。这可能需要一些时间……"
+        "description": "Orbi360 NVR 正在从录像中提取代表性图片。这可能需要一些时间……"
       },
       "training": {
         "title": "正在训练模型",

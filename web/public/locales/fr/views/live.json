@@ -1,9 +1,9 @@
 {
   "documentTitle": {
-    "default": "Direct - Frigate"
+    "default": "Direct - Orbi360 NVR"
   },
   "lowBandwidthMode": "Mode bande passante faible",
-  "documentTitle.withCamera": "{{camera}} - Direct - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Direct - Orbi360 NVR",
   "twoWayTalk": {
     "disable": "Désactiver la conversation bidirectionnelle",
     "enable": "Activer la conversation bidirectionnelle"
@@ -176,7 +176,7 @@
   },
   "noCameras": {
     "title": "Aucune caméra n'est configurée",
-    "description": "Pour commencer, connectez une caméra à Frigate.",
+    "description": "Pour commencer, connectez une caméra à Orbi360 NVR.",
     "buttonText": "Ajouter une caméra",
     "restricted": {
       "title": "Aucune caméra disponible",
@@ -184,7 +184,7 @@
     },
     "default": {
       "title": "Aucune caméra configurée",
-      "description": "Pour commencer, connectez une caméra à Frigate.",
+      "description": "Pour commencer, connectez une caméra à Orbi360 NVR.",
       "buttonText": "Ajouter une caméra"
     },
     "group": {

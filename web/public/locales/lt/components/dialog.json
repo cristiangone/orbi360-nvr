@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Esate įsitikinę, kad norite perkrauti Frigate?",
+    "title": "Esate įsitikinę, kad norite perkrauti Orbi360 NVR?",
     "button": "Perkrauti",
     "restarting": {
-      "title": "Frigate Persikrauna",
+      "title": "Orbi360 NVR Persikrauna",
       "content": "Šis puslapis persikraus už {{countdown}} sekundžių.",
       "button": "Priverstinai Perkrauti Dabar"
     },
-    "description": "Frigate laikinai sustabdoma, iki kol programa persikraus."
+    "description": "Orbi360 NVR laikinai sustabdoma, iki kol programa persikraus."
   },
   "explore": {
     "plus": {
@@ -174,10 +174,10 @@
     "shareTimestamp": {
       "label": "Pasidalinti Laiko tarpsniu",
       "title": "Pasidalinti Laiko tarpsniu",
-      "description": "Pasidalinti URL su grotuvo dabartinės pozicijos laiko žyma arba pasirinkti laiko tarpsni. Pastaba, tai nėra vieša nuoroda ir bus pasiekiama tik tiems vartotojams kuri turi prieigą prie Frigate ir šios kameros.",
+      "description": "Pasidalinti URL su grotuvo dabartinės pozicijos laiko žyma arba pasirinkti laiko tarpsni. Pastaba, tai nėra vieša nuoroda ir bus pasiekiama tik tiems vartotojams kuri turi prieigą prie Orbi360 NVR ir šios kameros.",
       "custom": "Pasirinktas Laiko tarpsnis",
       "button": "Dalintis Laiko Tarpsnio URL",
-      "shareTitle": "Frigate Peržiūros Laiko Juosta: {{camera}}"
+      "shareTitle": "Orbi360 NVR Peržiūros Laiko Juosta: {{camera}}"
     }
   },
   "search": {

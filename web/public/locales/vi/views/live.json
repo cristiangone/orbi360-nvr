@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Trực tiếp - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Trực tiếp - Frigate",
+  "documentTitle": "Trực tiếp - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Trực tiếp - Orbi360 NVR",
   "lowBandwidthMode": "Chế độ băng thông thấp",
   "twoWayTalk": {
     "enable": "Bật đàm thoại hai chiều",
@@ -179,7 +179,7 @@
   },
   "noCameras": {
     "title": "Không có camera nào được cấu hình",
-    "description": "Bắt đầu bằng cách kết nối một camera với Frigate.",
+    "description": "Bắt đầu bằng cách kết nối một camera với Orbi360 NVR.",
     "buttonText": "Thêm Camera",
     "restricted": {
       "title": "Không có Camera nào khả dụng",

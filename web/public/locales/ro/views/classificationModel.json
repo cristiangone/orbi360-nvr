@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Modele de clasificare - Frigate",
+  "documentTitle": "Modele de clasificare - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Șterge imaginile de clasificare",
     "renameCategory": "Redenumește clasa",
@@ -32,7 +32,7 @@
       "deleteImageFailed": "Ștergerea a eșuat: {{errorMessage}}",
       "deleteCategoryFailed": "Ștergerea clasei a eșuat: {{errorMessage}}",
       "categorizeFailed": "Categorisirea imaginii a eșuat: {{errorMessage}}",
-      "trainingFailed": "Antrenarea modelului a eșuat. Verifică jurnalele Frigate pentru detalii.",
+      "trainingFailed": "Antrenarea modelului a eșuat. Verifică jurnalele Orbi360 NVR pentru detalii.",
       "deleteModelFailed": "Ștergerea modelului a eșuat: {{errorMessage}}",
       "updateModelFailed": "Actualizarea modelului a eșuat: {{errorMessage}}",
       "renameCategoryFailed": "Redenumirea clasei a eșuat: {{errorMessage}}",
@@ -139,7 +139,7 @@
       "selectImagesDescription": "Apăsați pe imagini pentru a le selecta. Apăsați pe Continuare când ați terminat cu această clasă.",
       "generating": {
         "title": "Generare imagini de exemplu",
-        "description": "Frigate preia imagini reprezentative din înregistrările tale. Aceasta poate dura câteva momente..."
+        "description": "Orbi360 NVR preia imagini reprezentative din înregistrările tale. Aceasta poate dura câteva momente..."
       },
       "training": {
         "title": "Antrenare model",

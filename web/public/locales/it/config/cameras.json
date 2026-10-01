@@ -5,7 +5,7 @@
         "description": "Il nome della telecamera è obbligatorio"
     },
     "friendly_name": {
-        "description": "Nome descrittivo della telecamera utilizzato nell'interfaccia utente di Frigate",
+        "description": "Nome descrittivo della telecamera utilizzato nell'interfaccia utente di Orbi360 NVR",
         "label": "Nome descrittivo"
     },
     "enabled": {
@@ -180,7 +180,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Calibra all'avvio",
-                "description": "Misura la velocità dei motori PTZ all'avvio per migliorare la precisione del tracciamento. Frigate aggiornerà la configurazione con i valori di movement_weights dopo la calibrazione."
+                "description": "Misura la velocità dei motori PTZ all'avvio per migliorare la precisione del tracciamento. Orbi360 NVR aggiornerà la configurazione con i valori di movement_weights dopo la calibrazione."
             },
             "zooming": {
                 "label": "Modalità ingrandimento",
@@ -218,7 +218,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Ignora la discrepanza oraria",
-            "description": "Ignora le differenze di sincronizzazione oraria tra la telecamera e il server Frigate per la comunicazione ONVIF."
+            "description": "Ignora le differenze di sincronizzazione oraria tra la telecamera e il server Orbi360 NVR per la comunicazione ONVIF."
         },
         "label": "ONVIF",
         "port": {
@@ -875,7 +875,7 @@
         "label": "Zone",
         "friendly_name": {
             "label": "Nome zona",
-            "description": "Un nome descrittivo per la zona, visualizzato nell'interfaccia utente di Frigate. Se non specificato, verrà utilizzata una versione formattata del nome della zona."
+            "description": "Un nome descrittivo per la zona, visualizzato nell'interfaccia utente di Orbi360 NVR. Se non specificato, verrà utilizzata una versione formattata del nome della zona."
         },
         "filters": {
             "raw_mask": {

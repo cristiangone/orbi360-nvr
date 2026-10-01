@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Konfigurasjonsfil - Frigate",
+  "documentTitle": "Konfigurasjonsfil - Orbi360 NVR",
   "toast": {
     "error": {
       "savingError": "Feil ved lagring av konfigurasjon"
@@ -14,5 +14,5 @@
   "saveOnly": "Kun lagre",
   "confirm": "Avslutt uten å lagre?",
   "safeConfigEditor": "Konfigurasjonsfil (Sikker modus)",
-  "safeModeDescription": "Frigate er i sikker modus grunnet en feil i validering av konfigurasjonen."
+  "safeModeDescription": "Orbi360 NVR er i sikker modus grunnet en feil i validering av konfigurasjonen."
 }

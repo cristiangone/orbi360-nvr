@@ -6,7 +6,7 @@
     },
     "friendly_name": {
         "label": "Nom amistós",
-        "description": "Nom amigable de la càmera utilitzat a la interfície d'usuari de la Frigate"
+        "description": "Nom amigable de la càmera utilitzat a la interfície d'usuari de la Orbi360 NVR"
     },
     "enabled": {
         "label": "Habilitat",
@@ -811,7 +811,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Calibra a l'inici",
-                "description": "Mesura les velocitats del motor PTZ a l'inici per millorar la precisió del seguiment. Frigate actualitzarà la configuració amb «movtion.weights» després del calibratge."
+                "description": "Mesura les velocitats del motor PTZ a l'inici per millorar la precisió del seguiment. Orbi360 NVR actualitzarà la configuració amb «movtion.weights» després del calibratge."
             },
             "zooming": {
                 "label": "Mode de zoom",
@@ -848,7 +848,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Ignora el desajust de temps",
-            "description": "Ignora les diferències de sincronització de temps entre càmera i servidor Frigate per a la comunicació ONVIF."
+            "description": "Ignora les diferències de sincronització de temps entre càmera i servidor Orbi360 NVR per a la comunicació ONVIF."
         },
         "profile": {
             "label": "Perfil ONVIF",

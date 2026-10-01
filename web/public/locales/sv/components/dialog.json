@@ -2,12 +2,12 @@
   "restart": {
     "button": "Starta om",
     "restarting": {
-      "title": "Frigate startar om",
+      "title": "Orbi360 NVR startar om",
       "content": "Sidan uppdateras om {{countdown}} sekunder.",
       "button": "Tvinga omladdning nu"
     },
-    "title": "Är du säker på att du vill starta om Frigate?",
-    "description": "Frigate stoppas tillfälligt under omstarten."
+    "title": "Är du säker på att du vill starta om Orbi360 NVR?",
+    "description": "Orbi360 NVR stoppas tillfälligt under omstarten."
   },
   "explore": {
     "plus": {
@@ -183,10 +183,10 @@
     "shareTimestamp": {
       "label": "Dela tidsstämpel",
       "title": "Dela tidsstämpel",
-      "description": "Dela en tidsstämplad URL för spelarens nuvarande position eller välj en anpassad tidsstämpel. Observera att detta inte är en offentlig delnings-URL och endast är tillgänglig för användare med åtkomst till Frigate och den här kameran.",
+      "description": "Dela en tidsstämplad URL för spelarens nuvarande position eller välj en anpassad tidsstämpel. Observera att detta inte är en offentlig delnings-URL och endast är tillgänglig för användare med åtkomst till Orbi360 NVR och den här kameran.",
       "custom": "Anpassad tidsstämpel",
       "button": "Dela URL med tidsstämpel",
-      "shareTitle": "Tidsstämpel för Frigate-granskning: {{camera}}"
+      "shareTitle": "Tidsstämpel för Orbi360 NVR-granskning: {{camera}}"
     }
   },
   "imagePicker": {

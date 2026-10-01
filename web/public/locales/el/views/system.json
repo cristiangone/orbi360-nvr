@@ -1,13 +1,13 @@
 {
   "documentTitle": {
-    "cameras": "Στατιστικά Καμερών - Frigate",
-    "storage": "Στατιστικά αποθήκευσης - Frigate",
-    "general": "Γενικά στατιστικά - Frigate",
-    "enrichments": "Στατιστικά Εμπλουτισμού - Frigate",
+    "cameras": "Στατιστικά Καμερών - Orbi360 NVR",
+    "storage": "Στατιστικά αποθήκευσης - Orbi360 NVR",
+    "general": "Γενικά στατιστικά - Orbi360 NVR",
+    "enrichments": "Στατιστικά Εμπλουτισμού - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate αρχέιο καταγραφών - Frigate",
-      "go2rtc": "Αρχείο καταγραφής Go2RTC - Frigate",
-      "nginx": "Αρχείο καταγραφών Nginx - Frigate"
+      "frigate": "Orbi360 NVR αρχέιο καταγραφών - Orbi360 NVR",
+      "go2rtc": "Αρχείο καταγραφής Go2RTC - Orbi360 NVR",
+      "nginx": "Αρχείο καταγραφών Nginx - Orbi360 NVR"
     }
   },
   "title": "Σύστημα",

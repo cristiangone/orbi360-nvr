@@ -5,7 +5,7 @@
     },
     "friendly_name": {
         "label": "Nome amigável",
-        "description": "Nome amigável da câmera utilizado na Interface de Usuário do Frigate"
+        "description": "Nome amigável da câmera utilizado na Interface de Usuário do Orbi360 NVR"
     },
     "enabled": {
         "label": "Habilitado",
@@ -731,7 +731,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Calibrar ao iniciar",
-                "description": "Meça as velocidades do motor PTZ na inicialização para melhorar a precisão do rastreamento. O Frigate atualizará a configuração com movement_weights após a calibração."
+                "description": "Meça as velocidades do motor PTZ na inicialização para melhorar a precisão do rastreamento. O Orbi360 NVR atualizará a configuração com movement_weights após a calibração."
             },
             "zooming": {
                 "label": "Modo de zoom"

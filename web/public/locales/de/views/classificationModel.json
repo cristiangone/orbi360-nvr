@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Klassifikationsmodelle - Frigate",
+  "documentTitle": "Klassifikationsmodelle - Orbi360 NVR",
   "details": {
     "scoreInfo": "Die Punktzahl gibt die durchschnittliche Konfidenz aller Erkennungen dieses Objekts wieder.",
     "none": "Keiner",
@@ -44,7 +44,7 @@
       "updateModelFailed": "Aktualisierung des Modells fehlgeschlagen: {{errorMessage}}",
       "renameCategoryFailed": "Umbenennung der Klasse fehlgeschlagen: {{errorMessage}}",
       "categorizeFailed": "Bildkategorisierung fehlgeschlagen: {{errorMessage}}",
-      "trainingFailed": "Modelltraining fehlgeschlagen. Details sind in den Frigate-Protokollen zu finden.",
+      "trainingFailed": "Modelltraining fehlgeschlagen. Details sind in den Orbi360 NVR-Protokollen zu finden.",
       "reclassifyFailed": "Die Neuklassifizierung des Bildes ist fehlgeschlagen: {{errorMessage}}"
     }
   },
@@ -176,7 +176,7 @@
       "allImagesRequired_other": "Bitte klassifizieren Sie alle Bilder. {{count}} Bilder verbleiben.",
       "generating": {
         "title": "Beispielbilder generieren",
-        "description": "Frigate extrahiert repräsentative Bilder aus Ihren Aufnahmen. Dies kann einen Moment dauern..."
+        "description": "Orbi360 NVR extrahiert repräsentative Bilder aus Ihren Aufnahmen. Dies kann einen Moment dauern..."
       },
       "training": {
         "title": "Trainiere Modell",

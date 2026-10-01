@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Ste si istý, že chcete reštartovať Frigate ?",
+    "title": "Ste si istý, že chcete reštartovať Orbi360 NVR ?",
     "button": "Reštart",
     "restarting": {
-      "title": "Frigate sa reštartuje",
+      "title": "Orbi360 NVR sa reštartuje",
       "content": "Táto stránka bude obnovená o {{countdown}} sekúnd.",
       "button": "Vynútiť opätovné načítanie teraz"
     },
-    "description": "Počas reštartu bude Frigate nakrátko zastavený."
+    "description": "Počas reštartu bude Orbi360 NVR nakrátko zastavený."
   },
   "explore": {
     "plus": {

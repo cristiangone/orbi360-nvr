@@ -5,7 +5,7 @@
         "description": "Camera naam is vereist"
     },
     "friendly_name": {
-        "description": "Camera naam te gebruiken in de Frigate UI",
+        "description": "Camera naam te gebruiken in de Orbi360 NVR UI",
         "label": "Eenvoudige naam"
     },
     "enabled": {
@@ -147,7 +147,7 @@
         "description": "Met zones kun je een specifiek deel van het frame definiëren, zodat je kunt bepalen of een object zich binnen dat specifieke gebied bevindt.",
         "friendly_name": {
             "label": "Zone naam",
-            "description": "Een gebruiksvriendelijke naam voor de zone, die wordt weergegeven in de Frigate-gebruikersinterface. Als deze niet is ingesteld, wordt een opgemaakte versie van de zonenaam gebruikt."
+            "description": "Een gebruiksvriendelijke naam voor de zone, die wordt weergegeven in de Orbi360 NVR-gebruikersinterface. Als deze niet is ingesteld, wordt een opgemaakte versie van de zonenaam gebruikt."
         },
         "enabled": {
             "label": "Ingeschakeld",
@@ -809,7 +809,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Kalibreren bij opstarten",
-                "description": "PTZ-motorsnelheden meten bij opstarten voor nauwkeurigere volging. Frigate werkt de configuratie bij met movement_weights na kalibratie."
+                "description": "PTZ-motorsnelheden meten bij opstarten voor nauwkeurigere volging. Orbi360 NVR werkt de configuratie bij met movement_weights na kalibratie."
             },
             "zooming": {
                 "label": "Zoommodus",
@@ -846,7 +846,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Tijdsverschil negeren",
-            "description": "Tijdsynchronisatieverschillen tussen camera en Frigate-server negeren voor ONVIF-communicatie."
+            "description": "Tijdsynchronisatieverschillen tussen camera en Orbi360 NVR-server negeren voor ONVIF-communicatie."
         }
     },
     "best_image_timeout": {

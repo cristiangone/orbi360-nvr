@@ -5,7 +5,7 @@
       "deletedModel_other": "{{count}} mudeli kustutamine õnnestus"
     }
   },
-  "documentTitle": "Klassifitseerimise mudelid - Frigate",
+  "documentTitle": "Klassifitseerimise mudelid - Orbi360 NVR",
   "details": {
     "scoreInfo": "Punktiskoor näitab selle objekti kõigi tuvastuste keskmist klassifitseerimise usaldusväärsust.",
     "none": "Puudub",

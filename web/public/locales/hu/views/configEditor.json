@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Konfiguráció Szerkesztő - Frigate",
+  "documentTitle": "Konfiguráció Szerkesztő - Orbi360 NVR",
   "configEditor": "Konfiguráció szerkesztő",
   "copyConfig": "Konfiguráció másolása",
   "saveAndRestart": "Mentés és Újraindítás",
@@ -14,5 +14,5 @@
   },
   "confirm": "Kilép mentés nélkül?",
   "safeConfigEditor": "Konfiguráció szerkesztő (Biztosnági Mód)",
-  "safeModeDescription": "Frigate biztonsági módban van konfigurációs hiba miatt."
+  "safeModeDescription": "Orbi360 NVR biztonsági módban van konfigurációs hiba miatt."
 }

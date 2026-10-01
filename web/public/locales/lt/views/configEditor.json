@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Konfiguracijos redaktorius - Frigate",
+  "documentTitle": "Konfiguracijos redaktorius - Orbi360 NVR",
   "configEditor": "Konfiguracijos Redaktorius",
   "copyConfig": "Kopijuoti Konfiguraciją",
   "saveAndRestart": "Išsaugoti ir Perkrauti",
@@ -14,5 +14,5 @@
     }
   },
   "safeConfigEditor": "Konfiguracijos Redaktorius (Saugus Rėžimas)",
-  "safeModeDescription": "Frigate yra saugiame rėžime dėl konfiguracijos tinkamumo klaidos."
+  "safeModeDescription": "Orbi360 NVR yra saugiame rėžime dėl konfiguracijos tinkamumo klaidos."
 }

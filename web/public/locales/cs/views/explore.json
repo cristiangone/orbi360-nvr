@@ -1,6 +1,6 @@
 {
   "generativeAI": "Generativní AI",
-  "documentTitle": "Prozkoumat – Frigate",
+  "documentTitle": "Prozkoumat – Orbi360 NVR",
   "details": {
     "timestamp": "Časové razítko",
     "snapshotScore": {
@@ -14,7 +14,7 @@
         "viewInExplore": "Zobrazit v Průzkumu"
       },
       "tips": {
-        "hasMissingObjects": "Upravte svou konfiguraci, pokud chcete, aby Frigate ukládal sledované objekty pro následující štítky: <em>{{objects}}</em>",
+        "hasMissingObjects": "Upravte svou konfiguraci, pokud chcete, aby Orbi360 NVR ukládal sledované objekty pro následující štítky: <em>{{objects}}</em>",
         "mismatch_one": "{{count}} nedostupný objekt byl detekován a vložen do této položky kontroly. Tento objekt se buď nekvalifikoval jako výstraha nebo detekce, nebo již byl vyčištěn/smazán.",
         "mismatch_few": "{{count}} nedostupné objekty byly detekovány a vloženy do této položky kontroly. Tyto objekty se buď nekvalifikovaly jako výstraha nebo detekce, nebo již byly vyčištěny/smazány.",
         "mismatch_other": "{{count}} nedostupných objektů bylo detekováno a vloženo do této položky kontroly. Tyto objekty se buď nekvalifikovaly jako výstraha nebo detekce, nebo již byly vyčištěny/smazány."
@@ -24,7 +24,7 @@
           "regenerate": "Od {{provider}} byl vyžádán nový popis. V závislosti na rychlosti vašeho poskytovatele může obnovení nového popisu nějakou dobu trvat.",
           "updatedSublabel": "Úspěšně aktualizovaný podružný štítek.",
           "updatedLPR": "Úspěšně aktualizovaná SPZ.",
-          "audioTranscription": "Požádání o přepis zvuku bylo úspěšné. V závislosti na rychlosti Vašeho Frigate serveru může přepis trvat nějaký čas než bude dokončen.",
+          "audioTranscription": "Požádání o přepis zvuku bylo úspěšné. V závislosti na rychlosti Vašeho Orbi360 NVR serveru může přepis trvat nějaký čas než bude dokončen.",
           "updatedAttributes": "Atributy byly úspěšně aktualizovány."
         },
         "error": {
@@ -59,7 +59,7 @@
     "description": {
       "label": "Popis",
       "placeholder": "Popis sledovaného objektu",
-      "aiTips": "Frigate nebude vyžadovat popis od vašeho poskytovatele generativní AI, dokud neskončí životní cyklus sledovaného objektu."
+      "aiTips": "Orbi360 NVR nebude vyžadovat popis od vašeho poskytovatele generativní AI, dokud neskončí životní cyklus sledovaného objektu."
     },
     "expandRegenerationMenu": "Rozbalte nabídku regenerace",
     "regenerateFromSnapshot": "Regenerovat ze snímku",
@@ -92,7 +92,7 @@
       }
     },
     "downloadingModels": {
-      "context": "Frigate stahuje potřebné modely vložení pro podporu funkce sémantického vyhledávání. To může trvat několik minut v závislosti na rychlosti vašeho síťového připojení.",
+      "context": "Orbi360 NVR stahuje potřebné modely vložení pro podporu funkce sémantického vyhledávání. To může trvat několik minut v závislosti na rychlosti vašeho síťového připojení.",
       "setup": {
         "visionModelFeatureExtractor": "Extraktor funkcí Vision modelu",
         "visionModel": "Vision model",
@@ -103,7 +103,7 @@
         "documentation": "Přečtěte si dokumentaci",
         "context": "Můžete reindexovat vložení vašich sledovaných oběktů hned jak budou modely staženy."
       },
-      "error": "Nastala chyba. Zkontrolujte protokoly Frigate."
+      "error": "Nastala chyba. Zkontrolujte protokoly Orbi360 NVR."
     }
   },
   "trackedObjectsCount_one": "{{count}} sledovaný objekt ",
@@ -153,7 +153,7 @@
         "desc": "Tato data pocházejí z detekčního zdroje vaší kamery, ale jsou překryta na snímcích ze záznamu. Je nepravděpodobné, že by tyto dva proudy byly dokonale synchronizované. Výsledkem je, že ohraničující rámeček a stopáž nebudou dokonale zarovnány. K nastavení však lze použít pole <code>annotation_offset</code>.",
         "tips": "TIP: Představte si, že existuje klip události s osobou, která jde zleva doprava. Pokud je ohraničovací rámeček na časové ose události konzistentně vlevo od osoby, měla by být hodnota snížena. Podobně, pokud osoba chodí zleva doprava a ohraničující rámeček je trvale před osobou, měla by být hodnota zvýšena.",
         "toast": {
-          "success": "Posun anotace pro {{camera}} byl uložen do konfiguračního souboru. Restartujte Frigate, aby se změny projevily."
+          "success": "Posun anotace pro {{camera}} byl uložen do konfiguračního souboru. Restartujte Orbi360 NVR, aby se změny projevily."
         }
       },
       "title": "Nastavení popisků"

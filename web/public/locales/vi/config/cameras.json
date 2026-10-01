@@ -6,6 +6,6 @@
     },
     "friendly_name": {
         "label": "Tên thân thiện",
-        "description": "Tên hiển thị thân thiện với camera được sử dụng trong giao diện người dùng Frigate"
+        "description": "Tên hiển thị thân thiện với camera được sử dụng trong giao diện người dùng Orbi360 NVR"
     }
 }

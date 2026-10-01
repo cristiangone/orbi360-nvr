@@ -1,6 +1,6 @@
 {
   "title": "Debug Replay",
-  "description": "Replay camera recordings for debugging. The object list shows a time-delayed summary of detected objects and the Messages tab shows a stream of Frigate's internal messages from the replay footage.",
+  "description": "Replay camera recordings for debugging. The object list shows a time-delayed summary of detected objects and the Messages tab shows a stream of Orbi360 NVR's internal messages from the replay footage.",
   "websocket_messages": "Messages",
   "dialog": {
     "title": "Start Debug Replay",
@@ -31,7 +31,7 @@
     "noSessionDesc": "Start a Debug Replay from History view by clicking the Actions button in the toolbar and choosing Debug Replay.",
     "goToRecordings": "Go to History",
     "preparingClip": "Preparing clip…",
-    "preparingClipDesc": "Frigate is stitching together recordings for the selected time range. This can take a minute for longer ranges.",
+    "preparingClipDesc": "Orbi360 NVR is stitching together recordings for the selected time range. This can take a minute for longer ranges.",
     "startingCamera": "Starting Debug Replay…",
     "startError": {
       "title": "Failed to start Debug Replay",
@@ -55,6 +55,6 @@
     "activeTracking": "Active tracking",
     "noActiveTracking": "No active tracking",
     "configuration": "Configuration",
-    "configurationDesc": "Fine tune motion detection and object tracking settings for the Debug Replay camera. No changes are saved to your Frigate configuration file."
+    "configurationDesc": "Fine tune motion detection and object tracking settings for the Debug Replay camera. No changes are saved to your Orbi360 NVR configuration file."
   }
 }

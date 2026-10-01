@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Klassifiseringsmodeller - Frigate",
+  "documentTitle": "Klassifiseringsmodeller - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Slett klassifiseringsbilder",
     "renameCategory": "Omdøp klasse",
@@ -29,7 +29,7 @@
       "deleteImageFailed": "Kunne ikke slette: {{errorMessage}}",
       "deleteCategoryFailed": "Kunne ikke slette klasse: {{errorMessage}}",
       "categorizeFailed": "Kunne ikke klassifisere bilde: {{errorMessage}}",
-      "trainingFailed": "Modelltrening mislyktes. Sjekk Frigate-loggene for detaljer.",
+      "trainingFailed": "Modelltrening mislyktes. Sjekk Orbi360 NVR-loggene for detaljer.",
       "deleteModelFailed": "Kunne ikke slette modell: {{errorMessage}}",
       "trainingFailedToStart": "Kunne ikke starte modelltrening: {{errorMessage}}",
       "updateModelFailed": "Kunne ikke oppdatere modell: {{errorMessage}}",
@@ -132,7 +132,7 @@
       "selectImagesDescription": "Klikk på bilder for å velge dem. Klikk Fortsett når du er ferdig med denne klassen.",
       "generating": {
         "title": "Genererer eksempelbilder",
-        "description": "Frigate henter representative bilder fra opptakene dine. Dette kan ta litt tid..."
+        "description": "Orbi360 NVR henter representative bilder fra opptakene dine. Dette kan ta litt tid..."
       },
       "training": {
         "title": "Trener modell",

@@ -1,11 +1,11 @@
 {
   "restart": {
-    "title": "Estás seguro/a que queres reiniciar Frigate?",
+    "title": "Estás seguro/a que queres reiniciar Orbi360 NVR?",
     "button": "Reiniciar",
     "restarting": {
       "button": "Forzar reinicio",
       "content": "Esta páxina recargarase en {{countdown}} segundos.",
-      "title": "Frigate está Reiniciando"
+      "title": "Orbi360 NVR está Reiniciando"
     }
   },
   "explore": {

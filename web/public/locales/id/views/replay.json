@@ -1,6 +1,6 @@
 {
     "title": "Pemutaran Ulang Debug",
-    "description": "Putar ulang rekaman kamera untuk debugging. Daftar objek menampilkan ringkasan objek terdeteksi yang tertunda waktu, dan tab Pesan menampilkan aliran pesan internal Frigate dari rekaman pemutaran ulang.",
+    "description": "Putar ulang rekaman kamera untuk debugging. Daftar objek menampilkan ringkasan objek terdeteksi yang tertunda waktu, dan tab Pesan menampilkan aliran pesan internal Orbi360 NVR dari rekaman pemutaran ulang.",
     "websocket_messages": "Pesan",
     "dialog": {
         "title": "Mulai Pemutaran Ulang Debug",
@@ -30,7 +30,7 @@
         "noSessionDesc": "Mulai Pemutaran Ulang Debug dari tampilan Riwayat dengan mengeklik tombol Aksi di bilah alat dan memilih Pemutaran Ulang Debug.",
         "goToRecordings": "Buka Riwayat",
         "preparingClip": "Menyiapkan klip…",
-        "preparingClipDesc": "Frigate sedang menggabungkan rekaman untuk rentang waktu yang dipilih. Ini dapat memakan waktu satu menit untuk rentang yang lebih panjang.",
+        "preparingClipDesc": "Orbi360 NVR sedang menggabungkan rekaman untuk rentang waktu yang dipilih. Ini dapat memakan waktu satu menit untuk rentang yang lebih panjang.",
         "startingCamera": "Memulai Pemutaran Ulang Debug…",
         "startError": {
             "title": "Gagal memulai Pemutaran Ulang Debug",
@@ -54,6 +54,6 @@
         "activeTracking": "Pelacakan aktif",
         "noActiveTracking": "Tidak ada pelacakan aktif",
         "configuration": "Konfigurasi",
-        "configurationDesc": "Sesuaikan secara halus pengaturan deteksi gerakan dan pelacakan objek untuk kamera Pemutaran Ulang Debug. Tidak ada perubahan yang disimpan ke file konfigurasi Frigate Anda."
+        "configurationDesc": "Sesuaikan secara halus pengaturan deteksi gerakan dan pelacakan objek untuk kamera Pemutaran Ulang Debug. Tidak ada perubahan yang disimpan ke file konfigurasi Orbi360 NVR Anda."
     }
 }

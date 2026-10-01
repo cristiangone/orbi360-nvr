@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Live - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Live - Frigate",
+  "documentTitle": "Live - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Live - Orbi360 NVR",
   "twoWayTalk": {
     "enable": "Aktivér tovejskommunikation",
     "disable": "Deaktiver tovejskommunikation"

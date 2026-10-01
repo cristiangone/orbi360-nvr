@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Căutare - Frigate",
+  "documentTitle": "Căutare - Orbi360 NVR",
   "generativeAI": "AI Generativ",
   "exploreIsUnavailable": {
     "title": "Explorarea este Indisponibila",
@@ -15,7 +15,7 @@
       "context": "Funcția de căutare poate fi utilizată după ce reindexarea obiectelor înglobate este finalizată."
     },
     "downloadingModels": {
-      "context": "Frigate descarcă modelele de înglobare necesare pentru a susține funcția de Căutare Semantică. Acest lucru poate dura câteva minute, în funcție de viteza conexiunii rețelei dvs.",
+      "context": "Orbi360 NVR descarcă modelele de înglobare necesare pentru a susține funcția de Căutare Semantică. Acest lucru poate dura câteva minute, în funcție de viteza conexiunii rețelei dvs.",
       "setup": {
         "visionModel": "Model viziune",
         "visionModelFeatureExtractor": "Extractor de caracteristici pentru modelul de viziune",
@@ -26,7 +26,7 @@
         "context": "S-ar putea să dorești să reindexezi înglobările obiectelor urmărite odată ce modelele sunt descărcate.",
         "documentation": "Citește documentația"
       },
-      "error": "A apărut o eroare. Verifică jurnalele Frigate."
+      "error": "A apărut o eroare. Verifică jurnalele Orbi360 NVR."
     }
   },
   "type": {
@@ -76,7 +76,7 @@
         "millisecondsToOffset": "Millisecondele cu care să compensezi adnotările de detecție. <em>Implicit: 0</em>",
         "tips": "SFAT: Imaginează-ți că există un clip de eveniment cu o persoană care merge de la stânga la dreapta. Dacă caseta de delimitare de pe linia temporală a evenimentului este constant în partea stângă a persoanei, atunci valoarea ar trebui să fie scăzută. În mod similar, dacă persoana merge de la stânga la dreapta și caseta de delimitare este constant înaintea persoanei, atunci valoarea ar trebui să fie crescută.",
         "toast": {
-          "success": "Compensarea adnotării pentru {{camera}} a fost salvată în fișierul de configurație. Repornește Frigate pentru a aplica modificările."
+          "success": "Compensarea adnotării pentru {{camera}} a fost salvată în fișierul de configurație. Repornește Orbi360 NVR pentru a aplica modificările."
         }
       },
       "title": "Setări adnotare"
@@ -99,14 +99,14 @@
         "mismatch_one": "{{count}} obiect indisponibil a fost detectat și inclus în acest element de revizuire. Acest obiect fie nu s-a calificat ca alertă sau detecție, fie a fost deja curățat/șters.",
         "mismatch_few": "{{count}} obiecte indisponibile au fost detectate și incluse în acest element de revizuire. Aceste obiecte fie nu s-au calificat ca alertă sau detecție, fie au fost deja curățate/șterse.",
         "mismatch_other": "{{count}} de obiecte indisponibile au fost detectate și incluse în acest element de revizuire. Aceste obiecte fie nu s-au calificat ca alertă sau detecție, fie au fost deja curățate/șterse.",
-        "hasMissingObjects": "Ajustează-ți configurația dacă vrei ca Frigate să salveze obiectele urmărite pentru următoarele etichete: <em>{{objects}}</em>"
+        "hasMissingObjects": "Ajustează-ți configurația dacă vrei ca Orbi360 NVR să salveze obiectele urmărite pentru următoarele etichete: <em>{{objects}}</em>"
       },
       "toast": {
         "success": {
           "regenerate": "O nouă descriere a fost solicitată de la {{provider}}. În funcție de viteza furnizorului tău, regenerarea noii descrieri poate dura ceva timp.",
           "updatedSublabel": "Subeticheta a fost actualizată cu succes.",
           "updatedLPR": "Plăcuța de înmatriculare a fost actualizată cu succes.",
-          "audioTranscription": "Transcrierea audio a fost solicitată cu succes. În funcție de viteza serverului dumneavoastră Frigate, transcrierea poate dura ceva timp până la finalizare.",
+          "audioTranscription": "Transcrierea audio a fost solicitată cu succes. În funcție de viteza serverului dumneavoastră Orbi360 NVR, transcrierea poate dura ceva timp până la finalizare.",
           "updatedAttributes": "Atributele au fost actualizate cu succes."
         },
         "error": {
@@ -155,7 +155,7 @@
     "description": {
       "label": "Descriere",
       "placeholder": "Descrierea obiectului urmărit",
-      "aiTips": "Frigate nu va solicita o descriere de la furnizorul tău de AI până când ciclul de viață al obiectului urmărit nu se încheie."
+      "aiTips": "Orbi360 NVR nu va solicita o descriere de la furnizorul tău de AI până când ciclul de viață al obiectului urmărit nu se încheie."
     },
     "expandRegenerationMenu": "Extinde meniul de regenerare",
     "regenerateFromSnapshot": "Regenerează din snapshot",

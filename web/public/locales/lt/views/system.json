@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "cameras": "Kamerų Statistika - Frigate",
-    "storage": "Saugyklos Statistika - Frigate",
+    "cameras": "Kamerų Statistika - Orbi360 NVR",
+    "storage": "Saugyklos Statistika - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate Žurnalas - Frigate",
-      "go2rtc": "Go2RTC Žurnalas - Frigate",
-      "nginx": "Nginx Žurnalas - Frigate",
-      "websocket": "Žinučių Išrašas - Frigate"
+      "frigate": "Orbi360 NVR Žurnalas - Orbi360 NVR",
+      "go2rtc": "Go2RTC Žurnalas - Orbi360 NVR",
+      "nginx": "Nginx Žurnalas - Orbi360 NVR",
+      "websocket": "Žinučių Išrašas - Orbi360 NVR"
     },
-    "general": "Bendroji Statistika - Frigate",
-    "enrichments": "Pagerinimų Statistika - Frigate"
+    "general": "Bendroji Statistika - Orbi360 NVR",
+    "enrichments": "Pagerinimų Statistika - Orbi360 NVR"
   },
   "title": "Sistema",
   "metrics": "Sistemos metrikos",
@@ -108,7 +108,7 @@
       "intelGpuWarning": {
         "title": "Intel GPU statistikų įspėjimas",
         "message": "GPU statistika negalima",
-        "description": "Tai žinoma problema su Intel GPU statistikos raportavimo įrankiu (intel_gpu_top), kai jis stringa ir pakartotinai grąžina GPU vartojimas 0% net tais atvejais kai hardware acceleration ir objektų aptikimas taisiklingai veikia naudojant (i)GPU. Tai nėra Frigate klaida. Laikinai padeda įrenginio perkrovimas, kad įsitikinti teisingu GPU funkcionavimu. Tai neįtakoja spartos."
+        "description": "Tai žinoma problema su Intel GPU statistikos raportavimo įrankiu (intel_gpu_top), kai jis stringa ir pakartotinai grąžina GPU vartojimas 0% net tais atvejais kai hardware acceleration ir objektų aptikimas taisiklingai veikia naudojant (i)GPU. Tai nėra Orbi360 NVR klaida. Laikinai padeda įrenginio perkrovimas, kad įsitikinti teisingu GPU funkcionavimu. Tai neįtakoja spartos."
       },
       "gpuCompute": "GPU Skaičiavimai / Transformavimas",
       "gpuTemperature": "GPU Temperatūra",
@@ -132,7 +132,7 @@
     "overview": "Apžvalga",
     "recordings": {
       "title": "Įrašai",
-      "tips": "Ši reikšmė nurodo kiek iš viso Frigate duombazėje esantys įrašai užima vietos saugykloje. Frigate neseka kiek vietos užima visi kiti failai esantys laikmenoje.",
+      "tips": "Ši reikšmė nurodo kiek iš viso Orbi360 NVR duombazėje esantys įrašai užima vietos saugykloje. Orbi360 NVR neseka kiek vietos užima visi kiti failai esantys laikmenoje.",
       "earliestRecording": "Anksčiausias esantis įrašas:"
     },
     "cameraStorage": {
@@ -144,7 +144,7 @@
       "bandwidth": "Pralaidumas",
       "unused": {
         "title": "Nepanaudota",
-        "tips": "Jei saugykloje turite daugiau failų apart Frigate įrašų, ši reikšmė neatspindės tikslios likusios laisvos vietos Frigate panaudojimui. Frigate neseka saugyklos panaudojimo už savo įrašų ribų."
+        "tips": "Jei saugykloje turite daugiau failų apart Orbi360 NVR įrašų, ši reikšmė neatspindės tikslios likusios laisvos vietos Orbi360 NVR panaudojimui. Orbi360 NVR neseka saugyklos panaudojimo už savo įrašų ribų."
       }
     },
     "shm": {

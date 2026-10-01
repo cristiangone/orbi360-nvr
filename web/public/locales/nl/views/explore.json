@@ -19,8 +19,8 @@
         "visionModelFeatureExtractor": "kenmerkextractie van een visiemodel",
         "textModel": "Tekstmodel"
       },
-      "error": "Er is iets misgegaan. Raadpleeg de Frigate-logs.",
-      "context": "Frigate downloadt de vereiste inbedmodellen om de functie Semantisch zoeken te ondersteunen. Dit kan enkele minuten duren, afhankelijk van de snelheid van je netwerkverbinding.",
+      "error": "Er is iets misgegaan. Raadpleeg de Orbi360 NVR-logs.",
+      "context": "Orbi360 NVR downloadt de vereiste inbedmodellen om de functie Semantisch zoeken te ondersteunen. Dit kan enkele minuten duren, afhankelijk van de snelheid van je netwerkverbinding.",
       "tips": {
         "context": "Je wilt misschien de embeddings van je gevolgde objecten opnieuw indexeren zodra de modellen zijn gedownload.",
         "documentation": "Lees de documentatie"
@@ -66,7 +66,7 @@
         "label": "Annotatie-afwijking",
         "tips": "TIP: Stel je voor dat er een clip is waarin een persoon van links naar rechts loopt. Als het objectkader in de tijdlijn van het object steeds links van de persoon ligt, dan moet de waarde verlaagd worden. Op dezelfde manier als het objectkader consequent vóór de persoon ligt dus vooruitloopt, moet de waarde verhoogd worden.",
         "toast": {
-          "success": "Annotatieverschuiving voor {{camera}} is opgeslagen in het configuratiebestand. Herstart Frigate om je wijzigingen toe te passen."
+          "success": "Annotatieverschuiving voor {{camera}} is opgeslagen in het configuratiebestand. Herstart Orbi360 NVR om je wijzigingen toe te passen."
         }
       },
       "showAllZones": {
@@ -86,7 +86,7 @@
     "count": "{{first}} van {{second}}",
     "trackedPoint": "Volgpunt"
   },
-  "documentTitle": "Verken - Frigate",
+  "documentTitle": "Verken - Orbi360 NVR",
   "details": {
     "item": {
       "button": {
@@ -96,7 +96,7 @@
       "title": "Details van item bekijken",
       "desc": "Details van item bekijken",
       "tips": {
-        "hasMissingObjects": "Pas je configuratie aan als je wilt dat Frigate gevolgde objecten opslaat voor de volgende labels: <em>{{objects}}</em>",
+        "hasMissingObjects": "Pas je configuratie aan als je wilt dat Orbi360 NVR gevolgde objecten opslaat voor de volgende labels: <em>{{objects}}</em>",
         "mismatch_one": "{{count}} Niet-beschikbaar object werd gedetecteerd en opgenomen in dit beoordelingsitem. Het voldeed mogelijk niet aan de criteria voor een waarschuwing of detectie, of is inmiddels opgeschoond of verwijderd.",
         "mismatch_other": "{{count}} Niet-beschikbare objecten zijn gedetecteerd en opgenomen in dit beoordelingsitem. Deze objecten voldeden mogelijk niet aan de voorwaarden voor een waarschuwing of detectie, of zijn inmiddels verwijderd of opgeruimd."
       },
@@ -105,7 +105,7 @@
           "regenerate": "Er is een nieuwe beschrijving aangevraagd bij {{provider}}. Afhankelijk van de snelheid van je provider kan het regenereren van de nieuwe beschrijving enige tijd duren.",
           "updatedSublabel": "Sublabel succesvol bijgewerkt.",
           "updatedLPR": "Kenteken succesvol bijgewerkt.",
-          "audioTranscription": "Audio-transcriptie succesvol aangevraagd. Afhankelijk van de snelheid van uw Frigate-server kan het even duren voordat de transcriptie voltooid is.",
+          "audioTranscription": "Audio-transcriptie succesvol aangevraagd. Afhankelijk van de snelheid van uw Orbi360 NVR-server kan het even duren voordat de transcriptie voltooid is.",
           "updatedAttributes": "Attributen succesvol bijgewerkt."
         },
         "error": {
@@ -139,7 +139,7 @@
     "description": {
       "placeholder": "Beschrijving van het gevolgde object",
       "label": "Beschrijving",
-      "aiTips": "Frigate vraagt pas om een beschrijving van uw Generative AI-provider als de levenscyclus van het gevolgde object is afgelopen."
+      "aiTips": "Orbi360 NVR vraagt pas om een beschrijving van uw Generative AI-provider als de levenscyclus van het gevolgde object is afgelopen."
     },
     "expandRegenerationMenu": "Regeneratiemenu uitbreiden",
     "regenerateFromSnapshot": "Regenereren vanuit Snapshot",

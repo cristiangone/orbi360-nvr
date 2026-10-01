@@ -4,7 +4,7 @@
         "noSession": "Brak aktywnej sesji odtwarzania debugowania",
         "noSessionDesc": "Rozpocznij odtwarzanie debugowania z widoku Historii, klikając przycisk Akcje na pasku narzędzi i wybierając Odtwarzanie debugowania.",
         "goToRecordings": "Przejdź do Historii",
-        "preparingClipDesc": "Frigate łączy nagrania dla wybranego zakresu czasu. W przypadku dłuższych zakresów może to potrwać chwilę.",
+        "preparingClipDesc": "Orbi360 NVR łączy nagrania dla wybranego zakresu czasu. W przypadku dłuższych zakresów może to potrwać chwilę.",
         "startingCamera": "Uruchamianie odtwarzania debugowania…",
         "startError": {
             "title": "Nie udało się uruchomić odtwarzania debugowania",
@@ -28,10 +28,10 @@
         "activeTracking": "Aktywne śledzenie",
         "noActiveTracking": "Brak aktywnego śledzenia",
         "configuration": "Konfiguracja",
-        "configurationDesc": "Dostosuj ustawienia detekcji ruchu i śledzenia obiektów dla kamery odtwarzania debugowania. Żadne zmiany nie zostaną zapisane w głównym pliku konfiguracyjnym Frigate."
+        "configurationDesc": "Dostosuj ustawienia detekcji ruchu i śledzenia obiektów dla kamery odtwarzania debugowania. Żadne zmiany nie zostaną zapisane w głównym pliku konfiguracyjnym Orbi360 NVR."
     },
     "title": "Odtwarzanie debugowania",
-    "description": "Odtwarzaj nagrania z kamer w celu debugowania. Lista obiektów wyświetla opóźnione w czasie podsumowanie wykrytych obiektów, a karta Komunikaty pokazuje strumień wewnętrznych komunikatów Frigate z odtwarzanego materiału.",
+    "description": "Odtwarzaj nagrania z kamer w celu debugowania. Lista obiektów wyświetla opóźnione w czasie podsumowanie wykrytych obiektów, a karta Komunikaty pokazuje strumień wewnętrznych komunikatów Orbi360 NVR z odtwarzanego materiału.",
     "websocket_messages": "Komunikaty",
     "dialog": {
         "title": "Rozpocznij odtwarzanie debugowania",

@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Živě - Frigate",
-  "documentTitle.withCamera": "{{camera}}-Živě-Frigate",
+  "documentTitle": "Živě - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}}-Živě-Orbi360 NVR",
   "lowBandwidthMode": "Režim nízké šířky pásma",
   "twoWayTalk": {
     "enable": "Povolit obousměrný hovor",

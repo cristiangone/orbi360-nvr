@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Edytor konfiguracji - Frigate",
+  "documentTitle": "Edytor konfiguracji - Orbi360 NVR",
   "configEditor": "Edytor konfiguracji",
   "copyConfig": "Skopiuj konfigurację",
   "toast": {
@@ -14,5 +14,5 @@
   "saveAndRestart": "Zapisz i uruchom ponownie",
   "confirm": "Zamknąć bez zapisywania?",
   "safeConfigEditor": "Edytor Konfiguracji (tryb bezpieczny)",
-  "safeModeDescription": "Frigate jest w trybie bezpiecznym przez błąd walidacji konfiguracji."
+  "safeModeDescription": "Orbi360 NVR jest w trybie bezpiecznym przez błąd walidacji konfiguracji."
 }

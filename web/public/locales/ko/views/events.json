@@ -41,9 +41,9 @@
     "trackedPoint": "추적 지점",
     "clickToSeek": "이 시간대로 이동하려면 클릭하세요"
   },
-  "documentTitle": "다시보기 - Frigate",
+  "documentTitle": "다시보기 - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "녹화 - Frigate",
+    "documentTitle": "녹화 - Orbi360 NVR",
     "invalidSharedLink": "파싱 오류로 인해 타임스탬프 녹화 링크를 열 수 없습니다.",
     "invalidSharedCamera": "알 수 없거나 권한이 없는 카메라이므로 타임스탬프 녹화 링크를 열 수 없습니다."
   },

@@ -1,6 +1,6 @@
 {
   "generativeAI": "IA générative",
-  "documentTitle": "Explorer - Frigate",
+  "documentTitle": "Explorer - Orbi360 NVR",
   "exploreIsUnavailable": {
     "title": "L'exploration est indisponible",
     "embeddingsReindexing": {
@@ -15,7 +15,7 @@
       }
     },
     "downloadingModels": {
-      "context": "Frigate télécharge les modèles d'embeddings nécessaires pour prendre en charge la fonctionnalité de recherche sémantique. Cette opération peut prendre plusieurs minutes selon la vitesse de votre connexion réseau.",
+      "context": "Orbi360 NVR télécharge les modèles d'embeddings nécessaires pour prendre en charge la fonctionnalité de recherche sémantique. Cette opération peut prendre plusieurs minutes selon la vitesse de votre connexion réseau.",
       "setup": {
         "visionModelFeatureExtractor": "Extracteur de caractéristiques de modèle de vision",
         "textTokenizer": "Tokeniseur de texte",
@@ -26,7 +26,7 @@
         "documentation": "Lire la documentation",
         "context": "Une fois les modèles téléchargés, il est conseillé de réindexer les embeddings de vos objets suivis."
       },
-      "error": "Une erreur est survenue. Vérifiez les journaux Frigate."
+      "error": "Une erreur est survenue. Vérifiez les journaux Orbi360 NVR."
     }
   },
   "details": {
@@ -42,7 +42,7 @@
           "regenerate": "Une nouvelle description a été demandée à {{provider}}. Selon la vitesse de votre fournisseur, la régénération de la nouvelle description peut prendre un certain temps.",
           "updatedSublabel": "Sous-étiquette mise à jour avec succès",
           "updatedLPR": "Plaque d'immatriculation mise à jour avec succès",
-          "audioTranscription": "Transcription audio demandée avec succès. Selon la vitesse de votre serveur Frigate, la transcription peut prendre un certain temps.",
+          "audioTranscription": "Transcription audio demandée avec succès. Selon la vitesse de votre serveur Orbi360 NVR, la transcription peut prendre un certain temps.",
           "updatedAttributes": "Attributs mis à jour avec succès"
         },
         "error": {
@@ -57,7 +57,7 @@
         "mismatch_one": "{{count}} objet indisponible a été détecté et intégré dans cette activité. Cet objet n'a pas été qualifié comme une alerte ou une détection, ou a déjà été nettoyé / supprimé.",
         "mismatch_many": "{{count}} objets indisponibles ont été détectés et intégrés dans cette activité. Ces objets n'ont pas été qualifiés comme une alerte ou une détection, ou ont déjà été nettoyés / supprimés.",
         "mismatch_other": "{{count}} objets indisponibles ont été détectés et intégrés dans cette activité. Ces objets n'ont pas été qualifiés comme une alerte ou une détection, ou ont déjà été nettoyés / supprimés.",
-        "hasMissingObjects": "Ajustez votre configuration si vous souhaitez que Frigate enregistre les objets suivis pour les étiquettes suivantes : <em>{{objects}}</em>"
+        "hasMissingObjects": "Ajustez votre configuration si vous souhaitez que Orbi360 NVR enregistre les objets suivis pour les étiquettes suivantes : <em>{{objects}}</em>"
       },
       "desc": "Détails de l'activité"
     },
@@ -82,7 +82,7 @@
     "description": {
       "label": "Description",
       "placeholder": "Description de l'objet suivi",
-      "aiTips": "Frigate ne demandera pas de description à votre fournisseur d'IA générative tant que le cycle de vie de l'objet suivi ne sera pas terminé."
+      "aiTips": "Orbi360 NVR ne demandera pas de description à votre fournisseur d'IA générative tant que le cycle de vie de l'objet suivi ne sera pas terminé."
     },
     "regenerateFromSnapshot": "Générer à nouveau à partir d'un instantané",
     "regenerateFromThumbnails": "Générer à nouveau à partir des miniatures",
@@ -162,7 +162,7 @@
         "millisecondsToOffset": "Décalage des annotations de détection en millisecondes. <em>Par défaut : 0</em>",
         "tips": "Astuce : Pour mieux comprendre, visualisez un clip où une personne se déplace de gauche à droite. Si le cadre englobant affiché sur la ligne de temps de l'événement se trouve constamment à gauche de la personne, cela signifie que vous devriez réduire la valeur. À l'inverse, si ce même cadre englobant apparaît systématiquement en avance sur la personne qui marche de gauche à droite, alors vous devrez l'augmenter.",
         "toast": {
-          "success": "Le décalage d'annotation pour {{camera}} a été enregistré dans le fichier de configuration. Redémarrez Frigate pour appliquer vos modifications."
+          "success": "Le décalage d'annotation pour {{camera}} a été enregistré dans le fichier de configuration. Redémarrez Orbi360 NVR pour appliquer vos modifications."
         }
       }
     },

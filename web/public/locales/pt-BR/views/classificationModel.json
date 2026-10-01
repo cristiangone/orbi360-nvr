@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Modelos de Classificação - Frigate",
+  "documentTitle": "Modelos de Classificação - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Apagar Imagens de Classificação",
     "renameCategory": "Renomear Classe",
@@ -33,7 +33,7 @@
       "deleteCategoryFailed": "Falha ao excluir classe:{{errorMessage}}",
       "categorizeFailed": "Falha ao categorizar imagem:{{errorMessage}}",
       "deleteModelFailed": "Falha ao excluir o modelo: {{errorMessage}}",
-      "trainingFailed": "Treinamento do modelo falhou. Verifique os logs do Frigate para mais detalhes.",
+      "trainingFailed": "Treinamento do modelo falhou. Verifique os logs do Orbi360 NVR para mais detalhes.",
       "trainingFailedToStart": "Falha ao iniciar o treinamento do modelo: {{errorMessage}}",
       "updateModelFailed": "Falha ao atualizar modelo: {{errorMessage}}",
       "renameCategoryFailed": "Falha ao renomear classe: {{errorMessage}}",

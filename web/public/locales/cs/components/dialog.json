@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Jste si jistí, že chcete restartovat Frigate?",
+    "title": "Jste si jistí, že chcete restartovat Orbi360 NVR?",
     "button": "Restartovat",
     "restarting": {
-      "title": "Frigate restartuje",
+      "title": "Orbi360 NVR restartuje",
       "content": "Tato stránka bude obnovena za {{countdown}} sekund.",
       "button": "Vynutit opětovné načtení"
     },
-    "description": "Frigate bude během restartu krátce nedostupný."
+    "description": "Orbi360 NVR bude během restartu krátce nedostupný."
   },
   "explore": {
     "plus": {

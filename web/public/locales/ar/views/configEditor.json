@@ -4,7 +4,7 @@
   "copyConfig": "نسخ الإعدادات",
   "saveAndRestart": "حفظ وإعادة تشغيل",
   "safeConfigEditor": "محرر التكوين في ( الوضع الامن )",
-  "safeModeDescription": "أصبح Frigate في الوضع الآمن بسبب خطأ في التحقق من صحة التكوين.",
+  "safeModeDescription": "أصبح Orbi360 NVR في الوضع الآمن بسبب خطأ في التحقق من صحة التكوين.",
   "toast": {
     "success": {
       "copyToClipboard": "تم نسخ التكوين إلى الحافظة."

@@ -1,6 +1,6 @@
 {
     "title": "Tirti Pakartojimą",
-    "description": "Pakartoti kameros įrašą tyrimui. Objektų sąrašas rodo aptiktų objektų užvėlintą santrauką, o žinučiu skiltis rodo srauto vidinius Frigate pranešimus iš pakartojimo įrašo.",
+    "description": "Pakartoti kameros įrašą tyrimui. Objektų sąrašas rodo aptiktų objektų užvėlintą santrauką, o žinučiu skiltis rodo srauto vidinius Orbi360 NVR pranešimus iš pakartojimo įrašo.",
     "websocket_messages": "Žinutės",
     "dialog": {
         "title": "Pradėti Pakartojimo Tyrimą",
@@ -31,7 +31,7 @@
         "noSessionDesc": "Pradėti Pakartojimo Tyrimą iš Istorinių vaizdų spaudžiant Veiksmo mygtuką įrankių meniu ir pasirenkant Tirti Pakartojimą.",
         "goToRecordings": "Eiti į Istoriją",
         "preparingClip": "Klipas ruošiamas…",
-        "preparingClipDesc": "Frigate sudurinėja įrašus kartu pasirinktam laikotarpiui. Tai gali užtrukti kelias minutes jei pasirinkti ilgesni periodai.",
+        "preparingClipDesc": "Orbi360 NVR sudurinėja įrašus kartu pasirinktam laikotarpiui. Tai gali užtrukti kelias minutes jei pasirinkti ilgesni periodai.",
         "startingCamera": "Pradedamas Pakartojimo Tyrimas…",
         "startError": {
             "title": "Nepavyko pradėti Pakartojimo Tyrimo",
@@ -55,6 +55,6 @@
         "activeTracking": "Aktyvai sekama",
         "noActiveTracking": "Nėra aktyvaus sekimo",
         "configuration": "Konfiguracija",
-        "configurationDesc": "Tikslinti judesių aptikimą ir objekto sekimo nustatymus Pakartojimo Tyrimo kamerai. Jokie pokyčiai nėra išsaugomi į jūsų Frigate konfiguracijos failą."
+        "configurationDesc": "Tikslinti judesių aptikimą ir objekto sekimo nustatymus Pakartojimo Tyrimo kamerai. Jokie pokyčiai nėra išsaugomi į jūsų Orbi360 NVR konfiguracijos failą."
     }
 }

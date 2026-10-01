@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Iki {{time}}",
-    "untilForRestart": "Iki kol Frigate persikraus.",
+    "untilForRestart": "Iki kol Orbi360 NVR persikraus.",
     "untilRestart": "Iki perkrovimo",
     "ago": "prieš {{timeAgo}}",
     "justNow": "Ką tik",
@@ -239,9 +239,9 @@
     "help": "Pagalba",
     "documentation": {
       "title": "Dokumentacija",
-      "label": "Frigate dokumentacija"
+      "label": "Orbi360 NVR dokumentacija"
     },
-    "restart": "Perkrauti Frigate",
+    "restart": "Perkrauti Orbi360 NVR",
     "live": {
       "title": "Tiesiogiai",
       "allCameras": "Visos Kameros",
@@ -286,7 +286,7 @@
     "title": "Rolė",
     "admin": "Adminas",
     "viewer": "Žiūrėtojas",
-    "desc": "Adminai turi pilną prieigą prie visų Frigate vartotojo sąsajos fukncijų. Žiūrėtojai yra apriboti peržiūrėti kameras, peržiūrų įrašus ir istorinius įrašus."
+    "desc": "Adminai turi pilną prieigą prie visų Orbi360 NVR vartotojo sąsajos fukncijų. Žiūrėtojai yra apriboti peržiūrėti kameras, peržiūrų įrašus ir istorinius įrašus."
   },
   "pagination": {
     "label": "puslapiavimas",
@@ -301,12 +301,12 @@
     "more": "Daugiau puslapių"
   },
   "accessDenied": {
-    "documentTitle": "Priegai Nesuteikta - Frigate",
+    "documentTitle": "Priegai Nesuteikta - Orbi360 NVR",
     "title": "Prieiga Nesuteikta",
     "desc": "Jūs neturite leidimo žiūrėti šį puslapį."
   },
   "notFound": {
-    "documentTitle": "Nerasta - Frigate",
+    "documentTitle": "Nerasta - Orbi360 NVR",
     "title": "404",
     "desc": "Puslapis nerastas"
   },
@@ -322,7 +322,7 @@
   },
   "field": {
     "optional": "Pasirinktinis",
-    "internalID": "Vidinį ID Frigate naudoja konfiguracijoje ir duombazėje"
+    "internalID": "Vidinį ID Orbi360 NVR naudoja konfiguracijoje ir duombazėje"
   },
   "no_items": "Nėra įrašų",
   "validation_errors": "Tikrinimo Klaidos",

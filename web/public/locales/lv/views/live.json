@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Tiešraide - Frigate",
-  "documentTitle.withCamera": "{{camera}} - Tiešraide - Frigate",
+  "documentTitle": "Tiešraide - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} - Tiešraide - Orbi360 NVR",
   "lowBandwidthMode": "Eko režīms",
   "twoWayTalk": {
     "enable": "Iespējot divvirzienu saziņu",

@@ -1,22 +1,22 @@
 {
   "documentTitle": {
-    "authentication": "認証設定 - Frigate",
-    "camera": "カメラ設定 - Frigate",
-    "default": "設定 - Frigate",
-    "enrichments": "高度解析設定 - Frigate",
-    "masksAndZones": "マスク／ゾーンエディタ - Frigate",
-    "motionTuner": "モーションチューナー - Frigate",
-    "object": "デバッグ - Frigate",
-    "general": "UI設定 - Frigate",
-    "frigatePlus": "Frigate+ 設定 - Frigate",
-    "notifications": "通知設定 - Frigate",
-    "cameraManagement": "カメラ設定 - Frigate",
-    "cameraReview": "カメラレビュー設定 - Frigate",
-    "maintenance": "メンテナンス - Frigate",
-    "profiles": "プロファイル - Frigate",
-    "globalConfig": "グローバル設定 - Frigate",
-    "cameraConfig": "カメラ設定 - Frigate",
-    "detectorsAndModel": "検出器とモデル - Frigate"
+    "authentication": "認証設定 - Orbi360 NVR",
+    "camera": "カメラ設定 - Orbi360 NVR",
+    "default": "設定 - Orbi360 NVR",
+    "enrichments": "高度解析設定 - Orbi360 NVR",
+    "masksAndZones": "マスク／ゾーンエディタ - Orbi360 NVR",
+    "motionTuner": "モーションチューナー - Orbi360 NVR",
+    "object": "デバッグ - Orbi360 NVR",
+    "general": "UI設定 - Orbi360 NVR",
+    "frigatePlus": "Frigate+ 設定 - Orbi360 NVR",
+    "notifications": "通知設定 - Orbi360 NVR",
+    "cameraManagement": "カメラ設定 - Orbi360 NVR",
+    "cameraReview": "カメラレビュー設定 - Orbi360 NVR",
+    "maintenance": "メンテナンス - Orbi360 NVR",
+    "profiles": "プロファイル - Orbi360 NVR",
+    "globalConfig": "グローバル設定 - Orbi360 NVR",
+    "cameraConfig": "カメラ設定 - Orbi360 NVR",
+    "detectorsAndModel": "検出器とモデル - Orbi360 NVR"
   },
   "menu": {
     "ui": "UI",
@@ -168,7 +168,7 @@
     },
     "semanticSearch": {
       "title": "セマンティック検索",
-      "desc": "Frigate のセマンティック検索では、画像そのもの、ユーザー定義のテキスト説明、または自動生成された説明を用いて、レビュー項目内の追跡オブジェクトを検索できます。",
+      "desc": "Orbi360 NVR のセマンティック検索では、画像そのもの、ユーザー定義のテキスト説明、または自動生成された説明を用いて、レビュー項目内の追跡オブジェクトを検索できます。",
       "reindexNow": {
         "label": "今すぐ再インデックス",
         "desc": "インデックスの再構築を行うと、追跡対象のすべてのオブジェクトの埋め込みが再生成されます。この処理はバックグラウンドで実行され、追跡対象のオブジェクトの数によってはCPU使用率が最大になり、かなりの時間がかかる場合があります。",
@@ -214,7 +214,7 @@
     },
     "restart_required": "再起動が必要です（高度解析設定を変更）",
     "toast": {
-      "success": "高度解析設定を保存しました。変更を適用するには Frigate を再起動してください。",
+      "success": "高度解析設定を保存しました。変更を適用するには Orbi360 NVR を再起動してください。",
       "error": "設定変更の保存に失敗しました: {{errorMessage}}"
     }
   },
@@ -222,7 +222,7 @@
     "title": "カメラ設定",
     "streams": {
       "title": "ストリーム",
-      "desc": "Frigate の再起動まで、カメラを一時的に無効化します。無効化すると、このカメラのストリーム処理は完全に停止します。検出、録画、デバッグは利用できません。<br /> <em>注: これは go2rtc のリストリームは無効化しません。</em>"
+      "desc": "Orbi360 NVR の再起動まで、カメラを一時的に無効化します。無効化すると、このカメラのストリーム処理は完全に停止します。検出、録画、デバッグは利用できません。<br /> <em>注: これは go2rtc のリストリームは無効化しません。</em>"
     },
     "object_descriptions": {
       "title": "生成 AI オブジェクト説明",
@@ -234,13 +234,13 @@
     },
     "review": {
       "title": "レビュー",
-      "desc": "Frigate の再起動まで、このカメラのアラートと検出を一時的に有効／無効にします。無効時は新しいレビュー項目は生成されません。 ",
+      "desc": "Orbi360 NVR の再起動まで、このカメラのアラートと検出を一時的に有効／無効にします。無効時は新しいレビュー項目は生成されません。 ",
       "alerts": "アラート ",
       "detections": "検出 "
     },
     "reviewClassification": {
       "title": "レビュー分類",
-      "desc": "Frigate はレビュー項目をアラートと検出に分類します。既定では <em>person</em> と <em>car</em> はアラートです。必要ゾーンを設定することで分類を細かく調整できます。",
+      "desc": "Orbi360 NVR はレビュー項目をアラートと検出に分類します。既定では <em>person</em> と <em>car</em> はアラートです。必要ゾーンを設定することで分類を細かく調整できます。",
       "noDefinedZones": "このカメラにはゾーンが定義されていません。",
       "objectAlertsTips": "{{cameraName}} 上の {{alertsLabels}} はすべてアラートとして表示されます。",
       "zoneObjectAlertsTips": "{{cameraName}} の {{zone}} で検出された {{alertsLabels}} はすべてアラートとして表示されます。",
@@ -255,7 +255,7 @@
       "selectDetectionsZones": "検出のゾーンを選択",
       "limitDetections": "検出を特定ゾーンに制限",
       "toast": {
-        "success": "レビュー分類設定を保存しました。変更を適用するには Frigate を再起動してください。"
+        "success": "レビュー分類設定を保存しました。変更を適用するには Orbi360 NVR を再起動してください。"
       }
     },
     "addCamera": "新しいカメラを追加",
@@ -376,7 +376,7 @@
     },
     "zones": {
       "label": "ゾーン",
-      "documentTitle": "ゾーンを編集 - Frigate",
+      "documentTitle": "ゾーンを編集 - Orbi360 NVR",
       "desc": {
         "title": "ゾーンを使うと、フレーム内の特定領域を定義し、オブジェクトがその領域内にいるかどうかを判断できます。",
         "documentation": "ドキュメント"
@@ -431,7 +431,7 @@
     },
     "motionMasks": {
       "label": "モーションマスク",
-      "documentTitle": "モーションマスクを編集 - Frigate",
+      "documentTitle": "モーションマスクを編集 - Orbi360 NVR",
       "desc": {
         "title": "モーションマスクは、望ましくない種類の動きで検知がトリガーされるのを防ぎます。過度なマスクはオブジェクト追跡を困難にします。",
         "documentation": "ドキュメント"
@@ -462,7 +462,7 @@
     },
     "objectMasks": {
       "label": "オブジェクトマスク",
-      "documentTitle": "オブジェクトマスクを編集 - Frigate",
+      "documentTitle": "オブジェクトマスクを編集 - Orbi360 NVR",
       "desc": {
         "title": "オブジェクトフィルタマスクは、位置に基づいて特定のオブジェクトタイプの誤検知を除外するために使用します。",
         "documentation": "ドキュメント"
@@ -504,7 +504,7 @@
     "title": "モーション検知チューナー",
     "unsavedChanges": "未保存のモーションチューナーの変更（{{camera}}）",
     "desc": {
-      "title": "Frigate は、フレーム内に物体検知で確認すべき動きがあるかの一次チェックとしてモーション検知を使用します。",
+      "title": "Orbi360 NVR は、フレーム内に物体検知で確認すべき動きがあるかの一次チェックとしてモーション検知を使用します。",
       "documentation": "モーション調整ガイドを読む"
     },
     "Threshold": {
@@ -525,7 +525,7 @@
   },
   "debug": {
     "title": "デバッグ",
-    "detectorDesc": "Frigate は検出器（{{detectors}}）を使用して、カメラの映像ストリーム内のオブジェクトを検知します。",
+    "detectorDesc": "Orbi360 NVR は検出器（{{detectors}}）を使用して、カメラの映像ストリーム内のオブジェクトを検知します。",
     "desc": "デバッグビューは、追跡オブジェクトとその統計をリアルタイムに表示します。オブジェクト一覧には、検知オブジェクトの時差サマリが表示されます。",
     "openCameraWebUI": "{{camera}} の Web UI を開く",
     "debugging": "デバッグ",
@@ -586,7 +586,7 @@
     "title": "ユーザー",
     "management": {
       "title": "ユーザー管理",
-      "desc": "この Frigate インスタンスのユーザーアカウントを管理します。"
+      "desc": "この Orbi360 NVR インスタンスのユーザーアカウントを管理します。"
     },
     "addUser": "ユーザーを追加",
     "updatePassword": "パスワードをリセット",
@@ -662,7 +662,7 @@
       },
       "createUser": {
         "title": "新規ユーザーを作成",
-        "desc": "新しいユーザーアカウントを追加し、Frigate UIの各エリアへのアクセス権限となる役割を指定します。",
+        "desc": "新しいユーザーアカウントを追加し、Orbi360 NVR UIの各エリアへのアクセス権限となる役割を指定します。",
         "usernameOnlyInclude": "ユーザー名に使用できるのは英数字、.、_ のみです",
         "confirmPassword": "パスワードを確認してください"
       },
@@ -701,7 +701,7 @@
   "roles": {
     "management": {
       "title": "閲覧者ロール管理",
-      "desc": "この Frigate インスタンスのカスタム閲覧者ロールと、そのカメラアクセス権を管理します。"
+      "desc": "この Orbi360 NVR インスタンスのカスタム閲覧者ロールと、そのカメラアクセス権を管理します。"
     },
     "addRole": "ロールを追加",
     "table": {
@@ -762,11 +762,11 @@
     "title": "通知",
     "notificationSettings": {
       "title": "通知設定",
-      "desc": "Frigate はブラウザで実行中、または PWA としてインストールされている場合に、端末へネイティブのプッシュ通知を送信できます。"
+      "desc": "Orbi360 NVR はブラウザで実行中、または PWA としてインストールされている場合に、端末へネイティブのプッシュ通知を送信できます。"
     },
     "notificationUnavailable": {
       "title": "通知は利用できません",
-      "desc": "Web プッシュ通知にはセキュアコンテキスト（<code>https://…</code>）が必要です。これはブラウザの制限です。通知を利用するには、セキュアに Frigate へアクセスしてください。",
+      "desc": "Web プッシュ通知にはセキュアコンテキスト（<code>https://…</code>）が必要です。これはブラウザの制限です。通知を利用するには、セキュアに Orbi360 NVR へアクセスしてください。",
       "descPwa": "iOSでは、Frigateをホーム画面に追加した場合にのみ、Webプッシュ通知を利用できます。<strong>共有</strong>メニューを開き、<strong>ホーム画面に追加</strong>を選択してから、新しいアイコンからFrigateを起動し、このデバイスを通知対象として登録してください。"
     },
     "globalSettings": {
@@ -804,7 +804,7 @@
     "cancelSuspension": "一時停止を解除",
     "toast": {
       "success": {
-        "registered": "通知の登録に成功しました。通知（テスト通知を含む）を送信するには Frigate の再起動が必要です。",
+        "registered": "通知の登録に成功しました。通知（テスト通知を含む）を送信するには Orbi360 NVR の再起動が必要です。",
         "settingSaved": "通知設定を保存しました。"
       },
       "error": {
@@ -859,10 +859,10 @@
     "unsavedChanges": "未保存の Frigate+ 設定の変更",
     "restart_required": "再起動が必要です（Frigate+ モデルを変更）",
     "toast": {
-      "success": "Frigate+ 設定を保存しました。変更を適用するには Frigate を再起動してください。",
+      "success": "Frigate+ 設定を保存しました。変更を適用するには Orbi360 NVR を再起動してください。",
       "error": "設定変更の保存に失敗しました: {{errorMessage}}"
     },
-    "description": "Frigate+ はサブスクリプションサービスで、独自データで学習させたカスタム物体検知モデルなど、Frigate インスタンスに追加機能を提供します。Frigate+ モデルの設定はここから管理できます。",
+    "description": "Frigate+ はサブスクリプションサービスで、独自データで学習させたカスタム物体検知モデルなど、Orbi360 NVR インスタンスに追加機能を提供します。Frigate+ モデルの設定はここから管理できます。",
     "cardTitles": {
       "api": "API",
       "currentModel": "現在のモデル",
@@ -952,7 +952,7 @@
         },
         "actions": {
           "title": "操作",
-          "desc": "デフォルトでは、Frigate はすべてのトリガーに対して MQTT メッセージを送信します。サブラベルは、トリガー名をオブジェクトのラベルに追加します。属性（Attributes）は、追跡オブジェクトのメタデータとは別に保存される検索可能なメタデータです。",
+          "desc": "デフォルトでは、Orbi360 NVR はすべてのトリガーに対して MQTT メッセージを送信します。サブラベルは、トリガー名をオブジェクトのラベルに追加します。属性（Attributes）は、追跡オブジェクトのメタデータとは別に保存される検索可能なメタデータです。",
           "error": {
             "min": "少なくとも1つのアクションを選択してください。"
           }
@@ -1077,7 +1077,7 @@
       }
     },
     "title": "カメラを追加",
-    "description": "以下の手順に従って、Frigate に新しいカメラを追加します。",
+    "description": "以下の手順に従って、Orbi360 NVR に新しいカメラを追加します。",
     "steps": {
       "nameAndConnection": "名称と接続",
       "streamConfiguration": "ストリーム設定",
@@ -1264,7 +1264,7 @@
         "noAudioWarning": "このストリームでは音声が検知されていません。録画には音声が含まれません。",
         "resolutionUnknown": "このストリームの解像度を取得できませんでした。設定画面または設定ファイルで検知解像度を手動で指定してください。"
       },
-      "ffmpegModuleDescription": "何度か試してもストリームが読み込まれない場合は、このオプションを有効にしてください。有効にすると、Frigate は go2rtc と併用して ffmpeg モジュールを使用します。一部のカメラストリームでは、互換性が向上する場合があります。"
+      "ffmpegModuleDescription": "何度か試してもストリームが読み込まれない場合は、このオプションを有効にしてください。有効にすると、Orbi360 NVR は go2rtc と併用して ffmpeg モジュールを使用します。一部のカメラストリームでは、互換性が向上する場合があります。"
     }
   },
   "cameraManagement": {
@@ -1275,16 +1275,16 @@
     "backToSettings": "カメラ設定に戻る",
     "streams": {
       "title": "カメラの有効化／無効化",
-      "desc": "Frigate を再起動するまで一時的にカメラを無効化します。無効化すると、このカメラのストリーム処理は完全に停止し、検出・録画・デバッグは利用できません。<br /> <em>注: これは go2rtc のリストリームを無効にはしません。</em>",
+      "desc": "Orbi360 NVR を再起動するまで一時的にカメラを無効化します。無効化すると、このカメラのストリーム処理は完全に停止し、検出・録画・デバッグは利用できません。<br /> <em>注: これは go2rtc のリストリームを無効にはしません。</em>",
       "label": "カメラの状態",
-      "description": "各カメラの動作状態を設定します。<br /><br /><strong>オン</strong>: ストリームを通常通り処理します。<br /><strong>オフ</strong>: 処理を一時停止します。Frigate の再起動後は保持されません。<br /><strong>無効</strong>: 処理を停止し、設定ファイルに保存されます。再有効化には再起動が必要です。<br /><br /><em>注: 無効化しても go2rtc のリストリームには影響しません。</em><br /><br />ハンドルをドラッグすると、ライブダッシュボードやカメラ選択ドロップダウンなど、UI 内のアクティブなカメラの並び順を変更できます。",
+      "description": "各カメラの動作状態を設定します。<br /><br /><strong>オン</strong>: ストリームを通常通り処理します。<br /><strong>オフ</strong>: 処理を一時停止します。Orbi360 NVR の再起動後は保持されません。<br /><strong>無効</strong>: 処理を停止し、設定ファイルに保存されます。再有効化には再起動が必要です。<br /><br /><em>注: 無効化しても go2rtc のリストリームには影響しません。</em><br /><br />ハンドルをドラッグすると、ライブダッシュボードやカメラ選択ドロップダウンなど、UI 内のアクティブなカメラの並び順を変更できます。",
       "disabledSubheading": "設定で無効化されています",
       "status": {
         "on": "オン",
         "off": "オフ",
         "disabled": "無効"
       },
-      "enableSuccess": "{{cameraName}} を有効にしました。適用するには Frigate を再起動してください。",
+      "enableSuccess": "{{cameraName}} を有効にしました。適用するには Orbi360 NVR を再起動してください。",
       "disableSuccess": "{{cameraName}} を無効化し、設定に保存しました。",
       "reorderHandle": "ドラッグで並び替え",
       "saving": "保存中…",
@@ -1292,9 +1292,9 @@
       "details": {
         "edit": "カメラ詳細を編集",
         "title": "カメラ詳細を編集",
-        "description": "Frigate UI 全体で、このカメラに使用されている表示名、外部 URL、および公開設定を更新します。",
+        "description": "Orbi360 NVR UI 全体で、このカメラに使用されている表示名、外部 URL、および公開設定を更新します。",
         "friendlyNameLabel": "表示名",
-        "friendlyNameHelp": "Frigate UI 全体でこのカメラに表示される名前です。空欄にするとカメラ ID が使用されます。",
+        "friendlyNameHelp": "Orbi360 NVR UI 全体でこのカメラに表示される名前です。空欄にするとカメラ ID が使用されます。",
         "webuiUrlLabel": "カメラ Web UI の URL",
         "webuiUrlHelp": "デバッグビューからカメラの Web UI に直接アクセスするための URL です。空欄にするとリンクが無効になります。",
         "webuiUrlInvalid": "有効な URL を入力してください (例: https://example.com)。",
@@ -1360,7 +1360,7 @@
       "description": "各カメラのタイプを設定します。専用 LPR カメラは、遠方の車両のナンバープレートを捉えるために強力な光学ズームを備えた専用カメラです。LPR 専用かつナンバープレートに焦点を絞った設置でない限り、通常は「Normal」を使用してください。",
       "normal": "通常",
       "dedicatedLpr": "専用 LPR",
-      "saveSuccess": "{{cameraName}} のカメラタイプを更新しました。変更を適用するには Frigate を再起動してください。"
+      "saveSuccess": "{{cameraName}} のカメラタイプを更新しました。変更を適用するには Orbi360 NVR を再起動してください。"
     },
     "clone": {
       "sectionTitle": "設定を複製",
@@ -1434,9 +1434,9 @@
       },
       "toast": {
         "success": "設定が {{cameraName}} にコピーされました",
-        "successWithRestart": "設定が {{cameraName}} にコピーされました。すべての変更を適用するには、Frigate を再起動してください。",
+        "successWithRestart": "設定が {{cameraName}} にコピーされました。すべての変更を適用するには、Orbi360 NVR を再起動してください。",
         "successMulti_other": "設定が {{count}} 台のカメラにコピーされました",
-        "successMultiWithRestart_other": "設定が {{count}} 台のカメラにコピーされました。すべての変更を適用するには、Frigate を再起動してください。",
+        "successMultiWithRestart_other": "設定が {{count}} 台のカメラにコピーされました。すべての変更を適用するには、Orbi360 NVR を再起動してください。",
         "partialFailure": "{{successCount}} セクションが適用されました。「{{failedSection}}」で失敗しました: {{errorMessage}}",
         "partialFailureMulti": "{{successCount}} 台のカメラにコピーされました。{{failed}} で失敗しました: {{errorMessage}}",
         "newCameraPartialFailure": "カメラ {{cameraName}} が作成されましたが、一部の設定のコピーに失敗しました: {{errorMessage}}",
@@ -1457,13 +1457,13 @@
     },
     "review": {
       "title": "レビュー",
-      "desc": "Frigate を再起動するまで、このカメラのアラートと検知を一時的に有効／無効にします。無効にすると、新しいレビュー項目は生成されません。 ",
+      "desc": "Orbi360 NVR を再起動するまで、このカメラのアラートと検知を一時的に有効／無効にします。無効にすると、新しいレビュー項目は生成されません。 ",
       "alerts": "アラート ",
       "detections": "検知 "
     },
     "reviewClassification": {
       "title": "レビュー分類",
-      "desc": "Frigate はレビュー項目をアラートと検知に分類します。既定では、すべての <em>person</em> と <em>car</em> オブジェクトはアラートとして扱われます。必須ゾーンを設定することで、分類をより細かく調整できます。",
+      "desc": "Orbi360 NVR はレビュー項目をアラートと検知に分類します。既定では、すべての <em>person</em> と <em>car</em> オブジェクトはアラートとして扱われます。必須ゾーンを設定することで、分類をより細かく調整できます。",
       "noDefinedZones": "このカメラにはゾーンが定義されていません。",
       "objectAlertsTips": "すべての {{alertsLabels}} オブジェクトは {{cameraName}} でアラートとして表示されます。",
       "zoneObjectAlertsTips": "{{cameraName}} の {{zone}} で検知されたすべての {{alertsLabels}} オブジェクトはアラートとして表示されます。",
@@ -1478,7 +1478,7 @@
       "selectDetectionsZones": "検知用のゾーンを選択",
       "limitDetections": "特定のゾーンに検知を限定する",
       "toast": {
-        "success": "レビュー分類の設定を保存しました。変更を適用するには Frigate を再起動してください。"
+        "success": "レビュー分類の設定を保存しました。変更を適用するには Orbi360 NVR を再起動してください。"
       }
     }
   },
@@ -1492,7 +1492,7 @@
         "notRunning": "実行されていません"
       },
       "title": "メディア同期",
-      "desc": "Frigate は保持設定に従って定期的にメディアを整理します。動作中に孤立ファイルが少数発生するのは正常です。この機能を使うと、データベース上で参照されなくなった孤立メディアファイルをディスクから削除できます。",
+      "desc": "Orbi360 NVR は保持設定に従って定期的にメディアを整理します。動作中に孤立ファイルが少数発生するのは正常です。この機能を使うと、データベース上で参照されなくなった孤立メディアファイルをディスクから削除できます。",
       "started": "メディア同期を開始しました。",
       "alreadyRunning": "同期ジョブはすでに実行中です",
       "error": "同期の開始に失敗しました",
@@ -1533,10 +1533,10 @@
     "title": "メンテナンス",
     "regionGrid": {
       "title": "リージョングリッド",
-      "desc": "リージョングリッドは、各カメラの画角内でさまざまなサイズのオブジェクトが通常出現する位置を学習する最適化機能です。Frigate はこのデータをもとに検知領域のサイズを効率化します。グリッドは追跡オブジェクトのデータから時間をかけて自動的に構築されます。",
+      "desc": "リージョングリッドは、各カメラの画角内でさまざまなサイズのオブジェクトが通常出現する位置を学習する最適化機能です。Orbi360 NVR はこのデータをもとに検知領域のサイズを効率化します。グリッドは追跡オブジェクトのデータから時間をかけて自動的に構築されます。",
       "clear": "リージョングリッドをクリア",
       "clearConfirmTitle": "リージョングリッドをクリア",
-      "clearConfirmDesc": "リージョングリッドのクリアは、検出器のモデルサイズを最近変更した場合や、カメラの物理的な位置を変更してオブジェクト追跡に問題がある場合を除き、推奨されません。追跡が進むにつれて自動的に再構築されます。変更を反映するには Frigate の再起動が必要です。",
+      "clearConfirmDesc": "リージョングリッドのクリアは、検出器のモデルサイズを最近変更した場合や、カメラの物理的な位置を変更してオブジェクト追跡に問題がある場合を除き、推奨されません。追跡が進むにつれて自動的に再構築されます。変更を反映するには Orbi360 NVR の再起動が必要です。",
       "clearSuccess": "リージョングリッドをクリアしました",
       "clearError": "リージョングリッドのクリアに失敗しました",
       "restartRequired": "リージョングリッドの変更を反映するには再起動が必要です"
@@ -1609,7 +1609,7 @@
       "noModelSelected": "Frigate+ モデルを選択"
     },
     "toast": {
-      "saveSuccess": "検出器とモデルの設定を保存しました。変更を適用するには Frigate を再起動してください。",
+      "saveSuccess": "検出器とモデルの設定を保存しました。変更を適用するには Orbi360 NVR を再起動してください。",
       "saveError": "検出器とモデルの設定の保存に失敗しました"
     },
     "unsavedChanges": "検出器・モデルに未保存の変更があります",
@@ -1878,13 +1878,13 @@
   "toast": {
     "success": "設定を保存しました",
     "applied": "設定を適用しました",
-    "successRestartRequired": "設定を保存しました。変更を適用するには Frigate を再起動してください。",
+    "successRestartRequired": "設定を保存しました。変更を適用するには Orbi360 NVR を再起動してください。",
     "error": "設定の保存に失敗しました",
     "validationError": "入力検証に失敗しました: {{message}}",
     "resetSuccess": "グローバルのデフォルトにリセットしました",
     "resetError": "設定のリセットに失敗しました",
     "saveAllSuccess_other": "{{count}} 件のセクションをすべて保存しました。",
-    "saveAllSuccessRestartRequired_other": "{{count}} 件のセクションをすべて保存しました。変更を適用するには Frigate を再起動してください。",
+    "saveAllSuccessRestartRequired_other": "{{count}} 件のセクションをすべて保存しました。変更を適用するには Orbi360 NVR を再起動してください。",
     "saveAllPartial_other": "{{totalCount}} 件中 {{successCount}} 件のセクションを保存しました。{{failCount}} 件失敗。",
     "saveAllFailure": "すべてのセクションの保存に失敗しました。"
   },
@@ -2063,7 +2063,7 @@
       "recordDisabled": "録画が無効化されているため、レビュー項目は生成されません。",
       "detectDisabled": "物体検知が無効化されています。レビュー項目はアラートと検知を分類するために検知オブジェクトが必要です。",
       "allNonAlertDetections": "アラート以外のすべてのアクティビティが検知として含まれます。",
-      "genaiImageSourceRecordingsRecordDisabled": "画像ソースが「録画」に設定されていますが、録画は無効化されています。Frigate はプレビュー画像を代わりに使用します。"
+      "genaiImageSourceRecordingsRecordDisabled": "画像ソースが「録画」に設定されていますが、録画は無効化されています。Orbi360 NVR はプレビュー画像を代わりに使用します。"
     },
     "audio": {
       "noAudioRole": "audio ロールが定義されたストリームがありません。音声検知を機能させるには audio ロールを有効にする必要があります。"

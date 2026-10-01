@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Apakah kamu yakin ingin memulai ulang Frigate?",
+    "title": "Apakah kamu yakin ingin memulai ulang Orbi360 NVR?",
     "button": "Mulai ulang",
     "restarting": {
-      "title": "Sedang Merestart Frigate",
+      "title": "Sedang Merestart Orbi360 NVR",
       "content": "Halaman ini akan memulai ulang dalam {{countdown}} detik.",
       "button": "Muat Ulang Sekarang"
     },
-    "description": "Layanan Frigate akan terhenti sejenak saat proses restart."
+    "description": "Layanan Orbi360 NVR akan terhenti sejenak saat proses restart."
   },
   "explore": {
     "plus": {
@@ -156,8 +156,8 @@
       "title": "Bagikan Cap Waktu",
       "custom": "Cap Waktu Kustom",
       "button": "Bagikan URL Cap Waktu",
-      "description": "Bagikan URL bertanda waktu sesuai posisi pemutar saat ini atau pilih tanda waktu kustom. Perlu dicatat bahwa ini bukan URL bagikan publik dan hanya dapat diakses oleh pengguna yang memiliki akses ke Frigate dan kamera ini.",
-      "shareTitle": "Pratinjau Penunjuk Waktu Frigate : {{camera}}"
+      "description": "Bagikan URL bertanda waktu sesuai posisi pemutar saat ini atau pilih tanda waktu kustom. Perlu dicatat bahwa ini bukan URL bagikan publik dan hanya dapat diakses oleh pengguna yang memiliki akses ke Orbi360 NVR dan kamera ini.",
+      "shareTitle": "Pratinjau Penunjuk Waktu Orbi360 NVR : {{camera}}"
     },
     "confirmDelete": {
       "title": "Konfirmasi Penghapusan",

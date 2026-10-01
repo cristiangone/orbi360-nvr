@@ -1,11 +1,11 @@
 {
   "documentTitle": {
-    "cameras": "Estatísticas de cámaras - Frigate",
-    "storage": "Estatísticas de Almacenamento - Frigate",
-    "general": "Estatísticas Xerais - Frigate",
-    "enrichments": "Estatísticas complementarias - Frigate",
+    "cameras": "Estatísticas de cámaras - Orbi360 NVR",
+    "storage": "Estatísticas de Almacenamento - Orbi360 NVR",
+    "general": "Estatísticas Xerais - Orbi360 NVR",
+    "enrichments": "Estatísticas complementarias - Orbi360 NVR",
     "logs": {
-      "frigate": "Rexistros de Frigate - Frigate"
+      "frigate": "Rexistros de Orbi360 NVR - Orbi360 NVR"
     }
   },
   "title": "Sistema",

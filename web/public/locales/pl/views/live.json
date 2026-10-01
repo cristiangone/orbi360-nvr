@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "Transmisja - Frigate"
+    "default": "Transmisja - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}}- Na żywo - Frigate",
+  "documentTitle.withCamera": "{{camera}}- Na żywo - Orbi360 NVR",
   "lowBandwidthMode": "Tryb niskiej przepustowości",
   "twoWayTalk": {
     "enable": "Włącz komunikację dwukierunkową",
@@ -180,7 +180,7 @@
   },
   "noCameras": {
     "buttonText": "Dodaj kamerę",
-    "description": "Zacznij od podłączenia kamery do Frigate.",
+    "description": "Zacznij od podłączenia kamery do Orbi360 NVR.",
     "title": "Nie skonfigurowano żadnej kamery",
     "restricted": {
       "title": "Brak dostępnych kamer",
@@ -189,7 +189,7 @@
     "default": {
       "title": "Nie skonfigurowano żadnej kamery",
       "buttonText": "Dodaj kamerę",
-      "description": "Zacznij od podłączenia kamery do Frigate."
+      "description": "Zacznij od podłączenia kamery do Orbi360 NVR."
     },
     "group": {
       "title": "Brak kamer w grupie",

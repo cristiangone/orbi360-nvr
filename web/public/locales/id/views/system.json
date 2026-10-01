@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "cameras": "Statistik Kamera - Frigate",
-    "storage": "Statistik Penyimpanan - Frigate",
-    "general": "Statistik Umum - Frigate",
-    "enrichments": "Statistik Enrichment - Frigate",
+    "cameras": "Statistik Kamera - Orbi360 NVR",
+    "storage": "Statistik Penyimpanan - Orbi360 NVR",
+    "general": "Statistik Umum - Orbi360 NVR",
+    "enrichments": "Statistik Enrichment - Orbi360 NVR",
     "logs": {
-      "frigate": "Log Frigate - Frigate",
-      "go2rtc": "Log Go2RTC - Frigate",
-      "nginx": "Log Nginx - Frigate",
-      "websocket": "Log Pesan - Frigate"
+      "frigate": "Log Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Log Go2RTC - Orbi360 NVR",
+      "nginx": "Log Nginx - Orbi360 NVR",
+      "websocket": "Log Pesan - Orbi360 NVR"
     }
   },
   "title": "Sistem",
@@ -111,7 +111,7 @@
       "intelGpuWarning": {
         "title": "Peringatan Statistik GPU Intel",
         "message": "Statistik GPU tidak tersedia",
-        "description": "Ini adalah bug yang sudah diketahui pada alat pelaporan statistik GPU Intel (intel_gpu_top) yang dapat rusak dan berulang kali mengembalikan penggunaan GPU sebesar 0% bahkan ketika akselerasi perangkat keras dan deteksi objek berjalan dengan benar pada (i)GPU. Ini bukan bug Frigate. Anda dapat memulai ulang host untuk memperbaiki masalah ini sementara dan memastikan GPU berfungsi dengan benar. Ini tidak memengaruhi kinerja."
+        "description": "Ini adalah bug yang sudah diketahui pada alat pelaporan statistik GPU Intel (intel_gpu_top) yang dapat rusak dan berulang kali mengembalikan penggunaan GPU sebesar 0% bahkan ketika akselerasi perangkat keras dan deteksi objek berjalan dengan benar pada (i)GPU. Ini bukan bug Orbi360 NVR. Anda dapat memulai ulang host untuk memperbaiki masalah ini sementara dan memastikan GPU berfungsi dengan benar. Ini tidak memengaruhi kinerja."
       }
     },
     "otherProcesses": {
@@ -132,7 +132,7 @@
     "overview": "Ringkasan",
     "recordings": {
       "title": "Rekaman",
-      "tips": "Nilai ini menunjukkan total penyimpanan yang digunakan oleh rekaman di basis data Frigate. Frigate tidak melacak penggunaan penyimpanan untuk semua file di disk Anda.",
+      "tips": "Nilai ini menunjukkan total penyimpanan yang digunakan oleh rekaman di basis data Orbi360 NVR. Orbi360 NVR tidak melacak penggunaan penyimpanan untuk semua file di disk Anda.",
       "earliestRecording": "Rekaman paling awal yang tersedia:"
     },
     "shm": {
@@ -152,7 +152,7 @@
       "bandwidth": "Bandwidth",
       "unused": {
         "title": "Tidak Terpakai",
-        "tips": "Nilai ini mungkin tidak secara akurat merepresentasikan ruang kosong yang tersedia untuk Frigate jika Anda memiliki file lain yang disimpan di drive selain rekaman Frigate. Frigate tidak melacak penggunaan penyimpanan di luar rekamannya."
+        "tips": "Nilai ini mungkin tidak secara akurat merepresentasikan ruang kosong yang tersedia untuk Orbi360 NVR jika Anda memiliki file lain yang disimpan di drive selain rekaman Orbi360 NVR. Orbi360 NVR tidak melacak penggunaan penyimpanan di luar rekamannya."
       }
     }
   },

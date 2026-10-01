@@ -41,9 +41,9 @@
     "trackedPoint": "Praćena točka",
     "clickToSeek": "Kliknite za pomicanje na ovo vrijeme"
   },
-  "documentTitle": "Pregled - Frigate",
+  "documentTitle": "Pregled - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Snimke - Frigate"
+    "documentTitle": "Snimke - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Zadnja 24 sata"

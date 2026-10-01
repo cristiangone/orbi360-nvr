@@ -23,9 +23,9 @@
     "aria": "Sélectionner les événements",
     "noFoundForTimePeriod": "Aucun événement n'a été trouvé pour cette plage de temps."
   },
-  "documentTitle": "Activités - Frigate",
+  "documentTitle": "Activités - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Enregistrements - Frigate"
+    "documentTitle": "Enregistrements - Orbi360 NVR"
   },
   "calendarFilter": {
     "last24Hours": "Dernières 24 heures"

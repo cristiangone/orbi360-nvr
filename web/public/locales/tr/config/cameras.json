@@ -5,7 +5,7 @@
     },
     "friendly_name": {
         "label": "Kolay ad",
-        "description": "Frigate arayüzünde kullanılacak kolay ad"
+        "description": "Orbi360 NVR arayüzünde kullanılacak kolay ad"
     },
     "enabled": {
         "label": "Etkin",

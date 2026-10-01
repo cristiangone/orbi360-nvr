@@ -13,7 +13,7 @@
     }
   },
   "documentTitle": {
-    "default": "ถ่ายทอดสด - Frigate"
+    "default": "ถ่ายทอดสด - Orbi360 NVR"
   },
   "lowBandwidthMode": "โหมดแบนด์วิดท์ต่ำ",
   "twoWayTalk": {
@@ -37,7 +37,7 @@
       "all": "ทั้งหมด"
     }
   },
-  "documentTitle.withCamera": "{{camera}} - สด - Frigate",
+  "documentTitle.withCamera": "{{camera}} - สด - Orbi360 NVR",
   "streamingSettings": "การตั้งค่าการสตรีม",
   "camera": {
     "disable": "ปิดกล้อง"

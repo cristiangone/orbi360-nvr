@@ -77,7 +77,7 @@
     "autoTrackingTips": "Piirdekastide asukohad on automaatselt jälgivate kaamerate puhul ebatäpsed.",
     "trackedPoint": "Jälgitav punkt"
   },
-  "documentTitle": "Avasta - Frigate",
+  "documentTitle": "Avasta - Orbi360 NVR",
   "generativeAI": "Generatiivne tehisaru",
   "exploreMore": "Avasta rohkem {{label}}-tüüpi objekte",
   "exploreIsUnavailable": {
@@ -94,7 +94,7 @@
     },
     "title": "Avastamine pole saadaval",
     "downloadingModels": {
-      "context": "Frigate laadib alla semantilise otsingu funktsiooni toetamiseks vajalikke manustamismudeleid. See võib võtta mitu minutit, olenevalt teie võrguühenduse kiirusest.",
+      "context": "Orbi360 NVR laadib alla semantilise otsingu funktsiooni toetamiseks vajalikke manustamismudeleid. See võib võtta mitu minutit, olenevalt teie võrguühenduse kiirusest.",
       "setup": {
         "visionModel": "Nägemismudel",
         "visionModelFeatureExtractor": "Nägemismudeli tunnuste eraldaja",
@@ -104,7 +104,7 @@
       "tips": {
         "context": "Pärast mudelite allalaadimist tuleks oma jälgitavate objektide manused uuesti indekseerida."
       },
-      "error": "Tekkis viga. Kontrollige Frigate'i logisid."
+      "error": "Tekkis viga. Kontrollige Orbi360 NVR'i logisid."
     }
   },
   "type": {
@@ -150,7 +150,7 @@
     },
     "recognizedLicensePlate": "Tuvastatud sõiduki numbrimärk",
     "description": {
-      "aiTips": "Frigate ei küsi sinu generatiivse tehisaru teenusepakkujalt kirjeldust enne, kui jälgitava objekti elutsükkel on lõppenud.",
+      "aiTips": "Orbi360 NVR ei küsi sinu generatiivse tehisaru teenusepakkujalt kirjeldust enne, kui jälgitava objekti elutsükkel on lõppenud.",
       "label": "Kirjeldus",
       "placeholder": "Jälgitava objekti kirjeldus"
     },

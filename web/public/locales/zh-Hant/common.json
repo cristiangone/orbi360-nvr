@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "直到 {{time}}",
-    "untilForRestart": "直到 Frigate 重新啟動。",
+    "untilForRestart": "直到 Orbi360 NVR 重新啟動。",
     "untilRestart": "直到重新啟動",
     "ago": "{{timeAgo}} 前",
     "last14": "過去 14 天",
@@ -227,9 +227,9 @@
     "help": "幫助",
     "documentation": {
       "title": "文件",
-      "label": "Frigate 文件"
+      "label": "Orbi360 NVR 文件"
     },
-    "restart": "重新啟動 Frigate",
+    "restart": "重新啟動 Orbi360 NVR",
     "live": {
       "title": "即時影像",
       "allCameras": "所有鏡頭",
@@ -272,7 +272,7 @@
     "title": "角色",
     "admin": "管理員",
     "viewer": "檢視者",
-    "desc": "管理員可以存取 Frigate UI 的全部功能。檢視者僅能查看鏡頭影像、審核物件及歷史紀錄。"
+    "desc": "管理員可以存取 Orbi360 NVR UI 的全部功能。檢視者僅能查看鏡頭影像、審核物件及歷史紀錄。"
   },
   "pagination": {
     "label": "分頁",
@@ -287,12 +287,12 @@
     "more": "更多頁面"
   },
   "accessDenied": {
-    "documentTitle": "拒絕存取 - Frigate",
+    "documentTitle": "拒絕存取 - Orbi360 NVR",
     "title": "拒絕存取",
     "desc": "你沒有瀏覽此頁面的權限。"
   },
   "notFound": {
-    "documentTitle": "找不到頁面 - Frigate",
+    "documentTitle": "找不到頁面 - Orbi360 NVR",
     "title": "404",
     "desc": "找不到頁面"
   },
@@ -305,7 +305,7 @@
   },
   "field": {
     "optional": "可選的",
-    "internalID": "在 Frigate 設定檔和資料庫使用的內部 ID"
+    "internalID": "在 Orbi360 NVR 設定檔和資料庫使用的內部 ID"
   },
   "information": {
     "pixels": "{{area}} 像素"

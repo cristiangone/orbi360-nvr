@@ -44,9 +44,9 @@
     }
   },
   "documentTitle": {
-    "default": "Live - Frigate"
+    "default": "Live - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - Directe - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Directe - Orbi360 NVR",
   "lowBandwidthMode": "Mode de baix ample de banda",
   "twoWayTalk": {
     "enable": "Activa la comunicació bidireccional",
@@ -186,7 +186,7 @@
   },
   "noCameras": {
     "title": "No s'ha configurat cap càmera",
-    "description": "Comenceu connectant una càmera a Frigate.",
+    "description": "Comenceu connectant una càmera a Orbi360 NVR.",
     "buttonText": "Afegeix una càmera",
     "restricted": {
       "title": "No hi ha càmeres disponibles",
@@ -194,7 +194,7 @@
     },
     "default": {
       "title": "No s'ha configurat cap càmera",
-      "description": "Comenceu connectant una càmera a Frigate.",
+      "description": "Comenceu connectant una càmera a Orbi360 NVR.",
       "buttonText": "Afegeix una càmera"
     },
     "group": {

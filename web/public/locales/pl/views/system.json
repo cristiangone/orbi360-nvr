@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "cameras": "Statystyki kamer - Frigate",
-    "storage": "Statystyki Magazynowania - Frigate",
-    "general": "Statystyki Ogólne - Frigate",
-    "enrichments": "Statystyki Wzbogacania - Frigate",
+    "cameras": "Statystyki kamer - Orbi360 NVR",
+    "storage": "Statystyki Magazynowania - Orbi360 NVR",
+    "general": "Statystyki Ogólne - Orbi360 NVR",
+    "enrichments": "Statystyki Wzbogacania - Orbi360 NVR",
     "logs": {
-      "frigate": "Logi Frigate - Frigate",
-      "go2rtc": "Logi Go2RTC - Frigate",
-      "nginx": "Logi Nginx - Frigate",
-      "websocket": "Logi komunikatów - Frigate"
+      "frigate": "Logi Orbi360 NVR - Orbi360 NVR",
+      "go2rtc": "Logi Go2RTC - Orbi360 NVR",
+      "nginx": "Logi Nginx - Orbi360 NVR",
+      "websocket": "Logi komunikatów - Orbi360 NVR"
     }
   },
   "general": {
@@ -46,7 +46,7 @@
       "npuMemory": "Pamięć NPU",
       "intelGpuWarning": {
         "message": "Statystyki układu graficznego niedostępne",
-        "description": "W narzędziach telemetrii i statystyki układów graficznych firmy Intel (intel_gpu_top) znajduje się znany błąd powodujący raportowanie użycia układu graficznego wynoszące 0%, nawet gdy akceleracja sprzętowa i wykrywanie obiektów działa prawidłowo korzystając ze zintegrowanego układu graficznego. To nie jest błąd oprogramowania Frigate. Restart hosta może chwilowo rozwiązać problem i pozwolić na weryfikację działania układu graficznego. Ten bład nie wpływa na wydajność systemu.",
+        "description": "W narzędziach telemetrii i statystyki układów graficznych firmy Intel (intel_gpu_top) znajduje się znany błąd powodujący raportowanie użycia układu graficznego wynoszące 0%, nawet gdy akceleracja sprzętowa i wykrywanie obiektów działa prawidłowo korzystając ze zintegrowanego układu graficznego. To nie jest błąd oprogramowania Orbi360 NVR. Restart hosta może chwilowo rozwiązać problem i pozwolić na weryfikację działania układu graficznego. Ten bład nie wpływa na wydajność systemu.",
         "title": "Ostrzeżenie dotyczące statystyk Intel GPU"
       },
       "gpuCompute": "Obliczenia GPU / Kodowanie",
@@ -155,7 +155,7 @@
     "cameraStorage": {
       "unused": {
         "title": "Niewykorzystane",
-        "tips": "Ta wartość może niedokładnie przedstawiać wolne miejsce dostępne dla Frigate, jeśli masz inne pliki przechowywane na dysku poza nagraniami Frigate. Frigate nie śledzi wykorzystania magazynu poza swoimi nagraniami."
+        "tips": "Ta wartość może niedokładnie przedstawiać wolne miejsce dostępne dla Orbi360 NVR, jeśli masz inne pliki przechowywane na dysku poza nagraniami Orbi360 NVR. Orbi360 NVR nie śledzi wykorzystania magazynu poza swoimi nagraniami."
       },
       "title": "Magazyn kamery",
       "camera": "Kamera",
@@ -168,7 +168,7 @@
     "overview": "Przegląd",
     "recordings": {
       "title": "Nagrania",
-      "tips": "Ta wartość reprezentuje całkowite miejsce zajmowane przez nagrania w bazie danych Frigate. Frigate nie śledzi wykorzystania magazynu dla wszystkich plików na twoim dysku.",
+      "tips": "Ta wartość reprezentuje całkowite miejsce zajmowane przez nagrania w bazie danych Orbi360 NVR. Orbi360 NVR nie śledzi wykorzystania magazynu dla wszystkich plików na twoim dysku.",
       "earliestRecording": "Najwcześniejsze dostępne nagranie:"
     },
     "shm": {

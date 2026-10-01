@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Estàs segur que vols reiniciar Frigate?",
+    "title": "Estàs segur que vols reiniciar Orbi360 NVR?",
     "button": "Reiniciar",
     "restarting": {
-      "title": "Frigate s'està reiniciant",
+      "title": "Orbi360 NVR s'està reiniciant",
       "content": "Aquesta pàgina es tornarà a carregar d'aquí a {{countdown}} segons.",
       "button": "Forçar la recàrrega ara"
     },
-    "description": "Això aturarà breument Frigate mentre es reinicia."
+    "description": "Això aturarà breument Orbi360 NVR mentre es reinicia."
   },
   "explore": {
     "plus": {
@@ -192,10 +192,10 @@
     "shareTimestamp": {
       "label": "Comparteix la marca horària",
       "title": "Comparteix la marca horària",
-      "description": "Comparteix un URL amb marca horària de la posició actual del jugador o tria una marca horària personalitzada. Tingueu en compte que aquest no és un URL de compartició pública i només és accessible per als usuaris amb accés a Frigate i aquesta càmera.",
+      "description": "Comparteix un URL amb marca horària de la posició actual del jugador o tria una marca horària personalitzada. Tingueu en compte que aquest no és un URL de compartició pública i només és accessible per als usuaris amb accés a Orbi360 NVR i aquesta càmera.",
       "custom": "Marca horària personalitzada",
       "button": "Comparteix l'URL de la marca horària",
-      "shareTitle": "Marca de temps de revisió de Frigate: {{camera}}"
+      "shareTitle": "Marca de temps de revisió de Orbi360 NVR: {{camera}}"
     }
   },
   "imagePicker": {

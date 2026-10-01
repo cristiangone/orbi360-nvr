@@ -44,9 +44,9 @@
     "trackedPoint": "Praćeni točka",
     "clickToSeek": "Kliknite da biste prešli na ovo vrijeme"
   },
-  "documentTitle": "Pregled - Frigate",
+  "documentTitle": "Pregled - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "Snimci - Frigate",
+    "documentTitle": "Snimci - Orbi360 NVR",
     "invalidSharedLink": "Nemoguće otvoriti vezu za snimak sa vremenskom oznakom zbog greške u parsiranju.",
     "invalidSharedCamera": "Nemoguće otvoriti vezu za snimak sa vremenskom oznakom zbog nepoznate ili neovlašćene kamere."
   },

@@ -23,10 +23,10 @@
     "aria": "選擇事件",
     "noFoundForTimePeriod": "此時間段內沒有找到事件。"
   },
-  "documentTitle": "審核 - Frigate",
+  "documentTitle": "審核 - Orbi360 NVR",
   "allCameras": "所有鏡頭",
   "recordings": {
-    "documentTitle": "錄影 - Frigate",
+    "documentTitle": "錄影 - Orbi360 NVR",
     "invalidSharedLink": "由於解析錯誤，無法開啟帶時間戳的錄製連結。",
     "invalidSharedCamera": "由於攝影機未知或未獲授權，無法開啟帶時間戳的錄製連結。"
   },

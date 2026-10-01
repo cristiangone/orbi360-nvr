@@ -863,7 +863,7 @@
         },
         "topic_prefix": {
             "label": "Predfiks teme",
-            "description": "Predložak teme MQTT za sve teme Frigate; mora biti jedinstven ako pokrećete više instanci."
+            "description": "Predložak teme MQTT za sve teme Orbi360 NVR; mora biti jedinstven ako pokrećete više instanci."
         },
         "client_id": {
             "label": "ID klijenta",
@@ -958,7 +958,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Kalibriraj na početku",
-                "description": "Mjeri brzine motora PTZ pri pokretanju kako bi poboljšao preciznost praćenja. Frigate će ažurirati konfiguraciju s težinama pokreta nakon kalibracije."
+                "description": "Mjeri brzine motora PTZ pri pokretanju kako bi poboljšao preciznost praćenja. Orbi360 NVR će ažurirati konfiguraciju s težinama pokreta nakon kalibracije."
             },
             "zooming": {
                 "label": "Režim zumiranja",
@@ -995,7 +995,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Zanemari razliku u vremenu",
-            "description": "Zanemari razlike u sinhronizaciji vremena između kamere i Frigate servera za komunikaciju ONVIF."
+            "description": "Zanemari razlike u sinhronizaciji vremena između kamere i Orbi360 NVR servera za komunikaciju ONVIF."
         }
     },
     "profiles": {
@@ -1008,11 +1008,11 @@
     },
     "safe_mode": {
         "label": "Sigurnosni režim",
-        "description": "Kada je omogućeno, pokrenite Frigate u sigurnosnom režimu s smanjenim funkcijama za uklanjanje problema."
+        "description": "Kada je omogućeno, pokrenite Orbi360 NVR u sigurnosnom režimu s smanjenim funkcijama za uklanjanje problema."
     },
     "environment_vars": {
         "label": "Okolinski varijable",
-        "description": "Parovi ključ/vrijednost okolinskih varijabli za postavljanje za proces Frigate u Home Assistant OS. Korisnici koji nisu HAOS moraju koristiti konfiguraciju okolinskih varijabli Docker umjesto toga."
+        "description": "Parovi ključ/vrijednost okolinskih varijabli za postavljanje za proces Orbi360 NVR u Home Assistant OS. Korisnici koji nisu HAOS moraju koristiti konfiguraciju okolinskih varijabli Docker umjesto toga."
     },
     "logger": {
         "label": "Zapisi",
@@ -1031,7 +1031,7 @@
         "description": "Postavke povezane s autentifikacijom i sesijama uključujući opcije kolačića i ograničenja brzine.",
         "enabled": {
             "label": "Omogući autentifikaciju",
-            "description": "Omogući nativnu autentifikaciju za korisnički sučelje Frigate."
+            "description": "Omogući nativnu autentifikaciju za korisnički sučelje Orbi360 NVR."
         },
         "reset_admin_password": {
             "label": "Ponovno postavljanje lozinke administratora",
@@ -1076,10 +1076,10 @@
     },
     "database": {
         "label": "Baza podataka",
-        "description": "Postavke SQLite baze podataka korištene od strane Frigate za pohranjivanje metapodataka praćenih objekata i metapodataka snimaka.",
+        "description": "Postavke SQLite baze podataka korištene od strane Orbi360 NVR za pohranjivanje metapodataka praćenih objekata i metapodataka snimaka.",
         "path": {
             "label": "Putanja do baze podataka",
-            "description": "Putanja datotečnog sustava gdje će se datoteka SQLite baze podataka Frigate pohraniti."
+            "description": "Putanja datotečnog sustava gdje će se datoteka SQLite baze podataka Orbi360 NVR pohraniti."
         }
     },
     "go2rtc": {
@@ -1088,13 +1088,13 @@
     },
     "networking": {
         "label": "Mrežno",
-        "description": "Postavke povezane s mrežom, kao što je omogućavanje IPv6 za Frigate krajeve.",
+        "description": "Postavke povezane s mrežom, kao što je omogućavanje IPv6 za Orbi360 NVR krajeve.",
         "ipv6": {
             "label": "Konfiguracija IPv6",
-            "description": "IPv6-specifične postavke za mrežne usluge Frigate.",
+            "description": "IPv6-specifične postavke za mrežne usluge Orbi360 NVR.",
             "enabled": {
                 "label": "Omogući IPv6",
-                "description": "Omogući podršku za IPv6 za usluge Frigate (API i UI) gdje je primjenjivo."
+                "description": "Omogući podršku za IPv6 za usluge Orbi360 NVR (API i UI) gdje je primjenjivo."
             }
         },
         "listen": {
@@ -1102,20 +1102,20 @@
             "description": "Konfiguracija unutarnjih i vanjskih slušajućih porta. Ovo je za napredne korisnike. Za većinu slučajeva preporučuje se promijeniti sekciju porta u svojoj Docker compose datoteci.",
             "internal": {
                 "label": "Unutarnji port",
-                "description": "Unutarnji slušajući port za Frigate (zadano 5000)."
+                "description": "Unutarnji slušajući port za Orbi360 NVR (zadano 5000)."
             },
             "external": {
                 "label": "Vanjski port",
-                "description": "Vanjski slušajući port za Frigate (zadano 8971)."
+                "description": "Vanjski slušajući port za Orbi360 NVR (zadano 8971)."
             }
         }
     },
     "proxy": {
         "label": "Proxy",
-        "description": "Postavke za integraciju Frigate iza obrnute proxy posrednike koji prenose zaglavlja autentificiranih korisnika.",
+        "description": "Postavke za integraciju Orbi360 NVR iza obrnute proxy posrednike koji prenose zaglavlja autentificiranih korisnika.",
         "header_map": {
             "label": "Mapiranje zaglavlja",
-            "description": "Mapiraj dolazna zaglavlja proxy-a na polja korisnika i uloge Frigate za autentifikaciju baziranu na proxy-u.",
+            "description": "Mapiraj dolazna zaglavlja proxy-a na polja korisnika i uloge Orbi360 NVR za autentifikaciju baziranu na proxy-u.",
             "user": {
                 "label": "Zaglavlje korisnika",
                 "description": "Zaglavlje koje sadrži autentificirano korisničko ime pruženo od strane nadolazećeg proxy-a."
@@ -1126,7 +1126,7 @@
             },
             "role_map": {
                 "label": "Mapiranje uloga",
-                "description": "Mapiraj vrijednosti grupe iznad na uloge Frigate (npr. mapiraj grupe administratora na ulogu administratora)."
+                "description": "Mapiraj vrijednosti grupe iznad na uloge Orbi360 NVR (npr. mapiraj grupe administratora na ulogu administratora)."
             }
         },
         "logout_url": {
@@ -1175,15 +1175,15 @@
         },
         "version_check": {
             "label": "Provjera verzije",
-            "description": "Omogući ishodnu provjeru za otkrivanje ako je dostupnija verzija Frigate."
+            "description": "Omogući ishodnu provjeru za otkrivanje ako je dostupnija verzija Orbi360 NVR."
         }
     },
     "tls": {
         "label": "TLS",
-        "description": "Postavke TLS za web krajnje točke Frigate (port 8971).",
+        "description": "Postavke TLS za web krajnje točke Orbi360 NVR (port 8971).",
         "enabled": {
             "label": "Omogući TLS",
-            "description": "Omogući TLS za web UI i API Frigate na konfiguriranom TLS portu."
+            "description": "Omogući TLS za web UI i API Orbi360 NVR na konfiguriranom TLS portu."
         }
     },
     "ui": {
@@ -1590,7 +1590,7 @@
         },
         "dashboard": {
             "label": "Prikaži u UI",
-            "description": "Prekidač je li ova kamera vidljiva svuda u UI Frigate. Onemogućavanje ovoga zahtijeva ručno uređivanje konfiguracije za ponovno prikazivanje ove kamere u UI."
+            "description": "Prekidač je li ova kamera vidljiva svuda u UI Orbi360 NVR. Onemogućavanje ovoga zahtijeva ručno uređivanje konfiguracije za ponovno prikazivanje ove kamere u UI."
         }
     }
 }

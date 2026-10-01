@@ -45,7 +45,7 @@
     },
     "friendly_name": {
         "label": "Nombre descriptivo",
-        "description": "Nombre descriptivo de la cámara utilizado en la interfaz de usuario de Frigate"
+        "description": "Nombre descriptivo de la cámara utilizado en la interfaz de usuario de Orbi360 NVR"
     },
     "label": "Configuración de cámara",
     "onvif": {
@@ -59,7 +59,7 @@
                 "label": "Factor de zoom"
             },
             "calibrate_on_startup": {
-                "description": "Mida la velocidad de los motores PTZ al encenderlos para mejorar la precisión del seguimiento. Frigate actualizará la configuración con los `movement_weights` tras la calibración.",
+                "description": "Mida la velocidad de los motores PTZ al encenderlos para mejorar la precisión del seguimiento. Orbi360 NVR actualizará la configuración con los `movement_weights` tras la calibración.",
                 "label": "Calibrar al iniciar"
             },
             "description": "Realice un seguimiento automático de objetos en movimiento y manténgalos centrados en el encuadre mediante movimientos de cámara PTZ.",
@@ -121,7 +121,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Ignorar discrepancia horaria",
-            "description": "Ignora las diferencias de sincronización horaria entre la cámara y el servidor Frigate para la comunicación ONVIF."
+            "description": "Ignora las diferencias de sincronización horaria entre la cámara y el servidor Orbi360 NVR para la comunicación ONVIF."
         }
     },
     "zones": {
@@ -178,7 +178,7 @@
             "label": "Velocidad mínima"
         },
         "friendly_name": {
-            "description": "Un nombre fácil de usar para la zona, que se muestra en la interfaz de usuario de Frigate. Si no se especifica, se utilizará una versión formateada del nombre de la zona.",
+            "description": "Un nombre fácil de usar para la zona, que se muestra en la interfaz de usuario de Orbi360 NVR. Si no se especifica, se utilizará una versión formateada del nombre de la zona.",
             "label": "Nombre de zona"
         },
         "inertia": {

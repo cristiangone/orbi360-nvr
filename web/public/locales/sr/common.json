@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Do {{time}}",
-    "untilForRestart": "Dok se Frigate ponovo ne pokrene.",
+    "untilForRestart": "Dok se Orbi360 NVR ponovo ne pokrene.",
     "untilRestart": "Do ponovnog pokretanja",
     "ago": "{{timeAgo}} pre",
     "justNow": "Upravo sada",

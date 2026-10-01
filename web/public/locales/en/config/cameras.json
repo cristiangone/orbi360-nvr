@@ -6,7 +6,7 @@
   },
   "friendly_name": {
     "label": "Friendly name",
-    "description": "Camera friendly name used in the Frigate UI"
+    "description": "Camera friendly name used in the Orbi360 NVR UI"
   },
   "enabled": {
     "label": "Enabled",
@@ -807,7 +807,7 @@
       },
       "calibrate_on_startup": {
         "label": "Calibrate on start",
-        "description": "Measure PTZ motor speeds on startup to improve tracking accuracy. Frigate will update config with movement_weights after calibration."
+        "description": "Measure PTZ motor speeds on startup to improve tracking accuracy. Orbi360 NVR will update config with movement_weights after calibration."
       },
       "zooming": {
         "label": "Zoom mode",
@@ -844,7 +844,7 @@
     },
     "ignore_time_mismatch": {
       "label": "Ignore time mismatch",
-      "description": "Ignore time synchronization differences between camera and Frigate server for ONVIF communication."
+      "description": "Ignore time synchronization differences between camera and Orbi360 NVR server for ONVIF communication."
     }
   },
   "type": {
@@ -880,7 +880,7 @@
     "description": "Zones allow you to define a specific area of the frame so you can determine whether or not an object is within a particular area.",
     "friendly_name": {
       "label": "Zone name",
-      "description": "A user-friendly name for the zone, displayed in the Frigate UI. If not set, a formatted version of the zone name will be used."
+      "description": "A user-friendly name for the zone, displayed in the Orbi360 NVR UI. If not set, a formatted version of the zone name will be used."
     },
     "enabled": {
       "label": "Enabled",

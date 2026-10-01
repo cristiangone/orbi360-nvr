@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "cameras": "Kamera statisztikák - Frigate",
-    "storage": "Tárhely statisztikák - Frigate",
-    "general": "Általános Statisztikák - Frigate",
+    "cameras": "Kamera statisztikák - Orbi360 NVR",
+    "storage": "Tárhely statisztikák - Orbi360 NVR",
+    "general": "Általános Statisztikák - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate naplók - Frigate",
-      "go2rtc": "Go2RTC naplók - Frigate",
-      "nginx": "Nginx naplók - Frigate",
-      "websocket": "Üzenet naplók - Frigate"
+      "frigate": "Orbi360 NVR naplók - Orbi360 NVR",
+      "go2rtc": "Go2RTC naplók - Orbi360 NVR",
+      "nginx": "Nginx naplók - Orbi360 NVR",
+      "websocket": "Üzenet naplók - Orbi360 NVR"
     },
-    "enrichments": "Kiegészítés statisztikák - Frigate"
+    "enrichments": "Kiegészítés statisztikák - Orbi360 NVR"
   },
   "cameras": {
     "label": {
@@ -155,7 +155,7 @@
   "storage": {
     "recordings": {
       "title": "Felvételek",
-      "tips": "Ez az érték mutatja a Frigate adatbázisában található felvételek teljes tárhely felhasználását. A Frigate nem követi az összes fájl által foglalt tárhelyet.",
+      "tips": "Ez az érték mutatja a Orbi360 NVR adatbázisában található felvételek teljes tárhely felhasználását. A Orbi360 NVR nem követi az összes fájl által foglalt tárhelyet.",
       "earliestRecording": "Legkorábbi elérhető felvétel:"
     },
     "title": "Tárhely",
@@ -169,7 +169,7 @@
       "bandwidth": "Sávszélesség",
       "unused": {
         "title": "Felhasználatlan",
-        "tips": "Ez az érték nem feltétlenül tükrözi pontosan a Frigate számára elérhető szabad helyet, ha a meghajtón egyéb fájlok is tárolva vannak a Frigate felvételein kívül. A Frigate nem követi a tárhelyhasználatot a saját felvételein kívül."
+        "tips": "Ez az érték nem feltétlenül tükrözi pontosan a Orbi360 NVR számára elérhető szabad helyet, ha a meghajtón egyéb fájlok is tárolva vannak a Orbi360 NVR felvételein kívül. A Orbi360 NVR nem követi a tárhelyhasználatot a saját felvételein kívül."
       }
     },
     "shm": {

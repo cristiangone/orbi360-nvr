@@ -1,8 +1,8 @@
 {
   "documentTitle": {
-    "default": "ライブ - Frigate"
+    "default": "ライブ - Orbi360 NVR"
   },
-  "documentTitle.withCamera": "{{camera}} - ライブ - Frigate",
+  "documentTitle.withCamera": "{{camera}} - ライブ - Orbi360 NVR",
   "lowBandwidthMode": "低帯域モード",
   "twoWayTalk": {
     "enable": "双方向通話を有効化",
@@ -186,7 +186,7 @@
     },
     "default": {
       "title": "設定済みのカメラがありません",
-      "description": "Frigate にカメラを接続して開始しましょう。",
+      "description": "Orbi360 NVR にカメラを接続して開始しましょう。",
       "buttonText": "カメラを追加"
     },
     "group": {

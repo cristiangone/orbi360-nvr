@@ -5,14 +5,14 @@
         "context": "Potser voldreu reindexar els vectors dels objectes seguits un cop s'hagin descarregat els models.",
         "documentation": "Llegir la documentació"
       },
-      "context": "El Frigate està baixant els models de vectors necessaris per a admetre la funció de Cerca Semàntica. Això pot trigar uns quants minuts depenent de la velocitat de la vostra connexió de xarxa.",
+      "context": "El Orbi360 NVR està baixant els models de vectors necessaris per a admetre la funció de Cerca Semàntica. Això pot trigar uns quants minuts depenent de la velocitat de la vostra connexió de xarxa.",
       "setup": {
         "visionModel": "Model de visió",
         "visionModelFeatureExtractor": "Extractor de característiques del model de visió",
         "textModel": "Model de text",
         "textTokenizer": "Tokenitzador de text"
       },
-      "error": "S'ha produït un error. Comproveu els registres de Frigate."
+      "error": "S'ha produït un error. Comproveu els registres de Orbi360 NVR."
     },
     "embeddingsReindexing": {
       "context": "Explorar pot ser utilitzat després d’haver completat la reindexació d’objectes rastrejats.",
@@ -27,7 +27,7 @@
     },
     "title": "Explorar no està disponible"
   },
-  "documentTitle": "Explora - Frigate",
+  "documentTitle": "Explora - Orbi360 NVR",
   "generativeAI": "IA Generativa",
   "objectLifecycle": {
     "createObjectMask": "Crear màscara per a l'objecte",
@@ -60,7 +60,7 @@
         "desc": "Aquestes dades provenen de la detecció d'objectes, però se superposen a les imatges d’enregistrament. És poc probable que les dues transmissions estiguin perfectament sincronitzades. Per aquest motiu, la capsa delimitadora i les imatges poden no coincidir exactament. Tanmateix, es pot utilitzar el camp <code>annotation_offset</code> per ajustar-ho.",
         "tips": "CONSELL: Imagina que hi ha la captura d'un esdeveniment on una persona camina d'esquerra a dreta. Si la caixa delimitadora de l'objecte està constantment a l'esquerra de la persona, llavors el valor s'hauria de disminuir. Si, per contra, la caixa delimitadora està constantment per davant de la persona (a la seva dreta en aquest exemple), llavors el valor s'hauria d'augmentar.",
         "toast": {
-          "success": "El desplaçament d'anotació per {{camera}} s'ha guardat al fitxer de configuració. Reinicia Frigate per aplicar els canvis."
+          "success": "El desplaçament d'anotació per {{camera}} s'ha guardat al fitxer de configuració. Reinicia Orbi360 NVR per aplicar els canvis."
         },
         "millisecondsToOffset": "Mil·lisegons a desplaçar les anotacions de detecció: <em>Per Defecte: 0</em>"
       },
@@ -100,7 +100,7 @@
           "updatedSublabel": "Subetiqueta actualitzada amb èxit.",
           "updatedLPR": "Matrícula actualitzada amb èxit.",
           "regenerate": "El {{provider}} ha sol·licitat una nova descripció. En funció de la velocitat del vostre proveïdor, la nova descripció pot trigar un temps a regenerar-se.",
-          "audioTranscription": "S'ha sol·licitat correctament la transcripció d'àudio. Depenent de la velocitat del vostre servidor Frigate, la transcripció pot trigar una estona a completar-se.",
+          "audioTranscription": "S'ha sol·licitat correctament la transcripció d'àudio. Depenent de la velocitat del vostre servidor Orbi360 NVR, la transcripció pot trigar una estona a completar-se.",
           "updatedAttributes": "Els atributs s'han actualitzat correctament."
         },
         "error": {
@@ -114,7 +114,7 @@
       "title": "Revisar detalls de l'element",
       "desc": "Revisar detalls de l'element",
       "tips": {
-        "hasMissingObjects": "Ajusta la configuració si vols que Frigate guardi els objectes rastrejat de les seguents etiquetes: <em>{{objects}}</em>",
+        "hasMissingObjects": "Ajusta la configuració si vols que Orbi360 NVR guardi els objectes rastrejat de les seguents etiquetes: <em>{{objects}}</em>",
         "mismatch_one": "{{count}} objecte no disponible ha estat detectat i inclòs en aquest element de revisió. Aquest objecte tampoc no s'han calificat com una alerta o detecció o ja ha estat netejat mes amunt/eliminat.",
         "mismatch_many": "{{count}} objectes no disponibles han estat detectats i inclosos en aquest element de revisió. Aquests objectes tampoc no s'han calificat com una alerta o detecció o ja han estat netejats mes amunt/eliminats.",
         "mismatch_other": "{{count}} objectes no disponibles han estat detectats i inclosos en aquest element de revisió. Aquests objectes tampoc no s'han calificat com una alerta o detecció o ja han estat netejats mes amunt/eliminats."
@@ -143,7 +143,7 @@
     "description": {
       "placeholder": "Descripció de l'objecte rastrejat",
       "label": "Descripció",
-      "aiTips": "Frigate no sol·licitarà una descripció al teu proveïdor d'intel·ligència artificial generativa fins que el cicle de vida de l'objecte rastrejat hagi acabat."
+      "aiTips": "Orbi360 NVR no sol·licitarà una descripció al teu proveïdor d'intel·ligència artificial generativa fins que el cicle de vida de l'objecte rastrejat hagi acabat."
     },
     "objects": "Objectes",
     "camera": "Càmera",

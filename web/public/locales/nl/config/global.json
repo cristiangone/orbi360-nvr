@@ -177,17 +177,17 @@
     },
     "safe_mode": {
         "label": "Veilige modus",
-        "description": "Wanneer ingeschakeld, start Frigate op in veilige modus met beperkte functies voor probleemoplossing."
+        "description": "Wanneer ingeschakeld, start Orbi360 NVR op in veilige modus met beperkte functies voor probleemoplossing."
     },
     "environment_vars": {
         "label": "Omgevingsvariabelen",
-        "description": "Sleutel/waarde-paren van omgevingsvariabelen die ingesteld worden voor het Frigate-proces in Home Assistant OS. Gebruikers zonder HAOS moeten in plaats daarvan de Docker-omgevingsvariabelenconfiguratie gebruiken."
+        "description": "Sleutel/waarde-paren van omgevingsvariabelen die ingesteld worden voor het Orbi360 NVR-proces in Home Assistant OS. Gebruikers zonder HAOS moeten in plaats daarvan de Docker-omgevingsvariabelenconfiguratie gebruiken."
     },
     "auth": {
         "label": "Authenticatie",
         "enabled": {
             "label": "Authenticatie inschakelen",
-            "description": "Schakel native authenticatie in voor de Frigate UI."
+            "description": "Schakel native authenticatie in voor de Orbi360 NVR UI."
         },
         "reset_admin_password": {
             "label": "Adminwachtwoord resetten",
@@ -253,10 +253,10 @@
     },
     "database": {
         "label": "Database",
-        "description": "Instellingen voor de SQLite-database die Frigate gebruikt om gevolgde objecten en opname-metadata op te slaan.",
+        "description": "Instellingen voor de SQLite-database die Orbi360 NVR gebruikt om gevolgde objecten en opname-metadata op te slaan.",
         "path": {
             "label": "Databasepad",
-            "description": "Bestandssysteempad waar het Frigate SQLite-databasebestand wordt opgeslagen."
+            "description": "Bestandssysteempad waar het Orbi360 NVR SQLite-databasebestand wordt opgeslagen."
         }
     },
     "go2rtc": {
@@ -280,7 +280,7 @@
         },
         "topic_prefix": {
             "label": "Topic-prefix",
-            "description": "MQTT-topic-prefix voor alle Frigate-topics; moet uniek zijn bij meerdere instanties."
+            "description": "MQTT-topic-prefix voor alle Orbi360 NVR-topics; moet uniek zijn bij meerdere instanties."
         },
         "client_id": {
             "label": "Client-ID",
@@ -341,13 +341,13 @@
     },
     "networking": {
         "label": "Netwerken",
-        "description": "Netwerkinstellingen zoals IPv6-ondersteuning voor Frigate-eindpunten.",
+        "description": "Netwerkinstellingen zoals IPv6-ondersteuning voor Orbi360 NVR-eindpunten.",
         "ipv6": {
             "label": "IPv6-configuratie",
-            "description": "IPv6-instellingen voor Frigate-netwerkdiensten.",
+            "description": "IPv6-instellingen voor Orbi360 NVR-netwerkdiensten.",
             "enabled": {
                 "label": "IPv6 inschakelen",
-                "description": "IPv6-ondersteuning voor Frigate-diensten (API en UI) inschakelen waar van toepassing."
+                "description": "IPv6-ondersteuning voor Orbi360 NVR-diensten (API en UI) inschakelen waar van toepassing."
             }
         },
         "listen": {
@@ -355,20 +355,20 @@
             "description": "Configuratie van interne en externe luisterpoorten. Dit is voor gevorderde gebruikers. In de meeste gevallen wordt aanbevolen de poortensectie in het Docker Compose-bestand aan te passen.",
             "internal": {
                 "label": "Interne poort",
-                "description": "Interne luisterpoort voor Frigate (standaard 5000)."
+                "description": "Interne luisterpoort voor Orbi360 NVR (standaard 5000)."
             },
             "external": {
                 "label": "Externe poort",
-                "description": "Externe luisterpoort voor Frigate (standaard 8971)."
+                "description": "Externe luisterpoort voor Orbi360 NVR (standaard 8971)."
             }
         }
     },
     "proxy": {
         "label": "Proxy",
-        "description": "Instellingen voor het integreren van Frigate achter een reverse proxy die geauthenticeerde gebruikersheaders doorgeeft.",
+        "description": "Instellingen voor het integreren van Orbi360 NVR achter een reverse proxy die geauthenticeerde gebruikersheaders doorgeeft.",
         "header_map": {
             "label": "Headertoewijzing",
-            "description": "Inkomende proxyheaders koppelen aan Frigate gebruikers- en rolvelden voor proxy-authenticatie.",
+            "description": "Inkomende proxyheaders koppelen aan Orbi360 NVR gebruikers- en rolvelden voor proxy-authenticatie.",
             "user": {
                 "label": "Gebruikersheader",
                 "description": "Header met de geauthenticeerde gebruikersnaam van de upstream-proxy."
@@ -379,7 +379,7 @@
             },
             "role_map": {
                 "label": "Roltoewijzing",
-                "description": "Koppel upstream-groepswaarden aan Frigate-rollen (bijv. admingroepen aan de adminrol)."
+                "description": "Koppel upstream-groepswaarden aan Orbi360 NVR-rollen (bijv. admingroepen aan de adminrol)."
             }
         },
         "logout_url": {
@@ -428,15 +428,15 @@
         },
         "version_check": {
             "label": "Versiecontrole",
-            "description": "Een uitgaande controle inschakelen om te detecteren of een nieuwere Frigate-versie beschikbaar is."
+            "description": "Een uitgaande controle inschakelen om te detecteren of een nieuwere Orbi360 NVR-versie beschikbaar is."
         }
     },
     "tls": {
         "label": "TLS",
-        "description": "TLS-instellingen voor de Frigate-webservice (poort 8971).",
+        "description": "TLS-instellingen voor de Orbi360 NVR-webservice (poort 8971).",
         "enabled": {
             "label": "TLS inschakelen",
-            "description": "TLS inschakelen voor de Frigate-webinterface en API op de geconfigureerde TLS-poort."
+            "description": "TLS inschakelen voor de Orbi360 NVR-webinterface en API op de geconfigureerde TLS-poort."
         }
     },
     "ui": {
@@ -1521,7 +1521,7 @@
         },
         "dashboard": {
             "label": "Weergeven op het live-dashboard",
-            "description": "Schakel de zichtbaarheid van deze camera overal in de Frigate-UI in of uit. Uitschakelen vereist handmatige aanpassing van de configuratie om de camera opnieuw te bekijken."
+            "description": "Schakel de zichtbaarheid van deze camera overal in de Orbi360 NVR-UI in of uit. Uitschakelen vereist handmatige aanpassing van de configuratie om de camera opnieuw te bekijken."
         }
     },
     "onvif": {
@@ -1560,7 +1560,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Kalibreren bij opstarten",
-                "description": "PTZ-motorsnelheden meten bij opstarten voor nauwkeurigere volging. Frigate werkt de configuratie bij met movement_weights na kalibratie."
+                "description": "PTZ-motorsnelheden meten bij opstarten voor nauwkeurigere volging. Orbi360 NVR werkt de configuratie bij met movement_weights na kalibratie."
             },
             "zooming": {
                 "label": "Zoommodus",
@@ -1597,7 +1597,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Tijdsverschil negeren",
-            "description": "Tijdsynchronisatieverschillen tussen camera en Frigate-server negeren voor ONVIF-communicatie."
+            "description": "Tijdsynchronisatieverschillen tussen camera en Orbi360 NVR-server negeren voor ONVIF-communicatie."
         }
     }
 }

@@ -1,8 +1,8 @@
 {
-  "documentTitle": "Настройки на конфигурацията - Frigate",
+  "documentTitle": "Настройки на конфигурацията - Orbi360 NVR",
   "configEditor": "Конфигуратор",
   "safeConfigEditor": "Конфигуратор (Safe Mode)",
-  "safeModeDescription": "Frigate е в режим \"Safe Mode\" тъй като конфигурацията не минава проверките за валидност.",
+  "safeModeDescription": "Orbi360 NVR е в режим \"Safe Mode\" тъй като конфигурацията не минава проверките за валидност.",
   "copyConfig": "Копирай Конфигурацията",
   "saveAndRestart": "Запази и Рестартирай",
   "saveOnly": "Запази",

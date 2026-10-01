@@ -26,7 +26,7 @@
       "deleteCategoryFailed": "Xóa lớp không thành công: {{errorMessage}}",
       "deleteModelFailed": "Xóa mô hình không thành công: {{errorMessage}}",
       "categorizeFailed": "Phân loại hình ảnh không thành công: {{errorMessage}}",
-      "trainingFailed": "Huấn luyện mô hình thất bại. Vui lòng kiểm tra nhật ký của Frigate để biết chi tiết.",
+      "trainingFailed": "Huấn luyện mô hình thất bại. Vui lòng kiểm tra nhật ký của Orbi360 NVR để biết chi tiết.",
       "trainingFailedToStart": "Khởi động huấn luyện mô hình không thành công: {{errorMessage}}",
       "updateModelFailed": "Cập nhật mô hình không thành công: {{errorMessage}}",
       "renameCategoryFailed": "Không đổi tên được lớp: {{errorMessage}}"

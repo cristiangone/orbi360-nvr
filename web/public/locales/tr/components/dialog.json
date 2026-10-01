@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Frigate'i yeniden başlatmak istediğinize emin misiniz?",
+    "title": "Orbi360 NVR'i yeniden başlatmak istediğinize emin misiniz?",
     "button": "Yeniden Başlat",
     "restarting": {
       "content": "Bu sayfa {{countdown}} saniye sonra yeniden yüklenecektir.",
-      "title": "Frigate Yeniden Başlatılıyor",
+      "title": "Orbi360 NVR Yeniden Başlatılıyor",
       "button": "Şimdi Yeniden Yükle"
     },
-    "description": "Bu Frigate'i kısa süreliğine yeniden başlayana kadar durduracak."
+    "description": "Bu Orbi360 NVR'i kısa süreliğine yeniden başlayana kadar durduracak."
   },
   "explore": {
     "plus": {
@@ -193,10 +193,10 @@
     "shareTimestamp": {
       "label": "Zaman Damgasını Paylaş",
       "title": "Zaman Damgasını Paylaş",
-      "description": "Mevcut oynatıcı konumuna ait zaman damgalı bir URL paylaşın veya özel bir zaman damgası seçin. Bunun herkese açık bir paylaşım URL'si olmadığını ve yalnızca Frigate ile bu kameraya erişimi olan kullanıcılar tarafından görüntülenebileceğini unutmayın.",
+      "description": "Mevcut oynatıcı konumuna ait zaman damgalı bir URL paylaşın veya özel bir zaman damgası seçin. Bunun herkese açık bir paylaşım URL'si olmadığını ve yalnızca Orbi360 NVR ile bu kameraya erişimi olan kullanıcılar tarafından görüntülenebileceğini unutmayın.",
       "custom": "Özel Zaman Damgası",
       "button": "Zaman Damgalı URL'yi Paylaş",
-      "shareTitle": "Frigate İnceleme Zaman Damgası: {{camera}}"
+      "shareTitle": "Orbi360 NVR İnceleme Zaman Damgası: {{camera}}"
     }
   },
   "imagePicker": {

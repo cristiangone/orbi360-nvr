@@ -1,13 +1,13 @@
 {
   "documentTitle": {
-    "cameras": "鏡頭統計 - Frigate",
-    "storage": "儲存裝置統計 - Frigate",
-    "general": "一般統計 - Frigate",
-    "enrichments": "進階功能統計 - Frigate",
+    "cameras": "鏡頭統計 - Orbi360 NVR",
+    "storage": "儲存裝置統計 - Orbi360 NVR",
+    "general": "一般統計 - Orbi360 NVR",
+    "enrichments": "進階功能統計 - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate 日誌 - Frigate",
-      "nginx": "Nginx 日誌 - Frigate",
-      "go2rtc": "Go2RTC 日誌 - Frigate"
+      "frigate": "Orbi360 NVR 日誌 - Orbi360 NVR",
+      "nginx": "Nginx 日誌 - Orbi360 NVR",
+      "go2rtc": "Go2RTC 日誌 - Orbi360 NVR"
     }
   },
   "title": "系統",
@@ -104,7 +104,7 @@
     "recordings": {
       "title": "錄影檔案",
       "earliestRecording": "最早可用錄影檔案：",
-      "tips": "此數值代表 Frigate 資料庫中錄影檔案的總儲存使用量。Frigate 不會追蹤磁碟上所有檔案的儲存使用量。"
+      "tips": "此數值代表 Orbi360 NVR 資料庫中錄影檔案的總儲存使用量。Orbi360 NVR 不會追蹤磁碟上所有檔案的儲存使用量。"
     },
     "cameraStorage": {
       "camera": "鏡頭",
@@ -112,7 +112,7 @@
       "storageUsed": "已使用儲存",
       "bandwidth": "每小時使用量",
       "unused": {
-        "tips": "若您的磁碟中存有其他檔案，該數值可能無法準確反映 Frigate 可用的空間。Frigate 只追蹤其錄影檔案的儲存使用量。",
+        "tips": "若您的磁碟中存有其他檔案，該數值可能無法準確反映 Orbi360 NVR 可用的空間。Orbi360 NVR 只追蹤其錄影檔案的儲存使用量。",
         "title": "未使用"
       },
       "title": "鏡頭儲存",

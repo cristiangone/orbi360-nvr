@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Ești sigur că dorești să repornești Frigate?",
+    "title": "Ești sigur că dorești să repornești Orbi360 NVR?",
     "button": "Repornește",
     "restarting": {
-      "title": "Frigate repornește",
+      "title": "Orbi360 NVR repornește",
       "content": "Această pagină se va reâncărca automat în {{countdown}} secunde.",
       "button": "Forțează acum reîncărcarea"
     },
-    "description": "Acest lucru va opri temporar Frigate în timpul repornirii."
+    "description": "Acest lucru va opri temporar Orbi360 NVR în timpul repornirii."
   },
   "explore": {
     "plus": {
@@ -66,10 +66,10 @@
     "shareTimestamp": {
       "label": "Partajează timestamp-ul",
       "title": "Partajează timestamp-ul",
-      "description": "Partajează un URL cu timestamp al poziției actuale din player sau alege un timestamp personalizat. Reține că acesta nu este un URL de partajare publică și este accesibil doar utilizatorilor care au acces la Frigate și la această cameră.",
+      "description": "Partajează un URL cu timestamp al poziției actuale din player sau alege un timestamp personalizat. Reține că acesta nu este un URL de partajare publică și este accesibil doar utilizatorilor care au acces la Orbi360 NVR și la această cameră.",
       "custom": "Timestamp personalizat",
       "button": "Partajează URL-ul cu timestamp",
-      "shareTitle": "Timestamp review Frigate: {{camera}}"
+      "shareTitle": "Timestamp review Orbi360 NVR: {{camera}}"
     }
   },
   "export": {

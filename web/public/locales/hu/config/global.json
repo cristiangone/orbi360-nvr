@@ -35,11 +35,11 @@
     },
     "safe_mode": {
         "label": "Biztonságos mód",
-        "description": "Ha engedélyezve van, a Frigate programot biztonsági módban indítja el, csökkentett funkciókkal a hibaelhárítás érdekében."
+        "description": "Ha engedélyezve van, a Orbi360 NVR programot biztonsági módban indítja el, csökkentett funkciókkal a hibaelhárítás érdekében."
     },
     "environment_vars": {
         "label": "Környezeti változók",
-        "description": "A Home Assistant OS rendszerben a Frigate folyamat számára beállítandó környezeti változói. A nem HAOS-felhasználóknak helyette a Docker konfigurációját kell használniuk."
+        "description": "A Home Assistant OS rendszerben a Orbi360 NVR folyamat számára beállítandó környezeti változói. A nem HAOS-felhasználóknak helyette a Docker konfigurációját kell használniuk."
     },
     "logger": {
         "label": "Naplózás",
@@ -83,7 +83,7 @@
         "description": "Bejelentkezési és munkamenet-beállítások, többek között süti- és lekérdezési korlátok (rate limit) megadásához.",
         "enabled": {
             "label": "Bejelentkezés engedélyezése",
-            "description": "Natív bejelentkezés (azonosítás) engedélyezése a Frigate felületén."
+            "description": "Natív bejelentkezés (azonosítás) engedélyezése a Orbi360 NVR felületén."
         },
         "reset_admin_password": {
             "label": "Admin jelszó visszaállítása",

@@ -807,7 +807,7 @@
             },
             "calibrate_on_startup": {
                 "label": "启动时校准",
-                "description": "在启动时测量 PTZ 电机速度以提高追踪精度。Frigate 将在校准后用 movement_weights 更新配置。"
+                "description": "在启动时测量 PTZ 电机速度以提高追踪精度。Orbi360 NVR 将在校准后用 movement_weights 更新配置。"
             },
             "zooming": {
                 "label": "变焦模式",
@@ -844,7 +844,7 @@
         },
         "ignore_time_mismatch": {
             "label": "忽略时间不匹配",
-            "description": "忽略 ONVIF 通信中摄像头和 Frigate 服务器之间的时间同步差异。"
+            "description": "忽略 ONVIF 通信中摄像头和 Orbi360 NVR 服务器之间的时间同步差异。"
         },
         "profile": {
             "label": "ONVIF 配置文件",
@@ -884,7 +884,7 @@
         "description": "区域允许您定义帧的特定区域，以便确定目标是否在特定区域内。",
         "friendly_name": {
             "label": "区域名称",
-            "description": "区域的友好名称，显示在 Frigate 页面中。如果未设置，将使用区域名称的格式化版本。"
+            "description": "区域的友好名称，显示在 Orbi360 NVR 页面中。如果未设置，将使用区域名称的格式化版本。"
         },
         "enabled": {
             "label": "开启",

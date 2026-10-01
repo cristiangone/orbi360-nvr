@@ -14,8 +14,8 @@
       "context": "Explorar puede usarse después de que las incrustaciones de objetos rastreados hayan terminado de reindexarse."
     },
     "downloadingModels": {
-      "context": "Frigate está descargando los modelos de incrustaciones necesarios para soportar la función de Búsqueda Semántica. Esto puede tomar varios minutos dependiendo de la velocidad de tu conexión de red.",
-      "error": "Ha ocurrido un error. Revisa los registros de Frigate.",
+      "context": "Orbi360 NVR está descargando los modelos de incrustaciones necesarios para soportar la función de Búsqueda Semántica. Esto puede tomar varios minutos dependiendo de la velocidad de tu conexión de red.",
+      "error": "Ha ocurrido un error. Revisa los registros de Orbi360 NVR.",
       "setup": {
         "visionModelFeatureExtractor": "Extractor de características del modelo de visión",
         "visionModel": "Modelo de visión",
@@ -42,7 +42,7 @@
           "updatedSublabel": "Subetiqueta actualizada con éxito.",
           "regenerate": "Se ha solicitado una nueva descripción a {{provider}}. Dependiendo de la velocidad de tu proveedor, la nueva descripción puede tardar algún tiempo en regenerarse.",
           "updatedLPR": "Matrícula actualizada con éxito.",
-          "audioTranscription": "Se solicitó correctamente la transcripción de audio. Dependiendo de la velocidad de su servidor Frigate, la transcripción puede tardar un tiempo.",
+          "audioTranscription": "Se solicitó correctamente la transcripción de audio. Dependiendo de la velocidad de su servidor Orbi360 NVR, la transcripción puede tardar un tiempo.",
           "updatedAttributes": "Atributos actualizados correctamente."
         },
         "error": {
@@ -57,7 +57,7 @@
         "mismatch_one": "Se detectó y se incluyó en este elemento de revisión un objeto {{count}} no disponible. Esos objetos no calificaron como alerta o detección o ya han sido limpiados/eliminados.",
         "mismatch_many": "Se detectaron y se incluyeron en este elemento de revisión {{count}} objetos no disponibles. Esos objetos no calificaron como alerta o detección o ya han sido limpiados/eliminados.",
         "mismatch_other": "Se detectaron y se incluyeron en este elemento de revisión {{count}} objetos no disponibles. Esos objetos no calificaron como alerta o detección o ya han sido limpiados/eliminados.",
-        "hasMissingObjects": "Ajusta tu configuración si quieres que Frigate guarde los objetos rastreados para las siguientes etiquetas: <em>{{objects}}</em>"
+        "hasMissingObjects": "Ajusta tu configuración si quieres que Orbi360 NVR guarde los objetos rastreados para las siguientes etiquetas: <em>{{objects}}</em>"
       }
     },
     "topScore": {
@@ -65,7 +65,7 @@
       "info": "La puntuación máxima es la mediana más alta para el objeto rastreado, por lo que puede diferir de la puntuación mostrada en la miniatura del resultado de búsqueda."
     },
     "description": {
-      "aiTips": "Frigate no solicitará una descripción a tu proveedor de Inteligencia Artificial Generativa hasta que el ciclo de vida del objeto rastreado haya terminado.",
+      "aiTips": "Orbi360 NVR no solicitará una descripción a tu proveedor de Inteligencia Artificial Generativa hasta que el ciclo de vida del objeto rastreado haya terminado.",
       "placeholder": "Descripción del objeto rastreado",
       "label": "Descripción"
     },
@@ -115,7 +115,7 @@
     },
     "scoreInfo": "Información de confianza"
   },
-  "documentTitle": "Explorar - Frigate",
+  "documentTitle": "Explorar - Orbi360 NVR",
   "trackedObjectDetails": "Detalles del objeto rastreado",
   "type": {
     "snapshot": "captura instantánea",
@@ -157,7 +157,7 @@
         "documentation": "Leer la documentación ",
         "tips": "CONSEJO: Imagina que hay un clip de evento con una persona caminando de izquierda a derecha. Si la caja delimitadora de la línea de tiempo del evento está constantemente a la izquierda de la persona, entonces se debe disminuir el valor. Del mismo modo, si una persona camina de izquierda a derecha y la caja delimitadora está constantemente por delante de la persona, entonces se debe aumentar el valor.",
         "toast": {
-          "success": "El desplazamiento de anotación para {{camera}} se ha guardado en el archivo de configuración. Reinicia Frigate para aplicar los cambios."
+          "success": "El desplazamiento de anotación para {{camera}} se ha guardado en el archivo de configuración. Reinicia Orbi360 NVR para aplicar los cambios."
         }
       },
       "showAllZones": {

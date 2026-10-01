@@ -1,7 +1,7 @@
 {
-  "documentTitle.withCamera": "{{camera}} - Live - Frigate",
+  "documentTitle.withCamera": "{{camera}} - Live - Orbi360 NVR",
   "documentTitle": {
-    "default": "Live - Frigate"
+    "default": "Live - Orbi360 NVR"
   },
   "lowBandwidthMode": "Mode bandwidth rendah",
   "twoWayTalk": {
@@ -180,7 +180,7 @@
   },
   "noCameras": {
     "title": "Tidak Ada Kamera yang Dikonfigurasi",
-    "description": "Mulai dengan menghubungkan kamera ke Frigate.",
+    "description": "Mulai dengan menghubungkan kamera ke Orbi360 NVR.",
     "buttonText": "Tambahkan Kamera",
     "restricted": {
       "title": "Tidak Ada Kamera yang Tersedia",
@@ -188,7 +188,7 @@
     },
     "default": {
       "title": "Tidak Ada Kamera yang Dikonfigurasi",
-      "description": "Mulai dengan menghubungkan kamera ke Frigate.",
+      "description": "Mulai dengan menghubungkan kamera ke Orbi360 NVR.",
       "buttonText": "Tambahkan Kamera"
     },
     "group": {

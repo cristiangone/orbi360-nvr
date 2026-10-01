@@ -14,7 +14,7 @@
     "addFace": "Laadides üles oma esimese pildi saad lisada uue kogumiku Näoteeki.",
     "nameCannotContainHash": "Nimi ei saa sisaldada # märki."
   },
-  "documentTitle": "Näoteek - Frigate",
+  "documentTitle": "Näoteek - Orbi360 NVR",
   "createFaceLibrary": {
     "new": "Lisa uus nägu",
     "nextSteps": "Tugeva tuvastusaluse loomiseks:<li>Kasuta vahekaarti \"Hiljutised tuvastused\", et valida pilte ja treenida isikutuvastust.</li><li>Parima tulemuse saavutamiseks keskendu otsepiltidele; väldi nurga all olevaid nägusid treenimiseks.</li></ul>"

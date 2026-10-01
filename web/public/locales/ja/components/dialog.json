@@ -1,8 +1,8 @@
 {
   "restart": {
-    "title": "Frigate を再起動してもよろしいですか？",
+    "title": "Orbi360 NVR を再起動してもよろしいですか？",
     "restarting": {
-      "title": "Frigate を再起動中",
+      "title": "Orbi360 NVR を再起動中",
       "content": "このページは {{countdown}} 秒後に再読み込みされます。",
       "button": "今すぐ強制再読み込み"
     },
@@ -173,10 +173,10 @@
     "shareTimestamp": {
       "label": "タイムスタンプを共有",
       "title": "タイムスタンプを共有",
-      "description": "現在のプレーヤー位置をタイムスタンプ付き URL で共有するか、任意のタイムスタンプを指定できます。これは公開リンクではなく、Frigate とこのカメラへのアクセス権を持つユーザーのみアクセスできます。",
+      "description": "現在のプレーヤー位置をタイムスタンプ付き URL で共有するか、任意のタイムスタンプを指定できます。これは公開リンクではなく、Orbi360 NVR とこのカメラへのアクセス権を持つユーザーのみアクセスできます。",
       "custom": "カスタムタイムスタンプ",
       "button": "タイムスタンプ URL を共有",
-      "shareTitle": "Frigate レビュータイムスタンプ: {{camera}}"
+      "shareTitle": "Orbi360 NVR レビュータイムスタンプ: {{camera}}"
     }
   },
   "imagePicker": {

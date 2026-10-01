@@ -1,6 +1,6 @@
 {
-  "documentTitle": "Live - Frigate",
-  "documentTitle.withCamera": "{{camera}} – livevy - Frigate",
+  "documentTitle": "Live - Orbi360 NVR",
+  "documentTitle.withCamera": "{{camera}} – livevy - Orbi360 NVR",
   "twoWayTalk": {
     "enable": "Aktivera tvåvägssamtal",
     "disable": "Inaktivera tvåvägssamtal"
@@ -173,7 +173,7 @@
   },
   "noCameras": {
     "title": "Inga kameror konfigurerade",
-    "description": "Börja med att ansluta en kamera till Frigate.",
+    "description": "Börja med att ansluta en kamera till Orbi360 NVR.",
     "buttonText": "Lägg till kamera",
     "restricted": {
       "title": "Inga kameror tillgängliga",
@@ -181,7 +181,7 @@
     },
     "default": {
       "title": "Ingen kamera konfigurerad",
-      "description": "Börja med att ansluta en kamera till Frigate.",
+      "description": "Börja med att ansluta en kamera till Orbi360 NVR.",
       "buttonText": "Lägg till kamera"
     },
     "group": {

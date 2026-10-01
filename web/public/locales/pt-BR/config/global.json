@@ -5,11 +5,11 @@
     },
     "safe_mode": {
         "label": "Modo Seguro",
-        "description": "Quando habilitado, Frigate inicia em modo seguro com recursos reduzidos para solucionar problemas."
+        "description": "Quando habilitado, Orbi360 NVR inicia em modo seguro com recursos reduzidos para solucionar problemas."
     },
     "environment_vars": {
         "label": "Variáveis de ambiente",
-        "description": "Pares de chave/valor de variáveis de ambiente para atribuir ao processo do Frigate no Home Assistant OS. Usuários que não usam HAOS devem usar variáveis de ambiente do Docker."
+        "description": "Pares de chave/valor de variáveis de ambiente para atribuir ao processo do Orbi360 NVR no Home Assistant OS. Usuários que não usam HAOS devem usar variáveis de ambiente do Docker."
     },
     "logger": {
         "label": "Logando",
@@ -59,7 +59,7 @@
         "description": "Configurações de autenticação e relacionadas à sessão, incluindo opções de cookies e limite de taxa.",
         "enabled": {
             "label": "Habilitar autenticação",
-            "description": "Ative a autenticação nativa para a interface do usuário do Frigate."
+            "description": "Ative a autenticação nativa para a interface do usuário do Orbi360 NVR."
         },
         "reset_admin_password": {
             "label": "Redefinir senha de administrador",
@@ -740,7 +740,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Calibrar ao iniciar",
-                "description": "Meça as velocidades do motor PTZ na inicialização para melhorar a precisão do rastreamento. O Frigate atualizará a configuração com movement_weights após a calibração."
+                "description": "Meça as velocidades do motor PTZ na inicialização para melhorar a precisão do rastreamento. O Orbi360 NVR atualizará a configuração com movement_weights após a calibração."
             },
             "zooming": {
                 "label": "Modo de zoom"

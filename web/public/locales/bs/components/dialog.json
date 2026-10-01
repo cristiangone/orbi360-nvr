@@ -1,10 +1,10 @@
 {
   "restart": {
-    "title": "Sigurni li ste da želite ponovno pokrenuti Frigate?",
-    "description": "Ovo privremeno zaustavi Frigate dok se ponovno pokreće.",
+    "title": "Sigurni li ste da želite ponovno pokrenuti Orbi360 NVR?",
+    "description": "Ovo privremeno zaustavi Orbi360 NVR dok se ponovno pokreće.",
     "button": "Ponovno pokretanje",
     "restarting": {
-      "title": "Frigate se ponovo pokreće",
+      "title": "Orbi360 NVR se ponovo pokreće",
       "content": "Ova stranica će se ponovno učitati za {{countdown}} sekundi.",
       "button": "Silovito ponovno učitavanje sada"
     }
@@ -164,10 +164,10 @@
     "shareTimestamp": {
       "label": "Dijeli vremensku oznaku",
       "title": "Dijeli vremensku oznaku",
-      "description": "Dijelite URL označen vremenom trenutne pozicije igrača ili odaberite prilagođenu vremensku oznaku. Napomena: ovo nije javni URL za dijeljenje i dostupan je samo korisnicima koji imaju pristup Frigate i ovoj kameri.",
+      "description": "Dijelite URL označen vremenom trenutne pozicije igrača ili odaberite prilagođenu vremensku oznaku. Napomena: ovo nije javni URL za dijeljenje i dostupan je samo korisnicima koji imaju pristup Orbi360 NVR i ovoj kameri.",
       "custom": "Prilagođena vremenska oznaka",
       "button": "URL za dijeljenje vremenske oznake",
-      "shareTitle": "Vremenska oznaka pregleda Frigate: {{camera}}"
+      "shareTitle": "Vremenska oznaka pregleda Orbi360 NVR: {{camera}}"
     },
     "confirmDelete": {
       "title": "Potvrdi brisanje",

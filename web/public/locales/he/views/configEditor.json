@@ -1,5 +1,5 @@
 {
-  "documentTitle": "עורך הגדרות - Frigate",
+  "documentTitle": "עורך הגדרות - Orbi360 NVR",
   "configEditor": "עורך תצורה",
   "copyConfig": "העתקת הגדרות",
   "saveAndRestart": "שמירה והפעלה מחדש",
@@ -14,5 +14,5 @@
     }
   },
   "safeConfigEditor": "עורך תצורה (מצב בטוח)",
-  "safeModeDescription": "Frigate במצב בטוח עקב שגיאת אימות הגדרות."
+  "safeModeDescription": "Orbi360 NVR במצב בטוח עקב שגיאת אימות הגדרות."
 }

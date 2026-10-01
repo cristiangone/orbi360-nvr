@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Er du sikker på, at du vil genstarte Frigate?",
+    "title": "Er du sikker på, at du vil genstarte Orbi360 NVR?",
     "button": "Genstart",
     "restarting": {
-      "title": "Frigate genstarter",
+      "title": "Orbi360 NVR genstarter",
       "button": "Gennemtving genindlæsning nu",
       "content": "Denne side genindlæses om {{countdown}} sekunder."
     },
-    "description": "Dette vil kortvarigt stoppe Frigate under genstart."
+    "description": "Dette vil kortvarigt stoppe Orbi360 NVR under genstart."
   },
   "explore": {
     "plus": {

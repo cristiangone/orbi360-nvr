@@ -1,7 +1,7 @@
 {
   "time": {
     "untilForTime": "Until {{time}}",
-    "untilForRestart": "Until Frigate restarts.",
+    "untilForRestart": "Until Orbi360 NVR restarts.",
     "untilRestart": "Until restart",
     "never": "Never",
     "ago": "{{timeAgo}} ago",
@@ -112,7 +112,7 @@
   },
   "field": {
     "optional": "Optional",
-    "internalID": "The Internal ID Frigate uses in the configuration and database"
+    "internalID": "The Internal ID Orbi360 NVR uses in the configuration and database"
   },
   "button": {
     "add": "Add",
@@ -243,9 +243,9 @@
     "help": "Help",
     "documentation": {
       "title": "Documentation",
-      "label": "Frigate documentation"
+      "label": "Orbi360 NVR documentation"
     },
-    "restart": "Restart Frigate",
+    "restart": "Restart Orbi360 NVR",
     "live": {
       "title": "Live",
       "allCameras": "All Cameras",
@@ -288,7 +288,7 @@
     "title": "Role",
     "admin": "Admin",
     "viewer": "Viewer",
-    "desc": "Admins have full access to all features in the Frigate UI. Viewers are limited to viewing cameras, review items, and historical footage in the UI."
+    "desc": "Admins have full access to all features in the Orbi360 NVR UI. Viewers are limited to viewing cameras, review items, and historical footage in the UI."
   },
   "pagination": {
     "label": "pagination",
@@ -303,12 +303,12 @@
     "more": "More pages"
   },
   "accessDenied": {
-    "documentTitle": "Access Denied - Frigate",
+    "documentTitle": "Access Denied - Orbi360 NVR",
     "title": "Access Denied",
     "desc": "You don't have permission to view this page."
   },
   "notFound": {
-    "documentTitle": "Not Found - Frigate",
+    "documentTitle": "Not Found - Orbi360 NVR",
     "title": "404",
     "desc": "Page not found"
   },

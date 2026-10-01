@@ -1,6 +1,6 @@
 {
   "generativeAI": "Generatywna SI",
-  "documentTitle": "Eksploruj - Frigate",
+  "documentTitle": "Eksploruj - Orbi360 NVR",
   "details": {
     "timestamp": "Znacznik czasu",
     "item": {
@@ -11,7 +11,7 @@
         "viewInExplore": "Zobacz w Eksploracji"
       },
       "tips": {
-        "hasMissingObjects": "Dostosuj swoją konfigurację, jeśli chcesz, aby Frigate zapisywał śledzone obiekty dla następujących etykiet: <em>{{objects}}</em>",
+        "hasMissingObjects": "Dostosuj swoją konfigurację, jeśli chcesz, aby Orbi360 NVR zapisywał śledzone obiekty dla następujących etykiet: <em>{{objects}}</em>",
         "mismatch_one": "{{count}} niedostępny obiekt został wykryty i uwzględniony w tym elemencie przeglądu. Ten obiekt albo nie kwalifikował się jako alert lub detekcja, albo został już wyczyszczont/usunięty.",
         "mismatch_few": "{{count}} niedostępne obiekty zostały wykryte i uwzględnione w tym elemencie przeglądu. Te obiekty albo nie kwalifikowały się jako alert lub detekcja, albo zostały już wyczyszczone/usunięte.",
         "mismatch_many": "{{count}} niedostępnych obiektów zostało wykrytych i uwzględnionych w tym elemencie przeglądu. Te obiekty albo nie kwalifikowały się jako alert lub detekcja, albo zostały już wyczyszczone/usunięte."
@@ -21,7 +21,7 @@
           "regenerate": "Zażądano nowego opisu od {{provider}}. W zależności od szybkości twojego dostawcy, wygenerowanie nowego opisu może zająć trochę czasu.",
           "updatedSublabel": "Pomyślnie zaktualizowano podetykietę.",
           "updatedLPR": "Pomyślnie zaktualizowano tablicę rejestracyjną.",
-          "audioTranscription": "Wysłano prośbę o audio transkrypcję. W zależności od szybkości serwera Frigate, transkrypcja może potrwać trochę czasu.",
+          "audioTranscription": "Wysłano prośbę o audio transkrypcję. W zależności od szybkości serwera Orbi360 NVR, transkrypcja może potrwać trochę czasu.",
           "updatedAttributes": "Atrybuty zostały pomyślnie zaktualizowane."
         },
         "error": {
@@ -58,7 +58,7 @@
     "description": {
       "label": "Opis",
       "placeholder": "Opis śledzonego obiektu",
-      "aiTips": "Frigate nie poprosi o opis od twojego dostawcy AI, dopóki cykl życia śledzonego obiektu nie dobiegnie końca."
+      "aiTips": "Orbi360 NVR nie poprosi o opis od twojego dostawcy AI, dopóki cykl życia śledzonego obiektu nie dobiegnie końca."
     },
     "editLPR": {
       "title": "Edytuj tablicę rejestracyjną",
@@ -102,7 +102,7 @@
         "millisecondsToOffset": "Milisekundy do przesunięcia adnotacji detekcji. <em>Domyślnie: 0</em>",
         "tips": "WSKAZÓWKA: Wyobraź sobie, że istnieje klip zdarzenia z osobą idącą od lewej do prawej. Jeśli na osi czasu zdarzenia ramka ograniczająca jest konsekwentnie na lewo od osoby, wartość powinna być zmniejszona. Podobnie, jeśli osoba idzie od lewej do prawej, a ramka ograniczająca jest konsekwentnie przed osobą, wartość powinna być zwiększona.",
         "toast": {
-          "success": "Przesunięcie adnotacji dla {{camera}} zostało zapisane w pliku konfiguracyjnym. Zrestartuj Frigate, aby zastosować zmiany."
+          "success": "Przesunięcie adnotacji dla {{camera}} zostało zapisane w pliku konfiguracyjnym. Zrestartuj Orbi360 NVR, aby zastosować zmiany."
         }
       }
     },
@@ -151,7 +151,7 @@
       }
     },
     "downloadingModels": {
-      "context": "Frigate pobiera niezbędne modele osadzenia do obsługi funkcji wyszukiwania semantycznego. Może to potrwać kilka minut, w zależności od prędkości Twojego połączenia sieciowego.",
+      "context": "Orbi360 NVR pobiera niezbędne modele osadzenia do obsługi funkcji wyszukiwania semantycznego. Może to potrwać kilka minut, w zależności od prędkości Twojego połączenia sieciowego.",
       "setup": {
         "visionModelFeatureExtractor": "Ekstraktor cech modelu wizyjnego",
         "textModel": "Model tekstowy",
@@ -162,7 +162,7 @@
         "context": "Po pobraniu modeli warto ponownie zindeksować osadzenia śledzonych obiektów.",
         "documentation": "Przeczytaj dokumentację"
       },
-      "error": "Wystąpił błąd. Sprawdź logi Frigate."
+      "error": "Wystąpił błąd. Sprawdź logi Orbi360 NVR."
     }
   },
   "trackedObjectDetails": "Szczegóły śledzonego obiektu",

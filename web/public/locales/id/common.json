@@ -1,6 +1,6 @@
 {
   "time": {
-    "untilForRestart": "Sampai Frigate dimulai ulang.",
+    "untilForRestart": "Sampai Orbi360 NVR dimulai ulang.",
     "untilRestart": "Sampai dimulai ulang",
     "ago": "{{timeAgo}} yang lalu",
     "justNow": "Baru saja",
@@ -151,9 +151,9 @@
     "help": "Bantuan",
     "documentation": {
       "title": "Dokumentasi",
-      "label": "Dokumentasi Frigate"
+      "label": "Dokumentasi Orbi360 NVR"
     },
-    "restart": "Mulai Ulang Frigate",
+    "restart": "Mulai Ulang Orbi360 NVR",
     "live": {
       "title": "Live",
       "allCameras": "Semua Kamera",
@@ -214,7 +214,7 @@
   },
   "field": {
     "optional": "Opsional",
-    "internalID": "ID Internal yang digunakan Frigate dalam konfigurasi dan basis data"
+    "internalID": "ID Internal yang digunakan Orbi360 NVR dalam konfigurasi dan basis data"
   },
   "button": {
     "add": "Tambah",
@@ -281,7 +281,7 @@
     "title": "Peran",
     "admin": "Admin",
     "viewer": "Penampil",
-    "desc": "Admin memiliki akses penuh ke semua fitur di UI Frigate. Penampil terbatas hanya untuk melihat kamera, item tinjauan, dan rekaman historis di UI."
+    "desc": "Admin memiliki akses penuh ke semua fitur di UI Orbi360 NVR. Penampil terbatas hanya untuk melihat kamera, item tinjauan, dan rekaman historis di UI."
   },
   "pagination": {
     "label": "paginasi",
@@ -296,12 +296,12 @@
     "more": "Halaman lainnya"
   },
   "accessDenied": {
-    "documentTitle": "Akses Ditolak - Frigate",
+    "documentTitle": "Akses Ditolak - Orbi360 NVR",
     "title": "Akses Ditolak",
     "desc": "Anda tidak memiliki izin untuk melihat halaman ini."
   },
   "notFound": {
-    "documentTitle": "Tidak Ditemukan - Frigate",
+    "documentTitle": "Tidak Ditemukan - Orbi360 NVR",
     "title": "404",
     "desc": "Halaman tidak ditemukan"
   },

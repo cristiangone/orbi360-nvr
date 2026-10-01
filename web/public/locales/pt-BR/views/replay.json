@@ -1,6 +1,6 @@
 {
     "title": "Depuração de Replay",
-    "description": "“Reproduza gravações de câmera para depuração. A lista de objetos exibe um resumo com atraso temporal, dos objetos detectados e a aba de mensagens mostra um fluxo de mensagens internas do Frigate provenientes da gravação reproduzida.",
+    "description": "“Reproduza gravações de câmera para depuração. A lista de objetos exibe um resumo com atraso temporal, dos objetos detectados e a aba de mensagens mostra um fluxo de mensagens internas do Orbi360 NVR provenientes da gravação reproduzida.",
     "websocket_messages": "Mensagens",
     "dialog": {
         "title": "Iniciar Replay de Depuração",

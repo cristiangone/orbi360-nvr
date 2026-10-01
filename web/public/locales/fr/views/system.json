@@ -1,14 +1,14 @@
 {
   "documentTitle": {
-    "storage": "Statistiques de stockage - Frigate",
-    "cameras": "Statistiques des caméras - Frigate",
-    "general": "Statistiques générales - Frigate",
-    "enrichments": "Statistiques d'enrichissements - Frigate",
+    "storage": "Statistiques de stockage - Orbi360 NVR",
+    "cameras": "Statistiques des caméras - Orbi360 NVR",
+    "general": "Statistiques générales - Orbi360 NVR",
+    "enrichments": "Statistiques d'enrichissements - Orbi360 NVR",
     "logs": {
-      "frigate": "Journaux de Frigate - Frigate",
-      "nginx": "Journaux Nginx - Frigate",
-      "go2rtc": "Journaux Go2RTC - Frigate",
-      "websocket": "Journaux des messages - Frigate"
+      "frigate": "Journaux de Orbi360 NVR - Orbi360 NVR",
+      "nginx": "Journaux Nginx - Orbi360 NVR",
+      "go2rtc": "Journaux Go2RTC - Orbi360 NVR",
+      "websocket": "Journaux des messages - Orbi360 NVR"
     }
   },
   "title": "Système",
@@ -108,7 +108,7 @@
       "intelGpuWarning": {
         "title": "Avertissement relatif aux statistiques du GPU Intel",
         "message": "Statistiques du GPU non disponibles",
-        "description": "Il s'agit d'un bug connu de l'outil de statistiques GPU d'Intel (intel_gpu_top) : il peut afficher à tort une utilisation de 0 %, même lorsque l'accélération matérielle et la détection d'objets fonctionnent correctement sur l'iGPU. Ce problème ne vient pas de Frigate. Vous pouvez redémarrer l'hôte pour rétablir temporairement l'affichage et confirmer le fonctionnement du GPU. Les performances ne sont pas affectées."
+        "description": "Il s'agit d'un bug connu de l'outil de statistiques GPU d'Intel (intel_gpu_top) : il peut afficher à tort une utilisation de 0 %, même lorsque l'accélération matérielle et la détection d'objets fonctionnent correctement sur l'iGPU. Ce problème ne vient pas de Orbi360 NVR. Vous pouvez redémarrer l'hôte pour rétablir temporairement l'affichage et confirmer le fonctionnement du GPU. Les performances ne sont pas affectées."
       },
       "gpuTemperature": "Température du GPU",
       "npuTemperature": "Température du NPU",
@@ -132,14 +132,14 @@
     "recordings": {
       "title": "Enregistrements",
       "earliestRecording": "Enregistrement le plus ancien :",
-      "tips": "Cette valeur correspond au stockage total utilisé par les enregistrements dans la base de données Frigate. Frigate ne suit pas l'utilisation du stockage pour tous les fichiers de votre disque."
+      "tips": "Cette valeur correspond au stockage total utilisé par les enregistrements dans la base de données Orbi360 NVR. Orbi360 NVR ne suit pas l'utilisation du stockage pour tous les fichiers de votre disque."
     },
     "cameraStorage": {
       "title": "Stockage de la caméra",
       "bandwidth": "Bande passante",
       "unused": {
         "title": "Inutilisé",
-        "tips": "Cette valeur peut ne pas représenter précisément l'espace libre disponible pour Frigate si d'autres fichiers sont stockés sur votre disque en plus des enregistrements Frigate. Frigate ne suit pas l'utilisation du stockage en dehors de ses enregistrements."
+        "tips": "Cette valeur peut ne pas représenter précisément l'espace libre disponible pour Orbi360 NVR si d'autres fichiers sont stockés sur votre disque en plus des enregistrements Orbi360 NVR. Orbi360 NVR ne suit pas l'utilisation du stockage en dehors de ses enregistrements."
       },
       "percentageOfTotalUsed": "Pourcentage du total",
       "storageUsed": "Stockage",

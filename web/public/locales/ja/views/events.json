@@ -25,9 +25,9 @@
     "aria": "イベントを選択",
     "noFoundForTimePeriod": "この期間のイベントは見つかりません。"
   },
-  "documentTitle": "レビュー - Frigate",
+  "documentTitle": "レビュー - Orbi360 NVR",
   "recordings": {
-    "documentTitle": "録画 - Frigate",
+    "documentTitle": "録画 - Orbi360 NVR",
     "invalidSharedLink": "解析エラーのため、タイムスタンプ付きの録画リンクを開くことができません。",
     "invalidSharedCamera": "不明または未承認のカメラのため、タイムスタンプ付き録画のリンクを開くことができません。"
   },

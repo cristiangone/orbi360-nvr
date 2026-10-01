@@ -1,13 +1,13 @@
 {
   "restart": {
-    "title": "Er du sikker på at du vil starte Frigate på nytt?",
+    "title": "Er du sikker på at du vil starte Orbi360 NVR på nytt?",
     "button": "Start på nytt",
     "restarting": {
-      "title": "Frigate starter på nytt",
+      "title": "Orbi360 NVR starter på nytt",
       "button": "Tving omlasting nå",
       "content": "Denne siden vil lastes inn på nytt om {{countdown}} sekunder."
     },
-    "description": "Dette vil stoppe Frigate et øyeblikk mens det starter på nytt."
+    "description": "Dette vil stoppe Orbi360 NVR et øyeblikk mens det starter på nytt."
   },
   "explore": {
     "plus": {
@@ -191,12 +191,12 @@
       "markAsUnreviewed": "Merk som ikke inspisert"
     },
     "shareTimestamp": {
-      "description": "Del en tidsstemplet URL fra avspillerens nåværende posisjon, eller velg et egendefinert tidsstempel. Merk at dette ikke er en offentlig delingslenke, og at den kun er tilgjengelig for brukere med tilgang til Frigate og dette kameraet.",
+      "description": "Del en tidsstemplet URL fra avspillerens nåværende posisjon, eller velg et egendefinert tidsstempel. Merk at dette ikke er en offentlig delingslenke, og at den kun er tilgjengelig for brukere med tilgang til Orbi360 NVR og dette kameraet.",
       "custom": "Egendefinert tidsstempel",
       "title": "Del tidsstempel",
       "label": "Del tidsstempel",
       "button": "Del URL med tidsstempel",
-      "shareTitle": "Tidsstempel for Frigate-inspeksjon: {{camera}}"
+      "shareTitle": "Tidsstempel for Orbi360 NVR-inspeksjon: {{camera}}"
     }
   },
   "imagePicker": {

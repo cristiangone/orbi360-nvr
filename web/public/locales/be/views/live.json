@@ -1,7 +1,7 @@
 {
   "documentTitle": {
-    "default": "Жывы прагляд - Frigate",
-    "withCamera": "{{camera}} - жывы прагляд - Frigate"
+    "default": "Жывы прагляд - Orbi360 NVR",
+    "withCamera": "{{camera}} - жывы прагляд - Orbi360 NVR"
   },
   "lowBandwidthMode": "Рэжым нізкай паласы прапускання",
   "twoWayTalk": {
@@ -180,7 +180,7 @@
   },
   "noCameras": {
     "title": "Камеры не наладжаны",
-    "description": "Пачніце з падлучэння камеры да Frigate.",
+    "description": "Пачніце з падлучэння камеры да Orbi360 NVR.",
     "buttonText": "Дадаць камеру",
     "restricted": {
       "title": "Няма даступных камер",
@@ -188,7 +188,7 @@
     },
     "default": {
       "title": "Камеры не наладжаны",
-      "description": "Пачніце з падлучэння камеры да Frigate.",
+      "description": "Пачніце з падлучэння камеры да Orbi360 NVR.",
       "buttonText": "Дадаць камеру"
     },
     "group": {

@@ -1,15 +1,15 @@
 {
   "documentTitle": {
-    "cameras": "Kamerastatistikk - Frigate",
-    "storage": "Lagringsstatistikk - Frigate",
+    "cameras": "Kamerastatistikk - Orbi360 NVR",
+    "storage": "Lagringsstatistikk - Orbi360 NVR",
     "logs": {
-      "frigate": "Frigate-logger - Frigate",
-      "go2rtc": "Go2RTC-logger - Frigate",
-      "nginx": "Nginx-logger - Frigate",
-      "websocket": "Meldingslogger - Frigate"
+      "frigate": "Orbi360 NVR-logger - Orbi360 NVR",
+      "go2rtc": "Go2RTC-logger - Orbi360 NVR",
+      "nginx": "Nginx-logger - Orbi360 NVR",
+      "websocket": "Meldingslogger - Orbi360 NVR"
     },
-    "general": "Generell statistikk - Frigate",
-    "enrichments": "Statistikk for utvidelser - Frigate"
+    "general": "Generell statistikk - Orbi360 NVR",
+    "enrichments": "Statistikk for utvidelser - Orbi360 NVR"
   },
   "logs": {
     "copy": {
@@ -106,7 +106,7 @@
       "intelGpuWarning": {
         "title": "Til info om Intel GPU-statistikk",
         "message": "GPU statistikk ikke tilgjengelig",
-        "description": "Dette er en kjent feil i Intels verktøy for rapportering av GPU-statistikk (intel_gpu_top), der verktøyet slutter å fungere og gjentatte ganger viser 0 % GPU-bruk, selv om maskinvareakselerasjon og objektdeteksjon kjører korrekt på (i)GPU-en. Dette er ikke en feil i Frigate. Du kan starte verten på nytt for å løse problemet midlertidig, og for å bekrefte at GPU-en fungerer som den skal. Dette påvirker ikke ytelsen."
+        "description": "Dette er en kjent feil i Intels verktøy for rapportering av GPU-statistikk (intel_gpu_top), der verktøyet slutter å fungere og gjentatte ganger viser 0 % GPU-bruk, selv om maskinvareakselerasjon og objektdeteksjon kjører korrekt på (i)GPU-en. Dette er ikke en feil i Orbi360 NVR. Du kan starte verten på nytt for å løse problemet midlertidig, og for å bekrefte at GPU-en fungerer som den skal. Dette påvirker ikke ytelsen."
       },
       "gpuTemperature": "GPU-temperatur",
       "npuTemperature": "NPU-temperatur",
@@ -130,7 +130,7 @@
     "recordings": {
       "earliestRecording": "Tidligste opptak tilgjengelig:",
       "title": "Opptak",
-      "tips": "Denne verdien representerer total lagringsplass brukt av opptakene i Frigates database. Frigate sporer ikke lagringsbruk for alle filer på disken din."
+      "tips": "Denne verdien representerer total lagringsplass brukt av opptakene i Frigates database. Orbi360 NVR sporer ikke lagringsbruk for alle filer på disken din."
     },
     "cameraStorage": {
       "storageUsed": "Lagringsbruk",
@@ -141,7 +141,7 @@
       "percentageOfTotalUsed": "Prosentandel av tilgjengelig",
       "unused": {
         "title": "Ubrukt",
-        "tips": "Denne verdien representerer kanskje ikke nøyaktig den ledige plassen Frigate har tilgang til, dersom det finnes andre filer lagret på disken. Frigate sporer kun lagring brukt av egne opptak."
+        "tips": "Denne verdien representerer kanskje ikke nøyaktig den ledige plassen Orbi360 NVR har tilgang til, dersom det finnes andre filer lagret på disken. Orbi360 NVR sporer kun lagring brukt av egne opptak."
       }
     },
     "title": "Lagring",

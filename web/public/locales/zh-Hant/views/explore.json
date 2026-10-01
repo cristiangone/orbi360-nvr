@@ -1,5 +1,5 @@
 {
-  "documentTitle": "瀏覽 - Frigate",
+  "documentTitle": "瀏覽 - Orbi360 NVR",
   "generativeAI": "生成式 AI",
   "exploreMore": "瀏覽更多 {{label}} 物件",
   "exploreIsUnavailable": {
@@ -16,7 +16,7 @@
       "estimatedTime": "預計剩餘時間："
     },
     "downloadingModels": {
-      "context": "Frigate 正在下載所需的嵌入式模型以支援語意搜尋功能。根據你的網路連接速度，這可能會需要幾分鐘。",
+      "context": "Orbi360 NVR 正在下載所需的嵌入式模型以支援語意搜尋功能。根據你的網路連接速度，這可能會需要幾分鐘。",
       "setup": {
         "visionModel": "視覺模型",
         "visionModelFeatureExtractor": "視覺模型特徵提取器",
@@ -27,7 +27,7 @@
         "context": "在模型下載完成後，你可能會需要重新建立追蹤物件的特徵索引。",
         "documentation": "閱讀文件"
       },
-      "error": "發生錯誤。請檢查 Frigate 日誌。"
+      "error": "發生錯誤。請檢查 Orbi360 NVR 日誌。"
     }
   },
   "details": {
@@ -41,7 +41,7 @@
       },
       "tips": {
         "mismatch_other": "在此審核項目中偵測到 {{count}} 個不可用物件。這些物件可能不符合警示或偵測標準，或者已被清除/刪除。",
-        "hasMissingObjects": "如果你想要 Frigate 儲存以下標籤的追蹤物件：<em>{{objects}}</em>，請調整設定"
+        "hasMissingObjects": "如果你想要 Orbi360 NVR 儲存以下標籤的追蹤物件：<em>{{objects}}</em>，請調整設定"
       },
       "toast": {
         "success": {
@@ -49,7 +49,7 @@
           "updatedSublabel": "成功更新子標籤。",
           "updatedLPR": "成功更新車牌。",
           "updatedAttributes": "已成功更新屬性。",
-          "audioTranscription": "已成功送出音訊轉錄請求。轉錄完成所需時間會依您的 Frigate 伺服器速度而定，可能需要一段時間。"
+          "audioTranscription": "已成功送出音訊轉錄請求。轉錄完成所需時間會依您的 Orbi360 NVR 伺服器速度而定，可能需要一段時間。"
         },
         "error": {
           "regenerate": "請求 {{provider}} 生成新的說明失敗：{{errorMessage}}",
@@ -93,7 +93,7 @@
     "description": {
       "label": "說明",
       "placeholder": "追蹤物件的說明",
-      "aiTips": "在追蹤物件的生命週期結束前，Frigate 不會向你設定的生成式 AI 提供者請求說明。"
+      "aiTips": "在追蹤物件的生命週期結束前，Orbi360 NVR 不會向你設定的生成式 AI 提供者請求說明。"
     },
     "expandRegenerationMenu": "展開重新生成選單",
     "regenerateFromSnapshot": "從截圖重新生成",
@@ -164,7 +164,7 @@
         "millisecondsToOffset": "偵測註解偏移的毫秒數。<em>預設：0</em>",
         "tips": "提示：試想在一個片段中有個人從畫面左邊走到右邊。如果事件時間線上的定界框一直出現在人物的左邊，則應該減少數值。在同樣的畫面中，如果定界框持續出現在人的前方，則應該增加數值。",
         "toast": {
-          "success": "{{camera}} 的標注偏移量已保存到設定檔。重新啟動 Frigate 以套用更改。"
+          "success": "{{camera}} 的標注偏移量已保存到設定檔。重新啟動 Orbi360 NVR 以套用更改。"
         }
       }
     },

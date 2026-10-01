@@ -32,7 +32,7 @@
       "deleteImageFailed": "Impossibile eliminare: {{errorMessage}}",
       "deleteCategoryFailed": "Impossibile eliminare la classe: {{errorMessage}}",
       "categorizeFailed": "Impossibile categorizzare l'immagine: {{errorMessage}}",
-      "trainingFailed": "Addestramento del modello fallito. Controlla i registri di Frigate per i dettagli.",
+      "trainingFailed": "Addestramento del modello fallito. Controlla i registri di Orbi360 NVR per i dettagli.",
       "deleteModelFailed": "Impossibile eliminare il modello: {{errorMessage}}",
       "updateModelFailed": "Impossibile aggiornare il modello: {{errorMessage}}",
       "trainingFailedToStart": "Impossibile avviare l'addestramento del modello: {{errorMessage}}",
@@ -139,7 +139,7 @@
       "selectImagesDescription": "Clicca sulle immagini per selezionarle. Clicca su Continua quando hai finito con questa classe.",
       "generating": {
         "title": "Generazione di immagini campione",
-        "description": "Frigate sta estraendo immagini rappresentative dalle registrazioni. L'operazione potrebbe richiedere qualche istante..."
+        "description": "Orbi360 NVR sta estraendo immagini rappresentative dalle registrazioni. L'operazione potrebbe richiedere qualche istante..."
       },
       "training": {
         "title": "Modello di addestramento",

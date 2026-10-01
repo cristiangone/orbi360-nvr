@@ -1,5 +1,5 @@
 {
-  "documentTitle": "Klasifikačné modely - Frigate",
+  "documentTitle": "Klasifikačné modely - Orbi360 NVR",
   "button": {
     "deleteClassificationAttempts": "Odstrániť Obrázky Klasifikácie",
     "renameCategory": "Premenovať Triedu",
@@ -31,7 +31,7 @@
       "deleteImageFailed": "Nepodarilo sa odstrániť: {{errorMessage}}",
       "deleteCategoryFailed": "Nepodarilo sa odstrániť triedu: {{errorMessage}}",
       "categorizeFailed": "Nepodarilo sa kategorizovať obrázok: {{errorMessage}}",
-      "trainingFailed": "Trénovanie modelu zlyhalo. Skontroluj záznamy Frigate pre viac podrobností.",
+      "trainingFailed": "Trénovanie modelu zlyhalo. Skontroluj záznamy Orbi360 NVR pre viac podrobností.",
       "deleteModelFailed": "Nepodarilo sa odstrániť model: {{errorMessage}}",
       "trainingFailedToStart": "Neuspešné spustenie trénovania modelu: {{errorMessage}}",
       "updateModelFailed": "Chyba pri aktualizácii modelu: {{errorMessage}}",
@@ -137,7 +137,7 @@
       "selectImagesDescription": "Kliknite na obrázky a vyberte ich. Po dokončení tejto triedy kliknite na tlačidlo Pokračovať.",
       "generating": {
         "title": "Generovanie vzorových obrázkov",
-        "description": "Frigate načítava reprezentatívne obrázky z vašich nahrávok. Môže to chvíľu trvať..."
+        "description": "Orbi360 NVR načítava reprezentatívne obrázky z vašich nahrávok. Môže to chvíľu trvať..."
       },
       "training": {
         "title": "Tréningový model",

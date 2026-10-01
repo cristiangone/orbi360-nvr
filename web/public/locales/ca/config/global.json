@@ -644,7 +644,7 @@
             },
             "calibrate_on_startup": {
                 "label": "Calibra a l'inici",
-                "description": "Mesura les velocitats del motor PTZ a l'inici per millorar la precisió del seguiment. Frigate actualitzarà la configuració amb «movtion.weights» després del calibratge."
+                "description": "Mesura les velocitats del motor PTZ a l'inici per millorar la precisió del seguiment. Orbi360 NVR actualitzarà la configuració amb «movtion.weights» després del calibratge."
             },
             "zooming": {
                 "label": "Mode de zoom",
@@ -699,7 +699,7 @@
         },
         "ignore_time_mismatch": {
             "label": "Ignora el desajust de temps",
-            "description": "Ignora les diferències de sincronització de temps entre càmera i servidor Frigate per a la comunicació ONVIF."
+            "description": "Ignora les diferències de sincronització de temps entre càmera i servidor Orbi360 NVR per a la comunicació ONVIF."
         },
         "profile": {
             "label": "Perfil ONVIF",
@@ -736,11 +736,11 @@
     },
     "safe_mode": {
         "label": "Mode segur",
-        "description": "Quan està activat, arrenca la Frigate en mode segur amb funcions reduïdes per a la resolució de problemes."
+        "description": "Quan està activat, arrenca la Orbi360 NVR en mode segur amb funcions reduïdes per a la resolució de problemes."
     },
     "environment_vars": {
         "label": "Variables d'entorn",
-        "description": "Parells clau/valor de les variables d'entorn a establir per al procés Frigate al sistema operatiu Home Assistant. Els usuaris que no són usuaris de HAOS han d'utilitzar la configuració de la variable d'entorn Docker."
+        "description": "Parells clau/valor de les variables d'entorn a establir per al procés Orbi360 NVR al sistema operatiu Home Assistant. Els usuaris que no són usuaris de HAOS han d'utilitzar la configuració de la variable d'entorn Docker."
     },
     "logger": {
         "label": "Registre",
@@ -759,7 +759,7 @@
         "description": "Configuració relacionada amb l'autenticació i la sessió, incloses les opcions de cookies i límit de velocitat.",
         "enabled": {
             "label": "Habilita l'autenticació",
-            "description": "Habilita l'autenticació nativa per a la interfície d'usuari de la Frigate."
+            "description": "Habilita l'autenticació nativa per a la interfície d'usuari de la Orbi360 NVR."
         },
         "reset_admin_password": {
             "label": "Restableix la contrasenya d'administrador",
@@ -848,10 +848,10 @@
     },
     "database": {
         "label": "Base de dades",
-        "description": "Configuració de la base de dades SQLite utilitzada per Frigate per emmagatzemar objectes rastrejats i enregistrar metadades.",
+        "description": "Configuració de la base de dades SQLite utilitzada per Orbi360 NVR per emmagatzemar objectes rastrejats i enregistrar metadades.",
         "path": {
             "label": "Ruta a la base de dades",
-            "description": "Ruta del sistema de fitxers on s'emmagatzemarà el fitxer de base de dades SQLite de Frigate."
+            "description": "Ruta del sistema de fitxers on s'emmagatzemarà el fitxer de base de dades SQLite de Orbi360 NVR."
         }
     },
     "go2rtc": {
@@ -875,7 +875,7 @@
         },
         "topic_prefix": {
             "label": "Prefix del tema",
-            "description": "El prefix del tema MQTT per a tots els temes de Frigate; ha de ser únic si s'executen diverses instàncies."
+            "description": "El prefix del tema MQTT per a tots els temes de Orbi360 NVR; ha de ser únic si s'executen diverses instàncies."
         },
         "client_id": {
             "label": "ID del client",
@@ -936,13 +936,13 @@
     },
     "networking": {
         "label": "Xarxa",
-        "description": "Paràmetres relacionats amb la xarxa com l'habilitació IPv6 per als punts finals de Frigate.",
+        "description": "Paràmetres relacionats amb la xarxa com l'habilitació IPv6 per als punts finals de Orbi360 NVR.",
         "ipv6": {
             "label": "Configuració IPv6",
             "description": "Configuració específica d'IPv6 per als serveis de xarxa de fragate.",
             "enabled": {
                 "label": "Habilita IPv6",
-                "description": "Activa el suport IPv6 per als serveis de Frigate (API i UI) quan sigui aplicable"
+                "description": "Activa el suport IPv6 per als serveis de Orbi360 NVR (API i UI) quan sigui aplicable"
             }
         },
         "listen": {
@@ -950,20 +950,20 @@
             "description": "Configuració per a ports d'escolta interns i externs. Això és per a usuaris avançats. Per a la majoria de casos d'ús es recomana canviar la secció de ports del fitxer Docker.",
             "internal": {
                 "label": "Port intern",
-                "description": "Port d'escolta intern per a la Frigate (predeterminat 5000)."
+                "description": "Port d'escolta intern per a la Orbi360 NVR (predeterminat 5000)."
             },
             "external": {
                 "label": "Port extern",
-                "description": "Port d'escolta extern per a la Frigate (predeterminat 8971)."
+                "description": "Port d'escolta extern per a la Orbi360 NVR (predeterminat 8971)."
             }
         }
     },
     "proxy": {
         "label": "Proxy",
-        "description": "Paràmetres per a integrar Frigate darrere d'un servidor intermediari invers que passa les capçaleres d'usuari autenticades.",
+        "description": "Paràmetres per a integrar Orbi360 NVR darrere d'un servidor intermediari invers que passa les capçaleres d'usuari autenticades.",
         "header_map": {
             "label": "Mapeig de capçaleres",
-            "description": "Mapa les capçaleres del servidor intermediari entrant a l'usuari de Frigate i als camps de rol per a l'autenticació basada en el servidor intermediari.",
+            "description": "Mapa les capçaleres del servidor intermediari entrant a l'usuari de Orbi360 NVR i als camps de rol per a l'autenticació basada en el servidor intermediari.",
             "user": {
                 "label": "Capçalera d'usuari",
                 "description": "Capçalera que conté el nom d'usuari autenticat proporcionat pel servidor intermediari de la font."
@@ -974,7 +974,7 @@
             },
             "role_map": {
                 "label": "Mapatge del rol",
-                "description": "Mapa els valors de grup de la font als rols de Frigate (per exemple, assigna els grups d'administració al rol d'administrador)."
+                "description": "Mapa els valors de grup de la font als rols de Orbi360 NVR (per exemple, assigna els grups d'administració al rol d'administrador)."
             }
         },
         "logout_url": {
@@ -1023,15 +1023,15 @@
         },
         "version_check": {
             "label": "Comprovació de versió",
-            "description": "Activa una comprovació de sortida per detectar si hi ha disponible una versió de Frigate més nova."
+            "description": "Activa una comprovació de sortida per detectar si hi ha disponible una versió de Orbi360 NVR més nova."
         }
     },
     "tls": {
         "label": "TLS",
-        "description": "Configuració de TLS per als punts finals web de Frigate (port 8971).",
+        "description": "Configuració de TLS per als punts finals web de Orbi360 NVR (port 8971).",
         "enabled": {
             "label": "Habilita TLS",
-            "description": "Activa TLS per a la interfície d'usuari web i l'API de Frigate al port TLS configurat."
+            "description": "Activa TLS per a la interfície d'usuari web i l'API de Orbi360 NVR al port TLS configurat."
         }
     },
     "detectors": {

@@ -1,5 +1,5 @@
 {
-  "documentTitle": "分類模型 - Frigate",
+  "documentTitle": "分類模型 - Orbi360 NVR",
   "details": {
     "unknown": "未知",
     "scoreInfo": "分數代表此物件所有偵測結果的平均分類信心度。",
@@ -42,7 +42,7 @@
       "deleteCategoryFailed": "刪除類別失敗：{{errorMessage}}",
       "deleteModelFailed": "刪除模型失敗：{{errorMessage}}",
       "categorizeFailed": "影像分類失敗：{{errorMessage}}",
-      "trainingFailed": "模型訓練失敗，請查看 Frigate 日誌。",
+      "trainingFailed": "模型訓練失敗，請查看 Orbi360 NVR 日誌。",
       "trainingFailedToStart": "啟動模型訓練失敗：{{errorMessage}}",
       "updateModelFailed": "更新模型失敗：{{errorMessage}}",
       "renameCategoryFailed": "重新命名類別失敗：{{errorMessage}}"
@@ -154,7 +154,7 @@
       "allImagesRequired_other": "請完成所有分類，尚餘 {{count}} 張影像。",
       "generating": {
         "title": "正在產生範例影像",
-        "description": "Frigate 正在擷取代表性影像，請稍候…"
+        "description": "Orbi360 NVR 正在擷取代表性影像，請稍候…"
       },
       "training": {
         "title": "正在訓練模型",

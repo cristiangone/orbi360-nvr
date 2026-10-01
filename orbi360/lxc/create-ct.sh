@@ -18,6 +18,9 @@ SWAP="${SWAP:-1024}"                # MB
 BRIDGE="${BRIDGE:-vmbr0}"
 IP="${IP:-192.168.1.241/24}"
 GW="${GW:-192.168.1.254}"
+# DNS propios: si el nodo usa Tailscale MagicDNS (100.100.100.100), el CT lo heredaria
+# y no podria resolver nombres, porque no corre Tailscale
+NAMESERVER="${NAMESERVER:-1.1.1.1 8.8.8.8}"
 STORAGE="${STORAGE:-local-lvm}"     # donde van el disco del sistema y el de grabaciones
 ROOTFS_SIZE="${ROOTFS_SIZE:-32}"    # GB: sistema, Python, modelos
 MEDIA_SIZE="${MEDIA_SIZE:-55}"      # GB: grabaciones y snapshots (/media/frigate)
@@ -53,6 +56,8 @@ pct create "$CTID" "local:vztmpl/$TEMPLATE" \
   --rootfs "$STORAGE:$ROOTFS_SIZE" \
   --mp0 "$STORAGE:$MEDIA_SIZE,mp=/media/frigate,backup=0" \
   --net0 "name=eth0,bridge=$BRIDGE,ip=$IP,gw=$GW" \
+  --nameserver "$NAMESERVER" \
+  --searchdomain local \
   --features nesting=1 \
   --unprivileged 1 \
   --onboot 1 \

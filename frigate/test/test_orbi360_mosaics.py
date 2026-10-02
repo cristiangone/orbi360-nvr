@@ -93,6 +93,40 @@ class TestMosaicFiles(unittest.TestCase):
             "SRT_PASSPHRASE=Orbi360-Temuco.2026\n", mosaics.render_conf(secured)
         )
 
+    def test_caller_mode(self):
+        caller = mosaics.Mosaic(
+            **make(
+                mode="caller",
+                target_host="stream.orbi360.cl",
+                target_port=8890,
+                stream_id="#!::r=live/cam,m=publish",
+            )
+        )
+        conf = mosaics.render_conf(caller)
+        self.assertIn("MODE=caller", conf)
+        self.assertIn("TARGET_HOST=stream.orbi360.cl", conf)
+        self.assertIn("TARGET_PORT=8890", conf)
+        self.assertIn("STREAM_ID='#!::r=live/cam,m=publish'", conf)
+
+        listener = mosaics.render_conf(mosaics.Mosaic(**make()))
+        self.assertIn("MODE=listener", listener)
+        self.assertIn("STREAM_ID=''", listener)
+
+    def test_caller_mode_rejects_bad_targets(self):
+        for bad in (
+            make(mode="caller"),
+            make(mode="caller", target_host="1.2.3.4"),
+            make(mode="caller", target_port=8890),
+            make(mode="caller", target_host="-oProxy", target_port=8890),
+            make(mode="caller", target_host="a b", target_port=8890),
+            make(mode="caller", target_host="x", target_port=70000),
+            make(stream_id="live/cam&passphrase=x"),
+            make(stream_id="it's"),
+            make(stream_id="$(reboot)"),
+        ):
+            with self.assertRaises(ValidationError, msg=bad):
+                mosaics.Mosaic(**bad)
+
     def test_any_count_from_one_to_nine(self):
         for count in range(1, 10):
             mosaic = mosaics.Mosaic(**make(streams=[f"s{i}" for i in range(count)]))

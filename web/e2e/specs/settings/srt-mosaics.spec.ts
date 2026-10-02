@@ -115,6 +115,45 @@ test.describe("Orbi360 SRT mosaics settings @medium", () => {
     await expect(frigateApp.page.getByText(passphrase)).toHaveCount(0);
   });
 
+  test("creates a mosaic that pushes to an SRT server", async ({
+    frigateApp,
+  }) => {
+    const routes = await installMosaicRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=srtMosaics");
+
+    await frigateApp.page.getByRole("button", { name: "Add mosaic" }).click();
+    await frigateApp.page.getByLabel("Name").fill("Nimble");
+    await pickOption(
+      frigateApp.page,
+      "Wait for connections (listener)",
+      "Send to a server (caller)",
+    );
+    // the local port is not asked in caller mode
+    await expect(frigateApp.page.getByLabel("SRT port (UDP)")).toHaveCount(0);
+    await frigateApp.page
+      .getByLabel("Server (IP or domain)")
+      .fill("stream.example.com");
+    await frigateApp.page.getByLabel("Server port").fill("8890");
+    await frigateApp.page
+      .getByLabel("Stream ID (optional)")
+      .fill("#!::r=live/mosaic,m=publish");
+    await frigateApp.page.getByRole("button", { name: "Save" }).click();
+    await expect.poll(() => routes.saved()).not.toBeNull();
+
+    const added = routes.saved()!.mosaics.find((m) => m.id === "nimble")!;
+    expect(added.mode).toBe("caller");
+    expect(added.target_host).toBe("stream.example.com");
+    expect(added.target_port).toBe(8890);
+    expect(added.stream_id).toBe("#!::r=live/mosaic,m=publish");
+
+    await expect(frigateApp.page.getByText("Sends to server")).toBeVisible();
+    await expect(
+      frigateApp.page.getByText(
+        "srt://stream.example.com:8890?latency=5000&streamid=#!::r=live/mosaic,m=publish",
+      ),
+    ).toBeVisible();
+  });
+
   test("offers one stream picker per camera up to a 3x3 grid", async ({
     frigateApp,
   }) => {

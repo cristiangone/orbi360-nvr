@@ -1252,7 +1252,16 @@
       "passphrase": "SRT passphrase (optional)",
       "passphraseHint": "Encrypts the output with AES-128; players must use the same passphrase. 10 to 79 characters: letters, numbers, '.', '_', '~' or '-'. Leave it empty for no encryption. Recommended when the port is reachable from the Internet.",
       "generate": "Generate",
-      "togglePassphrase": "Show or hide the passphrase"
+      "togglePassphrase": "Show or hide the passphrase",
+      "mode": "SRT mode",
+      "modeHint": {
+        "listener": "The mosaic opens a port and players or a transcoder connect to it. To reach it from the Internet the port must be opened on the router.",
+        "caller": "The mosaic connects to an SRT server (Nimble, Wowza, vMix, MediaMTX...) and pushes the signal. No ports need to be opened; if the server is down it retries every few seconds."
+      },
+      "targetHost": "Server (IP or domain)",
+      "targetPort": "Server port",
+      "streamId": "Stream ID (optional)",
+      "streamIdHint": "Identifies where to publish on the server, for example publish:live/mosaic or #!::r=live/mosaic,m=publish (Nimble). Ask the server administrator."
     },
     "deleteConfirm": {
       "title": "Delete mosaic",
@@ -1276,7 +1285,13 @@
       "8": "3x3 grid",
       "9": "3x3 grid"
     },
-    "encrypted": "Encrypted"
+    "encrypted": "Encrypted",
+    "sending": "Sends to server",
+    "destination": "Destination:",
+    "modes": {
+      "listener": "Wait for connections (listener)",
+      "caller": "Send to a server (caller)"
+    }
   },
   "frigatePlus": {
     "title": "Frigate+ Settings",

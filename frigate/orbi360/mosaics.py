@@ -45,6 +45,10 @@ STREAM_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 # SRT passphrases are 10 to 79 characters; limited to URL safe ones so the
 # value can go into the srt:// URL and the shell config without quoting issues
 PASSPHRASE_PATTERN = re.compile(r"^[A-Za-z0-9._~-]{10,79}$")
+# Caller mode target. Stream IDs keep the characters servers use, such as
+# Nimble's '#!::r=live/cam,m=publish', but never quotes, spaces, '&' or '$'
+HOST_PATTERN = re.compile(r"^[A-Za-z0-9.-]{1,253}$")
+STREAM_ID_PATTERN = re.compile(r"^[A-Za-z0-9#!:,=/._~@+-]{1,512}$")
 
 RESOLUTIONS = {"1920x1080": (1920, 1080), "1280x720": (1280, 720)}
 MAX_STREAMS = 9
@@ -57,7 +61,18 @@ class Mosaic(BaseModel):
     streams: list[str] = Field(
         description="1 to 9 go2rtc stream names in reading order (left to right, top to bottom)"
     )
-    srt_port: int = Field(ge=MIN_PORT, le=MAX_PORT)
+    mode: Literal["listener", "caller"] = Field(
+        default="listener",
+        description="listener waits for clients on srt_port; caller pushes to target_host:target_port",
+    )
+    srt_port: int = Field(
+        ge=MIN_PORT,
+        le=MAX_PORT,
+        description="Listening port; in caller mode it only reserves the internal relay port",
+    )
+    target_host: str | None = None
+    target_port: int | None = Field(default=None, ge=1, le=65535)
+    stream_id: str | None = None
     latency_ms: int = Field(default=5000, ge=20, le=60000)
     bitrate_kbps: int = Field(default=2500, ge=300, le=20000)
     fps: int = Field(default=15, ge=1, le=30)
@@ -97,6 +112,34 @@ class Mosaic(BaseModel):
                 "the SRT passphrase needs 10 to 79 characters: letters, numbers, '.', '_', '~' or '-'"
             )
         return value
+
+    @field_validator("target_host")
+    @classmethod
+    def validate_target_host(cls, value: str | None) -> str | None:
+        if value in (None, ""):
+            return None
+        if not HOST_PATTERN.match(value) or value.startswith(("-", ".")):
+            raise ValueError(f"invalid server address: {value!r}")
+        return value
+
+    @field_validator("stream_id")
+    @classmethod
+    def validate_stream_id(cls, value: str | None) -> str | None:
+        if value in (None, ""):
+            return None
+        if not STREAM_ID_PATTERN.match(value):
+            raise ValueError(
+                "the stream ID can only use letters, numbers and # ! : , = / . _ ~ @ + -"
+            )
+        return value
+
+    @model_validator(mode="after")
+    def validate_target(self) -> "Mosaic":
+        if self.mode == "caller" and (not self.target_host or not self.target_port):
+            raise ValueError(
+                f"'{self.name}' sends to a server: it needs the server address and port"
+            )
+        return self
 
     @field_validator("srt_port")
     @classmethod
@@ -157,6 +200,11 @@ def render_conf(mosaic: Mosaic) -> str:
             f"OUT_H={out_h}",
             f"ENCODER={mosaic.encoder}",
             f"SRT_PASSPHRASE={mosaic.passphrase or ''}",
+            f"MODE={mosaic.mode}",
+            f"TARGET_HOST={mosaic.target_host or ''}",
+            f"TARGET_PORT={mosaic.target_port or ''}",
+            # single quotes: the stream ID may contain '#' or '!'
+            f"STREAM_ID='{mosaic.stream_id or ''}'",
             "",
         ]
     )

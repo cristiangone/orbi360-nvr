@@ -34,6 +34,7 @@ import { cn } from "@/lib/utils";
 import {
   SrtMosaic,
   SrtMosaicEncoder,
+  SrtMosaicMode,
   SrtMosaicResolution,
   SrtMosaicsResponse,
 } from "@/types/orbi360";
@@ -46,6 +47,7 @@ import {
   LuEye,
   LuEyeOff,
   LuLock,
+  LuSend,
   LuPencil,
   LuPlus,
   LuRotateCw,
@@ -101,10 +103,19 @@ function slugify(name: string): string {
     .slice(0, 32);
 }
 
-// The copied address includes the passphrase so it can be pasted as is in a
-// player; the one shown on the card masks it
+const MODES: SrtMosaicMode[] = ["listener", "caller"];
+
+// Listener: address a player uses to pull the mosaic. Caller: the server the
+// mosaic pushes to. The copied address includes the passphrase so it can be
+// pasted as is; the one shown on the card masks it
 function srtUrl(mosaic: SrtMosaic, masked = false): string {
-  const url = `srt://${window.location.hostname}:${mosaic.srt_port}?mode=caller&latency=${mosaic.latency_ms}`;
+  let url =
+    mosaic.mode === "caller"
+      ? `srt://${mosaic.target_host}:${mosaic.target_port}?latency=${mosaic.latency_ms}`
+      : `srt://${window.location.hostname}:${mosaic.srt_port}?mode=caller&latency=${mosaic.latency_ms}`;
+  if (mosaic.mode === "caller" && mosaic.stream_id) {
+    url += `&streamid=${mosaic.stream_id}`;
+  }
   if (!mosaic.passphrase) {
     return url;
   }
@@ -200,6 +211,10 @@ export default function SrtMosaicsSettingsView() {
       resolution: "1920x1080",
       encoder: "auto",
       passphrase: null,
+      mode: "listener",
+      target_host: null,
+      target_port: null,
+      stream_id: null,
     });
   }, [mosaics, streams]);
 
@@ -288,6 +303,12 @@ export default function SrtMosaicsSettingsView() {
                         defaultValue: status,
                       })}
                     </Badge>
+                    {mosaic.mode === "caller" && (
+                      <Badge variant="outline" className="gap-1">
+                        <LuSend className="size-3" />
+                        {t("srtMosaics.sending")}
+                      </Badge>
+                    )}
                     {mosaic.passphrase && (
                       <Badge variant="outline" className="gap-1">
                         <LuLock className="size-3" />
@@ -312,6 +333,11 @@ export default function SrtMosaicsSettingsView() {
                 <GridPreview streams={mosaic.streams} />
 
                 <div className="flex items-center gap-2">
+                  {mosaic.mode === "caller" && (
+                    <span className="text-xs text-muted-foreground">
+                      {t("srtMosaics.destination")}
+                    </span>
+                  )}
                   <code className="flex-1 truncate rounded bg-background_alt px-2 py-1 text-xs">
                     {srtUrl(mosaic, true)}
                   </code>
@@ -479,13 +505,94 @@ export default function SrtMosaicsSettingsView() {
                 </p>
               </div>
 
+              <div className="space-y-1">
+                <Label>{t("srtMosaics.form.mode")}</Label>
+                <Select
+                  value={editing.mode ?? "listener"}
+                  onValueChange={(value) =>
+                    setEditing({ ...editing, mode: value as SrtMosaicMode })
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {MODES.map((m) => (
+                      <SelectItem key={m} value={m}>
+                        {t(`srtMosaics.modes.${m}`)}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <p className="text-xs text-muted-foreground">
+                  {t(`srtMosaics.form.modeHint.${editing.mode ?? "listener"}`)}
+                </p>
+              </div>
+
+              {editing.mode === "caller" && (
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="col-span-2 space-y-1">
+                    <Label htmlFor="mosaic-target-host">
+                      {t("srtMosaics.form.targetHost")}
+                    </Label>
+                    <Input
+                      id="mosaic-target-host"
+                      placeholder="stream.ejemplo.com"
+                      value={editing.target_host ?? ""}
+                      onChange={(e) =>
+                        setEditing({
+                          ...editing,
+                          target_host: e.target.value.trim() || null,
+                        })
+                      }
+                    />
+                  </div>
+                  <NumberField
+                    id="mosaic-target-port"
+                    label={t("srtMosaics.form.targetPort")}
+                    value={editing.target_port ?? NaN}
+                    onChange={(target_port) =>
+                      setEditing({
+                        ...editing,
+                        target_port: Number.isFinite(target_port)
+                          ? target_port
+                          : null,
+                      })
+                    }
+                  />
+                  <div className="col-span-3 space-y-1">
+                    <Label htmlFor="mosaic-stream-id">
+                      {t("srtMosaics.form.streamId")}
+                    </Label>
+                    <Input
+                      id="mosaic-stream-id"
+                      placeholder="publish:live/mosaico"
+                      value={editing.stream_id ?? ""}
+                      onChange={(e) =>
+                        setEditing({
+                          ...editing,
+                          stream_id: e.target.value.trim() || null,
+                        })
+                      }
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      {t("srtMosaics.form.streamIdHint")}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <div className="grid grid-cols-2 gap-3">
-                <NumberField
-                  id="mosaic-port"
-                  label={t("srtMosaics.form.port")}
-                  value={editing.srt_port}
-                  onChange={(srt_port) => setEditing({ ...editing, srt_port })}
-                />
+                {editing.mode !== "caller" && (
+                  <NumberField
+                    id="mosaic-port"
+                    label={t("srtMosaics.form.port")}
+                    value={editing.srt_port}
+                    onChange={(srt_port) =>
+                      setEditing({ ...editing, srt_port })
+                    }
+                  />
+                )}
                 <NumberField
                   id="mosaic-latency"
                   label={t("srtMosaics.form.latency")}

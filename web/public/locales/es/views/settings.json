@@ -822,7 +822,16 @@
       "passphrase": "Contraseña SRT (opcional)",
       "passphraseHint": "Cifra la salida con AES-128; el reproductor debe usar la misma contraseña. De 10 a 79 caracteres: letras, números, '.', '_', '~' o '-'. Déjala vacía para no cifrar. Recomendada si el puerto queda accesible desde Internet.",
       "generate": "Generar",
-      "togglePassphrase": "Mostrar u ocultar la contraseña"
+      "togglePassphrase": "Mostrar u ocultar la contraseña",
+      "mode": "Modo SRT",
+      "modeHint": {
+        "listener": "El mosaico abre un puerto y los reproductores o el transcoder se conectan a él. Para tomarlo desde Internet hay que abrir el puerto en el router.",
+        "caller": "El mosaico se conecta a un servidor SRT (Nimble, Wowza, vMix, MediaMTX...) y le envía la señal. No hay que abrir puertos; si el servidor no responde, reintenta cada pocos segundos."
+      },
+      "targetHost": "Servidor (IP o dominio)",
+      "targetPort": "Puerto del servidor",
+      "streamId": "Stream ID (opcional)",
+      "streamIdHint": "Indica dónde publicar en el servidor, por ejemplo publish:live/mosaico o #!::r=live/mosaico,m=publish (Nimble). Consúltalo con quien administra el servidor."
     },
     "deleteConfirm": {
       "title": "Eliminar mosaico",
@@ -846,7 +855,13 @@
       "8": "Grilla 3x3",
       "9": "Grilla 3x3"
     },
-    "encrypted": "Cifrado"
+    "encrypted": "Cifrado",
+    "sending": "Envía a servidor",
+    "destination": "Destino:",
+    "modes": {
+      "listener": "Esperar conexiones (listener)",
+      "caller": "Enviar a un servidor (caller)"
+    }
   },
   "frigatePlus": {
     "title": "Configuración de Frigate+",

@@ -7,8 +7,11 @@
 #      --> ffmpeg (grilla segun la cantidad, H.264 + audio mudo) --> UDP local
 #      --> srt-live-transmit --> SRT listener :SRT_PORT
 #
-#  El cliente (transcoder/Nimble/etc.) hace PULL con:
-#    srt://<IP-del-NVR>:<SRT_PORT>?mode=caller&latency=<SRT_LATENCY>
+#  Dos modos:
+#    listener (MODE=listener): espera clientes; el transcoder/Nimble hace PULL con
+#      srt://<IP-del-NVR>:<SRT_PORT>?mode=caller&latency=<SRT_LATENCY>
+#    caller (MODE=caller): se conecta y EMPUJA la senal a TARGET_HOST:TARGET_PORT,
+#      con STREAM_ID opcional (ej. publish:live/cam o #!::r=live/cam,m=publish)
 #
 #  Configuracion: la genera la interfaz (Ajustes > Mosaico SRT) en
 #                 /config/orbi360/mosaics/<id>.conf
@@ -33,6 +36,8 @@ OUT_W="${OUT_W:-$(( ${TILE_W:-960} * 2 ))}"; OUT_H="${OUT_H:-$(( ${TILE_H:-540} 
 UDP_PORT="${UDP_PORT:-1234}"         # puerto UDP interno encoder -> relay (solo localhost)
 ENCODER="${ENCODER:-auto}"           # auto | vaapi | x264
 SRT_PASSPHRASE="${SRT_PASSPHRASE:-}" # vacio: sin cifrado | 10 a 79 caracteres: AES-128
+MODE="${MODE:-listener}"             # listener | caller
+TARGET_HOST="${TARGET_HOST:-}"; TARGET_PORT="${TARGET_PORT:-}"; STREAM_ID="${STREAM_ID:-}"
 VAAPI_DEVICE="${VAAPI_DEVICE:-/dev/dri/renderD128}"
 FFMPEG="${FFMPEG:-/usr/lib/ffmpeg/8.0/bin/ffmpeg}"
 
@@ -50,9 +55,18 @@ if [[ "$ENCODER" == auto ]]; then
 fi
 
 UDP="udp://127.0.0.1:${UDP_PORT}"
-SRT_OPTS="mode=listener&latency=${SRT_LATENCY}"
+if [[ "$MODE" == caller ]]; then
+  if [[ -z "$TARGET_HOST" || -z "$TARGET_PORT" ]]; then
+    echo "[mosaico] Modo caller sin TARGET_HOST/TARGET_PORT. Editar $CONF" >&2
+    exit 1
+  fi
+  SRT_DEST="srt://${TARGET_HOST}:${TARGET_PORT}?mode=caller&latency=${SRT_LATENCY}"
+  [[ -n "$STREAM_ID" ]] && SRT_DEST+="&streamid=${STREAM_ID}"
+else
+  SRT_DEST="srt://:${SRT_PORT}?mode=listener&latency=${SRT_LATENCY}"
+fi
 if [[ -n "$SRT_PASSPHRASE" ]]; then
-  SRT_OPTS+="&passphrase=${SRT_PASSPHRASE}&pbkeylen=16"
+  SRT_DEST+="&passphrase=${SRT_PASSPHRASE}&pbkeylen=16"
 fi
 GOP=$((FPS * 2))
 
@@ -106,16 +120,23 @@ else
 fi
 
 echo "[mosaico] Camaras ($N, grilla ${COLS}x${ROWS}): ${CAMS[*]} | ${OUT_W}x${OUT_H} | encoder: $ENCODER | ${BITRATE}k @ ${FPS} fps"
-echo "[mosaico] Publicando en srt://<IP>:${SRT_PORT}?mode=caller&latency=${SRT_LATENCY}$([[ -n "$SRT_PASSPHRASE" ]] && echo " (cifrado AES-128 con contrasena)")"
+CIFRADO="$([[ -n "$SRT_PASSPHRASE" ]] && echo " (cifrado AES-128 con contrasena)")"
+if [[ "$MODE" == caller ]]; then
+  echo "[mosaico] Enviando a srt://${TARGET_HOST}:${TARGET_PORT}${STREAM_ID:+ stream ID ${STREAM_ID}}${CIFRADO}"
+else
+  echo "[mosaico] Publicando en srt://<IP>:${SRT_PORT}?mode=caller&latency=${SRT_LATENCY}${CIFRADO}"
+fi
 
 trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
 
-# 1) Relay SRT persistente: si el cliente se desconecta, se reinicia solo sin tocar el encoder.
-#    Acepta un solo cliente a la vez; lo normal es que lo tome un transcoder y ese reparta.
+# 1) Relay SRT persistente, independiente del encoder:
+#    - listener: si el cliente se desconecta, vuelve a esperar. Un cliente a la vez; lo normal
+#      es que lo tome un transcoder y ese reparta.
+#    - caller: si el servidor no responde o corta, reintenta cada 3 segundos.
 ( while true; do
     srt-live-transmit "${UDP}?mode=listener" \
-      "srt://:${SRT_PORT}?${SRT_OPTS}" 2>&1 | sed -u 's/^/[srt] /'
-    sleep 1
+      "$SRT_DEST" 2>&1 | sed -u 's/^/[srt] /'
+    if [[ "$MODE" == caller ]]; then sleep 3; else sleep 1; fi
   done ) &
 
 # 2) Encoder: si una camara se cae y ffmpeg sale, reintenta sin tumbar el SRT.

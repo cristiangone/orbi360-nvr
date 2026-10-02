@@ -379,6 +379,14 @@ model:
 ffmpeg:
   hwaccel_args: preset-vaapi
 
+detect:
+  enabled: true
+
+objects:
+  track:
+    - person
+    - car
+
 cameras: {}  # Sin camaras: agregarlas desde la interfaz (Configuracion > Camaras)
 version: $CONFIG_VERSION
 EOF
@@ -406,6 +414,8 @@ else:
         "  input_pixel_format: bgr\n"
         "  path: /openvino-model/ssdlite_mobilenet_v2.xml\n"
         "  labelmap_path: /openvino-model/coco_91cl_bkgr.txt\n"
+        "detect:\n  enabled: true\n"
+        "objects:\n  track:\n    - person\n    - car\n"
         "cameras: {}\n"
         f"version: {os.environ['CONFIG_VERSION']}\n"
     )
@@ -419,11 +429,17 @@ api = cfg.setdefault("go2rtc", {}).setdefault("api", {})
 if "listen" not in api:
     api["listen"] = "127.0.0.1:1984"
     changed = True
+# Frigate trae la deteccion apagada por defecto: sin esta clave las camaras graban
+# pero no se registra ningun objeto (ni eventos ni busqueda). Si ya existe, se respeta.
+if "detect" not in cfg:
+    cfg["detect"] = {"enabled": True}
+    changed = True
+    print("config.yml: deteccion de objetos activada")
 
 if changed:
     with path.open("w") as f:
         yaml.dump(cfg, f)
-    print("config.yml: puertos internos 5000 y 1984 restringidos a localhost")
+    print("config.yml actualizado (puertos internos solo en localhost)")
 EOF
 
 # Cache de grabaciones en RAM, como el tmpfs que recomienda la documentacion

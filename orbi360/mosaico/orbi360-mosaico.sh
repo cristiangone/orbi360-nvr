@@ -32,6 +32,7 @@ FPS="${FPS:-15}"
 OUT_W="${OUT_W:-$(( ${TILE_W:-960} * 2 ))}"; OUT_H="${OUT_H:-$(( ${TILE_H:-540} * 2 ))}"
 UDP_PORT="${UDP_PORT:-1234}"         # puerto UDP interno encoder -> relay (solo localhost)
 ENCODER="${ENCODER:-auto}"           # auto | vaapi | x264
+SRT_PASSPHRASE="${SRT_PASSPHRASE:-}" # vacio: sin cifrado | 10 a 79 caracteres: AES-128
 VAAPI_DEVICE="${VAAPI_DEVICE:-/dev/dri/renderD128}"
 FFMPEG="${FFMPEG:-/usr/lib/ffmpeg/8.0/bin/ffmpeg}"
 
@@ -49,6 +50,10 @@ if [[ "$ENCODER" == auto ]]; then
 fi
 
 UDP="udp://127.0.0.1:${UDP_PORT}"
+SRT_OPTS="mode=listener&latency=${SRT_LATENCY}"
+if [[ -n "$SRT_PASSPHRASE" ]]; then
+  SRT_OPTS+="&passphrase=${SRT_PASSPHRASE}&pbkeylen=16"
+fi
 GOP=$((FPS * 2))
 
 # Opciones por input: TCP para RTSP y tolerancia a frames corruptos (camaras WiFi)
@@ -101,7 +106,7 @@ else
 fi
 
 echo "[mosaico] Camaras ($N, grilla ${COLS}x${ROWS}): ${CAMS[*]} | ${OUT_W}x${OUT_H} | encoder: $ENCODER | ${BITRATE}k @ ${FPS} fps"
-echo "[mosaico] Publicando en srt://<IP>:${SRT_PORT}?mode=caller&latency=${SRT_LATENCY}"
+echo "[mosaico] Publicando en srt://<IP>:${SRT_PORT}?mode=caller&latency=${SRT_LATENCY}$([[ -n "$SRT_PASSPHRASE" ]] && echo " (cifrado AES-128 con contrasena)")"
 
 trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
 
@@ -109,7 +114,7 @@ trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
 #    Acepta un solo cliente a la vez; lo normal es que lo tome un transcoder y ese reparta.
 ( while true; do
     srt-live-transmit "${UDP}?mode=listener" \
-      "srt://:${SRT_PORT}?mode=listener&latency=${SRT_LATENCY}" 2>&1 | sed -u 's/^/[srt] /'
+      "srt://:${SRT_PORT}?${SRT_OPTS}" 2>&1 | sed -u 's/^/[srt] /'
     sleep 1
   done ) &
 

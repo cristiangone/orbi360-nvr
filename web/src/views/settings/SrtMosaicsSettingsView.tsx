@@ -41,7 +41,16 @@ import axios, { AxiosError } from "axios";
 import copy from "copy-to-clipboard";
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LuCopy, LuPencil, LuPlus, LuRotateCw, LuTrash2 } from "react-icons/lu";
+import {
+  LuCopy,
+  LuEye,
+  LuEyeOff,
+  LuLock,
+  LuPencil,
+  LuPlus,
+  LuRotateCw,
+  LuTrash2,
+} from "react-icons/lu";
 import { toast } from "sonner";
 import useSWR from "swr";
 
@@ -92,8 +101,27 @@ function slugify(name: string): string {
     .slice(0, 32);
 }
 
-function srtUrl(mosaic: SrtMosaic): string {
-  return `srt://${window.location.hostname}:${mosaic.srt_port}?mode=caller&latency=${mosaic.latency_ms}`;
+// The copied address includes the passphrase so it can be pasted as is in a
+// player; the one shown on the card masks it
+function srtUrl(mosaic: SrtMosaic, masked = false): string {
+  const url = `srt://${window.location.hostname}:${mosaic.srt_port}?mode=caller&latency=${mosaic.latency_ms}`;
+  if (!mosaic.passphrase) {
+    return url;
+  }
+  const passphrase = masked ? "\u2022".repeat(8) : mosaic.passphrase;
+  return `${url}&passphrase=${passphrase}&pbkeylen=16`;
+}
+
+const PASSPHRASE_CHARS =
+  "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
+
+function generatePassphrase(length = 20): string {
+  const bytes = new Uint32Array(length);
+  crypto.getRandomValues(bytes);
+  return Array.from(
+    bytes,
+    (b) => PASSPHRASE_CHARS[b % PASSPHRASE_CHARS.length],
+  ).join("");
 }
 
 export default function SrtMosaicsSettingsView() {
@@ -171,6 +199,7 @@ export default function SrtMosaicsSettingsView() {
       fps: 15,
       resolution: "1920x1080",
       encoder: "auto",
+      passphrase: null,
     });
   }, [mosaics, streams]);
 
@@ -259,6 +288,12 @@ export default function SrtMosaicsSettingsView() {
                         defaultValue: status,
                       })}
                     </Badge>
+                    {mosaic.passphrase && (
+                      <Badge variant="outline" className="gap-1">
+                        <LuLock className="size-3" />
+                        {t("srtMosaics.encrypted")}
+                      </Badge>
+                    )}
                   </div>
                   <Switch
                     checked={mosaic.enabled}
@@ -278,7 +313,7 @@ export default function SrtMosaicsSettingsView() {
 
                 <div className="flex items-center gap-2">
                   <code className="flex-1 truncate rounded bg-background_alt px-2 py-1 text-xs">
-                    {srtUrl(mosaic)}
+                    {srtUrl(mosaic, true)}
                   </code>
                   <Button
                     size="sm"
@@ -521,6 +556,13 @@ export default function SrtMosaicsSettingsView() {
                 </div>
               </div>
 
+              <PassphraseField
+                value={editing.passphrase ?? ""}
+                onChange={(passphrase) =>
+                  setEditing({ ...editing, passphrase: passphrase || null })
+                }
+              />
+
               <div className="flex items-center justify-between">
                 <Label htmlFor="mosaic-enabled">
                   {t("srtMosaics.form.enabled")}
@@ -579,6 +621,59 @@ export default function SrtMosaicsSettingsView() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+    </div>
+  );
+}
+
+type PassphraseFieldProps = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+function PassphraseField({ value, onChange }: PassphraseFieldProps) {
+  const { t } = useTranslation("views/settings");
+  const [visible, setVisible] = useState(false);
+  return (
+    <div className="space-y-1">
+      <Label htmlFor="mosaic-passphrase">
+        {t("srtMosaics.form.passphrase")}
+      </Label>
+      <div className="flex gap-2">
+        <div className="relative flex-1">
+          <Input
+            id="mosaic-passphrase"
+            type={visible ? "text" : "password"}
+            autoComplete="new-password"
+            maxLength={79}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+          />
+          <button
+            type="button"
+            className="absolute inset-y-0 right-2 flex items-center text-muted-foreground"
+            aria-label={t("srtMosaics.form.togglePassphrase")}
+            onClick={() => setVisible(!visible)}
+          >
+            {visible ? (
+              <LuEyeOff className="size-4" />
+            ) : (
+              <LuEye className="size-4" />
+            )}
+          </button>
+        </div>
+        <Button
+          type="button"
+          onClick={() => {
+            onChange(generatePassphrase());
+            setVisible(true);
+          }}
+        >
+          {t("srtMosaics.form.generate")}
+        </Button>
+      </div>
+      <p className="text-xs text-muted-foreground">
+        {t("srtMosaics.form.passphraseHint")}
+      </p>
     </div>
   );
 }

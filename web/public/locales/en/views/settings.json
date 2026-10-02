@@ -1248,7 +1248,11 @@
       "count": "Number of cameras",
       "countOption_one": "{{count}} camera · {{layout}}",
       "countOption_other": "{{count}} cameras · {{layout}}",
-      "tile": "Tile {{n}}"
+      "tile": "Tile {{n}}",
+      "passphrase": "SRT passphrase (optional)",
+      "passphraseHint": "Encrypts the output with AES-128; players must use the same passphrase. 10 to 79 characters: letters, numbers, '.', '_', '~' or '-'. Leave it empty for no encryption. Recommended when the port is reachable from the Internet.",
+      "generate": "Generate",
+      "togglePassphrase": "Show or hide the passphrase"
     },
     "deleteConfirm": {
       "title": "Delete mosaic",
@@ -1271,7 +1275,8 @@
       "7": "3x3 grid",
       "8": "3x3 grid",
       "9": "3x3 grid"
-    }
+    },
+    "encrypted": "Encrypted"
   },
   "frigatePlus": {
     "title": "Frigate+ Settings",

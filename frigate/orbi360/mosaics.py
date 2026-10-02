@@ -42,6 +42,9 @@ RESERVED_PORTS = {1984, 5000, 8554, 8555, 8971}
 
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_-]{0,31}$")
 STREAM_PATTERN = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
+# SRT passphrases are 10 to 79 characters; limited to URL safe ones so the
+# value can go into the srt:// URL and the shell config without quoting issues
+PASSPHRASE_PATTERN = re.compile(r"^[A-Za-z0-9._~-]{10,79}$")
 
 RESOLUTIONS = {"1920x1080": (1920, 1080), "1280x720": (1280, 720)}
 MAX_STREAMS = 9
@@ -60,6 +63,10 @@ class Mosaic(BaseModel):
     fps: int = Field(default=15, ge=1, le=30)
     resolution: Literal["1920x1080", "1280x720"] = "1920x1080"
     encoder: Literal["auto", "vaapi", "x264"] = "auto"
+    passphrase: str | None = Field(
+        default=None,
+        description="SRT passphrase (AES-128). Clients must use the same one",
+    )
 
     @field_validator("id")
     @classmethod
@@ -78,6 +85,17 @@ class Mosaic(BaseModel):
         for stream in value:
             if not STREAM_PATTERN.match(stream):
                 raise ValueError(f"invalid stream name: {stream!r}")
+        return value
+
+    @field_validator("passphrase")
+    @classmethod
+    def validate_passphrase(cls, value: str | None) -> str | None:
+        if value in (None, ""):
+            return None
+        if not PASSPHRASE_PATTERN.match(value):
+            raise ValueError(
+                "the SRT passphrase needs 10 to 79 characters: letters, numbers, '.', '_', '~' or '-'"
+            )
         return value
 
     @field_validator("srt_port")
@@ -138,6 +156,7 @@ def render_conf(mosaic: Mosaic) -> str:
             f"OUT_W={out_w}",
             f"OUT_H={out_h}",
             f"ENCODER={mosaic.encoder}",
+            f"SRT_PASSPHRASE={mosaic.passphrase or ''}",
             "",
         ]
     )

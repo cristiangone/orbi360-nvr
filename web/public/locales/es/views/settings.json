@@ -818,7 +818,11 @@
       "count": "Cantidad de cámaras",
       "countOption_one": "{{count}} cámara · {{layout}}",
       "countOption_other": "{{count}} cámaras · {{layout}}",
-      "tile": "Cuadro {{n}}"
+      "tile": "Cuadro {{n}}",
+      "passphrase": "Contraseña SRT (opcional)",
+      "passphraseHint": "Cifra la salida con AES-128; el reproductor debe usar la misma contraseña. De 10 a 79 caracteres: letras, números, '.', '_', '~' o '-'. Déjala vacía para no cifrar. Recomendada si el puerto queda accesible desde Internet.",
+      "generate": "Generar",
+      "togglePassphrase": "Mostrar u ocultar la contraseña"
     },
     "deleteConfirm": {
       "title": "Eliminar mosaico",
@@ -841,7 +845,8 @@
       "7": "Grilla 3x3",
       "8": "Grilla 3x3",
       "9": "Grilla 3x3"
-    }
+    },
+    "encrypted": "Cifrado"
   },
   "frigatePlus": {
     "title": "Configuración de Frigate+",

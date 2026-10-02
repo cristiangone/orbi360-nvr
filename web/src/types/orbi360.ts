@@ -12,6 +12,7 @@ export type SrtMosaic = {
   fps: number;
   resolution: SrtMosaicResolution;
   encoder: SrtMosaicEncoder;
+  passphrase?: string | null;
 };
 
 export type SrtMosaicsResponse = {

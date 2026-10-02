@@ -37,6 +37,10 @@ class TestMosaicValidation(unittest.TestCase):
             make(srt_port=8554),
             make(srt_port=60000),
             make(encoder="nvenc"),
+            make(passphrase="corta"),
+            make(passphrase="con espacios no"),
+            make(passphrase="x" * 80),
+            make(passphrase="clave$(reboot)ok"),
         ):
             with self.assertRaises(ValidationError, msg=bad):
                 mosaics.Mosaic(**bad)
@@ -78,6 +82,16 @@ class TestMosaicFiles(unittest.TestCase):
         self.assertIn("UDP_PORT=19999", conf)
         self.assertIn("OUT_W=1280", conf)
         self.assertIn("OUT_H=720", conf)
+
+    def test_passphrase(self):
+        plain = mosaics.render_conf(mosaics.Mosaic(**make()))
+        self.assertIn("SRT_PASSPHRASE=\n", plain)
+        empty = mosaics.Mosaic(**make(passphrase=""))
+        self.assertIsNone(empty.passphrase)
+        secured = mosaics.Mosaic(**make(passphrase="Orbi360-Temuco.2026"))
+        self.assertIn(
+            "SRT_PASSPHRASE=Orbi360-Temuco.2026\n", mosaics.render_conf(secured)
+        )
 
     def test_any_count_from_one_to_nine(self):
         for count in range(1, 10):

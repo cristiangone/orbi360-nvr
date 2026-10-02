@@ -19,7 +19,7 @@ const STREAMS = [
   "sala_gym_sub",
 ];
 
-const PRINCIPAL = {
+const PRINCIPAL: Record<string, unknown> & { id: string; streams: string[] } = {
   id: "principal",
   name: "Principal",
   enabled: true,
@@ -79,11 +79,7 @@ test.describe("Orbi360 SRT mosaics settings @medium", () => {
 
     await frigateApp.page.getByRole("button", { name: "Add mosaic" }).click();
     await frigateApp.page.getByLabel("Name").fill("Entrada Casa");
-    await pickOption(
-      frigateApp.page,
-      "4 cameras",
-      "1 camera · Full screen",
-    );
+    await pickOption(frigateApp.page, "4 cameras", "1 camera · Full screen");
     await expect(frigateApp.page.getByText("Tile 1")).toBeVisible();
     await expect(frigateApp.page.getByText("Tile 2")).toHaveCount(0);
 
@@ -95,6 +91,28 @@ test.describe("Orbi360 SRT mosaics settings @medium", () => {
     expect(added!.streams).toHaveLength(1);
     // 9999 is taken by Principal, so the next free port is proposed
     expect(added!.srt_port).toBe(9000);
+  });
+
+  test("protects a mosaic with a generated SRT passphrase", async ({
+    frigateApp,
+  }) => {
+    const routes = await installMosaicRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=srtMosaics");
+
+    await frigateApp.page.getByRole("button", { name: "Edit" }).click();
+    await frigateApp.page.getByRole("button", { name: "Generate" }).click();
+    await frigateApp.page.getByRole("button", { name: "Save" }).click();
+    await expect.poll(() => routes.saved()).not.toBeNull();
+
+    const passphrase = routes.saved()!.mosaics[0].passphrase as string;
+    expect(passphrase).toMatch(/^[A-Za-z0-9]{20}$/);
+
+    // the card flags the output as encrypted and never shows the passphrase
+    await expect(frigateApp.page.getByText("Encrypted")).toBeVisible();
+    await expect(
+      frigateApp.page.getByText(/passphrase=•+&pbkeylen=16/),
+    ).toBeVisible();
+    await expect(frigateApp.page.getByText(passphrase)).toHaveCount(0);
   });
 
   test("offers one stream picker per camera up to a 3x3 grid", async ({
@@ -109,5 +127,20 @@ test.describe("Orbi360 SRT mosaics settings @medium", () => {
       await expect(frigateApp.page.getByText(`Tile ${n}`)).toBeVisible();
     }
     await expect(frigateApp.page.getByText("Tile 8")).toHaveCount(0);
+  });
+});
+
+test.describe("Orbi360 SRT mosaics — mobile @medium @mobile", () => {
+  test.skip(({ frigateApp }) => !frigateApp.isMobile, "Mobile-only");
+
+  test("mosaic card and SRT address fit the mobile viewport", async ({
+    frigateApp,
+  }) => {
+    await installMosaicRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=srtMosaics");
+    await expect(frigateApp.page.getByText("Principal")).toBeVisible();
+    await expect(
+      frigateApp.page.getByRole("button", { name: "Copy SRT address" }),
+    ).toBeInViewport();
   });
 });

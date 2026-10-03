@@ -70,11 +70,16 @@ if [[ -n "$SRT_PASSPHRASE" ]]; then
 fi
 GOP=$((FPS * 2))
 
-# Opciones por input: TCP para RTSP y tolerancia a frames corruptos (camaras WiFi)
+# Opciones por input: TCP para RTSP y tolerancia a frames corruptos (camaras WiFi).
+#  - timeout: si la camara deja de mandar datos 10 s, ffmpeg falla y se reintenta.
+#  - use_wallclock_as_timestamps: cuando go2rtc se reconecta a la camara, los tiempos
+#    RTP vuelven a cero; con los de la camara ffmpeg descartaba los cuadros nuevos y
+#    repetia el ultimo para siempre (imagen congelada con el servicio "activo").
 INPUTS=()
 for cam in "${CAMS[@]}"; do
   [[ "$SOURCE" == sub ]] && cam="${cam}_sub"
-  INPUTS+=(-rtsp_transport tcp -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${cam}")
+  INPUTS+=(-rtsp_transport tcp -timeout 10000000 -use_wallclock_as_timestamps 1
+           -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${cam}")
 done
 
 # Grilla segun la cantidad de camaras: 1 pantalla completa, 2 lado a lado, 3-4 en 2x2,
@@ -99,7 +104,8 @@ done
 if (( N == 1 )); then
   LAYOUT+="[t0]null"
 else
-  LAYOUT+="${TILES}xstack=inputs=${N}:layout=$(IFS='|'; echo "${POSITIONS[*]}"):fill=black"
+  # shortest=1: si una camara se corta, termina y se reintenta en vez de congelar su cuadro
+  LAYOUT+="${TILES}xstack=inputs=${N}:layout=$(IFS='|'; echo "${POSITIONS[*]}"):fill=black:shortest=1"
 fi
 # completa el lienzo si la division no fue exacta y fija los fps de salida
 LAYOUT+=",pad=${OUT_W}:${OUT_H}:(ow-iw)/2:(oh-ih)/2,fps=${FPS}"
@@ -140,16 +146,31 @@ trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
   done ) &
 
 # 2) Encoder: si una camara se cae y ffmpeg sale, reintenta sin tumbar el SRT.
-#    - anullsrc: pista de audio muda (muchos transcoders exigen audio)
+#    - anullsrc: pista de audio muda (muchos transcoders exigen audio). Es infinita, por
+#      eso -shortest: sin el, ffmpeg seguia vivo cuando el video terminaba.
 #    - cabeceras repetidas en cada keyframe: un cliente que entra a mitad de stream decodifica enseguida
+#    - vigilancia: si ffmpeg deja de producir video por STALL_SECS (sigue vivo pero
+#      trabado), se lo detiene para que el ciclo lo vuelva a lanzar.
+STALL_SECS="${STALL_SECS:-20}"
+PROGRESS="${TMPDIR:-/tmp}/orbi360-mosaico-${UDP_PORT}.progress"
 ( while true; do
-    "$FFMPEG" -hide_banner -loglevel warning -nostdin "${HW[@]}" \
+    rm -f "$PROGRESS"
+    "$FFMPEG" -hide_banner -loglevel warning -nostdin -progress "$PROGRESS" "${HW[@]}" \
       "${INPUTS[@]}" \
       -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
-      -filter_complex "$FILTER" -map "[v]" -map "${N}:a" \
+      -filter_complex "$FILTER" -map "[v]" -map "${N}:a" -shortest \
       "${VIDEO[@]}" \
       -c:a aac -b:a 64k -ac 2 \
-      -f mpegts "${UDP}?pkt_size=1316" 2>&1 | sed -u 's/^/[enc] /'
+      -f mpegts "${UDP}?pkt_size=1316" 2> >(sed -u 's/^/[enc] /' >&2) &
+    ENC_PID=$!
+    while kill -0 "$ENC_PID" 2>/dev/null; do
+      sleep 5
+      if [[ -f "$PROGRESS" ]] && (( $(date +%s) - $(stat -c %Y "$PROGRESS") > STALL_SECS )); then
+        echo "[enc] sin video hace mas de ${STALL_SECS}s, reinicio el encoder"
+        kill "$ENC_PID" 2>/dev/null; sleep 3; kill -9 "$ENC_PID" 2>/dev/null
+      fi
+    done
+    wait "$ENC_PID"
     echo "[enc] ffmpeg salio, reintento en 2s"; sleep 2
   done ) &
 

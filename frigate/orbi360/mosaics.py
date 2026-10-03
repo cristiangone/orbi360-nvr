@@ -252,12 +252,21 @@ def runtime(mosaic_id: str) -> dict | None:
     enc = _read_state(STATE_DIR / f"{mosaic_id}.enc")
     if srt is None and enc is None:
         return None
+    # <id>.cams: "missing <since> stream1,stream2" while cameras show "no signal"
+    missing: list[str] = []
+    try:
+        parts = (STATE_DIR / f"{mosaic_id}.cams").read_text().split()
+        if parts[0] == "missing" and len(parts) > 2:
+            missing = parts[2].split(",")
+    except (OSError, IndexError):
+        pass
     return {
         "srt": srt[0] if srt else "unknown",
         "srt_since": srt[1] if srt else None,
         "encoder": enc[0] if enc else "unknown",
         "encoder_since": enc[1] if enc else None,
         "restarts": enc[2] if enc else 0,
+        "missing": missing,
     }
 
 

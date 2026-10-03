@@ -27,6 +27,8 @@ export type SrtMosaicRuntime = {
   encoder: "ok" | "starting" | "restarting" | "stalled" | "unknown";
   encoder_since: number | null;
   restarts: number;
+  // streams shown as "no signal" while the rest keeps streaming
+  missing?: string[];
 };
 
 export type SrtMosaicsResponse = {

@@ -869,6 +869,7 @@
       "waitingClient": "Esperando cliente",
       "starting": "Iniciando video",
       "noVideo": "Sin video",
+      "noSignal": "Sin señal",
       "since": "desde las {{time}}",
       "restarts_one": "El video se reinició {{count}} vez desde que arrancó el servicio",
       "restarts_other": "El video se reinició {{count}} veces desde que arrancó el servicio"

@@ -42,8 +42,8 @@ VAAPI_DEVICE="${VAAPI_DEVICE:-/dev/dri/renderD128}"
 FFMPEG="${FFMPEG:-/usr/lib/ffmpeg/8.0/bin/ffmpeg}"
 ID="$(basename "$CONF" .conf)"
 NAME="${NAME:-$ID}"
-# Estado en vivo que lee la interfaz (Ajustes > Mosaico SRT): <id>.srt y <id>.enc,
-# con una linea "estado desde [reinicios]"
+# Estado en vivo que lee la interfaz (Ajustes > Mosaico SRT): <id>.srt, <id>.enc y
+# <id>.cams, con una linea "estado desde [reinicios | camaras sin senal]"
 STATE_DIR="${STATE_DIR:-/run/orbi360-mosaico}"
 # Avisos por Telegram: archivo generado por la interfaz (TELEGRAM_*, ALERT_AFTER)
 NOTIFY_ENV="${NOTIFY_ENV:-/config/orbi360/telegram.env}"
@@ -78,16 +78,11 @@ if [[ -n "$SRT_PASSPHRASE" ]]; then
 fi
 GOP=$((FPS * 2))
 
-# Opciones por input: TCP para RTSP y tolerancia a frames corruptos (camaras WiFi).
-#  - timeout: si la camara deja de mandar datos 10 s, ffmpeg falla y se reintenta.
-#  - use_wallclock_as_timestamps: cuando go2rtc se reconecta a la camara, los tiempos
-#    RTP vuelven a cero; con los de la camara ffmpeg descartaba los cuadros nuevos y
-#    repetia el ultimo para siempre (imagen congelada con el servicio "activo").
-INPUTS=()
+# Streams de go2rtc de cada cuadro
+STREAMS=()
 for cam in "${CAMS[@]}"; do
   [[ "$SOURCE" == sub ]] && cam="${cam}_sub"
-  INPUTS+=(-rtsp_transport tcp -timeout 10000000 -use_wallclock_as_timestamps 1
-           -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${cam}")
+  STREAMS+=("$cam")
 done
 
 # Grilla segun la cantidad de camaras: 1 pantalla completa, 2 lado a lado, 3-4 en 2x2,
@@ -102,32 +97,75 @@ case $N in
 esac
 TW=$(( OUT_W / COLS / 2 * 2 )); TH=$(( OUT_H / ROWS / 2 * 2 ))
 
-LAYOUT=""; TILES=""; POSITIONS=()
-for (( i = 0; i < N; i++ )); do
-  LAYOUT+="[${i}:v]scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
-  LAYOUT+="pad=${TW}:${TH}:(ow-iw)/2:(oh-ih)/2,setsar=1[t${i}];"
-  TILES+="[t${i}]"
-  POSITIONS+=("$(( i % COLS * TW ))_$(( i / COLS * TH ))")
-done
-if (( N == 1 )); then
-  LAYOUT+="[t0]null"
-else
-  # shortest=1: si una camara se corta, termina y se reintenta en vez de congelar su cuadro
-  LAYOUT+="${TILES}xstack=inputs=${N}:layout=$(IFS='|'; echo "${POSITIONS[*]}"):fill=black:shortest=1"
+# Camara caida: su cuadro se reemplaza por uno gris con "SIN SENAL" y las demas siguen
+# transmitiendo. El texto necesita el filtro drawtext y una fuente; si no estan, el
+# cuadro queda gris sin texto.
+FFPROBE="${FFPROBE:-$(dirname "$FFMPEG")/ffprobe}"
+FONT="${FONT:-/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf}"
+DRAWTEXT=0
+if [[ -f "$FONT" ]] && "$FFMPEG" -hide_banner -filters 2>/dev/null | grep -q ' drawtext '; then
+  DRAWTEXT=1
 fi
-# completa el lienzo si la division no fue exacta y fija los fps de salida
-LAYOUT+=",pad=${OUT_W}:${OUT_H}:(ow-iw)/2:(oh-ih)/2,fps=${FPS}"
+
+# 0 si go2rtc entrega video de ese stream (es decir, la camara responde)
+stream_alive() {
+  timeout 15 "$FFPROBE" -v error -rtsp_transport tcp -timeout 8000000 -select_streams v:0 \
+    -show_entries stream=codec_type -of csv=p=0 "${RTSP_BASE}/$1" 2>/dev/null | grep -q video
+}
+
+# Arma INPUTS y FILTER segun ALIVE (1/0 por cuadro).
+#  - timeout: si la camara deja de mandar datos 10 s, ffmpeg falla y se reintenta.
+#  - use_wallclock_as_timestamps: cuando go2rtc se reconecta a la camara, los tiempos
+#    RTP vuelven a cero; con los de la camara ffmpeg descartaba los cuadros nuevos y
+#    repetia el ultimo para siempre (imagen congelada con el servicio "activo").
+#  - setpts=PTS-STARTPTS: camaras y cuadros "sin senal" parten del mismo tiempo.
+build_pipeline() {
+  local i label tiles="" positions=()
+  INPUTS=(); LAYOUT=""
+  for (( i = 0; i < N; i++ )); do
+    if (( ALIVE[i] )); then
+      INPUTS+=(-rtsp_transport tcp -timeout 10000000 -use_wallclock_as_timestamps 1
+               -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${STREAMS[i]}")
+      LAYOUT+="[${i}:v]setpts=PTS-STARTPTS,scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
+      LAYOUT+="pad=${TW}:${TH}:(ow-iw)/2:(oh-ih)/2,setsar=1[t${i}];"
+    else
+      INPUTS+=(-re -f lavfi -i "color=c=0x262626:s=${TW}x${TH}:r=${FPS}")
+      LAYOUT+="[${i}:v]setpts=PTS-STARTPTS,setsar=1"
+      if (( DRAWTEXT )); then
+        label="${STREAMS[i]%_sub}"
+        LAYOUT+=",drawtext=fontfile=${FONT}:text='${label^^}':fontcolor=white@0.6"
+        LAYOUT+=":fontsize=$(( TH / 16 )):x=(w-text_w)/2:y=h/2-text_h*1.6"
+        LAYOUT+=",drawtext=fontfile=${FONT}:text='SIN SEÑAL':fontcolor=white"
+        LAYOUT+=":fontsize=$(( TH / 9 )):x=(w-text_w)/2:y=(h-text_h)/2+text_h*0.4"
+      fi
+      LAYOUT+="[t${i}];"
+    fi
+    tiles+="[t${i}]"
+    positions+=("$(( i % COLS * TW ))_$(( i / COLS * TH ))")
+  done
+  if (( N == 1 )); then
+    LAYOUT+="[t0]null"
+  else
+    # shortest=1: si una camara se corta, termina y se rearma con su cuadro "sin senal"
+    LAYOUT+="${tiles}xstack=inputs=${N}:layout=$(IFS='|'; echo "${positions[*]}"):fill=black:shortest=1"
+  fi
+  # completa el lienzo si la division no fue exacta y fija los fps de salida
+  LAYOUT+=",pad=${OUT_W}:${OUT_H}:(ow-iw)/2:(oh-ih)/2,fps=${FPS}"
+  if [[ "$ENCODER" == vaapi ]]; then
+    FILTER="${LAYOUT},format=nv12,hwupload[v]"
+  else
+    FILTER="${LAYOUT},format=yuv420p[v]"
+  fi
+}
 
 if [[ "$ENCODER" == vaapi ]]; then
   # Codificacion por hardware en la iGPU Intel: casi no usa CPU
   HW=(-vaapi_device "$VAAPI_DEVICE")
-  FILTER="${LAYOUT},format=nv12,hwupload[v]"
   # -rc_mode CBR: sin esto h264_vaapi puede elegir calidad constante e ignorar el bitrate
   VIDEO=(-c:v h264_vaapi -rc_mode CBR -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k"
          -g "$GOP" -bf 0 -aud 1)
 else
   HW=()
-  FILTER="${LAYOUT},format=yuv420p[v]"
   VIDEO=(-c:v libx264 -preset veryfast -g "$GOP" -keyint_min "$GOP" -sc_threshold 0
          -x264opts repeat-headers=1:aud=1
          -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k")
@@ -187,20 +225,35 @@ if [[ "$MODE" == caller ]]; then IDLE=connecting; else IDLE=waiting; fi
 #    - vigilancia: si ffmpeg deja de producir video por STALL_SECS (sigue vivo pero
 #      trabado), se lo detiene para que el ciclo lo vuelva a lanzar.
 STALL_SECS="${STALL_SECS:-20}"
+REJOIN_EVERY="${REJOIN_EVERY:-30}"   # cada cuantos segundos se prueba si volvio una camara caida
 PROGRESS="${TMPDIR:-/tmp}/orbi360-mosaico-${UDP_PORT}.progress"
 RESTARTS_LOG="$STATE_DIR/$ID.restarts"
 ( restarts=0
   while true; do
+    # Que camaras responden. Las caidas van como cuadro "sin senal"
+    ALIVE=(); missing=()
+    for (( i = 0; i < N; i++ )); do
+      if stream_alive "${STREAMS[i]}"; then ALIVE[i]=1; else ALIVE[i]=0; missing+=("${STREAMS[i]}"); fi
+    done
+    if (( ${#missing[@]} )); then
+      echo "[enc] sin senal: ${missing[*]}"
+      set_state cams missing "$(IFS=,; echo "${missing[*]}")"
+    else
+      set_state cams ok
+    fi
+    build_pipeline
+
     rm -f "$PROGRESS"
     set_state enc starting "$restarts"
     "$FFMPEG" -hide_banner -loglevel warning -nostdin -progress "$PROGRESS" "${HW[@]}" \
       "${INPUTS[@]}" \
-      -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
+      -re -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
       -filter_complex "$FILTER" -map "[v]" -map "${N}:a" -shortest \
       "${VIDEO[@]}" \
       -c:a aac -b:a 64k -ac 2 \
       -f mpegts "${UDP}?pkt_size=1316" 2> >(sed -u 's/^/[enc] /' >&2) &
     ENC_PID=$!
+    rejoin=0; next_check=$(( $(date +%s) + REJOIN_EVERY ))
     while kill -0 "$ENC_PID" 2>/dev/null; do
       sleep 5
       [[ -f "$PROGRESS" ]] || continue
@@ -213,8 +266,25 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
       elif (( age <= 10 )); then
         set_state enc ok "$restarts"
       fi
+      # Camara que vuelve: se rearma el mosaico para incluirla
+      if (( ${#missing[@]} && $(date +%s) >= next_check )); then
+        for stream in "${missing[@]}"; do
+          if stream_alive "$stream"; then
+            echo "[enc] volvio la senal de $stream, rearmo el mosaico"
+            rejoin=1
+          fi
+        done
+        if (( rejoin )); then
+          kill "$ENC_PID" 2>/dev/null; sleep 3; kill -9 "$ENC_PID" 2>/dev/null
+          break
+        fi
+        next_check=$(( $(date +%s) + REJOIN_EVERY ))
+      fi
     done
     wait "$ENC_PID" 2>/dev/null
+    if (( rejoin )); then
+      continue
+    fi
     restarts=$((restarts + 1))
     date +%s >> "$RESTARTS_LOG"
     set_state enc restarting "$restarts"
@@ -224,11 +294,13 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
 # 3) Avisos por Telegram. Solo se avisa si el problema dura ALERT_AFTER segundos
 #    (por defecto 60), para no mandar mensajes por cortes de unos segundos, y se
 #    avisa de nuevo cuando se recupera.
+# Devuelve 0 solo si el mensaje salio: con los avisos apagados o sin conexion a
+# Telegram, el problema sigue pendiente y se avisa cuando se pueda.
 notify() {
-  [[ -f "$NOTIFY_ENV" ]] || return 0
+  [[ -f "$NOTIFY_ENV" ]] || return 1
   ( # shellcheck source=/dev/null
     source "$NOTIFY_ENV"
-    [[ "${TELEGRAM_ENABLED:-0}" == 1 && -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]] || exit 0
+    [[ "${TELEGRAM_ENABLED:-0}" == 1 && -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]] || exit 1
     # la URL (con el token) va por stdin y no queda a la vista en la lista de procesos
     if printf 'url = "https://api.telegram.org/bot%s/sendMessage"\n' "$TELEGRAM_BOT_TOKEN" |
         curl -fsS --max-time 15 -K - --data-urlencode "chat_id=$TELEGRAM_CHAT_ID" \
@@ -236,6 +308,7 @@ notify() {
       echo "[aviso] enviado a Telegram"
     else
       echo "[aviso] no se pudo enviar a Telegram"
+      exit 1
     fi )
 }
 
@@ -245,31 +318,37 @@ alert_after() {
   echo "${value:-60}"
 }
 
-( bad_since=0; alerted=0; flap_alerted=0
+( bad_since=0; alerted=0; flap_alerted=0; last_try=0
   TITLE="Orbi360 NVR ($(hostname)) · mosaico «$NAME»"
   while true; do
     sleep 10
     now=$(date +%s)
     read -r enc _ 2>/dev/null < "$STATE_DIR/$ID.enc" || enc=starting
     read -r srt _ 2>/dev/null < "$STATE_DIR/$ID.srt" || srt=unknown
+    read -r cams _ lost 2>/dev/null < "$STATE_DIR/$ID.cams" || cams=ok
     problem=""
     if [[ "$enc" != ok ]]; then
-      problem="sin video de las cámaras (${CAMS[*]})"
+      problem="sin video (${STREAMS[*]})"
     elif [[ "$MODE" == caller && "$srt" != connected ]]; then
       problem="sin conexión con el servidor ${TARGET_HOST}:${TARGET_PORT}"
+    elif [[ "$cams" == missing ]]; then
+      problem="sin señal de ${lost//,/, } (se transmite el resto, con su cuadro en gris)"
     fi
 
     if [[ -n "$problem" ]]; then
       (( bad_since == 0 )) && bad_since=$now
-      if (( !alerted && now - bad_since >= $(alert_after) )); then
-        notify "⚠️ $TITLE: $problem desde las $(date -d "@$bad_since" +%H:%M)."
-        alerted=1
+      # el envio se reintenta cada minuto hasta que salga
+      if (( !alerted && now - bad_since >= $(alert_after) && now - last_try >= 60 )); then
+        last_try=$now
+        if notify "⚠️ $TITLE: $problem desde las $(date -d "@$bad_since" +%H:%M)."; then
+          alerted=1
+        fi
       fi
     else
       if (( alerted )); then
-        notify "✅ $TITLE: recuperado, estuvo fuera $(( (now - bad_since + 59) / 60 )) min."
+        notify "✅ $TITLE: recuperado, estuvo con problemas $(( (now - bad_since + 59) / 60 )) min."
       fi
-      bad_since=0; alerted=0
+      bad_since=0; alerted=0; last_try=0
     fi
 
     # Reinicios frecuentes: senal de una camara o red inestable aunque se recupere sola
@@ -278,8 +357,8 @@ alert_after() {
         mv -f "$RESTARTS_LOG.tmp" "$RESTARTS_LOG"
       count=$(wc -l < "$RESTARTS_LOG")
       if (( count >= FLAP_LIMIT && now - flap_alerted >= 3600 )); then
-        notify "🔁 $TITLE: el video se reinició $count veces en la última hora. Revisar la cámara o la red."
-        flap_alerted=$now
+        notify "🔁 $TITLE: el video se reinició $count veces en la última hora. Revisar la cámara o la red." &&
+          flap_alerted=$now
       fi
     fi
   done ) &

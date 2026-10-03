@@ -200,6 +200,7 @@ test.describe("Orbi360 SRT mosaics live state and alerts @medium", () => {
         encoder: "ok",
         encoder_since: 1700000000,
         restarts: 0,
+        missing: ["entrada_sub"],
       },
       nimble: {
         srt: "connecting",
@@ -231,6 +232,10 @@ test.describe("Orbi360 SRT mosaics live state and alerts @medium", () => {
       frigateApp.page.getByText(
         "The video restarted 2 times since the service started",
       ),
+    ).toBeVisible();
+    // a camera that went down is flagged on the grid preview
+    await expect(
+      frigateApp.page.getByText("entrada_sub · No signal"),
     ).toBeVisible();
     // the systemd state is only a fallback when the service reports nothing
     await expect(frigateApp.page.getByText("Running")).toHaveCount(0);

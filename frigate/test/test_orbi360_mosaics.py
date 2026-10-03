@@ -181,7 +181,14 @@ class TestMosaicFiles(unittest.TestCase):
                     "encoder": "ok",
                     "encoder_since": 1700000005,
                     "restarts": 3,
+                    "missing": [],
                 },
+            )
+            (state / "principal.cams").write_text(
+                "missing 1700000009 entrada_sub,cocina_sub\n"
+            )
+            self.assertEqual(
+                mosaics.runtime("principal")["missing"], ["entrada_sub", "cocina_sub"]
             )
             (state / "principal.enc").write_text("garbage")
             self.assertEqual(mosaics.runtime("principal")["encoder"], "unknown")

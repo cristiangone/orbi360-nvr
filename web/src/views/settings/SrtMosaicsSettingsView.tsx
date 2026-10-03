@@ -74,22 +74,35 @@ function gridFor(count: number): { cols: number; rows: number } {
 
 const GRID_COLS = ["grid-cols-1", "grid-cols-2", "grid-cols-3"];
 
-function GridPreview({ streams }: { streams: string[] }) {
+function GridPreview({
+  streams,
+  missing = [],
+}: {
+  streams: string[];
+  missing?: string[];
+}) {
+  const { t } = useTranslation("views/settings");
   const { cols, rows } = gridFor(streams.length);
   return (
     <div className={cn("grid gap-1 text-xs", GRID_COLS[cols - 1])}>
-      {Array.from({ length: cols * rows }, (_, i) => (
-        <div
-          key={i}
-          className={cn(
-            "h-6 truncate rounded px-2 py-1",
-            i < streams.length ? "bg-background_alt" : "bg-black/80",
-          )}
-          title={streams[i]}
-        >
-          {streams[i] ?? ""}
-        </div>
-      ))}
+      {Array.from({ length: cols * rows }, (_, i) => {
+        // the mosaic shows this camera as a grey "no signal" tile
+        const lost = i < streams.length && missing.includes(streams[i]);
+        return (
+          <div
+            key={i}
+            className={cn(
+              "h-6 truncate rounded px-2 py-1",
+              i < streams.length ? "bg-background_alt" : "bg-black/80",
+              lost && "bg-destructive/15 text-destructive",
+            )}
+            title={streams[i]}
+          >
+            {streams[i] ?? ""}
+            {lost && ` · ${t("srtMosaics.live.noSignal")}`}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -394,7 +407,10 @@ export default function SrtMosaicsSettingsView() {
                   />
                 </div>
 
-                <GridPreview streams={mosaic.streams} />
+                <GridPreview
+                  streams={mosaic.streams}
+                  missing={live ? runtime?.missing : undefined}
+                />
 
                 <div className="flex items-center gap-2">
                   {mosaic.mode === "caller" && (

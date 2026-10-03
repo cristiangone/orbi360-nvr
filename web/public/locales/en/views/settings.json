@@ -1299,6 +1299,7 @@
       "waitingClient": "Waiting for client",
       "starting": "Starting video",
       "noVideo": "No video",
+      "noSignal": "No signal",
       "since": "since {{time}}",
       "restarts_one": "The video restarted {{count}} time since the service started",
       "restarts_other": "The video restarted {{count}} times since the service started"

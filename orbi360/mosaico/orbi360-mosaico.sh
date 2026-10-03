@@ -40,6 +40,14 @@ MODE="${MODE:-listener}"             # listener | caller
 TARGET_HOST="${TARGET_HOST:-}"; TARGET_PORT="${TARGET_PORT:-}"; STREAM_ID="${STREAM_ID:-}"
 VAAPI_DEVICE="${VAAPI_DEVICE:-/dev/dri/renderD128}"
 FFMPEG="${FFMPEG:-/usr/lib/ffmpeg/8.0/bin/ffmpeg}"
+ID="$(basename "$CONF" .conf)"
+NAME="${NAME:-$ID}"
+# Estado en vivo que lee la interfaz (Ajustes > Mosaico SRT): <id>.srt y <id>.enc,
+# con una linea "estado desde [reinicios]"
+STATE_DIR="${STATE_DIR:-/run/orbi360-mosaico}"
+# Avisos por Telegram: archivo generado por la interfaz (TELEGRAM_*, ALERT_AFTER)
+NOTIFY_ENV="${NOTIFY_ENV:-/config/orbi360/telegram.env}"
+FLAP_LIMIT="${FLAP_LIMIT:-5}"   # reinicios del encoder en una hora que generan aviso
 
 N=${#CAMS[@]}
 if (( N < 1 || N > 9 )); then
@@ -133,15 +141,42 @@ else
   echo "[mosaico] Publicando en srt://<IP>:${SRT_PORT}?mode=caller&latency=${SRT_LATENCY}${CIFRADO}"
 fi
 
-trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
+mkdir -p "$STATE_DIR"
+# al detener el servicio, termina todos los procesos y borra su estado
+trap 'rm -f "$STATE_DIR/$ID".*; kill 0' TERM INT EXIT
+
+# Escribe "<estado> <desde>[ <extra>]" en <id>.<tipo>; "desde" solo cambia con el estado
+set_state() {
+  local file="$STATE_DIR/$ID.$1" state="$2" extra="${3:-}" since old old_since
+  since="$(date +%s)"
+  if [[ -f "$file" ]]; then
+    read -r old old_since _ < "$file"
+    [[ "$old" == "$state" ]] && since="$old_since"
+  fi
+  echo "$state $since${extra:+ $extra}" > "$file.tmp" && mv -f "$file.tmp" "$file"
+}
 
 # 1) Relay SRT persistente, independiente del encoder:
 #    - listener: si el cliente se desconecta, vuelve a esperar. Un cliente a la vez; lo normal
 #      es que lo tome un transcoder y ese reparta.
 #    - caller: si el servidor no responde o corta, reintenta cada 3 segundos.
+#    Con -v srt-live-transmit informa la conexion; de ahi sale el estado real.
+if [[ "$MODE" == caller ]]; then IDLE=connecting; else IDLE=waiting; fi
 ( while true; do
-    srt-live-transmit "${UDP}?mode=listener" \
-      "$SRT_DEST" 2>&1 | sed -u 's/^/[srt] /'
+    set_state srt "$IDLE"
+    srt-live-transmit -v "${UDP}?mode=listener" "$SRT_DEST" 2>&1 |
+      while IFS= read -r line; do
+        case "$line" in
+          *"SRT target connected"*|*"Accepted SRT target connection"*)
+            set_state srt connected; echo "[srt] conectado" ;;
+          *"SRT target disconnected"*)
+            set_state srt "$IDLE"; echo "[srt] desconectado" ;;
+          # ruido de -v y estadisticas periodicas
+          *"bytes lost"*|*"SRT parameters"*|*"Media path"*|*"Opening SRT"*|*"Connecting to"*|\
+          *"SrtCommon"*|*"Binding a server"*|*"listen..."*|*"accept..."*|*"connected."*|*" = '"*|"") ;;
+          *) echo "[srt] $line" ;;
+        esac
+      done
     if [[ "$MODE" == caller ]]; then sleep 3; else sleep 1; fi
   done ) &
 
@@ -153,8 +188,11 @@ trap 'kill 0' TERM INT EXIT   # al detener el servicio, termina ambos procesos
 #      trabado), se lo detiene para que el ciclo lo vuelva a lanzar.
 STALL_SECS="${STALL_SECS:-20}"
 PROGRESS="${TMPDIR:-/tmp}/orbi360-mosaico-${UDP_PORT}.progress"
-( while true; do
+RESTARTS_LOG="$STATE_DIR/$ID.restarts"
+( restarts=0
+  while true; do
     rm -f "$PROGRESS"
+    set_state enc starting "$restarts"
     "$FFMPEG" -hide_banner -loglevel warning -nostdin -progress "$PROGRESS" "${HW[@]}" \
       "${INPUTS[@]}" \
       -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
@@ -165,13 +203,85 @@ PROGRESS="${TMPDIR:-/tmp}/orbi360-mosaico-${UDP_PORT}.progress"
     ENC_PID=$!
     while kill -0 "$ENC_PID" 2>/dev/null; do
       sleep 5
-      if [[ -f "$PROGRESS" ]] && (( $(date +%s) - $(stat -c %Y "$PROGRESS") > STALL_SECS )); then
+      [[ -f "$PROGRESS" ]] || continue
+      age=$(( $(date +%s) - $(stat -c %Y "$PROGRESS") ))
+      if (( age > STALL_SECS )); then
         echo "[enc] sin video hace mas de ${STALL_SECS}s, reinicio el encoder"
+        set_state enc stalled "$restarts"
         kill "$ENC_PID" 2>/dev/null; sleep 3; kill -9 "$ENC_PID" 2>/dev/null
+        break
+      elif (( age <= 10 )); then
+        set_state enc ok "$restarts"
       fi
     done
-    wait "$ENC_PID"
+    wait "$ENC_PID" 2>/dev/null
+    restarts=$((restarts + 1))
+    date +%s >> "$RESTARTS_LOG"
+    set_state enc restarting "$restarts"
     echo "[enc] ffmpeg salio, reintento en 2s"; sleep 2
+  done ) &
+
+# 3) Avisos por Telegram. Solo se avisa si el problema dura ALERT_AFTER segundos
+#    (por defecto 60), para no mandar mensajes por cortes de unos segundos, y se
+#    avisa de nuevo cuando se recupera.
+notify() {
+  [[ -f "$NOTIFY_ENV" ]] || return 0
+  ( # shellcheck source=/dev/null
+    source "$NOTIFY_ENV"
+    [[ "${TELEGRAM_ENABLED:-0}" == 1 && -n "${TELEGRAM_BOT_TOKEN:-}" && -n "${TELEGRAM_CHAT_ID:-}" ]] || exit 0
+    # la URL (con el token) va por stdin y no queda a la vista en la lista de procesos
+    if printf 'url = "https://api.telegram.org/bot%s/sendMessage"\n' "$TELEGRAM_BOT_TOKEN" |
+        curl -fsS --max-time 15 -K - --data-urlencode "chat_id=$TELEGRAM_CHAT_ID" \
+          --data-urlencode "text=$1" -o /dev/null; then
+      echo "[aviso] enviado a Telegram"
+    else
+      echo "[aviso] no se pudo enviar a Telegram"
+    fi )
+}
+
+alert_after() {
+  local value=60
+  [[ -f "$NOTIFY_ENV" ]] && value="$(sed -n 's/^ALERT_AFTER=\([0-9]\+\)$/\1/p' "$NOTIFY_ENV")"
+  echo "${value:-60}"
+}
+
+( bad_since=0; alerted=0; flap_alerted=0
+  TITLE="Orbi360 NVR ($(hostname)) · mosaico «$NAME»"
+  while true; do
+    sleep 10
+    now=$(date +%s)
+    read -r enc _ 2>/dev/null < "$STATE_DIR/$ID.enc" || enc=starting
+    read -r srt _ 2>/dev/null < "$STATE_DIR/$ID.srt" || srt=unknown
+    problem=""
+    if [[ "$enc" != ok ]]; then
+      problem="sin video de las cámaras (${CAMS[*]})"
+    elif [[ "$MODE" == caller && "$srt" != connected ]]; then
+      problem="sin conexión con el servidor ${TARGET_HOST}:${TARGET_PORT}"
+    fi
+
+    if [[ -n "$problem" ]]; then
+      (( bad_since == 0 )) && bad_since=$now
+      if (( !alerted && now - bad_since >= $(alert_after) )); then
+        notify "⚠️ $TITLE: $problem desde las $(date -d "@$bad_since" +%H:%M)."
+        alerted=1
+      fi
+    else
+      if (( alerted )); then
+        notify "✅ $TITLE: recuperado, estuvo fuera $(( (now - bad_since + 59) / 60 )) min."
+      fi
+      bad_since=0; alerted=0
+    fi
+
+    # Reinicios frecuentes: senal de una camara o red inestable aunque se recupere sola
+    if [[ -f "$RESTARTS_LOG" ]]; then
+      awk -v from=$((now - 3600)) '$1 >= from' "$RESTARTS_LOG" > "$RESTARTS_LOG.tmp" &&
+        mv -f "$RESTARTS_LOG.tmp" "$RESTARTS_LOG"
+      count=$(wc -l < "$RESTARTS_LOG")
+      if (( count >= FLAP_LIMIT && now - flap_alerted >= 3600 )); then
+        notify "🔁 $TITLE: el video se reinició $count veces en la última hora. Revisar la cámara o la red."
+        flap_alerted=$now
+      fi
+    fi
   done ) &
 
 wait

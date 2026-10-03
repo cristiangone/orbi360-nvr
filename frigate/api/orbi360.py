@@ -1,4 +1,4 @@
-"""Orbi360 NVR apis: SRT mosaic outputs."""
+"""Orbi360 NVR apis: SRT mosaic outputs and Telegram alerts."""
 
 import asyncio
 import logging
@@ -9,7 +9,7 @@ from pydantic import ValidationError
 
 from frigate.api.auth import require_role
 from frigate.api.defs.tags import Tags
-from frigate.orbi360 import mosaics
+from frigate.orbi360 import mosaics, telegram
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +28,7 @@ def _response(
         content={
             "mosaics": mosaic_list.model_dump()["mosaics"],
             "status": status,
+            "runtime": {m.id: mosaics.runtime(m.id) for m in mosaic_list.mosaics},
             "streams": _go2rtc_streams(request),
             "supported": mosaics.systemd_available(),
         }
@@ -104,3 +105,64 @@ async def restart_mosaic(mosaic_id: str):
     )
     status = await asyncio.to_thread(mosaics.unit_status, mosaic_id)
     return JSONResponse(content={"success": True, "status": status})
+
+
+def _validation_error(e: ValidationError) -> JSONResponse:
+    errors = "; ".join(err["msg"] for err in e.errors())
+    return JSONResponse(content={"success": False, "message": errors}, status_code=400)
+
+
+@router.get(
+    "/orbi360/telegram",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Telegram alert settings (without the bot token)",
+)
+async def get_telegram():
+    settings = await asyncio.to_thread(telegram.load)
+    return JSONResponse(content=settings.public())
+
+
+@router.put(
+    "/orbi360/telegram",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Save Telegram alert settings",
+)
+async def put_telegram(body: dict):
+    try:
+        settings = await asyncio.to_thread(telegram.merge, body)
+    except ValidationError as e:
+        return _validation_error(e)
+    if settings.enabled and (not settings.bot_token or not settings.chat_id):
+        return JSONResponse(
+            content={
+                "success": False,
+                "message": "the bot token and the chat ID are required to enable alerts",
+            },
+            status_code=400,
+        )
+    await asyncio.to_thread(telegram.save, settings)
+    logger.info("Telegram alerts %s", "enabled" if settings.enabled else "disabled")
+    return JSONResponse(content=settings.public())
+
+
+@router.post(
+    "/orbi360/telegram/test",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Send a test Telegram message with the given or stored settings",
+)
+async def test_telegram(body: dict):
+    try:
+        settings = await asyncio.to_thread(telegram.merge, body)
+    except ValidationError as e:
+        return _validation_error(e)
+    error = await asyncio.to_thread(
+        telegram.send,
+        settings,
+        "✅ Orbi360 NVR: los avisos por Telegram funcionan. "
+        "Aquí llegarán las alertas de los mosaicos SRT.",
+    )
+    if error:
+        return JSONResponse(
+            content={"success": False, "message": error}, status_code=400
+        )
+    return JSONResponse(content={"success": True})

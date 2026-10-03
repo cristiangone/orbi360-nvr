@@ -20,9 +20,26 @@ export type SrtMosaic = {
   stream_id?: string | null;
 };
 
+// Live state reported by the running mosaic service
+export type SrtMosaicRuntime = {
+  srt: "connected" | "connecting" | "waiting" | "unknown";
+  srt_since: number | null;
+  encoder: "ok" | "starting" | "restarting" | "stalled" | "unknown";
+  encoder_since: number | null;
+  restarts: number;
+};
+
 export type SrtMosaicsResponse = {
   mosaics: SrtMosaic[];
   status: Record<string, string>;
+  runtime?: Record<string, SrtMosaicRuntime | null>;
   streams: string[];
   supported: boolean;
+};
+
+export type TelegramSettings = {
+  enabled: boolean;
+  chat_id: string | null;
+  alert_after_s: number;
+  token_set: boolean;
 };

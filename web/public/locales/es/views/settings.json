@@ -776,7 +776,7 @@
   },
   "srtMosaics": {
     "title": "Mosaico SRT",
-    "desc": "Cada mosaico combina de 1 a 9 transmisiones en una sola imagen y la publica como SRT listener, para que un transcoder o reproductor la tome. Cada mosaico es una salida independiente: guardar uno no interrumpe a los demás.",
+    "desc": "Cada mosaico combina de 1 a 9 transmisiones en una sola imagen y la entrega por SRT: esperando que un transcoder o reproductor se conecte, o enviándola a un servidor. Cada mosaico es una salida independiente: guardar uno no interrumpe a los demás.",
     "unsupported": "Esta instalación no puede administrar los servicios de mosaico (systemd no está disponible). Los mosaicos se guardan pero no se ejecutan.",
     "add": "Agregar mosaico",
     "empty": "Todavía no hay mosaicos. Agrega uno para publicar una salida SRT.",
@@ -861,6 +861,34 @@
     "modes": {
       "listener": "Esperar conexiones (listener)",
       "caller": "Enviar a un servidor (caller)"
+    },
+    "live": {
+      "connected": "Conectado",
+      "retrying": "Reintentando",
+      "clientConnected": "Cliente conectado",
+      "waitingClient": "Esperando cliente",
+      "starting": "Iniciando video",
+      "noVideo": "Sin video",
+      "since": "desde las {{time}}",
+      "restarts_one": "El video se reinició {{count}} vez desde que arrancó el servicio",
+      "restarts_other": "El video se reinició {{count}} veces desde que arrancó el servicio"
+    },
+    "telegram": {
+      "title": "Avisos por Telegram",
+      "desc": "Envía un mensaje cuando un mosaico pierde el video o la conexión con el servidor por más del tiempo indicado, cuando se recupera, y cuando se reinicia demasiadas veces.",
+      "enabled": "Enviar avisos",
+      "token": "Token del bot",
+      "tokenSet": "Hay un token guardado. Déjalo vacío para conservarlo.",
+      "chatId": "ID del chat",
+      "alertAfter": "Avisar después de (segundos)",
+      "help": "1) En Telegram, habla con @BotFather, envía /newbot y copia el token. 2) Envía cualquier mensaje a tu nuevo bot (o agrégalo a un grupo). 3) Obtén el ID del chat hablando con @userinfobot; para un grupo es el número negativo que muestra @RawDataBot.",
+      "save": "Guardar",
+      "test": "Enviar prueba",
+      "toast": {
+        "saved": "Avisos por Telegram guardados",
+        "testOk": "Mensaje de prueba enviado. Revisa Telegram.",
+        "error": "Telegram: {{message}}"
+      }
     }
   },
   "frigatePlus": {

@@ -36,16 +36,19 @@ import {
   SrtMosaicEncoder,
   SrtMosaicMode,
   SrtMosaicResolution,
+  SrtMosaicRuntime,
   SrtMosaicsResponse,
+  TelegramSettings,
 } from "@/types/orbi360";
 import axios, { AxiosError } from "axios";
 import copy from "copy-to-clipboard";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   LuCopy,
   LuEye,
   LuEyeOff,
+  LuBell,
   LuLock,
   LuSend,
   LuPencil,
@@ -135,9 +138,58 @@ function generatePassphrase(length = 20): string {
   ).join("");
 }
 
+type LiveStatus = {
+  key: string;
+  tone: "ok" | "warn" | "error" | "idle";
+  since: number | null;
+};
+
+// What the card shows: the real connection and video state while the service
+// runs, otherwise the systemd state ("Detenido", "Error"...)
+function liveStatus(
+  mosaic: SrtMosaic,
+  unit: string,
+  runtime: SrtMosaicRuntime | null | undefined,
+): LiveStatus | null {
+  if (unit !== "active" || !runtime) {
+    return null;
+  }
+  if (runtime.encoder === "restarting" || runtime.encoder === "stalled") {
+    return { key: "noVideo", tone: "error", since: runtime.encoder_since };
+  }
+  if (runtime.encoder !== "ok") {
+    return { key: "starting", tone: "warn", since: runtime.encoder_since };
+  }
+  if (mosaic.mode === "caller") {
+    return runtime.srt === "connected"
+      ? { key: "connected", tone: "ok", since: runtime.srt_since }
+      : { key: "retrying", tone: "warn", since: runtime.srt_since };
+  }
+  return runtime.srt === "connected"
+    ? { key: "clientConnected", tone: "ok", since: runtime.srt_since }
+    : { key: "waitingClient", tone: "idle", since: runtime.srt_since };
+}
+
+const TONE_CLASSES: Record<LiveStatus["tone"], string> = {
+  ok: "border-green-500 text-green-500",
+  warn: "border-amber-500 text-amber-500",
+  error: "border-destructive text-destructive",
+  idle: "border-sky-500 text-sky-500",
+};
+
+function formatTime(epoch: number): string {
+  return new Date(epoch * 1000).toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 export default function SrtMosaicsSettingsView() {
   const { t } = useTranslation("views/settings");
-  const { data, mutate } = useSWR<SrtMosaicsResponse>("orbi360/mosaics");
+  // refreshed every few seconds so the cards show the live connection state
+  const { data, mutate } = useSWR<SrtMosaicsResponse>("orbi360/mosaics", {
+    refreshInterval: 5000,
+  });
   const [editing, setEditing] = useState<SrtMosaic | null>(null);
   const [isNew, setIsNew] = useState(false);
   const [deleting, setDeleting] = useState<SrtMosaic | null>(null);
@@ -282,6 +334,9 @@ export default function SrtMosaicsSettingsView() {
         <div className="grid max-w-5xl grid-cols-1 gap-4 pb-6 lg:grid-cols-2">
           {mosaics.map((mosaic) => {
             const status = data.status[mosaic.id] ?? "unknown";
+            const runtime = data.runtime?.[mosaic.id];
+            const live = liveStatus(mosaic, status, runtime);
+            const restarts = runtime?.restarts ?? 0;
             return (
               <div
                 key={mosaic.id}
@@ -290,19 +345,28 @@ export default function SrtMosaicsSettingsView() {
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <span className="font-medium">{mosaic.name}</span>
-                    <Badge
-                      variant="outline"
-                      className={cn(
-                        status === "active" &&
-                          "border-green-500 text-green-500",
-                        status === "failed" &&
-                          "border-destructive text-destructive",
-                      )}
-                    >
-                      {t(`srtMosaics.status.${status}`, {
-                        defaultValue: status,
-                      })}
-                    </Badge>
+                    {live ? (
+                      <Badge
+                        variant="outline"
+                        className={TONE_CLASSES[live.tone]}
+                      >
+                        {t(`srtMosaics.live.${live.key}`)}
+                      </Badge>
+                    ) : (
+                      <Badge
+                        variant="outline"
+                        className={cn(
+                          status === "active" &&
+                            "border-green-500 text-green-500",
+                          status === "failed" &&
+                            "border-destructive text-destructive",
+                        )}
+                      >
+                        {t(`srtMosaics.status.${status}`, {
+                          defaultValue: status,
+                        })}
+                      </Badge>
+                    )}
                     {mosaic.mode === "caller" && (
                       <Badge variant="outline" className="gap-1">
                         <LuSend className="size-3" />
@@ -356,6 +420,24 @@ export default function SrtMosaicsSettingsView() {
                   </Button>
                 </div>
 
+                {live && (live.since || restarts > 0) && (
+                  <div className="text-xs text-muted-foreground">
+                    {live.since != null && (
+                      <span className="block">
+                        {t(`srtMosaics.live.${live.key}`)}{" "}
+                        {t("srtMosaics.live.since", {
+                          time: formatTime(live.since),
+                        })}
+                      </span>
+                    )}
+                    {restarts > 0 && (
+                      <span className="block">
+                        {t("srtMosaics.live.restarts", { count: restarts })}
+                      </span>
+                    )}
+                  </div>
+                )}
+
                 <div className="text-xs text-muted-foreground">
                   {t("srtMosaics.summary", {
                     count: mosaic.streams.length,
@@ -401,6 +483,8 @@ export default function SrtMosaicsSettingsView() {
             );
           })}
         </div>
+
+        <TelegramAlertsCard />
       </div>
 
       <Dialog
@@ -803,6 +887,149 @@ function NumberField({ id, label, value, onChange }: NumberFieldProps) {
         value={Number.isFinite(value) ? value : ""}
         onChange={(e) => onChange(parseInt(e.target.value, 10))}
       />
+    </div>
+  );
+}
+
+function TelegramAlertsCard() {
+  const { t } = useTranslation("views/settings");
+  const { data, mutate } = useSWR<TelegramSettings>("orbi360/telegram");
+  const [enabled, setEnabled] = useState(false);
+  const [token, setToken] = useState("");
+  const [chatId, setChatId] = useState("");
+  const [alertAfter, setAlertAfter] = useState(60);
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    if (data) {
+      setEnabled(data.enabled);
+      setChatId(data.chat_id ?? "");
+      setAlertAfter(data.alert_after_s);
+    }
+  }, [data]);
+
+  // An empty token keeps the one saved on the NVR: it is never sent back here
+  const body = () => ({
+    enabled,
+    bot_token: token.trim(),
+    chat_id: chatId.trim() || null,
+    alert_after_s: alertAfter,
+  });
+
+  const showError = (error: unknown) => {
+    const message =
+      (error as AxiosError<{ message?: string }>).response?.data?.message ??
+      String(error);
+    toast.error(t("srtMosaics.telegram.toast.error", { message }), {
+      position: "top-center",
+      closeButton: true,
+    });
+  };
+
+  const save = async () => {
+    setBusy(true);
+    try {
+      const response = await axios.put<TelegramSettings>(
+        "orbi360/telegram",
+        body(),
+      );
+      await mutate(response.data, false);
+      setToken("");
+      toast.success(t("srtMosaics.telegram.toast.saved"), {
+        position: "top-center",
+      });
+    } catch (error) {
+      showError(error);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const test = async () => {
+    setBusy(true);
+    try {
+      await axios.post("orbi360/telegram/test", body());
+      toast.success(t("srtMosaics.telegram.toast.testOk"), {
+        position: "top-center",
+      });
+    } catch (error) {
+      showError(error);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  if (!data) {
+    return null;
+  }
+
+  return (
+    <div className="mb-6 flex max-w-5xl flex-col gap-4 rounded-lg bg-secondary p-4">
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2 font-medium">
+          <LuBell className="size-4" />
+          {t("srtMosaics.telegram.title")}
+        </div>
+        <Switch
+          checked={enabled}
+          aria-label={t("srtMosaics.telegram.enabled")}
+          onCheckedChange={setEnabled}
+        />
+      </div>
+      <p className="text-sm text-muted-foreground">
+        {t("srtMosaics.telegram.desc")}
+      </p>
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+        <div className="space-y-1 md:col-span-2">
+          <Label htmlFor="telegram-token">
+            {t("srtMosaics.telegram.token")}
+          </Label>
+          <Input
+            id="telegram-token"
+            type="password"
+            autoComplete="off"
+            placeholder={
+              data.token_set ? "\u2022".repeat(12) : "123456789:ABC..."
+            }
+            value={token}
+            onChange={(e) => setToken(e.target.value)}
+          />
+          {data.token_set && (
+            <p className="text-xs text-muted-foreground">
+              {t("srtMosaics.telegram.tokenSet")}
+            </p>
+          )}
+        </div>
+        <div className="space-y-1">
+          <Label htmlFor="telegram-chat">
+            {t("srtMosaics.telegram.chatId")}
+          </Label>
+          <Input
+            id="telegram-chat"
+            placeholder="123456789"
+            value={chatId}
+            onChange={(e) => setChatId(e.target.value)}
+          />
+        </div>
+        <NumberField
+          id="telegram-alert-after"
+          label={t("srtMosaics.telegram.alertAfter")}
+          value={alertAfter}
+          onChange={setAlertAfter}
+        />
+      </div>
+      <p className="text-xs text-muted-foreground">
+        {t("srtMosaics.telegram.help")}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <Button variant="select" size="sm" disabled={busy} onClick={save}>
+          {t("srtMosaics.telegram.save")}
+        </Button>
+        <Button size="sm" disabled={busy} onClick={test}>
+          <LuSend className="mr-2 size-4" />
+          {t("srtMosaics.telegram.test")}
+        </Button>
+      </div>
     </div>
   );
 }

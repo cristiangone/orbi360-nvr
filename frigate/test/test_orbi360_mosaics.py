@@ -163,6 +163,29 @@ class TestMosaicFiles(unittest.TestCase):
         mosaics.LEGACY_CONF.write_text('CAMS="CAMARA1 CAMARA2 CAMARA3 CAMARA4"\n')
         self.assertFalse(mosaics.migrate_legacy())
 
+    def test_name_is_shell_quoted(self):
+        conf = mosaics.render_conf(mosaics.Mosaic(**make(name="Patio $(reboot) 'x'")))
+        self.assertIn("NAME='Patio $(reboot) '\"'\"'x'\"'\"''\n", conf)
+
+    def test_runtime_state(self):
+        state = Path(self.tmp.name)
+        with patch.object(mosaics, "STATE_DIR", state):
+            self.assertIsNone(mosaics.runtime("principal"))
+            (state / "principal.srt").write_text("connected 1700000000\n")
+            (state / "principal.enc").write_text("ok 1700000005 3\n")
+            self.assertEqual(
+                mosaics.runtime("principal"),
+                {
+                    "srt": "connected",
+                    "srt_since": 1700000000,
+                    "encoder": "ok",
+                    "encoder_since": 1700000005,
+                    "restarts": 3,
+                },
+            )
+            (state / "principal.enc").write_text("garbage")
+            self.assertEqual(mosaics.runtime("principal")["encoder"], "unknown")
+
 
 if __name__ == "__main__":
     unittest.main()

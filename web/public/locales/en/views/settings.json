@@ -1206,7 +1206,7 @@
   },
   "srtMosaics": {
     "title": "SRT mosaic",
-    "desc": "Each mosaic combines 1 to 9 streams into a single image and publishes it as an SRT listener, so a transcoder or player can pull it. Every mosaic is an independent output: saving one does not interrupt the others.",
+    "desc": "Each mosaic combines 1 to 9 streams into a single picture and delivers it over SRT: waiting for a transcoder or player to connect, or sending it to a server. Each mosaic is an independent output: saving one does not interrupt the others.",
     "unsupported": "This installation cannot manage mosaic services (systemd is not available). Mosaics can be saved but will not run.",
     "add": "Add mosaic",
     "empty": "No mosaics yet. Add one to publish an SRT output.",
@@ -1291,6 +1291,34 @@
     "modes": {
       "listener": "Wait for connections (listener)",
       "caller": "Send to a server (caller)"
+    },
+    "live": {
+      "connected": "Connected",
+      "retrying": "Retrying",
+      "clientConnected": "Client connected",
+      "waitingClient": "Waiting for client",
+      "starting": "Starting video",
+      "noVideo": "No video",
+      "since": "since {{time}}",
+      "restarts_one": "The video restarted {{count}} time since the service started",
+      "restarts_other": "The video restarted {{count}} times since the service started"
+    },
+    "telegram": {
+      "title": "Telegram alerts",
+      "desc": "Sends a message when a mosaic loses its video or its connection to the server for longer than the configured time, when it recovers, and when it restarts too often.",
+      "enabled": "Send alerts",
+      "token": "Bot token",
+      "tokenSet": "A token is saved. Leave it empty to keep it.",
+      "chatId": "Chat ID",
+      "alertAfter": "Alert after (seconds)",
+      "help": "1) In Telegram, talk to @BotFather, send /newbot and copy the token. 2) Send any message to your new bot (or add it to a group). 3) Get the chat ID by talking to @userinfobot; for a group, it is the negative number shown by @RawDataBot.",
+      "save": "Save",
+      "test": "Send test",
+      "toast": {
+        "saved": "Telegram alerts saved",
+        "testOk": "Test message sent. Check Telegram.",
+        "error": "Telegram: {{message}}"
+      }
     }
   },
   "frigatePlus": {

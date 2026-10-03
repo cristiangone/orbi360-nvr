@@ -15,6 +15,7 @@ Usage from the installer::
 import logging
 import os
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -32,6 +33,9 @@ MOSAICS_FILE = MOSAICS_DIR / "mosaics.json"
 CONF_DIR = MOSAICS_DIR / "mosaics"
 LEGACY_CONF = Path("/etc/orbi360-mosaico.conf")
 UNIT_TEMPLATE = "orbi360-mosaico@{}.service"
+# Live state written by orbi360-mosaico: <id>.srt and <id>.enc hold
+# "<state> <since epoch> [restarts]"
+STATE_DIR = Path("/run/orbi360-mosaico")
 
 # The encoder hands the stream to srt-live-transmit over a local UDP port derived
 # from the SRT port, so every mosaic needs its own pair
@@ -189,6 +193,7 @@ def render_conf(mosaic: Mosaic) -> str:
         [
             f"# Generado por Orbi360 NVR (Ajustes > Mosaico SRT): {mosaic.name}",
             "# No editar a mano: los cambios se pierden al guardar desde la interfaz",
+            f"NAME={shlex.quote(mosaic.name)}",
             f'CAMS="{" ".join(mosaic.streams)}"',
             "SOURCE=direct",
             f"SRT_PORT={mosaic.srt_port}",
@@ -227,6 +232,33 @@ def unit_status(mosaic_id: str) -> str:
         return "unsupported"
     result = _systemctl("is-active", UNIT_TEMPLATE.format(mosaic_id))
     return result.stdout.strip() or "unknown"
+
+
+def _read_state(path: Path) -> tuple[str, int, int] | None:
+    try:
+        parts = path.read_text().split()
+        return parts[0], int(parts[1]), int(parts[2]) if len(parts) > 2 else 0
+    except (OSError, IndexError, ValueError):
+        return None
+
+
+def runtime(mosaic_id: str) -> dict | None:
+    """Live connection and encoder state of a running mosaic, if it reports one.
+
+    srt: connected, connecting (caller retrying) or waiting (listener without a
+    client). encoder: ok, starting, restarting or stalled.
+    """
+    srt = _read_state(STATE_DIR / f"{mosaic_id}.srt")
+    enc = _read_state(STATE_DIR / f"{mosaic_id}.enc")
+    if srt is None and enc is None:
+        return None
+    return {
+        "srt": srt[0] if srt else "unknown",
+        "srt_since": srt[1] if srt else None,
+        "encoder": enc[0] if enc else "unknown",
+        "encoder_since": enc[1] if enc else None,
+        "restarts": enc[2] if enc else 0,
+    }
 
 
 def _running_instances() -> set[str]:

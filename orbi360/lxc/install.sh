@@ -512,7 +512,12 @@ EOF
 # Cada mosaico es una instancia de orbi360-mosaico@<id>.service. La lista vive en
 # /config/orbi360/mosaics.json y se administra desde la interfaz web.
 command -v srt-live-transmit >/dev/null || apt-get -qq install -y --no-install-recommends srt-tools
-install -m 755 "$SRC/orbi360/mosaico/orbi360-mosaico.sh" /usr/local/orbi360/bin/orbi360-mosaico
+# Si el script cambia, los mosaicos en marcha se reinician al final: "mosaics apply"
+# solo reinicia los que cambiaron de configuracion y seguirian con el script viejo
+MOSAIC_BIN=/usr/local/orbi360/bin/orbi360-mosaico
+MOSAIC_SCRIPT_CHANGED=0
+cmp -s "$SRC/orbi360/mosaico/orbi360-mosaico.sh" "$MOSAIC_BIN" || MOSAIC_SCRIPT_CHANGED=1
+install -m 755 "$SRC/orbi360/mosaico/orbi360-mosaico.sh" "$MOSAIC_BIN"
 
 cat > /etc/systemd/system/orbi360-mosaico@.service <<EOF
 [Unit]
@@ -572,6 +577,10 @@ if [[ -d /run/systemd/system ]]; then
   systemctl enable orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
   systemctl restart orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
   mosaics apply || echo "Aviso: no se pudieron aplicar los mosaicos SRT"
+  if (( MOSAIC_SCRIPT_CHANGED )); then
+    echo "Script de mosaicos actualizado: reiniciando los mosaicos en marcha"
+    systemctl try-restart 'orbi360-mosaico@*.service' || true
+  fi
 else
   echo "Aviso: systemd no esta activo; los servicios quedaron instalados pero no se iniciaron"
 fi

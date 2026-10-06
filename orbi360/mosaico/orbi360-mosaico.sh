@@ -63,6 +63,14 @@ if [[ "$ENCODER" == auto ]]; then
 fi
 
 UDP="udp://127.0.0.1:${UDP_PORT}"
+# Salida pareja: ffmpeg reparte los paquetes en el tiempo (bitrate/burst_bits de la salida
+# UDP) en vez de soltar cada cuadro de golpe. Las rafagas de los keyframes superaban por
+# un instante la subida y se perdian paquetes (11 % recuperado por SRT con 2500 ms).
+# El ritmo queda 30 % sobre el bitrate (audio, MPEG-TS y margen) para no atrasarse nunca.
+PACE_KBPS="${PACE_KBPS:-$(( BITRATE * 13 / 10 + 150 ))}"
+UDP_OUT="${UDP}?pkt_size=1316&bitrate=$(( PACE_KBPS * 1000 ))&burst_bits=$(( 1316 * 8 * 4 ))"
+# Buffer del encoder de 1 s: cuadros de tamano mas parejo que con 2 s
+BUFSIZE="${BUFSIZE:-$BITRATE}"
 if [[ "$MODE" == caller ]]; then
   if [[ -z "$TARGET_HOST" || -z "$TARGET_PORT" ]]; then
     echo "[mosaico] Modo caller sin TARGET_HOST/TARGET_PORT. Editar $CONF" >&2
@@ -167,13 +175,13 @@ if [[ "$ENCODER" == vaapi ]]; then
   # Codificacion por hardware en la iGPU Intel: casi no usa CPU
   HW=(-vaapi_device "$VAAPI_DEVICE")
   # -rc_mode CBR: sin esto h264_vaapi puede elegir calidad constante e ignorar el bitrate
-  VIDEO=(-c:v h264_vaapi -rc_mode CBR -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k"
+  VIDEO=(-c:v h264_vaapi -rc_mode CBR -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "${BUFSIZE}k"
          -g "$GOP" -bf 0 -aud 1)
 else
   HW=()
   VIDEO=(-c:v libx264 -preset veryfast -g "$GOP" -keyint_min "$GOP" -sc_threshold 0
          -x264opts repeat-headers=1:aud=1
-         -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "$((BITRATE * 2))k")
+         -b:v "${BITRATE}k" -maxrate "${BITRATE}k" -bufsize "${BUFSIZE}k")
 fi
 
 echo "[mosaico] Camaras ($N, grilla ${COLS}x${ROWS}): ${CAMS[*]} | ${OUT_W}x${OUT_H} | encoder: $ENCODER | ${BITRATE}k @ ${FPS} fps"
@@ -186,7 +194,8 @@ fi
 
 mkdir -p "$STATE_DIR"
 # al detener el servicio, termina todos los procesos y borra su estado
-trap 'rm -f "$STATE_DIR/$ID".*; kill 0' TERM INT EXIT
+# (se desarma primero: "kill 0" tambien le llega a este shell y lo volveria a disparar)
+trap 'trap - TERM INT EXIT; rm -f "$STATE_DIR/$ID".*; kill 0' TERM INT EXIT
 
 # Escribe "<estado> <desde>[ <extra>]" en <id>.<tipo>; "desde" solo cambia con el estado
 set_state() {
@@ -264,7 +273,7 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
       -filter_complex "$FILTER" -map "[v]" -map "${N}:a" -shortest \
       "${VIDEO[@]}" \
       -c:a aac -b:a 64k -ac 2 -output_ts_offset "$(date +%s.%N)" \
-      -f mpegts "${UDP}?pkt_size=1316" 2> >(sed -u 's/^/[enc] /' >&2) &
+      -f mpegts "$UDP_OUT" 2> >(sed -u 's/^/[enc] /' >&2) &
     ENC_PID=$!
     rejoin=0; next_check=$(( $(date +%s) + REJOIN_EVERY ))
     prev_size=-1; flood=0

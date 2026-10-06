@@ -118,7 +118,14 @@ stream_alive() {
 #  - use_wallclock_as_timestamps: cuando go2rtc se reconecta a la camara, los tiempos
 #    RTP vuelven a cero; con los de la camara ffmpeg descartaba los cuadros nuevos y
 #    repetia el ultimo para siempre (imagen congelada con el servicio "activo").
-#  - setpts=PTS-STARTPTS: camaras y cuadros "sin senal" parten del mismo tiempo.
+#  - todo (camaras, cuadros "sin senal" y audio) usa la hora del sistema y -copyts la
+#    conserva: tras reiniciar el encoder el tiempo sigue avanzando. Si volviera a cero,
+#    el transcoder que toma la senal veria el tiempo retroceder y entregaria video gris.
+#    Las fuentes generadas (cuadro gris y audio mudo) cuentan cuadros/muestras desde la
+#    hora de inicio (RTCSTART): un reloj continuo, sin el temblor de leer la hora a cada
+#    paquete.
+CLOCK_V="N/FRAME_RATE/TB+RTCSTART/1000000/TB"
+CLOCK_A="N/SR/TB+RTCSTART/1000000/TB"
 build_pipeline() {
   local i label tiles="" positions=()
   INPUTS=(); LAYOUT=""
@@ -126,11 +133,11 @@ build_pipeline() {
     if (( ALIVE[i] )); then
       INPUTS+=(-rtsp_transport tcp -timeout 10000000 -use_wallclock_as_timestamps 1
                -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${STREAMS[i]}")
-      LAYOUT+="[${i}:v]setpts=PTS-STARTPTS,scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
+      LAYOUT+="[${i}:v]scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
       LAYOUT+="pad=${TW}:${TH}:(ow-iw)/2:(oh-ih)/2,setsar=1[t${i}];"
     else
       INPUTS+=(-re -f lavfi -i "color=c=0x262626:s=${TW}x${TH}:r=${FPS}")
-      LAYOUT+="[${i}:v]setpts=PTS-STARTPTS,setsar=1"
+      LAYOUT+="[${i}:v]setpts=${CLOCK_V},setsar=1"
       if (( DRAWTEXT )); then
         label="${STREAMS[i]%_sub}"
         LAYOUT+=",drawtext=fontfile=${FONT}:text='${label^^}':fontcolor=white@0.6"
@@ -231,9 +238,17 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
 ( restarts=0
   while true; do
     # Que camaras responden. Las caidas van como cuadro "sin senal"
-    ALIVE=(); missing=()
+    # (en paralelo: una camara caida tarda hasta el timeout y no debe demorar a las demas)
+    ALIVE=(); missing=(); probes=()
     for (( i = 0; i < N; i++ )); do
-      if stream_alive "${STREAMS[i]}"; then ALIVE[i]=1; else ALIVE[i]=0; missing+=("${STREAMS[i]}"); fi
+      ( stream_alive "${STREAMS[i]}" && echo 1 || echo 0 ) > "$STATE_DIR/$ID.probe$i" &
+      probes+=($!)
+    done
+    wait "${probes[@]}"
+    for (( i = 0; i < N; i++ )); do
+      read -r ALIVE[i] < "$STATE_DIR/$ID.probe$i" || ALIVE[i]=0
+      rm -f "$STATE_DIR/$ID.probe$i"
+      (( ALIVE[i] )) || missing+=("${STREAMS[i]}")
     done
     if (( ${#missing[@]} )); then
       echo "[enc] sin senal: ${missing[*]}"
@@ -248,20 +263,20 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
     "$FFMPEG" -hide_banner -loglevel warning -nostdin -progress "$PROGRESS" "${HW[@]}" \
       "${INPUTS[@]}" \
       -re -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
-      -filter_complex "$FILTER" -map "[v]" -map "${N}:a" -shortest \
+      -copyts -filter_complex "${FILTER};[${N}:a]asetpts=${CLOCK_A}[a]" -map "[v]" -map "[a]" -shortest \
       "${VIDEO[@]}" \
       -c:a aac -b:a 64k -ac 2 \
       -f mpegts "${UDP}?pkt_size=1316" 2> >(sed -u 's/^/[enc] /' >&2) &
     ENC_PID=$!
     rejoin=0; next_check=$(( $(date +%s) + REJOIN_EVERY ))
     while kill -0 "$ENC_PID" 2>/dev/null; do
-      sleep 5
+      sleep 1
       [[ -f "$PROGRESS" ]] || continue
       age=$(( $(date +%s) - $(stat -c %Y "$PROGRESS") ))
       if (( age > STALL_SECS )); then
         echo "[enc] sin video hace mas de ${STALL_SECS}s, reinicio el encoder"
         set_state enc stalled "$restarts"
-        kill "$ENC_PID" 2>/dev/null; sleep 3; kill -9 "$ENC_PID" 2>/dev/null
+        kill "$ENC_PID" 2>/dev/null; sleep 1; kill -9 "$ENC_PID" 2>/dev/null
         break
       elif (( age <= 10 )); then
         set_state enc ok "$restarts"
@@ -275,7 +290,7 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
           fi
         done
         if (( rejoin )); then
-          kill "$ENC_PID" 2>/dev/null; sleep 3; kill -9 "$ENC_PID" 2>/dev/null
+          kill "$ENC_PID" 2>/dev/null; sleep 1; kill -9 "$ENC_PID" 2>/dev/null
           break
         fi
         next_check=$(( $(date +%s) + REJOIN_EVERY ))
@@ -288,7 +303,7 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
     restarts=$((restarts + 1))
     date +%s >> "$RESTARTS_LOG"
     set_state enc restarting "$restarts"
-    echo "[enc] ffmpeg salio, reintento en 2s"; sleep 2
+    echo "[enc] ffmpeg salio, reintento"; sleep 1
   done ) &
 
 # 3) Avisos por Telegram. Solo se avisa si el problema dura ALERT_AFTER segundos

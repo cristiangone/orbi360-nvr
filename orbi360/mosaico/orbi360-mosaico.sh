@@ -118,14 +118,12 @@ stream_alive() {
 #  - use_wallclock_as_timestamps: cuando go2rtc se reconecta a la camara, los tiempos
 #    RTP vuelven a cero; con los de la camara ffmpeg descartaba los cuadros nuevos y
 #    repetia el ultimo para siempre (imagen congelada con el servicio "activo").
-#  - todo (camaras, cuadros "sin senal" y audio) usa la hora del sistema y -copyts la
-#    conserva: tras reiniciar el encoder el tiempo sigue avanzando. Si volviera a cero,
-#    el transcoder que toma la senal veria el tiempo retroceder y entregaria video gris.
-#    Las fuentes generadas (cuadro gris y audio mudo) cuentan cuadros/muestras desde la
-#    hora de inicio (RTCSTART): un reloj continuo, sin el temblor de leer la hora a cada
-#    paquete.
-CLOCK_V="N/FRAME_RATE/TB+RTCSTART/1000000/TB"
-CLOCK_A="N/SR/TB+RTCSTART/1000000/TB"
+#  - setpts=PTS-STARTPTS: camaras y cuadros "sin senal" parten de 0 dentro del filtro, y
+#    la salida se desplaza con -output_ts_offset a la hora del sistema al arrancar. Asi,
+#    tras reiniciar el encoder el tiempo de la senal sigue avanzando: si volviera a cero,
+#    el transcoder que la toma veria el tiempo retroceder y entregaria video gris.
+#    (Con -copyts y la hora del sistema dentro del filtro, ffmpeg 8 desincroniza xstack
+#    y llega a generar cuadros repetidos a toda velocidad.)
 build_pipeline() {
   local i label tiles="" positions=()
   INPUTS=(); LAYOUT=""
@@ -133,11 +131,11 @@ build_pipeline() {
     if (( ALIVE[i] )); then
       INPUTS+=(-rtsp_transport tcp -timeout 10000000 -use_wallclock_as_timestamps 1
                -thread_queue_size 1024 -fflags +discardcorrupt+genpts -i "${RTSP_BASE}/${STREAMS[i]}")
-      LAYOUT+="[${i}:v]scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
+      LAYOUT+="[${i}:v]setpts=PTS-STARTPTS,scale=${TW}:${TH}:force_original_aspect_ratio=decrease,"
       LAYOUT+="pad=${TW}:${TH}:(ow-iw)/2:(oh-ih)/2,setsar=1[t${i}];"
     else
       INPUTS+=(-re -f lavfi -i "color=c=0x262626:s=${TW}x${TH}:r=${FPS}")
-      LAYOUT+="[${i}:v]setpts=${CLOCK_V},setsar=1"
+      LAYOUT+="[${i}:v]setpts=PTS-STARTPTS,setsar=1"
       if (( DRAWTEXT )); then
         label="${STREAMS[i]%_sub}"
         LAYOUT+=",drawtext=fontfile=${FONT}:text='${label^^}':fontcolor=white@0.6"
@@ -263,15 +261,34 @@ RESTARTS_LOG="$STATE_DIR/$ID.restarts"
     "$FFMPEG" -hide_banner -loglevel warning -nostdin -progress "$PROGRESS" "${HW[@]}" \
       "${INPUTS[@]}" \
       -re -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 \
-      -copyts -filter_complex "${FILTER};[${N}:a]asetpts=${CLOCK_A}[a]" -map "[v]" -map "[a]" -shortest \
+      -filter_complex "$FILTER" -map "[v]" -map "${N}:a" -shortest \
       "${VIDEO[@]}" \
-      -c:a aac -b:a 64k -ac 2 \
+      -c:a aac -b:a 64k -ac 2 -output_ts_offset "$(date +%s.%N)" \
       -f mpegts "${UDP}?pkt_size=1316" 2> >(sed -u 's/^/[enc] /' >&2) &
     ENC_PID=$!
     rejoin=0; next_check=$(( $(date +%s) + REJOIN_EVERY ))
+    prev_size=-1; flood=0
     while kill -0 "$ENC_PID" 2>/dev/null; do
       sleep 1
       [[ -f "$PROGRESS" ]] || continue
+      # Seguro contra torrentes: si la salida supera 4 veces el bitrate configurado
+      # durante 5 s seguidos (p. ej. cuadros repetidos a toda velocidad), se reinicia
+      # el encoder antes de saturar la subida y el servidor
+      size=$(tail -c 4000 "$PROGRESS" | sed -n 's/^total_size=\([0-9]\+\)$/\1/p' | tail -1)
+      if [[ -n "$size" ]] && (( prev_size >= 0 )); then
+        if (( (size - prev_size) * 8 / 1000 > BITRATE * 4 + 500 )); then
+          flood=$((flood + 1))
+        else
+          flood=0
+        fi
+        if (( flood >= 5 )); then
+          echo "[enc] salida anormal: $(( (size - prev_size) * 8 / 1000 )) kbit/s (config ${BITRATE}), reinicio el encoder"
+          set_state enc stalled "$restarts"
+          kill "$ENC_PID" 2>/dev/null; sleep 1; kill -9 "$ENC_PID" 2>/dev/null
+          break
+        fi
+      fi
+      [[ -n "$size" ]] && prev_size=$size
       age=$(( $(date +%s) - $(stat -c %Y "$PROGRESS") ))
       if (( age > STALL_SECS )); then
         echo "[enc] sin video hace mas de ${STALL_SECS}s, reinicio el encoder"

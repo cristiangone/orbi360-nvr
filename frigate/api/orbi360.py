@@ -230,3 +230,24 @@ async def ignore_device(body: dict):
 
     state = await asyncio.to_thread(ignore)
     return JSONResponse(content={"success": True, "ignored": state["ignored"]})
+
+
+@router.post(
+    "/orbi360/network/forget",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Forget the learned MAC of a camera so the next scan learns it again",
+)
+async def forget_camera_mac(body: dict):
+    camera = str(body.get("camera", ""))
+    if not camera:
+        return JSONResponse(
+            content={"success": False, "message": "camera is required"},
+            status_code=400,
+        )
+    try:
+        done = await asyncio.to_thread(camlocator.forget_saved, [camera])
+    except OSError as e:
+        return JSONResponse(
+            content={"success": False, "message": str(e)}, status_code=500
+        )
+    return JSONResponse(content={"success": True, "forgotten": done})

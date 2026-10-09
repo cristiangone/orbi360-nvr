@@ -50,6 +50,10 @@ go2rtc:
 """
 
 
+# addresses with RTSP open in the lab
+RTSP = {"192.168.1.5", "192.168.1.6", "192.168.1.11", "192.168.1.103", "192.168.1.213"}
+
+
 def empty_state():
     return {
         "cameras": {},
@@ -93,7 +97,7 @@ class TestLocate(unittest.TestCase):
     def test_learns_macs_but_never_from_the_factory_address(self):
         state = empty_state()
         moves, _ = camlocator.locate(
-            state, self.hosts, self.entries, 100, probe=lambda ip: False
+            state, self.hosts, self.entries, 100, probe=lambda ip: ip in RTSP
         )
         cams = state["cameras"]
         self.assertEqual(moves, {})
@@ -116,7 +120,9 @@ class TestLocate(unittest.TestCase):
 
     def test_two_own_leases_are_not_a_move(self):
         state = empty_state()
-        camlocator.locate(state, self.hosts, self.entries, 100, probe=lambda ip: False)
+        camlocator.locate(
+            state, self.hosts, self.entries, 100, probe=lambda ip: ip in RTSP
+        )
         moves, _ = camlocator.locate(
             state, self.hosts, self.entries, 200, probe=lambda ip: False
         )
@@ -147,6 +153,31 @@ class TestLocate(unittest.TestCase):
         state["cameras"]["vieja"] = {"mac": "00:11:22:33:44:55"}
         camlocator.locate(state, self.hosts, self.entries, 100, probe=lambda ip: False)
         self.assertNotIn("vieja", state["cameras"])
+
+    def test_never_learns_a_vm_or_a_device_without_rtsp(self):
+        # 2026-10-09: a Proxmox container held the camera's old address .213 and a
+        # Xiaomi gadget took .17; an older version learned both as the cameras
+        hosts = {"entrada": {"192.168.1.213"}, "pieza_principal": {"192.168.1.17"}}
+        entries = [
+            ("192.168.1.213", "bc:24:11:c3:51:e2", ""),
+            ("192.168.1.17", "44:23:7c:75:35:4b", "Beijing Xiaomi"),
+        ]
+        state = empty_state()
+        state["cameras"]["entrada"] = {"mac": "bc:24:11:c3:51:e2"}
+        camlocator.locate(
+            state, hosts, entries, 100, probe=lambda ip: ip == "192.168.1.213"
+        )
+        self.assertNotIn("mac", state["cameras"]["entrada"])
+        self.assertNotIn("mac", state["cameras"]["pieza_principal"])
+        self.assertEqual(state["discovered"], {})
+
+    def test_forget(self):
+        state = empty_state()
+        state["cameras"]["pieza_principal"] = {"mac": "44:23:7c:75:35:4b"}
+        self.assertEqual(
+            camlocator.forget(state, ["pieza_principal", "nada"]), ["pieza_principal"]
+        )
+        self.assertNotIn("mac", state["cameras"]["pieza_principal"])
 
 
 class TestApplyMoves(unittest.TestCase):

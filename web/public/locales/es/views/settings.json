@@ -2319,7 +2319,9 @@
       "ip": "IP",
       "mac": "MAC / fabricante",
       "status": "Estado",
-      "lastSeen": "Vista por última vez"
+      "lastSeen": "Vista por última vez",
+      "forget": "Olvidar MAC",
+      "forgetHint": "Úsalo si la MAC es de otro equipo: el próximo escaneo la vuelve a aprender."
     },
     "status": {
       "ok": "En la red",
@@ -2352,7 +2354,8 @@
       "scanned": "Red escaneada",
       "ignored": "Equipo ignorado",
       "copied": "IP copiada",
-      "error": "Red de cámaras: {{message}}"
+      "error": "Red de cámaras: {{message}}",
+      "forgotten": "MAC de {{camera}} olvidada: se aprenderá en el próximo escaneo"
     }
   }
 }

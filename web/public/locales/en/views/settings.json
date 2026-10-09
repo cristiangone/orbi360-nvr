@@ -2105,7 +2105,9 @@
       "ip": "IP",
       "mac": "MAC / vendor",
       "status": "Status",
-      "lastSeen": "Last seen"
+      "lastSeen": "Last seen",
+      "forget": "Forget MAC",
+      "forgetHint": "Use it if the MAC belongs to another device: the next scan learns it again."
     },
     "status": {
       "ok": "On the network",
@@ -2138,7 +2140,8 @@
       "scanned": "Network scanned",
       "ignored": "Device ignored",
       "copied": "IP copied",
-      "error": "Camera network: {{message}}"
+      "error": "Camera network: {{message}}",
+      "forgotten": "MAC of {{camera}} forgotten: it will be learned in the next scan"
     }
   }
 }

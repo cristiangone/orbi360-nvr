@@ -54,6 +54,24 @@ ARP_LINE = re.compile(
 MAC_PATTERN = re.compile(r"^[0-9a-f]{2}(?::[0-9a-f]{2}){5}$")
 DUP_SUFFIX = re.compile(r"\s*\(DUP: \d+\)\s*$")
 LOCAL_HOSTS = {"127.0.0.1", "localhost"}
+# MAC prefixes of virtual machines and containers (Proxmox, QEMU/KVM, Docker):
+# never a camera, even when a guest holds an address the router also leased
+VIRTUAL_OUIS = ("bc:24:11", "52:54:00", "02:42:")
+
+
+def is_virtual(mac: str) -> bool:
+    return mac.lower().startswith(VIRTUAL_OUIS)
+
+
+def forget(state: dict, names: list[str]) -> list[str]:
+    """Drop the learned MAC of these cameras so the next scan learns it again."""
+    forgotten = []
+    for name in names:
+        rec = state["cameras"].get(name)
+        if rec and rec.pop("mac", None):
+            rec["status"] = "not_seen"
+            forgotten.append(name)
+    return forgotten
 
 
 def ip_key(ip: str) -> tuple:
@@ -257,11 +275,19 @@ def locate(
         current = sorted(ips, key=ip_key)[0] if len(ips) == 1 else None
         rec["ip"] = current or ", ".join(sorted(ips, key=ip_key))
         mac = rec.get("mac")
+        if mac and is_virtual(mac):
+            # learned by an older version from a Proxmox guest sharing the address
+            del rec["mac"]
+            mac = None
+        # Learn the MAC only from an address a single, non-virtual device answers
+        # and that serves RTSP: a VM or another gadget may hold the camera's old IP
         if (
             not mac
             and current
             and current not in FACTORY_IPS
             and len(by_ip.get(current, ())) == 1
+            and not is_virtual(next(iter(by_ip[current])))
+            and probe(current)
         ):
             mac = next(iter(by_ip[current]))
             rec["mac"] = mac
@@ -300,7 +326,7 @@ def locate(
     ignored = set(state["ignored"])
     discovered = state["discovered"]
     for mac, ips in by_mac.items():
-        if mac in known_macs or mac in ignored or ips & used_ips:
+        if mac in known_macs or mac in ignored or ips & used_ips or is_virtual(mac):
             continue
         candidates = own_ips(mac) or sorted(ips, key=ip_key)
         ip = candidates[0]
@@ -320,6 +346,19 @@ def locate(
 
     state["last_scan"] = now
     return moves, messages
+
+
+def forget_saved(names: list[str]) -> list[str]:
+    """forget() on the saved state, under the same lock as a scan."""
+    import fcntl
+
+    LOCK_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(LOCK_FILE, "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        state = load_state()
+        done = forget(state, names)
+        save_state(state)
+        return done
 
 
 def run(dry_run: bool = False) -> dict:
@@ -358,9 +397,14 @@ def run(dry_run: bool = False) -> dict:
 
 def main(argv: list[str]) -> int:
     logging.basicConfig(level=logging.INFO, format="%(message)s")
+    if len(argv) >= 3 and argv[1] == "forget":
+        done = forget_saved(argv[2:])
+        print("MAC olvidada:", ", ".join(done) or "ninguna (sin MAC aprendida)")
+        return 0
     if len(argv) < 2 or argv[1] != "run":
         print(
-            "usage: python3 -m frigate.orbi360.camlocator run [--dry-run]",
+            "usage: python3 -m frigate.orbi360.camlocator run [--dry-run]\n"
+            "       python3 -m frigate.orbi360.camlocator forget <camara> [...]",
             file=sys.stderr,
         )
         return 2

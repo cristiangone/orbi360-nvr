@@ -8,7 +8,7 @@ import axios, { AxiosError } from "axios";
 import copy from "copy-to-clipboard";
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LuCopy, LuEyeOff, LuRadar } from "react-icons/lu";
+import { LuCopy, LuEyeOff, LuRadar, LuRotateCcw } from "react-icons/lu";
 import { toast } from "sonner";
 import useSWR from "swr";
 
@@ -76,6 +76,21 @@ export default function CameraNetworkSettingsView() {
         await axios.post("orbi360/network/ignore", { mac });
         await mutate();
         toast.success(t("cameraNetwork.toast.ignored"), {
+          position: "top-center",
+        });
+      } catch (error) {
+        showError(error);
+      }
+    },
+    [mutate, showError, t],
+  );
+
+  const forget = useCallback(
+    async (camera: string) => {
+      try {
+        await axios.post("orbi360/network/forget", { camera });
+        await mutate();
+        toast.success(t("cameraNetwork.toast.forgotten", { camera }), {
           position: "top-center",
         });
       } catch (error) {
@@ -162,6 +177,17 @@ export default function CameraNetworkSettingsView() {
                           <span className="block font-sans text-muted-foreground">
                             {cam.vendor}
                           </span>
+                        )}
+                        {cam.mac && (
+                          <button
+                            type="button"
+                            className="mt-1 flex items-center gap-1 font-sans text-xs text-muted-foreground underline-offset-2 hover:underline"
+                            title={t("cameraNetwork.cameras.forgetHint")}
+                            onClick={() => forget(name)}
+                          >
+                            <LuRotateCcw className="size-3" />
+                            {t("cameraNetwork.cameras.forget")}
+                          </button>
                         )}
                       </td>
                       <td className="p-3">

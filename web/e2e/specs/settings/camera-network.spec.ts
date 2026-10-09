@@ -47,7 +47,11 @@ const NETWORK = {
 };
 
 async function installNetworkRoutes(page: Page) {
-  const calls = { scan: 0, ignored: null as string | null };
+  const calls = {
+    scan: 0,
+    ignored: null as string | null,
+    forgotten: null as string | null,
+  };
   let state = structuredClone(NETWORK);
   await page.route("**/api/orbi360/network", (route) =>
     route.fulfill({ json: state }),
@@ -60,6 +64,12 @@ async function installNetworkRoutes(page: Page) {
     calls.ignored = route.request().postDataJSON().mac;
     state = { ...state, discovered: {}, ignored: [calls.ignored!] };
     return route.fulfill({ json: { success: true } });
+  });
+  await page.route("**/api/orbi360/network/forget", (route) => {
+    calls.forgotten = route.request().postDataJSON().camera;
+    return route.fulfill({
+      json: { success: true, forgotten: [calls.forgotten] },
+    });
   });
   return calls;
 }
@@ -99,5 +109,15 @@ test.describe("Orbi360 camera network @medium", () => {
     await frigateApp.page.getByRole("button", { name: "Ignore" }).click();
     await expect.poll(() => calls.ignored).toBe("aa:bb:cc:00:11:22");
     await expect(frigateApp.page.getByText("No new cameras.")).toBeVisible();
+  });
+
+  test("forgets a wrongly learned MAC", async ({ frigateApp }) => {
+    const calls = await installNetworkRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=cameraNetwork");
+    await frigateApp.page
+      .getByRole("button", { name: "Forget MAC" })
+      .first()
+      .click();
+    await expect.poll(() => calls.forgotten).toBe("cocina");
   });
 });

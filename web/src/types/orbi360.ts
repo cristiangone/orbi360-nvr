@@ -45,3 +45,43 @@ export type TelegramSettings = {
   alert_after_s: number;
   token_set: boolean;
 };
+
+// Camera network locator (Ajustes > Red de cámaras)
+export type CameraNetworkStatus =
+  | "ok"
+  | "moved"
+  | "not_seen"
+  | "shared_ip"
+  | "factory_ip";
+
+export type CameraNetworkCamera = {
+  ip?: string;
+  mac?: string;
+  vendor?: string;
+  status?: CameraNetworkStatus;
+  last_seen?: number;
+  moved_at?: number;
+};
+
+export type DiscoveredDevice = {
+  ip: string;
+  vendor?: string;
+  first_seen: number;
+  last_seen: number;
+};
+
+export type CameraNetworkEvent = {
+  time: number;
+  kind: "moved" | "new";
+  text: string;
+};
+
+export type CameraNetworkResponse = {
+  cameras: Record<string, CameraNetworkCamera>;
+  discovered: Record<string, DiscoveredDevice>;
+  ignored: string[];
+  events: CameraNetworkEvent[];
+  last_scan: number | null;
+  factory_ips: string[];
+  supported: boolean;
+};

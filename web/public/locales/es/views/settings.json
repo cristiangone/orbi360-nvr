@@ -30,6 +30,7 @@
     "users": "Usuarios",
     "notifications": "Notificaciones",
     "srtMosaics": "Mosaico SRT",
+    "cameraNetwork": "Red de cámaras",
     "enrichments": "Análisis avanzado",
     "triggers": "Disparadores",
     "roles": "Rols",
@@ -2303,5 +2304,55 @@
     "overrideGlobal": "Esta sección sobrescribe la configuración global",
     "overrideProfile": "Esta sección está sobrescrita por el perfil {{profile}}",
     "unsaved": "Esta sección tiene cambios sin guardar"
+  },
+  "cameraNetwork": {
+    "title": "Red de cámaras",
+    "desc": "Orbi360 sigue a cada cámara por su dirección MAC, así sigue funcionando aunque el router le entregue otra IP: cada 3 minutos escanea la red, actualiza la dirección de una cámara que cambió y avisa de equipos con RTSP que todavía no están configurados. Nunca usa la IP de fábrica {{factory}}: todas las cámaras de esa marca también responden ahí.",
+    "unsupported": "arp-scan no está instalado en este NVR, así que no se puede escanear la red. Vuelve a correr el instalador.",
+    "scan": "Escanear ahora",
+    "scanning": "Escaneando…",
+    "lastScan": "Último escaneo: {{time}}",
+    "cameras": {
+      "title": "Cámaras configuradas",
+      "empty": "Todavía no hay cámaras con dirección de red.",
+      "name": "Cámara",
+      "ip": "IP",
+      "mac": "MAC / fabricante",
+      "status": "Estado",
+      "lastSeen": "Vista por última vez"
+    },
+    "status": {
+      "ok": "En la red",
+      "moved": "IP actualizada",
+      "not_seen": "No vista",
+      "shared_ip": "IP compartida",
+      "factory_ip": "IP de fábrica"
+    },
+    "statusHint": {
+      "ok": "Responde en su dirección configurada.",
+      "moved": "Cambió de dirección; Orbi360 la actualizó.",
+      "not_seen": "No respondió en el último escaneo: revisa energía y Wi-Fi.",
+      "shared_ip": "Su dirección la responden varios equipos; corrígelo en el router.",
+      "factory_ip": "Usa la IP de fábrica que comparten todas las cámaras: cámbiala por su IP propia."
+    },
+    "discovered": {
+      "title": "Cámaras nuevas detectadas",
+      "desc": "Equipos con RTSP (puerto 554) que ninguna cámara usa. Para agregar una, copia su IP y usa Ajustes → Configuración de cámara → Añadir cámara.",
+      "empty": "No hay cámaras nuevas.",
+      "new": "Nueva",
+      "firstSeen": "Vista por primera vez: {{time}}",
+      "copyIp": "Copiar IP",
+      "ignore": "Ignorar"
+    },
+    "events": {
+      "title": "Cambios recientes",
+      "empty": "Todavía no hay cambios."
+    },
+    "toast": {
+      "scanned": "Red escaneada",
+      "ignored": "Equipo ignorado",
+      "copied": "IP copiada",
+      "error": "Red de cámaras: {{message}}"
+    }
   }
 }

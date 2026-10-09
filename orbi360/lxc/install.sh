@@ -536,6 +536,35 @@ KillMode=control-group
 WantedBy=multi-user.target
 EOF
 
+# --- Localizador de camaras por MAC (frigate/orbi360/camlocator.py) ---
+# Cada 3 minutos escanea la red: si una camara cambio de IP por DHCP actualiza su
+# direccion, y avisa de equipos nuevos con RTSP. Se ve en Ajustes > Red de camaras.
+command -v arp-scan >/dev/null || apt-get -qq install -y --no-install-recommends arp-scan
+
+cat > /etc/systemd/system/orbi360-camlocator.service <<EOF
+[Unit]
+Description=Orbi360 NVR - localizador de camaras por MAC
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/frigate
+ExecStart=/usr/bin/python3 -m frigate.orbi360.camlocator run
+TimeoutStartSec=300
+EOF
+
+cat > /etc/systemd/system/orbi360-camlocator.timer <<EOF
+[Unit]
+Description=Orbi360 NVR - escanea la red de camaras cada 3 minutos
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=3min
+
+[Install]
+WantedBy=timers.target
+EOF
+
 # Version anterior: un unico servicio configurado en /etc/orbi360-mosaico.conf
 if [[ -f /etc/systemd/system/orbi360-mosaico.service ]]; then
   if [[ -d /run/systemd/system ]]; then
@@ -577,6 +606,7 @@ if [[ -d /run/systemd/system ]]; then
   systemctl enable orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
   systemctl restart orbi360-go2rtc.service orbi360-nvr.service orbi360-nginx.service
   mosaics apply || echo "Aviso: no se pudieron aplicar los mosaicos SRT"
+  systemctl enable --now orbi360-camlocator.timer || echo "Aviso: no se pudo activar el localizador de camaras"
   if (( MOSAIC_SCRIPT_CHANGED )); then
     echo "Script de mosaicos actualizado: reiniciando los mosaicos en marcha"
     systemctl try-restart 'orbi360-mosaico@*.service' || true

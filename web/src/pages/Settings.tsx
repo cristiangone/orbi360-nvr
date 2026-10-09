@@ -45,6 +45,7 @@ import MotionTunerView from "@/views/settings/MotionTunerView";
 import MasksAndZonesView from "@/views/settings/MasksAndZonesView";
 import UsersView from "@/views/settings/UsersView";
 import SrtMosaicsSettingsView from "@/views/settings/SrtMosaicsSettingsView";
+import CameraNetworkSettingsView from "@/views/settings/CameraNetworkSettingsView";
 import RolesView from "@/views/settings/RolesView";
 import UiSettingsView from "@/views/settings/UiSettingsView";
 import ProfilesView from "@/views/settings/ProfilesView";
@@ -182,6 +183,7 @@ const allSettingsViews = [
   "roles",
   "notifications",
   "srtMosaics",
+  "cameraNetwork",
   "frigateplus",
   "mediaSync",
   "regionGrid",
@@ -444,6 +446,10 @@ const settingsGroups = [
   {
     label: "srtMosaics",
     items: [{ key: "srtMosaics", component: SrtMosaicsSettingsView }],
+  },
+  {
+    label: "cameraNetwork",
+    items: [{ key: "cameraNetwork", component: CameraNetworkSettingsView }],
   },
   {
     label: "frigateplus",

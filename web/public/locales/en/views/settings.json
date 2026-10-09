@@ -112,6 +112,7 @@
     "roles": "Roles",
     "notifications": "Notifications",
     "srtMosaics": "SRT mosaic",
+    "cameraNetwork": "Camera network",
     "triggers": "Triggers",
     "debug": "Debug",
     "frigateplus": "Frigate+",
@@ -2088,6 +2089,56 @@
     },
     "onvif": {
       "autotrackingNoZones": "Autotracking requires at least one zone. Define a zone for this camera in Masks / Zones, then set it as a required zone below."
+    }
+  },
+  "cameraNetwork": {
+    "title": "Camera network",
+    "desc": "Orbi360 follows each camera by its MAC address, so it keeps working when the router hands it a new IP: every 3 minutes it scans the network, updates the address of a camera that moved and reports devices with RTSP that are not configured yet. The factory address {{factory}} is never used: every camera of that brand also answers there.",
+    "unsupported": "arp-scan is not installed on this NVR, so the network cannot be scanned. Re-run the installer.",
+    "scan": "Scan now",
+    "scanning": "Scanning…",
+    "lastScan": "Last scan: {{time}}",
+    "cameras": {
+      "title": "Configured cameras",
+      "empty": "No cameras with a network address yet.",
+      "name": "Camera",
+      "ip": "IP",
+      "mac": "MAC / vendor",
+      "status": "Status",
+      "lastSeen": "Last seen"
+    },
+    "status": {
+      "ok": "On the network",
+      "moved": "IP updated",
+      "not_seen": "Not seen",
+      "shared_ip": "Shared IP",
+      "factory_ip": "Factory IP"
+    },
+    "statusHint": {
+      "ok": "Answers at its configured address.",
+      "moved": "Changed address; Orbi360 updated it.",
+      "not_seen": "Did not answer the last scan: check power and Wi-Fi.",
+      "shared_ip": "Its address is answered by several devices; fix it in the router.",
+      "factory_ip": "Uses the factory address shared by every camera: change it to its own address."
+    },
+    "discovered": {
+      "title": "New cameras detected",
+      "desc": "Devices with RTSP (port 554) that no camera uses. To add one, copy its IP and use Settings → Camera configuration → Add camera.",
+      "empty": "No new cameras.",
+      "new": "New",
+      "firstSeen": "Seen first: {{time}}",
+      "copyIp": "Copy IP",
+      "ignore": "Ignore"
+    },
+    "events": {
+      "title": "Recent changes",
+      "empty": "No changes yet."
+    },
+    "toast": {
+      "scanned": "Network scanned",
+      "ignored": "Device ignored",
+      "copied": "IP copied",
+      "error": "Camera network: {{message}}"
     }
   }
 }

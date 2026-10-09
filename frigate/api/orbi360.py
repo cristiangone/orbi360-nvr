@@ -1,7 +1,8 @@
-"""Orbi360 NVR apis: SRT mosaic outputs and Telegram alerts."""
+"""Orbi360 NVR apis: SRT mosaics, Telegram alerts and the camera network."""
 
 import asyncio
 import logging
+import subprocess
 
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import JSONResponse
@@ -9,7 +10,7 @@ from pydantic import ValidationError
 
 from frigate.api.auth import require_role
 from frigate.api.defs.tags import Tags
-from frigate.orbi360 import mosaics, telegram
+from frigate.orbi360 import camlocator, mosaics, telegram
 
 logger = logging.getLogger(__name__)
 
@@ -166,3 +167,66 @@ async def test_telegram(body: dict):
             content={"success": False, "message": error}, status_code=400
         )
     return JSONResponse(content={"success": True})
+
+
+@router.get(
+    "/orbi360/network",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Cameras located by MAC and new RTSP devices on the LAN",
+)
+async def get_network():
+    state = await asyncio.to_thread(camlocator.load_state)
+    return JSONResponse(
+        content={
+            **state,
+            "factory_ips": sorted(camlocator.FACTORY_IPS),
+            "supported": camlocator.shutil.which("arp-scan") is not None,
+        }
+    )
+
+
+@router.post(
+    "/orbi360/network/scan",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Scan the LAN now and follow cameras that changed address",
+)
+async def scan_network():
+    try:
+        state = await asyncio.to_thread(camlocator.run)
+    except (OSError, RuntimeError, subprocess.SubprocessError) as e:
+        logger.warning("camera network scan failed: %s", e)
+        return JSONResponse(
+            content={"success": False, "message": str(e)}, status_code=500
+        )
+    return JSONResponse(
+        content={
+            **state,
+            "factory_ips": sorted(camlocator.FACTORY_IPS),
+            "supported": True,
+        }
+    )
+
+
+@router.post(
+    "/orbi360/network/ignore",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Stop reporting a discovered device",
+)
+async def ignore_device(body: dict):
+    mac = str(body.get("mac", "")).lower()
+    if not camlocator.MAC_PATTERN.match(mac):
+        return JSONResponse(
+            content={"success": False, "message": "invalid MAC address"},
+            status_code=400,
+        )
+
+    def ignore():
+        state = camlocator.load_state()
+        if mac not in state["ignored"]:
+            state["ignored"].append(mac)
+        state["discovered"].pop(mac, None)
+        camlocator.save_state(state)
+        return state
+
+    state = await asyncio.to_thread(ignore)
+    return JSONResponse(content={"success": True, "ignored": state["ignored"]})

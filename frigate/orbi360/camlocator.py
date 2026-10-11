@@ -9,7 +9,7 @@ config.yml can start pointing at another device. Every few minutes
 * when a known MAC shows up at a different address, rewrites that camera's
   URLs in config.yml and restarts go2rtc (and the NVR if the camera reads the
   device directly);
-* reports devices with RTSP (port 554) that no camera uses yet.
+* reports devices with RTSP (554) or DVRIP (34567) that no camera uses yet.
 
 Addresses answered by several MACs are never trusted: Xiongmai cameras keep
 their factory address 192.168.1.10 as an alias, so every one of them answers
@@ -48,6 +48,9 @@ LOCK_FILE = Path("/run/orbi360-camlocator.lock")
 ENV_FILE = "/etc/orbi360-nvr.env"
 FACTORY_IPS = {"192.168.1.10"}
 RTSP_PORT = 554
+# Xiongmai NETsurveillance (DVRIP): some iCSee cameras ship with RTSP off and
+# only serve video here, read by go2rtc as dvrip://
+DVRIP_PORT = 34567
 MAX_EVENTS = 50
 
 # Host of an RTSP/HTTP URL: preceded by "//" or "user:pass@", followed by ":" or "/"
@@ -116,6 +119,11 @@ def port_open(ip: str, port: int = RTSP_PORT, timeout: float = 3) -> bool:
             return True
     except OSError:
         return False
+
+
+def video_port_open(ip: str) -> bool:
+    """RTSP or DVRIP open: the device can serve camera video."""
+    return port_open(ip, RTSP_PORT) or port_open(ip, DVRIP_PORT)
 
 
 def _env_vars() -> dict[str, str]:
@@ -326,7 +334,7 @@ def locate(
     hosts: dict[str, set[str]],
     entries: list[tuple[str, str, str]],
     now: int,
-    probe=port_open,
+    probe=video_port_open,
     verify=None,
 ) -> tuple[dict[str, tuple[str, str]], list[str]]:
     """Update state from one scan. Returns (camera moves, messages to send).
@@ -510,7 +518,7 @@ def run(dry_run: bool = False) -> dict:
 
         def verify(name: str, ip: str) -> bool:
             url = urls.get((name, ip))
-            return stream_ok(url) if url else True  # no RTSP URL: port check only
+            return stream_ok(url) if url else True  # dvrip:// or other: port check only
 
         moves, messages = locate(
             state, camera_hosts(cfg), scan_network(), int(time.time()), verify=verify

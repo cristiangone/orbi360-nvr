@@ -110,7 +110,7 @@ def scan_network() -> list[tuple[str, str, str]]:
     return parse_arp_scan(result.stdout)
 
 
-def port_open(ip: str, port: int = RTSP_PORT, timeout: float = 1.5) -> bool:
+def port_open(ip: str, port: int = RTSP_PORT, timeout: float = 3) -> bool:
     try:
         with socket.create_connection((ip, port), timeout=timeout):
             return True
@@ -416,7 +416,8 @@ def locate(
 
     # Devices with RTSP that no camera uses yet
     known_macs = {rec.get("mac") for rec in cameras.values() if rec.get("mac")}
-    used_ips = set().union(*hosts.values()) if hosts else set()
+    # the factory alias is shared by every Xiongmai camera: it does not tell which
+    used_ips = (set().union(*hosts.values()) if hosts else set()) - FACTORY_IPS
     ignored = set(state["ignored"])
     discovered = state["discovered"]
 
@@ -431,9 +432,13 @@ def locate(
     for mac in by_mac:
         if not_new(mac):
             continue
-        candidates = own_ips(mac) or sorted(by_mac[mac], key=ip_key)
-        ip = candidates[0]
-        if not probe(ip):
+        own = own_ips(mac)
+        ip = next((ip for ip in own if probe(ip)), None)
+        if ip is None and by_mac[mac] & FACTORY_IPS:
+            # Only Xiongmai cameras answer the factory alias: a camera even when
+            # its own address is slow to open RTSP (2026-10-12, a camera at .37)
+            ip = own[0] if own else sorted(by_mac[mac] & FACTORY_IPS)[0]
+        if ip is None:
             continue
         entry = discovered.get(mac)
         if entry is None:

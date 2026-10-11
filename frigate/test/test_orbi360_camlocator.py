@@ -149,7 +149,12 @@ class TestLocate(unittest.TestCase):
         # the repeater has no RTSP; the kitchen's second lease belongs to a known camera
         self.assertNotIn("10:27:f5:09:a5:67", state["discovered"])
         self.assertNotIn("b4:fb:e3:37:3f:3d", state["discovered"])
-        self.assertEqual(sum("nueva" in m for m in messages), 1)
+        # "entrada" is configured on the shared factory alias, so the camera at
+        # its own lease .213 is reported too: that is the address to use
+        self.assertEqual(
+            state["discovered"]["dc:29:19:e0:38:d0"]["ip"], "192.168.1.213"
+        )
+        self.assertEqual(sum("nueva" in m for m in messages), 2)
         _, messages = camlocator.locate(
             state, self.hosts, entries, 200, probe=lambda ip: ip in rtsp
         )
@@ -157,6 +162,17 @@ class TestLocate(unittest.TestCase):
         state["ignored"].append("aa:bb:cc:00:11:22")
         camlocator.locate(state, self.hosts, entries, 300, probe=lambda ip: ip in rtsp)
         self.assertNotIn("aa:bb:cc:00:11:22", state["discovered"])
+
+    def test_reports_a_camera_answering_the_factory_alias(self):
+        # 2026-10-12: a new camera answered .10 and its own lease .37, but RTSP
+        # did not open at .37 within the probe
+        entries = self.entries + [
+            ("192.168.1.10", "10:65:19:0a:d2:fe", ""),
+            ("192.168.1.37", "10:65:19:0a:d2:fe", ""),
+        ]
+        state = empty_state()
+        camlocator.locate(state, self.hosts, entries, 100, probe=lambda ip: ip in RTSP)
+        self.assertEqual(state["discovered"]["10:65:19:0a:d2:fe"]["ip"], "192.168.1.37")
 
     def test_forgets_cameras_removed_from_config(self):
         state = empty_state()

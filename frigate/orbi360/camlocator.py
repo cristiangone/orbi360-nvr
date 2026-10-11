@@ -4,7 +4,8 @@ Cameras get their address from a DHCP server we do not control, so an IP in
 config.yml can start pointing at another device. Every few minutes
 (orbi360-camlocator.timer) this module scans the LAN with arp-scan and:
 
-* learns the MAC behind each configured camera address;
+* learns the MAC behind each configured camera address, once the camera's own
+  RTSP URL returns video there (or takes one set by hand with ``set``);
 * when a known MAC shows up at a different address, rewrites that camera's
   URLs in config.yml and restarts go2rtc (and the NVR if the camera reads the
   device directly);
@@ -18,6 +19,8 @@ Telegram when alerts are enabled.
 Usage::
 
     python3 -m frigate.orbi360.camlocator run [--dry-run]
+    python3 -m frigate.orbi360.camlocator forget <camera> [...]
+    python3 -m frigate.orbi360.camlocator set <camera> <mac>
 """
 
 import ipaddress
@@ -42,6 +45,7 @@ logger = logging.getLogger(__name__)
 CONFIG_FILE = Path(CONFIG_DIR) / "config.yml"
 STATE_FILE = Path(CONFIG_DIR) / "orbi360" / "camera-network.json"
 LOCK_FILE = Path("/run/orbi360-camlocator.lock")
+ENV_FILE = "/etc/orbi360-nvr.env"
 FACTORY_IPS = {"192.168.1.10"}
 RTSP_PORT = 554
 MAX_EVENTS = 50
@@ -114,6 +118,68 @@ def port_open(ip: str, port: int = RTSP_PORT, timeout: float = 1.5) -> bool:
         return False
 
 
+def _env_vars() -> dict[str, str]:
+    """FRIGATE_* variables, also when run by hand outside the systemd units."""
+    env = {}
+    try:
+        for line in Path(ENV_FILE).read_text().splitlines():
+            key, sep, value = line.partition("=")
+            if sep and key.startswith("FRIGATE_"):
+                env[key] = value
+    except OSError:
+        pass
+    env.update({k: v for k, v in os.environ.items() if k.startswith("FRIGATE_")})
+    return env
+
+
+def _ffprobe() -> str | None:
+    version = os.environ.get("DEFAULT_FFMPEG_VERSION", "")
+    for path in (f"/usr/lib/ffmpeg/{version}/bin/ffprobe", shutil.which("ffprobe")):
+        if path and os.access(path, os.X_OK):
+            return path
+    found = sorted(Path("/usr/lib/ffmpeg").glob("*/bin/ffprobe"))
+    return str(found[-1]) if found else None
+
+
+def stream_ok(url: str, timeout: int = 15) -> bool:
+    """True when the camera URL from config.yml really serves video.
+
+    A port 554 check is not enough: an Amazon device that got a camera's old
+    lease answered on 554 too (2026-10-11). With the camera's credentials only
+    the camera itself returns a video stream.
+    """
+    ffprobe = _ffprobe()
+    if not ffprobe:
+        return False
+    for key, value in _env_vars().items():
+        url = url.replace("{" + key + "}", value)
+    try:
+        result = subprocess.run(
+            [
+                ffprobe,
+                "-v",
+                "error",
+                "-rtsp_transport",
+                "tcp",
+                "-timeout",
+                "5000000",
+                "-select_streams",
+                "v:0",
+                "-show_entries",
+                "stream=codec_type",
+                "-of",
+                "csv=p=0",
+                url,
+            ],
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return "video" in result.stdout
+
+
 def _base_name(stream: str) -> str:
     return stream[: -len("_sub")] if stream.endswith("_sub") else stream
 
@@ -146,6 +212,26 @@ def camera_hosts(cfg: dict) -> dict[str, set[str]]:
                 if ip not in LOCAL_HOSTS:
                     hosts.setdefault(str(name), set()).add(ip)
     return hosts
+
+
+def camera_urls(cfg: dict) -> dict[tuple[str, str], str]:
+    """An RTSP URL per (camera, device address), main streams first."""
+    urls: dict[tuple[str, str], str] = {}
+    streams = ((cfg.get("go2rtc") or {}).get("streams")) or {}
+    sources = sorted(streams.items(), key=lambda item: str(item[0]).endswith("_sub"))
+    sources = [(_base_name(str(n)), u) for n, s in sources for u in _urls(s)]
+    for name, cam in (cfg.get("cameras") or {}).items():
+        for inp in ((cam or {}).get("ffmpeg") or {}).get("inputs") or []:
+            sources.append((str(name), str((inp or {}).get("path", ""))))
+    for name, url in sources:
+        start = url.find("rtsp://")
+        if start < 0:
+            continue
+        url = url[start:].split("#", 1)[0]  # drop go2rtc "ffmpeg:" prefix and options
+        for ip in URL_IP.findall(url):
+            if ip not in LOCAL_HOSTS:
+                urls.setdefault((name, ip), url)
+    return urls
 
 
 def load_state() -> dict:
@@ -241,8 +327,15 @@ def locate(
     entries: list[tuple[str, str, str]],
     now: int,
     probe=port_open,
+    verify=None,
 ) -> tuple[dict[str, tuple[str, str]], list[str]]:
-    """Update state from one scan. Returns (camera moves, messages to send)."""
+    """Update state from one scan. Returns (camera moves, messages to send).
+
+    probe(ip) tells whether a device serves RTSP; verify(camera, ip), when
+    given, must also confirm it is that camera before its MAC is learned.
+    """
+    if verify is None:
+        verify = lambda name, ip: probe(ip)  # noqa: E731
     by_ip: dict[str, set[str]] = {}
     by_mac: dict[str, set[str]] = {}
     vendors: dict[str, str] = {}
@@ -288,6 +381,7 @@ def locate(
             and len(by_ip.get(current, ())) == 1
             and not is_virtual(next(iter(by_ip[current])))
             and probe(current)
+            and verify(name, current)
         ):
             mac = next(iter(by_ip[current]))
             rec["mac"] = mac
@@ -325,10 +419,19 @@ def locate(
     used_ips = set().union(*hosts.values()) if hosts else set()
     ignored = set(state["ignored"])
     discovered = state["discovered"]
-    for mac, ips in by_mac.items():
-        if mac in known_macs or mac in ignored or ips & used_ips or is_virtual(mac):
+
+    def not_new(mac: str) -> bool:
+        return (
+            mac in known_macs
+            or mac in ignored
+            or is_virtual(mac)
+            or bool(by_mac.get(mac, set()) & used_ips)
+        )
+
+    for mac in by_mac:
+        if not_new(mac):
             continue
-        candidates = own_ips(mac) or sorted(ips, key=ip_key)
+        candidates = own_ips(mac) or sorted(by_mac[mac], key=ip_key)
         ip = candidates[0]
         if not probe(ip):
             continue
@@ -340,25 +443,50 @@ def locate(
             _event(state, "new", text, now)
             messages.append(f"🆕 Orbi360 NVR: {text} Agrégala desde Ajustes.")
         entry.update({"ip": ip, "vendor": vendors.get(mac, ""), "last_seen": now})
+    # also drops entries an older version reported for a camera already in use
     for mac in list(discovered):
-        if mac in known_macs or mac in ignored:
+        if not_new(mac):
             del discovered[mac]
 
     state["last_scan"] = now
     return moves, messages
 
 
-def forget_saved(names: list[str]) -> list[str]:
-    """forget() on the saved state, under the same lock as a scan."""
+def _with_saved_state(change):
+    """Apply change(state) to the saved state, under the same lock as a scan."""
     import fcntl
 
     LOCK_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(LOCK_FILE, "w") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         state = load_state()
-        done = forget(state, names)
+        result = change(state)
         save_state(state)
-        return done
+        return result
+
+
+def forget_saved(names: list[str]) -> list[str]:
+    return _with_saved_state(lambda state: forget(state, names))
+
+
+def assign(state: dict, name: str, mac: str) -> None:
+    """Set a camera's MAC by hand (from the label or the router), e.g. while it
+    is off or shares its address with another device."""
+    mac = mac.lower()
+    if not MAC_PATTERN.match(mac) or is_virtual(mac):
+        raise ValueError(f"MAC inválida: {mac}")
+    for other, rec in state["cameras"].items():
+        if other != name and rec.get("mac") == mac:
+            rec.pop("mac")
+            rec["status"] = "not_seen"
+    rec = state["cameras"].setdefault(name, {})
+    rec["mac"] = mac
+    rec["status"] = "not_seen"  # the next scan confirms where it is
+    state["discovered"].pop(mac, None)
+
+
+def assign_saved(name: str, mac: str) -> None:
+    _with_saved_state(lambda state: assign(state, name, mac))
 
 
 def run(dry_run: bool = False) -> dict:
@@ -373,8 +501,14 @@ def run(dry_run: bool = False) -> dict:
         yaml.indent(mapping=2, sequence=4, offset=2)  # same style as config.yml
         cfg = yaml.load(CONFIG_FILE.read_text()) or {}
         state = load_state()
+        urls = camera_urls(cfg)
+
+        def verify(name: str, ip: str) -> bool:
+            url = urls.get((name, ip))
+            return stream_ok(url) if url else True  # no RTSP URL: port check only
+
         moves, messages = locate(
-            state, camera_hosts(cfg), scan_network(), int(time.time())
+            state, camera_hosts(cfg), scan_network(), int(time.time()), verify=verify
         )
         if moves and not dry_run:
             backup = CONFIG_FILE.with_name(f"config.yml.bak-locator-{int(time.time())}")
@@ -401,10 +535,19 @@ def main(argv: list[str]) -> int:
         done = forget_saved(argv[2:])
         print("MAC olvidada:", ", ".join(done) or "ninguna (sin MAC aprendida)")
         return 0
+    if len(argv) == 4 and argv[1] == "set":
+        try:
+            assign_saved(argv[2], argv[3])
+        except ValueError as e:
+            print(e, file=sys.stderr)
+            return 2
+        print(f"MAC asignada: {argv[2]} = {argv[3].lower()}")
+        return 0
     if len(argv) < 2 or argv[1] != "run":
         print(
             "usage: python3 -m frigate.orbi360.camlocator run [--dry-run]\n"
-            "       python3 -m frigate.orbi360.camlocator forget <camara> [...]",
+            "       python3 -m frigate.orbi360.camlocator forget <camara> [...]\n"
+            "       python3 -m frigate.orbi360.camlocator set <camara> <mac>",
             file=sys.stderr,
         )
         return 2

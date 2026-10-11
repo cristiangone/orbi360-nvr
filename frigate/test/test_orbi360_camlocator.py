@@ -88,6 +88,16 @@ class TestParsing(unittest.TestCase):
         self.assertEqual(hosts["salida_pieza"], {"192.168.1.12"})
         self.assertNotIn("127.0.0.1", set().union(*hosts.values()))
 
+    def test_camera_urls(self):
+        urls = camlocator.camera_urls(load_cfg())
+        # the main stream is checked, not the substream
+        self.assertTrue(urls[("sala_gym", "192.168.1.5")].endswith("stream=0.sdp"))
+        self.assertEqual(
+            urls[("salida_pieza", "192.168.1.12")],
+            "rtsp://admin:{FRIGATE_RTSP_PASSWORD}@192.168.1.12:554/0/av0",
+        )
+        self.assertNotIn(("entrada", "127.0.0.1"), urls)
+
 
 class TestLocate(unittest.TestCase):
     def setUp(self):
@@ -170,6 +180,68 @@ class TestLocate(unittest.TestCase):
         self.assertNotIn("mac", state["cameras"]["entrada"])
         self.assertNotIn("mac", state["cameras"]["pieza_principal"])
         self.assertEqual(state["discovered"], {})
+
+    def test_learns_only_when_the_camera_stream_answers(self):
+        # 2026-10-11: with Salida Pieza off, an Amazon device got .12 and had
+        # port 554 open; only the camera's own URL tells them apart
+        hosts = {"salida_pieza": {"192.168.1.12"}}
+        entries = [("192.168.1.12", "fc:a1:83:db:84:3f", "Amazon Technologies Inc.")]
+        state = empty_state()
+        camlocator.locate(
+            state,
+            hosts,
+            entries,
+            100,
+            probe=lambda ip: True,
+            verify=lambda name, ip: False,
+        )
+        self.assertNotIn("mac", state["cameras"]["salida_pieza"])
+        self.assertEqual(state["cameras"]["salida_pieza"]["status"], "not_seen")
+        camlocator.locate(
+            state,
+            hosts,
+            entries,
+            200,
+            probe=lambda ip: True,
+            verify=lambda name, ip: name == "salida_pieza",
+        )
+        self.assertEqual(state["cameras"]["salida_pieza"]["mac"], "fc:a1:83:db:84:3f")
+
+    def test_drops_stale_new_camera_reports(self):
+        # an older version reported the Entrada camera at the factory address
+        state = empty_state()
+        state["discovered"]["dc:29:19:e0:38:d0"] = {
+            "ip": "192.168.1.10",
+            "first_seen": 1,
+            "last_seen": 1,
+        }
+        hosts = {"entrada": {"192.168.1.213"}}
+        entries = [
+            ("192.168.1.213", "bc:24:11:c3:51:e2", ""),
+            ("192.168.1.213", "dc:29:19:e0:38:d0", "AltoBeam"),
+            ("192.168.1.10", "dc:29:19:e0:38:d0", "AltoBeam"),
+        ]
+        camlocator.locate(state, hosts, entries, 100, probe=lambda ip: True)
+        self.assertEqual(state["discovered"], {})
+        self.assertEqual(state["cameras"]["entrada"]["status"], "shared_ip")
+
+    def test_assign_by_hand(self):
+        state = empty_state()
+        state["discovered"]["dc:29:19:e0:38:d0"] = {"ip": "192.168.1.10"}
+        state["cameras"]["salida_pieza"] = {"mac": "dc:29:19:e0:38:d0"}
+        camlocator.assign(state, "entrada", "DC:29:19:E0:38:D0")
+        self.assertEqual(state["cameras"]["entrada"]["mac"], "dc:29:19:e0:38:d0")
+        self.assertNotIn("mac", state["cameras"]["salida_pieza"])
+        self.assertEqual(state["discovered"], {})
+        with self.assertRaises(ValueError):
+            camlocator.assign(state, "entrada", "bc:24:11:c3:51:e2")
+        with self.assertRaises(ValueError):
+            camlocator.assign(state, "entrada", "no-es-mac")
+        # a camera with its MAC set by hand follows it to a new address
+        hosts = {"entrada": {"192.168.1.213"}}
+        entries = [("192.168.1.30", "dc:29:19:e0:38:d0", "AltoBeam")]
+        moves, _ = camlocator.locate(state, hosts, entries, 100, probe=lambda ip: False)
+        self.assertEqual(moves, {"entrada": ("192.168.1.213", "192.168.1.30")})
 
     def test_forget(self):
         state = empty_state()

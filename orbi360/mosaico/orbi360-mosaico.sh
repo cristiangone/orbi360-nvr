@@ -48,6 +48,11 @@ STATE_DIR="${STATE_DIR:-/run/orbi360-mosaico}"
 # Avisos por Telegram: archivo generado por la interfaz (TELEGRAM_*, ALERT_AFTER)
 NOTIFY_ENV="${NOTIFY_ENV:-/config/orbi360/telegram.env}"
 FLAP_LIMIT="${FLAP_LIMIT:-5}"   # reinicios del encoder en una hora que generan aviso
+# Reconexion SRT diaria (HH:MM, vacio = nunca). srt-mux puede dejar una sesion "colgada":
+# el servidor sigue confirmando los paquetes pero ya no los entrega al canal, y desde aca
+# no se nota (probado con srt-live-transmit 1.5.1). Reabrir la sesion una vez al dia acota
+# la falla hasta que srt-mux tenga su propio vigilante. El corte dura unos 3 segundos.
+SRT_RECONNECT_AT="${SRT_RECONNECT_AT-04:00}"
 
 N=${#CAMS[@]}
 if (( N < 1 || N > 9 )); then
@@ -214,9 +219,10 @@ set_state() {
 #    - caller: si el servidor no responde o corta, reintenta cada 3 segundos.
 #    Con -v srt-live-transmit informa la conexion; de ahi sale el estado real.
 if [[ "$MODE" == caller ]]; then IDLE=connecting; else IDLE=waiting; fi
+RELAY_PID="$STATE_DIR/$ID.relaypid"
 ( while true; do
     set_state srt "$IDLE"
-    srt-live-transmit -v "${UDP}?mode=listener" "$SRT_DEST" 2>&1 |
+    srt-live-transmit -v "${UDP}?mode=listener" "$SRT_DEST" > >(
       while IFS= read -r line; do
         case "$line" in
           *"SRT target connected"*|*"Accepted SRT target connection"*)
@@ -225,12 +231,30 @@ if [[ "$MODE" == caller ]]; then IDLE=connecting; else IDLE=waiting; fi
             set_state srt "$IDLE"; echo "[srt] desconectado" ;;
           # ruido de -v y estadisticas periodicas
           *"bytes lost"*|*"SRT parameters"*|*"Media path"*|*"Opening SRT"*|*"Connecting to"*|\
-          *"SrtCommon"*|*"Binding a server"*|*"listen..."*|*"accept..."*|*"connected."*|*" = '"*|"") ;;
+          *"SrtCommon"*|*"Binding a server"*|*"REQUESTED INTERRUPT"*|*"listen..."*|*"accept..."*|*"connected."*|*" = '"*|"") ;;
           *) echo "[srt] $line" ;;
         esac
-      done
+      done) 2>&1 &
+    echo $! > "$RELAY_PID"
+    wait $!
     if [[ "$MODE" == caller ]]; then sleep 3; else sleep 1; fi
   done ) &
+
+# Reconexion diaria programada (ver SRT_RECONNECT_AT)
+if [[ "$SRT_RECONNECT_AT" =~ ^([01][0-9]|2[0-3]):[0-5][0-9]$ ]]; then
+  ( while true; do
+      now=$(date +%s)
+      next=$(date -d "today $SRT_RECONNECT_AT" +%s)
+      (( next <= now )) && next=$(date -d "tomorrow $SRT_RECONNECT_AT" +%s)
+      sleep $(( next - now ))
+      if read -r pid < "$RELAY_PID" 2>/dev/null && kill "$pid" 2>/dev/null; then
+        echo "[srt] reconexion diaria programada ($SRT_RECONNECT_AT)"
+      fi
+      sleep 61   # no repetir dentro del mismo minuto
+    done ) &
+elif [[ -n "$SRT_RECONNECT_AT" ]]; then
+  echo "[mosaico] SRT_RECONNECT_AT invalido ('$SRT_RECONNECT_AT', se espera HH:MM): sin reconexion diaria" >&2
+fi
 
 # 2) Encoder: si una camara se cae y ffmpeg sale, reintenta sin tumbar el SRT.
 #    - anullsrc: pista de audio muda (muchos transcoders exigen audio). Es infinita, por

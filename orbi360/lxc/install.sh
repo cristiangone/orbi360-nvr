@@ -335,6 +335,8 @@ cat > /usr/local/bin/orbi360-actualizar <<EOF
 exec bash -c "\$(wget -qO- https://raw.githubusercontent.com/cristiangone/orbi360-nvr/$BRANCH/orbi360/lxc/install.sh)"
 EOF
 chmod 755 /usr/local/bin/orbi360-actualizar
+# pct enter abre la consola con un PATH minimo, sin /usr/local/bin
+ln -sf /usr/local/bin/orbi360-actualizar /usr/sbin/orbi360-actualizar
 
 # Variables de entorno de la imagen Docker
 DEFAULT_FFMPEG_VERSION="$(grep -oP 'ENV DEFAULT_FFMPEG_VERSION="\K[^"]+' "$DOCKER/Dockerfile")"

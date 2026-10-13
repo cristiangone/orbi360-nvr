@@ -15,6 +15,7 @@ import useSWR from "swr";
 import { FrigateConfig } from "./types/frigateConfig";
 import ActivityIndicator from "@/components/indicators/activity-indicator";
 import { isRedirectingToLogin } from "@/api/auth-redirect";
+import Assistant from "@/components/orbi360/assistant/Assistant";
 
 const Live = lazy(() => import("@/pages/Live"));
 const Events = lazy(() => import("@/pages/Events"));
@@ -73,6 +74,7 @@ function DefaultAppView() {
       {isDesktop && <Sidebar />}
       {isDesktop && <Statusbar />}
       {isMobile && <Bottombar />}
+      <Assistant />
       <div
         id="pageRoot"
         className={cn(

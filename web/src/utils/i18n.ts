@@ -40,6 +40,7 @@ i18n
       "common",
       "objects",
       "audio",
+      "components/assistant",
       "components/auth",
       "components/camera",
       "components/dialog",

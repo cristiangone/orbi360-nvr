@@ -1,0 +1,9 @@
+{
+  "button": "Assistant",
+  "open": "Open the assistant",
+  "title": "Orbi360 assistant",
+  "desc": "Frequently asked questions about the product, the service and how to set it up (answers in Spanish).",
+  "search": "Type your question, e.g. “add camera”",
+  "back": "Back",
+  "noResults": "No answer found. Try other words or open “No encontré mi respuesta”."
+}

@@ -2125,12 +2125,13 @@
     },
     "discovered": {
       "title": "New cameras detected",
-      "desc": "Devices with RTSP (port 554) that no camera uses. To add one, copy its IP and use Settings → Camera configuration → Add camera.",
+      "desc": "Devices that look like cameras (RTSP, DVRIP or answering the factory address) that no camera uses. Add them with the “Add” button.",
       "empty": "No new cameras.",
       "new": "New",
       "firstSeen": "Seen first: {{time}}",
       "copyIp": "Copy IP",
-      "ignore": "Ignore"
+      "ignore": "Ignore",
+      "add": "Add"
     },
     "events": {
       "title": "Recent changes",
@@ -2142,6 +2143,31 @@
       "copied": "IP copied",
       "error": "Camera network: {{message}}",
       "forgotten": "MAC of {{camera}} forgotten: it will be learned in the next scan"
+    },
+    "loadError": "Could not load the camera network: {{message}}",
+    "retry": "Retry",
+    "add": {
+      "byIp": "Add camera by IP",
+      "title": "Add camera",
+      "desc": "Orbi360 detects how to read the camera with the camera password, adds it to the configuration, follows it by MAC and restarts the NVR (recordings pause for ~1 minute).",
+      "friendlyName": "Camera name",
+      "friendlyNamePlaceholder": "e.g. North Yard",
+      "internalName": "Internal name: {{name}}",
+      "nameTaken": "A camera “{{name}}” already exists: choose another name.",
+      "ip": "Camera IP",
+      "detect": "Detect",
+      "detected": {
+        "xm_rtsp": "Xiongmai camera with RTSP: ready to add.",
+        "dvrip": "iCSee camera over DVRIP (no RTSP): it will be recorded without audio to protect memory."
+      },
+      "toH264": "Its video is H.265, which Orbi360 cannot read: switch it to H.264 (recommended, the camera reboots)",
+      "custom": "Other brand (type the URLs)",
+      "mainUrl": "Main URL (recording)",
+      "subUrl": "Sub URL (detection, optional)",
+      "customHint": "Use {FRIGATE_RTSP_PASSWORD} instead of the password so it is not written in the configuration.",
+      "cancel": "Cancel",
+      "submit": "Add",
+      "done": "Camera “{{camera}}” added: the NVR is restarting and it will show up in 1-2 minutes."
     }
   }
 }

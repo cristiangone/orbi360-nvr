@@ -51,6 +51,7 @@ async function installNetworkRoutes(page: Page) {
     scan: 0,
     ignored: null as string | null,
     forgotten: null as string | null,
+    added: null as Record<string, unknown> | null,
   };
   let state = structuredClone(NETWORK);
   await page.route("**/api/orbi360/network", (route) =>
@@ -69,6 +70,22 @@ async function installNetworkRoutes(page: Page) {
     calls.forgotten = route.request().postDataJSON().camera;
     return route.fulfill({
       json: { success: true, forgotten: [calls.forgotten] },
+    });
+  });
+  await page.route("**/api/orbi360/network/probe", (route) =>
+    route.fulfill({
+      json: {
+        success: true,
+        protocol: "dvrip",
+        ip: route.request().postDataJSON().ip,
+        codec: "H.265",
+      },
+    }),
+  );
+  await page.route("**/api/orbi360/network/add", (route) => {
+    calls.added = route.request().postDataJSON();
+    return route.fulfill({
+      json: { success: true, name: "north_yard", backup: "config.yml.bak" },
     });
   });
   return calls;
@@ -119,5 +136,46 @@ test.describe("Orbi360 camera network @medium", () => {
       .first()
       .click();
     await expect.poll(() => calls.forgotten).toBe("cocina");
+  });
+
+  test("adds a discovered camera over DVRIP", async ({ frigateApp }) => {
+    const calls = await installNetworkRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=cameraNetwork");
+    const page = frigateApp.page;
+
+    await page.getByRole("button", { name: "Add", exact: true }).click();
+    const dialog = page.getByRole("dialog");
+    await dialog.getByLabel("Camera name").fill("North Yard");
+    await expect(dialog.getByText("Internal name: north_yard")).toBeVisible();
+    await dialog.getByRole("button", { name: "Detect" }).click();
+    await expect(dialog.getByText(/iCSee camera over DVRIP/)).toBeVisible();
+    await expect(dialog.getByLabel(/switch it to H.264/)).toBeChecked();
+    await dialog.getByRole("button", { name: "Add", exact: true }).click();
+
+    await expect
+      .poll(() => calls.added)
+      .toMatchObject({
+        name: "north_yard",
+        friendly_name: "North Yard",
+        protocol: "dvrip",
+        ip: "192.168.1.40",
+        mac: "aa:bb:cc:00:11:22",
+        to_h264: true,
+      });
+  });
+
+  test("shows an error with retry instead of spinning", async ({
+    frigateApp,
+  }) => {
+    await frigateApp.page.route("**/api/orbi360/network", (route) =>
+      route.fulfill({ status: 500, json: { message: "boom" } }),
+    );
+    await frigateApp.goto("/settings?page=cameraNetwork");
+    await expect(
+      frigateApp.page.getByText(/Could not load the camera network: boom/),
+    ).toBeVisible();
+    await expect(
+      frigateApp.page.getByRole("button", { name: "Retry" }),
+    ).toBeVisible();
   });
 });

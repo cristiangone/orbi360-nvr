@@ -2339,12 +2339,13 @@
     },
     "discovered": {
       "title": "Cámaras nuevas detectadas",
-      "desc": "Equipos con RTSP (puerto 554) que ninguna cámara usa. Para agregar una, copia su IP y usa Ajustes → Configuración de cámara → Añadir cámara.",
+      "desc": "Equipos que parecen cámaras (RTSP, DVRIP o que responden en la IP de fábrica) y que ninguna cámara usa. Agrégalos con el botón «Agregar».",
       "empty": "No hay cámaras nuevas.",
       "new": "Nueva",
       "firstSeen": "Vista por primera vez: {{time}}",
       "copyIp": "Copiar IP",
-      "ignore": "Ignorar"
+      "ignore": "Ignorar",
+      "add": "Agregar"
     },
     "events": {
       "title": "Cambios recientes",
@@ -2356,6 +2357,31 @@
       "copied": "IP copiada",
       "error": "Red de cámaras: {{message}}",
       "forgotten": "MAC de {{camera}} olvidada: se aprenderá en el próximo escaneo"
+    },
+    "loadError": "No se pudo cargar la red de cámaras: {{message}}",
+    "retry": "Reintentar",
+    "add": {
+      "byIp": "Agregar cámara por IP",
+      "title": "Agregar cámara",
+      "desc": "Orbi360 detecta cómo leer la cámara con la clave de las cámaras, la agrega a la configuración, la sigue por su MAC y reinicia el NVR (las grabaciones se cortan ~1 minuto).",
+      "friendlyName": "Nombre de la cámara",
+      "friendlyNamePlaceholder": "Ej.: Patio Norte",
+      "internalName": "Nombre interno: {{name}}",
+      "nameTaken": "Ya existe una cámara «{{name}}»: elige otro nombre.",
+      "ip": "IP de la cámara",
+      "detect": "Detectar",
+      "detected": {
+        "xm_rtsp": "Cámara Xiongmai con RTSP: lista para agregar.",
+        "dvrip": "Cámara iCSee por DVRIP (sin RTSP): se grabará sin audio para cuidar la memoria."
+      },
+      "toH264": "Su video es H.265 y Orbi360 no lo puede leer: cambiarla a H.264 (recomendado, la cámara se reinicia)",
+      "custom": "Otra marca (escribir las URLs)",
+      "mainUrl": "URL principal (grabación)",
+      "subUrl": "URL secundaria (detección, opcional)",
+      "customHint": "Usa {FRIGATE_RTSP_PASSWORD} en lugar de la clave para no dejarla escrita en la configuración.",
+      "cancel": "Cancelar",
+      "submit": "Agregar",
+      "done": "Cámara «{{camera}}» agregada: el NVR se está reiniciando y aparecerá en 1-2 minutos."
     }
   }
 }

@@ -1,6 +1,7 @@
 """Orbi360 NVR apis: SRT mosaics, Telegram alerts and the camera network."""
 
 import asyncio
+import ipaddress
 import logging
 import subprocess
 
@@ -10,7 +11,7 @@ from pydantic import ValidationError
 
 from frigate.api.auth import require_role
 from frigate.api.defs.tags import Tags
-from frigate.orbi360 import camlocator, mosaics, telegram
+from frigate.orbi360 import camadd, camlocator, mosaics, telegram
 
 logger = logging.getLogger(__name__)
 
@@ -251,3 +252,63 @@ async def forget_camera_mac(body: dict):
             content={"success": False, "message": str(e)}, status_code=500
         )
     return JSONResponse(content={"success": True, "forgotten": done})
+
+
+def _valid_ip(value) -> str | None:
+    try:
+        return str(ipaddress.IPv4Address(str(value).strip()))
+    except ValueError:
+        return None
+
+
+@router.post(
+    "/orbi360/network/probe",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Detect how a camera can be read (Xiongmai RTSP or DVRIP)",
+)
+async def probe_camera(body: dict):
+    ip = _valid_ip(body.get("ip"))
+    if not ip:
+        return JSONResponse(
+            content={"success": False, "message": "invalid IP address"},
+            status_code=400,
+        )
+    result = await asyncio.to_thread(camadd.probe, ip)
+    return JSONResponse(content={"success": True, **result})
+
+
+@router.post(
+    "/orbi360/network/add",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Add a camera to config.yml and restart the NVR",
+)
+async def add_camera(body: dict):
+    protocol = str(body.get("protocol", ""))
+    ip = _valid_ip(body.get("ip")) if protocol != "custom" else ""
+    if protocol != "custom" and not ip:
+        return JSONResponse(
+            content={"success": False, "message": "invalid IP address"},
+            status_code=400,
+        )
+    try:
+        result = await asyncio.to_thread(
+            camadd.add_camera,
+            name=str(body.get("name", "")),
+            friendly_name=str(body.get("friendly_name", "")),
+            protocol=protocol,
+            ip=ip or "",
+            mac=str(body.get("mac", "") or ""),
+            main_url=str(body.get("main_url", "") or ""),
+            sub_url=str(body.get("sub_url", "") or ""),
+            to_h264=bool(body.get("to_h264", False)),
+        )
+    except camadd.AddError as e:
+        return JSONResponse(
+            content={"success": False, "message": str(e)}, status_code=400
+        )
+    except OSError as e:
+        logger.warning("adding camera failed: %s", e)
+        return JSONResponse(
+            content={"success": False, "message": str(e)}, status_code=500
+        )
+    return JSONResponse(content={"success": True, **result})

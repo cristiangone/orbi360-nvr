@@ -8,9 +8,10 @@ import axios, { AxiosError } from "axios";
 import copy from "copy-to-clipboard";
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LuCopy, LuEyeOff, LuRadar, LuRotateCcw } from "react-icons/lu";
+import { LuCopy, LuEyeOff, LuPlus, LuRadar, LuRotateCcw } from "react-icons/lu";
 import { toast } from "sonner";
 import useSWR from "swr";
+import AddCameraDialog from "./components/AddCameraDialog";
 
 const STATUS_CLASSES: Record<CameraNetworkStatus, string> = {
   ok: "border-green-500 text-green-500",
@@ -35,10 +36,13 @@ function formatDateTime(epoch?: number | null): string {
 export default function CameraNetworkSettingsView() {
   const { t } = useTranslation("views/settings");
   // the locator scans every 3 minutes on the NVR; refresh to show its findings
-  const { data, mutate } = useSWR<CameraNetworkResponse>("orbi360/network", {
-    refreshInterval: 30000,
-  });
+  const { data, error, mutate } = useSWR<CameraNetworkResponse>(
+    "orbi360/network",
+    { refreshInterval: 30000 },
+  );
   const [scanning, setScanning] = useState(false);
+  // undefined: closed; {}: add by IP; {ip, mac}: add a discovered device
+  const [adding, setAdding] = useState<{ ip?: string; mac?: string }>();
 
   const showError = useCallback(
     (error: unknown) => {
@@ -101,6 +105,21 @@ export default function CameraNetworkSettingsView() {
   );
 
   if (!data) {
+    if (error) {
+      // without this the page kept spinning after one failed load
+      return (
+        <div className="flex flex-col items-start gap-3 p-4 text-sm">
+          <span className="text-destructive">
+            {t("cameraNetwork.loadError", {
+              message:
+                (error as AxiosError<{ message?: string }>).response?.data
+                  ?.message ?? String(error),
+            })}
+          </span>
+          <Button onClick={() => mutate()}>{t("cameraNetwork.retry")}</Button>
+        </div>
+      );
+    }
     return <ActivityIndicator />;
   }
 
@@ -137,6 +156,10 @@ export default function CameraNetworkSettingsView() {
               <LuRadar className="mr-2 size-4" />
             )}
             {scanning ? t("cameraNetwork.scanning") : t("cameraNetwork.scan")}
+          </Button>
+          <Button onClick={() => setAdding({})}>
+            <LuPlus className="mr-2 size-4" />
+            {t("cameraNetwork.add.byIp")}
           </Button>
           <span className="text-xs text-muted-foreground">
             {t("cameraNetwork.lastScan", {
@@ -253,6 +276,14 @@ export default function CameraNetworkSettingsView() {
                 <div className="flex flex-wrap gap-2">
                   <Button
                     size="sm"
+                    variant="select"
+                    onClick={() => setAdding({ ip: device.ip, mac })}
+                  >
+                    <LuPlus className="mr-2 size-4" />
+                    {t("cameraNetwork.discovered.add")}
+                  </Button>
+                  <Button
+                    size="sm"
                     onClick={() => {
                       copy(device.ip);
                       toast.success(t("cameraNetwork.toast.copied"), {
@@ -298,6 +329,14 @@ export default function CameraNetworkSettingsView() {
           </ul>
         )}
       </div>
+      <AddCameraDialog
+        open={adding !== undefined}
+        ip={adding?.ip}
+        mac={adding?.mac}
+        existing={Object.keys(data.cameras)}
+        onClose={() => setAdding(undefined)}
+        onAdded={() => mutate()}
+      />
     </div>
   );
 }

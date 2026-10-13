@@ -85,3 +85,19 @@ export type CameraNetworkResponse = {
   factory_ips: string[];
   supported: boolean;
 };
+
+// Agregar cámara (Ajustes > Red de cámaras)
+export type CameraProtocol = "xm_rtsp" | "dvrip" | "custom";
+
+export type CameraProbeResult = {
+  protocol: Exclude<CameraProtocol, "custom"> | null;
+  ip: string;
+  codec?: string | null;
+  message?: string;
+};
+
+export type AddCameraResult = {
+  name: string;
+  backup: string;
+  notes?: string[];
+};

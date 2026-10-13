@@ -328,6 +328,14 @@ for svc in frigate go2rtc nginx; do
 done
 install -m 755 "$SRC/orbi360/lxc/orbi360-log.py" /usr/local/orbi360/bin/orbi360-log
 
+# Atajo para actualizar: vuelve a correr este instalador desde el repositorio
+cat > /usr/local/bin/orbi360-actualizar <<EOF
+#!/bin/bash
+# Actualiza Orbi360 NVR a la ultima version de la rama $BRANCH
+exec bash -c "\$(wget -qO- https://raw.githubusercontent.com/cristiangone/orbi360-nvr/$BRANCH/orbi360/lxc/install.sh)"
+EOF
+chmod 755 /usr/local/bin/orbi360-actualizar
+
 # Variables de entorno de la imagen Docker
 DEFAULT_FFMPEG_VERSION="$(grep -oP 'ENV DEFAULT_FFMPEG_VERSION="\K[^"]+' "$DOCKER/Dockerfile")"
 # Las variables FRIGATE_* (por ejemplo FRIGATE_RTSP_PASSWORD) las agrega el usuario:
@@ -630,6 +638,7 @@ cat <<EOF
     systemctl status orbi360-nvr          estado del servicio
     journalctl -u orbi360-nvr -f          log en vivo
     nano /config/config.yml               configuracion
+    orbi360-actualizar                    actualizar a la ultima version
 
   Mosaicos SRT: se configuran en la interfaz, Ajustes > Mosaico SRT
     (el primero queda en srt://$IP_ADDR:9999?mode=caller&latency=5000)

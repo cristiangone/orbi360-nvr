@@ -198,11 +198,20 @@ def add_camera(
             "Nombre interno inválido: minúsculas, números y _, empezando con una letra"
         )
     friendly_name = friendly_name.strip() or name
-    mac = mac.lower()
+    # a device behind a repeater is reported as "<repeater mac>@<ip>"
+    key = mac.lower()
+    mac, _, behind = key.partition("@")
     if mac and not camlocator.MAC_PATTERN.match(mac):
         raise AddError(f"MAC inválida: {mac}")
 
     notes = []
+    if mac and (behind or mac in camlocator.load_state().get("bridged", [])):
+        # the repeater's MAC: following it would move the camera to the repeater
+        mac = ""
+        notes.append(
+            "Está detrás de un repetidor WiFi que oculta su MAC: Orbi360 no puede "
+            "seguirla si cambia de IP. Conéctala al router principal o fija su IP."
+        )
     if protocol == "dvrip" and to_h264:
         from frigate.orbi360 import xmcam
 
@@ -236,6 +245,12 @@ def add_camera(
 
     if mac:
         camlocator._with_saved_state(lambda state: camlocator.assign(state, name, mac))
+    elif behind:
+
+        def drop(state):
+            state["discovered"].pop(key, None)
+
+        camlocator._with_saved_state(drop)
     if restart and shutil.which("systemctl") and Path("/run/systemd/system").is_dir():
         # --no-block: the API answering this request runs inside orbi360-nvr
         # (its ExecStartPre also restarts go2rtc, which loads the new streams)

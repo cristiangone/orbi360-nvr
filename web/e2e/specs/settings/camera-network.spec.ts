@@ -164,6 +164,36 @@ test.describe("Orbi360 camera network @medium", () => {
       });
   });
 
+  test("marks cameras behind a Wi-Fi repeater", async ({ frigateApp }) => {
+    const rep = "10:27:f5:09:a5:67";
+    await frigateApp.page.route("**/api/orbi360/network", (route) =>
+      route.fulfill({
+        json: {
+          ...NETWORK,
+          cameras: { patio_pieza: { ip: "192.168.1.111", status: "bridged" } },
+          discovered: {
+            [`${rep}@192.168.1.102`]: {
+              ip: "192.168.1.102",
+              bridged: true,
+              first_seen: 1791500000,
+              last_seen: 1791500000,
+            },
+          },
+        },
+      }),
+    );
+    await frigateApp.goto("/settings?page=cameraNetwork");
+    await expect(
+      frigateApp.page.getByText("Behind repeater", { exact: true }),
+    ).toBeVisible();
+    await expect(
+      frigateApp.page.getByText(
+        /Behind a Wi-Fi repeater: it cannot be followed/,
+      ),
+    ).toBeVisible();
+    await expect(frigateApp.page.getByText(rep, { exact: true })).toBeVisible();
+  });
+
   test("shows an error with retry instead of spinning", async ({
     frigateApp,
   }) => {

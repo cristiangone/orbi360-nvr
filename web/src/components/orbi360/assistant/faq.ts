@@ -138,6 +138,17 @@ export const FAQ: FaqEntry[] = [
     link: { label: "Ir a Red de cámaras", to: "/settings?page=cameraNetwork" },
   },
   {
+    id: "repetidor",
+    category: "Cámaras",
+    question: "Mi cámara dice «Detrás de repetidor»",
+    answer: [
+      "Está conectada a un **repetidor WiFi** que muestra su propia MAC en lugar de la de la cámara. Orbi360 la graba igual, pero **no puede seguirla** si el router le cambia la IP.",
+      "Lo ideal es conectarla al **router principal** (o poner el repetidor en modo punto de acceso). Si no se puede, fija su IP en el router.",
+    ],
+    keywords: ["repetidor", "extensor", "tp-link", "mac", "bridged", "wifi"],
+    link: { label: "Ir a Red de cámaras", to: "/settings?page=cameraNetwork" },
+  },
+  {
     id: "sin-senal",
     category: "Problemas comunes",
     question: "Una cámara dice «sin señal» o «transmisión desconectada»",

@@ -2114,14 +2114,16 @@
       "moved": "IP updated",
       "not_seen": "Not seen",
       "shared_ip": "Shared IP",
-      "factory_ip": "Factory IP"
+      "factory_ip": "Factory IP",
+      "bridged": "Behind repeater"
     },
     "statusHint": {
       "ok": "Answers at its configured address.",
       "moved": "Changed address; Orbi360 updated it.",
       "not_seen": "Did not answer the last scan: check power and Wi-Fi.",
       "shared_ip": "Its address is answered by several devices; fix it in the router.",
-      "factory_ip": "Uses the factory address shared by every camera: change it to its own address."
+      "factory_ip": "Uses the factory address shared by every camera: change it to its own address.",
+      "bridged": "It is connected to a Wi-Fi repeater that hides its MAC: Orbi360 cannot follow it if its address changes. Connect it to the main router or give it a fixed IP."
     },
     "discovered": {
       "title": "New cameras detected",
@@ -2131,7 +2133,8 @@
       "firstSeen": "Seen first: {{time}}",
       "copyIp": "Copy IP",
       "ignore": "Ignore",
-      "add": "Add"
+      "add": "Add",
+      "bridged": "Behind a Wi-Fi repeater: it cannot be followed by MAC if its address changes."
     },
     "events": {
       "title": "Recent changes",

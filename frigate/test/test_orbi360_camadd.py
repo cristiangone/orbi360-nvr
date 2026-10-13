@@ -133,6 +133,24 @@ class TestAddCamera(unittest.TestCase):
         self.assertEqual(saved["cameras"]["garaje"]["mac"], "10:65:19:0a:d2:fe")
         self.assertEqual(saved["discovered"], {})
 
+    def test_never_assigns_a_repeater_mac(self):
+        rep = "10:27:f5:09:a5:67"
+        state = camlocator.load_state()
+        state["discovered"][f"{rep}@192.168.1.111"] = {"ip": "192.168.1.111"}
+        camlocator.save_state(state)
+        result = camadd.add_camera(
+            "patio_pieza",
+            "Patio Pieza",
+            "dvrip",
+            "192.168.1.111",
+            mac=f"{rep}@192.168.1.111",
+            restart=False,
+        )
+        saved = json.loads(self.state.read_text())
+        self.assertNotIn("patio_pieza", saved["cameras"])
+        self.assertEqual(saved["discovered"], {})
+        self.assertIn("repetidor", result["notes"][0])
+
     def test_rejects_duplicates_and_bad_names(self):
         with self.assertRaises(camadd.AddError):
             camadd.add_camera(

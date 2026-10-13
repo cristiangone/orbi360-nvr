@@ -214,8 +214,10 @@ async def scan_network():
     summary="Stop reporting a discovered device",
 )
 async def ignore_device(body: dict):
+    # "<mac>" or, for a device behind a repeater, "<repeater mac>@<ip>"
     mac = str(body.get("mac", "")).lower()
-    if not camlocator.MAC_PATTERN.match(mac):
+    base, _, behind = mac.partition("@")
+    if not camlocator.MAC_PATTERN.match(base) or (behind and not _valid_ip(behind)):
         return JSONResponse(
             content={"success": False, "message": "invalid MAC address"},
             status_code=400,

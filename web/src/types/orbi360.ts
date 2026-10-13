@@ -52,7 +52,8 @@ export type CameraNetworkStatus =
   | "moved"
   | "not_seen"
   | "shared_ip"
-  | "factory_ip";
+  | "factory_ip"
+  | "bridged";
 
 export type CameraNetworkCamera = {
   ip?: string;
@@ -66,6 +67,8 @@ export type CameraNetworkCamera = {
 export type DiscoveredDevice = {
   ip: string;
   vendor?: string;
+  // behind a Wi-Fi repeater that shows its own MAC (key: "<mac>@<ip>")
+  bridged?: boolean;
   first_seen: number;
   last_seen: number;
 };

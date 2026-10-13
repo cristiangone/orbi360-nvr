@@ -19,6 +19,7 @@ const STATUS_CLASSES: Record<CameraNetworkStatus, string> = {
   not_seen: "border-destructive text-destructive",
   shared_ip: "border-amber-500 text-amber-500",
   factory_ip: "border-amber-500 text-amber-500",
+  bridged: "border-amber-500 text-amber-500",
 };
 
 function formatDateTime(epoch?: number | null): string {
@@ -265,8 +266,13 @@ export default function CameraNetworkSettingsView() {
                   </Badge>
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  <span className="font-mono">{mac}</span>
+                  <span className="font-mono">{mac.split("@")[0]}</span>
                   {device.vendor && ` · ${device.vendor}`}
+                  {device.bridged && (
+                    <span className="block text-amber-500">
+                      {t("cameraNetwork.discovered.bridged")}
+                    </span>
+                  )}
                   <span className="block">
                     {t("cameraNetwork.discovered.firstSeen", {
                       time: formatDateTime(device.first_seen),

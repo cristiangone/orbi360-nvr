@@ -2328,14 +2328,16 @@
       "moved": "IP actualizada",
       "not_seen": "No vista",
       "shared_ip": "IP compartida",
-      "factory_ip": "IP de fábrica"
+      "factory_ip": "IP de fábrica",
+      "bridged": "Detrás de repetidor"
     },
     "statusHint": {
       "ok": "Responde en su dirección configurada.",
       "moved": "Cambió de dirección; Orbi360 la actualizó.",
       "not_seen": "No respondió en el último escaneo: revisa energía y Wi-Fi.",
       "shared_ip": "Su dirección la responden varios equipos; corrígelo en el router.",
-      "factory_ip": "Usa la IP de fábrica que comparten todas las cámaras: cámbiala por su IP propia."
+      "factory_ip": "Usa la IP de fábrica que comparten todas las cámaras: cámbiala por su IP propia.",
+      "bridged": "Está conectada a un repetidor WiFi que oculta su MAC: Orbi360 no puede seguirla si cambia de IP. Conéctala al router principal o fija su IP."
     },
     "discovered": {
       "title": "Cámaras nuevas detectadas",
@@ -2345,7 +2347,8 @@
       "firstSeen": "Vista por primera vez: {{time}}",
       "copyIp": "Copiar IP",
       "ignore": "Ignorar",
-      "add": "Agregar"
+      "add": "Agregar",
+      "bridged": "Detrás de un repetidor WiFi: no se podrá seguir por MAC si cambia de IP."
     },
     "events": {
       "title": "Cambios recientes",

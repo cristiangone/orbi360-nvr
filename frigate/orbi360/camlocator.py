@@ -47,6 +47,8 @@ STATE_FILE = Path(CONFIG_DIR) / "orbi360" / "camera-network.json"
 LOCK_FILE = Path("/run/orbi360-camlocator.lock")
 ENV_FILE = "/etc/orbi360-nvr.env"
 FACTORY_IPS = {"192.168.1.10"}
+# a MAC on this many addresses is a repeater translating the MACs behind it
+BRIDGE_MIN_IPS = 3
 RTSP_PORT = 554
 # Xiongmai NETsurveillance (DVRIP): some iCSee cameras ship with RTSP off and
 # only serve video here, read by go2rtc as dvrip://
@@ -250,6 +252,7 @@ def load_state() -> dict:
                 state.setdefault("cameras", {})
                 state.setdefault("discovered", {})
                 state.setdefault("ignored", [])
+                state.setdefault("bridged", [])
                 state.setdefault("events", [])
                 return state
         except ValueError:
@@ -258,6 +261,7 @@ def load_state() -> dict:
         "cameras": {},
         "discovered": {},
         "ignored": [],
+        "bridged": [],
         "events": [],
         "last_scan": None,
     }
@@ -329,6 +333,18 @@ def _systemctl(*args: str) -> None:
         subprocess.run(["systemctl", *args], capture_output=True, timeout=120)
 
 
+def bridge_macs(by_mac: dict[str, set[str]]) -> set[str]:
+    """MACs answering BRIDGE_MIN_IPS or more addresses: a Wi-Fi repeater that
+    puts its own MAC on every device behind it (TP-Link .31 on 2026-10-13
+    answered .31, .100, .102, .111 and the factory .10). Such a MAC tells
+    nothing about which camera is which."""
+    return {
+        mac
+        for mac, ips in by_mac.items()
+        if not is_virtual(mac) and len(ips - FACTORY_IPS) >= BRIDGE_MIN_IPS
+    }
+
+
 def locate(
     state: dict,
     hosts: dict[str, set[str]],
@@ -339,8 +355,9 @@ def locate(
 ) -> tuple[dict[str, tuple[str, str]], list[str]]:
     """Update state from one scan. Returns (camera moves, messages to send).
 
-    probe(ip) tells whether a device serves RTSP; verify(camera, ip), when
-    given, must also confirm it is that camera before its MAC is learned.
+    probe(ip) tells whether a device serves camera video (RTSP or DVRIP);
+    verify(camera, ip), when given, must also confirm it is that camera before
+    its MAC is learned.
     """
     if verify is None:
         verify = lambda name, ip: probe(ip)  # noqa: E731
@@ -352,6 +369,10 @@ def locate(
         by_mac.setdefault(mac, set()).add(ip)
         if vendor:
             vendors[mac] = vendor
+
+    # remembered across scans: a repeater may answer fewer addresses some time
+    bridged = set(state.setdefault("bridged", [])) | bridge_macs(by_mac)
+    state["bridged"] = sorted(bridged)
 
     def own_ips(mac: str) -> list[str]:
         """Addresses only this MAC answers, factory alias excluded."""
@@ -376,31 +397,35 @@ def locate(
         current = sorted(ips, key=ip_key)[0] if len(ips) == 1 else None
         rec["ip"] = current or ", ".join(sorted(ips, key=ip_key))
         mac = rec.get("mac")
-        if mac and is_virtual(mac):
-            # learned by an older version from a Proxmox guest sharing the address
+        if mac and (is_virtual(mac) or mac in bridged):
+            # a Proxmox guest sharing the address or a repeater's MAC, learned
+            # by an older version: it would move the camera to the wrong device
             del rec["mac"]
             mac = None
+        current_macs = by_ip.get(current or "", set())
         # Learn the MAC only from an address a single, non-virtual device answers
-        # and that serves RTSP: a VM or another gadget may hold the camera's old IP
+        # and that serves video: a VM or another gadget may hold the camera's old IP
         if (
             not mac
             and current
             and current not in FACTORY_IPS
-            and len(by_ip.get(current, ())) == 1
-            and not is_virtual(next(iter(by_ip[current])))
+            and len(current_macs) == 1
+            and not is_virtual(next(iter(current_macs)))
+            and next(iter(current_macs)) not in bridged
             and probe(current)
             and verify(name, current)
         ):
-            mac = next(iter(by_ip[current]))
+            mac = next(iter(current_macs))
             rec["mac"] = mac
         if not mac:
-            rec["status"] = (
-                "factory_ip"
-                if current in FACTORY_IPS
-                else (
-                    "shared_ip" if len(by_ip.get(current or "", ())) > 1 else "not_seen"
-                )
-            )
+            if current in FACTORY_IPS:
+                rec["status"] = "factory_ip"
+            elif current_macs & bridged:
+                rec["status"] = "bridged"
+            elif len(current_macs) > 1:
+                rec["status"] = "shared_ip"
+            else:
+                rec["status"] = "not_seen"
             continue
         rec["vendor"] = vendors.get(mac, rec.get("vendor", ""))
         if mac not in by_mac:
@@ -410,8 +435,10 @@ def locate(
         own = own_ips(mac)
         if current and current in own:
             rec["status"] = "ok"
-        elif current and own:
-            new = own[0]
+            continue
+        # never move a camera to an address that does not serve video
+        new = next((ip for ip in own if probe(ip)), None) if current else None
+        if new:
             moves[name] = (current, new)
             rec["ip"] = new
             rec["status"] = "moved"
@@ -422,44 +449,61 @@ def locate(
         else:
             rec["status"] = "shared_ip"
 
-    # Devices with RTSP that no camera uses yet
+    # Devices with camera video that no camera uses yet
     known_macs = {rec.get("mac") for rec in cameras.values() if rec.get("mac")}
     # the factory alias is shared by every Xiongmai camera: it does not tell which
     used_ips = (set().union(*hosts.values()) if hosts else set()) - FACTORY_IPS
     ignored = set(state["ignored"])
     discovered = state["discovered"]
 
-    def not_new(mac: str) -> bool:
+    def report(key: str, ip: str, mac: str, behind_repeater: bool) -> None:
+        entry = discovered.get(key)
+        if entry is None:
+            entry = discovered[key] = {"first_seen": now}
+            vendor = vendors.get(mac, "")
+            where = " (detrás de un repetidor)" if behind_repeater else ""
+            text = f"Cámara nueva detectada en {ip}{where} (MAC {mac}{', ' + vendor if vendor else ''})."
+            _event(state, "new", text, now)
+            messages.append(f"🆕 Orbi360 NVR: {text} Agrégala desde Ajustes.")
+        entry.update({"ip": ip, "vendor": vendors.get(mac, ""), "last_seen": now})
+        if behind_repeater:
+            entry["bridged"] = True
+
+    def not_new(key: str) -> bool:
+        mac, _, ip = key.partition("@")
+        if ip:  # one device behind a repeater
+            return key in ignored or ip in used_ips
         return (
             mac in known_macs
             or mac in ignored
+            or mac in bridged
             or is_virtual(mac)
             or bool(by_mac.get(mac, set()) & used_ips)
         )
 
-    for mac in by_mac:
+    for mac, ips in by_mac.items():
+        if mac in bridged:
+            # each address behind the repeater can be a different camera
+            for ip in sorted(ips - FACTORY_IPS, key=ip_key):
+                key = f"{mac}@{ip}"
+                if not not_new(key) and len(by_ip[ip]) == 1 and probe(ip):
+                    report(key, ip, mac, True)
+            continue
         if not_new(mac):
             continue
         own = own_ips(mac)
         ip = next((ip for ip in own if probe(ip)), None)
-        if ip is None and by_mac[mac] & FACTORY_IPS:
+        if ip is None and ips & FACTORY_IPS:
             # Only Xiongmai cameras answer the factory alias: a camera even when
             # its own address is slow to open RTSP (2026-10-12, a camera at .37)
-            ip = own[0] if own else sorted(by_mac[mac] & FACTORY_IPS)[0]
+            ip = own[0] if own else sorted(ips & FACTORY_IPS)[0]
         if ip is None:
             continue
-        entry = discovered.get(mac)
-        if entry is None:
-            entry = discovered[mac] = {"first_seen": now}
-            vendor = vendors.get(mac, "")
-            text = f"Cámara nueva detectada en {ip} (MAC {mac}{', ' + vendor if vendor else ''})."
-            _event(state, "new", text, now)
-            messages.append(f"🆕 Orbi360 NVR: {text} Agrégala desde Ajustes.")
-        entry.update({"ip": ip, "vendor": vendors.get(mac, ""), "last_seen": now})
+        report(mac, ip, mac, False)
     # also drops entries an older version reported for a camera already in use
-    for mac in list(discovered):
-        if not_new(mac):
-            del discovered[mac]
+    for key in list(discovered):
+        if not_new(key):
+            del discovered[key]
 
     state["last_scan"] = now
     return moves, messages

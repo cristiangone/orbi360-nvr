@@ -122,7 +122,11 @@ class TestLocate(unittest.TestCase):
         state = empty_state()
         state["cameras"]["entrada"] = {"mac": "dc:29:19:e0:38:d0"}
         moves, messages = camlocator.locate(
-            state, self.hosts, self.entries, 100, probe=lambda ip: False
+            state,
+            self.hosts,
+            self.entries,
+            100,
+            probe=lambda ip: ip == "192.168.1.213",
         )
         self.assertEqual(moves, {"entrada": ("192.168.1.10", "192.168.1.213")})
         self.assertEqual(state["cameras"]["entrada"]["status"], "moved")
@@ -256,8 +260,53 @@ class TestLocate(unittest.TestCase):
         # a camera with its MAC set by hand follows it to a new address
         hosts = {"entrada": {"192.168.1.213"}}
         entries = [("192.168.1.30", "dc:29:19:e0:38:d0", "AltoBeam")]
-        moves, _ = camlocator.locate(state, hosts, entries, 100, probe=lambda ip: False)
+        moves, _ = camlocator.locate(
+            state, hosts, entries, 100, probe=lambda ip: ip == "192.168.1.30"
+        )
         self.assertEqual(moves, {"entrada": ("192.168.1.213", "192.168.1.30")})
+
+    def test_never_moves_a_camera_to_an_address_without_video(self):
+        state = empty_state()
+        state["cameras"]["entrada"] = {"mac": "dc:29:19:e0:38:d0"}
+        moves, _ = camlocator.locate(
+            state, self.hosts, self.entries, 100, probe=lambda ip: False
+        )
+        self.assertEqual(moves, {})
+        self.assertEqual(state["cameras"]["entrada"]["status"], "shared_ip")
+
+    def test_repeater_mac_is_never_learned_or_followed(self):
+        # arp-scan on 2026-10-13: the TP-Link repeater puts its MAC on every
+        # device behind it; a camera added at .111 got the repeater's MAC and
+        # the locator moved it to .31 (the repeater itself)
+        rep = "10:27:f5:09:a5:67"
+        entries = [
+            ("192.168.1.31", rep, "TP-Link Corporation Limited"),
+            ("192.168.1.10", rep, "TP-Link Corporation Limited"),
+            ("192.168.1.111", rep, "TP-Link Corporation Limited"),
+            ("192.168.1.100", rep, "TP-Link Corporation Limited"),
+            ("192.168.1.102", rep, "TP-Link Corporation Limited"),
+        ]
+        hosts = {"patio_pieza": {"192.168.1.111"}}
+        video = {"192.168.1.111", "192.168.1.102"}
+        state = empty_state()
+        state["cameras"]["patio_pieza"] = {"mac": rep}
+        moves, messages = camlocator.locate(
+            state, hosts, entries, 100, probe=lambda ip: ip in video
+        )
+        cam = state["cameras"]["patio_pieza"]
+        self.assertEqual(moves, {})
+        self.assertNotIn("mac", cam)
+        self.assertEqual(cam["status"], "bridged")
+        self.assertEqual(state["bridged"], [rep])
+        # the other camera behind the repeater is reported by address
+        self.assertEqual(list(state["discovered"]), [f"{rep}@192.168.1.102"])
+        self.assertTrue(state["discovered"][f"{rep}@192.168.1.102"]["bridged"])
+        self.assertEqual(sum("repetidor" in m for m in messages), 1)
+        # remembered even when the repeater answers a single address later
+        camlocator.locate(
+            state, hosts, [("192.168.1.111", rep, "")], 200, probe=lambda ip: True
+        )
+        self.assertNotIn("mac", state["cameras"]["patio_pieza"])
 
     def test_forget(self):
         state = empty_state()

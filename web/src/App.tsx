@@ -74,7 +74,7 @@ function DefaultAppView() {
       {isDesktop && <Sidebar />}
       {isDesktop && <Statusbar />}
       {isMobile && <Bottombar />}
-      <Assistant />
+      {isMobile && <Assistant variant="floating" />}
       <div
         id="pageRoot"
         className={cn(

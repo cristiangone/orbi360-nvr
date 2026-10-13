@@ -37,7 +37,13 @@ function Paragraph({ text }: { text: string }) {
   );
 }
 
-export default function Assistant() {
+type AssistantProps = {
+  // sidebar: icon in the desktop sidebar; floating: round button on phones,
+  // above the settings save bar and the bottom navigation
+  variant: "sidebar" | "floating";
+};
+
+export default function Assistant({ variant }: AssistantProps) {
   const { t } = useTranslation("components/assistant");
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -62,17 +68,18 @@ export default function Assistant() {
       <button
         type="button"
         aria-label={t("open")}
+        title={t("button")}
         onClick={() => setOpen(true)}
         className={cn(
-          "fixed z-40 flex items-center justify-center gap-2 rounded-full bg-gradient-to-br from-sky-500 to-violet-600 font-semibold text-white shadow-lg transition hover:brightness-110",
-          // on phones, above the settings save bar and the bottom navigation
-          isMobile
-            ? "bottom-28 right-3 size-12"
-            : "bottom-12 right-4 h-11 px-4 text-sm",
+          "flex items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-violet-600 text-white shadow-lg transition hover:brightness-110",
+          variant === "floating"
+            ? "fixed bottom-28 right-3 z-40 size-12"
+            : "size-9",
         )}
       >
-        <LuMessageCircle className="size-5" />
-        {!isMobile && t("button")}
+        <LuMessageCircle
+          className={variant === "floating" ? "size-5" : "size-4"}
+        />
       </button>
 
       <Sheet open={open} onOpenChange={setOpen}>

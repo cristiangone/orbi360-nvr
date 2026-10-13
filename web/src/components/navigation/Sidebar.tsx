@@ -7,6 +7,7 @@ import AccountSettings from "../menu/AccountSettings";
 import useNavigation from "@/hooks/use-navigation";
 import { baseUrl } from "@/api/baseUrl";
 import { useMemo } from "react";
+import Assistant from "@/components/orbi360/assistant/Assistant";
 
 function Sidebar() {
   const basePath = useMemo(() => new URL(baseUrl).pathname, []);
@@ -40,6 +41,7 @@ function Sidebar() {
         })}
       </div>
       <div className="mb-8 flex flex-col items-center gap-4">
+        <Assistant variant="sidebar" />
         <GeneralSettings />
         <AccountSettings />
       </div>

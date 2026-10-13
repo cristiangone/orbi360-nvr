@@ -43,6 +43,14 @@ def xm_dvrip(ip: str, stream: int) -> str:
     return f"dvrip://admin:{PASSWORD_VAR}@{ip}:34567?channel=0&subtype={stream}"
 
 
+# The restream preset plus the NVR's clock as timestamps: a camera whose clock
+# jumps made the detect ffmpeg's fps filter queue frames until it reached ~6 GB
+# and the kernel killed the NVR (sala_gym, 2026-10-13)
+RESTREAM_INPUT_ARGS = (
+    "-rtsp_transport tcp -timeout 10000000 -use_wallclock_as_timestamps 1"
+)
+
+
 class AddError(ValueError):
     """Message shown to the user as is."""
 
@@ -151,12 +159,12 @@ def camera_entries(
         [
             CommentedMap(
                 path=f"rtsp://127.0.0.1:8554/{name}",
-                input_args="preset-rtsp-restream",
+                input_args=RESTREAM_INPUT_ARGS,
                 roles=CommentedSeq(["record"]),
             ),
             CommentedMap(
                 path=f"rtsp://127.0.0.1:8554/{name}_sub",
-                input_args="preset-rtsp-restream",
+                input_args=RESTREAM_INPUT_ARGS,
                 roles=CommentedSeq(["detect"]),
             ),
         ]

@@ -349,7 +349,7 @@ export const FAQ: FaqEntry[] = [
     question: "El sistema está lento o no carga",
     answer: [
       "Espera 1-2 minutos: después de un corte de luz o un cambio de configuración el NVR se reinicia. Si sigue igual, revisa en **Sistema** el uso de memoria y CPU.",
-      "Si una cámara nueva coincide con la lentitud, desactívala y avisa al técnico: hay cámaras que necesitan grabarse sin audio.",
+      "Si se repite, avisa al técnico: una cámara con la hora desajustada puede llenar la memoria del equipo. Orbi360 ya usa su propia hora para leer las cámaras y evitarlo.",
     ],
     keywords: [
       "lento",

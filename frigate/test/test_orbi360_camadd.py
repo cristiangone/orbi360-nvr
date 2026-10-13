@@ -51,6 +51,9 @@ class TestEntries(unittest.TestCase):
         self.assertEqual(
             cam["ffmpeg"]["inputs"][1]["path"], "rtsp://127.0.0.1:8554/patio_sub"
         )
+        self.assertIn(
+            "-use_wallclock_as_timestamps 1", cam["ffmpeg"]["inputs"][0]["input_args"]
+        )
 
     def test_dvrip_is_recorded_without_audio(self):
         main, sub, cam = camadd.camera_entries(

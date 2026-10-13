@@ -179,3 +179,20 @@ test.describe("Orbi360 camera network @medium", () => {
     ).toBeVisible();
   });
 });
+
+test.describe("Orbi360 camera network — mobile @medium @mobile", () => {
+  test.skip(({ frigateApp }) => !frigateApp.isMobile, "Mobile-only");
+
+  test("add camera dialog fits the phone screen", async ({ frigateApp }) => {
+    await installNetworkRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=cameraNetwork");
+    await frigateApp.page
+      .getByRole("button", { name: "Add camera by IP" })
+      .click();
+    const dialog = frigateApp.page.getByRole("dialog");
+    await expect(dialog.getByLabel("Camera IP")).toBeInViewport();
+    await expect(
+      dialog.getByRole("button", { name: "Add", exact: true }),
+    ).toBeInViewport();
+  });
+});

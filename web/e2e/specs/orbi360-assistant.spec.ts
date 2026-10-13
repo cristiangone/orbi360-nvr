@@ -50,3 +50,18 @@ test.describe("Orbi360 assistant @medium", () => {
     await expect(panel.getByText(/No answer found/)).toBeVisible();
   });
 });
+
+test.describe("Orbi360 assistant — mobile @medium @mobile", () => {
+  test.skip(({ frigateApp }) => !frigateApp.isMobile, "Mobile-only");
+
+  test("button and panel fit the phone screen", async ({ frigateApp }) => {
+    await frigateApp.goto("/");
+    const page = frigateApp.page;
+    const button = page.getByRole("button", { name: "Open the assistant" });
+    await expect(button).toBeInViewport();
+    await button.click();
+    await expect(
+      page.getByRole("dialog").getByPlaceholder(/Type your question/),
+    ).toBeInViewport();
+  });
+});

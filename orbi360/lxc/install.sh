@@ -337,6 +337,11 @@ EOF
 chmod 755 /usr/local/bin/orbi360-actualizar
 # pct enter abre la consola con un PATH minimo, sin /usr/local/bin
 ln -sf /usr/local/bin/orbi360-actualizar /usr/sbin/orbi360-actualizar
+# Respaldo y restauracion de la configuracion (cambio de equipo)
+for tool in respaldo restaurar; do
+  install -m 755 "$SRC/orbi360/lxc/orbi360-$tool.sh" "/usr/local/bin/orbi360-$tool"
+  ln -sf "/usr/local/bin/orbi360-$tool" "/usr/sbin/orbi360-$tool"
+done
 
 # Variables de entorno de la imagen Docker
 DEFAULT_FFMPEG_VERSION="$(grep -oP 'ENV DEFAULT_FFMPEG_VERSION="\K[^"]+' "$DOCKER/Dockerfile")"
@@ -641,6 +646,7 @@ cat <<EOF
     journalctl -u orbi360-nvr -f          log en vivo
     nano /config/config.yml               configuracion
     orbi360-actualizar                    actualizar a la ultima version
+    orbi360-respaldo                      respaldar la configuracion (cambio de equipo)
 
   Mosaicos SRT: se configuran en la interfaz, Ajustes > Mosaico SRT
     (el primero queda en srt://$IP_ADDR:9999?mode=caller&latency=5000)

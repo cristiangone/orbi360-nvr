@@ -12,6 +12,7 @@ import { LuCopy, LuEyeOff, LuPlus, LuRadar, LuRotateCcw } from "react-icons/lu";
 import { toast } from "sonner";
 import useSWR from "swr";
 import AddCameraDialog from "./components/AddCameraDialog";
+import CameraPasswordCard from "./components/CameraPasswordCard";
 
 const STATUS_CLASSES: Record<CameraNetworkStatus, string> = {
   ok: "border-green-500 text-green-500",
@@ -144,6 +145,8 @@ export default function CameraNetworkSettingsView() {
             {t("cameraNetwork.unsupported")}
           </div>
         )}
+
+        <CameraPasswordCard />
 
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <Button

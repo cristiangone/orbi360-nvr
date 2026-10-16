@@ -52,6 +52,7 @@ async function installNetworkRoutes(page: Page) {
     ignored: null as string | null,
     forgotten: null as string | null,
     added: null as Record<string, unknown> | null,
+    password: null as string | null,
   };
   let state = structuredClone(NETWORK);
   await page.route("**/api/orbi360/network", (route) =>
@@ -87,6 +88,13 @@ async function installNetworkRoutes(page: Page) {
     return route.fulfill({
       json: { success: true, name: "north_yard", backup: "config.yml.bak" },
     });
+  });
+  await page.route("**/api/orbi360/camera-password", (route) => {
+    if (route.request().method() === "PUT") {
+      calls.password = route.request().postDataJSON().password;
+      return route.fulfill({ json: { success: true } });
+    }
+    return route.fulfill({ json: { set: calls.password !== null } });
   });
   return calls;
 }
@@ -192,6 +200,20 @@ test.describe("Orbi360 camera network @medium", () => {
       ),
     ).toBeVisible();
     await expect(frigateApp.page.getByText(rep, { exact: true })).toBeVisible();
+  });
+
+  test("sets the camera password without showing it back", async ({
+    frigateApp,
+  }) => {
+    const calls = await installNetworkRoutes(frigateApp.page);
+    await frigateApp.goto("/settings?page=cameraNetwork");
+    const page = frigateApp.page;
+    await expect(page.getByText("Not set", { exact: true })).toBeVisible();
+    await page.getByPlaceholder("Camera password").fill("clave.Cam-1");
+    await page.getByRole("button", { name: "Save password" }).click();
+    await expect.poll(() => calls.password).toBe("clave.Cam-1");
+    await expect(page.getByText("Set", { exact: true })).toBeVisible();
+    await expect(page.getByPlaceholder(/New password/)).toHaveValue("");
   });
 
   test("shows an error with retry instead of spinning", async ({

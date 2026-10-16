@@ -391,18 +391,32 @@ model:
   path: /openvino-model/ssdlite_mobilenet_v2.xml
   labelmap_path: /openvino-model/coco_91cl_bkgr.txt
 
+# ffmpeg 5.0 + VA-API: la combinacion validada en el laboratorio para leer las camaras
 ffmpeg:
+  path: "5.0"
   hwaccel_args: preset-vaapi
 
 detect:
   enabled: true
+
+# 7 dias de todo lo que tenga movimiento y de las alertas y detecciones de la IA
+record:
+  enabled: true
+  motion:
+    days: 7
+  alerts:
+    retain:
+      days: 7
+  detections:
+    retain:
+      days: 7
 
 objects:
   track:
     - person
     - car
 
-cameras: {}  # Sin camaras: agregarlas desde la interfaz (Configuracion > Camaras)
+cameras: {}  # Sin camaras: agregarlas desde Ajustes > Red de camaras
 version: $CONFIG_VERSION
 EOF
 fi
@@ -450,6 +464,16 @@ if "detect" not in cfg:
     cfg["detect"] = {"enabled": True}
     changed = True
     print("config.yml: deteccion de objetos activada")
+# Tambien trae la grabacion apagada: una camara agregada se veria en vivo sin guardar nada
+if "record" not in cfg:
+    cfg["record"] = {
+        "enabled": True,
+        "motion": {"days": 7},
+        "alerts": {"retain": {"days": 7}},
+        "detections": {"retain": {"days": 7}},
+    }
+    changed = True
+    print("config.yml: grabacion activada (7 dias)")
 
 if changed:
     with path.open("w") as f:

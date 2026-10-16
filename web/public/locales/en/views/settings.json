@@ -2171,6 +2171,16 @@
       "cancel": "Cancel",
       "submit": "Add",
       "done": "Camera “{{camera}}” added: the NVR is restarting and it will show up in 1-2 minutes."
+    },
+    "password": {
+      "title": "Camera password",
+      "isSet": "Set",
+      "notSet": "Not set",
+      "desc": "Orbi360 signs in to every camera with this password (user admin). Set it before adding cameras; new iCSee cameras get the same one with “xmcam passwd”. It is stored only on this device and never shown again. Saving restarts the NVR (1-2 minutes).",
+      "placeholder": "Camera password",
+      "changePlaceholder": "New password (to change it)",
+      "save": "Save password",
+      "saved": "Password saved: the NVR is restarting and will use it in 1-2 minutes."
     }
   }
 }

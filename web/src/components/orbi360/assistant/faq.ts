@@ -80,7 +80,7 @@ export const FAQ: FaqEntry[] = [
     category: "Cámaras",
     question: "¿Cómo agrego una cámara nueva?",
     answer: [
-      "Conecta la cámara a la misma red WiFi o cable. En unos 3 minutos aparece en **Ajustes → Red de cámaras → Cámaras nuevas detectadas** (también te avisa por Telegram si está activado).",
+      "Primero, una sola vez: en **Ajustes → Red de cámaras** escribe la **clave de las cámaras** (la misma en todas). Luego conecta la cámara a la misma red WiFi o cable. En unos 3 minutos aparece en **Ajustes → Red de cámaras → Cámaras nuevas detectadas** (también te avisa por Telegram si está activado).",
       "Presiona **Agregar**, escribe un nombre (por ejemplo «Patio») y **Detectar**. Orbi360 la configura, la graba y la sigue aunque cambie de IP. El NVR se reinicia y la cámara aparece en 1-2 minutos.",
       "Si la cámara no aparece, usa **Agregar cámara por IP**. Para otras marcas activa «Otra marca» y escribe sus URLs RTSP.",
     ],

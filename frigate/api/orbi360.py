@@ -11,7 +11,7 @@ from pydantic import ValidationError
 
 from frigate.api.auth import require_role
 from frigate.api.defs.tags import Tags
-from frigate.orbi360 import camadd, camlocator, mosaics, telegram
+from frigate.orbi360 import camadd, camerapassword, camlocator, mosaics, telegram
 
 logger = logging.getLogger(__name__)
 
@@ -314,3 +314,42 @@ async def add_camera(body: dict):
             content={"success": False, "message": str(e)}, status_code=500
         )
     return JSONResponse(content={"success": True, **result})
+
+
+@router.get(
+    "/orbi360/camera-password",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Whether the camera password (FRIGATE_RTSP_PASSWORD) is set",
+)
+async def get_camera_password():
+    return JSONResponse(content={"set": camerapassword.is_set()})
+
+
+@router.put(
+    "/orbi360/camera-password",
+    dependencies=[Depends(require_role(["admin"]))],
+    summary="Set the camera password and restart the NVR to use it",
+)
+async def put_camera_password(body: dict):
+    try:
+        await asyncio.to_thread(
+            camerapassword.set_password, str(body.get("password", ""))
+        )
+    except camerapassword.PasswordError as e:
+        return JSONResponse(
+            content={"success": False, "message": str(e)}, status_code=400
+        )
+    except OSError as e:
+        logger.warning("saving the camera password failed: %s", e)
+        return JSONResponse(
+            content={"success": False, "message": str(e)}, status_code=500
+        )
+    # config.yml uses {FRIGATE_RTSP_PASSWORD}: go2rtc and the NVR read it on start.
+    # --no-block: this request runs inside orbi360-nvr
+    if mosaics.systemd_available():
+        subprocess.run(
+            ["systemctl", "--no-block", "restart", "orbi360-nvr.service"],
+            capture_output=True,
+            timeout=30,
+        )
+    return JSONResponse(content={"success": True})

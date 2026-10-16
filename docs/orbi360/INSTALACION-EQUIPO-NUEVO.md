@@ -67,7 +67,58 @@ grep -A2 -i password /dev/shm/logs/frigate/current
 
 Desde aquí, para actualizar basta con `orbi360-actualizar` dentro del CT.
 
-## 4. Traer la configuración del equipo anterior (opcional)
+## 4. Configurar desde cero (cliente nuevo)
+
+Todo desde la interfaz `https://IP-del-CT:8971`:
+
+1. **Cambiar la clave de `admin`**: Ajustes → Usuarios.
+2. **Clave de las cámaras**: Ajustes → **Red de cámaras** → *Clave de las cámaras*.
+   Es la clave con la que Orbi360 entra a todas las cámaras (usuario `admin`). El NVR
+   se reinicia al guardarla (1-2 minutos).
+3. **Cámaras**: en la misma página, *Escanear ahora*. Las cámaras aparecen en
+   *Cámaras nuevas detectadas*; en cada una, **Agregar** → nombre (“Patio”) →
+   **Detectar** → **Agregar**. Si una no aparece, *Agregar cámara por IP*.
+   - iCSee nuevas (solo DVRIP): si la detección dice que no acepta la clave, en el CT:
+     `cd /opt/frigate && python3 -m frigate.orbi360.xmcam passwd <IP>` (clave actual vacía).
+     Si son H.265, el diálogo ofrece pasarlas a H.264.
+   - Verificar cada cámara por el **nombre sobreimpreso** en la imagen.
+4. **Avisos por Telegram**: Ajustes → Mosaico SRT → *Avisos por Telegram* (token del
+   bot, ID de chat, *Probar*).
+5. **Mosaicos** (si el cliente transmite a la plataforma): Ajustes → Mosaico SRT →
+   agregar, elegir cámaras, resolución y destino (*Enviar a*: servidor y puerto SRT).
+
+El equipo ya viene con: detección de personas y autos, grabación de 7 días
+(movimiento, alertas y detecciones), localizador de cámaras por MAC cada 3 minutos,
+lectura con la hora del NVR y reconexión SRT diaria a las 04:00.
+
+## 5. Validar (primera semana)
+
+En el CT nuevo, con las cámaras funcionando:
+
+```bash
+systemctl show orbi360-nvr -p NRestarts
+curl -s http://127.0.0.1:5000/api/stats | python3 -c "import sys,json; s=json.load(sys.stdin); print({n: d.get('inference_speed') for n, d in s['detectors'].items()}); print(s.get('gpu_usages'))"
+free -m | head -2
+```
+
+| Qué | Esperado en un N150 |
+|---|---|
+| Inferencia OpenVINO | ~15 ms |
+| GPU | < 70 % |
+| RAM usada | < 60 % del CT |
+| `NRestarts` | no sube |
+
+## 6. Si reemplaza a otro equipo
+
+1. En el equipo anterior: Ajustes → Mosaico SRT → detener los mosaicos.
+2. En el nuevo: Ajustes → Mosaico SRT → activarlos. Revisar que los canales
+   lleguen al servidor (panel de Orbitv) y a MiraME.
+3. Apagar el CT anterior (`pct shutdown 241` en el nodo anterior) y dejar de
+   iniciarlo al arrancar (`pct set 241 --onboot 0`).
+4. Opcional: dar al CT nuevo la IP del anterior (`192.168.1.241`) para no cambiar
+   accesos ni marcadores: `pct set 241 -net0 name=eth0,bridge=vmbr0,ip=192.168.1.241/24,gw=192.168.1.254` y `pct reboot 241`.
+
+## Anexo: traer la configuración de otro equipo (en lugar del paso 4)
 
 En el **CT del equipo anterior**:
 
@@ -100,30 +151,3 @@ orbi360-restaurar /root/orbi360-respaldo.tar.gz --sin-mosaicos
 
 Quedan las cámaras, la clave de las cámaras, los usuarios, Telegram, el
 localizador y los mosaicos (detenidos). Las grabaciones no se copian.
-
-## 5. Validar (primera semana)
-
-En el CT nuevo, con las cámaras funcionando:
-
-```bash
-systemctl show orbi360-nvr -p NRestarts
-curl -s http://127.0.0.1:5000/api/stats | python3 -c "import sys,json; s=json.load(sys.stdin); print({n: d.get('inference_speed') for n, d in s['detectors'].items()}); print(s.get('gpu_usages'))"
-free -m | head -2
-```
-
-| Qué | Esperado en un N150 |
-|---|---|
-| Inferencia OpenVINO | ~15 ms |
-| GPU | < 70 % |
-| RAM usada | < 60 % del CT |
-| `NRestarts` | no sube |
-
-## 6. Cambiar al equipo nuevo
-
-1. En el equipo anterior: Ajustes → Mosaico SRT → detener los mosaicos.
-2. En el nuevo: Ajustes → Mosaico SRT → activarlos. Revisar que los canales
-   lleguen al servidor (panel de Orbitv) y a MiraME.
-3. Apagar el CT anterior (`pct shutdown 241` en el nodo anterior) y dejar de
-   iniciarlo al arrancar (`pct set 241 --onboot 0`).
-4. Opcional: dar al CT nuevo la IP del anterior (`192.168.1.241`) para no cambiar
-   accesos ni marcadores: `pct set 241 -net0 name=eth0,bridge=vmbr0,ip=192.168.1.241/24,gw=192.168.1.254` y `pct reboot 241`.

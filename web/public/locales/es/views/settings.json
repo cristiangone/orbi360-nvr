@@ -2385,6 +2385,16 @@
       "cancel": "Cancelar",
       "submit": "Agregar",
       "done": "Cámara «{{camera}}» agregada: el NVR se está reiniciando y aparecerá en 1-2 minutos."
+    },
+    "password": {
+      "title": "Clave de las cámaras",
+      "isSet": "Configurada",
+      "notSet": "Sin configurar",
+      "desc": "Orbi360 entra a todas las cámaras con esta clave (usuario admin). Ponla antes de agregar cámaras; en las iCSee nuevas, la misma se les asigna con «xmcam passwd». Se guarda solo en el equipo y no se vuelve a mostrar. Al guardarla, el NVR se reinicia (1-2 minutos).",
+      "placeholder": "Clave de las cámaras",
+      "changePlaceholder": "Nueva clave (para cambiarla)",
+      "save": "Guardar clave",
+      "saved": "Clave guardada: el NVR se está reiniciando y la usará en 1-2 minutos."
     }
   }
 }

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { CameraNetworkResponse, CameraNetworkStatus } from "@/types/orbi360";
 import axios, { AxiosError } from "axios";
 import copy from "copy-to-clipboard";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LuCopy, LuEyeOff, LuPlus, LuRadar, LuRotateCcw } from "react-icons/lu";
 import { toast } from "sonner";
@@ -45,6 +45,48 @@ export default function CameraNetworkSettingsView() {
   const [scanning, setScanning] = useState(false);
   // undefined: closed; {}: add by IP; {ip, mac}: add a discovered device
   const [adding, setAdding] = useState<{ ip?: string; mac?: string }>();
+  // name of the camera just added while the NVR restarts to load it
+  const [restarting, setRestarting] = useState<string>();
+
+  // Adding a camera restarts the NVR (--no-block): wait until its API answers
+  // again (twice in a row, after the old process has stopped), then reload the
+  // page data so the camera shows as configured and the next one can be added
+  useEffect(() => {
+    if (!restarting) {
+      return;
+    }
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout>;
+    const started = Date.now();
+    let answers = 0;
+    const tick = async () => {
+      if (cancelled) {
+        return;
+      }
+      const elapsed = Date.now() - started;
+      if (elapsed > 8000) {
+        try {
+          await axios.get("version", { timeout: 3000 });
+          answers += 1;
+        } catch {
+          answers = 0;
+        }
+        if (answers >= 2 || elapsed > 240000) {
+          await mutate();
+          if (!cancelled) {
+            setRestarting(undefined);
+          }
+          return;
+        }
+      }
+      timer = setTimeout(tick, 3000);
+    };
+    tick();
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [restarting, mutate]);
 
   const showError = useCallback(
     (error: unknown) => {
@@ -148,6 +190,13 @@ export default function CameraNetworkSettingsView() {
 
         <CameraPasswordCard />
 
+        {restarting && (
+          <div className="mb-4 flex max-w-4xl items-center gap-3 rounded-lg border border-sky-500 p-3 text-sm">
+            <ActivityIndicator className="size-4" />
+            {t("cameraNetwork.add.restarting", { camera: restarting })}
+          </div>
+        )}
+
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <Button
             variant="select"
@@ -161,7 +210,7 @@ export default function CameraNetworkSettingsView() {
             )}
             {scanning ? t("cameraNetwork.scanning") : t("cameraNetwork.scan")}
           </Button>
-          <Button onClick={() => setAdding({})}>
+          <Button onClick={() => setAdding({})} disabled={!!restarting}>
             <LuPlus className="mr-2 size-4" />
             {t("cameraNetwork.add.byIp")}
           </Button>
@@ -286,6 +335,7 @@ export default function CameraNetworkSettingsView() {
                   <Button
                     size="sm"
                     variant="select"
+                    disabled={!!restarting}
                     onClick={() => setAdding({ ip: device.ip, mac })}
                   >
                     <LuPlus className="mr-2 size-4" />
@@ -344,7 +394,7 @@ export default function CameraNetworkSettingsView() {
         mac={adding?.mac}
         existing={Object.keys(data.cameras)}
         onClose={() => setAdding(undefined)}
-        onAdded={() => mutate()}
+        onAdded={(camera) => setRestarting(camera)}
       />
     </div>
   );

@@ -2170,7 +2170,8 @@
       "customHint": "Use {FRIGATE_RTSP_PASSWORD} instead of the password so it is not written in the configuration.",
       "cancel": "Cancel",
       "submit": "Add",
-      "done": "Camera “{{camera}}” added: the NVR is restarting and it will show up in 1-2 minutes."
+      "done": "Camera “{{camera}}” added: the NVR is restarting and it will show up in 1-2 minutes.",
+      "restarting": "Restarting the NVR with camera “{{camera}}”… In 1-2 minutes it shows under Configured cameras and you can add the next one."
     },
     "password": {
       "title": "Camera password",

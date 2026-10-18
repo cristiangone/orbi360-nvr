@@ -28,7 +28,8 @@ type AddCameraDialogProps = {
   mac?: string;
   existing: string[];
   onClose: () => void;
-  onAdded: () => void;
+  // called with the camera name once it is saved (the NVR is restarting)
+  onAdded: (camera: string) => void;
 };
 
 // "Patio Norte" -> "patio_norte" (same rule as frigate/orbi360/camadd.py)
@@ -137,7 +138,7 @@ export default function AddCameraDialog({
       response.data.notes?.forEach((note) =>
         toast.info(note, { position: "top-center", duration: 8000 }),
       );
-      onAdded();
+      onAdded(friendlyName.trim() || name);
       onClose();
     } catch (error) {
       toast.error(

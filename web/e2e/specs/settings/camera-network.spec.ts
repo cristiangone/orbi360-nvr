@@ -170,6 +170,22 @@ test.describe("Orbi360 camera network @medium", () => {
         mac: "aa:bb:cc:00:11:22",
         to_h264: true,
       });
+
+    // the NVR restarts to load the camera: wait for it, then refresh the page data
+    await page.route("**/api/version", (route) =>
+      route.fulfill({ body: "0.18.0-test" }),
+    );
+    const banner = page.getByText(
+      /Restarting the NVR with camera “North Yard”/,
+    );
+    await expect(banner).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Add camera by IP" }),
+    ).toBeDisabled();
+    await expect(banner).toBeHidden({ timeout: 30000 });
+    await expect(
+      page.getByRole("button", { name: "Add camera by IP" }),
+    ).toBeEnabled();
   });
 
   test("marks cameras behind a Wi-Fi repeater", async ({ frigateApp }) => {

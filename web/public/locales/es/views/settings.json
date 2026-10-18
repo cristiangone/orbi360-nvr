@@ -2384,7 +2384,8 @@
       "customHint": "Usa {FRIGATE_RTSP_PASSWORD} en lugar de la clave para no dejarla escrita en la configuración.",
       "cancel": "Cancelar",
       "submit": "Agregar",
-      "done": "Cámara «{{camera}}» agregada: el NVR se está reiniciando y aparecerá en 1-2 minutos."
+      "done": "Cámara «{{camera}}» agregada: el NVR se está reiniciando y aparecerá en 1-2 minutos.",
+      "restarting": "Reiniciando el NVR con la cámara «{{camera}}»… En 1-2 minutos aparece en Cámaras configuradas y puedes agregar la siguiente."
     },
     "password": {
       "title": "Clave de las cámaras",

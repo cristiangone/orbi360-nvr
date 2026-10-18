@@ -716,7 +716,8 @@ function NoCameraView({ cameraGroup }: { cameraGroup?: string }) {
         }
         link={
           type !== "restricted" && isDefault
-            ? "/settings?page=cameraManagement"
+            ? // Orbi360: cameras are found and added from Red de cámaras
+              "/settings?page=cameraNetwork"
             : undefined
         }
       />

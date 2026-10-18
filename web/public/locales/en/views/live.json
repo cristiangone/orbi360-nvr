@@ -188,8 +188,8 @@
     },
     "default": {
       "title": "No Cameras Configured",
-      "description": "Get started by connecting a camera to Orbi360 NVR.",
-      "buttonText": "Add Camera"
+      "description": "Orbi360 finds the cameras on your network: add them from Camera network.",
+      "buttonText": "Find cameras"
     },
     "group": {
       "title": "No Cameras in Group",

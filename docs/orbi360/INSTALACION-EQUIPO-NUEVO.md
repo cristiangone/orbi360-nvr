@@ -10,46 +10,85 @@ operativo y Orbi360 NVR dentro de un contenedor (CT), igual que el laboratorio.
 ## 0. Antes de empezar
 
 - Un pendrive de 8 GB o más.
-- Cable de red al router (puerto LAN de la izquierda).
-- Elegir dos IP libres de la red, por ejemplo `192.168.1.170` para Proxmox y
-  `192.168.1.242` para el CT. Comprobar que nadie las use (desde el CT actual):
-  `arp-scan --localnet | grep -wE "192.168.1.170|192.168.1.242"` (sin resultado = libres).
+- **Un teclado USB y un monitor HDMI** (solo para instalar Proxmox; después todo
+  se hace desde el navegador).
+- Cable de red al router. El mini PC tiene **dos puertos LAN**: si después de
+  instalar no responde, probar el cable en el otro puerto.
+- Elegir dos IP libres, por ejemplo `192.168.1.170` para Proxmox y
+  `192.168.1.241` para el CT. Comprobar que no respondan: `ping -c2 -W1 192.168.1.170`.
 
 ## 1. Instalar Proxmox VE
 
-1. Descargar el ISO de la última versión de **Proxmox VE** desde
-   https://www.proxmox.com/en/downloads (sección *Proxmox Virtual Environment*).
-2. Grabarlo en el pendrive con **balenaEtcher** o **Rufus** (en Rufus, modo *DD*).
-3. Conectar el pendrive, un monitor y un teclado al mini PC. Encenderlo y abrir el
-   menú de arranque (en estos equipos suele ser **F7**, **F11** o **Supr/Del**).
-   Elegir el pendrive.
+1. Descargar el ISO de la última versión de **Proxmox VE** (x86-64, no ARM64) desde
+   https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso y comprobar
+   su SHA256 con el de la página. En Windows:
+   `(Get-FileHash .\proxmox-ve_X.Y-Z.iso -Algorithm SHA256).Hash`
+2. Grabarlo con **Rufus** en **modo Imagen DD** (o balenaEtcher). Si Rufus da
+   “Error de escritura”, limpiar el pendrive con `diskpart` (`list disk`,
+   `select disk N` del pendrive, `detail disk` para confirmar que es USB, `clean`)
+   y reintentar. Si Windows pide formatearlo después, **no** aceptar.
+3. Conectar el pendrive, el teclado, el monitor y la red al mini PC. Encenderlo
+   presionando **F7** (o F11 / Supr) y elegir el pendrive.
 4. *Install Proxmox VE (Graphical)*:
-   - Disco: el SSD de 512 GB, sistema de archivos **ext4** (por defecto).
+   - Disco: el SSD, sistema de archivos **ext4** (por defecto).
    - País, zona horaria **America/Santiago** y teclado **Latin American**.
    - Contraseña de root y un correo.
-   - Red: la interfaz conectada, **hostname** (ej. `orbi360-n150.local`), IP
-     `192.168.1.170/24`, gateway `192.168.1.254`, DNS `1.1.1.1`.
-5. Al terminar, retirar el pendrive. Desde otro PC abrir `https://192.168.1.170:8006`
-   (usuario `root`, la contraseña elegida; aceptar la advertencia del certificado).
+   - Red: **hostname** (ej. `nvr`), IP `192.168.1.170/24`, gateway `192.168.1.254`,
+     DNS `1.1.1.1`. Si queda con otra IP, se cambia después:
+     `sed -i 's/IP_VIEJA/192.168.1.170/' /etc/network/interfaces /etc/hosts && ifreload -a`
+5. Al terminar, retirar el pendrive y abrir `https://192.168.1.170:8006` desde otro
+   PC de la misma red (usuario `root`; aceptar la advertencia del certificado).
 
-### Repositorios (sin suscripción)
+### Repositorios (sin suscripción) y actualización
 
-En el nodo: *Actualizaciones → Repositorios*: deshabilitar los repositorios
-**enterprise** (PVE y Ceph) y agregar **No-Subscription**. Luego en la consola del nodo:
+Los repositorios *enterprise* exigen suscripción y hacen fallar `apt` (`401
+Unauthorized`). En la consola del nodo:
 
 ```bash
-apt update && apt full-upgrade -y && reboot
+mv /etc/apt/sources.list.d/pve-enterprise.sources /etc/apt/sources.list.d/ceph.sources /root/
+cat > /etc/apt/sources.list.d/pve-no-subscription.sources <<'EOF'
+Types: deb
+URIs: http://download.proxmox.com/debian/pve
+Suites: trixie
+Components: pve-no-subscription
+Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+EOF
+apt-get update && apt-get -y full-upgrade && reboot
 ```
+
+`download.proxmox.com` a veces va muy lento: mientras las líneas digan `Get:` se
+puede cortar con Ctrl+C y reintentar más tarde.
+
+### Acceso remoto por Tailscale (si el técnico no está en la red del cliente)
+
+En la consola del nodo (se instala sin `|` para escribirlo fácil con el teclado):
+
+```bash
+curl -fsSL https://tailscale.com/install.sh -o ts.sh && sh ts.sh
+echo net.ipv4.ip_forward=1 > /etc/sysctl.d/99-tailscale.conf && sysctl -p /etc/sysctl.d/99-tailscale.conf
+tailscale up --advertise-routes=192.168.1.0/24 --accept-dns=false
+```
+
+Abrir el enlace que muestra, iniciar sesión y aprobar la ruta en
+login.tailscale.com → *Machines* → el equipo → *Edit route settings*.
+
+> Proxmox VE 9 es Debian 13, que **no lee `/etc/sysctl.conf`**: el reenvío va en
+> `/etc/sysctl.d/`. Sin él, por Tailscale se llega al nodo pero no al CT.
 
 ## 2. Crear el contenedor de Orbi360
 
-En la **consola del nodo** (Proxmox → nodo → *Consola*). Sin `MEMORY`, `CPULIMIT`
-ni `MEDIA_SIZE` el script se ajusta al equipo (todos los hilos, la RAM menos 4 GB
-para Proxmox y ~75 % del espacio libre para grabaciones). Pasa la iGPU al CT.
+En la **consola del nodo**. Sin `MEMORY`, `CPULIMIT` ni `MEDIA_SIZE` el script se
+ajusta al equipo (todos los hilos, la RAM menos 4 GB para Proxmox y ~75 % del
+espacio libre para grabaciones) y pasa la iGPU al CT. En el N150 de 16 GB / 512 GB:
+4 hilos, 11.667 MB y 228 GB.
 
 ```bash
-CTID=241 IP=192.168.1.242/24 GW=192.168.1.254 bash -c "$(wget -qO- https://raw.githubusercontent.com/cristiangone/orbi360-nvr/orbi360/orbi360/lxc/create-ct.sh)"
+CTID=241 IP=192.168.1.241/24 GW=192.168.1.254 bash -c "$(wget -qO- https://raw.githubusercontent.com/cristiangone/orbi360-nvr/orbi360/orbi360/lxc/create-ct.sh)"
+pct exec 241 -- passwd
+pct config 241 | grep -E "dev0|memory|cpulimit|mp0"
 ```
+
+`dev0: /dev/dri/renderD128` confirma que el CT recibió la GPU.
 
 ## 3. Instalar Orbi360 NVR
 
@@ -58,11 +97,19 @@ pct enter 241
 bash -c "$(wget -qO- https://raw.githubusercontent.com/cristiangone/orbi360-nvr/orbi360/orbi360/lxc/install.sh)"
 ```
 
-Tarda 20-40 minutos la primera vez (compila la interfaz). Al final muestra la
-dirección `https://192.168.1.242:8971`. Para ver la clave inicial de `admin`:
+Tarda 20-40 minutos la primera vez. Instala también los **drivers de GPU de Intel**
+recientes (repositorio de Intel para Ubuntu 22.04): los de Debian 12 no reconocen
+el N150 y sin ellos la detección no arranca. Al final muestra
+`https://192.168.1.241:8971`. Para ver la clave inicial de `admin`:
 
 ```bash
 grep -A2 -i password /dev/shm/logs/frigate/current
+```
+
+Comprobar la GPU dentro del CT:
+
+```bash
+python3 -c "import openvino as ov; print(ov.Core().available_devices)"   # ['CPU', 'GPU']
 ```
 
 Desde aquí, para actualizar basta con `orbi360-actualizar` dentro del CT.
@@ -101,12 +148,13 @@ curl -s http://127.0.0.1:5000/api/stats | python3 -c "import sys,json; s=json.lo
 free -m | head -2
 ```
 
-| Qué | Esperado en un N150 |
-|---|---|
-| Inferencia OpenVINO | ~15 ms |
-| GPU | < 70 % |
-| RAM usada | < 60 % del CT |
-| `NRestarts` | no sube |
+| Qué | Esperado | Medido en el N150 (17/10/2026, 6 cámaras, 2 mosaicos 1080p) |
+|---|---|---|
+| Inferencia OpenVINO | < 15 ms | 10,5 ms |
+| GPU | < 70 % | 12,7 % |
+| Carga de CPU (`uptime`) | < 3,5 de 4 | ~2 |
+| RAM usada | < 60 % del CT | 2,2 GB de 11,4 |
+| `NRestarts` | no sube | 0 |
 
 ## 6. Si reemplaza a otro equipo
 

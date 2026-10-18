@@ -188,12 +188,12 @@
     },
     "default": {
       "title": "No hay Cámaras Configuradas",
-      "description": "Comienza conectando una cámara a Orbi360 NVR.",
-      "buttonText": "Añadir Cámara"
+      "description": "Orbi360 detecta las cámaras de tu red: agrégalas desde Red de cámaras.",
+      "buttonText": "Buscar cámaras"
     },
     "group": {
       "title": "No hay Cámaras en Grupo",
-      "description": "Estae grupo de cámaras no tiene cámaras asignadas o habilitadas.",
+      "description": "Este grupo de cámaras no tiene cámaras asignadas o habilitadas.",
       "buttonText": "Gestionar Grupos"
     }
   },

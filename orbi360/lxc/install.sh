@@ -692,8 +692,8 @@ cat <<EOF
     orbi360-actualizar                    actualizar a la ultima version
     orbi360-respaldo                      respaldar la configuracion (cambio de equipo)
 
-  Mosaicos SRT: se configuran en la interfaz, Ajustes > Mosaico SRT
-    (el primero queda en srt://$IP_ADDR:9999?mode=caller&latency=5000)
+  Camaras: Ajustes > Red de camaras (clave de las camaras, escanear, Agregar)
+  Mosaicos SRT y avisos por Telegram: Ajustes > Mosaico SRT
 
   Log de esta instalacion: $LOG
 EOF

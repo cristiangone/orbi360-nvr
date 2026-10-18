@@ -82,5 +82,69 @@ class TestXmPasswd(unittest.TestCase):
             self.assertEqual(result[0][fmt]["Video"]["FPS"], 12)
 
 
+class TestXmStaticIp(unittest.TestCase):
+    def setUp(self):
+        self.common = {
+            "HostIP": xmcam.ip_to_hex("192.168.1.10"),
+            "Submask": xmcam.ip_to_hex("255.255.255.0"),
+            "GateWay": xmcam.ip_to_hex("192.168.1.1"),
+        }
+        self.wifi = {
+            "Enable": True,
+            "Keys": "secreta",
+            "HostIP": xmcam.ip_to_hex("192.168.1.37"),
+            "Submask": xmcam.ip_to_hex("255.255.255.0"),
+            "GateWay": xmcam.ip_to_hex("192.168.1.254"),
+        }
+        self.dhcp = [
+            {"Enable": True, "Interface": "eth0"},
+            {"Enable": True, "Interface": "wlan0"},
+        ]
+
+    def test_hex_round_trip(self):
+        self.assertEqual(xmcam.ip_to_hex("192.168.1.100"), "0x6401A8C0")
+        self.assertEqual(xmcam.hex_to_ip("0x6401A8C0"), "192.168.1.100")
+
+    def test_fixes_the_wifi_interface(self):
+        iface, configs = xmcam.plan_static(
+            self.common, self.wifi, self.dhcp, "192.168.1.37", "192.168.1.231"
+        )
+        self.assertEqual(iface, "wlan0")
+        wifi = configs[xmcam.NET_WIFI]
+        self.assertEqual(xmcam.hex_to_ip(wifi["HostIP"]), "192.168.1.231")
+        self.assertEqual(wifi["Keys"], "secreta")
+        self.assertEqual(
+            configs[xmcam.NET_DHCP],
+            [
+                {"Enable": True, "Interface": "eth0"},
+                {"Enable": False, "Interface": "wlan0"},
+            ],
+        )
+        self.assertEqual(
+            xmcam.hex_to_ip(configs[xmcam.NET_DNS]["Address"]), "192.168.1.254"
+        )
+        self.assertNotIn(xmcam.NET_COMMON, configs)
+        self.assertTrue(self.dhcp[1]["Enable"])
+
+    def test_fixes_the_cable_interface(self):
+        self.wifi["Enable"] = False
+        iface, configs = xmcam.plan_static(
+            self.common, self.wifi, self.dhcp, "192.168.1.10", "192.168.1.232"
+        )
+        self.assertEqual(iface, "eth0")
+        self.assertIn(xmcam.NET_COMMON, configs)
+        self.assertFalse(configs[xmcam.NET_DHCP][0]["Enable"])
+
+    def test_refuses_unsafe_changes(self):
+        for current, new in (
+            ("192.168.1.99", "192.168.1.231"),  # camera doesn't report this IP
+            ("192.168.1.37", "192.168.2.231"),  # other subnet
+            ("192.168.1.37", "192.168.1.254"),  # the gateway
+            ("192.168.1.37", "192.168.1.255"),  # broadcast
+        ):
+            with self.assertRaises(xmcam.NetError):
+                xmcam.plan_static(self.common, self.wifi, self.dhcp, current, new)
+
+
 if __name__ == "__main__":
     unittest.main()

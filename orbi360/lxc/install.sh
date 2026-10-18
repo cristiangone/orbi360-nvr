@@ -153,8 +153,8 @@ step python "$(file_hash "$DOCKER/requirements.txt" "$DOCKER/requirements-wheels
 # trae libva2/libvpl2 de Debian 13 (para Battlemage) y eso arrastra libc6 y
 # base-files de trixie, dejando un sistema hibrido que se rompe con "apt upgrade".
 # Aca todo sale de Debian 12. Los .deb de Intel compute-runtime de upstream exigen
-# glibc 2.38 (Debian 13), asi que para OpenVINO en GPU se usa intel-opencl-icd de
-# Debian 12 (22.43), que soporta iGPUs hasta Gen12 (Tiger Lake, Alder Lake).
+# glibc 2.38 (Debian 13); los drivers de GPU nuevos salen del repositorio de Intel
+# para Ubuntu 22.04 (paso intel-gpu, mas abajo).
 # Al actualizar desde upstream, revisar install_deps.sh por cambios de versiones.
 install_runtime() {
   local deps="$DOCKER/install_deps.sh"
@@ -222,6 +222,26 @@ install_libva() {
   rm -rf "$work"
 }
 step libva "$LIBVA_VERSION" install_libva
+
+# --- Drivers de GPU Intel recientes (repositorio de Intel para Ubuntu 22.04) ---
+# Los de Debian 12 (iHD 23.1, OpenCL 22.43) no reconocen las iGPU nuevas: en un
+# Intel N150 (Twin Lake, 2026-10-17) VA-API daba "init failed" y OpenVINO solo veia
+# la CPU, el detector no arrancaba y el NVR se reiniciaba en bucle. Los paquetes de
+# Intel para jammy usan glibc 2.35, compatible con Debian 12. El pin limita ese
+# repositorio a estos drivers: todo lo demas sigue saliendo de Debian 12.
+INTEL_GPU_PKGS="intel-media-va-driver-non-free intel-opencl-icd libigdgmm12 libigc1 libigdfcl1 intel-igc-cm"
+install_intel_gpu() {
+  wget -qO- https://repositories.intel.com/gpu/intel-graphics.key \
+    | gpg --yes --dearmor -o /usr/share/keyrings/intel-graphics.gpg
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy client" \
+    > /etc/apt/sources.list.d/intel-gpu-jammy.list
+  printf 'Package: *\nPin: origin repositories.intel.com\nPin-Priority: 100\n\nPackage: %s\nPin: origin repositories.intel.com\nPin-Priority: 700\n' \
+    "$INTEL_GPU_PKGS" > /etc/apt/preferences.d/intel-gpu
+  apt-get -qq update
+  # shellcheck disable=SC2086
+  apt-get -qq install -y --no-install-recommends $INTEL_GPU_PKGS
+}
+step intel-gpu "jammy-client-v1" install_intel_gpu
 
 # --- Acceso a la iGPU Intel (si el CT la tiene) ---
 HAS_IGPU=0

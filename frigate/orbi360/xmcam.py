@@ -173,9 +173,12 @@ class NetError(Exception):
 
 
 def active_interface(common: dict, wifi: dict | None, current_ip: str) -> str:
-    """Interface the camera answers on: "wlan0" (Wi-Fi) or "eth0" (cable)."""
+    """Interface the camera answers on: "eth2" (Wi-Fi) or "eth0" (cable).
+
+    Names as in NetWork.NetDHCP (eth0..eth3); Xiongmai calls its Wi-Fi eth2.
+    """
     if wifi and wifi.get("Enable") and hex_to_ip(wifi["HostIP"]) == current_ip:
-        return "wlan0"
+        return "eth2"
     if hex_to_ip(common["HostIP"]) == current_ip:
         return "eth0"
     raise NetError(f"la camara no informa {current_ip} en cable ni en Wi-Fi")
@@ -190,7 +193,7 @@ def plan_static(
     Returns (interface, {config name: value}); the inputs are not modified.
     """
     iface = active_interface(common, wifi, current_ip)
-    section = dict(wifi if iface == "wlan0" else common)
+    section = dict(wifi if iface == "eth2" else common)
     gateway = hex_to_ip(section["GateWay"])
     mask = hex_to_ip(section["Submask"])
     net = ipaddress.IPv4Network(f"{gateway}/{mask}", strict=False)
@@ -207,7 +210,7 @@ def plan_static(
         entry["Enable"] = False
     section["HostIP"] = ip_to_hex(new_ip)
     return iface, {
-        NET_WIFI if iface == "wlan0" else NET_COMMON: section,
+        NET_WIFI if iface == "eth2" else NET_COMMON: section,
         NET_DNS: {
             "Address": ip_to_hex(gateway),
             "SpareAddress": ip_to_hex(SPARE_DNS),
@@ -254,9 +257,9 @@ def _red(cam: "Dvrip", ip: str) -> int:
         iface = "?"
     rows = [("eth0", "cable", common)]
     if wifi:
-        rows.append(("wlan0", "Wi-Fi", wifi))
+        rows.append(("eth2", "Wi-Fi", wifi))
     for name, label, section in rows:
-        if name == "wlan0" and not wifi.get("Enable"):
+        if name == "eth2" and not wifi.get("Enable"):
             print(f"{label:6} apagado")
             continue
         mode = "?" if name not in dhcp else "DHCP" if dhcp[name] else "IP fija"
@@ -287,7 +290,7 @@ def _ipfija(cam: "Dvrip", ip: str, new_ip: str, user: str, password: str) -> int
         print(f"No se cambio nada: {new_ip} ya responde en la red.")
         return 1
     # IP first, DHCP last: if the camera rejects a step it stays on DHCP
-    for name in (NET_WIFI if iface == "wlan0" else NET_COMMON, NET_DNS, NET_DHCP):
+    for name in (NET_WIFI if iface == "eth2" else NET_COMMON, NET_DNS, NET_DHCP):
         code = cam.set_config(name, configs[name])
         if code not in (RET_OK, RET_SAVED_NEEDS_REBOOT):
             print(f"La camara rechazo {name}: {_ret(code)}.")

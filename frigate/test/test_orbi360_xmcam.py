@@ -98,7 +98,7 @@ class TestXmStaticIp(unittest.TestCase):
         }
         self.dhcp = [
             {"Enable": True, "Interface": "eth0"},
-            {"Enable": True, "Interface": "wlan0"},
+            {"Enable": True, "Interface": "eth2"},
         ]
 
     def test_hex_round_trip(self):
@@ -109,7 +109,7 @@ class TestXmStaticIp(unittest.TestCase):
         iface, configs = xmcam.plan_static(
             self.common, self.wifi, self.dhcp, "192.168.1.37", "192.168.1.231"
         )
-        self.assertEqual(iface, "wlan0")
+        self.assertEqual(iface, "eth2")
         wifi = configs[xmcam.NET_WIFI]
         self.assertEqual(xmcam.hex_to_ip(wifi["HostIP"]), "192.168.1.231")
         self.assertEqual(wifi["Keys"], "secreta")
@@ -117,7 +117,7 @@ class TestXmStaticIp(unittest.TestCase):
             configs[xmcam.NET_DHCP],
             [
                 {"Enable": True, "Interface": "eth0"},
-                {"Enable": False, "Interface": "wlan0"},
+                {"Enable": False, "Interface": "eth2"},
             ],
         )
         self.assertEqual(

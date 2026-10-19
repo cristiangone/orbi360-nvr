@@ -92,7 +92,9 @@ class Dvrip:
         _, _, session, _, _, size = HEADER.unpack(self._recv(HEADER.size))
         reply = self._recv(size).rstrip(b"\x00\x0a ")
         self.session = session or self.session
-        return json.loads(reply.decode("utf-8", "replace")) if reply else {}
+        # strict=False: some cameras send raw control characters (e.g. in the SSID)
+        text = reply.decode("utf-8", "replace")
+        return json.loads(text, strict=False) if reply else {}
 
     def login(self, user: str, password: str) -> int:
         reply = self.send(
@@ -257,13 +259,15 @@ def _red(cam: "Dvrip", ip: str) -> int:
         if name == "wlan0" and not wifi.get("Enable"):
             print(f"{label:6} apagado")
             continue
-        mode = "DHCP" if dhcp.get(name) else "IP fija"
+        mode = "?" if name not in dhcp else "DHCP" if dhcp[name] else "IP fija"
         mark = "  <- en uso" if name == iface else ""
         print(
             f"{label:6} {mode:8} {hex_to_ip(section['HostIP'])} "
             f"mascara {hex_to_ip(section['Submask'])} "
             f"gateway {hex_to_ip(section['GateWay'])}{mark}"
         )
+    listed = ", ".join(f"{k}={'si' if v else 'no'}" for k, v in dhcp.items())
+    print(f"DHCP en la camara: {listed or 'sin entradas'}")
     return 0
 
 

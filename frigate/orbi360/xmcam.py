@@ -23,7 +23,11 @@ Every command but passwd logs in with FRIGATE_RTSP_PASSWORD. Passwords are
 never printed (nor the Wi-Fi key, which is part of NetWork.Wifi).
 
 ipfija exists because the lab's DHCP is the ISP's Fiberhome, where IPs can't be
-reserved, and the Archer AX21 runs as an access point (no DHCP).
+reserved, and the Archer AX21 runs as an access point (no DHCP). It does NOT hold
+on Wi-Fi: on the Entrada camera (2026-11-08) the camera accepted the change, then
+came back from the reboot on its DHCP lease, with eth2=no all along. The cable
+address also answers on the Wi-Fi link as an alias, so a cable address other than
+the factory .10 makes the camera answer on two IPs.
 """
 
 import getpass
